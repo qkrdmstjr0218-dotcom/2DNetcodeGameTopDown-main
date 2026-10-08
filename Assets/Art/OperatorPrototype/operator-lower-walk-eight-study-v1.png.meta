@@ -1,0 +1,858 @@
+fileFormatVersion: 2
+guid: c6dcc8c0545224945945b2c859169069
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2095822288987988918
+    second: operator-lower-walk-eight-study-v1_0
+  - first:
+      213: 4092686841885003162
+    second: operator-lower-walk-eight-study-v1_1
+  - first:
+      213: 2357653298875596525
+    second: operator-lower-walk-eight-study-v1_2
+  - first:
+      213: 65368357427466805
+    second: operator-lower-walk-eight-study-v1_3
+  - first:
+      213: 7431090228982504443
+    second: operator-lower-walk-eight-study-v1_4
+  - first:
+      213: 9174057084559381602
+    second: operator-lower-walk-eight-study-v1_5
+  - first:
+      213: 7114179532878148186
+    second: operator-lower-walk-eight-study-v1_6
+  - first:
+      213: 7559118717733568790
+    second: operator-lower-walk-eight-study-v1_7
+  - first:
+      213: -136387900438877749
+    second: operator-lower-walk-eight-study-v1_8
+  - first:
+      213: 895868594926915498
+    second: operator-lower-walk-eight-study-v1_9
+  - first:
+      213: 4298212810694099550
+    second: operator-lower-walk-eight-study-v1_10
+  - first:
+      213: 8980401298047042710
+    second: operator-lower-walk-eight-study-v1_11
+  - first:
+      213: -3418040429888909324
+    second: operator-lower-walk-eight-study-v1_12
+  - first:
+      213: 2372209260057296314
+    second: operator-lower-walk-eight-study-v1_13
+  - first:
+      213: -1758951154040755143
+    second: operator-lower-walk-eight-study-v1_14
+  - first:
+      213: 5047373573096722312
+    second: operator-lower-walk-eight-study-v1_15
+  - first:
+      213: 5088138648094131140
+    second: operator-lower-walk-eight-study-v1_16
+  - first:
+      213: -8852707250360088463
+    second: operator-lower-walk-eight-study-v1_17
+  - first:
+      213: 9162832277530332993
+    second: operator-lower-walk-eight-study-v1_18
+  - first:
+      213: 7604426298240549258
+    second: operator-lower-walk-eight-study-v1_19
+  - first:
+      213: 191800333584765554
+    second: operator-lower-walk-eight-study-v1_20
+  - first:
+      213: 5467895185369035861
+    second: operator-lower-walk-eight-study-v1_21
+  - first:
+      213: 6582032995310764368
+    second: operator-lower-walk-eight-study-v1_22
+  - first:
+      213: -2180296881176634147
+    second: operator-lower-walk-eight-study-v1_23
+  - first:
+      213: -4174335366026306639
+    second: operator-lower-walk-eight-study-v1_24
+  - first:
+      213: 4241781384570148664
+    second: operator-lower-walk-eight-study-v1_25
+  - first:
+      213: -4937759015124775407
+    second: operator-lower-walk-eight-study-v1_26
+  - first:
+      213: -987941258529115860
+    second: operator-lower-walk-eight-study-v1_27
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: operator-lower-walk-eight-study-v1_0
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 447
+        width: 441
+        height: 413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4c56887bb42ae2e0800000000000000
+      internalID: -2095822288987988918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-lower-walk-eight-study-v1_1
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 436
+        width: 328
+        height: 423
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9d887baff42cc830800000000000000
+      internalID: 4092686841885003162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-lower-walk-eight-study-v1_2
+      rect:
+        serializedVersion: 2
+        x: 837
+        y: 779
+        width: 59
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: deef1071f2118b020800000000000000
+      internalID: 2357653298875596525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-lower-walk-eight-study-v1_3
+      rect:
+        serializedVersion: 2
+        x: 883
+        y: 408
+        width: 451
+        height: 448
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 532d30cbc2c38e000800000000000000
+      internalID: 65368357427466805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-lower-walk-eight-study-v1_4
+      rect:
+        serializedVersion: 2
+        x: 1396
+        y: 448
+        width: 307
+        height: 408
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfbd0601139802760800000000000000
+      internalID: 7431090228982504443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-lower-walk-eight-study-v1_5
+      rect:
+        serializedVersion: 2
+        x: 1338
+        y: 518
+        width: 12
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 264515aef4cc05f70800000000000000
+      internalID: 9174057084559381602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-lower-walk-eight-study-v1_6
+      rect:
+        serializedVersion: 2
+        x: 1314
+        y: 501
+        width: 32
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a527e85b794aab260800000000000000
+      internalID: 7114179532878148186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-lower-walk-eight-study-v1_7
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 469
+        width: 33
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61104818c6267e860800000000000000
+      internalID: 7559118717733568790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-lower-walk-eight-study-v1_8
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 475
+        width: 13
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc9edaa5de37b1ef0800000000000000
+      internalID: -136387900438877749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-lower-walk-eight-study-v1_9
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 436
+        width: 34
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aaf0c069db3ce6c00800000000000000
+      internalID: 895868594926915498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-lower-walk-eight-study-v1_10
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 459
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e52847647c156ab30800000000000000
+      internalID: 4298212810694099550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-lower-walk-eight-study-v1_11
+      rect:
+        serializedVersion: 2
+        x: 814
+        y: 450
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6940d8e766bc0ac70800000000000000
+      internalID: 8980401298047042710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-lower-walk-eight-study-v1_12
+      rect:
+        serializedVersion: 2
+        x: 814
+        y: 442
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ff4c8ca65ea090d0800000000000000
+      internalID: -3418040429888909324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-lower-walk-eight-study-v1_13
+      rect:
+        serializedVersion: 2
+        x: 1449
+        y: 442
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abd7b96e0c7cbe020800000000000000
+      internalID: 2372209260057296314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-lower-walk-eight-study-v1_14
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 414
+        height: 435
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93c2326ae33f697e0800000000000000
+      internalID: -1758951154040755143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-lower-walk-eight-study-v1_15
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 0
+        width: 371
+        height: 438
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88fcf19c58fdb0640800000000000000
+      internalID: 5047373573096722312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-lower-walk-eight-study-v1_16
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 434
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c3469f6423bc9640800000000000000
+      internalID: 5088138648094131140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-lower-walk-eight-study-v1_17
+      rect:
+        serializedVersion: 2
+        x: 968
+        y: 15
+        width: 291
+        height: 409
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17803c1d8add42580800000000000000
+      internalID: -8852707250360088463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-lower-walk-eight-study-v1_18
+      rect:
+        serializedVersion: 2
+        x: 1079
+        y: 420
+        width: 47
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14fcdaed86be82f70800000000000000
+      internalID: 9162832277530332993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-lower-walk-eight-study-v1_19
+      rect:
+        serializedVersion: 2
+        x: 1282
+        y: 15
+        width: 441
+        height: 411
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a814443ad69588960800000000000000
+      internalID: 7604426298240549258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-lower-walk-eight-study-v1_20
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 384
+        width: 52
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2721f1f136969a200800000000000000
+      internalID: 191800333584765554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-lower-walk-eight-study-v1_21
+      rect:
+        serializedVersion: 2
+        x: 1258
+        y: 378
+        width: 37
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5547df073bdd1eb40800000000000000
+      internalID: 5467895185369035861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-lower-walk-eight-study-v1_22
+      rect:
+        serializedVersion: 2
+        x: 1724
+        y: 209
+        width: 19
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0510669d224185b50800000000000000
+      internalID: 6582032995310764368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-lower-walk-eight-study-v1_23
+      rect:
+        serializedVersion: 2
+        x: 1330
+        y: 33
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ddc139cc9870eb1e0800000000000000
+      internalID: -2180296881176634147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-lower-walk-eight-study-v1_24
+      rect:
+        serializedVersion: 2
+        x: 1335
+        y: 35
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bbd6a6e918c116c0800000000000000
+      internalID: -4174335366026306639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-lower-walk-eight-study-v1_25
+      rect:
+        serializedVersion: 2
+        x: 1387
+        y: 19
+        width: 7
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8371b2202b5ddda30800000000000000
+      internalID: 4241781384570148664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-lower-walk-eight-study-v1_26
+      rect:
+        serializedVersion: 2
+        x: 941
+        y: 18
+        width: 12
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11e410d465e897bb0800000000000000
+      internalID: -4937759015124775407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-lower-walk-eight-study-v1_27
+      rect:
+        serializedVersion: 2
+        x: 1393
+        y: 15
+        width: 9
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c217b62e8a02a42f0800000000000000
+      internalID: -987941258529115860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      operator-lower-walk-eight-study-v1_0: -2095822288987988918
+      operator-lower-walk-eight-study-v1_1: 4092686841885003162
+      operator-lower-walk-eight-study-v1_10: 4298212810694099550
+      operator-lower-walk-eight-study-v1_11: 8980401298047042710
+      operator-lower-walk-eight-study-v1_12: -3418040429888909324
+      operator-lower-walk-eight-study-v1_13: 2372209260057296314
+      operator-lower-walk-eight-study-v1_14: -1758951154040755143
+      operator-lower-walk-eight-study-v1_15: 5047373573096722312
+      operator-lower-walk-eight-study-v1_16: 5088138648094131140
+      operator-lower-walk-eight-study-v1_17: -8852707250360088463
+      operator-lower-walk-eight-study-v1_18: 9162832277530332993
+      operator-lower-walk-eight-study-v1_19: 7604426298240549258
+      operator-lower-walk-eight-study-v1_2: 2357653298875596525
+      operator-lower-walk-eight-study-v1_20: 191800333584765554
+      operator-lower-walk-eight-study-v1_21: 5467895185369035861
+      operator-lower-walk-eight-study-v1_22: 6582032995310764368
+      operator-lower-walk-eight-study-v1_23: -2180296881176634147
+      operator-lower-walk-eight-study-v1_24: -4174335366026306639
+      operator-lower-walk-eight-study-v1_25: 4241781384570148664
+      operator-lower-walk-eight-study-v1_26: -4937759015124775407
+      operator-lower-walk-eight-study-v1_27: -987941258529115860
+      operator-lower-walk-eight-study-v1_3: 65368357427466805
+      operator-lower-walk-eight-study-v1_4: 7431090228982504443
+      operator-lower-walk-eight-study-v1_5: 9174057084559381602
+      operator-lower-walk-eight-study-v1_6: 7114179532878148186
+      operator-lower-walk-eight-study-v1_7: 7559118717733568790
+      operator-lower-walk-eight-study-v1_8: -136387900438877749
+      operator-lower-walk-eight-study-v1_9: 895868594926915498
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,1118 @@
+fileFormatVersion: 2
+guid: f3bac38318f167a49bfc28e4175c42e3
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6433072122932540088
+    second: operator-right-walk-v1_0
+  - first:
+      213: -8725052497646717532
+    second: operator-right-walk-v1_1
+  - first:
+      213: 709420275875355702
+    second: operator-right-walk-v1_2
+  - first:
+      213: -9076782537477332975
+    second: operator-right-walk-v1_3
+  - first:
+      213: 1228715113915815191
+    second: operator-right-walk-v1_4
+  - first:
+      213: -8107979118176805767
+    second: operator-right-walk-v1_5
+  - first:
+      213: -7806500863426566502
+    second: operator-right-walk-v1_6
+  - first:
+      213: -8268353389641389332
+    second: operator-right-walk-v1_7
+  - first:
+      213: -1767495679681130357
+    second: operator-right-walk-v1_8
+  - first:
+      213: 5623375086756729238
+    second: operator-right-walk-v1_9
+  - first:
+      213: 1809935238460950702
+    second: operator-right-walk-v1_10
+  - first:
+      213: 7982619403177445176
+    second: operator-right-walk-v1_11
+  - first:
+      213: 715596156148295100
+    second: operator-right-walk-v1_12
+  - first:
+      213: 6163786840699809998
+    second: operator-right-walk-v1_13
+  - first:
+      213: 1638919659406346215
+    second: operator-right-walk-v1_14
+  - first:
+      213: 8612036574548532496
+    second: operator-right-walk-v1_15
+  - first:
+      213: -1532501779242200799
+    second: operator-right-walk-v1_16
+  - first:
+      213: 4890919653633260972
+    second: operator-right-walk-v1_17
+  - first:
+      213: 8549662989335477205
+    second: operator-right-walk-v1_18
+  - first:
+      213: -3042748132180377150
+    second: operator-right-walk-v1_19
+  - first:
+      213: -7362031912257704517
+    second: operator-right-walk-v1_20
+  - first:
+      213: -8217743700020766443
+    second: operator-right-walk-v1_21
+  - first:
+      213: 8899791214948880433
+    second: operator-right-walk-v1_22
+  - first:
+      213: -2097782519904331283
+    second: operator-right-walk-v1_23
+  - first:
+      213: -7678266235143147144
+    second: operator-right-walk-v1_24
+  - first:
+      213: -2036738072541637993
+    second: operator-right-walk-v1_25
+  - first:
+      213: -1580233464367885504
+    second: operator-right-walk-v1_26
+  - first:
+      213: -2093034281115694496
+    second: operator-right-walk-v1_27
+  - first:
+      213: -4527339660775108241
+    second: operator-right-walk-v1_28
+  - first:
+      213: 8388277844693710879
+    second: operator-right-walk-v1_29
+  - first:
+      213: -575648572262923875
+    second: operator-right-walk-v1_30
+  - first:
+      213: 8193699092038194049
+    second: operator-right-walk-v1_31
+  - first:
+      213: 458042603655115640
+    second: operator-right-walk-v1_32
+  - first:
+      213: 7995893678649535060
+    second: operator-right-walk-v1_33
+  - first:
+      213: -1927959458632471387
+    second: operator-right-walk-v1_34
+  - first:
+      213: -3270407771961308556
+    second: operator-right-walk-v1_35
+  - first:
+      213: -3597863541226111622
+    second: operator-right-walk-v1_36
+  - first:
+      213: -2300428896683102425
+    second: operator-right-walk-v1_37
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 1
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 0
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: operator-right-walk-v1_0
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 39
+        width: 537
+        height: 971
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84d4322fcf229b6a0800000000000000
+      internalID: -6433072122932540088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-right-walk-v1_1
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 943
+        width: 35
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a5f12f0bf26ae680800000000000000
+      internalID: -8725052497646717532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-right-walk-v1_2
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 903
+        width: 75
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63c92047bfd58d900800000000000000
+      internalID: 709420275875355702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-right-walk-v1_3
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 499
+        width: 425
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 110e13e7f5ac80280800000000000000
+      internalID: -9076782537477332975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-right-walk-v1_4
+      rect:
+        serializedVersion: 2
+        x: 990
+        y: 33
+        width: 529
+        height: 977
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7151b17d2e54d0110800000000000000
+      internalID: 1228715113915815191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-right-walk-v1_5
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 859
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97c59ce23fbaa7f80800000000000000
+      internalID: -8107979118176805767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-right-walk-v1_6
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 821
+        width: 31
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a96eda843dcb9a390800000000000000
+      internalID: -7806500863426566502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-right-walk-v1_7
+      rect:
+        serializedVersion: 2
+        x: 1054
+        y: 845
+        width: 21
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cea27055668e04d80800000000000000
+      internalID: -8268353389641389332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-right-walk-v1_8
+      rect:
+        serializedVersion: 2
+        x: 1046
+        y: 830
+        width: 11
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b80919e3b089877e0800000000000000
+      internalID: -1767495679681130357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-right-walk-v1_9
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 795
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6919ae4f8dd3a0e40800000000000000
+      internalID: 5623375086756729238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-right-walk-v1_10
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 765
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea84dea828e2e1910800000000000000
+      internalID: 1809935238460950702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-right-walk-v1_11
+      rect:
+        serializedVersion: 2
+        x: 562
+        y: 739
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 837488fad06f7ce60800000000000000
+      internalID: 7982619403177445176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-right-walk-v1_12
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 737
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb5aad1a9ee4ee900800000000000000
+      internalID: 715596156148295100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-right-walk-v1_13
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 747
+        width: 29
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec0b327797b2a8550800000000000000
+      internalID: 6163786840699809998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-right-walk-v1_14
+      rect:
+        serializedVersion: 2
+        x: 974
+        y: 559
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e7c1523fbc9eb610800000000000000
+      internalID: 1638919659406346215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-right-walk-v1_15
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 517
+        width: 43
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01d13a2d2a9148770800000000000000
+      internalID: 8612036574548532496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-right-walk-v1_16
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 417
+        width: 131
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1215d9650c57bbae0800000000000000
+      internalID: -1532501779242200799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-right-walk-v1_17
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 442
+        width: 55
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cad79c3038900e340800000000000000
+      internalID: 4890919653633260972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-right-walk-v1_18
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 451
+        width: 42
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5db35a4d03186a670800000000000000
+      internalID: 8549662989335477205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-right-walk-v1_19
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 477
+        width: 11
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c1c768e1bcf5c5d0800000000000000
+      internalID: -3042748132180377150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-right-walk-v1_20
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 26
+        width: 387
+        height: 478
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbd2ac44bfec4d990800000000000000
+      internalID: -7362031912257704517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-right-walk-v1_21
+      rect:
+        serializedVersion: 2
+        x: 1032
+        y: 418
+        width: 61
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 519de01f4a5b4fd80800000000000000
+      internalID: -8217743700020766443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-right-walk-v1_22
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 451
+        width: 26
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1309b26f4f8628b70800000000000000
+      internalID: 8899791214948880433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-right-walk-v1_23
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 435
+        width: 23
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de91415a9ed23e2e0800000000000000
+      internalID: -2097782519904331283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-right-walk-v1_24
+      rect:
+        serializedVersion: 2
+        x: 1094
+        y: 463
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 871ba635a81517590800000000000000
+      internalID: -7678266235143147144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-right-walk-v1_25
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 419
+        width: 15
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79254ad938d0cb3e0800000000000000
+      internalID: -2036738072541637993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-right-walk-v1_26
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 432
+        width: 9
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 043da2e5902e11ae0800000000000000
+      internalID: -1580233464367885504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-right-walk-v1_27
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 402
+        width: 41
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06a4263296c04f2e0800000000000000
+      internalID: -2093034281115694496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-right-walk-v1_28
+      rect:
+        serializedVersion: 2
+        x: 1030
+        y: 437
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6156fdb098ab21c0800000000000000
+      internalID: -4527339660775108241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-right-walk-v1_29
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 311
+        width: 30
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f187f3ab146296470800000000000000
+      internalID: 8388277844693710879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-right-walk-v1_30
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 318
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d91cec66ca2e208f0800000000000000
+      internalID: -575648572262923875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-right-walk-v1_31
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 311
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 183906189edd5b170800000000000000
+      internalID: 8193699092038194049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-right-walk-v1_32
+      rect:
+        serializedVersion: 2
+        x: 1030
+        y: 307
+        width: 35
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 873bbda325b4b5600800000000000000
+      internalID: 458042603655115640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-right-walk-v1_33
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 292
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45a62b9cfee17fe60800000000000000
+      internalID: 7995893678649535060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-right-walk-v1_34
+      rect:
+        serializedVersion: 2
+        x: 1030
+        y: 263
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ac6bde46138e35e0800000000000000
+      internalID: -1927959458632471387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-right-walk-v1_35
+      rect:
+        serializedVersion: 2
+        x: 1072
+        y: 271
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47ac191757d2d92d0800000000000000
+      internalID: -3270407771961308556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-right-walk-v1_36
+      rect:
+        serializedVersion: 2
+        x: 1094
+        y: 239
+        width: 11
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7d73eaeb22d11ec0800000000000000
+      internalID: -3597863541226111622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-right-walk-v1_37
+      rect:
+        serializedVersion: 2
+        x: 1018
+        y: 131
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72fe82e4b1c3310e0800000000000000
+      internalID: -2300428896683102425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      operator-right-walk-v1_0: -6433072122932540088
+      operator-right-walk-v1_1: -8725052497646717532
+      operator-right-walk-v1_10: 1809935238460950702
+      operator-right-walk-v1_11: 7982619403177445176
+      operator-right-walk-v1_12: 715596156148295100
+      operator-right-walk-v1_13: 6163786840699809998
+      operator-right-walk-v1_14: 1638919659406346215
+      operator-right-walk-v1_15: 8612036574548532496
+      operator-right-walk-v1_16: -1532501779242200799
+      operator-right-walk-v1_17: 4890919653633260972
+      operator-right-walk-v1_18: 8549662989335477205
+      operator-right-walk-v1_19: -3042748132180377150
+      operator-right-walk-v1_2: 709420275875355702
+      operator-right-walk-v1_20: -7362031912257704517
+      operator-right-walk-v1_21: -8217743700020766443
+      operator-right-walk-v1_22: 8899791214948880433
+      operator-right-walk-v1_23: -2097782519904331283
+      operator-right-walk-v1_24: -7678266235143147144
+      operator-right-walk-v1_25: -2036738072541637993
+      operator-right-walk-v1_26: -1580233464367885504
+      operator-right-walk-v1_27: -2093034281115694496
+      operator-right-walk-v1_28: -4527339660775108241
+      operator-right-walk-v1_29: 8388277844693710879
+      operator-right-walk-v1_3: -9076782537477332975
+      operator-right-walk-v1_30: -575648572262923875
+      operator-right-walk-v1_31: 8193699092038194049
+      operator-right-walk-v1_32: 458042603655115640
+      operator-right-walk-v1_33: 7995893678649535060
+      operator-right-walk-v1_34: -1927959458632471387
+      operator-right-walk-v1_35: -3270407771961308556
+      operator-right-walk-v1_36: -3597863541226111622
+      operator-right-walk-v1_37: -2300428896683102425
+      operator-right-walk-v1_4: 1228715113915815191
+      operator-right-walk-v1_5: -8107979118176805767
+      operator-right-walk-v1_6: -7806500863426566502
+      operator-right-walk-v1_7: -8268353389641389332
+      operator-right-walk-v1_8: -1767495679681130357
+      operator-right-walk-v1_9: 5623375086756729238
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,520 @@
+fileFormatVersion: 2
+guid: 5f2177969c1e2434791ce3d222629f89
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1386232133618883169
+    second: operator-right-fullbody-master-v1_0
+  - first:
+      213: 1311520188555120159
+    second: operator-right-fullbody-master-v1_1
+  - first:
+      213: 1856514976470700413
+    second: operator-right-fullbody-master-v1_2
+  - first:
+      213: -4436611376461015902
+    second: operator-right-fullbody-master-v1_3
+  - first:
+      213: -8016102899732226475
+    second: operator-right-fullbody-master-v1_4
+  - first:
+      213: -7345414080450225533
+    second: operator-right-fullbody-master-v1_5
+  - first:
+      213: 8956187284515903999
+    second: operator-right-fullbody-master-v1_6
+  - first:
+      213: 7175421630891911849
+    second: operator-right-fullbody-master-v1_7
+  - first:
+      213: -425203153380987738
+    second: operator-right-fullbody-master-v1_8
+  - first:
+      213: 5181091050610281809
+    second: operator-right-fullbody-master-v1_9
+  - first:
+      213: -7476961512438932962
+    second: operator-right-fullbody-master-v1_10
+  - first:
+      213: -9194005040468728326
+    second: operator-right-fullbody-master-v1_11
+  - first:
+      213: 198794318164486428
+    second: operator-right-fullbody-master-v1_12
+  - first:
+      213: -2381709738741714810
+    second: operator-right-fullbody-master-v1_13
+  - first:
+      213: 3184082654107122674
+    second: operator-right-fullbody-master-v1_14
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: operator-right-fullbody-master-v1_0
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 0
+        width: 1045
+        height: 1368
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f952a63183d13cce0800000000000000
+      internalID: -1386232133618883169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-right-fullbody-master-v1_1
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 1261
+        width: 24
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1ec49aa9a4733210800000000000000
+      internalID: 1311520188555120159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-right-fullbody-master-v1_2
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 1098
+        width: 76
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d719abce88aa3c910800000000000000
+      internalID: 1856514976470700413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-right-fullbody-master-v1_3
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 1185
+        width: 16
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a49593957dfd62c0800000000000000
+      internalID: -4436611376461015902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-right-fullbody-master-v1_4
+      rect:
+        serializedVersion: 2
+        x: 1029
+        y: 1132
+        width: 34
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55e5b7242e411c090800000000000000
+      internalID: -8016102899732226475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-right-fullbody-master-v1_5
+      rect:
+        serializedVersion: 2
+        x: 1127
+        y: 1163
+        width: 18
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38a9c9ebfc8df0a90800000000000000
+      internalID: -7345414080450225533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-right-fullbody-master-v1_6
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 1019
+        width: 21
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff9d07322e4ca4c70800000000000000
+      internalID: 8956187284515903999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-right-fullbody-master-v1_7
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 1009
+        width: 17
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9aa67fec4f7349360800000000000000
+      internalID: 7175421630891911849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-right-fullbody-master-v1_8
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 1023
+        width: 22
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6aca95d1cff591af0800000000000000
+      internalID: -425203153380987738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-right-fullbody-master-v1_9
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 971
+        width: 23
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15dc4942cdee6e740800000000000000
+      internalID: 5181091050610281809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-right-fullbody-master-v1_10
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 987
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1a5fcb7e1f7c3890800000000000000
+      internalID: -7476961512438932962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-right-fullbody-master-v1_11
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 969
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af5e5bba025586080800000000000000
+      internalID: -9194005040468728326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-right-fullbody-master-v1_12
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 72
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c196f8d016242c200800000000000000
+      internalID: 198794318164486428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-right-fullbody-master-v1_13
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 74
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68036388c9772fed0800000000000000
+      internalID: -2381709738741714810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-right-fullbody-master-v1_14
+      rect:
+        serializedVersion: 2
+        x: 661
+        y: 13
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fbb98dcd42203c20800000000000000
+      internalID: 3184082654107122674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      operator-right-fullbody-master-v1_0: -1386232133618883169
+      operator-right-fullbody-master-v1_1: 1311520188555120159
+      operator-right-fullbody-master-v1_10: -7476961512438932962
+      operator-right-fullbody-master-v1_11: -9194005040468728326
+      operator-right-fullbody-master-v1_12: 198794318164486428
+      operator-right-fullbody-master-v1_13: -2381709738741714810
+      operator-right-fullbody-master-v1_14: 3184082654107122674
+      operator-right-fullbody-master-v1_2: 1856514976470700413
+      operator-right-fullbody-master-v1_3: -4436611376461015902
+      operator-right-fullbody-master-v1_4: -8016102899732226475
+      operator-right-fullbody-master-v1_5: -7345414080450225533
+      operator-right-fullbody-master-v1_6: 8956187284515903999
+      operator-right-fullbody-master-v1_7: 7175421630891911849
+      operator-right-fullbody-master-v1_8: -425203153380987738
+      operator-right-fullbody-master-v1_9: 5181091050610281809
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

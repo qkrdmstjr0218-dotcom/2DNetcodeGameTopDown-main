@@ -1,0 +1,416 @@
+fileFormatVersion: 2
+guid: 326adabf727b58d45abc4c5c336b990d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6050565097311710800
+    second: operator-joint-parts-matched-v1_0
+  - first:
+      213: -653001865121946813
+    second: operator-joint-parts-matched-v1_1
+  - first:
+      213: 4679730815067788660
+    second: operator-joint-parts-matched-v1_2
+  - first:
+      213: 5578154001512549012
+    second: operator-joint-parts-matched-v1_3
+  - first:
+      213: 3644021028763568596
+    second: operator-joint-parts-matched-v1_4
+  - first:
+      213: -2940808975510275640
+    second: operator-joint-parts-matched-v1_5
+  - first:
+      213: 7278496828188114912
+    second: operator-joint-parts-matched-v1_6
+  - first:
+      213: -2482540121954417988
+    second: operator-joint-parts-matched-v1_7
+  - first:
+      213: 3974198056275275550
+    second: operator-joint-parts-matched-v1_8
+  - first:
+      213: -4923736182299118573
+    second: operator-joint-parts-matched-v1_9
+  - first:
+      213: -2273854777862348474
+    second: operator-joint-parts-matched-v1_10
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 1
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 0
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: operator-joint-parts-matched-v1_0
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 471
+        width: 320
+        height: 541
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b1db5ce913180ca0800000000000000
+      internalID: -6050565097311710800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-joint-parts-matched-v1_1
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 543
+        width: 311
+        height: 468
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3432dbf634210f6f0800000000000000
+      internalID: -653001865121946813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-joint-parts-matched-v1_2
+      rect:
+        serializedVersion: 2
+        x: 1222
+        y: 913
+        width: 29
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 475909cc16eb1f040800000000000000
+      internalID: 4679730815067788660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-joint-parts-matched-v1_3
+      rect:
+        serializedVersion: 2
+        x: 1246
+        y: 915
+        width: 119
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49a44929285996d40800000000000000
+      internalID: 5578154001512549012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-joint-parts-matched-v1_4
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 21
+        width: 296
+        height: 478
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d9818d91d9229230800000000000000
+      internalID: 3644021028763568596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-joint-parts-matched-v1_5
+      rect:
+        serializedVersion: 2
+        x: 638
+        y: 31
+        width: 273
+        height: 466
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c9fd6e51d52037d0800000000000000
+      internalID: -2940808975510275640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-joint-parts-matched-v1_6
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 435
+        width: 33
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0efb5f65d4a620560800000000000000
+      internalID: 7278496828188114912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-joint-parts-matched-v1_7
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 359
+        width: 485
+        height: 474
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb2804289ee3c8dd0800000000000000
+      internalID: -2482540121954417988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-joint-parts-matched-v1_8
+      rect:
+        serializedVersion: 2
+        x: 1046
+        y: 433
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1fe5537310372730800000000000000
+      internalID: 3974198056275275550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-joint-parts-matched-v1_9
+      rect:
+        serializedVersion: 2
+        x: 1086
+        y: 449
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 314b25e77006babb0800000000000000
+      internalID: -4923736182299118573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-joint-parts-matched-v1_10
+      rect:
+        serializedVersion: 2
+        x: 952
+        y: 17
+        width: 426
+        height: 314
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 641a0be7025a170e0800000000000000
+      internalID: -2273854777862348474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      operator-joint-parts-matched-v1_0: -6050565097311710800
+      operator-joint-parts-matched-v1_1: -653001865121946813
+      operator-joint-parts-matched-v1_10: -2273854777862348474
+      operator-joint-parts-matched-v1_2: 4679730815067788660
+      operator-joint-parts-matched-v1_3: 5578154001512549012
+      operator-joint-parts-matched-v1_4: 3644021028763568596
+      operator-joint-parts-matched-v1_5: -2940808975510275640
+      operator-joint-parts-matched-v1_6: 7278496828188114912
+      operator-joint-parts-matched-v1_7: -2482540121954417988
+      operator-joint-parts-matched-v1_8: 3974198056275275550
+      operator-joint-parts-matched-v1_9: -4923736182299118573
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

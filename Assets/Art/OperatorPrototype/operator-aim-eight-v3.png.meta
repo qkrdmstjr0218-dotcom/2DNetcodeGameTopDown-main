@@ -1,0 +1,806 @@
+fileFormatVersion: 2
+guid: ff9fe64545c5ce948b5dc63d56b63125
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7475096779867149477
+    second: operator-aim-eight-v3_0
+  - first:
+      213: 2292417035927976591
+    second: operator-aim-eight-v3_1
+  - first:
+      213: 5971128705952009158
+    second: operator-aim-eight-v3_2
+  - first:
+      213: -4542637521310478012
+    second: operator-aim-eight-v3_3
+  - first:
+      213: -4903749564998398733
+    second: operator-aim-eight-v3_4
+  - first:
+      213: 3860414546634738499
+    second: operator-aim-eight-v3_5
+  - first:
+      213: -7986167706077238193
+    second: operator-aim-eight-v3_6
+  - first:
+      213: 7239030550319886579
+    second: operator-aim-eight-v3_7
+  - first:
+      213: -6810669109545939694
+    second: operator-aim-eight-v3_8
+  - first:
+      213: 3918091216179657105
+    second: operator-aim-eight-v3_9
+  - first:
+      213: 3810529776562898355
+    second: operator-aim-eight-v3_10
+  - first:
+      213: -6633815236164742884
+    second: operator-aim-eight-v3_11
+  - first:
+      213: 7007308215562990276
+    second: operator-aim-eight-v3_12
+  - first:
+      213: 2869941639871872921
+    second: operator-aim-eight-v3_13
+  - first:
+      213: -8471630945784503846
+    second: operator-aim-eight-v3_14
+  - first:
+      213: 3405744844829184842
+    second: operator-aim-eight-v3_15
+  - first:
+      213: -3020132313878124901
+    second: operator-aim-eight-v3_16
+  - first:
+      213: 5628869783595446984
+    second: operator-aim-eight-v3_17
+  - first:
+      213: -4470999807256539025
+    second: operator-aim-eight-v3_18
+  - first:
+      213: -723003807805817119
+    second: operator-aim-eight-v3_19
+  - first:
+      213: -1257067369357824164
+    second: operator-aim-eight-v3_20
+  - first:
+      213: 1851093101697478903
+    second: operator-aim-eight-v3_21
+  - first:
+      213: 3949465871674019698
+    second: operator-aim-eight-v3_22
+  - first:
+      213: 833754599018136725
+    second: operator-aim-eight-v3_23
+  - first:
+      213: 5140508681138606935
+    second: operator-aim-eight-v3_24
+  - first:
+      213: 5608313501532306135
+    second: operator-aim-eight-v3_25
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 1
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 0
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: operator-aim-eight-v3_0
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 432
+        width: 431
+        height: 439
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5b2a5e551f134890800000000000000
+      internalID: -7475096779867149477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-aim-eight-v3_1
+      rect:
+        serializedVersion: 2
+        x: 478
+        y: 434
+        width: 378
+        height: 423
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8a7a8ff52d40df10800000000000000
+      internalID: 2292417035927976591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-aim-eight-v3_2
+      rect:
+        serializedVersion: 2
+        x: 903
+        y: 389
+        width: 354
+        height: 456
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6cb4862fbe5bdd250800000000000000
+      internalID: 5971128705952009158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-aim-eight-v3_3
+      rect:
+        serializedVersion: 2
+        x: 1207
+        y: 797
+        width: 32
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4419de60e3f45f0c0800000000000000
+      internalID: -4542637521310478012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-aim-eight-v3_4
+      rect:
+        serializedVersion: 2
+        x: 1290
+        y: 371
+        width: 455
+        height: 485
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fc4bc670c162fbb0800000000000000
+      internalID: -4903749564998398733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-aim-eight-v3_5
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 741
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34b0ae9a392f29530800000000000000
+      internalID: 3860414546634738499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-aim-eight-v3_6
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 736
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4ce19aa8ce6b2190800000000000000
+      internalID: -7986167706077238193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-aim-eight-v3_7
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 376
+        width: 46
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f074067ee3367460800000000000000
+      internalID: 7239030550319886579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-aim-eight-v3_8
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 448
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21dc9c28784ab71a0800000000000000
+      internalID: -6810669109545939694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-aim-eight-v3_9
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 442
+        width: 7
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19977f1c33bdf5630800000000000000
+      internalID: 3918091216179657105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-aim-eight-v3_10
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 418
+        width: 34
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b5841a84a8b1e430800000000000000
+      internalID: 3810529776562898355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-aim-eight-v3_11
+      rect:
+        serializedVersion: 2
+        x: 1403
+        y: 442
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1193dea034ffe3a0800000000000000
+      internalID: -6633815236164742884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-aim-eight-v3_12
+      rect:
+        serializedVersion: 2
+        x: 1669
+        y: 432
+        width: 11
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c2fe4c12b5fe3160800000000000000
+      internalID: 7007308215562990276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-aim-eight-v3_13
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 19
+        width: 392
+        height: 419
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99f3aa247b414d720800000000000000
+      internalID: 2869941639871872921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-aim-eight-v3_14
+      rect:
+        serializedVersion: 2
+        x: 1046
+        y: 434
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad1ee481a88be6a80800000000000000
+      internalID: -8471630945784503846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-aim-eight-v3_15
+      rect:
+        serializedVersion: 2
+        x: 1336
+        y: 25
+        width: 356
+        height: 413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4359a754e2a34f20800000000000000
+      internalID: 3405744844829184842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-aim-eight-v3_16
+      rect:
+        serializedVersion: 2
+        x: 1443
+        y: 434
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b96ad9079a55616d0800000000000000
+      internalID: -3020132313878124901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-aim-eight-v3_17
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 392
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c2f222ce33cd1e40800000000000000
+      internalID: 5628869783595446984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-aim-eight-v3_18
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 23
+        width: 382
+        height: 410
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6052a91d51d3f1c0800000000000000
+      internalID: -4470999807256539025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-aim-eight-v3_19
+      rect:
+        serializedVersion: 2
+        x: 945
+        y: 25
+        width: 324
+        height: 406
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1eeba701edf57f5f0800000000000000
+      internalID: -723003807805817119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-aim-eight-v3_20
+      rect:
+        serializedVersion: 2
+        x: 972
+        y: 386
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5f21b643effd8ee0800000000000000
+      internalID: -1257067369357824164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-aim-eight-v3_21
+      rect:
+        serializedVersion: 2
+        x: 1395
+        y: 277
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f0bad45e5760b910800000000000000
+      internalID: 1851093101697478903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-aim-eight-v3_22
+      rect:
+        serializedVersion: 2
+        x: 1405
+        y: 289
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27f88adf8425fc630800000000000000
+      internalID: 3949465871674019698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-aim-eight-v3_23
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 281
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5940350f367129b00800000000000000
+      internalID: 833754599018136725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-aim-eight-v3_24
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 275
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7531410f861c65740800000000000000
+      internalID: 5140508681138606935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-aim-eight-v3_25
+      rect:
+        serializedVersion: 2
+        x: 827
+        y: 278
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7da3cdf5a6bb4dd40800000000000000
+      internalID: 5608313501532306135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      operator-aim-eight-v3_0: -7475096779867149477
+      operator-aim-eight-v3_1: 2292417035927976591
+      operator-aim-eight-v3_10: 3810529776562898355
+      operator-aim-eight-v3_11: -6633815236164742884
+      operator-aim-eight-v3_12: 7007308215562990276
+      operator-aim-eight-v3_13: 2869941639871872921
+      operator-aim-eight-v3_14: -8471630945784503846
+      operator-aim-eight-v3_15: 3405744844829184842
+      operator-aim-eight-v3_16: -3020132313878124901
+      operator-aim-eight-v3_17: 5628869783595446984
+      operator-aim-eight-v3_18: -4470999807256539025
+      operator-aim-eight-v3_19: -723003807805817119
+      operator-aim-eight-v3_2: 5971128705952009158
+      operator-aim-eight-v3_20: -1257067369357824164
+      operator-aim-eight-v3_21: 1851093101697478903
+      operator-aim-eight-v3_22: 3949465871674019698
+      operator-aim-eight-v3_23: 833754599018136725
+      operator-aim-eight-v3_24: 5140508681138606935
+      operator-aim-eight-v3_25: 5608313501532306135
+      operator-aim-eight-v3_3: -4542637521310478012
+      operator-aim-eight-v3_4: -4903749564998398733
+      operator-aim-eight-v3_5: 3860414546634738499
+      operator-aim-eight-v3_6: -7986167706077238193
+      operator-aim-eight-v3_7: 7239030550319886579
+      operator-aim-eight-v3_8: -6810669109545939694
+      operator-aim-eight-v3_9: 3918091216179657105
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

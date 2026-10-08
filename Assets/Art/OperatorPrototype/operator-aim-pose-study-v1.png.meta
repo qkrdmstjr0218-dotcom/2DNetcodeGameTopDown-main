@@ -1,0 +1,494 @@
+fileFormatVersion: 2
+guid: abb367be38d5d304aaa4148bd9fc6e6e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2791962742877082430
+    second: operator-aim-pose-study-v1_0
+  - first:
+      213: -1905087428514968382
+    second: operator-aim-pose-study-v1_1
+  - first:
+      213: -6821750478007920105
+    second: operator-aim-pose-study-v1_2
+  - first:
+      213: -842072113199909983
+    second: operator-aim-pose-study-v1_3
+  - first:
+      213: -3363426233277903742
+    second: operator-aim-pose-study-v1_4
+  - first:
+      213: 3717863695082667522
+    second: operator-aim-pose-study-v1_5
+  - first:
+      213: -5685504560181636132
+    second: operator-aim-pose-study-v1_6
+  - first:
+      213: 2087189708816860756
+    second: operator-aim-pose-study-v1_7
+  - first:
+      213: 3639431604673357754
+    second: operator-aim-pose-study-v1_8
+  - first:
+      213: -5651820038755659301
+    second: operator-aim-pose-study-v1_9
+  - first:
+      213: 3540725231875037374
+    second: operator-aim-pose-study-v1_10
+  - first:
+      213: -1083146856125850077
+    second: operator-aim-pose-study-v1_11
+  - first:
+      213: -650247066609297600
+    second: operator-aim-pose-study-v1_12
+  - first:
+      213: 4557933023577585356
+    second: operator-aim-pose-study-v1_13
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 1
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 0
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: operator-aim-pose-study-v1_0
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 0
+        width: 602
+        height: 862
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e33505b725b0fb620800000000000000
+      internalID: 2791962742877082430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-aim-pose-study-v1_1
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 840
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2cc8d4dc315cf85e0800000000000000
+      internalID: -1905087428514968382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-aim-pose-study-v1_2
+      rect:
+        serializedVersion: 2
+        x: 635
+        y: 27
+        width: 537
+        height: 836
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71a9cfb55164451a0800000000000000
+      internalID: -6821750478007920105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-aim-pose-study-v1_3
+      rect:
+        serializedVersion: 2
+        x: 1185
+        y: 48
+        width: 558
+        height: 801
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a3f471efdb5054f0800000000000000
+      internalID: -842072113199909983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-aim-pose-study-v1_4
+      rect:
+        serializedVersion: 2
+        x: 1693
+        y: 838
+        width: 18
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28c8d3939a5b251d0800000000000000
+      internalID: -3363426233277903742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-aim-pose-study-v1_5
+      rect:
+        serializedVersion: 2
+        x: 1705
+        y: 799
+        width: 56
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20e39b42551889330800000000000000
+      internalID: 3717863695082667522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-aim-pose-study-v1_6
+      rect:
+        serializedVersion: 2
+        x: 562
+        y: 779
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd39281c9b70911b0800000000000000
+      internalID: -5685504560181636132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-aim-pose-study-v1_7
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 761
+        width: 19
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45641e45bff27fc10800000000000000
+      internalID: 2087189708816860756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-aim-pose-study-v1_8
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 612
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab7a2ec03cbd18230800000000000000
+      internalID: 3639431604673357754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-aim-pose-study-v1_9
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 612
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd1d88f8e93b091b0800000000000000
+      internalID: -5651820038755659301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-aim-pose-study-v1_10
+      rect:
+        serializedVersion: 2
+        x: 1304
+        y: 482
+        width: 11
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb89c2db6de232130800000000000000
+      internalID: 3540725231875037374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-aim-pose-study-v1_11
+      rect:
+        serializedVersion: 2
+        x: 1330
+        y: 469
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32e99015ca3e7f0f0800000000000000
+      internalID: -1083146856125850077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-aim-pose-study-v1_12
+      rect:
+        serializedVersion: 2
+        x: 1183
+        y: 386
+        width: 32
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0475382fcbbd9f6f0800000000000000
+      internalID: -650247066609297600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-aim-pose-study-v1_13
+      rect:
+        serializedVersion: 2
+        x: 1193
+        y: 229
+        width: 20
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc63d5c9fe7014f30800000000000000
+      internalID: 4557933023577585356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      operator-aim-pose-study-v1_0: 2791962742877082430
+      operator-aim-pose-study-v1_1: -1905087428514968382
+      operator-aim-pose-study-v1_10: 3540725231875037374
+      operator-aim-pose-study-v1_11: -1083146856125850077
+      operator-aim-pose-study-v1_12: -650247066609297600
+      operator-aim-pose-study-v1_13: 4557933023577585356
+      operator-aim-pose-study-v1_2: -6821750478007920105
+      operator-aim-pose-study-v1_3: -842072113199909983
+      operator-aim-pose-study-v1_4: -3363426233277903742
+      operator-aim-pose-study-v1_5: 3717863695082667522
+      operator-aim-pose-study-v1_6: -5685504560181636132
+      operator-aim-pose-study-v1_7: 2087189708816860756
+      operator-aim-pose-study-v1_8: 3639431604673357754
+      operator-aim-pose-study-v1_9: -5651820038755659301
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

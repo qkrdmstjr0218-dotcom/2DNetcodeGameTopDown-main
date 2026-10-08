@@ -1,0 +1,1040 @@
+fileFormatVersion: 2
+guid: 89fc31cc178d30840b5dc8654ac7f341
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5487071085972102950
+    second: operator-lower-walk-redraw-v1_0
+  - first:
+      213: 3695885768231208811
+    second: operator-lower-walk-redraw-v1_1
+  - first:
+      213: 4382585213321790153
+    second: operator-lower-walk-redraw-v1_2
+  - first:
+      213: 9041254602847184450
+    second: operator-lower-walk-redraw-v1_3
+  - first:
+      213: 4889360532673197811
+    second: operator-lower-walk-redraw-v1_4
+  - first:
+      213: -5043159597546225366
+    second: operator-lower-walk-redraw-v1_5
+  - first:
+      213: -2226009046388993763
+    second: operator-lower-walk-redraw-v1_6
+  - first:
+      213: -7500851753645602779
+    second: operator-lower-walk-redraw-v1_7
+  - first:
+      213: 1435120401799676454
+    second: operator-lower-walk-redraw-v1_8
+  - first:
+      213: 5500342135012512537
+    second: operator-lower-walk-redraw-v1_9
+  - first:
+      213: 8695423792085043815
+    second: operator-lower-walk-redraw-v1_10
+  - first:
+      213: -6538902487646066685
+    second: operator-lower-walk-redraw-v1_11
+  - first:
+      213: -4780713556367929450
+    second: operator-lower-walk-redraw-v1_12
+  - first:
+      213: 2211006090537980917
+    second: operator-lower-walk-redraw-v1_13
+  - first:
+      213: -7148687052835251819
+    second: operator-lower-walk-redraw-v1_14
+  - first:
+      213: 6792977970566409447
+    second: operator-lower-walk-redraw-v1_15
+  - first:
+      213: 1551232204425655153
+    second: operator-lower-walk-redraw-v1_16
+  - first:
+      213: 7082415964461430525
+    second: operator-lower-walk-redraw-v1_17
+  - first:
+      213: 1587388839701396330
+    second: operator-lower-walk-redraw-v1_18
+  - first:
+      213: 8959069829200151908
+    second: operator-lower-walk-redraw-v1_19
+  - first:
+      213: -6783813972344865726
+    second: operator-lower-walk-redraw-v1_20
+  - first:
+      213: 8249584415280306361
+    second: operator-lower-walk-redraw-v1_21
+  - first:
+      213: 3639274543762427556
+    second: operator-lower-walk-redraw-v1_22
+  - first:
+      213: 6469716788279791660
+    second: operator-lower-walk-redraw-v1_23
+  - first:
+      213: -1619316295748001055
+    second: operator-lower-walk-redraw-v1_24
+  - first:
+      213: -8106864428522207695
+    second: operator-lower-walk-redraw-v1_25
+  - first:
+      213: 5813138317482334439
+    second: operator-lower-walk-redraw-v1_26
+  - first:
+      213: 8626674624248362778
+    second: operator-lower-walk-redraw-v1_27
+  - first:
+      213: 4061762399223024777
+    second: operator-lower-walk-redraw-v1_28
+  - first:
+      213: -1776839452662250455
+    second: operator-lower-walk-redraw-v1_29
+  - first:
+      213: -4411866381595732082
+    second: operator-lower-walk-redraw-v1_30
+  - first:
+      213: -2123528016185146278
+    second: operator-lower-walk-redraw-v1_31
+  - first:
+      213: -2922109299797072263
+    second: operator-lower-walk-redraw-v1_32
+  - first:
+      213: -960204080323912923
+    second: operator-lower-walk-redraw-v1_33
+  - first:
+      213: -8544462577084569401
+    second: operator-lower-walk-redraw-v1_34
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 1
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 0
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: operator-lower-walk-redraw-v1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 844
+        width: 13
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62f1fa8b41ef52c40800000000000000
+      internalID: 5487071085972102950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-lower-walk-redraw-v1_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 408
+        width: 430
+        height: 437
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b67c7d9468c6a4330800000000000000
+      internalID: 3695885768231208811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-lower-walk-redraw-v1_2
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 420
+        width: 386
+        height: 437
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c2cce5180212dc30800000000000000
+      internalID: 4382585213321790153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-lower-walk-redraw-v1_3
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 805
+        width: 66
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 246629e982df87d70800000000000000
+      internalID: 9041254602847184450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-lower-walk-redraw-v1_4
+      rect:
+        serializedVersion: 2
+        x: 837
+        y: 410
+        width: 450
+        height: 459
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f6fcc0ef7f7ad340800000000000000
+      internalID: 4889360532673197811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-lower-walk-redraw-v1_5
+      rect:
+        serializedVersion: 2
+        x: 1328
+        y: 362
+        width: 421
+        height: 485
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a21c7aad019130ab0800000000000000
+      internalID: -5043159597546225366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-lower-walk-redraw-v1_6
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 759
+        width: 26
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d119d23f090ab11e0800000000000000
+      internalID: -2226009046388993763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-lower-walk-redraw-v1_7
+      rect:
+        serializedVersion: 2
+        x: 1292
+        y: 729
+        width: 106
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 528861f321f97e790800000000000000
+      internalID: -7500851753645602779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-lower-walk-redraw-v1_8
+      rect:
+        serializedVersion: 2
+        x: 1369
+        y: 650
+        width: 37
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6228f2fd6629ae310800000000000000
+      internalID: 1435120401799676454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-lower-walk-redraw-v1_9
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 636
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 913d88c9704255c40800000000000000
+      internalID: 5500342135012512537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-lower-walk-redraw-v1_10
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 394
+        width: 31
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76a85ba5ed95ca870800000000000000
+      internalID: 8695423792085043815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-lower-walk-redraw-v1_11
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 31
+        width: 446
+        height: 415
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30820f205d62145a0800000000000000
+      internalID: -6538902487646066685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-lower-walk-redraw-v1_12
+      rect:
+        serializedVersion: 2
+        x: 1605
+        y: 436
+        width: 7
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69f8bcb895e77adb0800000000000000
+      internalID: -4780713556367929450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-lower-walk-redraw-v1_13
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 25
+        width: 433
+        height: 409
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f3ddbe23521fae10800000000000000
+      internalID: 2211006090537980917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-lower-walk-redraw-v1_14
+      rect:
+        serializedVersion: 2
+        x: 976
+        y: 43
+        width: 331
+        height: 388
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59912553003cacc90800000000000000
+      internalID: -7148687052835251819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-lower-walk-redraw-v1_15
+      rect:
+        serializedVersion: 2
+        x: 1409
+        y: 410
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ec2aa63971854e50800000000000000
+      internalID: 6792977970566409447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-lower-walk-redraw-v1_16
+      rect:
+        serializedVersion: 2
+        x: 1441
+        y: 14
+        width: 306
+        height: 410
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 173ffec9875178510800000000000000
+      internalID: 1551232204425655153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-lower-walk-redraw-v1_17
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 335
+        width: 48
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df67741abcbc94260800000000000000
+      internalID: 7082415964461430525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-lower-walk-redraw-v1_18
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 295
+        width: 33
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6b32d64db9870610800000000000000
+      internalID: 1587388839701396330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-lower-walk-redraw-v1_19
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 360
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 465056fda82055c70800000000000000
+      internalID: 8959069829200151908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-lower-walk-redraw-v1_20
+      rect:
+        serializedVersion: 2
+        x: 869
+        y: 327
+        width: 84
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24c7d04622d0bd1a0800000000000000
+      internalID: -6783813972344865726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-lower-walk-redraw-v1_21
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 295
+        width: 18
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b8916941596c7270800000000000000
+      internalID: 8249584415280306361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-lower-walk-redraw-v1_22
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 319
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4aec4157aec418230800000000000000
+      internalID: 3639274543762427556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-lower-walk-redraw-v1_23
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 305
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c205cc2142d09c950800000000000000
+      internalID: 6469716788279791660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-lower-walk-redraw-v1_24
+      rect:
+        serializedVersion: 2
+        x: 887
+        y: 309
+        width: 15
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e260f498680789e0800000000000000
+      internalID: -1619316295748001055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-lower-walk-redraw-v1_25
+      rect:
+        serializedVersion: 2
+        x: 899
+        y: 307
+        width: 15
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1360fa711c1ae7f80800000000000000
+      internalID: -8106864428522207695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-lower-walk-redraw-v1_26
+      rect:
+        serializedVersion: 2
+        x: 1312
+        y: 243
+        width: 30
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e81fbb108a6ca050800000000000000
+      internalID: 5813138317482334439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-lower-walk-redraw-v1_27
+      rect:
+        serializedVersion: 2
+        x: 1334
+        y: 80
+        width: 84
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a17333b5dda18b770800000000000000
+      internalID: 8626674624248362778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-lower-walk-redraw-v1_28
+      rect:
+        serializedVersion: 2
+        x: 1459
+        y: 243
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98c0ab7c1674e5830800000000000000
+      internalID: 4061762399223024777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-lower-walk-redraw-v1_29
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 112
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 924ca219ee56757e0800000000000000
+      internalID: -1776839452662250455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-lower-walk-redraw-v1_30
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 66
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e879f78a6e6e5c2c0800000000000000
+      internalID: -4411866381595732082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-lower-walk-redraw-v1_31
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 65
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a54c1bc2586b782e0800000000000000
+      internalID: -2123528016185146278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-lower-walk-redraw-v1_32
+      rect:
+        serializedVersion: 2
+        x: 861
+        y: 63
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 976eab6e2159277d0800000000000000
+      internalID: -2922109299797072263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-lower-walk-redraw-v1_33
+      rect:
+        serializedVersion: 2
+        x: 1213
+        y: 31
+        width: 18
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52b9960f97baca2f0800000000000000
+      internalID: -960204080323912923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-lower-walk-redraw-v1_34
+      rect:
+        serializedVersion: 2
+        x: 1355
+        y: 31
+        width: 39
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c861408e88fb6980800000000000000
+      internalID: -8544462577084569401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      operator-lower-walk-redraw-v1_0: 5487071085972102950
+      operator-lower-walk-redraw-v1_1: 3695885768231208811
+      operator-lower-walk-redraw-v1_10: 8695423792085043815
+      operator-lower-walk-redraw-v1_11: -6538902487646066685
+      operator-lower-walk-redraw-v1_12: -4780713556367929450
+      operator-lower-walk-redraw-v1_13: 2211006090537980917
+      operator-lower-walk-redraw-v1_14: -7148687052835251819
+      operator-lower-walk-redraw-v1_15: 6792977970566409447
+      operator-lower-walk-redraw-v1_16: 1551232204425655153
+      operator-lower-walk-redraw-v1_17: 7082415964461430525
+      operator-lower-walk-redraw-v1_18: 1587388839701396330
+      operator-lower-walk-redraw-v1_19: 8959069829200151908
+      operator-lower-walk-redraw-v1_2: 4382585213321790153
+      operator-lower-walk-redraw-v1_20: -6783813972344865726
+      operator-lower-walk-redraw-v1_21: 8249584415280306361
+      operator-lower-walk-redraw-v1_22: 3639274543762427556
+      operator-lower-walk-redraw-v1_23: 6469716788279791660
+      operator-lower-walk-redraw-v1_24: -1619316295748001055
+      operator-lower-walk-redraw-v1_25: -8106864428522207695
+      operator-lower-walk-redraw-v1_26: 5813138317482334439
+      operator-lower-walk-redraw-v1_27: 8626674624248362778
+      operator-lower-walk-redraw-v1_28: 4061762399223024777
+      operator-lower-walk-redraw-v1_29: -1776839452662250455
+      operator-lower-walk-redraw-v1_3: 9041254602847184450
+      operator-lower-walk-redraw-v1_30: -4411866381595732082
+      operator-lower-walk-redraw-v1_31: -2123528016185146278
+      operator-lower-walk-redraw-v1_32: -2922109299797072263
+      operator-lower-walk-redraw-v1_33: -960204080323912923
+      operator-lower-walk-redraw-v1_34: -8544462577084569401
+      operator-lower-walk-redraw-v1_4: 4889360532673197811
+      operator-lower-walk-redraw-v1_5: -5043159597546225366
+      operator-lower-walk-redraw-v1_6: -2226009046388993763
+      operator-lower-walk-redraw-v1_7: -7500851753645602779
+      operator-lower-walk-redraw-v1_8: 1435120401799676454
+      operator-lower-walk-redraw-v1_9: 5500342135012512537
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

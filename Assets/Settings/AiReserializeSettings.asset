@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fbd6fddb7a298e4481c600eda52ae60, type: 3}
+  m_Name: AiReserializeSettings
+  m_EditorClassIdentifier: 
+  runOnEditorLoad: 1
+  runOncePerSession: 1
+  targetFolderPaths:
+  - Assets
+  includePrefabs: 1
+  includeScenes: 1
+  includeScriptableObjects: 1
+  includeMaterials: 1
+  includeOtherAssets: 1
+  batchSize: 200
+  showProgressBar: 1
+  logToConsole: 1

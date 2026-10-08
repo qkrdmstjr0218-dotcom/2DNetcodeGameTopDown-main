@@ -1,0 +1,2730 @@
+fileFormatVersion: 2
+guid: c0a81ed136e61054e9b33e33fb1af4d6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1786387588173430535
+    second: operator-modular-body-v1_0
+  - first:
+      213: 4674682576927126199
+    second: operator-modular-body-v1_1
+  - first:
+      213: -2171134123668967396
+    second: operator-modular-body-v1_2
+  - first:
+      213: 3110747902356666603
+    second: operator-modular-body-v1_3
+  - first:
+      213: 4566348341876648369
+    second: operator-modular-body-v1_4
+  - first:
+      213: 2559650164963684516
+    second: operator-modular-body-v1_5
+  - first:
+      213: -4079321852227094294
+    second: operator-modular-body-v1_6
+  - first:
+      213: -8607986868387842929
+    second: operator-modular-body-v1_7
+  - first:
+      213: -7626961263382386342
+    second: operator-modular-body-v1_8
+  - first:
+      213: -3983655718651924979
+    second: operator-modular-body-v1_9
+  - first:
+      213: 6286333287339929739
+    second: operator-modular-body-v1_10
+  - first:
+      213: -6005060965792274480
+    second: operator-modular-body-v1_11
+  - first:
+      213: -2272835332150522848
+    second: operator-modular-body-v1_12
+  - first:
+      213: -5247256279344150895
+    second: operator-modular-body-v1_13
+  - first:
+      213: 5391528342872923155
+    second: operator-modular-body-v1_14
+  - first:
+      213: -2156589942346977057
+    second: operator-modular-body-v1_15
+  - first:
+      213: -5255522852499425872
+    second: operator-modular-body-v1_16
+  - first:
+      213: -5463218590166827528
+    second: operator-modular-body-v1_17
+  - first:
+      213: -8672876087397436098
+    second: operator-modular-body-v1_18
+  - first:
+      213: -4175969547545696964
+    second: operator-modular-body-v1_19
+  - first:
+      213: 6057410978258974320
+    second: operator-modular-body-v1_20
+  - first:
+      213: 8519051452905682235
+    second: operator-modular-body-v1_21
+  - first:
+      213: -7658117370747175167
+    second: operator-modular-body-v1_22
+  - first:
+      213: 6151174706664165521
+    second: operator-modular-body-v1_23
+  - first:
+      213: 5985404798688407697
+    second: operator-modular-body-v1_24
+  - first:
+      213: -4985997987751165978
+    second: operator-modular-body-v1_25
+  - first:
+      213: 4324500487155136793
+    second: operator-modular-body-v1_26
+  - first:
+      213: -3190993811267978161
+    second: operator-modular-body-v1_27
+  - first:
+      213: 6586497847948058895
+    second: operator-modular-body-v1_28
+  - first:
+      213: -7151853044791952540
+    second: operator-modular-body-v1_29
+  - first:
+      213: -1081325233341442985
+    second: operator-modular-body-v1_30
+  - first:
+      213: -8486527585571625733
+    second: operator-modular-body-v1_31
+  - first:
+      213: -3263409685408015408
+    second: operator-modular-body-v1_32
+  - first:
+      213: 3457505722398358421
+    second: operator-modular-body-v1_33
+  - first:
+      213: -1284717859781778669
+    second: operator-modular-body-v1_34
+  - first:
+      213: 7967184295653295599
+    second: operator-modular-body-v1_35
+  - first:
+      213: -4861486930832305325
+    second: operator-modular-body-v1_36
+  - first:
+      213: 3825015352931584741
+    second: operator-modular-body-v1_37
+  - first:
+      213: 4721674787225506914
+    second: operator-modular-body-v1_38
+  - first:
+      213: -6673120431989607232
+    second: operator-modular-body-v1_39
+  - first:
+      213: -5816981822666863681
+    second: operator-modular-body-v1_40
+  - first:
+      213: -2165056934725589110
+    second: operator-modular-body-v1_41
+  - first:
+      213: 7933521612820508771
+    second: operator-modular-body-v1_42
+  - first:
+      213: 8238049674801981312
+    second: operator-modular-body-v1_43
+  - first:
+      213: 6351099203714139757
+    second: operator-modular-body-v1_44
+  - first:
+      213: 4586156926086526118
+    second: operator-modular-body-v1_45
+  - first:
+      213: 5052703673157550384
+    second: operator-modular-body-v1_46
+  - first:
+      213: 9142874122852087140
+    second: operator-modular-body-v1_47
+  - first:
+      213: 2982525040290972083
+    second: operator-modular-body-v1_48
+  - first:
+      213: 6629628467356728545
+    second: operator-modular-body-v1_49
+  - first:
+      213: -1318699774168885396
+    second: operator-modular-body-v1_50
+  - first:
+      213: -4876034629085951135
+    second: operator-modular-body-v1_51
+  - first:
+      213: 1409842298063778415
+    second: operator-modular-body-v1_52
+  - first:
+      213: 2774586252218122463
+    second: operator-modular-body-v1_53
+  - first:
+      213: -2840277193623657700
+    second: operator-modular-body-v1_54
+  - first:
+      213: -8645224966827760505
+    second: operator-modular-body-v1_55
+  - first:
+      213: -7184379820104619630
+    second: operator-modular-body-v1_56
+  - first:
+      213: -313790046739457359
+    second: operator-modular-body-v1_57
+  - first:
+      213: 4710288563575644206
+    second: operator-modular-body-v1_58
+  - first:
+      213: 849370783163689737
+    second: operator-modular-body-v1_59
+  - first:
+      213: -2431438729002101572
+    second: operator-modular-body-v1_60
+  - first:
+      213: 6760487938950024884
+    second: operator-modular-body-v1_61
+  - first:
+      213: 7844178551066567346
+    second: operator-modular-body-v1_62
+  - first:
+      213: 5513693675225147407
+    second: operator-modular-body-v1_63
+  - first:
+      213: -6054466779849904972
+    second: operator-modular-body-v1_64
+  - first:
+      213: -254709810394771926
+    second: operator-modular-body-v1_65
+  - first:
+      213: 8252031781742678069
+    second: operator-modular-body-v1_66
+  - first:
+      213: 5099416646868963745
+    second: operator-modular-body-v1_67
+  - first:
+      213: -7417866211685660222
+    second: operator-modular-body-v1_68
+  - first:
+      213: -6656806133356847986
+    second: operator-modular-body-v1_69
+  - first:
+      213: -7368639747332414859
+    second: operator-modular-body-v1_70
+  - first:
+      213: 4221571684690888632
+    second: operator-modular-body-v1_71
+  - first:
+      213: 5170210162442943463
+    second: operator-modular-body-v1_72
+  - first:
+      213: -8473817498470836493
+    second: operator-modular-body-v1_73
+  - first:
+      213: -156736850510777964
+    second: operator-modular-body-v1_74
+  - first:
+      213: -3393798739708534363
+    second: operator-modular-body-v1_75
+  - first:
+      213: 591892466827994350
+    second: operator-modular-body-v1_76
+  - first:
+      213: -7410300636938853132
+    second: operator-modular-body-v1_77
+  - first:
+      213: 3872148895655158529
+    second: operator-modular-body-v1_78
+  - first:
+      213: -4848601004387605550
+    second: operator-modular-body-v1_79
+  - first:
+      213: 393487017003443899
+    second: operator-modular-body-v1_80
+  - first:
+      213: -1542222458363693342
+    second: operator-modular-body-v1_81
+  - first:
+      213: 7277986747857298039
+    second: operator-modular-body-v1_82
+  - first:
+      213: -8931140898890767736
+    second: operator-modular-body-v1_83
+  - first:
+      213: -1622649335720445015
+    second: operator-modular-body-v1_84
+  - first:
+      213: -8147866796266017110
+    second: operator-modular-body-v1_85
+  - first:
+      213: -2117139273092812771
+    second: operator-modular-body-v1_86
+  - first:
+      213: 2932291398077850309
+    second: operator-modular-body-v1_87
+  - first:
+      213: -5201513281772402263
+    second: operator-modular-body-v1_88
+  - first:
+      213: -5968758805242526108
+    second: operator-modular-body-v1_89
+  - first:
+      213: 6775215329127749742
+    second: operator-modular-body-v1_90
+  - first:
+      213: 8106351541490536409
+    second: operator-modular-body-v1_91
+  - first:
+      213: 1896307781463864491
+    second: operator-modular-body-v1_92
+  - first:
+      213: -1396716348360987891
+    second: operator-modular-body-v1_93
+  - first:
+      213: 2091813719686765676
+    second: operator-modular-body-v1_94
+  - first:
+      213: -4612107436471532056
+    second: operator-modular-body-v1_95
+  - first:
+      213: -4986372086784117899
+    second: operator-modular-body-v1_96
+  - first:
+      213: 6000829248821468089
+    second: operator-modular-body-v1_97
+  - first:
+      213: 5521986627753960140
+    second: operator-modular-body-v1_98
+  - first:
+      213: 4697427886055913993
+    second: operator-modular-body-v1_99
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 1
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 0
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: operator-modular-body-v1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 51
+        width: 599
+        height: 973
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70f7e38fb068ac810800000000000000
+      internalID: 1786387588173430535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 990
+        width: 93
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b2f273490fcfd040800000000000000
+      internalID: 4674682576927126199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_2
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 949
+        width: 63
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c107bf684059ed1e0800000000000000
+      internalID: -2171134123668967396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_3
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 985
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be8b2c95cb89b2b20800000000000000
+      internalID: 3110747902356666603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_4
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 919
+        width: 41
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b960469f9dee5f30800000000000000
+      internalID: 4566348341876648369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_5
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 981
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a03eef6344b58320800000000000000
+      internalID: 2559650164963684516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_6
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 987
+        width: 27
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae8f38973665367c0800000000000000
+      internalID: -4079321852227094294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_7
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 961
+        width: 53
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f84f38edc894a8880800000000000000
+      internalID: -8607986868387842929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_8
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 713
+        width: 139
+        height: 297
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a59ad6ce327972690800000000000000
+      internalID: -7626961263382386342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_9
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 517
+        width: 399
+        height: 507
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0e6c4eea3637b8c0800000000000000
+      internalID: -3983655718651924979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_10
+      rect:
+        serializedVersion: 2
+        x: 972
+        y: 487
+        width: 529
+        height: 537
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b803c9381da8d3750800000000000000
+      internalID: 6286333287339929739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_11
+      rect:
+        serializedVersion: 2
+        x: 1062
+        y: 951
+        width: 33
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d723672edcb9aca0800000000000000
+      internalID: -6005060965792274480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_12
+      rect:
+        serializedVersion: 2
+        x: 1380
+        y: 955
+        width: 87
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02c0632be444570e0800000000000000
+      internalID: -2272835332150522848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_13
+      rect:
+        serializedVersion: 2
+        x: 1514
+        y: 983
+        width: 22
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 196014017300e27b0800000000000000
+      internalID: -5247256279344150895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_14
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 962
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31c1469567e82da40800000000000000
+      internalID: 5391528342872923155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_15
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 965
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd07a30afd04212e0800000000000000
+      internalID: -2156589942346977057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_16
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 953
+        width: 11
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b5f2d38fc1a017b0800000000000000
+      internalID: -5255522852499425872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_17
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 954
+        width: 11
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fdbbca33afbe24b0800000000000000
+      internalID: -5463218590166827528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_18
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 919
+        width: 55
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3532bd3621c3a780800000000000000
+      internalID: -8672876087397436098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_19
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 871
+        width: 93
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c35a0bd52d9fb06c0800000000000000
+      internalID: -4175969547545696964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_20
+      rect:
+        serializedVersion: 2
+        x: 1022
+        y: 899
+        width: 27
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0767da1f03f301450800000000000000
+      internalID: 6057410978258974320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_21
+      rect:
+        serializedVersion: 2
+        x: 1046
+        y: 903
+        width: 15
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b35f7b91920c93670800000000000000
+      internalID: 8519051452905682235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_22
+      rect:
+        serializedVersion: 2
+        x: 1048
+        y: 933
+        width: 19
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10fbd5463d6e8b590800000000000000
+      internalID: -7658117370747175167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_23
+      rect:
+        serializedVersion: 2
+        x: 1064
+        y: 919
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 190d51e2ecc5d5550800000000000000
+      internalID: 6151174706664165521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_24
+      rect:
+        serializedVersion: 2
+        x: 1406
+        y: 915
+        width: 79
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 190bdbec3fd601350800000000000000
+      internalID: 5985404798688407697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_25
+      rect:
+        serializedVersion: 2
+        x: 586
+        y: 918
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ef77414f3d2ecab0800000000000000
+      internalID: -4985997987751165978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_26
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 749
+        width: 67
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 919b2e7e746b30c30800000000000000
+      internalID: 4324500487155136793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_27
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 719
+        width: 75
+        height: 167
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4cf6e6090057b3d0800000000000000
+      internalID: -3190993811267978161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_28
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 839
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f01a1dc55e0f76b50800000000000000
+      internalID: 6586497847948058895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_29
+      rect:
+        serializedVersion: 2
+        x: 494
+        y: 853
+        width: 21
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46b31634c838fbc90800000000000000
+      internalID: -7151853044791952540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_30
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 858
+        width: 11
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 754540ced6c5ef0f0800000000000000
+      internalID: -1081325233341442985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_31
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 815
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf4237ddf1cc93a80800000000000000
+      internalID: -8486527585571625733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_32
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 815
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0db9fa07e2a06b2d0800000000000000
+      internalID: -3263409685408015408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_33
+      rect:
+        serializedVersion: 2
+        x: 974
+        y: 773
+        width: 29
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59b3f68c2278bff20800000000000000
+      internalID: 3457505722398358421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_34
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 853
+        width: 49
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3136b1bc9e3cb2ee0800000000000000
+      internalID: -1284717859781778669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_35
+      rect:
+        serializedVersion: 2
+        x: 1406
+        y: 815
+        width: 53
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe54c7aa7ef119e60800000000000000
+      internalID: 7967184295653295599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_36
+      rect:
+        serializedVersion: 2
+        x: 1436
+        y: 855
+        width: 21
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3535987c467888cb0800000000000000
+      internalID: -4861486930832305325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_37
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 802
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ea07eb923f251530800000000000000
+      internalID: 3825015352931584741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_38
+      rect:
+        serializedVersion: 2
+        x: 1064
+        y: 791
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2649e75d332c68140800000000000000
+      internalID: 4721674787225506914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_39
+      rect:
+        serializedVersion: 2
+        x: 1406
+        y: 757
+        width: 69
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c4bbd3a2505463a0800000000000000
+      internalID: -6673120431989607232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_40
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 756
+        width: 27
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbb890b1adde54fa0800000000000000
+      internalID: -5816981822666863681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_41
+      rect:
+        serializedVersion: 2
+        x: 586
+        y: 763
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a876f27503c24f1e0800000000000000
+      internalID: -2165056934725589110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_42
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 758
+        width: 25
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 360fc0e8fd7891e60800000000000000
+      internalID: 7933521612820508771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_43
+      rect:
+        serializedVersion: 2
+        x: 976
+        y: 733
+        width: 27
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 087289c388e635270800000000000000
+      internalID: 8238049674801981312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_44
+      rect:
+        serializedVersion: 2
+        x: 1002
+        y: 765
+        width: 15
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d66c5a28313a32850800000000000000
+      internalID: 6351099203714139757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_45
+      rect:
+        serializedVersion: 2
+        x: 1369
+        y: 742
+        width: 22
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a4b59ffc6d45af30800000000000000
+      internalID: 4586156926086526118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_46
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 737
+        width: 9
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0310ed9683fce1640800000000000000
+      internalID: 5052703673157550384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_47
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 733
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 465b5bed29302ee70800000000000000
+      internalID: 9142874122852087140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_48
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 669
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b14048d8be046920800000000000000
+      internalID: 2982525040290972083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_49
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 671
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ec7d9d37fb210c50800000000000000
+      internalID: 6629628467356728545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_50
+      rect:
+        serializedVersion: 2
+        x: 1350
+        y: 646
+        width: 25
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c67964bca8903bde0800000000000000
+      internalID: -1318699774168885396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_51
+      rect:
+        serializedVersion: 2
+        x: 1390
+        y: 603
+        width: 9
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16b04d4d658d45cb0800000000000000
+      internalID: -4876034629085951135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_52
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 545
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f627965b914c09310800000000000000
+      internalID: 1409842298063778415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_53
+      rect:
+        serializedVersion: 2
+        x: 1366
+        y: 513
+        width: 47
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd0c42afe7f418620800000000000000
+      internalID: 2774586252218122463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_54
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 529
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c132b6ad0fe4598d0800000000000000
+      internalID: -2840277193623657700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_55
+      rect:
+        serializedVersion: 2
+        x: 938
+        y: 501
+        width: 33
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 784a4e072bdf50880800000000000000
+      internalID: -8645224966827760505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_56
+      rect:
+        serializedVersion: 2
+        x: 984
+        y: 519
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 299ed2b3e94fb4c90800000000000000
+      internalID: -7184379820104619630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_57
+      rect:
+        serializedVersion: 2
+        x: 1208
+        y: 529
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ba9a027d9135abf0800000000000000
+      internalID: -313790046739457359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_58
+      rect:
+        serializedVersion: 2
+        x: 1412
+        y: 511
+        width: 37
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e20e28d0e7e4e5140800000000000000
+      internalID: 4710288563575644206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_59
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 511
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90b21152a3299cb00800000000000000
+      internalID: 849370783163689737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_60
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 487
+        width: 11
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb4d3b8bb5bc14ed0800000000000000
+      internalID: -2431438729002101572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_61
+      rect:
+        serializedVersion: 2
+        x: 986
+        y: 418
+        width: 75
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4becd6d36f312dd50800000000000000
+      internalID: 6760487938950024884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_62
+      rect:
+        serializedVersion: 2
+        x: 1442
+        y: 497
+        width: 13
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b2af0bf4de1cdc60800000000000000
+      internalID: 7844178551066567346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_63
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 335
+        width: 332
+        height: 165
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f08ec105f23948c40800000000000000
+      internalID: 5513693675225147407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_64
+      rect:
+        serializedVersion: 2
+        x: 638
+        y: 263
+        width: 349
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bca4aaaa863afba0800000000000000
+      internalID: -6054466779849904972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_65
+      rect:
+        serializedVersion: 2
+        x: 982
+        y: 495
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2ecc96e6c6177cf0800000000000000
+      internalID: -254709810394771926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_66
+      rect:
+        serializedVersion: 2
+        x: 1006
+        y: 0
+        width: 513
+        height: 499
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53091023f2b158270800000000000000
+      internalID: 8252031781742678069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_67
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 341
+        width: 65
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a196562c64c4c640800000000000000
+      internalID: 5099416646868963745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_68
+      rect:
+        serializedVersion: 2
+        x: 1004
+        y: 353
+        width: 25
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c98a156bf17e0990800000000000000
+      internalID: -7417866211685660222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_69
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 309
+        width: 49
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8c9f9a47164e93a0800000000000000
+      internalID: -6656806133356847986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_70
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 327
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5726d66c0355db990800000000000000
+      internalID: -7368639747332414859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_71
+      rect:
+        serializedVersion: 2
+        x: 982
+        y: 269
+        width: 63
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b709d39419069a30800000000000000
+      internalID: 4221571684690888632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_72
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 301
+        width: 21
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ebb682ffb640c740800000000000000
+      internalID: 5170210162442943463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_73
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 283
+        width: 13
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f61820a1e3f66a80800000000000000
+      internalID: -8473817498470836493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_74
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 287
+        width: 27
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49177163aa823ddf0800000000000000
+      internalID: -156736850510777964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_75
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 295
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a12180070ec6e0d0800000000000000
+      internalID: -3393798739708534363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_76
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 297
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee423860013d63800800000000000000
+      internalID: 591892466827994350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_77
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 287
+        width: 39
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f4a86805d2592990800000000000000
+      internalID: -7410300636938853132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_78
+      rect:
+        serializedVersion: 2
+        x: 758
+        y: 303
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10362f2b7e2acb530800000000000000
+      internalID: 3872148895655158529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_79
+      rect:
+        serializedVersion: 2
+        x: 958
+        y: 286
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d3efd3531f46bcb0800000000000000
+      internalID: -4848601004387605550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_80
+      rect:
+        serializedVersion: 2
+        x: 968
+        y: 289
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb6e7307b52f57500800000000000000
+      internalID: 393487017003443899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_81
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 262
+        width: 26
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e63a9c58dce89ae0800000000000000
+      internalID: -1542222458363693342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_82
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 273
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 772e802036a900560800000000000000
+      internalID: 7277986747857298039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_83
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 229
+        width: 69
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88227a2fba63e0480800000000000000
+      internalID: -8931140898890767736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_84
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 13
+        width: 263
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9abfb5db6013b79e0800000000000000
+      internalID: -1622649335720445015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_85
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 256
+        width: 9
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aae2d5b6156fcee80800000000000000
+      internalID: -8147866796266017110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_86
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 0
+        width: 401
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1036475c096e92e0800000000000000
+      internalID: -2117139273092812771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_87
+      rect:
+        serializedVersion: 2
+        x: 1176
+        y: 0
+        width: 140
+        height: 264
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c22d589d7791b820800000000000000
+      internalID: 2932291398077850309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_88
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 223
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a9ca71aa3380d7b0800000000000000
+      internalID: -5201513281772402263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_89
+      rect:
+        serializedVersion: 2
+        x: 1062
+        y: 187
+        width: 13
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 466c88f8d75ba2da0800000000000000
+      internalID: -5968758805242526108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_90
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 117
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e68d079f176660e50800000000000000
+      internalID: 6775215329127749742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_91
+      rect:
+        serializedVersion: 2
+        x: 1332
+        y: 129
+        width: 31
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9dfcbf617cb8f7070800000000000000
+      internalID: 8106351541490536409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_92
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 87
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba476f251e9015a10800000000000000
+      internalID: 1896307781463864491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_93
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 85
+        width: 9
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0b66fb91eddd9ce0800000000000000
+      internalID: -1396716348360987891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_94
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 71
+        width: 13
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6cd732ce7d970d10800000000000000
+      internalID: 2091813719686765676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_95
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 15
+        width: 19
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e54d27f8b08effb0800000000000000
+      internalID: -4612107436471532056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_96
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 58
+        width: 9
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5733f498109dccab0800000000000000
+      internalID: -4986372086784117899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_97
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 41
+        width: 59
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bb17c5786a374350800000000000000
+      internalID: 6000829248821468089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_98
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 45
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc26bb9c49902ac40800000000000000
+      internalID: 5521986627753960140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-modular-body-v1_99
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 0
+        width: 33
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90a706a36cd903140800000000000000
+      internalID: 4697427886055913993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      operator-modular-body-v1_0: 1786387588173430535
+      operator-modular-body-v1_1: 4674682576927126199
+      operator-modular-body-v1_10: 6286333287339929739
+      operator-modular-body-v1_11: -6005060965792274480
+      operator-modular-body-v1_12: -2272835332150522848
+      operator-modular-body-v1_13: -5247256279344150895
+      operator-modular-body-v1_14: 5391528342872923155
+      operator-modular-body-v1_15: -2156589942346977057
+      operator-modular-body-v1_16: -5255522852499425872
+      operator-modular-body-v1_17: -5463218590166827528
+      operator-modular-body-v1_18: -8672876087397436098
+      operator-modular-body-v1_19: -4175969547545696964
+      operator-modular-body-v1_2: -2171134123668967396
+      operator-modular-body-v1_20: 6057410978258974320
+      operator-modular-body-v1_21: 8519051452905682235
+      operator-modular-body-v1_22: -7658117370747175167
+      operator-modular-body-v1_23: 6151174706664165521
+      operator-modular-body-v1_24: 5985404798688407697
+      operator-modular-body-v1_25: -4985997987751165978
+      operator-modular-body-v1_26: 4324500487155136793
+      operator-modular-body-v1_27: -3190993811267978161
+      operator-modular-body-v1_28: 6586497847948058895
+      operator-modular-body-v1_29: -7151853044791952540
+      operator-modular-body-v1_3: 3110747902356666603
+      operator-modular-body-v1_30: -1081325233341442985
+      operator-modular-body-v1_31: -8486527585571625733
+      operator-modular-body-v1_32: -3263409685408015408
+      operator-modular-body-v1_33: 3457505722398358421
+      operator-modular-body-v1_34: -1284717859781778669
+      operator-modular-body-v1_35: 7967184295653295599
+      operator-modular-body-v1_36: -4861486930832305325
+      operator-modular-body-v1_37: 3825015352931584741
+      operator-modular-body-v1_38: 4721674787225506914
+      operator-modular-body-v1_39: -6673120431989607232
+      operator-modular-body-v1_4: 4566348341876648369
+      operator-modular-body-v1_40: -5816981822666863681
+      operator-modular-body-v1_41: -2165056934725589110
+      operator-modular-body-v1_42: 7933521612820508771
+      operator-modular-body-v1_43: 8238049674801981312
+      operator-modular-body-v1_44: 6351099203714139757
+      operator-modular-body-v1_45: 4586156926086526118
+      operator-modular-body-v1_46: 5052703673157550384
+      operator-modular-body-v1_47: 9142874122852087140
+      operator-modular-body-v1_48: 2982525040290972083
+      operator-modular-body-v1_49: 6629628467356728545
+      operator-modular-body-v1_5: 2559650164963684516
+      operator-modular-body-v1_50: -1318699774168885396
+      operator-modular-body-v1_51: -4876034629085951135
+      operator-modular-body-v1_52: 1409842298063778415
+      operator-modular-body-v1_53: 2774586252218122463
+      operator-modular-body-v1_54: -2840277193623657700
+      operator-modular-body-v1_55: -8645224966827760505
+      operator-modular-body-v1_56: -7184379820104619630
+      operator-modular-body-v1_57: -313790046739457359
+      operator-modular-body-v1_58: 4710288563575644206
+      operator-modular-body-v1_59: 849370783163689737
+      operator-modular-body-v1_6: -4079321852227094294
+      operator-modular-body-v1_60: -2431438729002101572
+      operator-modular-body-v1_61: 6760487938950024884
+      operator-modular-body-v1_62: 7844178551066567346
+      operator-modular-body-v1_63: 5513693675225147407
+      operator-modular-body-v1_64: -6054466779849904972
+      operator-modular-body-v1_65: -254709810394771926
+      operator-modular-body-v1_66: 8252031781742678069
+      operator-modular-body-v1_67: 5099416646868963745
+      operator-modular-body-v1_68: -7417866211685660222
+      operator-modular-body-v1_69: -6656806133356847986
+      operator-modular-body-v1_7: -8607986868387842929
+      operator-modular-body-v1_70: -7368639747332414859
+      operator-modular-body-v1_71: 4221571684690888632
+      operator-modular-body-v1_72: 5170210162442943463
+      operator-modular-body-v1_73: -8473817498470836493
+      operator-modular-body-v1_74: -156736850510777964
+      operator-modular-body-v1_75: -3393798739708534363
+      operator-modular-body-v1_76: 591892466827994350
+      operator-modular-body-v1_77: -7410300636938853132
+      operator-modular-body-v1_78: 3872148895655158529
+      operator-modular-body-v1_79: -4848601004387605550
+      operator-modular-body-v1_8: -7626961263382386342
+      operator-modular-body-v1_80: 393487017003443899
+      operator-modular-body-v1_81: -1542222458363693342
+      operator-modular-body-v1_82: 7277986747857298039
+      operator-modular-body-v1_83: -8931140898890767736
+      operator-modular-body-v1_84: -1622649335720445015
+      operator-modular-body-v1_85: -8147866796266017110
+      operator-modular-body-v1_86: -2117139273092812771
+      operator-modular-body-v1_87: 2932291398077850309
+      operator-modular-body-v1_88: -5201513281772402263
+      operator-modular-body-v1_89: -5968758805242526108
+      operator-modular-body-v1_9: -3983655718651924979
+      operator-modular-body-v1_90: 6775215329127749742
+      operator-modular-body-v1_91: 8106351541490536409
+      operator-modular-body-v1_92: 1896307781463864491
+      operator-modular-body-v1_93: -1396716348360987891
+      operator-modular-body-v1_94: 2091813719686765676
+      operator-modular-body-v1_95: -4612107436471532056
+      operator-modular-body-v1_96: -4986372086784117899
+      operator-modular-body-v1_97: 6000829248821468089
+      operator-modular-body-v1_98: 5521986627753960140
+      operator-modular-body-v1_99: 4697427886055913993
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
