@@ -1,0 +1,754 @@
+fileFormatVersion: 2
+guid: 082cab3d62d171e42b8ef6e15e4c461f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -754882617914197619
+    second: operator-leg-parts-v2_0
+  - first:
+      213: -5167901620901660773
+    second: operator-leg-parts-v2_1
+  - first:
+      213: -857117836063074664
+    second: operator-leg-parts-v2_2
+  - first:
+      213: -4900531828139412715
+    second: operator-leg-parts-v2_3
+  - first:
+      213: 3731572948183285451
+    second: operator-leg-parts-v2_4
+  - first:
+      213: 4609386924731378207
+    second: operator-leg-parts-v2_5
+  - first:
+      213: -5782646423471753950
+    second: operator-leg-parts-v2_6
+  - first:
+      213: 2259027911977729456
+    second: operator-leg-parts-v2_7
+  - first:
+      213: -8301653490653714605
+    second: operator-leg-parts-v2_8
+  - first:
+      213: -4756597209251550209
+    second: operator-leg-parts-v2_9
+  - first:
+      213: -8636950316691750639
+    second: operator-leg-parts-v2_10
+  - first:
+      213: -749503724912292534
+    second: operator-leg-parts-v2_11
+  - first:
+      213: 3839947515160332633
+    second: operator-leg-parts-v2_12
+  - first:
+      213: 4429360379965624270
+    second: operator-leg-parts-v2_13
+  - first:
+      213: 5243207425942423924
+    second: operator-leg-parts-v2_14
+  - first:
+      213: 8082489879757879392
+    second: operator-leg-parts-v2_15
+  - first:
+      213: -8214190245574502720
+    second: operator-leg-parts-v2_16
+  - first:
+      213: -62009604877456538
+    second: operator-leg-parts-v2_17
+  - first:
+      213: 5872643914712539800
+    second: operator-leg-parts-v2_18
+  - first:
+      213: -6735705469105260884
+    second: operator-leg-parts-v2_19
+  - first:
+      213: -6522701387696860572
+    second: operator-leg-parts-v2_20
+  - first:
+      213: -7044742739181870140
+    second: operator-leg-parts-v2_21
+  - first:
+      213: -6563263650780288951
+    second: operator-leg-parts-v2_22
+  - first:
+      213: 6003312298383973235
+    second: operator-leg-parts-v2_23
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 1
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 0
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: operator-leg-parts-v2_0
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 455
+        width: 509
+        height: 550
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d897b10324e1685f0800000000000000
+      internalID: -754882617914197619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-leg-parts-v2_1
+      rect:
+        serializedVersion: 2
+        x: 638
+        y: 556
+        width: 301
+        height: 415
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b97bdf34bdce748b0800000000000000
+      internalID: -5167901620901660773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-leg-parts-v2_2
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 880
+        width: 101
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8961fca8ed7ea14f0800000000000000
+      internalID: -857117836063074664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-leg-parts-v2_3
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 214
+        width: 627
+        height: 690
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51331453440ddfbb0800000000000000
+      internalID: -4900531828139412715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-leg-parts-v2_4
+      rect:
+        serializedVersion: 2
+        x: 902
+        y: 897
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bcefbed53d539c330800000000000000
+      internalID: 3731572948183285451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-leg-parts-v2_5
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 47
+        width: 447
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1aa1f88cf4d7ff30800000000000000
+      internalID: 4609386924731378207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-leg-parts-v2_6
+      rect:
+        serializedVersion: 2
+        x: 555
+        y: 0
+        width: 338
+        height: 490
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 225784337b9efbfa0800000000000000
+      internalID: -5782646423471753950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-leg-parts-v2_7
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 479
+        width: 11
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bdff17caeda95f10800000000000000
+      internalID: 2259027911977729456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-leg-parts-v2_8
+      rect:
+        serializedVersion: 2
+        x: 1128
+        y: 433
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3572431622a9acc80800000000000000
+      internalID: -8301653490653714605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-leg-parts-v2_9
+      rect:
+        serializedVersion: 2
+        x: 1150
+        y: 426
+        width: 11
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffb62fa2a0c2dfdb0800000000000000
+      internalID: -4756597209251550209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-leg-parts-v2_10
+      rect:
+        serializedVersion: 2
+        x: 1252
+        y: 429
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11104ee8273632880800000000000000
+      internalID: -8636950316691750639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-leg-parts-v2_11
+      rect:
+        serializedVersion: 2
+        x: 1270
+        y: 431
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4d45ce455a3995f0800000000000000
+      internalID: -749503724912292534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-leg-parts-v2_12
+      rect:
+        serializedVersion: 2
+        x: 1128
+        y: 399
+        width: 23
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 959864d8beb3a4530800000000000000
+      internalID: 3839947515160332633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-leg-parts-v2_13
+      rect:
+        serializedVersion: 2
+        x: 1250
+        y: 399
+        width: 17
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecf4a0e3ccf387d30800000000000000
+      internalID: 4429360379965624270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-leg-parts-v2_14
+      rect:
+        serializedVersion: 2
+        x: 1310
+        y: 383
+        width: 48
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4790dfacf5d93c840800000000000000
+      internalID: 5243207425942423924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-leg-parts-v2_15
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 287
+        width: 9
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06878a709b5ca2070800000000000000
+      internalID: 8082489879757879392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-leg-parts-v2_16
+      rect:
+        serializedVersion: 2
+        x: 1012
+        y: 293
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c69d070e75510e80800000000000000
+      internalID: -8214190245574502720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-leg-parts-v2_17
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 161
+        width: 27
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66bed98c792b32ff0800000000000000
+      internalID: -62009604877456538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-leg-parts-v2_18
+      rect:
+        serializedVersion: 2
+        x: 982
+        y: 238
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 892eccc9682df7150800000000000000
+      internalID: 5872643914712539800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-leg-parts-v2_19
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 21
+        width: 337
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca6335a2097f582a0800000000000000
+      internalID: -6735705469105260884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-leg-parts-v2_20
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 31
+        width: 67
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 462916a85a5ba75a0800000000000000
+      internalID: -6522701387696860572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-leg-parts-v2_21
+      rect:
+        serializedVersion: 2
+        x: 1454
+        y: 159
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c36d09adcb0c3e90800000000000000
+      internalID: -7044742739181870140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-leg-parts-v2_22
+      rect:
+        serializedVersion: 2
+        x: 754
+        y: 71
+        width: 24
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 948e108bb7a9ae4a0800000000000000
+      internalID: -6563263650780288951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: operator-leg-parts-v2_23
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 17
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37b19ec7abc005350800000000000000
+      internalID: 6003312298383973235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      operator-leg-parts-v2_0: -754882617914197619
+      operator-leg-parts-v2_1: -5167901620901660773
+      operator-leg-parts-v2_10: -8636950316691750639
+      operator-leg-parts-v2_11: -749503724912292534
+      operator-leg-parts-v2_12: 3839947515160332633
+      operator-leg-parts-v2_13: 4429360379965624270
+      operator-leg-parts-v2_14: 5243207425942423924
+      operator-leg-parts-v2_15: 8082489879757879392
+      operator-leg-parts-v2_16: -8214190245574502720
+      operator-leg-parts-v2_17: -62009604877456538
+      operator-leg-parts-v2_18: 5872643914712539800
+      operator-leg-parts-v2_19: -6735705469105260884
+      operator-leg-parts-v2_2: -857117836063074664
+      operator-leg-parts-v2_20: -6522701387696860572
+      operator-leg-parts-v2_21: -7044742739181870140
+      operator-leg-parts-v2_22: -6563263650780288951
+      operator-leg-parts-v2_23: 6003312298383973235
+      operator-leg-parts-v2_3: -4900531828139412715
+      operator-leg-parts-v2_4: 3731572948183285451
+      operator-leg-parts-v2_5: 4609386924731378207
+      operator-leg-parts-v2_6: -5782646423471753950
+      operator-leg-parts-v2_7: 2259027911977729456
+      operator-leg-parts-v2_8: -8301653490653714605
+      operator-leg-parts-v2_9: -4756597209251550209
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

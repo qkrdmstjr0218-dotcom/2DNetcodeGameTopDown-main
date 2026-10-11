@@ -3361,6 +3361,8 @@ MonoBehaviour:
   ShowTopMostFoldoutHeaderGroup: 1
   gameConfig: {fileID: 11400000, guid: b1f45606d33d0e74ba16a1b9376edb83, type: 2}
   enemySpawner: {fileID: 1362577302}
+  minimumPlayers: 1
+  practiceMode: 0
   waveStartedEvent: {fileID: 11400000, guid: 65994f1a8cd7b4742a3e39e8be2e8c26, type: 2}
   waveCompletedEvent: {fileID: 11400000, guid: ce4d020fda25e36498c125bc05cd3b27, type: 2}
   gameOverEvent: {fileID: 11400000, guid: f6ab9ae901583ae4fb69da7986eff128, type: 2}

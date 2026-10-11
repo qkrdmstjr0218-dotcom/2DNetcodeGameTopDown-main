@@ -204,10 +204,11 @@ MonoBehaviour:
   ShowTopMostFoldoutHeaderGroup: 1
   inputHandler: {fileID: 5122732325960673479}
   moveSpeed: 5
-  stepRate: 0.35
+  sprintMultiplier: 1.6
+  allowSprintFire: 1
   firePoint: {fileID: 1000000001}
-  fireRate: 0.2
   projectileConfig: {fileID: 11400000, guid: c4aab93522a6f5a4a964d40766fc0a49, type: 2}
+  weapons: []
   playerCamera: {fileID: 7241373236544126158}
   playerDownedEvent: {fileID: 11400000, guid: ce4d020fda25e36498c125bc05cd3b27, type: 2}
 --- !u!114 &4339183692472969719

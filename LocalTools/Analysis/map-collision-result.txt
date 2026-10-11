@@ -1,0 +1,1 @@
+blockedX=0.9950002; finalPosition=(2.47, 0.16); grounded=True

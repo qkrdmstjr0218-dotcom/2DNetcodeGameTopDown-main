@@ -1,0 +1,650 @@
+fileFormatVersion: 2
+guid: 21f33f90287ceed47a7a61db0f172d12
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -279068065216257315
+    second: RightWalkSheet-Legs-SmoothThigh-v67_0
+  - first:
+      213: -4567100779860389426
+    second: RightWalkSheet-Legs-SmoothThigh-v67_1
+  - first:
+      213: -5270587507646168106
+    second: RightWalkSheet-Legs-SmoothThigh-v67_2
+  - first:
+      213: 2474437989559824760
+    second: RightWalkSheet-Legs-SmoothThigh-v67_3
+  - first:
+      213: 2422662066540851108
+    second: RightWalkSheet-Legs-SmoothThigh-v67_4
+  - first:
+      213: -407822703611045586
+    second: RightWalkSheet-Legs-SmoothThigh-v67_5
+  - first:
+      213: -7941927430128976382
+    second: RightWalkSheet-Legs-SmoothThigh-v67_6
+  - first:
+      213: -550485689692841989
+    second: RightWalkSheet-Legs-SmoothThigh-v67_7
+  - first:
+      213: -4075238410739302573
+    second: RightWalkSheet-Legs-SmoothThigh-v67_8
+  - first:
+      213: 6553719276212919070
+    second: RightWalkSheet-Legs-SmoothThigh-v67_9
+  - first:
+      213: -1140539585032396511
+    second: RightWalkSheet-Legs-SmoothThigh-v67_10
+  - first:
+      213: 158012756232674144
+    second: RightWalkSheet-Legs-SmoothThigh-v67_11
+  - first:
+      213: 5773025224867969155
+    second: RightWalkSheet-Legs-SmoothThigh-v67_12
+  - first:
+      213: -233731141674301648
+    second: RightWalkSheet-Legs-SmoothThigh-v67_13
+  - first:
+      213: -7686895330288642628
+    second: RightWalkSheet-Legs-SmoothThigh-v67_14
+  - first:
+      213: 8029198489860478770
+    second: RightWalkSheet-Legs-SmoothThigh-v67_15
+  - first:
+      213: -2716233564036497644
+    second: RightWalkSheet-Legs-SmoothThigh-v67_16
+  - first:
+      213: -6914617145557394236
+    second: RightWalkSheet-Legs-SmoothThigh-v67_17
+  - first:
+      213: 2408008339071612859
+    second: RightWalkSheet-Legs-SmoothThigh-v67_18
+  - first:
+      213: 2576187363025877048
+    second: RightWalkSheet-Legs-SmoothThigh-v67_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 0
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-SmoothThigh-v67_0
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 1576
+        width: 213
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd221a0c21d802cf0800000000000000
+      internalID: -279068065216257315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-SmoothThigh-v67_1
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 1578
+        width: 213
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec1130bc9066e90c0800000000000000
+      internalID: -4567100779860389426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-SmoothThigh-v67_2
+      rect:
+        serializedVersion: 2
+        x: 1192
+        y: 1577
+        width: 213
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d38329269c1bd6b0800000000000000
+      internalID: -5270587507646168106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-SmoothThigh-v67_3
+      rect:
+        serializedVersion: 2
+        x: 1709
+        y: 1578
+        width: 199
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 871f17acd38f65220800000000000000
+      internalID: 2474437989559824760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-SmoothThigh-v67_4
+      rect:
+        serializedVersion: 2
+        x: 2232
+        y: 1578
+        width: 180
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4af2bfe40560f9120800000000000000
+      internalID: 2422662066540851108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-SmoothThigh-v67_5
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 1066
+        width: 155
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e299ceb696f175af0800000000000000
+      internalID: -407822703611045586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-SmoothThigh-v67_6
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 1066
+        width: 139
+        height: 245
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20e3b37941b98c190800000000000000
+      internalID: -7941927430128976382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-SmoothThigh-v67_7
+      rect:
+        serializedVersion: 2
+        x: 1231
+        y: 1066
+        width: 152
+        height: 246
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf71ceb8e284c58f0800000000000000
+      internalID: -550485689692841989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-SmoothThigh-v67_8
+      rect:
+        serializedVersion: 2
+        x: 1742
+        y: 1066
+        width: 168
+        height: 246
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35f3bd8c148d177c0800000000000000
+      internalID: -4075238410739302573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-SmoothThigh-v67_9
+      rect:
+        serializedVersion: 2
+        x: 2250
+        y: 1066
+        width: 184
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1b1d4865fc73fa50800000000000000
+      internalID: 6553719276212919070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-SmoothThigh-v67_10
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 552
+        width: 197
+        height: 252
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1216fdd4a4dfb20f0800000000000000
+      internalID: -1140539585032396511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-SmoothThigh-v67_11
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 554
+        width: 197
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06b9a3db3cf513200800000000000000
+      internalID: 158012756232674144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-SmoothThigh-v67_12
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 553
+        width: 197
+        height: 252
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 388ff9fead7ed1050800000000000000
+      internalID: 5773025224867969155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-SmoothThigh-v67_13
+      rect:
+        serializedVersion: 2
+        x: 1717
+        y: 554
+        width: 183
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0378e87d3ce91ccf0800000000000000
+      internalID: -233731141674301648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-SmoothThigh-v67_14
+      rect:
+        serializedVersion: 2
+        x: 2240
+        y: 554
+        width: 164
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb5598c8c69a25590800000000000000
+      internalID: -7686895330288642628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-SmoothThigh-v67_15
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 42
+        width: 139
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2379c3b6c717d6f60800000000000000
+      internalID: 8029198489860478770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-SmoothThigh-v67_16
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 42
+        width: 134
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41f7c98f6fffd4ad0800000000000000
+      internalID: -2716233564036497644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-SmoothThigh-v67_17
+      rect:
+        serializedVersion: 2
+        x: 1235
+        y: 42
+        width: 156
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ccd93167585a00a0800000000000000
+      internalID: -6914617145557394236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-SmoothThigh-v67_18
+      rect:
+        serializedVersion: 2
+        x: 1739
+        y: 42
+        width: 179
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb7ba8283d6fa6120800000000000000
+      internalID: 2408008339071612859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-SmoothThigh-v67_19
+      rect:
+        serializedVersion: 2
+        x: 2242
+        y: 42
+        width: 200
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 838f108e1c470c320800000000000000
+      internalID: 2576187363025877048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      RightWalkSheet-Legs-SmoothThigh-v67_0: -279068065216257315
+      RightWalkSheet-Legs-SmoothThigh-v67_1: -4567100779860389426
+      RightWalkSheet-Legs-SmoothThigh-v67_10: -1140539585032396511
+      RightWalkSheet-Legs-SmoothThigh-v67_11: 158012756232674144
+      RightWalkSheet-Legs-SmoothThigh-v67_12: 5773025224867969155
+      RightWalkSheet-Legs-SmoothThigh-v67_13: -233731141674301648
+      RightWalkSheet-Legs-SmoothThigh-v67_14: -7686895330288642628
+      RightWalkSheet-Legs-SmoothThigh-v67_15: 8029198489860478770
+      RightWalkSheet-Legs-SmoothThigh-v67_16: -2716233564036497644
+      RightWalkSheet-Legs-SmoothThigh-v67_17: -6914617145557394236
+      RightWalkSheet-Legs-SmoothThigh-v67_18: 2408008339071612859
+      RightWalkSheet-Legs-SmoothThigh-v67_19: 2576187363025877048
+      RightWalkSheet-Legs-SmoothThigh-v67_2: -5270587507646168106
+      RightWalkSheet-Legs-SmoothThigh-v67_3: 2474437989559824760
+      RightWalkSheet-Legs-SmoothThigh-v67_4: 2422662066540851108
+      RightWalkSheet-Legs-SmoothThigh-v67_5: -407822703611045586
+      RightWalkSheet-Legs-SmoothThigh-v67_6: -7941927430128976382
+      RightWalkSheet-Legs-SmoothThigh-v67_7: -550485689692841989
+      RightWalkSheet-Legs-SmoothThigh-v67_8: -4075238410739302573
+      RightWalkSheet-Legs-SmoothThigh-v67_9: 6553719276212919070
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

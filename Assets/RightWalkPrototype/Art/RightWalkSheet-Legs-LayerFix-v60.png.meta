@@ -1,0 +1,650 @@
+fileFormatVersion: 2
+guid: 3718a6e27679fae40845213d24348429
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8549001109831342920
+    second: RightWalkSheet-Legs-LayerFix-v60_0
+  - first:
+      213: -4581439872493032954
+    second: RightWalkSheet-Legs-LayerFix-v60_1
+  - first:
+      213: 2137615180376894240
+    second: RightWalkSheet-Legs-LayerFix-v60_2
+  - first:
+      213: 3607530756158289973
+    second: RightWalkSheet-Legs-LayerFix-v60_3
+  - first:
+      213: -4909442301402274433
+    second: RightWalkSheet-Legs-LayerFix-v60_4
+  - first:
+      213: 8084056920722463784
+    second: RightWalkSheet-Legs-LayerFix-v60_5
+  - first:
+      213: 4070598351146939726
+    second: RightWalkSheet-Legs-LayerFix-v60_6
+  - first:
+      213: 6072210022825282117
+    second: RightWalkSheet-Legs-LayerFix-v60_7
+  - first:
+      213: 1417533478348201782
+    second: RightWalkSheet-Legs-LayerFix-v60_8
+  - first:
+      213: -5525753960382379592
+    second: RightWalkSheet-Legs-LayerFix-v60_9
+  - first:
+      213: 8671871823129331148
+    second: RightWalkSheet-Legs-LayerFix-v60_10
+  - first:
+      213: 8466825517353021190
+    second: RightWalkSheet-Legs-LayerFix-v60_11
+  - first:
+      213: -8582724250407216309
+    second: RightWalkSheet-Legs-LayerFix-v60_12
+  - first:
+      213: -2205292421542327235
+    second: RightWalkSheet-Legs-LayerFix-v60_13
+  - first:
+      213: 8569461551161397777
+    second: RightWalkSheet-Legs-LayerFix-v60_14
+  - first:
+      213: -5256072668215300240
+    second: RightWalkSheet-Legs-LayerFix-v60_15
+  - first:
+      213: -6411618992652906420
+    second: RightWalkSheet-Legs-LayerFix-v60_16
+  - first:
+      213: 3001880466673922796
+    second: RightWalkSheet-Legs-LayerFix-v60_17
+  - first:
+      213: 424732401355016763
+    second: RightWalkSheet-Legs-LayerFix-v60_18
+  - first:
+      213: -6352475669275012192
+    second: RightWalkSheet-Legs-LayerFix-v60_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 0
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-LayerFix-v60_0
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 1576
+        width: 213
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b4251009c8db5980800000000000000
+      internalID: -8549001109831342920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-LayerFix-v60_1
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 1578
+        width: 213
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60aed30a5b47b60c0800000000000000
+      internalID: -4581439872493032954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-LayerFix-v60_2
+      rect:
+        serializedVersion: 2
+        x: 1192
+        y: 1577
+        width: 213
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02be8d45ea55aad10800000000000000
+      internalID: 2137615180376894240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-LayerFix-v60_3
+      rect:
+        serializedVersion: 2
+        x: 1709
+        y: 1578
+        width: 199
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5387c15fb16801230800000000000000
+      internalID: 3607530756158289973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-LayerFix-v60_4
+      rect:
+        serializedVersion: 2
+        x: 2232
+        y: 1578
+        width: 180
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7524abfc382edbb0800000000000000
+      internalID: -4909442301402274433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-LayerFix-v60_5
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 1066
+        width: 155
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82c53bf20f6503070800000000000000
+      internalID: 8084056920722463784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-LayerFix-v60_6
+      rect:
+        serializedVersion: 2
+        x: 726
+        y: 1066
+        width: 133
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e45776722abad7830800000000000000
+      internalID: 4070598351146939726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-LayerFix-v60_7
+      rect:
+        serializedVersion: 2
+        x: 1236
+        y: 1066
+        width: 147
+        height: 245
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54a411408d2d44450800000000000000
+      internalID: 6072210022825282117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-LayerFix-v60_8
+      rect:
+        serializedVersion: 2
+        x: 1747
+        y: 1066
+        width: 163
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63f1b2a20371ca310800000000000000
+      internalID: 1417533478348201782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-LayerFix-v60_9
+      rect:
+        serializedVersion: 2
+        x: 2250
+        y: 1066
+        width: 184
+        height: 246
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b9433bbc049053b0800000000000000
+      internalID: -5525753960382379592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-LayerFix-v60_10
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 552
+        width: 197
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc5c7534a7da85870800000000000000
+      internalID: 8671871823129331148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-LayerFix-v60_11
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 554
+        width: 197
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60f2a09e2f4308570800000000000000
+      internalID: 8466825517353021190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-LayerFix-v60_12
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 553
+        width: 197
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4bd85974c904e880800000000000000
+      internalID: -8582724250407216309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-LayerFix-v60_13
+      rect:
+        serializedVersion: 2
+        x: 1717
+        y: 554
+        width: 183
+        height: 246
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3ccb1c0a3a3561e0800000000000000
+      internalID: -2205292421542327235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-LayerFix-v60_14
+      rect:
+        serializedVersion: 2
+        x: 2240
+        y: 554
+        width: 164
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 112d759b0e7dce670800000000000000
+      internalID: 8569461551161397777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-LayerFix-v60_15
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 42
+        width: 139
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07f236191cdae07b0800000000000000
+      internalID: -5256072668215300240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-LayerFix-v60_16
+      rect:
+        serializedVersion: 2
+        x: 731
+        y: 42
+        width: 128
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4096c31f7a5507a0800000000000000
+      internalID: -6411618992652906420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-LayerFix-v60_17
+      rect:
+        serializedVersion: 2
+        x: 1235
+        y: 42
+        width: 156
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce2784a3162d8a920800000000000000
+      internalID: 3001880466673922796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-LayerFix-v60_18
+      rect:
+        serializedVersion: 2
+        x: 1739
+        y: 42
+        width: 179
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3a4d536ed3f4e500800000000000000
+      internalID: 424732401355016763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-LayerFix-v60_19
+      rect:
+        serializedVersion: 2
+        x: 2242
+        y: 42
+        width: 200
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a31d80290977d7a0800000000000000
+      internalID: -6352475669275012192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      RightWalkSheet-Legs-LayerFix-v60_0: -8549001109831342920
+      RightWalkSheet-Legs-LayerFix-v60_1: -4581439872493032954
+      RightWalkSheet-Legs-LayerFix-v60_10: 8671871823129331148
+      RightWalkSheet-Legs-LayerFix-v60_11: 8466825517353021190
+      RightWalkSheet-Legs-LayerFix-v60_12: -8582724250407216309
+      RightWalkSheet-Legs-LayerFix-v60_13: -2205292421542327235
+      RightWalkSheet-Legs-LayerFix-v60_14: 8569461551161397777
+      RightWalkSheet-Legs-LayerFix-v60_15: -5256072668215300240
+      RightWalkSheet-Legs-LayerFix-v60_16: -6411618992652906420
+      RightWalkSheet-Legs-LayerFix-v60_17: 3001880466673922796
+      RightWalkSheet-Legs-LayerFix-v60_18: 424732401355016763
+      RightWalkSheet-Legs-LayerFix-v60_19: -6352475669275012192
+      RightWalkSheet-Legs-LayerFix-v60_2: 2137615180376894240
+      RightWalkSheet-Legs-LayerFix-v60_3: 3607530756158289973
+      RightWalkSheet-Legs-LayerFix-v60_4: -4909442301402274433
+      RightWalkSheet-Legs-LayerFix-v60_5: 8084056920722463784
+      RightWalkSheet-Legs-LayerFix-v60_6: 4070598351146939726
+      RightWalkSheet-Legs-LayerFix-v60_7: 6072210022825282117
+      RightWalkSheet-Legs-LayerFix-v60_8: 1417533478348201782
+      RightWalkSheet-Legs-LayerFix-v60_9: -5525753960382379592
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

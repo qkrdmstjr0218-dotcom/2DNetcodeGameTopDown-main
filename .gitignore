@@ -65,6 +65,15 @@ sysinfo.txt
 *.app
 
 # Crashlytics generated file
+# Reproducible sources only; local runtimes/captures remain excluded.
+/LocalTools/*
+!/LocalTools/Analysis/
+/LocalTools/Analysis/*
+!/LocalTools/Analysis/*.py
+!/LocalTools/Analysis/*.json
+!/LocalTools/Analysis/*.csv
+!/LocalTools/Analysis/*.txt
+!/LocalTools/UnityMcpPackage/
 crashlytics-build.properties
 
 # Packed Addressables
@@ -73,3 +82,6 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+
+# Local packages/checkpoint archives; project sources live under Assets.
+/Exports/

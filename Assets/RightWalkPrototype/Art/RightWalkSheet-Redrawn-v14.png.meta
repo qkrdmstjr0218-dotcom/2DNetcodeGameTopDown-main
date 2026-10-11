@@ -1,0 +1,650 @@
+fileFormatVersion: 2
+guid: 31d242ac61b12434b897846eb2b9d23b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4523919149578272651
+    second: RightWalkSheet-Redrawn-v14_0
+  - first:
+      213: 3203582566423930869
+    second: RightWalkSheet-Redrawn-v14_1
+  - first:
+      213: -3411533044645755069
+    second: RightWalkSheet-Redrawn-v14_2
+  - first:
+      213: 5624781105208999358
+    second: RightWalkSheet-Redrawn-v14_3
+  - first:
+      213: -8824248086938571619
+    second: RightWalkSheet-Redrawn-v14_4
+  - first:
+      213: 6560315050026230356
+    second: RightWalkSheet-Redrawn-v14_5
+  - first:
+      213: -3870194178509087767
+    second: RightWalkSheet-Redrawn-v14_6
+  - first:
+      213: -4782291265478806089
+    second: RightWalkSheet-Redrawn-v14_7
+  - first:
+      213: -4048676020555588080
+    second: RightWalkSheet-Redrawn-v14_8
+  - first:
+      213: 2121784052234601804
+    second: RightWalkSheet-Redrawn-v14_9
+  - first:
+      213: 7837426554309990976
+    second: RightWalkSheet-Redrawn-v14_10
+  - first:
+      213: -1516786746111637045
+    second: RightWalkSheet-Redrawn-v14_11
+  - first:
+      213: -1025474832763425453
+    second: RightWalkSheet-Redrawn-v14_12
+  - first:
+      213: -2227354116176410431
+    second: RightWalkSheet-Redrawn-v14_13
+  - first:
+      213: 9185110912227662613
+    second: RightWalkSheet-Redrawn-v14_14
+  - first:
+      213: -7350556367717759790
+    second: RightWalkSheet-Redrawn-v14_15
+  - first:
+      213: 8216116414357487724
+    second: RightWalkSheet-Redrawn-v14_16
+  - first:
+      213: -5626807601293454740
+    second: RightWalkSheet-Redrawn-v14_17
+  - first:
+      213: 1811031806849210489
+    second: RightWalkSheet-Redrawn-v14_18
+  - first:
+      213: 4099979226687665018
+    second: RightWalkSheet-Redrawn-v14_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 0
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: RightWalkSheet-Redrawn-v14_0
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 1580
+        width: 347
+        height: 438
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 570ccc0908fc731c0800000000000000
+      internalID: -4523919149578272651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Redrawn-v14_1
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 1580
+        width: 347
+        height: 438
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f72550fe59657c20800000000000000
+      internalID: 3203582566423930869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Redrawn-v14_2
+      rect:
+        serializedVersion: 2
+        x: 1142
+        y: 1580
+        width: 347
+        height: 438
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 347026e55ccc7a0d0800000000000000
+      internalID: -3411533044645755069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Redrawn-v14_3
+      rect:
+        serializedVersion: 2
+        x: 1654
+        y: 1580
+        width: 347
+        height: 438
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebdbf432d9c3f0e40800000000000000
+      internalID: 5624781105208999358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Redrawn-v14_4
+      rect:
+        serializedVersion: 2
+        x: 2166
+        y: 1580
+        width: 347
+        height: 438
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9c2b182e19f98580800000000000000
+      internalID: -8824248086938571619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Redrawn-v14_5
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 1068
+        width: 347
+        height: 438
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 452667ba7cbea0b50800000000000000
+      internalID: 6560315050026230356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Redrawn-v14_6
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 1068
+        width: 347
+        height: 438
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9eb5e2a56ee4a4ac0800000000000000
+      internalID: -3870194178509087767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Redrawn-v14_7
+      rect:
+        serializedVersion: 2
+        x: 1142
+        y: 1068
+        width: 347
+        height: 438
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b5bea48e63e1adb0800000000000000
+      internalID: -4782291265478806089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Redrawn-v14_8
+      rect:
+        serializedVersion: 2
+        x: 1654
+        y: 1068
+        width: 347
+        height: 438
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01e54203c9630d7c0800000000000000
+      internalID: -4048676020555588080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Redrawn-v14_9
+      rect:
+        serializedVersion: 2
+        x: 2166
+        y: 1068
+        width: 347
+        height: 438
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4548839a57127d10800000000000000
+      internalID: 2121784052234601804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Redrawn-v14_10
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 556
+        width: 347
+        height: 438
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04a5cda3de124cc60800000000000000
+      internalID: 7837426554309990976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Redrawn-v14_11
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 556
+        width: 347
+        height: 438
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc9cefd9d7a43fae0800000000000000
+      internalID: -1516786746111637045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Redrawn-v14_12
+      rect:
+        serializedVersion: 2
+        x: 1142
+        y: 556
+        width: 347
+        height: 438
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35d6803a218c4c1f0800000000000000
+      internalID: -1025474832763425453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Redrawn-v14_13
+      rect:
+        serializedVersion: 2
+        x: 1654
+        y: 556
+        width: 347
+        height: 438
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c80d4c7b39d611e0800000000000000
+      internalID: -2227354116176410431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Redrawn-v14_14
+      rect:
+        serializedVersion: 2
+        x: 2166
+        y: 556
+        width: 347
+        height: 438
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51bd4e9b5b1187f70800000000000000
+      internalID: 9185110912227662613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Redrawn-v14_15
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 44
+        width: 347
+        height: 438
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d482b0bde39df990800000000000000
+      internalID: -7350556367717759790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Redrawn-v14_16
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 44
+        width: 347
+        height: 438
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c60c8071952850270800000000000000
+      internalID: 8216116414357487724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Redrawn-v14_17
+      rect:
+        serializedVersion: 2
+        x: 1142
+        y: 44
+        width: 347
+        height: 438
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c629f697c4099e1b0800000000000000
+      internalID: -5626807601293454740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Redrawn-v14_18
+      rect:
+        serializedVersion: 2
+        x: 1654
+        y: 44
+        width: 347
+        height: 438
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9785e2445d3122910800000000000000
+      internalID: 1811031806849210489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Redrawn-v14_19
+      rect:
+        serializedVersion: 2
+        x: 2166
+        y: 44
+        width: 347
+        height: 438
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a73f231526d06e830800000000000000
+      internalID: 4099979226687665018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      RightWalkSheet-Redrawn-v14_0: -4523919149578272651
+      RightWalkSheet-Redrawn-v14_1: 3203582566423930869
+      RightWalkSheet-Redrawn-v14_10: 7837426554309990976
+      RightWalkSheet-Redrawn-v14_11: -1516786746111637045
+      RightWalkSheet-Redrawn-v14_12: -1025474832763425453
+      RightWalkSheet-Redrawn-v14_13: -2227354116176410431
+      RightWalkSheet-Redrawn-v14_14: 9185110912227662613
+      RightWalkSheet-Redrawn-v14_15: -7350556367717759790
+      RightWalkSheet-Redrawn-v14_16: 8216116414357487724
+      RightWalkSheet-Redrawn-v14_17: -5626807601293454740
+      RightWalkSheet-Redrawn-v14_18: 1811031806849210489
+      RightWalkSheet-Redrawn-v14_19: 4099979226687665018
+      RightWalkSheet-Redrawn-v14_2: -3411533044645755069
+      RightWalkSheet-Redrawn-v14_3: 5624781105208999358
+      RightWalkSheet-Redrawn-v14_4: -8824248086938571619
+      RightWalkSheet-Redrawn-v14_5: 6560315050026230356
+      RightWalkSheet-Redrawn-v14_6: -3870194178509087767
+      RightWalkSheet-Redrawn-v14_7: -4782291265478806089
+      RightWalkSheet-Redrawn-v14_8: -4048676020555588080
+      RightWalkSheet-Redrawn-v14_9: 2121784052234601804
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

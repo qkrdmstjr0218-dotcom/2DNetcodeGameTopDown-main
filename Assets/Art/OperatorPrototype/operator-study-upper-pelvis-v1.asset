@@ -21,7 +21,7 @@ Sprite:
   m_IsPolygon: 0
   m_PackingTag: 
   m_RenderDataKey:
-    00000000000000000000000000000000: 0
+    c01ca2af9c053a44cbc2abadb528a20a: 21300000
   m_AtlasTags: []
   m_SpriteAtlas: {fileID: 0}
   m_RD:
@@ -231,7 +231,7 @@ Sprite:
   m_IsPolygon: 0
   m_PackingTag: 
   m_RenderDataKey:
-    00000000000000000000000000000000: 0
+    c01ca2af9c053a44cbc2abadb528a20a: 7028492450477981294
   m_AtlasTags: []
   m_SpriteAtlas: {fileID: 0}
   m_RD:

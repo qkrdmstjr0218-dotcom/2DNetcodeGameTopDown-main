@@ -1,0 +1,650 @@
+fileFormatVersion: 2
+guid: 591429ea061b5a444967219fd6aae4a3
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8234453897016885555
+    second: RightWalkSheet-Legs-SmoothRearContour-v69_0
+  - first:
+      213: -3772215002451317883
+    second: RightWalkSheet-Legs-SmoothRearContour-v69_1
+  - first:
+      213: 4480785661653648204
+    second: RightWalkSheet-Legs-SmoothRearContour-v69_2
+  - first:
+      213: -781243396677491911
+    second: RightWalkSheet-Legs-SmoothRearContour-v69_3
+  - first:
+      213: -6968940412679073944
+    second: RightWalkSheet-Legs-SmoothRearContour-v69_4
+  - first:
+      213: 577370143649025114
+    second: RightWalkSheet-Legs-SmoothRearContour-v69_5
+  - first:
+      213: 7005502315197589024
+    second: RightWalkSheet-Legs-SmoothRearContour-v69_6
+  - first:
+      213: 2085162186462502135
+    second: RightWalkSheet-Legs-SmoothRearContour-v69_7
+  - first:
+      213: 4242412061813404875
+    second: RightWalkSheet-Legs-SmoothRearContour-v69_8
+  - first:
+      213: -2467276663460910857
+    second: RightWalkSheet-Legs-SmoothRearContour-v69_9
+  - first:
+      213: 4164762185388316248
+    second: RightWalkSheet-Legs-SmoothRearContour-v69_10
+  - first:
+      213: 4012109431312073180
+    second: RightWalkSheet-Legs-SmoothRearContour-v69_11
+  - first:
+      213: 7643671958485488929
+    second: RightWalkSheet-Legs-SmoothRearContour-v69_12
+  - first:
+      213: -6220345607817000833
+    second: RightWalkSheet-Legs-SmoothRearContour-v69_13
+  - first:
+      213: -2262958682297024763
+    second: RightWalkSheet-Legs-SmoothRearContour-v69_14
+  - first:
+      213: -7922121645872387480
+    second: RightWalkSheet-Legs-SmoothRearContour-v69_15
+  - first:
+      213: 1094845191579999328
+    second: RightWalkSheet-Legs-SmoothRearContour-v69_16
+  - first:
+      213: -2364330859435964
+    second: RightWalkSheet-Legs-SmoothRearContour-v69_17
+  - first:
+      213: 9213257345912593694
+    second: RightWalkSheet-Legs-SmoothRearContour-v69_18
+  - first:
+      213: -5081740965982223202
+    second: RightWalkSheet-Legs-SmoothRearContour-v69_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 0
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-SmoothRearContour-v69_0
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 1576
+        width: 213
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dce3af40fc759bd80800000000000000
+      internalID: -8234453897016885555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-SmoothRearContour-v69_1
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 1578
+        width: 213
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58b6d7af07666abc0800000000000000
+      internalID: -3772215002451317883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-SmoothRearContour-v69_2
+      rect:
+        serializedVersion: 2
+        x: 1192
+        y: 1577
+        width: 213
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c43878da1d2fe2e30800000000000000
+      internalID: 4480785661653648204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-SmoothRearContour-v69_3
+      rect:
+        serializedVersion: 2
+        x: 1709
+        y: 1578
+        width: 199
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9332be915477825f0800000000000000
+      internalID: -781243396677491911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-SmoothRearContour-v69_4
+      rect:
+        serializedVersion: 2
+        x: 2232
+        y: 1578
+        width: 180
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86f46612e99594f90800000000000000
+      internalID: -6968940412679073944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-SmoothRearContour-v69_5
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 1066
+        width: 155
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5ccd1c261b330800800000000000000
+      internalID: 577370143649025114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-SmoothRearContour-v69_6
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 1066
+        width: 136
+        height: 245
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 026678a2d3b883160800000000000000
+      internalID: 7005502315197589024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-SmoothRearContour-v69_7
+      rect:
+        serializedVersion: 2
+        x: 1235
+        y: 1066
+        width: 148
+        height: 246
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fc9c2ff5fbffec10800000000000000
+      internalID: 2085162186462502135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-SmoothRearContour-v69_8
+      rect:
+        serializedVersion: 2
+        x: 1747
+        y: 1066
+        width: 163
+        height: 246
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc4783ffa4310ea30800000000000000
+      internalID: 4242412061813404875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-SmoothRearContour-v69_9
+      rect:
+        serializedVersion: 2
+        x: 2250
+        y: 1066
+        width: 184
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f82dcf52f872cdd0800000000000000
+      internalID: -2467276663460910857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-SmoothRearContour-v69_10
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 552
+        width: 197
+        height: 252
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 856dc0a44253cc930800000000000000
+      internalID: 4164762185388316248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-SmoothRearContour-v69_11
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 554
+        width: 197
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd1c95d4540eda730800000000000000
+      internalID: 4012109431312073180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-SmoothRearContour-v69_12
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 553
+        width: 197
+        height: 252
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1255429f527c31a60800000000000000
+      internalID: 7643671958485488929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-SmoothRearContour-v69_13
+      rect:
+        serializedVersion: 2
+        x: 1717
+        y: 554
+        width: 183
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7808e160a4eca9a0800000000000000
+      internalID: -6220345607817000833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-SmoothRearContour-v69_14
+      rect:
+        serializedVersion: 2
+        x: 2240
+        y: 554
+        width: 164
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50fbc40711b5890e0800000000000000
+      internalID: -2262958682297024763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-SmoothRearContour-v69_15
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 42
+        width: 139
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86ae7561658fe0290800000000000000
+      internalID: -7922121645872387480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-SmoothRearContour-v69_16
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 42
+        width: 134
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06c9b28a6eba13f00800000000000000
+      internalID: 1094845191579999328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-SmoothRearContour-v69_17
+      rect:
+        serializedVersion: 2
+        x: 1235
+        y: 42
+        width: 156
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 448edf257a997fff0800000000000000
+      internalID: -2364330859435964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-SmoothRearContour-v69_18
+      rect:
+        serializedVersion: 2
+        x: 1739
+        y: 42
+        width: 179
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1dd06ffdb01cdf70800000000000000
+      internalID: 9213257345912593694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-SmoothRearContour-v69_19
+      rect:
+        serializedVersion: 2
+        x: 2242
+        y: 42
+        width: 200
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e94441204870a79b0800000000000000
+      internalID: -5081740965982223202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      RightWalkSheet-Legs-SmoothRearContour-v69_0: -8234453897016885555
+      RightWalkSheet-Legs-SmoothRearContour-v69_1: -3772215002451317883
+      RightWalkSheet-Legs-SmoothRearContour-v69_10: 4164762185388316248
+      RightWalkSheet-Legs-SmoothRearContour-v69_11: 4012109431312073180
+      RightWalkSheet-Legs-SmoothRearContour-v69_12: 7643671958485488929
+      RightWalkSheet-Legs-SmoothRearContour-v69_13: -6220345607817000833
+      RightWalkSheet-Legs-SmoothRearContour-v69_14: -2262958682297024763
+      RightWalkSheet-Legs-SmoothRearContour-v69_15: -7922121645872387480
+      RightWalkSheet-Legs-SmoothRearContour-v69_16: 1094845191579999328
+      RightWalkSheet-Legs-SmoothRearContour-v69_17: -2364330859435964
+      RightWalkSheet-Legs-SmoothRearContour-v69_18: 9213257345912593694
+      RightWalkSheet-Legs-SmoothRearContour-v69_19: -5081740965982223202
+      RightWalkSheet-Legs-SmoothRearContour-v69_2: 4480785661653648204
+      RightWalkSheet-Legs-SmoothRearContour-v69_3: -781243396677491911
+      RightWalkSheet-Legs-SmoothRearContour-v69_4: -6968940412679073944
+      RightWalkSheet-Legs-SmoothRearContour-v69_5: 577370143649025114
+      RightWalkSheet-Legs-SmoothRearContour-v69_6: 7005502315197589024
+      RightWalkSheet-Legs-SmoothRearContour-v69_7: 2085162186462502135
+      RightWalkSheet-Legs-SmoothRearContour-v69_8: 4242412061813404875
+      RightWalkSheet-Legs-SmoothRearContour-v69_9: -2467276663460910857
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

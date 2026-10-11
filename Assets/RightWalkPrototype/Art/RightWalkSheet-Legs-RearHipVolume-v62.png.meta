@@ -1,0 +1,650 @@
+fileFormatVersion: 2
+guid: 4799b8d391feb6a4b856ffcb0552803c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5725958324584881682
+    second: RightWalkSheet-Legs-RearHipVolume-v62_0
+  - first:
+      213: 4117037521346468624
+    second: RightWalkSheet-Legs-RearHipVolume-v62_1
+  - first:
+      213: 8696715235109417093
+    second: RightWalkSheet-Legs-RearHipVolume-v62_2
+  - first:
+      213: -751097701264919168
+    second: RightWalkSheet-Legs-RearHipVolume-v62_3
+  - first:
+      213: 6227735232872334953
+    second: RightWalkSheet-Legs-RearHipVolume-v62_4
+  - first:
+      213: 3732078794298889993
+    second: RightWalkSheet-Legs-RearHipVolume-v62_5
+  - first:
+      213: -376465310961506701
+    second: RightWalkSheet-Legs-RearHipVolume-v62_6
+  - first:
+      213: 890406380297027972
+    second: RightWalkSheet-Legs-RearHipVolume-v62_7
+  - first:
+      213: 7554815895030378394
+    second: RightWalkSheet-Legs-RearHipVolume-v62_8
+  - first:
+      213: -4274190627821985506
+    second: RightWalkSheet-Legs-RearHipVolume-v62_9
+  - first:
+      213: 2121630256555892636
+    second: RightWalkSheet-Legs-RearHipVolume-v62_10
+  - first:
+      213: -1086248264714852010
+    second: RightWalkSheet-Legs-RearHipVolume-v62_11
+  - first:
+      213: -4520078117619481981
+    second: RightWalkSheet-Legs-RearHipVolume-v62_12
+  - first:
+      213: -4321541088652938388
+    second: RightWalkSheet-Legs-RearHipVolume-v62_13
+  - first:
+      213: 2567728217265483490
+    second: RightWalkSheet-Legs-RearHipVolume-v62_14
+  - first:
+      213: 6461512893932477373
+    second: RightWalkSheet-Legs-RearHipVolume-v62_15
+  - first:
+      213: 6320810400192933396
+    second: RightWalkSheet-Legs-RearHipVolume-v62_16
+  - first:
+      213: 2896980924868416403
+    second: RightWalkSheet-Legs-RearHipVolume-v62_17
+  - first:
+      213: 1326743907102409931
+    second: RightWalkSheet-Legs-RearHipVolume-v62_18
+  - first:
+      213: -3510482120810076202
+    second: RightWalkSheet-Legs-RearHipVolume-v62_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 0
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-RearHipVolume-v62_0
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 1576
+        width: 213
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee16d60cd3f4980b0800000000000000
+      internalID: -5725958324584881682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-RearHipVolume-v62_1
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 1578
+        width: 213
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01b9fca00d7a22930800000000000000
+      internalID: 4117037521346468624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-RearHipVolume-v62_2
+      rect:
+        serializedVersion: 2
+        x: 1192
+        y: 1577
+        width: 213
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 580bc6ddd60f0b870800000000000000
+      internalID: 8696715235109417093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-RearHipVolume-v62_3
+      rect:
+        serializedVersion: 2
+        x: 1709
+        y: 1578
+        width: 199
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 085fd74ce909395f0800000000000000
+      internalID: -751097701264919168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-RearHipVolume-v62_4
+      rect:
+        serializedVersion: 2
+        x: 2232
+        y: 1578
+        width: 180
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9664a86c23c5d6650800000000000000
+      internalID: 6227735232872334953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-RearHipVolume-v62_5
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 1066
+        width: 155
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90714f7d3e10bc330800000000000000
+      internalID: 3732078794298889993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-RearHipVolume-v62_6
+      rect:
+        serializedVersion: 2
+        x: 718
+        y: 1066
+        width: 141
+        height: 245
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 376e1e55bc686caf0800000000000000
+      internalID: -376465310961506701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-RearHipVolume-v62_7
+      rect:
+        serializedVersion: 2
+        x: 1231
+        y: 1066
+        width: 152
+        height: 246
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4818853a2eb5b5c00800000000000000
+      internalID: 890406380297027972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-RearHipVolume-v62_8
+      rect:
+        serializedVersion: 2
+        x: 1743
+        y: 1066
+        width: 167
+        height: 246
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9fa2c6870918d860800000000000000
+      internalID: 7554815895030378394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-RearHipVolume-v62_9
+      rect:
+        serializedVersion: 2
+        x: 2250
+        y: 1066
+        width: 184
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e11ed5605460fa4c0800000000000000
+      internalID: -4274190627821985506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-RearHipVolume-v62_10
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 552
+        width: 197
+        height: 252
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9f1cba3a7b817d10800000000000000
+      internalID: 2121630256555892636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-RearHipVolume-v62_11
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 554
+        width: 197
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65969cb55fedce0f0800000000000000
+      internalID: -1086248264714852010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-RearHipVolume-v62_12
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 553
+        width: 197
+        height: 252
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 382464286e47541c0800000000000000
+      internalID: -4520078117619481981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-RearHipVolume-v62_13
+      rect:
+        serializedVersion: 2
+        x: 1717
+        y: 554
+        width: 183
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c633690c64dc604c0800000000000000
+      internalID: -4321541088652938388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-RearHipVolume-v62_14
+      rect:
+        serializedVersion: 2
+        x: 2240
+        y: 554
+        width: 164
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ee2bdd853762a320800000000000000
+      internalID: 2567728217265483490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-RearHipVolume-v62_15
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 42
+        width: 141
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbb93721eb7eba950800000000000000
+      internalID: 6461512893932477373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-RearHipVolume-v62_16
+      rect:
+        serializedVersion: 2
+        x: 718
+        y: 42
+        width: 141
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41e2814e19708b750800000000000000
+      internalID: 6320810400192933396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-RearHipVolume-v62_17
+      rect:
+        serializedVersion: 2
+        x: 1232
+        y: 42
+        width: 159
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3935dd36dc4243820800000000000000
+      internalID: 2896980924868416403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-RearHipVolume-v62_18
+      rect:
+        serializedVersion: 2
+        x: 1739
+        y: 42
+        width: 179
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc4c0cadd8a896210800000000000000
+      internalID: 1326743907102409931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-RearHipVolume-v62_19
+      rect:
+        serializedVersion: 2
+        x: 2242
+        y: 42
+        width: 200
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d761c64c13484fc0800000000000000
+      internalID: -3510482120810076202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      RightWalkSheet-Legs-RearHipVolume-v62_0: -5725958324584881682
+      RightWalkSheet-Legs-RearHipVolume-v62_1: 4117037521346468624
+      RightWalkSheet-Legs-RearHipVolume-v62_10: 2121630256555892636
+      RightWalkSheet-Legs-RearHipVolume-v62_11: -1086248264714852010
+      RightWalkSheet-Legs-RearHipVolume-v62_12: -4520078117619481981
+      RightWalkSheet-Legs-RearHipVolume-v62_13: -4321541088652938388
+      RightWalkSheet-Legs-RearHipVolume-v62_14: 2567728217265483490
+      RightWalkSheet-Legs-RearHipVolume-v62_15: 6461512893932477373
+      RightWalkSheet-Legs-RearHipVolume-v62_16: 6320810400192933396
+      RightWalkSheet-Legs-RearHipVolume-v62_17: 2896980924868416403
+      RightWalkSheet-Legs-RearHipVolume-v62_18: 1326743907102409931
+      RightWalkSheet-Legs-RearHipVolume-v62_19: -3510482120810076202
+      RightWalkSheet-Legs-RearHipVolume-v62_2: 8696715235109417093
+      RightWalkSheet-Legs-RearHipVolume-v62_3: -751097701264919168
+      RightWalkSheet-Legs-RearHipVolume-v62_4: 6227735232872334953
+      RightWalkSheet-Legs-RearHipVolume-v62_5: 3732078794298889993
+      RightWalkSheet-Legs-RearHipVolume-v62_6: -376465310961506701
+      RightWalkSheet-Legs-RearHipVolume-v62_7: 890406380297027972
+      RightWalkSheet-Legs-RearHipVolume-v62_8: 7554815895030378394
+      RightWalkSheet-Legs-RearHipVolume-v62_9: -4274190627821985506
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,650 @@
+fileFormatVersion: 2
+guid: a9f3dfacae0394a4ebb01bd6dbe06a8b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2341175345212480222
+    second: RightWalkSheet-Legs-FinalContour-v72_0
+  - first:
+      213: 922381418549908375
+    second: RightWalkSheet-Legs-FinalContour-v72_1
+  - first:
+      213: -7928326428706067170
+    second: RightWalkSheet-Legs-FinalContour-v72_2
+  - first:
+      213: -98695027321546003
+    second: RightWalkSheet-Legs-FinalContour-v72_3
+  - first:
+      213: -523454931771078502
+    second: RightWalkSheet-Legs-FinalContour-v72_4
+  - first:
+      213: 5406904678498186274
+    second: RightWalkSheet-Legs-FinalContour-v72_5
+  - first:
+      213: -4988404844982238316
+    second: RightWalkSheet-Legs-FinalContour-v72_6
+  - first:
+      213: 881542322460674780
+    second: RightWalkSheet-Legs-FinalContour-v72_7
+  - first:
+      213: 4968371851050466925
+    second: RightWalkSheet-Legs-FinalContour-v72_8
+  - first:
+      213: -510861738266544093
+    second: RightWalkSheet-Legs-FinalContour-v72_9
+  - first:
+      213: 7676021461245939332
+    second: RightWalkSheet-Legs-FinalContour-v72_10
+  - first:
+      213: 5421547922697845993
+    second: RightWalkSheet-Legs-FinalContour-v72_11
+  - first:
+      213: -3535351514449233546
+    second: RightWalkSheet-Legs-FinalContour-v72_12
+  - first:
+      213: -2583573286297013590
+    second: RightWalkSheet-Legs-FinalContour-v72_13
+  - first:
+      213: -2494448019362604179
+    second: RightWalkSheet-Legs-FinalContour-v72_14
+  - first:
+      213: -1865813970713474160
+    second: RightWalkSheet-Legs-FinalContour-v72_15
+  - first:
+      213: -6931266018033513148
+    second: RightWalkSheet-Legs-FinalContour-v72_16
+  - first:
+      213: 5977449050721568447
+    second: RightWalkSheet-Legs-FinalContour-v72_17
+  - first:
+      213: -4510281393198422808
+    second: RightWalkSheet-Legs-FinalContour-v72_18
+  - first:
+      213: -7890828392843066995
+    second: RightWalkSheet-Legs-FinalContour-v72_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 0
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-FinalContour-v72_0
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 1577
+        width: 211
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: edada4882968d7020800000000000000
+      internalID: 2341175345212480222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-FinalContour-v72_1
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 1579
+        width: 212
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79396106305fccc00800000000000000
+      internalID: 922381418549908375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-FinalContour-v72_2
+      rect:
+        serializedVersion: 2
+        x: 1193
+        y: 1578
+        width: 211
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1d22a18e1de8f190800000000000000
+      internalID: -7928326428706067170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-FinalContour-v72_3
+      rect:
+        serializedVersion: 2
+        x: 1709
+        y: 1578
+        width: 199
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dead663456d51aef0800000000000000
+      internalID: -98695027321546003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-FinalContour-v72_4
+      rect:
+        serializedVersion: 2
+        x: 2233
+        y: 1578
+        width: 179
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a98cbdf43805cb8f0800000000000000
+      internalID: -523454931771078502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-FinalContour-v72_5
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 1066
+        width: 154
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2243848782f290b40800000000000000
+      internalID: 5406904678498186274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-FinalContour-v72_6
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 1066
+        width: 134
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4930ff22930a5cab0800000000000000
+      internalID: -4988404844982238316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-FinalContour-v72_7
+      rect:
+        serializedVersion: 2
+        x: 1237
+        y: 1066
+        width: 144
+        height: 245
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cdacdb8521edb3c00800000000000000
+      internalID: 881542322460674780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-FinalContour-v72_8
+      rect:
+        serializedVersion: 2
+        x: 1747
+        y: 1066
+        width: 163
+        height: 245
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6eb9edffd333f440800000000000000
+      internalID: 4968371851050466925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-FinalContour-v72_9
+      rect:
+        serializedVersion: 2
+        x: 2251
+        y: 1066
+        width: 182
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 328b849a4fd09e8f0800000000000000
+      internalID: -510861738266544093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-FinalContour-v72_10
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 553
+        width: 195
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48ec6d589d4b68a60800000000000000
+      internalID: 7676021461245939332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-FinalContour-v72_11
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 555
+        width: 196
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ec79217c153d3b40800000000000000
+      internalID: 5421547922697845993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-FinalContour-v72_12
+      rect:
+        serializedVersion: 2
+        x: 1201
+        y: 554
+        width: 195
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6793d195788efeec0800000000000000
+      internalID: -3535351514449233546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-FinalContour-v72_13
+      rect:
+        serializedVersion: 2
+        x: 1717
+        y: 554
+        width: 183
+        height: 246
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa2f313d8cd452cd0800000000000000
+      internalID: -2583573286297013590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-FinalContour-v72_14
+      rect:
+        serializedVersion: 2
+        x: 2241
+        y: 554
+        width: 163
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6b17371eb0f16dd0800000000000000
+      internalID: -2494448019362604179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-FinalContour-v72_15
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 42
+        width: 138
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09b89a2441c4b16e0800000000000000
+      internalID: -1865813970713474160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-FinalContour-v72_16
+      rect:
+        serializedVersion: 2
+        x: 726
+        y: 42
+        width: 133
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44d406fa7423fcf90800000000000000
+      internalID: -6931266018033513148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-FinalContour-v72_17
+      rect:
+        serializedVersion: 2
+        x: 1235
+        y: 42
+        width: 154
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb64143ed3a24f250800000000000000
+      internalID: 5977449050721568447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-FinalContour-v72_18
+      rect:
+        serializedVersion: 2
+        x: 1739
+        y: 42
+        width: 179
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e4aa5928f24861c0800000000000000
+      internalID: -4510281393198422808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-FinalContour-v72_19
+      rect:
+        serializedVersion: 2
+        x: 2243
+        y: 42
+        width: 198
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d81c50552652e7290800000000000000
+      internalID: -7890828392843066995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      RightWalkSheet-Legs-FinalContour-v72_0: 2341175345212480222
+      RightWalkSheet-Legs-FinalContour-v72_1: 922381418549908375
+      RightWalkSheet-Legs-FinalContour-v72_10: 7676021461245939332
+      RightWalkSheet-Legs-FinalContour-v72_11: 5421547922697845993
+      RightWalkSheet-Legs-FinalContour-v72_12: -3535351514449233546
+      RightWalkSheet-Legs-FinalContour-v72_13: -2583573286297013590
+      RightWalkSheet-Legs-FinalContour-v72_14: -2494448019362604179
+      RightWalkSheet-Legs-FinalContour-v72_15: -1865813970713474160
+      RightWalkSheet-Legs-FinalContour-v72_16: -6931266018033513148
+      RightWalkSheet-Legs-FinalContour-v72_17: 5977449050721568447
+      RightWalkSheet-Legs-FinalContour-v72_18: -4510281393198422808
+      RightWalkSheet-Legs-FinalContour-v72_19: -7890828392843066995
+      RightWalkSheet-Legs-FinalContour-v72_2: -7928326428706067170
+      RightWalkSheet-Legs-FinalContour-v72_3: -98695027321546003
+      RightWalkSheet-Legs-FinalContour-v72_4: -523454931771078502
+      RightWalkSheet-Legs-FinalContour-v72_5: 5406904678498186274
+      RightWalkSheet-Legs-FinalContour-v72_6: -4988404844982238316
+      RightWalkSheet-Legs-FinalContour-v72_7: 881542322460674780
+      RightWalkSheet-Legs-FinalContour-v72_8: 4968371851050466925
+      RightWalkSheet-Legs-FinalContour-v72_9: -510861738266544093
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

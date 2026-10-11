@@ -1,0 +1,416 @@
+fileFormatVersion: 2
+guid: f16d3950c0a403040acf4d485489bdcf
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2745080947926778404
+    second: Weapon-Hands-Repair-Reference-v44_0
+  - first:
+      213: -5986720910032918770
+    second: Weapon-Hands-Repair-Reference-v44_1
+  - first:
+      213: 2894090601332111054
+    second: Weapon-Hands-Repair-Reference-v44_2
+  - first:
+      213: 3915466490370526674
+    second: Weapon-Hands-Repair-Reference-v44_3
+  - first:
+      213: -6428925939774187673
+    second: Weapon-Hands-Repair-Reference-v44_4
+  - first:
+      213: -2362970612364283972
+    second: Weapon-Hands-Repair-Reference-v44_5
+  - first:
+      213: -4775460963179302811
+    second: Weapon-Hands-Repair-Reference-v44_6
+  - first:
+      213: -1920115130419546831
+    second: Weapon-Hands-Repair-Reference-v44_7
+  - first:
+      213: 7742766399201189213
+    second: Weapon-Hands-Repair-Reference-v44_8
+  - first:
+      213: -4052380493546335660
+    second: Weapon-Hands-Repair-Reference-v44_9
+  - first:
+      213: 2992117626147524558
+    second: Weapon-Hands-Repair-Reference-v44_10
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Weapon-Hands-Repair-Reference-v44_0
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 31
+        width: 1213
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cddb1230c6387e9d0800000000000000
+      internalID: -2745080947926778404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon-Hands-Repair-Reference-v44_1
+      rect:
+        serializedVersion: 2
+        x: 637
+        y: 915
+        width: 218
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e07a5142d05eaeca0800000000000000
+      internalID: -5986720910032918770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon-Hands-Repair-Reference-v44_2
+      rect:
+        serializedVersion: 2
+        x: 858
+        y: 915
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec672308110e92820800000000000000
+      internalID: 2894090601332111054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon-Hands-Repair-Reference-v44_3
+      rect:
+        serializedVersion: 2
+        x: 892
+        y: 917
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2dd0b782708865630800000000000000
+      internalID: 3915466490370526674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon-Hands-Repair-Reference-v44_4
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 919
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76717707bedd7c6a0800000000000000
+      internalID: -6428925939774187673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon-Hands-Repair-Reference-v44_5
+      rect:
+        serializedVersion: 2
+        x: 924
+        y: 915
+        width: 237
+        height: 221
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbfe6536fba053fd0800000000000000
+      internalID: -2362970612364283972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon-Hands-Repair-Reference-v44_6
+      rect:
+        serializedVersion: 2
+        x: 930
+        y: 922
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 560f3f23e872abdb0800000000000000
+      internalID: -4775460963179302811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon-Hands-Repair-Reference-v44_7
+      rect:
+        serializedVersion: 2
+        x: 940
+        y: 918
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1357d7b46716a55e0800000000000000
+      internalID: -1920115130419546831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon-Hands-Repair-Reference-v44_8
+      rect:
+        serializedVersion: 2
+        x: 951
+        y: 918
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5d97336405d37b60800000000000000
+      internalID: 7742766399201189213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon-Hands-Repair-Reference-v44_9
+      rect:
+        serializedVersion: 2
+        x: 989
+        y: 913
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 452d27b596d03c7c0800000000000000
+      internalID: -4052380493546335660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon-Hands-Repair-Reference-v44_10
+      rect:
+        serializedVersion: 2
+        x: 989
+        y: 869
+        width: 7
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecf45b8c023268920800000000000000
+      internalID: 2992117626147524558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Weapon-Hands-Repair-Reference-v44_0: -2745080947926778404
+      Weapon-Hands-Repair-Reference-v44_1: -5986720910032918770
+      Weapon-Hands-Repair-Reference-v44_10: 2992117626147524558
+      Weapon-Hands-Repair-Reference-v44_2: 2894090601332111054
+      Weapon-Hands-Repair-Reference-v44_3: 3915466490370526674
+      Weapon-Hands-Repair-Reference-v44_4: -6428925939774187673
+      Weapon-Hands-Repair-Reference-v44_5: -2362970612364283972
+      Weapon-Hands-Repair-Reference-v44_6: -4775460963179302811
+      Weapon-Hands-Repair-Reference-v44_7: -1920115130419546831
+      Weapon-Hands-Repair-Reference-v44_8: 7742766399201189213
+      Weapon-Hands-Repair-Reference-v44_9: -4052380493546335660
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

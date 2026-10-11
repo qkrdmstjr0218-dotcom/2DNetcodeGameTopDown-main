@@ -1,0 +1,650 @@
+fileFormatVersion: 2
+guid: 003752f48d2d54f438106e2604c285f2
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7130167386040547351
+    second: RightWalkSheet-Legs-ThighEdges-v57_0
+  - first:
+      213: -1776463258799373625
+    second: RightWalkSheet-Legs-ThighEdges-v57_1
+  - first:
+      213: 8930703811883267561
+    second: RightWalkSheet-Legs-ThighEdges-v57_2
+  - first:
+      213: -6971288855018065506
+    second: RightWalkSheet-Legs-ThighEdges-v57_3
+  - first:
+      213: -5913123462423699220
+    second: RightWalkSheet-Legs-ThighEdges-v57_4
+  - first:
+      213: 1892703271941253575
+    second: RightWalkSheet-Legs-ThighEdges-v57_5
+  - first:
+      213: 6392868323193335899
+    second: RightWalkSheet-Legs-ThighEdges-v57_6
+  - first:
+      213: -8260840856815090130
+    second: RightWalkSheet-Legs-ThighEdges-v57_7
+  - first:
+      213: -7409838318055830303
+    second: RightWalkSheet-Legs-ThighEdges-v57_8
+  - first:
+      213: 8899428277361480077
+    second: RightWalkSheet-Legs-ThighEdges-v57_9
+  - first:
+      213: -8155596536802154549
+    second: RightWalkSheet-Legs-ThighEdges-v57_10
+  - first:
+      213: 6977694552394660165
+    second: RightWalkSheet-Legs-ThighEdges-v57_11
+  - first:
+      213: -4776538854026352960
+    second: RightWalkSheet-Legs-ThighEdges-v57_12
+  - first:
+      213: -2370337713845063991
+    second: RightWalkSheet-Legs-ThighEdges-v57_13
+  - first:
+      213: -2130968022876037376
+    second: RightWalkSheet-Legs-ThighEdges-v57_14
+  - first:
+      213: -7762509592890081063
+    second: RightWalkSheet-Legs-ThighEdges-v57_15
+  - first:
+      213: 8408971416433947159
+    second: RightWalkSheet-Legs-ThighEdges-v57_16
+  - first:
+      213: 8989039150064496448
+    second: RightWalkSheet-Legs-ThighEdges-v57_17
+  - first:
+      213: -2088558324944598855
+    second: RightWalkSheet-Legs-ThighEdges-v57_18
+  - first:
+      213: 7787048850240694056
+    second: RightWalkSheet-Legs-ThighEdges-v57_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 0
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-ThighEdges-v57_0
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 1576
+        width: 213
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e74af52a8e8c0d90800000000000000
+      internalID: -7130167386040547351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-ThighEdges-v57_1
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 1578
+        width: 213
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c20bb6041cb857e0800000000000000
+      internalID: -1776463258799373625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-ThighEdges-v57_2
+      rect:
+        serializedVersion: 2
+        x: 1192
+        y: 1577
+        width: 213
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e5778dcccb30fb70800000000000000
+      internalID: 8930703811883267561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-ThighEdges-v57_3
+      rect:
+        serializedVersion: 2
+        x: 1709
+        y: 1578
+        width: 199
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e91320ac8b1014f90800000000000000
+      internalID: -6971288855018065506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-ThighEdges-v57_4
+      rect:
+        serializedVersion: 2
+        x: 2232
+        y: 1578
+        width: 180
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce0253d3a8d50fda0800000000000000
+      internalID: -5913123462423699220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-ThighEdges-v57_5
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 1066
+        width: 155
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c9274d099b344a10800000000000000
+      internalID: 1892703271941253575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-ThighEdges-v57_6
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 1066
+        width: 136
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5039cb7ed708b850800000000000000
+      internalID: 6392868323193335899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-ThighEdges-v57_7
+      rect:
+        serializedVersion: 2
+        x: 1234
+        y: 1066
+        width: 149
+        height: 245
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e26c08f22099b5d80800000000000000
+      internalID: -8260840856815090130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-ThighEdges-v57_8
+      rect:
+        serializedVersion: 2
+        x: 1746
+        y: 1066
+        width: 164
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ec44390f47fa2990800000000000000
+      internalID: -7409838318055830303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-ThighEdges-v57_9
+      rect:
+        serializedVersion: 2
+        x: 2250
+        y: 1066
+        width: 184
+        height: 246
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d819238fdde118b70800000000000000
+      internalID: 8899428277361480077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-ThighEdges-v57_10
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 552
+        width: 197
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc76084f82081de80800000000000000
+      internalID: -8155596536802154549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-ThighEdges-v57_11
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 554
+        width: 197
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54979aad930c5d060800000000000000
+      internalID: 6977694552394660165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-ThighEdges-v57_12
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 553
+        width: 197
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c668ed283356bdb0800000000000000
+      internalID: -4776538854026352960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-ThighEdges-v57_13
+      rect:
+        serializedVersion: 2
+        x: 1717
+        y: 554
+        width: 183
+        height: 246
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cead88686eda1fd0800000000000000
+      internalID: -2370337713845063991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-ThighEdges-v57_14
+      rect:
+        serializedVersion: 2
+        x: 2240
+        y: 554
+        width: 164
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00fd1c0afd74d62e0800000000000000
+      internalID: -2130968022876037376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-ThighEdges-v57_15
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 42
+        width: 139
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d0893e17a6064490800000000000000
+      internalID: -7762509592890081063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-ThighEdges-v57_16
+      rect:
+        serializedVersion: 2
+        x: 729
+        y: 42
+        width: 130
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71275fa53faa2b470800000000000000
+      internalID: 8408971416433947159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-ThighEdges-v57_17
+      rect:
+        serializedVersion: 2
+        x: 1235
+        y: 42
+        width: 156
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04f6ca32b7b7fbc70800000000000000
+      internalID: 8989039150064496448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-ThighEdges-v57_18
+      rect:
+        serializedVersion: 2
+        x: 1739
+        y: 42
+        width: 179
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b80ef4e443f303e0800000000000000
+      internalID: -2088558324944598855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-ThighEdges-v57_19
+      rect:
+        serializedVersion: 2
+        x: 2242
+        y: 42
+        width: 200
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 827e537fba7211c60800000000000000
+      internalID: 7787048850240694056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      RightWalkSheet-Legs-ThighEdges-v57_0: -7130167386040547351
+      RightWalkSheet-Legs-ThighEdges-v57_1: -1776463258799373625
+      RightWalkSheet-Legs-ThighEdges-v57_10: -8155596536802154549
+      RightWalkSheet-Legs-ThighEdges-v57_11: 6977694552394660165
+      RightWalkSheet-Legs-ThighEdges-v57_12: -4776538854026352960
+      RightWalkSheet-Legs-ThighEdges-v57_13: -2370337713845063991
+      RightWalkSheet-Legs-ThighEdges-v57_14: -2130968022876037376
+      RightWalkSheet-Legs-ThighEdges-v57_15: -7762509592890081063
+      RightWalkSheet-Legs-ThighEdges-v57_16: 8408971416433947159
+      RightWalkSheet-Legs-ThighEdges-v57_17: 8989039150064496448
+      RightWalkSheet-Legs-ThighEdges-v57_18: -2088558324944598855
+      RightWalkSheet-Legs-ThighEdges-v57_19: 7787048850240694056
+      RightWalkSheet-Legs-ThighEdges-v57_2: 8930703811883267561
+      RightWalkSheet-Legs-ThighEdges-v57_3: -6971288855018065506
+      RightWalkSheet-Legs-ThighEdges-v57_4: -5913123462423699220
+      RightWalkSheet-Legs-ThighEdges-v57_5: 1892703271941253575
+      RightWalkSheet-Legs-ThighEdges-v57_6: 6392868323193335899
+      RightWalkSheet-Legs-ThighEdges-v57_7: -8260840856815090130
+      RightWalkSheet-Legs-ThighEdges-v57_8: -7409838318055830303
+      RightWalkSheet-Legs-ThighEdges-v57_9: 8899428277361480077
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

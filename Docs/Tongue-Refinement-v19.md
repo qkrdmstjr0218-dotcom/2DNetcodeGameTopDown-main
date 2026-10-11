@@ -1,0 +1,3 @@
+# v19 원화 교체와 설포
+Built-in image_gen edit of Armor-Repair-Reference-v18.png. Final artwork: Assets/RightWalkPrototype/Art/RightCharacter-Refined-v19.png. Entire source image replaces old source in bake_walk_v19.py. Existing 20-frame gait coordinates/timing preserved.
+Prompt: Preserve exact character framing, pose, anatomy and all other features. Refine two white boot tongues into short soft padded rectangular tongues with subtly rounded corners, curved around instep, lower end tucked beneath existing fastening/strap and white vamp, pale lavender shading, narrow dark outline and contact shadow. No floating flat plate or added armor. Transparent background. Clean red hair-edge artifacts without changing silhouette (some residual edge artifacts remain in output).

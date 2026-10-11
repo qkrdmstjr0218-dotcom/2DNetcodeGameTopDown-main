@@ -1,0 +1,1 @@
+v23: reviewed all 20 frames for pelvis/thigh and calf/boot overlaps. Retained pelvis. Moved actual ankle target +8px instead of offsetting boot alone; recomputed offline knee/calf orientations. Boot positions and gait timing unchanged from v22. Fixed source segment sizes. v22 retained. Unity compilation: no errors. Package updated.

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fbd6fddb7a298e4481c600eda52ae60, type: 3}
   m_Name: AiReserializeSettings
   m_EditorClassIdentifier: 
-  runOnEditorLoad: 1
+  runOnEditorLoad: 0
   runOncePerSession: 1
   targetFolderPaths:
   - Assets

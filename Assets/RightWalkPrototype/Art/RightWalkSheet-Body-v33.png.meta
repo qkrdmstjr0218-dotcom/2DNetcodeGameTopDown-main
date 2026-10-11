@@ -1,0 +1,650 @@
+fileFormatVersion: 2
+guid: 14ee12224ff2cad4ba7d0bc081b0aba9
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6163620851569067396
+    second: RightWalkSheet-Body-v33_0
+  - first:
+      213: -4135440635795205749
+    second: RightWalkSheet-Body-v33_1
+  - first:
+      213: 690251971759957100
+    second: RightWalkSheet-Body-v33_2
+  - first:
+      213: -6077080265049764015
+    second: RightWalkSheet-Body-v33_3
+  - first:
+      213: 2912815876477279613
+    second: RightWalkSheet-Body-v33_4
+  - first:
+      213: -8517058363273939454
+    second: RightWalkSheet-Body-v33_5
+  - first:
+      213: -3706875042717857477
+    second: RightWalkSheet-Body-v33_6
+  - first:
+      213: -833533543128424549
+    second: RightWalkSheet-Body-v33_7
+  - first:
+      213: 301402171122122135
+    second: RightWalkSheet-Body-v33_8
+  - first:
+      213: 3547876053245387806
+    second: RightWalkSheet-Body-v33_9
+  - first:
+      213: -4932368154951229330
+    second: RightWalkSheet-Body-v33_10
+  - first:
+      213: 8152487711497708352
+    second: RightWalkSheet-Body-v33_11
+  - first:
+      213: -7633855097920381317
+    second: RightWalkSheet-Body-v33_12
+  - first:
+      213: -5280333626630708970
+    second: RightWalkSheet-Body-v33_13
+  - first:
+      213: 3356585267562971778
+    second: RightWalkSheet-Body-v33_14
+  - first:
+      213: -6215854100422852649
+    second: RightWalkSheet-Body-v33_15
+  - first:
+      213: 2361083655825960301
+    second: RightWalkSheet-Body-v33_16
+  - first:
+      213: -3976566682108118274
+    second: RightWalkSheet-Body-v33_17
+  - first:
+      213: -8975923750181566283
+    second: RightWalkSheet-Body-v33_18
+  - first:
+      213: 5596968445442855764
+    second: RightWalkSheet-Body-v33_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 0
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: RightWalkSheet-Body-v33_0
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 1575
+        width: 237
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7af804ed7b667aa0800000000000000
+      internalID: -6163620851569067396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Body-v33_1
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 1576
+        width: 229
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8116b9f6a6fb96c0800000000000000
+      internalID: -4135440635795205749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Body-v33_2
+      rect:
+        serializedVersion: 2
+        x: 1190
+        y: 1576
+        width: 220
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c64e34ed284449900800000000000000
+      internalID: 690251971759957100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Body-v33_3
+      rect:
+        serializedVersion: 2
+        x: 1702
+        y: 1575
+        width: 212
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15f0c2a52bfd9aba0800000000000000
+      internalID: -6077080265049764015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Body-v33_4
+      rect:
+        serializedVersion: 2
+        x: 2214
+        y: 1575
+        width: 203
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7ddb8d5b966c6820800000000000000
+      internalID: 2912815876477279613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Body-v33_5
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 1063
+        width: 195
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20679cd3b845dc980800000000000000
+      internalID: -8517058363273939454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Body-v33_6
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 1063
+        width: 187
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b398a0cd9c88e8cc0800000000000000
+      internalID: -3706875042717857477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Body-v33_7
+      rect:
+        serializedVersion: 2
+        x: 1190
+        y: 1063
+        width: 205
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9f1575a8a1be64f0800000000000000
+      internalID: -833533543128424549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Body-v33_8
+      rect:
+        serializedVersion: 2
+        x: 1702
+        y: 1063
+        width: 221
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79df3408dabce2400800000000000000
+      internalID: 301402171122122135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Body-v33_9
+      rect:
+        serializedVersion: 2
+        x: 2214
+        y: 1063
+        width: 233
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e146ec419769c3130800000000000000
+      internalID: 3547876053245387806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Body-v33_10
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 551
+        width: 237
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e60eeaebb45bc8bb0800000000000000
+      internalID: -4932368154951229330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Body-v33_11
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 552
+        width: 229
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 043ee8f3164732170800000000000000
+      internalID: 8152487711497708352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Body-v33_12
+      rect:
+        serializedVersion: 2
+        x: 1190
+        y: 552
+        width: 220
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7e96adfb391f0690800000000000000
+      internalID: -7633855097920381317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Body-v33_13
+      rect:
+        serializedVersion: 2
+        x: 1702
+        y: 551
+        width: 212
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61160210b8c78b6b0800000000000000
+      internalID: -5280333626630708970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Body-v33_14
+      rect:
+        serializedVersion: 2
+        x: 2214
+        y: 551
+        width: 203
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2828663548cf49e20800000000000000
+      internalID: 3356585267562971778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Body-v33_15
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 39
+        width: 195
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7dff3a0f0a9dcb9a0800000000000000
+      internalID: -6215854100422852649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Body-v33_16
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 39
+        width: 187
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6dac7e431144c020800000000000000
+      internalID: 2361083655825960301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Body-v33_17
+      rect:
+        serializedVersion: 2
+        x: 1190
+        y: 39
+        width: 205
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efaba4fdba560d8c0800000000000000
+      internalID: -3976566682108118274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Body-v33_18
+      rect:
+        serializedVersion: 2
+        x: 1702
+        y: 39
+        width: 221
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b88f6bd7ec1f6380800000000000000
+      internalID: -8975923750181566283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Body-v33_19
+      rect:
+        serializedVersion: 2
+        x: 2214
+        y: 39
+        width: 233
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45311b9a52d6cad40800000000000000
+      internalID: 5596968445442855764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      RightWalkSheet-Body-v33_0: -6163620851569067396
+      RightWalkSheet-Body-v33_1: -4135440635795205749
+      RightWalkSheet-Body-v33_10: -4932368154951229330
+      RightWalkSheet-Body-v33_11: 8152487711497708352
+      RightWalkSheet-Body-v33_12: -7633855097920381317
+      RightWalkSheet-Body-v33_13: -5280333626630708970
+      RightWalkSheet-Body-v33_14: 3356585267562971778
+      RightWalkSheet-Body-v33_15: -6215854100422852649
+      RightWalkSheet-Body-v33_16: 2361083655825960301
+      RightWalkSheet-Body-v33_17: -3976566682108118274
+      RightWalkSheet-Body-v33_18: -8975923750181566283
+      RightWalkSheet-Body-v33_19: 5596968445442855764
+      RightWalkSheet-Body-v33_2: 690251971759957100
+      RightWalkSheet-Body-v33_3: -6077080265049764015
+      RightWalkSheet-Body-v33_4: 2912815876477279613
+      RightWalkSheet-Body-v33_5: -8517058363273939454
+      RightWalkSheet-Body-v33_6: -3706875042717857477
+      RightWalkSheet-Body-v33_7: -833533543128424549
+      RightWalkSheet-Body-v33_8: 301402171122122135
+      RightWalkSheet-Body-v33_9: 3547876053245387806
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

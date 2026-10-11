@@ -1,0 +1,650 @@
+fileFormatVersion: 2
+guid: 5a8eff12b9ce6c2409dab91d0871761f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3010030549290339239
+    second: RightWalkSheet-Legs-RightThighIndent-v65_0
+  - first:
+      213: 5584880623745515945
+    second: RightWalkSheet-Legs-RightThighIndent-v65_1
+  - first:
+      213: -6732338109625267052
+    second: RightWalkSheet-Legs-RightThighIndent-v65_2
+  - first:
+      213: -35647311059356564
+    second: RightWalkSheet-Legs-RightThighIndent-v65_3
+  - first:
+      213: 2366438828068916655
+    second: RightWalkSheet-Legs-RightThighIndent-v65_4
+  - first:
+      213: -4044448839034656452
+    second: RightWalkSheet-Legs-RightThighIndent-v65_5
+  - first:
+      213: -9146134321436185085
+    second: RightWalkSheet-Legs-RightThighIndent-v65_6
+  - first:
+      213: -8623399987584663963
+    second: RightWalkSheet-Legs-RightThighIndent-v65_7
+  - first:
+      213: 3010838624058632847
+    second: RightWalkSheet-Legs-RightThighIndent-v65_8
+  - first:
+      213: -8820365105677216684
+    second: RightWalkSheet-Legs-RightThighIndent-v65_9
+  - first:
+      213: -6781674453394828078
+    second: RightWalkSheet-Legs-RightThighIndent-v65_10
+  - first:
+      213: -8398196934731516368
+    second: RightWalkSheet-Legs-RightThighIndent-v65_11
+  - first:
+      213: -4934956051807156306
+    second: RightWalkSheet-Legs-RightThighIndent-v65_12
+  - first:
+      213: -1333663712068742720
+    second: RightWalkSheet-Legs-RightThighIndent-v65_13
+  - first:
+      213: 4257621883872168895
+    second: RightWalkSheet-Legs-RightThighIndent-v65_14
+  - first:
+      213: 5033942092504793287
+    second: RightWalkSheet-Legs-RightThighIndent-v65_15
+  - first:
+      213: 723168893793306347
+    second: RightWalkSheet-Legs-RightThighIndent-v65_16
+  - first:
+      213: 2819266639786949561
+    second: RightWalkSheet-Legs-RightThighIndent-v65_17
+  - first:
+      213: -2758837032389149247
+    second: RightWalkSheet-Legs-RightThighIndent-v65_18
+  - first:
+      213: -6574870569872128272
+    second: RightWalkSheet-Legs-RightThighIndent-v65_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 0
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-RightThighIndent-v65_0
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 1576
+        width: 213
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ab468536d6c5c920800000000000000
+      internalID: 3010030549290339239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-RightThighIndent-v65_1
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 1578
+        width: 213
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a1405b565b718d40800000000000000
+      internalID: 5584880623745515945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-RightThighIndent-v65_2
+      rect:
+        serializedVersion: 2
+        x: 1192
+        y: 1577
+        width: 213
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49c06f3a82ee192a0800000000000000
+      internalID: -6732338109625267052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-RightThighIndent-v65_3
+      rect:
+        serializedVersion: 2
+        x: 1709
+        y: 1578
+        width: 199
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c64fb1f95fa518ff0800000000000000
+      internalID: -35647311059356564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-RightThighIndent-v65_4
+      rect:
+        serializedVersion: 2
+        x: 2232
+        y: 1578
+        width: 180
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fad4db1839747d020800000000000000
+      internalID: 2366438828068916655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-RightThighIndent-v65_5
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 1066
+        width: 155
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c392915953b3fd7c0800000000000000
+      internalID: -4044448839034656452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-RightThighIndent-v65_6
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 1066
+        width: 136
+        height: 245
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30ea9cefa47621180800000000000000
+      internalID: -9146134321436185085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-RightThighIndent-v65_7
+      rect:
+        serializedVersion: 2
+        x: 1234
+        y: 1066
+        width: 149
+        height: 246
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56e78e76667835880800000000000000
+      internalID: -8623399987584663963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-RightThighIndent-v65_8
+      rect:
+        serializedVersion: 2
+        x: 1746
+        y: 1066
+        width: 164
+        height: 246
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8a6a07c6c5a8c920800000000000000
+      internalID: 3010838624058632847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-RightThighIndent-v65_9
+      rect:
+        serializedVersion: 2
+        x: 2250
+        y: 1066
+        width: 184
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 454dbde2ba4c79580800000000000000
+      internalID: -8820365105677216684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-RightThighIndent-v65_10
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 552
+        width: 197
+        height: 252
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d45f07f307a2e1a0800000000000000
+      internalID: -6781674453394828078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-RightThighIndent-v65_11
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 554
+        width: 197
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 036bd87226c937b80800000000000000
+      internalID: -8398196934731516368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-RightThighIndent-v65_12
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 553
+        width: 197
+        height: 252
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea7cedd0e93838bb0800000000000000
+      internalID: -4934956051807156306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-RightThighIndent-v65_13
+      rect:
+        serializedVersion: 2
+        x: 1717
+        y: 554
+        width: 183
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c150508befdd7de0800000000000000
+      internalID: -1333663712068742720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-RightThighIndent-v65_14
+      rect:
+        serializedVersion: 2
+        x: 2240
+        y: 554
+        width: 164
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbb4128ab8c161b30800000000000000
+      internalID: 4257621883872168895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-RightThighIndent-v65_15
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 42
+        width: 139
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c082a389a72cd540800000000000000
+      internalID: 5033942092504793287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-RightThighIndent-v65_16
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 42
+        width: 136
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be689230746390a00800000000000000
+      internalID: 723168893793306347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-RightThighIndent-v65_17
+      rect:
+        serializedVersion: 2
+        x: 1235
+        y: 42
+        width: 156
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bb3c9f521c002720800000000000000
+      internalID: 2819266639786949561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-RightThighIndent-v65_18
+      rect:
+        serializedVersion: 2
+        x: 1739
+        y: 42
+        width: 179
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1cd70430654a6b9d0800000000000000
+      internalID: -2758837032389149247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RightWalkSheet-Legs-RightThighIndent-v65_19
+      rect:
+        serializedVersion: 2
+        x: 2242
+        y: 42
+        width: 200
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f60a964d0e51c4a0800000000000000
+      internalID: -6574870569872128272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      RightWalkSheet-Legs-RightThighIndent-v65_0: 3010030549290339239
+      RightWalkSheet-Legs-RightThighIndent-v65_1: 5584880623745515945
+      RightWalkSheet-Legs-RightThighIndent-v65_10: -6781674453394828078
+      RightWalkSheet-Legs-RightThighIndent-v65_11: -8398196934731516368
+      RightWalkSheet-Legs-RightThighIndent-v65_12: -4934956051807156306
+      RightWalkSheet-Legs-RightThighIndent-v65_13: -1333663712068742720
+      RightWalkSheet-Legs-RightThighIndent-v65_14: 4257621883872168895
+      RightWalkSheet-Legs-RightThighIndent-v65_15: 5033942092504793287
+      RightWalkSheet-Legs-RightThighIndent-v65_16: 723168893793306347
+      RightWalkSheet-Legs-RightThighIndent-v65_17: 2819266639786949561
+      RightWalkSheet-Legs-RightThighIndent-v65_18: -2758837032389149247
+      RightWalkSheet-Legs-RightThighIndent-v65_19: -6574870569872128272
+      RightWalkSheet-Legs-RightThighIndent-v65_2: -6732338109625267052
+      RightWalkSheet-Legs-RightThighIndent-v65_3: -35647311059356564
+      RightWalkSheet-Legs-RightThighIndent-v65_4: 2366438828068916655
+      RightWalkSheet-Legs-RightThighIndent-v65_5: -4044448839034656452
+      RightWalkSheet-Legs-RightThighIndent-v65_6: -9146134321436185085
+      RightWalkSheet-Legs-RightThighIndent-v65_7: -8623399987584663963
+      RightWalkSheet-Legs-RightThighIndent-v65_8: 3010838624058632847
+      RightWalkSheet-Legs-RightThighIndent-v65_9: -8820365105677216684
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

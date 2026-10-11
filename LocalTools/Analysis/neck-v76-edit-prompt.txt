@@ -1,0 +1,1 @@
+Built-in image_gen edit: remove upper-left dark neck skin stripe and stepped shading; preserve silhouette, position, alpha and peach skin palette. Applied generated RGB to original neck alpha; head/neck rig unchanged.

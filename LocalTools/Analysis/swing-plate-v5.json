@@ -1,0 +1,100 @@
+{
+  "canonical_size": [
+    59,
+    57
+  ],
+  "frames": [
+    {
+      "frame": 1,
+      "plate_center": [
+        269,
+        275
+      ],
+      "rotation": 0
+    },
+    {
+      "frame": 2,
+      "plate_center": [
+        272,
+        281
+      ],
+      "rotation": -27
+    },
+    {
+      "frame": 3,
+      "plate_center": [
+        252,
+        286
+      ],
+      "rotation": -55
+    },
+    {
+      "frame": 4,
+      "plate_center": [
+        231,
+        284
+      ],
+      "rotation": -79
+    },
+    {
+      "frame": 5,
+      "plate_center": [
+        231,
+        284
+      ],
+      "rotation": -79
+    },
+    {
+      "frame": 6,
+      "plate_center": [
+        241,
+        286
+      ],
+      "rotation": -45
+    },
+    {
+      "frame": 7,
+      "plate_center": [
+        249,
+        283
+      ],
+      "rotation": -49
+    },
+    {
+      "frame": 8,
+      "plate_center": [
+        264,
+        278
+      ],
+      "rotation": -19
+    },
+    {
+      "frame": 9,
+      "plate_center": [
+        275,
+        273
+      ],
+      "rotation": -3
+    },
+    {
+      "frame": 10,
+      "plate_center": [
+        278,
+        273
+      ],
+      "rotation": 0
+    }
+  ],
+  "durations": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    0.3333333333333333,
+    0.3333333333333333,
+    0.3333333333333333,
+    1,
+    1
+  ]
+}
