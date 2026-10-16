@@ -29,6 +29,14 @@ namespace RightWalkPrototype
         private float settleStart, settleDelta, settleElapsed;
         public float CyclePhase => phase;
         public bool IsSettling => settling;
+        public bool HoldCycle { get; set; }
+        public void ResumeFromPlantedPose(int index)
+        {
+            phase = PlantedPhase(index);
+            settling = false;
+            HoldCycle = false;
+            ShowFrame(index);
+        }
 
         private void Awake()
         {
@@ -88,6 +96,7 @@ namespace RightWalkPrototype
 
         private void AdvancePose(Vector2 displacement, float deltaTime)
         {
+            if (HoldCycle) return;
             float distance = displacement.magnitude;
             // Preview animates in place. Real movement advances by actual distance travelled.
             if (Velocity.sqrMagnitude > .00000001f || autoPreview)

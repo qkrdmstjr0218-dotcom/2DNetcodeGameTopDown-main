@@ -1,0 +1,562 @@
+[
+  {
+    "side": "far",
+    "phase": 0.5,
+    "bottomY": 443,
+    "rotation": 0.8899999999999997,
+    "cuffExposedPixels": 30
+  },
+  {
+    "side": "near",
+    "phase": 0.0,
+    "bottomY": 458,
+    "rotation": 0.0,
+    "cuffExposedPixels": 0
+  },
+  {
+    "side": "far",
+    "phase": 0.525,
+    "bottomY": 442,
+    "rotation": 1.126993713378906,
+    "cuffExposedPixels": 9
+  },
+  {
+    "side": "near",
+    "phase": 0.025,
+    "bottomY": 460,
+    "rotation": 0.0,
+    "cuffExposedPixels": 1
+  },
+  {
+    "side": "far",
+    "phase": 0.55,
+    "bottomY": 441,
+    "rotation": 1.3040039062500002,
+    "cuffExposedPixels": 0
+  },
+  {
+    "side": "near",
+    "phase": 0.05,
+    "bottomY": 462,
+    "rotation": 0.0,
+    "cuffExposedPixels": 2
+  },
+  {
+    "side": "far",
+    "phase": 0.575,
+    "bottomY": 437,
+    "rotation": 1.412479553222656,
+    "cuffExposedPixels": 1
+  },
+  {
+    "side": "near",
+    "phase": 0.075,
+    "bottomY": 463,
+    "rotation": 0.0,
+    "cuffExposedPixels": 0
+  },
+  {
+    "side": "far",
+    "phase": 0.6,
+    "bottomY": 434,
+    "rotation": 1.45,
+    "cuffExposedPixels": 0
+  },
+  {
+    "side": "near",
+    "phase": 0.1,
+    "bottomY": 465,
+    "rotation": 0.0,
+    "cuffExposedPixels": 1
+  },
+  {
+    "side": "far",
+    "phase": 0.625,
+    "bottomY": 435,
+    "rotation": 1.45,
+    "cuffExposedPixels": 0
+  },
+  {
+    "side": "near",
+    "phase": 0.125,
+    "bottomY": 466,
+    "rotation": 0.0,
+    "cuffExposedPixels": 1
+  },
+  {
+    "side": "far",
+    "phase": 0.65,
+    "bottomY": 435,
+    "rotation": 1.45,
+    "cuffExposedPixels": 1
+  },
+  {
+    "side": "near",
+    "phase": 0.15,
+    "bottomY": 466,
+    "rotation": 0.0,
+    "cuffExposedPixels": 0
+  },
+  {
+    "side": "far",
+    "phase": 0.675,
+    "bottomY": 434,
+    "rotation": 1.45,
+    "cuffExposedPixels": 0
+  },
+  {
+    "side": "near",
+    "phase": 0.175,
+    "bottomY": 468,
+    "rotation": 0.0,
+    "cuffExposedPixels": 0
+  },
+  {
+    "side": "far",
+    "phase": 0.7,
+    "bottomY": 433,
+    "rotation": 1.45,
+    "cuffExposedPixels": 1
+  },
+  {
+    "side": "near",
+    "phase": 0.2,
+    "bottomY": 467,
+    "rotation": 0.0,
+    "cuffExposedPixels": 0
+  },
+  {
+    "side": "far",
+    "phase": 0.725,
+    "bottomY": 433,
+    "rotation": 1.45,
+    "cuffExposedPixels": 1
+  },
+  {
+    "side": "near",
+    "phase": 0.225,
+    "bottomY": 468,
+    "rotation": 0.0,
+    "cuffExposedPixels": 0
+  },
+  {
+    "side": "far",
+    "phase": 0.75,
+    "bottomY": 432,
+    "rotation": 1.45,
+    "cuffExposedPixels": 3
+  },
+  {
+    "side": "near",
+    "phase": 0.25,
+    "bottomY": 468,
+    "rotation": 0.0,
+    "cuffExposedPixels": 0
+  },
+  {
+    "side": "far",
+    "phase": 0.775,
+    "bottomY": 434,
+    "rotation": 1.422984375,
+    "cuffExposedPixels": 7
+  },
+  {
+    "side": "near",
+    "phase": 0.275,
+    "bottomY": 468,
+    "rotation": 0.0,
+    "cuffExposedPixels": 0
+  },
+  {
+    "side": "far",
+    "phase": 0.8,
+    "bottomY": 437,
+    "rotation": 1.3459999999999996,
+    "cuffExposedPixels": 8
+  },
+  {
+    "side": "near",
+    "phase": 0.3,
+    "bottomY": 467,
+    "rotation": 0.004444444444444428,
+    "cuffExposedPixels": 0
+  },
+  {
+    "side": "far",
+    "phase": 0.825,
+    "bottomY": 440,
+    "rotation": 1.2253937500000003,
+    "cuffExposedPixels": 6
+  },
+  {
+    "side": "near",
+    "phase": 0.325,
+    "bottomY": 465,
+    "rotation": 0.01898437499999999,
+    "cuffExposedPixels": 0
+  },
+  {
+    "side": "far",
+    "phase": 0.85,
+    "bottomY": 443,
+    "rotation": 1.0683000000000002,
+    "cuffExposedPixels": 5
+  },
+  {
+    "side": "near",
+    "phase": 0.35,
+    "bottomY": 459,
+    "rotation": 0.037430555555555516,
+    "cuffExposedPixels": 6
+  },
+  {
+    "side": "far",
+    "phase": 0.875,
+    "bottomY": 448,
+    "rotation": 0.867640307708498,
+    "cuffExposedPixels": 7
+  },
+  {
+    "side": "near",
+    "phase": 0.375,
+    "bottomY": 453,
+    "rotation": 0.05327256944444443,
+    "cuffExposedPixels": 14
+  },
+  {
+    "side": "far",
+    "phase": 0.9,
+    "bottomY": 453,
+    "rotation": 0.5889489342909229,
+    "cuffExposedPixels": 3
+  },
+  {
+    "side": "near",
+    "phase": 0.4,
+    "bottomY": 446,
+    "rotation": 0.06,
+    "cuffExposedPixels": 46
+  },
+  {
+    "side": "far",
+    "phase": 0.925,
+    "bottomY": 458,
+    "rotation": 0.36504462314342156,
+    "cuffExposedPixels": 3
+  },
+  {
+    "side": "near",
+    "phase": 0.425,
+    "bottomY": 446,
+    "rotation": 0.13999500837832504,
+    "cuffExposedPixels": 45
+  },
+  {
+    "side": "far",
+    "phase": 0.95,
+    "bottomY": 462,
+    "rotation": 0.20044423001922348,
+    "cuffExposedPixels": 6
+  },
+  {
+    "side": "near",
+    "phase": 0.45,
+    "bottomY": 445,
+    "rotation": 0.3483789062499999,
+    "cuffExposedPixels": 37
+  },
+  {
+    "side": "far",
+    "phase": 0.975,
+    "bottomY": 463,
+    "rotation": 0.08456407364150559,
+    "cuffExposedPixels": 9
+  },
+  {
+    "side": "near",
+    "phase": 0.475,
+    "bottomY": 444,
+    "rotation": 0.6166030883789058,
+    "cuffExposedPixels": 26
+  },
+  {
+    "side": "far",
+    "phase": 0.0,
+    "bottomY": 460,
+    "rotation": 0.0,
+    "cuffExposedPixels": 11
+  },
+  {
+    "side": "near",
+    "phase": 0.5,
+    "bottomY": 443,
+    "rotation": 0.8899999999999997,
+    "cuffExposedPixels": 12
+  },
+  {
+    "side": "far",
+    "phase": 0.02499999999999991,
+    "bottomY": 461,
+    "rotation": 0.0,
+    "cuffExposedPixels": 7
+  },
+  {
+    "side": "near",
+    "phase": 0.525,
+    "bottomY": 442,
+    "rotation": 1.126993713378906,
+    "cuffExposedPixels": 1
+  },
+  {
+    "side": "far",
+    "phase": 0.050000000000000044,
+    "bottomY": 462,
+    "rotation": 0.0,
+    "cuffExposedPixels": 6
+  },
+  {
+    "side": "near",
+    "phase": 0.55,
+    "bottomY": 441,
+    "rotation": 1.3040039062500002,
+    "cuffExposedPixels": 1
+  },
+  {
+    "side": "far",
+    "phase": 0.07499999999999996,
+    "bottomY": 463,
+    "rotation": 0.0,
+    "cuffExposedPixels": 2
+  },
+  {
+    "side": "near",
+    "phase": 0.575,
+    "bottomY": 439,
+    "rotation": 1.412479553222656,
+    "cuffExposedPixels": 1
+  },
+  {
+    "side": "far",
+    "phase": 0.10000000000000009,
+    "bottomY": 464,
+    "rotation": 0.0,
+    "cuffExposedPixels": 1
+  },
+  {
+    "side": "near",
+    "phase": 0.6,
+    "bottomY": 437,
+    "rotation": 1.45,
+    "cuffExposedPixels": 0
+  },
+  {
+    "side": "far",
+    "phase": 0.125,
+    "bottomY": 465,
+    "rotation": 0.0,
+    "cuffExposedPixels": 0
+  },
+  {
+    "side": "near",
+    "phase": 0.625,
+    "bottomY": 436,
+    "rotation": 1.45,
+    "cuffExposedPixels": 1
+  },
+  {
+    "side": "far",
+    "phase": 0.1499999999999999,
+    "bottomY": 466,
+    "rotation": 0.0,
+    "cuffExposedPixels": 0
+  },
+  {
+    "side": "near",
+    "phase": 0.65,
+    "bottomY": 435,
+    "rotation": 1.45,
+    "cuffExposedPixels": 1
+  },
+  {
+    "side": "far",
+    "phase": 0.17500000000000004,
+    "bottomY": 466,
+    "rotation": 0.0,
+    "cuffExposedPixels": 3
+  },
+  {
+    "side": "near",
+    "phase": 0.675,
+    "bottomY": 435,
+    "rotation": 1.45,
+    "cuffExposedPixels": 1
+  },
+  {
+    "side": "far",
+    "phase": 0.19999999999999996,
+    "bottomY": 467,
+    "rotation": 0.0,
+    "cuffExposedPixels": 4
+  },
+  {
+    "side": "near",
+    "phase": 0.7,
+    "bottomY": 435,
+    "rotation": 1.45,
+    "cuffExposedPixels": 2
+  },
+  {
+    "side": "far",
+    "phase": 0.2250000000000001,
+    "bottomY": 467,
+    "rotation": 0.0,
+    "cuffExposedPixels": 3
+  },
+  {
+    "side": "near",
+    "phase": 0.725,
+    "bottomY": 435,
+    "rotation": 1.45,
+    "cuffExposedPixels": 2
+  },
+  {
+    "side": "far",
+    "phase": 0.25,
+    "bottomY": 467,
+    "rotation": 0.0,
+    "cuffExposedPixels": 3
+  },
+  {
+    "side": "near",
+    "phase": 0.75,
+    "bottomY": 435,
+    "rotation": 1.45,
+    "cuffExposedPixels": 1
+  },
+  {
+    "side": "far",
+    "phase": 0.2749999999999999,
+    "bottomY": 466,
+    "rotation": 0.0,
+    "cuffExposedPixels": 3
+  },
+  {
+    "side": "near",
+    "phase": 0.775,
+    "bottomY": 436,
+    "rotation": 1.422984375,
+    "cuffExposedPixels": 1
+  },
+  {
+    "side": "far",
+    "phase": 0.30000000000000004,
+    "bottomY": 466,
+    "rotation": 0.004444444444444452,
+    "cuffExposedPixels": 2
+  },
+  {
+    "side": "near",
+    "phase": 0.8,
+    "bottomY": 437,
+    "rotation": 1.3459999999999996,
+    "cuffExposedPixels": 2
+  },
+  {
+    "side": "far",
+    "phase": 0.32499999999999996,
+    "bottomY": 463,
+    "rotation": 0.01898437499999995,
+    "cuffExposedPixels": 6
+  },
+  {
+    "side": "near",
+    "phase": 0.825,
+    "bottomY": 439,
+    "rotation": 1.2253937500000003,
+    "cuffExposedPixels": 3
+  },
+  {
+    "side": "far",
+    "phase": 0.3500000000000001,
+    "bottomY": 457,
+    "rotation": 0.037430555555555606,
+    "cuffExposedPixels": 23
+  },
+  {
+    "side": "near",
+    "phase": 0.85,
+    "bottomY": 443,
+    "rotation": 1.0683000000000002,
+    "cuffExposedPixels": 1
+  },
+  {
+    "side": "far",
+    "phase": 0.375,
+    "bottomY": 451,
+    "rotation": 0.05327256944444443,
+    "cuffExposedPixels": 38
+  },
+  {
+    "side": "near",
+    "phase": 0.875,
+    "bottomY": 448,
+    "rotation": 0.8503504560776987,
+    "cuffExposedPixels": 3
+  },
+  {
+    "side": "far",
+    "phase": 0.3999999999999999,
+    "bottomY": 449,
+    "rotation": 0.06,
+    "cuffExposedPixels": 53
+  },
+  {
+    "side": "near",
+    "phase": 0.9,
+    "bottomY": 453,
+    "rotation": 0.5792680004330096,
+    "cuffExposedPixels": 1
+  },
+  {
+    "side": "far",
+    "phase": 0.42500000000000004,
+    "bottomY": 446,
+    "rotation": 0.1402130312397789,
+    "cuffExposedPixels": 65
+  },
+  {
+    "side": "near",
+    "phase": 0.925,
+    "bottomY": 458,
+    "rotation": 0.36056206240549665,
+    "cuffExposedPixels": 2
+  },
+  {
+    "side": "far",
+    "phase": 0.44999999999999996,
+    "bottomY": 445,
+    "rotation": 0.34837890624999934,
+    "cuffExposedPixels": 61
+  },
+  {
+    "side": "near",
+    "phase": 0.95,
+    "bottomY": 462,
+    "rotation": 0.19858563609738167,
+    "cuffExposedPixels": 2
+  },
+  {
+    "side": "far",
+    "phase": 0.4750000000000001,
+    "bottomY": 444,
+    "rotation": 0.6166030883789069,
+    "cuffExposedPixels": 51
+  },
+  {
+    "side": "near",
+    "phase": 0.975,
+    "bottomY": 463,
+    "rotation": 0.08398343502271663,
+    "cuffExposedPixels": 2
+  }
+]

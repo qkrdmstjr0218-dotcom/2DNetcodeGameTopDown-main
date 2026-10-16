@@ -1,0 +1,1170 @@
+fileFormatVersion: 2
+guid: 9a7c8f8bf38b15148a044ed9f6173dc0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4052891826572832813
+    second: RunTrial_0
+  - first:
+      213: 1741044301995248852
+    second: RunTrial_1
+  - first:
+      213: -3902316193790084967
+    second: RunTrial_2
+  - first:
+      213: 8625043574370407877
+    second: RunTrial_3
+  - first:
+      213: 4932366104508050636
+    second: RunTrial_4
+  - first:
+      213: -5364152501784680067
+    second: RunTrial_5
+  - first:
+      213: -358245199370966829
+    second: RunTrial_6
+  - first:
+      213: -2353585954663246126
+    second: RunTrial_7
+  - first:
+      213: -8345185045349053092
+    second: RunTrial_8
+  - first:
+      213: -2575923088542394166
+    second: RunTrial_9
+  - first:
+      213: 5012465195393458706
+    second: RunTrial_10
+  - first:
+      213: -3572928457602680592
+    second: RunTrial_11
+  - first:
+      213: 2914732038113883709
+    second: RunTrial_12
+  - first:
+      213: 2865397102607777998
+    second: RunTrial_13
+  - first:
+      213: 6387682708907403678
+    second: RunTrial_14
+  - first:
+      213: 3368563451288385387
+    second: RunTrial_15
+  - first:
+      213: -1814677075837080869
+    second: RunTrial_16
+  - first:
+      213: 1522410190855171556
+    second: RunTrial_17
+  - first:
+      213: 4905882367220173962
+    second: RunTrial_18
+  - first:
+      213: 2292485457550158099
+    second: RunTrial_19
+  - first:
+      213: -5705707438645769635
+    second: RunTrial_20
+  - first:
+      213: -3173009656286734486
+    second: RunTrial_21
+  - first:
+      213: -2174209376770446587
+    second: RunTrial_22
+  - first:
+      213: -3631315224112114106
+    second: RunTrial_23
+  - first:
+      213: 8019263705919516010
+    second: RunTrial_24
+  - first:
+      213: 5419544756837168694
+    second: RunTrial_25
+  - first:
+      213: 6314597375156645213
+    second: RunTrial_26
+  - first:
+      213: 6299490379338457489
+    second: RunTrial_27
+  - first:
+      213: -335700040756858210
+    second: RunTrial_28
+  - first:
+      213: 3927788126072664823
+    second: RunTrial_29
+  - first:
+      213: -2463406636601475004
+    second: RunTrial_30
+  - first:
+      213: -3407528411753852826
+    second: RunTrial_31
+  - first:
+      213: 4129707345525439339
+    second: RunTrial_32
+  - first:
+      213: -6180183156823660290
+    second: RunTrial_33
+  - first:
+      213: -2474670594176391475
+    second: RunTrial_34
+  - first:
+      213: -2784366840121877773
+    second: RunTrial_35
+  - first:
+      213: 1594155528255491783
+    second: RunTrial_36
+  - first:
+      213: -4986426137138510328
+    second: RunTrial_37
+  - first:
+      213: 2762101317169357101
+    second: RunTrial_38
+  - first:
+      213: 7979261858453724437
+    second: RunTrial_39
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 0
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: RunTrial_0
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 3626
+        width: 252
+        height: 234
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2035f3a4a3ce3830800000000000000
+      internalID: 4052891826572832813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunTrial_1
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 3626
+        width: 238
+        height: 232
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4dc05a6719e692810800000000000000
+      internalID: 1741044301995248852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunTrial_2
+      rect:
+        serializedVersion: 2
+        x: 1196
+        y: 3626
+        width: 224
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99833ebd81038d9c0800000000000000
+      internalID: -3902316193790084967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunTrial_3
+      rect:
+        serializedVersion: 2
+        x: 1714
+        y: 3626
+        width: 210
+        height: 229
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c51d96fe6f42b770800000000000000
+      internalID: 8625043574370407877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunTrial_4
+      rect:
+        serializedVersion: 2
+        x: 2234
+        y: 3626
+        width: 194
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccc2169d6d8437440800000000000000
+      internalID: 4932366104508050636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunTrial_5
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 3114
+        width: 179
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d79e91a58b3be85b0800000000000000
+      internalID: -5364152501784680067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunTrial_6
+      rect:
+        serializedVersion: 2
+        x: 713
+        y: 3114
+        width: 163
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d82105a3e1470bf0800000000000000
+      internalID: -358245199370966829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunTrial_7
+      rect:
+        serializedVersion: 2
+        x: 1234
+        y: 3114
+        width: 156
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d6d2f74b02665fd0800000000000000
+      internalID: -2353585954663246126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunTrial_8
+      rect:
+        serializedVersion: 2
+        x: 1749
+        y: 3114
+        width: 156
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5d411b7a62ff2c80800000000000000
+      internalID: -8345185045349053092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunTrial_9
+      rect:
+        serializedVersion: 2
+        x: 2260
+        y: 3114
+        width: 159
+        height: 231
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac814ba499b704cd0800000000000000
+      internalID: -2575923088542394166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunTrial_10
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 2602
+        width: 160
+        height: 236
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 212af6cb98adf8540800000000000000
+      internalID: 5012465195393458706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunTrial_11
+      rect:
+        serializedVersion: 2
+        x: 715
+        y: 2602
+        width: 167
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f835bc7f786a6ec0800000000000000
+      internalID: -3572928457602680592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunTrial_12
+      rect:
+        serializedVersion: 2
+        x: 1219
+        y: 2601
+        width: 176
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d367a338855337820800000000000000
+      internalID: 2914732038113883709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunTrial_13
+      rect:
+        serializedVersion: 2
+        x: 1721
+        y: 2601
+        width: 194
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec0ce59bb7fe3c720800000000000000
+      internalID: 2865397102607777998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunTrial_14
+      rect:
+        serializedVersion: 2
+        x: 2223
+        y: 2602
+        width: 210
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e99a452949b95a850800000000000000
+      internalID: 6387682708907403678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunTrial_15
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 2093
+        width: 224
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b67786d8c9a8fbe20800000000000000
+      internalID: 3368563451288385387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunTrial_16
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 2094
+        width: 236
+        height: 252
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdaafa860d8f0d6e0800000000000000
+      internalID: -1814677075837080869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunTrial_17
+      rect:
+        serializedVersion: 2
+        x: 1184
+        y: 2100
+        width: 239
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ed6b54a000b02510800000000000000
+      internalID: 1522410190855171556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunTrial_18
+      rect:
+        serializedVersion: 2
+        x: 1698
+        y: 2101
+        width: 241
+        height: 237
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8cc2004502351440800000000000000
+      internalID: 4905882367220173962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunTrial_19
+      rect:
+        serializedVersion: 2
+        x: 2213
+        y: 2095
+        width: 239
+        height: 237
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 319a606a06b80df10800000000000000
+      internalID: 2292485457550158099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunTrial_20
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 1578
+        width: 236
+        height: 237
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5a073f805141d0b0800000000000000
+      internalID: -5705707438645769635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunTrial_21
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 1578
+        width: 222
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a671528678437f3d0800000000000000
+      internalID: -3173009656286734486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunTrial_22
+      rect:
+        serializedVersion: 2
+        x: 1204
+        y: 1578
+        width: 208
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50b264e5718a3d1e0800000000000000
+      internalID: -2174209376770446587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunTrial_23
+      rect:
+        serializedVersion: 2
+        x: 1722
+        y: 1578
+        width: 194
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 646545f0b0afa9dc0800000000000000
+      internalID: -3631315224112114106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunTrial_24
+      rect:
+        serializedVersion: 2
+        x: 2242
+        y: 1578
+        width: 178
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6de3874ad52a4f60800000000000000
+      internalID: 8019263705919516010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunTrial_25
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 1066
+        width: 163
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6363c9b0e37163b40800000000000000
+      internalID: 5419544756837168694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunTrial_26
+      rect:
+        serializedVersion: 2
+        x: 721
+        y: 1066
+        width: 154
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5d63d54bd4f1a750800000000000000
+      internalID: 6314597375156645213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunTrial_27
+      rect:
+        serializedVersion: 2
+        x: 1235
+        y: 1066
+        width: 155
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 191a576bf194c6750800000000000000
+      internalID: 6299490379338457489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunTrial_28
+      rect:
+        serializedVersion: 2
+        x: 1749
+        y: 1066
+        width: 156
+        height: 233
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e927a9f679a575bf0800000000000000
+      internalID: -335700040756858210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunTrial_29
+      rect:
+        serializedVersion: 2
+        x: 2258
+        y: 1066
+        width: 160
+        height: 236
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f2fe878d7e428630800000000000000
+      internalID: 3927788126072664823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunTrial_30
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 554
+        width: 167
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 440870837b830ddd0800000000000000
+      internalID: -2463406636601475004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunTrial_31
+      rect:
+        serializedVersion: 2
+        x: 707
+        y: 554
+        width: 176
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6605c5f96f606b0d0800000000000000
+      internalID: -3407528411753852826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunTrial_32
+      rect:
+        serializedVersion: 2
+        x: 1211
+        y: 553
+        width: 192
+        height: 246
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6b7d5c53faaf4930800000000000000
+      internalID: 4129707345525439339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunTrial_33
+      rect:
+        serializedVersion: 2
+        x: 1713
+        y: 553
+        width: 210
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef86ca2b9249b3aa0800000000000000
+      internalID: -6180183156823660290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunTrial_34
+      rect:
+        serializedVersion: 2
+        x: 2215
+        y: 554
+        width: 226
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc6e20ab43438add0800000000000000
+      internalID: -2474670594176391475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunTrial_35
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 45
+        width: 240
+        height: 245
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fa98227c11fb59d0800000000000000
+      internalID: -2784366840121877773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunTrial_36
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 46
+        width: 252
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7cec46ab1049f1610800000000000000
+      internalID: 1594155528255491783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunTrial_37
+      rect:
+        serializedVersion: 2
+        x: 1176
+        y: 52
+        width: 255
+        height: 235
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 806c225f8d7accab0800000000000000
+      internalID: -4986426137138510328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunTrial_38
+      rect:
+        serializedVersion: 2
+        x: 1690
+        y: 53
+        width: 257
+        height: 231
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d21a4838384f45620800000000000000
+      internalID: 2762101317169357101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunTrial_39
+      rect:
+        serializedVersion: 2
+        x: 2205
+        y: 47
+        width: 255
+        height: 234
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51d15f262680cbe60800000000000000
+      internalID: 7979261858453724437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      RunTrial_0: 4052891826572832813
+      RunTrial_1: 1741044301995248852
+      RunTrial_10: 5012465195393458706
+      RunTrial_11: -3572928457602680592
+      RunTrial_12: 2914732038113883709
+      RunTrial_13: 2865397102607777998
+      RunTrial_14: 6387682708907403678
+      RunTrial_15: 3368563451288385387
+      RunTrial_16: -1814677075837080869
+      RunTrial_17: 1522410190855171556
+      RunTrial_18: 4905882367220173962
+      RunTrial_19: 2292485457550158099
+      RunTrial_2: -3902316193790084967
+      RunTrial_20: -5705707438645769635
+      RunTrial_21: -3173009656286734486
+      RunTrial_22: -2174209376770446587
+      RunTrial_23: -3631315224112114106
+      RunTrial_24: 8019263705919516010
+      RunTrial_25: 5419544756837168694
+      RunTrial_26: 6314597375156645213
+      RunTrial_27: 6299490379338457489
+      RunTrial_28: -335700040756858210
+      RunTrial_29: 3927788126072664823
+      RunTrial_3: 8625043574370407877
+      RunTrial_30: -2463406636601475004
+      RunTrial_31: -3407528411753852826
+      RunTrial_32: 4129707345525439339
+      RunTrial_33: -6180183156823660290
+      RunTrial_34: -2474670594176391475
+      RunTrial_35: -2784366840121877773
+      RunTrial_36: 1594155528255491783
+      RunTrial_37: -4986426137138510328
+      RunTrial_38: 2762101317169357101
+      RunTrial_39: 7979261858453724437
+      RunTrial_4: 4932366104508050636
+      RunTrial_5: -5364152501784680067
+      RunTrial_6: -358245199370966829
+      RunTrial_7: -2353585954663246126
+      RunTrial_8: -8345185045349053092
+      RunTrial_9: -2575923088542394166
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

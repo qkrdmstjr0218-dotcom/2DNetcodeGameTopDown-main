@@ -1,0 +1,442 @@
+fileFormatVersion: 2
+guid: d9d2a0bb06ab69e4eb82792a737cc352
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7711963091293413780
+    second: front-down-atlas-v30_0
+  - first:
+      213: -6851830701905876366
+    second: front-down-atlas-v30_1
+  - first:
+      213: -9175463926971499772
+    second: front-down-atlas-v30_2
+  - first:
+      213: 5806999858543402512
+    second: front-down-atlas-v30_3
+  - first:
+      213: -1491891722741675831
+    second: front-down-atlas-v30_4
+  - first:
+      213: 4393786202371461394
+    second: front-down-atlas-v30_5
+  - first:
+      213: -3982159989872308095
+    second: front-down-atlas-v30_6
+  - first:
+      213: 2306427685270500926
+    second: front-down-atlas-v30_7
+  - first:
+      213: -3799420308490680368
+    second: front-down-atlas-v30_8
+  - first:
+      213: -9103847862365206927
+    second: front-down-atlas-v30_9
+  - first:
+      213: -1376678114275157141
+    second: front-down-atlas-v30_10
+  - first:
+      213: 2848454784846771891
+    second: front-down-atlas-v30_11
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 0
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: front-down-atlas-v30_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 560
+        width: 985
+        height: 1160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6e588e9d6a99f490800000000000000
+      internalID: -7711963091293413780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: front-down-atlas-v30_1
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 1700
+        width: 593
+        height: 345
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27ae8c7774869e0a0800000000000000
+      internalID: -6851830701905876366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: front-down-atlas-v30_2
+      rect:
+        serializedVersion: 2
+        x: 863
+        y: 1386
+        width: 204
+        height: 659
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40bf37f0c243aa080800000000000000
+      internalID: -9175463926971499772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: front-down-atlas-v30_3
+      rect:
+        serializedVersion: 2
+        x: 1073
+        y: 1625
+        width: 513
+        height: 420
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01e1933ca9b969050800000000000000
+      internalID: 5806999858543402512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: front-down-atlas-v30_4
+      rect:
+        serializedVersion: 2
+        x: 1592
+        y: 1840
+        width: 151
+        height: 205
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c803aee16cbb4be0800000000000000
+      internalID: -1491891722741675831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: front-down-atlas-v30_5
+      rect:
+        serializedVersion: 2
+        x: 1749
+        y: 1849
+        width: 100
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2111d53954dd9fc30800000000000000
+      internalID: 4393786202371461394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: front-down-atlas-v30_6
+      rect:
+        serializedVersion: 2
+        x: 1855
+        y: 1854
+        width: 109
+        height: 191
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18053ec66968cb8c0800000000000000
+      internalID: -3982159989872308095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: front-down-atlas-v30_7
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 1328
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e36bca082c3120020800000000000000
+      internalID: 2306427685270500926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: front-down-atlas-v30_8
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 458
+        width: 30
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d702001c5fb54bc0800000000000000
+      internalID: -3799420308490680368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: front-down-atlas-v30_9
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 440
+        width: 62
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 176c58a7a92a8a180800000000000000
+      internalID: -9103847862365206927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: front-down-atlas-v30_10
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 445
+        width: 139
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6b139c8c8e05ece0800000000000000
+      internalID: -1376678114275157141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: front-down-atlas-v30_11
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 468
+        width: 35
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b6bd89f88eb78720800000000000000
+      internalID: 2848454784846771891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      front-down-atlas-v30_0: -7711963091293413780
+      front-down-atlas-v30_1: -6851830701905876366
+      front-down-atlas-v30_10: -1376678114275157141
+      front-down-atlas-v30_11: 2848454784846771891
+      front-down-atlas-v30_2: -9175463926971499772
+      front-down-atlas-v30_3: 5806999858543402512
+      front-down-atlas-v30_4: -1491891722741675831
+      front-down-atlas-v30_5: 4393786202371461394
+      front-down-atlas-v30_6: -3982159989872308095
+      front-down-atlas-v30_7: 2306427685270500926
+      front-down-atlas-v30_8: -3799420308490680368
+      front-down-atlas-v30_9: -9103847862365206927
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

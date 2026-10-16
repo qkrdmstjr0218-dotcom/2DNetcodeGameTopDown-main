@@ -41,6 +41,7 @@ public static class SideScrollTestMapBuilder
         new GameObject("Main Light").AddComponent<Light>().type=LightType.Directional;
         var control=character.AddComponent<SideScrollMapPreview>();control.walker=walker;control.followCamera=camera;
         walker.GetComponentInChildren<RightFacingAimRig>().mouseAim=true;
+        walker.GetComponentInChildren<RightFacingAimRig>().maxAngle=90f;
         EditorSceneManager.SaveScene(scene,Root+"/SideScrollTestMap.unity");AssetDatabase.SaveAssets();
     }
     private static void Block(Sprite sprite,string name,Vector2 center,Vector2 size,Color color,int order,bool solid)

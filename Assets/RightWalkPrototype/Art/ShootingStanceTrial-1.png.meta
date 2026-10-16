@@ -1,0 +1,780 @@
+fileFormatVersion: 2
+guid: a2ae79255aa3e344f95167bd6ba45d3f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7872284801128854929
+    second: ShootingStanceTrial-1_0
+  - first:
+      213: -6311080036832644128
+    second: ShootingStanceTrial-1_1
+  - first:
+      213: -1351506153604709801
+    second: ShootingStanceTrial-1_2
+  - first:
+      213: 8286547700944723872
+    second: ShootingStanceTrial-1_3
+  - first:
+      213: 2008144095065944014
+    second: ShootingStanceTrial-1_4
+  - first:
+      213: -3927552542255865004
+    second: ShootingStanceTrial-1_5
+  - first:
+      213: 5625272570960814408
+    second: ShootingStanceTrial-1_6
+  - first:
+      213: 9000933652161599454
+    second: ShootingStanceTrial-1_7
+  - first:
+      213: -6394981663537245996
+    second: ShootingStanceTrial-1_8
+  - first:
+      213: -1200483093455201573
+    second: ShootingStanceTrial-1_9
+  - first:
+      213: 4890465359254690694
+    second: ShootingStanceTrial-1_10
+  - first:
+      213: -5387883129343842815
+    second: ShootingStanceTrial-1_11
+  - first:
+      213: 8907366520022611562
+    second: ShootingStanceTrial-1_12
+  - first:
+      213: 3101858970219187652
+    second: ShootingStanceTrial-1_13
+  - first:
+      213: 4922871458436099212
+    second: ShootingStanceTrial-1_14
+  - first:
+      213: 5053877526875620538
+    second: ShootingStanceTrial-1_15
+  - first:
+      213: -2334118121604081860
+    second: ShootingStanceTrial-1_16
+  - first:
+      213: -6689373444508595673
+    second: ShootingStanceTrial-1_17
+  - first:
+      213: -1185516292764629079
+    second: ShootingStanceTrial-1_18
+  - first:
+      213: -8712024353790483725
+    second: ShootingStanceTrial-1_19
+  - first:
+      213: -3535036800172388985
+    second: ShootingStanceTrial-1_20
+  - first:
+      213: 2607288515708896384
+    second: ShootingStanceTrial-1_21
+  - first:
+      213: 7234891353485190407
+    second: ShootingStanceTrial-1_22
+  - first:
+      213: -2021760186268774464
+    second: ShootingStanceTrial-1_23
+  - first:
+      213: 4153671757830499766
+    second: ShootingStanceTrial-1_24
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 0
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ShootingStanceTrial-1_0
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 2088
+        width: 239
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6a020abea600c290800000000000000
+      internalID: -7872284801128854929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShootingStanceTrial-1_1
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 2090
+        width: 236
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e3f78fd42a8a68a0800000000000000
+      internalID: -6311080036832644128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShootingStanceTrial-1_2
+      rect:
+        serializedVersion: 2
+        x: 1204
+        y: 2090
+        width: 234
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75203aa505c7e3de0800000000000000
+      internalID: -1351506153604709801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShootingStanceTrial-1_3
+      rect:
+        serializedVersion: 2
+        x: 1718
+        y: 2090
+        width: 232
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0afd321ea3bbff270800000000000000
+      internalID: 8286547700944723872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShootingStanceTrial-1_4
+      rect:
+        serializedVersion: 2
+        x: 2233
+        y: 2090
+        width: 229
+        height: 236
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecf24343a6c5edb10800000000000000
+      internalID: 2008144095065944014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShootingStanceTrial-1_5
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 1578
+        width: 225
+        height: 235
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 453282a95c78e79c0800000000000000
+      internalID: -3927552542255865004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShootingStanceTrial-1_6
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 1578
+        width: 222
+        height: 233
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8412edc699bf01e40800000000000000
+      internalID: 5625272570960814408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShootingStanceTrial-1_7
+      rect:
+        serializedVersion: 2
+        x: 1220
+        y: 1578
+        width: 218
+        height: 233
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed793f7b77db9ec70800000000000000
+      internalID: 9000933652161599454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShootingStanceTrial-1_8
+      rect:
+        serializedVersion: 2
+        x: 1736
+        y: 1578
+        width: 214
+        height: 233
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d0d9bf1f067047a0800000000000000
+      internalID: -6394981663537245996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShootingStanceTrial-1_9
+      rect:
+        serializedVersion: 2
+        x: 2251
+        y: 1578
+        width: 211
+        height: 233
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bda9db7acf6075fe0800000000000000
+      internalID: -1200483093455201573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShootingStanceTrial-1_10
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 1066
+        width: 209
+        height: 232
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68b9abc555c6ed340800000000000000
+      internalID: 4890465359254690694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShootingStanceTrial-1_11
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 1066
+        width: 207
+        height: 234
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 106e32017d46a35b0800000000000000
+      internalID: -5387883129343842815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShootingStanceTrial-1_12
+      rect:
+        serializedVersion: 2
+        x: 1231
+        y: 1066
+        width: 207
+        height: 234
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a66b72e18a25d9b70800000000000000
+      internalID: 8907366520022611562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShootingStanceTrial-1_13
+      rect:
+        serializedVersion: 2
+        x: 1743
+        y: 1066
+        width: 207
+        height: 235
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cd064f8c440c0b20800000000000000
+      internalID: 3101858970219187652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShootingStanceTrial-1_14
+      rect:
+        serializedVersion: 2
+        x: 2255
+        y: 1066
+        width: 204
+        height: 234
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8c2efa428d815440800000000000000
+      internalID: 4922871458436099212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShootingStanceTrial-1_15
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 554
+        width: 200
+        height: 236
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab440c785daf22640800000000000000
+      internalID: 5053877526875620538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShootingStanceTrial-1_16
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 554
+        width: 196
+        height: 237
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c379cf16feb8b9fd0800000000000000
+      internalID: -2334118121604081860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShootingStanceTrial-1_17
+      rect:
+        serializedVersion: 2
+        x: 1231
+        y: 554
+        width: 191
+        height: 237
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72a42264b429a23a0800000000000000
+      internalID: -6689373444508595673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShootingStanceTrial-1_18
+      rect:
+        serializedVersion: 2
+        x: 1743
+        y: 554
+        width: 185
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a7835e76333c8fe0800000000000000
+      internalID: -1185516292764629079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShootingStanceTrial-1_19
+      rect:
+        serializedVersion: 2
+        x: 2255
+        y: 554
+        width: 179
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f224cd220ca81780800000000000000
+      internalID: -8712024353790483725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShootingStanceTrial-1_20
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 42
+        width: 175
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78d8ac972c601fec0800000000000000
+      internalID: -3535036800172388985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShootingStanceTrial-1_21
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 42
+        width: 170
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 084c8cd4713fe2420800000000000000
+      internalID: 2607288515708896384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShootingStanceTrial-1_22
+      rect:
+        serializedVersion: 2
+        x: 1231
+        y: 42
+        width: 166
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 705a7099a5f776460800000000000000
+      internalID: 7234891353485190407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShootingStanceTrial-1_23
+      rect:
+        serializedVersion: 2
+        x: 1743
+        y: 42
+        width: 163
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cf0c6482d341f3e0800000000000000
+      internalID: -2021760186268774464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShootingStanceTrial-1_24
+      rect:
+        serializedVersion: 2
+        x: 2255
+        y: 42
+        width: 162
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bd2f07e47ec4a930800000000000000
+      internalID: 4153671757830499766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      ShootingStanceTrial-1_0: -7872284801128854929
+      ShootingStanceTrial-1_1: -6311080036832644128
+      ShootingStanceTrial-1_10: 4890465359254690694
+      ShootingStanceTrial-1_11: -5387883129343842815
+      ShootingStanceTrial-1_12: 8907366520022611562
+      ShootingStanceTrial-1_13: 3101858970219187652
+      ShootingStanceTrial-1_14: 4922871458436099212
+      ShootingStanceTrial-1_15: 5053877526875620538
+      ShootingStanceTrial-1_16: -2334118121604081860
+      ShootingStanceTrial-1_17: -6689373444508595673
+      ShootingStanceTrial-1_18: -1185516292764629079
+      ShootingStanceTrial-1_19: -8712024353790483725
+      ShootingStanceTrial-1_2: -1351506153604709801
+      ShootingStanceTrial-1_20: -3535036800172388985
+      ShootingStanceTrial-1_21: 2607288515708896384
+      ShootingStanceTrial-1_22: 7234891353485190407
+      ShootingStanceTrial-1_23: -2021760186268774464
+      ShootingStanceTrial-1_24: 4153671757830499766
+      ShootingStanceTrial-1_3: 8286547700944723872
+      ShootingStanceTrial-1_4: 2008144095065944014
+      ShootingStanceTrial-1_5: -3927552542255865004
+      ShootingStanceTrial-1_6: 5625272570960814408
+      ShootingStanceTrial-1_7: 9000933652161599454
+      ShootingStanceTrial-1_8: -6394981663537245996
+      ShootingStanceTrial-1_9: -1200483093455201573
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

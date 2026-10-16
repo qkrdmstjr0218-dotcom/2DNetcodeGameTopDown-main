@@ -1,0 +1,23 @@
+{
+  "original_visible_bounds": [
+    120,
+    33,
+    461,
+    469
+  ],
+  "front_visible_bounds": [
+    207,
+    18,
+    823,
+    1479
+  ],
+  "review_only_display_ratio": 0.29842573579739906,
+  "source_images_resized_or_overwritten": false,
+  "unity_root_scale_changed": false,
+  "weapon_size_validated": false,
+  "next_checks": [
+    "Match head/sole landmarks, excluding ponytail height.",
+    "Confirm rifle dimensions accounting for camera foreshortening.",
+    "Separate complete layers and reconstruct hidden surfaces before motion tests."
+  ]
+}

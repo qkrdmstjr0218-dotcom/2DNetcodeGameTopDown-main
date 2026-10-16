@@ -18,6 +18,11 @@ namespace RightWalkPrototype
             float delta = worldX - transform.position.x;
             if (Mathf.Abs(delta) > .04f) SetFacing(delta < 0 ? -1 : 1);
         }
+        public void FaceAimTarget(float worldX, float originX)
+        {
+            float delta=worldX-originX;
+            if(Mathf.Abs(delta)>.001f)SetFacing(delta<0 ? -1 : 1);
+        }
         public void FollowMovement(Vector2 velocity)
         {
             var aim = GetComponentInChildren<RightFacingAimRig>();

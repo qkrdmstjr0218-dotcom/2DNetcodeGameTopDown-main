@@ -1,0 +1,8 @@
+{
+  "source_head_rgb_exact": true,
+  "below_head_exact": true,
+  "alpha_unchanged": true,
+  "resized": false,
+  "unity_imported": false,
+  "limitation": "Restores earlier front-view source colors only; does not recover detail missing from that source. Hair-edge alpha still uses the existing cutout."
+}

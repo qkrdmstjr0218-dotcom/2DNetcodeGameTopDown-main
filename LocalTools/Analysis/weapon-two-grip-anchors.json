@@ -1,0 +1,16 @@
+{
+  "original_texture": "RightWalk-WeaponHands-v44.png",
+  "physical_contacts_estimated_px": {
+    "right_pistol_grip": [
+      334,
+      160
+    ],
+    "left_foreend_underside": [
+      410,
+      157
+    ]
+  },
+  "runtime_wrist_pivots_are_different": true,
+  "front_transfer": "provisional stock-to-muzzle proportions; not exact projection",
+  "needs_confirmation": "trigger/handle hidden faces must be reconstructed before anatomy validation"
+}

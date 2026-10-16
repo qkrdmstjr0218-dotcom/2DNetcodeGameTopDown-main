@@ -1203,7 +1203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RightWalkPrototype.SideScrollMapPreview
   walker: {fileID: 931039245}
   followCamera: {fileID: 670586054}
-  speed: 1.6
+  speed: 0.8
   jumpSpeed: 5
   readKeyboard: 1
 --- !u!61 &931039247

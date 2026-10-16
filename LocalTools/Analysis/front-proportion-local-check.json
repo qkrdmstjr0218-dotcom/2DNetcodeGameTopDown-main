@@ -1,0 +1,10 @@
+{
+  "lower_region_exact": true,
+  "weapon_protected_region_exact": true,
+  "unity_imported": false,
+  "status": "Local head/shoulder proportion trial; hair is generated and not byte-preserved.",
+  "limitations": [
+    "Blend at shoulders needs visual review.",
+    "World scale and projected rifle length still unvalidated."
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "head_mask_rgba_exact": true,
+  "outside_head_mask_exact_to_tone": true,
+  "head_resampled": false,
+  "weapon_or_body_resized": false,
+  "unity_imported": false,
+  "weapon_scale_validated": false,
+  "proportion_adjusted": false,
+  "limitations": [
+    "Tone trial already contains small generated changes outside restored head.",
+    "A height-normalized view alone does not establish correct anatomical or weapon scale."
+  ]
+}
