@@ -11,7 +11,9 @@ namespace RightWalkPrototype
         public Camera followCamera;
         public float speed = .8f, jumpSpeed = 5f;
         public bool readKeyboard = true;
+        public bool allowDoubleJump;
         public bool Grounded { get; private set; }
+        public int JumpCount { get; private set; }
         public void SetRemoteGrounded(bool value) { Grounded=value; }
         private Rigidbody2D body;
         private BoxCollider2D shape;
@@ -48,10 +50,15 @@ namespace RightWalkPrototype
         {
             var bounds=shape.bounds;
             Grounded=body.linearVelocity.y<=.1f&&Physics2D.BoxCast(new Vector2(bounds.center.x,bounds.min.y+.03f),new Vector2(bounds.size.x*.85f,.04f),0,Vector2.down,.08f,1).collider!=null;
+            if(Grounded)JumpCount=0;
+            else if(JumpCount==0)JumpCount=1; // Walking off an edge leaves one air jump.
             var velocity=body.linearVelocity;
             float targetSpeed=runMode!=null && sprintRequested ? runMode.runSpeed : speed;
             velocity.x=Mathf.MoveTowards(velocity.x,input*targetSpeed,14f*Time.fixedDeltaTime);
-            if(jumpRequested && Grounded){velocity.y=jumpSpeed;Grounded=false;}
+            if(jumpRequested && (Grounded || allowDoubleJump&&JumpCount<2))
+            {
+                JumpCount=Grounded?1:2;velocity.y=jumpSpeed;Grounded=false;
+            }
             jumpRequested=false;body.linearVelocity=velocity;
         }
         private void LateUpdate()
@@ -67,15 +74,16 @@ namespace RightWalkPrototype
         }
         public void ResetPosition()
         {
-            body.position=spawn;body.linearVelocity=Vector2.zero;lastPosition=spawn;
+            body.position=spawn;body.linearVelocity=Vector2.zero;lastPosition=spawn;JumpCount=0;
         }
         private void OnGUI()
         {
             GUILayout.BeginArea(new Rect(15,15,310,180),GUI.skin.box);
             GUILayout.Label("횡스크롤 테스트 맵");
-            GUILayout.Label("A/D 또는 ←/→: 이동 / Space: 점프");
+            GUILayout.Label(allowDoubleJump?"A/D 또는 ←/→: 이동 / Space: 점프·공중 1회 추가":"A/D 또는 ←/→: 이동 / Space: 점프");
             var aim=walker.GetComponentInChildren<RightFacingAimRig>();
             string downLabel=aim!=null&&aim.frontDownAim!=null ? "정지 하단 90도 시험 / 이동 "+aim.groundedDownAngle.ToString("F0")+"도" : "지상 아래 "+(aim!=null ? aim.groundedDownAngle.ToString("F0") : "60")+"도";
+            if(aim!=null&&aim.frontDownAim!=null&&aim.frontDownAim.allowMovingDownAim)downLabel="정지·이동 하단 90도 시험";
             GUILayout.Label("마우스 조준: 위 90도 / "+downLabel);
             GUILayout.Label("속도: "+speed.ToString("F1"));
             if(runMode!=null)GUILayout.Label("Shift: 달리기 "+runMode.runSpeed.ToString("F1"));

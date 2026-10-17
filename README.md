@@ -1,4 +1,7 @@
 # Unity 2D 탑다운 멀티플레이 슈팅 게임 탬플릿
+
+현재 캐릭터 움직임 작업은 `Assets/RightWalkPrototype/SideScrollFrontPlayableTrial.unity`에서 확인합니다. [2026-10-18 저장 지점·씬 길잡이](CHARACTER-MOTION-CHECKPOINT-2026-10-18.ko.md)를 먼저 보세요. 아래 SFPlayground/탑다운 설명은 보존된 이전 방향성의 기록입니다.
+
 현재 SF 조작 시험 버전은 `Assets/Scenes/SFPlayground.unity`에서 실행합니다. 새 조작·솔로/멀티 접속·시험 방법은 [PLAYGROUND_GUIDE.md](PLAYGROUND_GUIDE.md)를 참고하세요. 아래는 강사 제공 템플릿 설명입니다.
 Netcode for GameObjects(NGO) 기반 | 2인 협동 P2P(Host-Client)
 

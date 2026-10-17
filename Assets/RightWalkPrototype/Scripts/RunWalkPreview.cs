@@ -8,7 +8,9 @@ namespace RightWalkPrototype
         public Sprite[] runFrames;
         public float runSpeed = 2.4f;
         public float runCycleDistance = 130f / 204.8f / .4f;
+        public bool backwardRunUsesWalk;
         public bool IsRunning { get; private set; }
+        private bool atRunSpeed;
         private Sprite[] walkFrames;
         private float walkDistance, walkMean, walkAmplitude, walkOffset;
         private RightFacingWalker walker;
@@ -31,7 +33,12 @@ namespace RightWalkPrototype
         {
             if (walkFrames == null || runFrames == null || runFrames.Length != walkFrames.Length) return;
             float threshold = (control.speed + runSpeed) * .5f;
-            bool running = Mathf.Abs(velocity) > threshold + (IsRunning ? -.05f : .05f);
+            // Keep speed hysteresis independent of the displayed sheet: backward sprint
+            // uses walk art, but still travels at the unchanged sprint speed.
+            atRunSpeed = Mathf.Abs(velocity) > threshold + (atRunSpeed ? -.05f : .05f);
+            float facingSign = transform.lossyScale.x < 0 ? -1f : 1f;
+            bool backward = velocity * facingSign < -.01f;
+            bool running = atRunSpeed && !(backwardRunUsesWalk && backward);
             if (running == IsRunning) return;
             IsRunning = running;
             // Both sheets share the same phase count; preserve phase through the speed change.

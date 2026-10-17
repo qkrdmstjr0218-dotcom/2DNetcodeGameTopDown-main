@@ -1,0 +1,144 @@
+{
+  "sourceSize": [
+    1024,
+    1536
+  ],
+  "placementOffset": [0, 72],
+  "gripOffsets": {"support": [0, -48]},
+  "raisedPivot": {"rise": 192},
+  "aimFollow": {"travel": 24},
+  "headAim": {"pivot": [550, 393], "maxDegrees": 7, "gunDegrees": 35, "response": 12, "offset": [0, 0]},
+  "armConnectionV2": {"minScale": 0.75, "maxScale": 1.4, "flexDegrees": 18, "rootBlendStart": -64, "rootBlendEnd": 40, "shoulderRoots": {"trigger": [438, 367]}, "elbowOverlap": {"trigger": 22}},
+  "jointSleeves": {
+    "trigger": {"texture": [399, 480, 8, 8], "socket": [418, 525], "halfWidth": 20, "elbowRadius": 24},
+    "support": {"texture": [639, 532, 12, 12], "socket": [649, 587], "halfWidth": 22, "elbowRadius": 27}
+  },
+  "stockRear": [519, 438],
+  "shoulderPose": {
+    "keys": [
+      {"degrees": 0, "support": [0, 0], "trigger": [0, 0]},
+      {"degrees": 17.5, "support": [0, -40], "trigger": [0, 24]},
+      {"degrees": 35, "support": [0, -75], "trigger": [0, 36]}
+    ]
+  },
+  "torsoLean": {
+    "pivot": [519, 650],
+    "blendStartY": 560,
+    "blendEndY": 700,
+    "keys": [[0, 0], [17.5, -18], [35, -25]]
+  },
+  "supportProjection": {
+    "keys": [
+      {"degrees": 0, "shoulderOffset": [-20, 32], "foreScale": 0.92},
+      {"degrees": 17.5, "shoulderOffset": [-18, 26], "foreScale": 0.94},
+      {"degrees": 35, "shoulderOffset": [-12, 16], "foreScale": 0.96}
+    ]
+  },
+  "pivot": [
+    500.10785025117445,
+    426.72287263262274
+  ],
+  "muzzle": [
+    519,
+    939
+  ],
+  "arms": [
+    {
+      "side": "trigger",
+      "shoulder": [
+        416,
+        392
+      ],
+      "elbow": [
+        407,
+        493
+      ],
+      "wrist": [
+        476,
+        568
+      ],
+      "bend": 1
+    },
+    {
+      "side": "support",
+      "shoulder": [
+        663,
+        434
+      ],
+      "elbow": [
+        651,
+        568
+      ],
+      "wrist": [
+        580,
+        711
+      ],
+      "bend": -1
+    }
+  ],
+  "previewOnly": true,
+  "unityAssetsChanged": false,
+  "limitations": [
+    "Manual arm boundaries are provisional.",
+    "Generated torso underlay is local placeholder art, not approved new design.",
+    "Arm art can expose gaps under rotation; reach mismatch is measured, not hidden.",
+    "Support projection is an authored 2D trial, not a verified 3D anatomical solution.",
+    "Torso lean warps existing upper-body pixels, with the head following the torso. No raised-shoulder replacement art or independent head correction yet.",
+    "Whole-torso lean is now off by default. Local shoulder trial keeps the head and body axis fixed; its socket outlines remain provisional, especially near -55 aim.",
+    "Raised-body pivot is an independent weapon-path trial. It releases the old rear-stock anchor but can increase trigger-arm reach error; it is not an approved arm solution.",
+    "Aim-follow was removed from the interactive comparison after the user clarified the desired fixed-center swept band. Its math remains only as a regression reference.",
+    "The fixed virtual pivot now starts at rise 192, adjustable to 640 source pixels. Stock and muzzle paths show the swept band, not a firing-range increase. Arm sockets and reach are not repaired by this change.",
+    "Arm-connection V2 is now the sandbox default: refined visible cuts, fixed shoulder sockets, source-pixel joint overlaps and bounded 0.75-1.4 length-axis projection. At rise 192 the canonical down sector reaches both unchanged grips, but anatomical naturalness and large projection remain review items. Extreme settings can still exceed reach; the old arm/shoulder trial remains selectable.",
+    "Support reach is checked for the default mirrored ground sector; air, legacy, non-mirrored and trigger-arm issues remain.",
+    "Only down-aim sector +/-35 degrees is tested; no full Unity gameplay replacement."
+  ],
+  "legacyPivot": [
+    519,
+    590
+  ],
+  "referenceAxisX": 519,
+  "trajectory": {
+    "defaultMode": "raised-body",
+    "previewPixelsPerUnit": 540.3778424194262,
+    "sourceAimPixel": [
+      270.0,
+      151.00000255999993
+    ],
+    "sourceStockRearPixelXEstimate": 272.0,
+    "localMuzzle": [
+      0.947998025,
+      0.03496100000000002
+    ],
+    "groundedDownAngle": 55.0,
+    "groundedDownLean": 6.0,
+    "groundedDownGunOffset": [
+      0.08,
+      0.06
+    ],
+    "airOffsets": [
+      [
+        45,
+        0,
+        0
+      ],
+      [
+        60,
+        0.1,
+        0
+      ],
+      [
+        75,
+        0.225,
+        0.06
+      ],
+      [
+        90,
+        0.45,
+        0.1
+      ]
+    ],
+    "groundExtensionNote": "New fixed-pivot extension beyond existing -55 clamp, not an existing Unity ground pose.",
+    "liveUnityVerified": false,
+    "mapping": "Right-facing serialized aim geometry, normalized to existing front rifle length; not validated world-scale matching."
+  }
+}

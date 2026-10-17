@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>하단 사격 테스트</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#202c34;color:#e9eef0;font:14px system-ui,sans-serif;letter-spacing:0}header{height:54px;display:flex;align-items:center;gap:20px;padding:0 20px;background:#141c21;border-bottom:1px solid #45535b}h1{font-size:16px;margin:0}header span{color:#acb7be;font-size:12px}main{height:calc(100dvh - 54px);display:grid;grid-template-columns:1fr 220px}canvas{width:100%;height:100%;display:block;cursor:crosshair;touch-action:none}aside{background:#172128;border-left:1px solid #45535b;padding:18px 14px;overflow:auto}label{display:flex;gap:8px;align-items:center;margin:15px 0}dl{margin:20px 0}dt{color:#93a5ae;font-size:12px;margin-top:16px}dd{margin:5px 0;font-variant-numeric:tabular-nums}button{border:1px solid #60747e;color:#e8f0f2;background:#293b44;padding:8px 12px;border-radius:4px;cursor:pointer}input[type=range]{width:100%;accent-color:#53b4ac}#angle{color:#eac263}#error{color:#ef9d84}#loading{position:absolute;top:70px;left:20px} @media(max-width:650px){main{grid-template-columns:1fr}aside{position:absolute;right:8px;top:66px;width:145px;background:#172128dd;border:1px solid #45535b;padding:9px;font-size:12px}header{padding:0 12px;gap:12px}header span{font-size:11px}dt{margin-top:8px}label{margin:9px 0}}
+body{overflow:hidden}main,canvas{min-height:0;min-width:0}
+select{width:100%;background:#293b44;color:#e8f0f2;border:1px solid #60747e;border-radius:3px;padding:5px;font:12px system-ui}
+@media(max-width:650px){main{grid-template-rows:minmax(0,1fr) 184px}aside{position:static;width:auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;padding:8px;border-left:0;border-top:1px solid #45535b;background:#172128}aside label{margin:0;font-size:11px}aside label[for=scale]{grid-column:1}aside input[type=range]{grid-column:2 / 4;margin:0}aside dl{grid-column:1 / 4;margin:0;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:3px;font-size:10px}aside dt{margin:0;font-size:10px}aside dd{margin:0;font-size:10px;overflow-wrap:anywhere}aside button{grid-column:3;padding:4px;font-size:11px}header h1{font-size:14px}header span{font-size:10px}}
+@media(max-width:650px){main{grid-template-rows:minmax(0,1fr) 214px}aside label[for=trajectory]{grid-column:1}aside select{grid-column:2 / 4;font-size:10px}}
+label[for=drop] output{margin-left:auto;font-variant-numeric:tabular-nums;color:#eac263}
+@media(max-width:650px){main{grid-template-rows:minmax(0,1fr) 244px}aside label[for=drop]{grid-column:1}aside input#drop{grid-column:2 / 4}}
+label[for=gripRise] output,label[for=pivotRise] output{margin-left:auto;font-variant-numeric:tabular-nums;color:#eac263}
+@media(min-width:651px){aside{padding:12px 14px}aside label{margin:8px 0}aside dl{margin:12px 0}aside dt{margin-top:9px}aside dd{margin:4px 0}}
+@media(max-width:650px){main{grid-template-rows:minmax(0,1fr) 274px}aside label[for=gripRise]{grid-column:1}aside input#gripRise{grid-column:2 / 4}}
+@media(max-width:650px){main{grid-template-rows:minmax(0,1fr) 304px}aside label[for=posePreset]{grid-column:1}aside select#posePreset{grid-column:2 / 4}}
+@media(max-width:650px){main{grid-template-rows:minmax(0,1fr) 344px}}
+@media(max-width:650px){main{grid-template-rows:minmax(0,1fr) 374px}aside label[for=pivotRise]{grid-column:1}aside input#pivotRise{grid-column:2 / 4}}
+@media(min-width:651px){aside dl{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:8px;align-items:baseline}aside dt,aside dd{margin:6px 0}aside dt{font-size:11px}aside dd{font-size:12px;overflow-wrap:anywhere}}
+.reset-actions{display:flex;gap:8px;flex-wrap:wrap}.reset-actions button{flex:1;font-size:12px;white-space:nowrap}
+.path-key{display:flex;gap:14px;color:#acb7be;font-size:11px;margin:8px 0}.path-key span{display:flex;align-items:center;gap:5px}.path-key i{display:block;width:16px;border-top:2px solid #eac263}.path-key .muzzle-key{border-color:#80b7bd}
+header a{margin-left:auto;color:#94caca;font-size:12px;white-space:nowrap}
+.art-audit{margin:10px 0;display:flex;align-items:center;gap:8px;flex-wrap:wrap}.art-audit button{font-size:12px}.art-audit output{font-size:11px;color:#a4d4c3;overflow-wrap:anywhere}
+@media(max-width:650px){.art-audit{grid-column:1 / 4;margin:0}.art-audit button{padding:5px}}
+@media(max-width:650px){main{grid-template-rows:minmax(0,1fr) min(438px,50dvh)}.path-key{grid-column:1 / 4;margin:0}.reset-actions{grid-column:1 / 4}.reset-actions button{padding:6px}}
+</style></head><body>
+<header><h1>하단 사격 테스트</h1><span>별도 시제품 · 기존 플레이어 미변경</span><a href="./parts.html">팔 파츠</a></header>
+<main><canvas id="view"></canvas><aside>
+<label><input id="auto" type="checkbox">자동 사격</label>
+<label><input id="joints" type="checkbox" checked>팔 표시 · 임시</label>
+<label><input id="mirror" type="checkbox" checked>좌우 반전</label>
+<label><input id="armV2" type="checkbox" checked>새 팔 연결 · 시험</label>
+<label><input id="foreArt" type="checkbox" checked>팔꿈치·아래팔 보강</label>
+<label><input id="supportInside" type="checkbox" checked>왼팔 안쪽 굽힘</label>
+<label><input id="projection" type="checkbox" checked>팔 원근 보정</label>
+<label><input id="headFollow" type="checkbox" checked>고개 조준 연동</label>
+<label><input id="shoulders" type="checkbox" checked>어깨 자세 · 이전</label>
+<label><input id="torso" type="checkbox">상체 기울임 · 이전 시험</label>
+<label><input id="guides" type="checkbox">관절 진단</label>
+<label><input id="paths" type="checkbox" checked>총 궤적 표시</label>
+<div class="path-key"><span><i></i>개머리판</span><span><i class="muzzle-key"></i>총구</span></div>
+<label for="posePreset">확인 각도</label><select id="posePreset" disabled><option value="mouse">마우스 조준</option><option value="0">−90°</option><option value="-17.5">−72.5°</option><option value="-35">−55°</option></select>
+<label for="trajectory">총 궤적</label><select id="trajectory"><option value="raised-body">위쪽 가상 고정 축 · 시험</option><option value="ground-extension">개머리판 뒤 고정 축 · 이전</option><option value="air-existing">공중 보정값 적용 · 비교</option><option value="legacy">이전 손잡이 축 · 비교용</option></select>
+<label for="pivotRise">회전축 높임 <output id="pivotRiseValue" for="pivotRise">192 px</output></label><input id="pivotRise" type="range" min="0" max="640" step="4" value="192" disabled>
+<label for="scale">표시 배율</label><input id="scale" type="range" min="65" max="105" value="85">
+<label for="drop">총 내림 <output id="dropValue" for="drop">72 px</output></label><input id="drop" type="range" min="0" max="140" step="4" value="72">
+<label for="gripRise">왼손 올림 <output id="gripRiseValue" for="gripRise">48 px</output></label><input id="gripRise" type="range" min="0" max="120" step="4" value="48">
+<dl><dt>조준</dt><dd id="angle">-90°</dd><dt>사격</dt><dd id="shots">0</dd><dt>명중</dt><dd id="hits">0</dd><dt>왼손 도달 오차</dt><dd id="error">0 px</dd><dt>오른손 도달 오차</dt><dd id="triggerError">0 px</dd><dt>상체 기울임</dt><dd id="lean">0°</dd><dt>왼팔 굽힘</dt><dd id="flex">0°</dd><dt>오른팔 길이</dt><dd id="triggerScale">-</dd><dt>왼팔 길이</dt><dd id="supportScale">-</dd><dt>탄환 풀</dt><dd id="pool">0 / 96</dd><dt>상태</dt><dd id="state">불러오는 중</dd></dl>
+<div class="art-audit"><button id="contactAudit" disabled>팔 전체 접합 검사</button><output id="contactAuditResult">미검사</output></div>
+<div class="reset-actions"><button id="reset" title="설정과 사격 기록을 기본값으로 복원">설정 초기화</button><button id="resetRecords" title="설정을 유지하고 사격·명중 기록만 초기화">기록 초기화</button></div>
+</aside></main><div id="loading">불러오는 중</div>
+<script type="module" src="sandbox.mjs?v=head-aim-30"></script></body></html>

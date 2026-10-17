@@ -1,0 +1,22 @@
+{
+  "trigger": {
+    "image": "trigger-fore-complete-v5",
+    "elbow": [635, 420],
+    "wrist": [635, 1115],
+    "clip": [445, 250, 350, 937],
+    "widthScale": 0.19,
+    "joinAlong": -20,
+    "joinOverlap": 7,
+    "mirror": false
+  },
+  "support": {
+    "image": "support-fore-complete-v5",
+    "elbow": [635, 310],
+    "wrist": [640, 1115],
+    "clip": [445, 135, 360, 1057],
+    "widthScale": 0.19,
+    "joinAlong": -30,
+    "joinOverlap": 7,
+    "mirror": true
+  }
+}

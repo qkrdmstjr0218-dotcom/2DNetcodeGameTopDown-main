@@ -1,0 +1,62 @@
+{
+  "version": 2,
+  "source": "parts-source-v2.png",
+  "weaponExclusion": "parts-weapon-exclusion-v2.png",
+  "sourceSize": [1024, 1536],
+  "parts": [
+    {
+      "id": "trigger-upper",
+      "label": "오른 위팔",
+      "color": "#f0c45b",
+      "path": "M 414 344 C 394 341 379 352 371 368 C 362 387 361 413 368 437 L 373 448 L 365 458 L 359 483 C 353 500 358 521 372 532 L 390 540 L 406 535 L 428 525 L 441 505 L 450 481 L 455 450 C 454 427 455 402 449 379 C 442 358 431 347 414 344 Z",
+      "anchors": {"shoulder": [416, 392], "elbow": [378, 506]},
+      "offset": [-155, -30]
+    },
+    {
+      "id": "support-upper",
+      "label": "왼 위팔",
+      "color": "#74c6c0",
+      "path": "M 667 391 C 653 397 638 413 628 436 C 622 452 619 467 617 480 L 613 497 L 609 522 L 612 548 L 628 565 L 651 577 L 675 579 L 695 564 L 702 540 L 709 503 L 715 465 C 718 438 713 415 701 402 C 690 391 679 389 667 391 Z",
+      "anchors": {"shoulder": [667, 435], "elbow": [674, 553]},
+      "offset": [155, -30]
+    },
+    {
+      "id": "trigger-fore",
+      "label": "오른 아래팔",
+      "color": "#dca0cf",
+      "path": "M 408 508 C 423 504 438 512 449 522 L 467 538 L 480 542 L 488 555 L 484 574 L 476 586 C 460 588 444 579 430 574 C 414 566 405 554 401 540 L 396 532 Z",
+      "anchors": {"elbow": [378, 506], "wrist": [476, 568]},
+      "offset": [-155, 55]
+    },
+    {
+      "id": "support-fore",
+      "label": "왼 아래팔",
+      "color": "#93b4f0",
+      "path": "M 638 566 L 662 567 L 674 579 L 669 602 L 655 630 L 641 657 L 626 687 L 614 710 L 600 725 L 577 727 L 555 711 L 553 693 L 562 671 L 578 644 L 593 614 L 610 586 L 622 573 Z",
+      "anchors": {"elbow": [674, 553], "wrist": [579, 711]},
+      "offset": [155, 55]
+    },
+    {
+      "id": "trigger-hand",
+      "label": "오른손",
+      "color": "#eaa283",
+      "path": "M 476 542 L 490 537 L 502 550 L 499 611 L 487 621 L 470 608 L 463 583 Z",
+      "anchors": {"wrist": [476, 568]},
+      "offset": [-155, 105]
+    },
+    {
+      "id": "support-hand",
+      "label": "왼손",
+      "color": "#a8cb80",
+      "path": "M 569 699 L 594 704 L 603 731 L 590 766 L 573 802 L 548 812 L 533 791 L 535 757 L 550 726 Z M 483 712 L 499 702 L 504 747 L 495 795 L 478 790 L 470 754 Z",
+      "anchors": {"wrist": [579, 711]},
+      "offset": [155, 105]
+    }
+  ],
+  "limitations": [
+    "Visible source-pixel partition only; hidden surfaces have not been invented.",
+    "Hand paths retain the prior visible grip regions for comparison.",
+    "Refined shoulder/elbow anchors are used by the sandbox arm-connection trial, not the Unity rig.",
+    "This extraction review shows exclusive visible pixels; runtime joint overlap and projection are separate."
+  ]
+}

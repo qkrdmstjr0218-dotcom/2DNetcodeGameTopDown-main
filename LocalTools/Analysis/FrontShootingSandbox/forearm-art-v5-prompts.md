@@ -1,0 +1,23 @@
+# Complete Forearm Art
+
+Mode: built-in ImageGen, two reference-based edits with transparent output. Original cutouts and previous assets were not overwritten. Generated assets are 1254x1254; authored anchors, crop rectangles, mirror and width scaling are in forearm-art-v5.json. The initial V5 crop incorrectly discarded the new elbow and retained the broken original elbow disc. The elbow-art-6 integration corrects this: the complete new elbow and forearm move together, while the original upper source is cropped before the old elbow and joined by an overlapping black fabric neck. Original upper-arm skin/cuff, hands and weapon remain separate.
+
+## Trigger Forearm
+
+Inputs: trigger-fore-v2.png and trigger-upper-v2.png.
+Saved asset: trigger-fore-complete-v5.png.
+
+Use case: precise-object-edit. Asset: one complete forearm armor animation sprite, NOT a character. The references are incomplete cutouts of the same black/white/gold armored forearm and its elbow. Reconstruct the complete forearm including the missing INNER side and elbow-to-forearm fabric. Output ONLY a single isolated, straight forearm assembly on true transparency, vertical with elbow at TOP and wrist at BOTTOM. No upper arm, skin, hand, fingers, body, gun or scenery. Match the original polished white curved shell, thin bright gold trim bands and black fabric undersuit, with black circular elbow armor and one gold circular rim visible on the LEFT side near the top. The entire forearm must form ONE CLOSED SOLID silhouette: a complete padded black elbow section continuously joins to the white forearm shell, tapering into a black wrist cuff. There must be NO transparent wedge, notch, missing triangle, slit or hollow inner surface between elbow and cuff. This is a compact, relatively short trigger-arm bracer, one broad white shell. Do not make fingers or hand anatomy. 1024x1024 square canvas. Center a forearm about 300 pixels wide and 760 pixels tall, elbow center around (512,200), wrist attachment center around (512,850); leave margin on every side. Crisp clean sprite edges, detailed cel shaded painted game art matching the references. No text, labels, shadows on background or background color.
+
+## Support Forearm
+
+Inputs: support-fore-v2.png, support-upper-v2.png, trigger-fore-complete-v5.png.
+Saved asset: support-fore-complete-v5.png.
+
+Use case: precise-object-edit. Asset: one complete support FOREARM armor sprite only. Images 1 and 2 define the original armor design; image 3 shows the desired closed, fully drawn fabric and clean rendering style. Reconstruct all missing inner-side fabric and shell surfaces of the support forearm. Output ONE isolated slender forearm assembly, straight vertical, elbow at TOP, wrist at BOTTOM, all on true transparency. Black padded elbow joint at top, black circular elbow armor with a thin gold ring visible on the RIGHT outer side, then a long plain white curved bracer with thin gold edging, ending in two modest gold/black cuff bands and a short black wrist cuff. Use the smooth simple white shell of image 1, no new decorative inlays. ONE CLOSED SOLID silhouette from elbow to wrist: the elbow padding must physically and visually continue into the forearm with no gap, hollow, missing triangular inner panel, notch or transparent slit. Do NOT draw an upper arm above the elbow, no skin, hand, fingers, body or weapon. Image 3 has an unwanted long upper-arm cap above its elbow; do not repeat that. Square 1024x1024 canvas, centered slender forearm about 280 pixels wide and 780 pixels tall, elbow joint center approximately (512,180), wrist attachment approximately (512,860), generous transparent margins. Crisp cel-shaded painted 2D game sprite, black outlines and white/black/gold palette matched to original references. No environment, backdrop, glow, text or ground shadow.
+
+## Integration Limits
+
+The joint-seam-7b code pass subsequently registers the actual opaque upper/lower collar cross-sections to one common seam, matches terminal tangents, and shares a bounded proximal width correction. This does not regenerate these bitmap sources. The forearm wrist and the shoulder root remain at their existing anchors.
+
+Generated gauntlet designs contain minor extra trim details. These are provisional replacement elbow/lower-arm surfaces, not an exact source-pixel restoration or final approved design. Crop and anchor registration preserve the existing elbow/wrist target positions; elbow/lower-arm art and upper-layer ownership changed. The torso repair from the previous pass was not edited in this pass. Do not claim that every natural-motion/anatomy issue has been approved.

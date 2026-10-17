@@ -1,0 +1,18 @@
+import assert from 'node:assert/strict';
+import {headAimAmount,easeHead,drawAimedHead} from './head-aim.mjs';
+const config={gunDegrees:35};
+assert.equal(headAimAmount(0,config),0);
+assert.equal(headAimAmount(-35*Math.PI/180,config),1);
+assert.equal(headAimAmount(-Math.PI,config),1);
+assert.equal(headAimAmount(Math.PI,config),0);
+assert.ok(Math.abs(headAimAmount(-17.5*Math.PI/180,config)-.5)<1e-10);
+let smallSteps=0;for(let i=0;i<60;i++)smallSteps=easeHead(smallSteps,1,1/60,12);
+assert.ok(Math.abs(smallSteps-easeHead(0,1,1,12))<1e-10);
+assert.equal(easeHead(.4,1,0,12),.4);
+assert.ok(easeHead(.9,0,.04,12)>0);
+let rotation;
+const paint={save(){},restore(){},translate(){},rotate(angle){rotation=angle;},drawImage(){}};
+drawAimedHead(paint,{head:{},bounds:[0,0,20,20]},1,{pivot:[10,20],offset:[0,0],maxDegrees:7});
+assert.ok(rotation<0,'Right-facing aim from -90 to -55 must turn counterclockwise on canvas.');
+assert.ok(Math.abs(rotation+7*Math.PI/180)<1e-10);
+console.log('Head aim: bounded, smooth, frame independent, counterclockwise to match Unity Z rotation.');

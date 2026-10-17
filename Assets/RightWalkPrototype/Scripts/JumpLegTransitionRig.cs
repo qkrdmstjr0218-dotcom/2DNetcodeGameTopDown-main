@@ -19,6 +19,7 @@ namespace RightWalkPrototype
         private readonly State[] start = new State[2], target = new State[2], current = new State[2];
         private readonly float[] upperLength = new float[2], lowerLength = new float[2];
         private bool wasAirborne, initialized, transitioning;
+        private bool wasSecondJump, firstAlternatePose;
         private float began, duration;
         public Sprite Waist { get; private set; }
         public Sprite AlternateAirPose { get; private set; }
@@ -83,16 +84,16 @@ namespace RightWalkPrototype
                 shin = Angle(V(leg.ankle)-V(leg.knee)), boot = leg.bootAngle,
                 bootOffset = V(leg.boot)-V(leg.ankle) };
         }
-        public bool Apply(bool grounded, int frame, bool running, int takeoffFrame=-1, bool takeoffRunning=false)
+        public bool Apply(bool grounded, int frame, bool running, int takeoffFrame=-1, bool takeoffRunning=false, bool secondJump=false)
         {
             if(!Ready) return false;
             Pose[] frames = running ? data.run : data.walk;
             Pose gait = frames[Mathf.Clamp(frame,0,frames.Length-1)];
             bool airborne = !grounded;
             if(!initialized) { initialized = true; wasAirborne = false; }
-            if(airborne != wasAirborne)
+            if(airborne != wasAirborne || airborne&&secondJump!=wasSecondJump)
             {
-                if(airborne)
+                if(airborne&&!wasAirborne)
                 {
                     TakeoffFrame=takeoffFrame>=0 ? takeoffFrame : frame;
                     TakeoffRunning=takeoffFrame>=0 ? takeoffRunning : running;
@@ -104,8 +105,13 @@ namespace RightWalkPrototype
                 bool nearSupport = Mathf.Abs(gait.near.contactY-gait.far.contactY)>2f
                     ? gait.near.contactY>gait.far.contactY
                     : gait.near.ankle[0]<gait.far.ankle[0];
+                if(airborne)
+                {
+                    if(!wasAirborne)firstAlternatePose=nearSupport;
+                    nearSupport=firstAlternatePose^secondJump;
+                    UseAlternatePose=nearSupport;
+                }
                 bool nearFolded = !nearSupport;
-                if(airborne) UseAlternatePose = nearSupport;
                 for(int side = 0; side < 2; side++)
                 {
                     start[side] = transitioning ? current[side] : wasAirborne ? target[side] : Gait(gait,side);
@@ -122,7 +128,7 @@ namespace RightWalkPrototype
                         : Gait(gait,side);
                 }
                 began = Time.time; duration = airborne ? .16f : .10f;
-                transitioning = true; wasAirborne = airborne;
+                transitioning = true; wasAirborne = airborne;wasSecondJump=secondJump;
             }
             if(!transitioning) { SetVisible(false); return false; }
             float t = Mathf.Clamp01((Time.time-began)/duration);

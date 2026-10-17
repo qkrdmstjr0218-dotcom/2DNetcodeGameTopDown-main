@@ -32,7 +32,8 @@ namespace RightWalkPrototype
         private void ApplyPose(int frame, bool running, int takeoffFrame=-1, bool takeoffRunning=false)
         {
             if(movement==null||hip==null||legs==null||walker==null)return;
-            if(transition!=null&&transition.Apply(movement.Grounded,frame,running,takeoffFrame,takeoffRunning))
+            if(transition!=null&&transition.Apply(movement.Grounded,frame,running,takeoffFrame,takeoffRunning,
+                movement.allowDoubleJump&&movement.JumpCount>1))
             {
                 active=true;legs.sprite=transition.Waist;
                 hip.OverrideDropPixels=transition.DropPixels;hip.ApplyFrame(frame);

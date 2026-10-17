@@ -1,0 +1,14 @@
+{
+  "trigger": {
+    "image": "trigger-fore-complete-v5",
+    "elbow": [635, 540], "wrist": [635, 1115],
+    "clip": [445, 505, 350, 682],
+    "widthScale": 0.19, "cuffWidthRatio": 1.15, "includeHandPatch": false, "joinAlong": 0, "joinOverlap": 12, "mirror": false
+  },
+  "support": {
+    "image": "support-fore-complete-v5",
+    "elbow": [640, 510], "wrist": [640, 1115],
+    "clip": [445, 475, 360, 717],
+    "widthScale": 0.19, "cuffWidthRatio": 1.15, "includeHandPatch": false, "joinAlong": 0, "joinOverlap": 12, "mirror": true
+  }
+}
