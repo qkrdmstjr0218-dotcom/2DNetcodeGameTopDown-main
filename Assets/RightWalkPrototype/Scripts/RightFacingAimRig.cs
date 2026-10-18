@@ -22,6 +22,7 @@ namespace RightWalkPrototype
         [Range(0,1)] public float headDownFollow = .45f;
         [Range(0,1)] public float headFollow = .75f;
         public bool mouseAim;
+        public bool HorizontalAndUpOnly { get; set; }
         [Range(0,90)] public float maxAngle = 90f;
         public float restAngle;
         [Range(0,90)] public float groundedDownAngle = 55f;
@@ -190,7 +191,8 @@ namespace RightWalkPrototype
             var restingOrigin=transform.parent.parent.TransformPoint(bodyRestPosition+bodyRestRotation*aimRestPosition);
             var bodyDirection=transform.parent.parent.InverseTransformVector(point-(Vector2)restingOrigin);
             float bodyAngle=Mathf.Atan2(bodyDirection.y,bodyDirection.x)*Mathf.Rad2Deg;
-            if(frontDownAim!=null&&frontDownAim.TryAim(point))
+            if(HorizontalAndUpOnly){bodyAngle=Mathf.Max(0,bodyAngle);if(frontDownAim!=null)frontDownAim.Deactivate();}
+            if(!HorizontalAndUpOnly&&frontDownAim!=null&&frontDownAim.TryAim(point))
             {
                 SetBodyLean(0f);SetDownAimOffset(0f);AimAngle=frontDownAim.LocalAimDegrees;
                 TargetWithinRange=frontDownAim.TargetWithinRange;AirborneDownAim=airborne;
@@ -224,7 +226,7 @@ namespace RightWalkPrototype
                 desired=Mathf.LerpAngle(desired,bodyAngle-lean,verticalBlend);
             }
             // The ground limit is the barrel's angle, not its angle relative to the bent torso.
-            float downLimit=movement!=null && !airborne ? Mathf.Min(maxAngle,groundedDownAngle)+Mathf.Min(0f,lean) : maxAngle;
+            float downLimit=HorizontalAndUpOnly ? 0f : movement!=null && !airborne ? Mathf.Min(maxAngle,groundedDownAngle)+Mathf.Min(0f,lean) : maxAngle;
             TargetWithinRange=(airborne || directionTarget || delta.x>=-.001f) && desired>=restAngle-downLimit-.01f && desired<=restAngle+maxAngle+.01f;
             AimAngle=Mathf.Clamp(desired,restAngle-downLimit,restAngle+maxAngle);
             AirborneDownAim=airborne && AimAngle<restAngle-groundedDownAngle;

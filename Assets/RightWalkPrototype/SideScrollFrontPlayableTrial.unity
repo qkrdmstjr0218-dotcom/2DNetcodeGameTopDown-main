@@ -1639,6 +1639,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5538394363876727333, guid: d048713c7c459b049881981204668b06, type: 3}
       insertIndex: -1
       addedObject: {fileID: 931039258}
+    - targetCorrespondingSourceObject: {fileID: 5538394363876727333, guid: d048713c7c459b049881981204668b06, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 931039259}
     - targetCorrespondingSourceObject: {fileID: 123243779605805170, guid: d048713c7c459b049881981204668b06, type: 3}
       insertIndex: -1
       addedObject: {fileID: 895356082}
@@ -1890,6 +1893,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9091eb365208ff34a83d03dbde75d9d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RightWalkPrototype.FrontDownAimMovingLegs
+--- !u!114 &931039259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 931039244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d264bdff7144224cae2536064dd752a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RightWalkPrototype.CharacterDeathTrial
+  middlePose: {fileID: 21300000, guid: 8a229254b43d470458d790139df9c549, type: 3}
+  fallenPose: {fileID: 21300000, guid: 146c2b7016e746c4caba11468c6e6994, type: 3}
+  droppedWeapon: {fileID: 21300000, guid: dc3c71fd3419c96439b977bdc4983627, type: 2}
+  maxHealth: 100
+  recoilDuration: 0.08
+  buckleDuration: 0.18
+  fallDuration: 0.34
 --- !u!1 &941748094
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,6 +14,8 @@ namespace RightWalkPrototype
         public bool allowDoubleJump;
         public bool Grounded { get; private set; }
         public int JumpCount { get; private set; }
+        public float? SpeedOverride { get; set; }
+        public bool JumpInputBlocked { get; set; }
         public void SetRemoteGrounded(bool value) { Grounded=value; }
         private Rigidbody2D body;
         private BoxCollider2D shape;
@@ -53,9 +55,9 @@ namespace RightWalkPrototype
             if(Grounded)JumpCount=0;
             else if(JumpCount==0)JumpCount=1; // Walking off an edge leaves one air jump.
             var velocity=body.linearVelocity;
-            float targetSpeed=runMode!=null && sprintRequested ? runMode.runSpeed : speed;
+            float targetSpeed=SpeedOverride ?? (runMode!=null && sprintRequested ? runMode.runSpeed : speed);
             velocity.x=Mathf.MoveTowards(velocity.x,input*targetSpeed,14f*Time.fixedDeltaTime);
-            if(jumpRequested && (Grounded || allowDoubleJump&&JumpCount<2))
+            if(jumpRequested && !JumpInputBlocked && (Grounded || allowDoubleJump&&JumpCount<2))
             {
                 JumpCount=Grounded?1:2;velocity.y=jumpSpeed;Grounded=false;
             }
@@ -74,7 +76,7 @@ namespace RightWalkPrototype
         }
         public void ResetPosition()
         {
-            body.position=spawn;body.linearVelocity=Vector2.zero;lastPosition=spawn;JumpCount=0;
+            body.position=spawn;body.linearVelocity=Vector2.zero;lastPosition=spawn;JumpCount=0;jumpRequested=false;
         }
         private void OnGUI()
         {

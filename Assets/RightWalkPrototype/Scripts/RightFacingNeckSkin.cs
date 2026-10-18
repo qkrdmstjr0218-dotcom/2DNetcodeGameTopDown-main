@@ -7,6 +7,7 @@ namespace RightWalkPrototype
         public Transform head;
         public Material material;
         private Mesh mesh;
+        private Vector3? attachmentBack, attachmentFront;
         private const int Rows=24, Columns=9;
         private Vector3 NeckPoint(float x,float y) { return new Vector3((x-252f)/204.8f,(145f-y)/204.8f,0); }
         private Vector3 HeadPoint(float x,float y)
@@ -14,6 +15,11 @@ namespace RightWalkPrototype
             return transform.InverseTransformPoint(head.TransformPoint(new Vector3((x-249f)/204.8f,(132f-y)/204.8f,0)));
         }
         private void OnEnable() { Rebuild(); }
+        // Only the separate death clone supplies the replacement head's attachment.
+        public void RebuildWithAttachment(Vector3 backWorld,Vector3 frontWorld)
+        {
+            attachmentBack=backWorld;attachmentFront=frontWorld;Rebuild();
+        }
         public void Rebuild()
         {
             if(head==null || material==null)return;
@@ -24,7 +30,8 @@ namespace RightWalkPrototype
             var vertices=new Vector3[(Rows+1)*Columns];var colors=new Color[vertices.Length];var uv=new Vector2[vertices.Length];
             var triangles=new int[Rows*(Columns-1)*6];
             var backBase=NeckPoint(240,145);var frontBase=NeckPoint(261,151);
-            var backTop=HeadPoint(242,124);var frontTop=HeadPoint(268,137);
+            var backTop=attachmentBack.HasValue?transform.InverseTransformPoint(attachmentBack.Value):HeadPoint(242,124);
+            var frontTop=attachmentFront.HasValue?transform.InverseTransformPoint(attachmentFront.Value):HeadPoint(268,137);
             for(int row=0;row<=Rows;row++)
             {
                 float t=(float)row/Rows;

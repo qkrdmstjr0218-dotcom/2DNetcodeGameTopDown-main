@@ -5,5 +5,5 @@
 - Do not launch subagents or change models/reasoning settings unless the user requests it.
 - Preserve existing artwork, weapon geometry, character scale, and working behavior outside the requested change. Prefer small edits and reuse existing assets.
 - Treat brainstorming and future requests as notes, not implementation authorization. Distinguish confirmed requirements, candidates, and unresolved choices.
-- Read `HANDOFF-2026-10-16.ko.md` for the current handoff. The browser source is `LocalTools/Analysis/FrontShootingSandbox`; stationary down aim is also connected in the separate `SideScrollFrontDownAimTrial.unity`, not the production/network player. The failed body proportion warp was removed. Latest stance/feet/pelvis ideas are deferred notes, not authorization to implement.
+- Read `HANDOFF-2026-10-19.ko.md` for the current home-to-academy handoff; `HANDOFF-2026-10-16.ko.md` is historical. The latest crouch pose is unfinished and explicitly not accepted by the user. Preserve working motion and original scenes; inspect current state before further edits. Browser source: `LocalTools/Analysis/FrontShootingSandbox`. Local pose trials are separate from the production/network player.
 - Read `LocalTools/Analysis/combat-system-design-notes.ko.md` for the planned combat direction when relevant.

@@ -97,6 +97,8 @@ namespace RightWalkPrototype
         }
         public bool TryAim(Vector2 worldTarget)
         {
+            var crouch=GetComponent<CrouchTrial>();
+            if(crouch!=null&&crouch.IsCrouched){Deactivate();return false;}
             if(!isActiveAndEnabled||poseData==null||material==null){Deactivate();return false;}
             Initialize();
             if(standingTrialOnly&&!UseAirbornePose&&!UseMovingPose)
@@ -116,6 +118,8 @@ namespace RightWalkPrototype
         }
         public void ShowAngle(float radians,bool immediateHead=true)
         {
+            var crouch=GetComponent<CrouchTrial>();
+            if(crouch!=null&&crouch.IsCrouched){Deactivate();return;}
             Initialize();FrontDownAimMath.Evaluate(data,radians,pose);
             LocalAimDegrees=-90-radians*Mathf.Rad2Deg;
             float target=Mathf.Clamp01(-radians/(data.headAim.gunDegrees*Mathf.Deg2Rad));

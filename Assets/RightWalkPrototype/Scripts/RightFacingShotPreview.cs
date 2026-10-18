@@ -14,6 +14,7 @@ namespace RightWalkPrototype
         public bool readMouse = true;
         public System.Action<Vector2,Vector2> ShotRequested;
         private RightFacingAimRig aim;
+        private CharacterDeathTrial life;
         private Material material;
         private float nextShot;
         private readonly List<Shot> shots = new List<Shot>();
@@ -34,11 +35,11 @@ namespace RightWalkPrototype
             public bool impacted;
             public bool authoritativePath, hitsAtEnd;
         }
-        private void Awake() { aim=GetComponent<RightFacingAimRig>(); }
+        private void Awake() { aim=GetComponent<RightFacingAimRig>();life=GetComponentInParent<CharacterDeathTrial>(); }
         public void Fire()
         {
             if(aim==null)aim=GetComponent<RightFacingAimRig>();
-            if(!isActiveAndEnabled || !Application.isPlaying || Time.time<nextShot)return;
+            if(!isActiveAndEnabled || !Application.isPlaying || Time.time<nextShot || life!=null&&life.IsDead)return;
             nextShot=Time.time+Mathf.Max(.01f,shotInterval);
             if(ShotRequested!=null){ShotRequested(aim.MuzzlePosition,aim.AimDirection);return;}
             ShowShot(aim.MuzzlePosition,aim.AimDirection,Mathf.Max(.1f,aim.previewAimRange),false,false);

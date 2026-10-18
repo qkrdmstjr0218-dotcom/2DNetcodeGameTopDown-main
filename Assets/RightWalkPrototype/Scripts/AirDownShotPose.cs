@@ -15,6 +15,7 @@ namespace RightWalkPrototype
         private RunWalkPreview gait;
         public int TakeoffFrame => transition!=null ? transition.TakeoffFrame : 0;
         public bool TakeoffRunning => transition!=null&&transition.TakeoffRunning;
+        public bool UseAlternatePose => transition!=null&&transition.UseAlternatePose;
         private void Awake()
         {
             walker=GetComponent<RightFacingWalker>();legs=GetComponent<SpriteRenderer>();
