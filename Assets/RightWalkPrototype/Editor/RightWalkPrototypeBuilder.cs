@@ -88,7 +88,7 @@ public static class RightWalkPrototypeBuilder
             MakeLine("Grid horizontal " + i, new Vector3(-4, i * .25f), new Vector3(4, i * .25f), gridMaterial);
         }
         AssetDatabase.SaveAssets();
-        EditorSceneManager.SaveScene(scene, Root + "/RightWalkDemo.unity");
+        EditorSceneManager.SaveScene(scene, "Assets/RightWalkPrototype/Scenes/Archive/RightWalkDemo.unity");
         Export();
         Selection.activeGameObject = character;
         Debug.Log("[RightWalkPrototype] Demo, standalone prefab and package created.");

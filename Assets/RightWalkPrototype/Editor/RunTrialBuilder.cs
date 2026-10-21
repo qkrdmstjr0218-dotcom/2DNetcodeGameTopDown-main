@@ -53,8 +53,8 @@ public static class RunTrialBuilder
             }
         }
         if (frames.Length != 40) throw new InvalidOperationException("Expected 40 run poses.");
-        var scene = EditorSceneManager.OpenScene(Root + "SideScrollStrideTrial.unity");
-        EditorSceneManager.SaveScene(scene, Root + (recovery ? "SideScrollRunRecoveryTrial.unity" : "SideScrollRunTrial.unity"));
+        var scene = EditorSceneManager.OpenScene("Assets/RightWalkPrototype/Scenes/Archive/SideScrollStrideTrial.unity");
+        EditorSceneManager.SaveScene(scene, (recovery ? "Assets/RightWalkPrototype/Scenes/Archive/SideScrollRunRecoveryTrial.unity" : "Assets/RightWalkPrototype/Scenes/Archive/SideScrollRunTrial.unity"));
         var control = UnityEngine.Object.FindFirstObjectByType<SideScrollMapPreview>();
         var run = control.gameObject.AddComponent<RunWalkPreview>();
         run.runFrames = frames;

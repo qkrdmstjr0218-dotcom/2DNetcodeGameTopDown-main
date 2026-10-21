@@ -39,6 +39,11 @@ namespace RightWalkPrototype
             float facingSign = transform.lossyScale.x < 0 ? -1f : 1f;
             bool backward = velocity * facingSign < -.01f;
             bool running = atRunSpeed && !(backwardRunUsesWalk && backward);
+            ApplyNetworkGait(running);
+        }
+
+        public void ApplyNetworkGait(bool running)
+        {
             if (running == IsRunning) return;
             IsRunning = running;
             // Both sheets share the same phase count; preserve phase through the speed change.

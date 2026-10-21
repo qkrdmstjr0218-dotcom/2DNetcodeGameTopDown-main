@@ -10,7 +10,7 @@ public static class FrontDownAimTrialBuilder
 {
     private const string Root="Assets/RightWalkPrototype/";
     private const string Art=Root+"Art/FrontDownAim/";
-    private const string Scene=Root+"SideScrollFrontDownAimTrial.unity";
+    private const string Scene="Assets/RightWalkPrototype/Scenes/Archive/SideScrollFrontDownAimTrial.unity";
     [Serializable] private sealed class Report
     {
         public bool passed;
@@ -32,7 +32,7 @@ public static class FrontDownAimTrialBuilder
         var material=AssetDatabase.LoadAssetAtPath<Material>(Art+"FrontDownAim.mat");
         if(material==null){material=new Material(Shader.Find("Sprites/Default"));AssetDatabase.CreateAsset(material,Art+"FrontDownAim.mat");}
         material.mainTexture=AssetDatabase.LoadAssetAtPath<Texture2D>(png);EditorUtility.SetDirty(material);
-        var scene=EditorSceneManager.OpenScene(Root+"SideScrollTestMap.unity");
+        var scene=EditorSceneManager.OpenScene("Assets/RightWalkPrototype/Scenes/Archive/SideScrollTestMap.unity");
         EditorSceneManager.SaveScene(scene,Scene);
         var walker=UnityEngine.Object.FindFirstObjectByType<RightFacingWalker>();
         if(walker==null)throw new InvalidOperationException("The map has no sprite walker.");

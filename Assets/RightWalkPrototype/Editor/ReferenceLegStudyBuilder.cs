@@ -30,7 +30,7 @@ public static class ReferenceLegStudyBuilder
         var ground=new GameObject("Ground Reference").AddComponent<LineRenderer>();
         ground.sharedMaterial=rig.material;ground.positionCount=2;ground.SetPosition(0,new Vector3(-10,0));ground.SetPosition(1,new Vector3(10,0));
         ground.startWidth=ground.endWidth=.01f;ground.startColor=ground.endColor=Color.gray;
-        EditorSceneManager.SaveScene(scene,"Assets/RightWalkPrototype/ReferenceLegStudy.unity");
+        EditorSceneManager.SaveScene(scene,"Assets/RightWalkPrototype/Scenes/Archive/ReferenceLegStudy.unity");
         AssetDatabase.SaveAssets();
     }
 }

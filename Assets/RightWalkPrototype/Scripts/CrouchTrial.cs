@@ -34,6 +34,15 @@ namespace RightWalkPrototype
         private float? oldSpeed,oldDrop;
         private float phase;
         private float floor;
+        private bool networkDriven;
+        public float CyclePhase => phase;
+        public float MotionAmount => motion;
+        public void SetNetworkDriven(bool value){networkDriven=value;if(value)readKeyboard=false;}
+        public void ApplyNetworkPose(bool crouched,float cyclePhase,float motionAmount)
+        {
+            if(crouched&&!IsCrouched)Enter();else if(!crouched&&IsCrouched)Exit();
+            phase=Mathf.Repeat(cyclePhase,1);motion=Mathf.Clamp01(motionAmount);
+        }
         public void SetRequested(bool value){readKeyboard=false;requested=value;}
         private void Awake()
         {
@@ -48,6 +57,8 @@ namespace RightWalkPrototype
         }
         private void Update()
         {
+            if(networkDriven)return;
+            if(readKeyboard&&RelayArenaPrototype.LiveInputBlocked)return;
             if(readKeyboard)
             {
 #if ENABLE_INPUT_SYSTEM
@@ -93,9 +104,9 @@ namespace RightWalkPrototype
             float distance=position.x-lastVisualPosition.x;lastVisualPosition=position;
             if(!IsCrouched){legRig?.Hide();return;}
             float velocity=physicsBody.linearVelocity.x;
-            if(Mathf.Abs(velocity)>.025f&&Mathf.Abs(distance)<.5f)
+            if(!networkDriven&&!movement.HitReacting&&Mathf.Abs(velocity)>.025f&&Mathf.Abs(distance)<.5f)
                 phase=Mathf.Repeat(phase+distance*(transform.localScale.x<0?-1:1)/Mathf.Max(.1f,cycleDistance),1);
-            motion=Mathf.MoveTowards(motion,Mathf.Abs(velocity)>.025f?1:0,Time.deltaTime/.32f);
+            if(!networkDriven)motion=Mathf.MoveTowards(motion,!movement.HitReacting&&Mathf.Abs(velocity)>.025f?1:0,Time.deltaTime/.32f);
             FrameIndex=(int)(phase*40);
             ApplyHeight(legRig.DrawCrouch(phase,Mathf.SmoothStep(0,1,motion),bodyDrop,floor,cycleDistance));
         }
@@ -105,7 +116,14 @@ namespace RightWalkPrototype
             var center=(Vector2)transform.TransformPoint(standingOffset);
             var size=Vector2.Scale(standingSize,new Vector2(Mathf.Abs(scale.x),Mathf.Abs(scale.y)))-Vector2.one*.025f;
             foreach(var hit in Physics2D.OverlapBoxAll(center,size,0,1))
-                if(!hit.isTrigger&&hit!=shape&&!hit.transform.IsChildOf(transform))return false;
+            {
+                if(hit.isTrigger||hit==shape||hit.transform.IsChildOf(transform))continue;
+                if(Physics2D.GetIgnoreCollision(shape,hit))continue;
+                var platform=hit.usedByEffector?hit.GetComponent<PlatformEffector2D>():null;
+                // A one-way surface supports feet but cannot obstruct the head.
+                if(platform!=null&&platform.enabled&&platform.useOneWay)continue;
+                return false;
+            }
             return true;
         }
         private void Exit()
@@ -123,6 +141,7 @@ namespace RightWalkPrototype
         private void OnDestroy(){legRig?.Dispose();}
         private void OnGUI()
         {
+            if(networkDriven||ArenaObjectiveMatch.InReadyRoom)return;
             GUILayout.BeginArea(new Rect(15,215,310,94),GUI.skin.box);
             GUILayout.Label("앉기 시험 · S / ↓ / 왼쪽 Ctrl 유지");
             GUILayout.Label("A/D: 앉아서 이동 · 마우스/좌클릭: 좌우·위·비스듬한 아래 사격");

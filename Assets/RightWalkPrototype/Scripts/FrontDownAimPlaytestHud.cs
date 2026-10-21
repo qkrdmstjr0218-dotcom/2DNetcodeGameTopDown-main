@@ -6,6 +6,12 @@ namespace RightWalkPrototype
     public sealed class FrontDownAimPlaytestHud : MonoBehaviour
     {
         public FrontDownAimOverlay overlay;
+        private void OnEnable()
+        {
+            // This HUD also exists inside legacy character prefabs. Network scenes
+            // use the session HUD and the owning player's server-backed HP controls.
+            if(FindFirstObjectByType<SideScrollNetworkSession>()!=null)enabled=false;
+        }
         private void OnGUI()
         {
             GUILayout.BeginArea(new Rect(Mathf.Max(12,Screen.width-330),12,318,180),GUI.skin.box);

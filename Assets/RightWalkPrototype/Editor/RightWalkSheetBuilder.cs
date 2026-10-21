@@ -91,7 +91,7 @@ public static class RightWalkSheetBuilder
         new GameObject("Main Light").AddComponent<Light>().type=LightType.Directional;
         var preview=new GameObject("Preview Controls").AddComponent<WalkPreviewControls>();
         preview.walker=walker;preview.followCamera=camera;preview.cameraHeight=1.1f;preview.SetWhiteBackground(true);
-        EditorSceneManager.SaveScene(scene,Root+"/RightWalkSheetDemo.unity");AssetDatabase.SaveAssets();
+        EditorSceneManager.SaveScene(scene,"Assets/RightWalkPrototype/Scenes/Archive/RightWalkSheetDemo.unity");AssetDatabase.SaveAssets();
     }
     private static Material HeadSplitMaterial(string name,bool rear)
     {

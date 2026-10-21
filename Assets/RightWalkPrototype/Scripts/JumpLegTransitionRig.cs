@@ -195,7 +195,6 @@ namespace RightWalkPrototype
         private readonly Vector2[] crouchGuardShift=new Vector2[2];
         public float CrouchSupportClearance { get; private set; }
         public float CrouchFootContactError { get; private set; }
-        private readonly float[] crouchToeLift=new float[2],crouchFootX=new float[2],crouchKneeLift=new float[2];
         public void PrepareCrouch()
         {
             if(!Ready)return;
@@ -205,9 +204,10 @@ namespace RightWalkPrototype
             {
                 var source=side==0?data.source.far:data.source.near;
                 var thigh=V(source.knee)-V(source.hip);thigh.y=-thigh.y;
-                // The old thigh crop includes a piece of the knee guard. That
-                // must not rotate with the thigh in a deep crouch.
-                ClipFallPart(side*4,V(source.knee),-thigh.normalized,8f/Ppu,side==1);
+                // Keep the near thigh's full width through its knee socket.
+                // An inset plus a diagonal trim removed the outer knee volume.
+                // The separate guard still covers the end of the thigh.
+                ClipFallPart(side*4,V(source.knee),-thigh.normalized,side==0?8f/Ppu:0f);
                 var cuff=side==0?new Vector2(150.8079f,400.3056f):new Vector2(344.1662f,406.4092f);
                 var inward=V(source.knee)-cuff;inward.y=-inward.y;
                 ClipFallPart(side*4+1,cuff,inward.normalized,-4f/Ppu);
@@ -288,7 +288,8 @@ namespace RightWalkPrototype
         {
             // Register to the accepted walking pelvis, not the detached
             // cutout's original (forward and lower) artwork coordinates.
-            return V((side==0?data.walk[0].far:data.walk[0].near).hip);
+            // Set both crouching legs back slightly beneath the waist edge.
+            return V((side==0?data.walk[0].far:data.walk[0].near).hip)-Vector2.right*8f;
         }
         private float CrouchSupportDepth(int side,float shinAngle,float bootAngle,Vector2 bootOffset)
         {
@@ -347,58 +348,29 @@ namespace RightWalkPrototype
             if(!Ready)return new Vector2(0,drop);
             CrouchLengthError=0;CrouchSocketError=0;CrouchContactError=0;CrouchFootContactError=0;CrouchSupportClearance=float.PositiveInfinity;
             float ground=499.2f-floor*Ppu,poseDrop=drop;
-            // Thighs rotate around registered hips. During stance the knee
-            // travels back; during recovery it lifts and returns forwards.
-            // The shared hip height stays fixed; the planted guard and
-            // trailing boot are solved without sliding the hip socket.
+            // Preserve the resting pose, including the accepted guard/boot contacts.
+            // Walking uses a small fore/aft hip exchange and a low knee return;
+            // the upper body keeps its resting height throughout the cycle.
             for(int side=0;side<2;side++)
             {
-                var original=side==0?data.source.far:data.source.near;
-                float t=Mathf.Repeat(phase+(side==0?.5f:0),1);
-                const float stance=.62f;
-                float recovery=t<stance?0:(t-stance)/(1-stance);
-                float lift=Mathf.Pow(Mathf.Sin(Mathf.PI*recovery),2);
                 float shinAngle=-165f;
                 float bootAngle=127f;
                 var idleBoot=KneelBootOffset(side,-165f,bootAngle);
                 float idleDepth=CrouchSupportDepth(side,-165f,bootAngle,idleBoot);
                 float vertical=ground-idleDepth-CrouchHip(side).y-drop*Ppu;
                 float restThigh=Mathf.Asin(Mathf.Clamp(vertical/upperLength[side],-.98f,.98f))*Mathf.Rad2Deg;
-                float sweep=side==0?8f:10f;
-                float sweepAngle;
-                if(t<stance)sweepAngle=sweep*(-1+2*t/stance);
-                else
-                {
-                    float u=recovery,quintic=u*u*u*(10+u*(-15+6*u));
-                    float tangent=2*sweep*(1-stance)/stance;
-                    sweepAngle=sweep+tangent*u+(-2*sweep-tangent)*quintic;
-                }
-                // Extend the greave back through stance and fold it forwards
-                // during recovery, instead of rotating only at the knee lift.
-                shinAngle=-165f+motion*(5f-17f*sweepAngle/sweep);
-                float gaitThigh=restThigh+sweepAngle-(side==0?5f:8f)*lift;
-                float thigh=Mathf.LerpAngle(restThigh,gaitThigh,motion);
-                crouchToeLift[side]=.025f*lift*motion;
-                float halfStep=cycleDistance*stance*Ppu*.30f;
-                // Leave room between the folded greave and thigh.
-                crouchFootX[side]=(side==0?-33f:-39f)-halfStep*sweepAngle/sweep;
-                crouchKneeLift[side]=.06f*lift*motion;
-                var bootOffset=KneelBootOffset(side,shinAngle,bootAngle);
-                crouchDepth[side]=CrouchSupportDepth(side,shinAngle,bootAngle,bootOffset);
-                crouchPose[side]=new State{thigh=thigh,shin=shinAngle,boot=bootAngle,bootOffset=bootOffset-Direction(shinAngle)*lowerLength[side]};
+                crouchPose[side]=new State{thigh=restThigh,shin=shinAngle,boot=bootAngle};
             }
             for(int side=0;side<2;side++)
             {
-                var original=side==0?data.source.far:data.source.near;
                 var pose=crouchPose[side];var h=CrouchHip(side)+Vector2.up*(poseDrop*Ppu);pose.hip=h;
                 var knee=h+Direction(pose.thigh)*upperLength[side];
-                float toeDepth=ground-knee.y-crouchToeLift[side]*Ppu;
+                float toeDepth=ground-knee.y;
                 pose.boot=CrouchToeAngle(side,pose.shin,toeDepth);
                 var neutralBoot=knee+KneelBootOffset(side,pose.shin,pose.boot);
                 var neutralToe=neutralBoot+RotatePixels(BootSupportPoint(pose.boot)-V(data.source.near.ankle),pose.boot);
-                var wantedToe=new Vector2(Mathf.Lerp(neutralToe.x,h.x+crouchFootX[side],motion),ground-crouchToeLift[side]*Ppu);
-                // Register the actual guard to the floor, then solve the
-                // trailing cuff and boot together. Only the recovering knee lifts.
+                var wantedToe=new Vector2(neutralToe.x,ground);
+                // Retain the resting guard contact and connected trailing boot.
                 float kneeLow=h.y+upperLength[side]*.05f,kneeHigh=h.y+upperLength[side]*.9999f;
                 for(int solve=0;solve<18;solve++)
                 {
@@ -408,14 +380,74 @@ namespace RightWalkPrototype
                     pose.boot=127f;
                     PlaceCrouchFoot(side,knee,wantedToe,ref pose);
                     float bottom=knee.y+KneeDepth(side,pose.shin);
-                    if(bottom>ground-crouchKneeLift[side]*Ppu)kneeHigh=kneeY;else kneeLow=kneeY;
+                    if(bottom>ground)kneeHigh=kneeY;else kneeLow=kneeY;
                 }
                 pose.thigh=Angle(knee-h);
+                crouchPose[side]=pose;
+            }
+            if(motion>0)
+            {
+                for(int side=0;side<2;side++)
+                {
+                    float t=Mathf.Repeat(phase+(side==0?.5f:0),1);
+                    const float stance=.62f;
+                    float sweep;
+                    float swing=0;
+                    if(t<stance)sweep=-1+2*t/stance;
+                    else
+                    {
+                        float u=(t-stance)/(1-stance);
+                        float ease=u*u*u*(10+u*(-15+6*u));
+                        swing=Mathf.Sin(Mathf.PI*u);swing*=swing;
+                        // Carry the thigh forwards during recovery, matching
+                        // the rearward stance velocity at both ends of the loop.
+                        float tangent=2*(1-stance)/stance;
+                        sweep=1+tangent*u+(-2-tangent)*ease;
+                    }
+                    var pose=crouchPose[side];
+                    var hip=CrouchHip(side)+Vector2.up*(drop*Ppu);
+                    // A small opposite hip exchange suggests pelvic rotation
+                    // in side view without raising the torso or scaling the art.
+                    hip.x+=(side==0?-2f:4f)-(side==0?10f:13f)*sweep;
+                    float shin=(side==0?-181f:-174f)-(side==0?5f:3f)*sweep;
+                    float depth=KneeDepth(side,shin);
+                    float y=Mathf.Clamp(ground-depth-4.5f*swing-hip.y,
+                        upperLength[side]*.05f,upperLength[side]*.9999f);
+                    float x=Mathf.Sqrt(upperLength[side]*upperLength[side]-y*y);
+                    pose.hip=Vector2.Lerp(pose.hip,hip,motion);
+                    pose.thigh=Mathf.LerpAngle(pose.thigh,Angle(new Vector2(x,y)),motion);
+                    pose.shin=Mathf.LerpAngle(pose.shin,shin,motion);
+                    pose.boot=Mathf.LerpAngle(pose.boot,CrouchToeAngle(side,shin,depth),motion);
+                    crouchPose[side]=pose;
+                }
+                // Interpolating limb rotations must not push a guard or cuff
+                // through the floor during the start/stop blend.
+                float correction=0;
+                for(int side=0;side<2;side++)
+                {
+                    var pose=crouchPose[side];
+                    var knee=pose.hip+Direction(pose.thigh)*upperLength[side];
+                    var offset=KneelBootOffset(side,pose.shin,pose.boot);
+                    float depth=Mathf.Max(CrouchSupportDepth(side,pose.shin,pose.boot,offset),
+                        offset.y+MaxDown(BootContact,V(data.source.near.ankle),pose.boot));
+                    correction=Mathf.Max(correction,knee.y+depth-ground);
+                }
+                poseDrop-=correction/Ppu;
+                for(int side=0;side<2;side++)
+                {
+                    var pose=crouchPose[side];pose.hip.y-=correction;crouchPose[side]=pose;
+                }
+            }
+            for(int side=0;side<2;side++)
+            {
+                var original=side==0?data.source.far:data.source.near;
+                var pose=crouchPose[side];var h=pose.hip;
+                var knee=h+Direction(pose.thigh)*upperLength[side];
                 var ankle=knee+Direction(pose.shin)*lowerLength[side];
                 var boot=knee+KneelBootOffset(side,pose.shin,pose.boot);pose.bootOffset=boot-ankle;
                 crouchDepth[side]=CrouchSupportDepth(side,pose.shin,pose.boot,boot-knee);
                 float toeBottom=boot.y+MaxDown(BootContact,V(data.source.near.ankle),pose.boot);
-                if(crouchToeLift[side]<.00001f)CrouchFootContactError=Mathf.Max(CrouchFootContactError,Mathf.Abs(toeBottom-ground)/Ppu);
+                if(ground-knee.y-KneeDepth(side,pose.shin)<.001f)CrouchFootContactError=Mathf.Max(CrouchFootContactError,Mathf.Abs(toeBottom-ground)/Ppu);
                 CrouchContactError=Mathf.Max(CrouchContactError,Mathf.Max(0,(toeBottom-ground)/Ppu));
                 float shinRotation=pose.shin-Angle(V(original.ankle)-V(original.knee));
                 var socket=side==0?new Vector2(150.8079f,400.3056f):new Vector2(344.1662f,406.4092f);
@@ -442,7 +474,7 @@ namespace RightWalkPrototype
             SetVisible(true);
             return new Vector2(0,poseDrop);
         }
-        private void ClipFallPart(int index,Vector2 jointPixel,Vector2 inward,float inset,bool trimCrouchFront=false)
+        private void ClipFallPart(int index,Vector2 jointPixel,Vector2 inward,float inset)
         {
             var sprite=sprites[index];var pivot=sprite.pivot/Ppu;var size=sprite.rect.size/Ppu;
             var joint=new Vector2(jointPixel.x/Ppu,(sprite.texture.height-jointPixel.y)/Ppu)-pivot;
@@ -453,19 +485,6 @@ namespace RightWalkPrototype
                 var a=polygon[i];var b=polygon[(i+1)%polygon.Length];float da=Vector2.Dot(a-joint,inward)-inset,db=Vector2.Dot(b-joint,inward)-inset;
                 if(da>=0)clipped.Add(a);
                 if((da>=0)!=(db>=0))clipped.Add(Vector2.Lerp(a,b,da/(da-db)));
-            }
-            if(trimCrouchFront)
-            {
-                var trimmed=new System.Collections.Generic.List<Vector2>();
-                for(int i=0;i<clipped.Count;i++)
-                {
-                    var a=clipped[i];var b=clipped[(i+1)%clipped.Count];
-                    var pa=(a+pivot)*Ppu;var pb=(b+pivot)*Ppu;
-                    float da=364-(pa.x+.2f*(sprite.texture.height-pa.y)),db=364-(pb.x+.2f*(sprite.texture.height-pb.y));
-                    if(da>=0)trimmed.Add(a);
-                    if((da>=0)!=(db>=0))trimmed.Add(Vector2.Lerp(a,b,da/(da-db)));
-                }
-                clipped=trimmed;
             }
             var vertices=new Vector3[clipped.Count];var uv=new Vector2[clipped.Count];var colors=new Color[clipped.Count];
             for(int i=0;i<clipped.Count;i++){vertices[i]=clipped[i];uv[i]=(clipped[i]+pivot)*Ppu/sprite.texture.width;colors[i]=Color.white;}

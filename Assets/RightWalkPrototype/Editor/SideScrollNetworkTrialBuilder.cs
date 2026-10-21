@@ -7,14 +7,17 @@ using RightWalkPrototype;
 
 public static class SideScrollNetworkTrialBuilder
 {
-    public const string ScenePath="Assets/RightWalkPrototype/SideScrollNetworkTrial.unity";
+    public const string ScenePath="Assets/RightWalkPrototype/Scenes/Network/SideScrollNetworkTrial.unity";
+    public const string PlayerPath="Assets/RightWalkPrototype/SideScrollNetworkPlayer.prefab";
+    private const string CurrentScene="Assets/Characters/Current/Scenes/Character_Complete_Playground.unity";
     [MenuItem("Tools/Right Walk Prototype/Build Network Trial")]
     public static void Build()
     {
         if(EditorApplication.isPlaying)throw new System.InvalidOperationException("Stop play mode first.");
         if(!EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo())return;
-        var scene=EditorSceneManager.OpenScene("Assets/RightWalkPrototype/SideScrollRunRecoveryTrial.unity");
-        EditorSceneManager.SaveScene(scene,ScenePath);
+        var source=EditorSceneManager.OpenScene(CurrentScene);
+        EditorSceneManager.SaveScene(source,ScenePath,true);
+        var scene=EditorSceneManager.OpenScene(ScenePath);
         var walker=Object.FindFirstObjectByType<RightFacingWalker>();
         var character=walker.gameObject;
         PrefabUtility.UnpackPrefabInstance(character,PrefabUnpackMode.Completely,InteractionMode.AutomatedAction);
@@ -22,14 +25,24 @@ public static class SideScrollNetworkTrialBuilder
         character.GetComponentInChildren<RightFacingAimRig>().aimCamera=null;
         if(character.GetComponent<NetworkObject>()==null)character.AddComponent<NetworkObject>();
         character.AddComponent<SideScrollNetworkPlayer>();
-        var player=PrefabUtility.SaveAsPrefabAsset(character,"Assets/RightWalkPrototype/SideScrollNetworkPlayer.prefab");
+        character.name="NetworkCharacter_Complete";
+        var player=PrefabUtility.SaveAsPrefabAsset(character,PlayerPath);
+        // Persist NGO's prefab identity after validation so virtual editors read the same hash.
+        AssetDatabase.ImportAsset(PlayerPath,ImportAssetOptions.ForceUpdate);
+        player=AssetDatabase.LoadAssetAtPath<GameObject>(PlayerPath);
+        var identity=player.GetComponent<NetworkObject>();
+        EditorUtility.SetDirty(identity);AssetDatabase.SaveAssetIfDirty(identity);
         Object.DestroyImmediate(character);
+        // Local HP/tuning buttons belong to the preserved local trial, not network play.
+        foreach(var hud in Object.FindObjectsByType<FrontDownAimPlaytestHud>(FindObjectsSortMode.None))Object.DestroyImmediate(hud);
         var go=new GameObject("Side Scroll Network Session");
         var transport=go.AddComponent<UnityTransport>();
         var manager=go.AddComponent<NetworkManager>();
         manager.NetworkConfig=new NetworkConfig {NetworkTransport=transport,PlayerPrefab=player,EnableSceneManagement=false};
-        go.AddComponent<SideScrollNetworkSession>();
-        AddTargets();
+        var session=go.AddComponent<SideScrollNetworkSession>();
+        session.targetPrefab=AssetDatabase.LoadAssetAtPath<GameObject>("Assets/RightWalkPrototype/NetworkDamageTarget.prefab");
+        if(session.targetPrefab==null)AddTargets();
+        else manager.NetworkConfig.Prefabs.Add(new NetworkPrefab {Prefab=session.targetPrefab});
         EditorSceneManager.SaveScene(scene,ScenePath);
         AssetDatabase.SaveAssets();
     }
@@ -73,7 +86,7 @@ public static class SideScrollNetworkTrialBuilder
     [MenuItem("Tools/Right Walk Prototype/Build Network Test Player")]
     public static void BuildPlayer()
     {
-        var report=BuildPipeline.BuildPlayer(new BuildPlayerOptions {scenes=new[]{ScenePath},locationPathName="Builds/SideScrollNetwork/SideScrollNetwork.exe",target=BuildTarget.StandaloneWindows64,options=BuildOptions.Development});
+        var report=BuildPipeline.BuildPlayer(new BuildPlayerOptions {scenes=new[]{ScenePath},locationPathName="Builds/SideScrollNetworkCurrent/SideScrollNetworkCurrent.exe",target=BuildTarget.StandaloneWindows64,options=BuildOptions.Development});
         if(report.summary.result!=UnityEditor.Build.Reporting.BuildResult.Succeeded)
             throw new System.InvalidOperationException("Network test build failed: "+report.summary.result);
     }

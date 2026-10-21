@@ -7,8 +7,32 @@ namespace RightWalkPrototype
     public sealed class SideScrollNetworkSession : MonoBehaviour
     {
         public GameObject targetPrefab;
+        public GameObject arenaObjectivePrefab;
+        public Transform[] playerSpawns;
+        public bool useReadyRoom=true;
+        public string ConnectionNotice {get;private set;}="";
+        private NetworkManager sessionManager;
+        private bool connectedToHost, intentionalDisconnect;
+        private void ClientConnected(ulong clientId)
+        {
+            if(sessionManager!=null&&clientId==sessionManager.LocalClientId)
+            {connectedToHost=true;ConnectionNotice="";}
+        }
+        private void ClientStopped(bool wasHost)
+        {
+            ConnectionNotice=wasHost||intentionalDisconnect?"연결을 종료했습니다.":
+                connectedToHost?"호스트와의 연결이 종료되었습니다.\n다시 접속할 수 있습니다.":"호스트에 연결하지 못했습니다.\n호스트 실행 여부를 확인해 주세요.";
+            if(!wasHost&&!intentionalDisconnect&&!connectedToHost&&sessionManager!=null&&!string.IsNullOrEmpty(sessionManager.DisconnectReason))ConnectionNotice=sessionManager.DisconnectReason;
+            connectedToHost=false;
+        }
+        public void DisconnectLocal()
+        {
+            intentionalDisconnect=true;
+            NetworkManager.Singleton?.Shutdown();
+        }
         private void SpawnTargets()
         {
+            if(arenaObjectivePrefab!=null)Instantiate(arenaObjectivePrefab).GetComponent<NetworkObject>().Spawn();
             if(targetPrefab==null)return;
             foreach(float x in new[]{-3f,3f})
                 Instantiate(targetPrefab,new Vector3(x,1.2f,0),Quaternion.identity).GetComponent<NetworkObject>().Spawn();
@@ -17,8 +41,20 @@ namespace RightWalkPrototype
         {
             var manager=NetworkManager.Singleton;
             if(manager==null||manager.IsListening)return;
+            bool room=useReadyRoom&&arenaObjectivePrefab!=null&&RelayArenaPrototype.Instance!=null;
+            manager.NetworkConfig.ConnectionApproval=room;
+            manager.ConnectionApprovalCallback=room?ApproveRoomConnection:null;
+            ConnectionNotice="";connectedToHost=false;intentionalDisconnect=false;
             manager.GetComponent<UnityTransport>().SetConnectionData("127.0.0.1",7783,"127.0.0.1");
             if(host)manager.StartHost();else manager.StartClient();
+        }
+        private void ApproveRoomConnection(NetworkManager.ConnectionApprovalRequest request,NetworkManager.ConnectionApprovalResponse response)
+        {
+            var match=ArenaObjectiveMatch.Instance;
+            bool busy=match!=null&&match.IsSpawned&&match.State.Value.Phase!=ArenaObjectiveMatch.Stage.Waiting;
+            bool full=NetworkManager.Singleton.ConnectedClients.Count>=4;
+            response.Approved=!busy&&!full;response.CreatePlayerObject=response.Approved;response.Pending=false;
+            response.Reason=busy?"경기가 진행 중입니다. 대기방으로 돌아온 뒤 참가해 주세요.":full?"방이 가득 찼습니다. 최대 4명까지 참가할 수 있습니다.":"";
         }
         private void Start()
         {
@@ -26,9 +62,16 @@ namespace RightWalkPrototype
             // NetworkConfig.Prefabs.Add alone is not a persisted prefab-list asset.
             if(targetPrefab!=null && !NetworkManager.Singleton.NetworkConfig.Prefabs.Contains(targetPrefab))
                 NetworkManager.Singleton.AddNetworkPrefab(targetPrefab);
+            if(arenaObjectivePrefab!=null&&!NetworkManager.Singleton.NetworkConfig.Prefabs.Contains(arenaObjectivePrefab))NetworkManager.Singleton.AddNetworkPrefab(arenaObjectivePrefab);
             NetworkManager.Singleton.OnServerStarted+=SpawnTargets;
+            sessionManager=NetworkManager.Singleton;
+            sessionManager.OnClientConnectedCallback+=ClientConnected;
+            sessionManager.OnClientStopped+=ClientStopped;
             if(System.Array.IndexOf(args,"--side-host")>=0)StartLocal(true);
             else if(System.Array.IndexOf(args,"--side-client")>=0)StartLocal(false);
+#if UNITY_EDITOR || DEVELOPMENT_BUILD
+            if(System.Array.IndexOf(args,"--side-motion-test")>=0)StartCoroutine(SideScrollNetworkMotionVerification.Run(this));
+#endif
             if(System.Array.IndexOf(args,"--side-test")>=0||System.Array.IndexOf(args,"--side-damage-test")>=0||System.Array.IndexOf(args,"--side-air-test")>=0)StartCoroutine(CheckTwoPlayers());
         }
         private System.Collections.IEnumerator CheckTwoPlayers()
@@ -80,26 +123,37 @@ namespace RightWalkPrototype
         }
         private void OnGUI()
         {
+            if(ArenaObjectiveMatch.TransitionActive)return;
             var manager=NetworkManager.Singleton;
+            if(manager==null)return;
             GUILayout.BeginArea(new Rect(Screen.width-230,15,215,160),GUI.skin.box);
             if(!manager.IsListening)
             {
+                if(!string.IsNullOrEmpty(ConnectionNotice))
+                    GUILayout.Label(ConnectionNotice,new GUIStyle(GUI.skin.label){wordWrap=true});
                 if(GUILayout.Button("Local Host"))StartLocal(true);
                 if(GUILayout.Button("Local Client"))StartLocal(false);
             }
             else
             {
+                if(ArenaObjectiveMatch.Instance!=null&&ArenaObjectiveMatch.Instance.RoomFlow)
+                {GUILayout.Label(manager.IsHost?"내가 방장 · 로컬 연결":"참가 중 · 로컬 연결");if(GUILayout.Button(manager.IsHost?"방 닫고 나가기":"방 나가기"))DisconnectLocal();GUILayout.EndArea();return;}
                 GUILayout.Label(manager.IsHost ? "Host : 7783" : "Client : 7783");
                 GUILayout.Label("Players: "+FindObjectsByType<SideScrollNetworkPlayer>(FindObjectsSortMode.None).Length);
                 if(manager.IsServer && GUILayout.Button("Reset Targets"))
                     foreach(var target in FindObjectsByType<SideScrollDamageTarget>(FindObjectsSortMode.None))target.ResetTarget();
-                if(GUILayout.Button("Disconnect"))manager.Shutdown();
+                if(GUILayout.Button("Disconnect"))DisconnectLocal();
             }
             GUILayout.EndArea();
         }
         private void OnDestroy()
         {
-            if(NetworkManager.Singleton!=null)NetworkManager.Singleton.OnServerStarted-=SpawnTargets;
+            if(sessionManager!=null)
+            {
+                sessionManager.OnServerStarted-=SpawnTargets;
+                sessionManager.OnClientConnectedCallback-=ClientConnected;
+                sessionManager.OnClientStopped-=ClientStopped;
+            }
         }
     }
 }

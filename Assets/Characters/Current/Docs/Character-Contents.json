@@ -1,0 +1,536 @@
+[
+  {
+    "path": "Assets/Characters/Current/Docs/Organization-Report.ko.md",
+    "guid": "518e1fbfa2ba1bb4dbbd5a64cdace12a",
+    "bytes": 1845,
+    "sha256": "ff4da5fcf10f51dfa2f166997e166dde904872734c7f4bba44a2bc95b959d89d"
+  },
+  {
+    "path": "Assets/Characters/Current/Docs/Scene-Catalog.json",
+    "guid": "ca39c69db73256c46bf18415c58fc251",
+    "bytes": 7162,
+    "sha256": "893de5074adc1abbbcb0793d9f6c9110bc9ad9f7774384ce1203643b0ff21c07"
+  },
+  {
+    "path": "Assets/Characters/Current/Prefabs/Character_Complete.prefab",
+    "guid": "c265304510c067d479a5130ed9dd939a",
+    "bytes": 69752,
+    "sha256": "e8ba9ff2aa6e0da64af3b837942c08118ffd5959aad9c181cdc42aa570c7fb21"
+  },
+  {
+    "path": "Assets/Characters/Current/README.ko.md",
+    "guid": "76290eca0e90bfb4c953168cafed063d",
+    "bytes": 3081,
+    "sha256": "cb82a49a78027b7888004f188f360af69f9c11f1f67734f04e6b43b69d8ac42b"
+  },
+  {
+    "path": "Assets/Characters/Current/Scenes/Character_Complete_Playground.unity",
+    "guid": "2a24347685819f445a02290d5f0188b4",
+    "bytes": 65349,
+    "sha256": "c589b72f0a1c542e9a5e8466d07199602b9d2fa7fe113cd07b2fa40f4fd0f622"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Art/Character.mat",
+    "guid": "591743cd6d0a95c44ab686ffe9fb67b3",
+    "bytes": 1176,
+    "sha256": "18cdb2cef392eb38623f607078f30da5f99f37761429382492808c884415a33b"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Art/CrouchTrial/crouch-lower-atlas-v2.png",
+    "guid": "d597004b63609414eba9e8e364f8e4ab",
+    "bytes": 994478,
+    "sha256": "35b2836d48841cce32d064a02739948a6c1671b29d4d10462097c1d9463fb06f"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Art/DeathTrial/death-final-v2.png",
+    "guid": "146c2b7016e746c4caba11468c6e6994",
+    "bytes": 940980,
+    "sha256": "853f6fd10d7b1328c25f181b216884dead583854438d3408f05fa660da2fd4be"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Art/DeathTrial/death-middle-v1.png",
+    "guid": "8a229254b43d470458d790139df9c549",
+    "bytes": 1640186,
+    "sha256": "debf4fc2355df15c12ba16fb685adeb6b1bde24da3d3e1fa67ee79a3dc216c81"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Art/FrontDownAim/FrontDownAimAirApprovedV9.mat",
+    "guid": "777b0202c04bacd44b2cf02bc6de811c",
+    "bytes": 1247,
+    "sha256": "da1b6cfddf0390377087417678e2cc49a5c7402a702487b8bcf89226529bce1f"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Art/FrontDownAim/FrontDownAimPlayableToneV3.mat",
+    "guid": "3cbfb63518bb53a49acd46fa2e49b18f",
+    "bytes": 1283,
+    "sha256": "764ca90ca91666f0acfb5817de7bfb63531312d9a09dada19b7c480ded40de3a"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Art/FrontDownAim/front-down-air-legs-approved-v9.png",
+    "guid": "acae749c6961d124e8d7df44bce19efb",
+    "bytes": 139638,
+    "sha256": "381b83eaa40fcfbdb88c0e9df3364f884f62048149bce96c859c817ce992afa4"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Art/FrontDownAim/front-down-atlas-playable-waist-v2.png",
+    "guid": "f490efcf688d13345b28c0f08947fd0a",
+    "bytes": 1299114,
+    "sha256": "551444166dbc0f2fa0c5613d556daa1d54b216b5a9031e68ae9d04effce2da1a"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Art/FrontDownAim/front-down-pose-v30.json",
+    "guid": "9126d65116b4db143b1618267eb88506",
+    "bytes": 7447,
+    "sha256": "df5bdec761dee572bc7db0eea0e67bb1576001a7d003f2897e41fe8d4f218695"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Art/FrontDownAim/FrontHighlightTone.shader",
+    "guid": "458e688519cb95d49bbbaf5e93b21642",
+    "bytes": 1750,
+    "sha256": "e940ca3b4e722c2a415ebc5cd586c1e143b3dcb54bbea8c645b9237deda0749a"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Art/HeadSplit-v88.shader",
+    "guid": "5b4097fd01cf6384798685198ea8edfc",
+    "bytes": 1804,
+    "sha256": "efb6bf8b103d4788f1f37b70dde63b2e2e63efe655f7d852a08015a56570307c"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Art/JumpAirbornePose.png",
+    "guid": "86daebeb68a94cd5a2b913e1cb6f0473",
+    "bytes": 61607,
+    "sha256": "aa2bbfae199207fa001b34267fb6c3972d6c7a47a39bae87ce6059c3a6382106"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Art/LegEdge-v42.mat",
+    "guid": "1285c0dab14a6a14e8179ef78ad0f920",
+    "bytes": 932,
+    "sha256": "6328c76c0d4c0bf2063f64152bf28470dbacb04333db95957f35680eedbaac05"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Art/LegEdge-v42.shader",
+    "guid": "8c00ddd4ce108e048ae176e259e8ad50",
+    "bytes": 1934,
+    "sha256": "215cecf7637c88517d2a902bf14d5649b926a1188a059b20a041cdb74316bddf"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Art/LooseRifle.shader",
+    "guid": "da4482e82d2ac41458dc905f4c374dd0",
+    "bytes": 1178,
+    "sha256": "b77f4e7cfb264204e496d770dfc5661b6983a804c4f7ccadc5e9ddcc05680900"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Art/MapNoFriction.physicsMaterial2D",
+    "guid": "2c96a825b7b97364eab60d5b3577d070",
+    "bytes": 341,
+    "sha256": "58502ad15dd0b1e2848f19cbeae8a9ccb08ac3cfa8c81b7389386f6ffaf134be"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Art/MapSolid.png",
+    "guid": "1817e72402ae74d4ab60f3e9c96c21d8",
+    "bytes": 75,
+    "sha256": "e737dac8d0f4f8564bb2c31436ee4c84e1ac9cd308683b892176607ab24ad2e3"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Art/RightWalk-CollarFront-v45.asset",
+    "guid": "69d3eb7cfed24e444b5aaa6573c23db1",
+    "bytes": 5095,
+    "sha256": "d8a7d56dc3272830af6a67faed1dd13758b4fa88176f3676452e333235e40e09"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Art/RightWalk-CollarFront-v45.png",
+    "guid": "3b9e908e9a5c0244ba122c29ba81f380",
+    "bytes": 3516,
+    "sha256": "8e52d4f5773957aea760cf469f39c35815ab33d87054e5e4ad76feb9f875f6fd"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Art/RightWalk-FarForearm-v43.asset",
+    "guid": "80951f3bf9deeb84aa7f8fd922b0b4f4",
+    "bytes": 5094,
+    "sha256": "a6cbe425ac06a0eb114d118ed599a53f90ba5ee4db09eec2efc57c822bcc8026"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Art/RightWalk-FarForearm-v43.png",
+    "guid": "a3d09cde20838b54dadd23e1d7e5268c",
+    "bytes": 8054,
+    "sha256": "3ed5bdad82414e6104fa45fad1823504314db23befc34d33d860a83da6d2b75d"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Art/RightWalk-FarUpperArm-v48.asset",
+    "guid": "4c5c0a97f6cf28a46ba44d1e045d14cc",
+    "bytes": 5095,
+    "sha256": "eea1f6ae9298d7dbadcccc70e1eeca04bdaf84d875f263ddf77b25d8debfb9a9"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Art/RightWalk-FarUpperArm-v48.png",
+    "guid": "6486bf12ecadfc345af0d25f247f6376",
+    "bytes": 12451,
+    "sha256": "761e644548f3740e4fb1e9ec4de9016727f3e7eea26d8ae3edf7fe56bc963ee0"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Art/RightWalk-HeadFace-v46.asset",
+    "guid": "b06ab08286e4cee44884882fe303fded",
+    "bytes": 5092,
+    "sha256": "ed950b7b98256703cfbe7c34790b4e4220aef5172621d3720e06a970f5c6baf2"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Art/RightWalk-HeadFace-v46.png",
+    "guid": "c46ec94e0ad0c334cab8b3d3586bc8bb",
+    "bytes": 52809,
+    "sha256": "be909c4bdf046de460d97bc3af2749efe2f27d66f4fa2754abbcaca3b4281498"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Art/RightWalk-HeadFront-v88.mat",
+    "guid": "02d4b13ca4f0ec049a6c2f1cd1617b15",
+    "bytes": 962,
+    "sha256": "a8342848fbcfaced7833d9fa1d16474cdb38cc712f06e38696ca8f7d4f380960"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Art/RightWalk-HeadRear-v88.mat",
+    "guid": "f81657faea389ac4e9bd19e4bf49758b",
+    "bytes": 961,
+    "sha256": "d03895244e2529fd2c36dd91e37805cac082ed00b8d6b584d6d02c2998f71c6f"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Art/RightWalk-Hip-Clothing-v43.asset",
+    "guid": "8e9851e9fc5fa1f4bb750380d95c20a0",
+    "bytes": 5096,
+    "sha256": "bebfe7099d6d540b34533c20e00c3cdd5daaa1c9470e329baeb5179b3c7ea7cd"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Art/RightWalk-Hip-Clothing-v43.png",
+    "guid": "838349c0ae34f3042afc0490f603bdfd",
+    "bytes": 17187,
+    "sha256": "3d3c6f389b42f1bcf4e0caf349761870f3bc507317ea15810f611327ea7b0e53"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Art/RightWalk-NearForearm-v43.asset",
+    "guid": "3baec5448e3d6114281106332bee19d6",
+    "bytes": 5095,
+    "sha256": "c9114f4aa3e769b41a56588e6bf2dddc01636f28edfd4e7b4267f4dba72f7df2"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Art/RightWalk-NearForearm-v43.png",
+    "guid": "a022de811b321124280b012b29df3e7a",
+    "bytes": 10391,
+    "sha256": "93744977e72444783d0d37b141a2df1b98c522c8d767f35bc4f675823bb3f57f"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Art/RightWalk-NearUpperArm-v47.asset",
+    "guid": "33415be0d4ec9f34faa2d4f5c86e1d33",
+    "bytes": 5096,
+    "sha256": "64ab86dd437beb6209bc38cf6b299baf4b1d5a0beaae81270b3b8d933404fdbc"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Art/RightWalk-NearUpperArm-v47.png",
+    "guid": "8cc0cd917c5b648498abab87dd16fdfb",
+    "bytes": 9622,
+    "sha256": "6de5474e1a79999e66dc649ca722241835d03bdcbf09dfbff0e538e5a696a77b"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Art/RightWalk-Pelvis-Underlay-v46.asset",
+    "guid": "03a95cf81424c6c41883d18a7a0ac9df",
+    "bytes": 5099,
+    "sha256": "62c4818c8b5a20faf05c1209431c7a1699d0741fc1f4a71497ef0c064635052b"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Art/RightWalk-Pelvis-Underlay-v46.png",
+    "guid": "0dd08f6de2f86144ebde2a41968fb880",
+    "bytes": 7943,
+    "sha256": "2a166c394e5d8cb426978d1cc3e0f9fcf1802dd157a881549af903ce202e54a7"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Art/RightWalk-Torso-v42.asset",
+    "guid": "c90f305756808f742849094afbf591b9",
+    "bytes": 5089,
+    "sha256": "0d87ba2ec0b664d3e8bebbe161fd388bd6035a7ec77cfc6aac2d9f263cf3aafe"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Art/RightWalk-Torso-v42.png",
+    "guid": "8345e571a99870b41a459162853f0700",
+    "bytes": 21678,
+    "sha256": "4cb9a045247bd37f07e2ced715dd89edc47ad62514478254ea2b4a844439bb71"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Art/RightWalk-WeaponHands-v44.asset",
+    "guid": "f5a4bde29a472464e97f9ead9b0370b1",
+    "bytes": 5095,
+    "sha256": "04bdb9c5ba9575aa31ee157b215b64a8f1b91acc97a1590a1ebc453cfe65d31b"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Art/RightWalk-WeaponHands-v44.png",
+    "guid": "1610b56542629054eafc8ffc35ac3eda",
+    "bytes": 21203,
+    "sha256": "858a291d6c653aaed2f7fd72307155dd3f3bd2960078b7c6bba5d6150efda065"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Art/RightWalk-Weapon-v42.asset",
+    "guid": "dc3c71fd3419c96439b977bdc4983627",
+    "bytes": 5090,
+    "sha256": "546f2f7188391efaa5c04ded6d3aae5c75f1129b57c41ebce0d2ec47fa02a523"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Art/RightWalk-Weapon-v42.png",
+    "guid": "73720fceb5bf49b4e908e869cd35103d",
+    "bytes": 20295,
+    "sha256": "32911b452215c498d4160f1a616c291cc0c3fbc943bbba677060990d569b1d1a"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Art/RunRecoveryTrial.png",
+    "guid": "069d1a4f01eef9143afd9c851ea61f14",
+    "bytes": 2702146,
+    "sha256": "f17ad4f779621d6fcd379456416bf23d65de70a384e65619e6caad6bb29534a0"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Art/RunRecoveryTrialFrames.asset",
+    "guid": "51750fe99fa81e641b6da7f45e786101",
+    "bytes": 193950,
+    "sha256": "7f81aef4828c1bba5ffed90563f48bc9df1331d67a9790d7b491f6f3b3acac4a"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Art/WalkStrideTrial.png",
+    "guid": "64057a2b19339e1428a658ff26aa0712",
+    "bytes": 2693431,
+    "sha256": "ffdb53aa8b1829fd5fe0222ac3ebd7942fc6c80bba1af40456c40fbd84a7e1b8"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Art/WalkStrideTrialFrames.asset",
+    "guid": "ecee58f4a650b0a499cf5bb86e757c1b",
+    "bytes": 194071,
+    "sha256": "edacd143102d6ddec7e420a519c4b9404189fd9e9e030b87c74610970490e0e8"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Resources/JumpTransition/AlternateAir.png",
+    "guid": "dc32f803a2161854eb36ca2862baba6e",
+    "bytes": 70059,
+    "sha256": "8858a2878cf41cd5a0485b5e6aeb8a29e9b3ec63de888baa472a62fd1df8c189"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Resources/JumpTransition/Boot.png",
+    "guid": "8a8b5aa0aea7cac45ba45cdb9091cab9",
+    "bytes": 17735,
+    "sha256": "91edead8afadd7e4eb52091579f82ff78de7b947c130100acbd6f67f60cb8e89"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Resources/JumpTransition/FarKnee.png",
+    "guid": "2ce68b481a6174e4983cdca6a3d629aa",
+    "bytes": 175816,
+    "sha256": "5e447175d7411575b503a6b1ab480fecdf6f99eaf796d7c501aa47c410605d20"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Resources/JumpTransition/farShin.png",
+    "guid": "5bb3eee6b9a92794da690279357ca13c",
+    "bytes": 17764,
+    "sha256": "e13b241d543ada4a6d6107f9eca1fe37039c206b84d9947d5d201085db05a14a"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Resources/JumpTransition/farThigh.png",
+    "guid": "a8ceb0c1290075142b1a9bc63b5d991a",
+    "bytes": 12365,
+    "sha256": "5bbfbe77dff5695c38000b166aca232adf63581a3a987ed7124fcae92adb99c3"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Resources/JumpTransition/Joints.json",
+    "guid": "569beb0da7b1c8849817ab09c5577932",
+    "bytes": 42275,
+    "sha256": "e71bf0f23c408b3bcd8964173e5339fe76726b5e0bc34c61c1eb3932bbb6a517"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Resources/JumpTransition/Knee.png",
+    "guid": "2fcfd673c54e4e040ad927932ddfd86e",
+    "bytes": 175816,
+    "sha256": "5e447175d7411575b503a6b1ab480fecdf6f99eaf796d7c501aa47c410605d20"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Resources/JumpTransition/nearShin.png",
+    "guid": "31badb29d602d7b42b920b148d514b37",
+    "bytes": 19654,
+    "sha256": "a3564f7253c723e31c29db6bb5bfe4cfd2b08bb363c055e50ee49099bf21118e"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Resources/JumpTransition/nearThigh.png",
+    "guid": "c58aa7328bd0dcf4ca9755cf67e38878",
+    "bytes": 20914,
+    "sha256": "414c94df7f359b6d3a7027e9d29c4a9d922fa0f50706248ba771a03aa0e1a64a"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Resources/JumpTransition/Waist.png",
+    "guid": "e13f0207b4b981a4e9344617225ec776",
+    "bytes": 3006,
+    "sha256": "9e931e89d2d29b7168434fdaa6a56798844ff5afc7e2e3b8e6ce9bf0020ea664"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Scripts/AirDownShotPose.cs",
+    "guid": "52cd956675f3cdb4f8cb5292767826e5",
+    "bytes": 3410,
+    "sha256": "05f76f3f62e6fb196086caba175ed09a129224a33662b316b5d0a4c33bf70cf3"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Scripts/CharacterDeathTrial.cs",
+    "guid": "0d264bdff7144224cae2536064dd752a",
+    "bytes": 5527,
+    "sha256": "213356816501ea9c8bbd3f4badace2aa3636314d39cd612de15efe14a8b5c064"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Scripts/CrouchTrial.cs",
+    "guid": "453d26c819047fa4c847d6b459e6608f",
+    "bytes": 7386,
+    "sha256": "f1c263f2a8cdad9ede4bc12bcaa772c7df0cdc5388e961b1ededfbf6250417e3"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Scripts/FrontDownAimAirLegs.cs",
+    "guid": "4aa99c8b41a1f724db8ff4777170e687",
+    "bytes": 11544,
+    "sha256": "84fd91500b65aaa9ef7e0b9ebeb3a417d6487183fea07b4ba29c8cd892ffb515"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Scripts/FrontDownAimMath.cs",
+    "guid": "35d91efc9438abd45a678d072928e991",
+    "bytes": 5442,
+    "sha256": "c5a159f46206adfacb440dc15a7c608d7f84a08302e19923f22a7d551c65e8ee"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Scripts/FrontDownAimMovingLegs.cs",
+    "guid": "9091eb365208ff34a83d03dbde75d9d2",
+    "bytes": 7016,
+    "sha256": "776b730f12ca06f946fea0d1a95a8c8022859f4e488a22d491ef0a8353fe008f"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Scripts/FrontDownAimOverlay.cs",
+    "guid": "119f66aeb95fbed46a71222797b31d12",
+    "bytes": 13042,
+    "sha256": "b4ea5b3e19d7083e70f2977cebb441dc31444c321f39f8f597e8a63964844b6f"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Scripts/FrontDownAimPlaytestHud.cs",
+    "guid": "214c31c64812d594aad6ecc7e2a389c7",
+    "bytes": 1470,
+    "sha256": "ebe7f6b0719879b94ee18a77a4dce358c4b29caccbc8a1f81c7b4ecc62b055eb"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Scripts/JumpLegTransitionRig.cs",
+    "guid": "285c9b4a79e87814a96c18ead605cd62",
+    "bytes": 37334,
+    "sha256": "e5b666e9e39027e7cc3fb1c3c424c67cd2a8019d5a177ce72820174a34cc9dc6"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Scripts/NativeDeathRig.cs",
+    "guid": "510fc1d4b213d1a4d8554f936a187996",
+    "bytes": 9840,
+    "sha256": "209a8bca5b285a3087021591482d18e8108c0ce01868bf1cfb3cfa22d3323894"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Scripts/ReferenceCharacterArt.cs",
+    "guid": "3ad1fb8ff7c479c49a157d6320c7d898",
+    "bytes": 2776,
+    "sha256": "34f661fd26e08698eeb31d578240617a9b276b9deac6aa04a0adb69a9be59001"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Scripts/ReferenceLegWalker.cs",
+    "guid": "4a9f64b0ea0f73e44942d50b4b9e9e01",
+    "bytes": 5016,
+    "sha256": "61e3a6e027d91e90eb0f34e8c8115364887f2a29e1c80041a4a763f0fb22db7e"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Scripts/RestingDeathPose.cs",
+    "guid": "26b8a7ed81d3eed4ca2868c91521b62c",
+    "bytes": 6505,
+    "sha256": "10d4912d3f86a84a8048a6dad265eaf51d61a4bc41f89c8598bc9c5d7939c530"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Scripts/RightFacingAimRig.cs",
+    "guid": "584dbc929e3833e4d85b250bebd1fd7b",
+    "bytes": 16731,
+    "sha256": "b1af8a7ebe4e858ae0d33cf28cc214ec735f41a86337eeedea949411e68c6135"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Scripts/RightFacingArmIK.cs",
+    "guid": "735f6e2b26d1e1b47ba64ea978927731",
+    "bytes": 2424,
+    "sha256": "0efe5afc0685bb5db2fba5ccbe5dfbeb388ab77a38b47259f3f87cfb1c7fdad8"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Scripts/RightFacingHipLink.cs",
+    "guid": "96f261e37ef76934d8da6565e4ca82f0",
+    "bytes": 1001,
+    "sha256": "a005acf395a60729d38c9be379322696340f0c2abdceb8db7334ac1e565c9990"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Scripts/RightFacingNeckSkin.cs",
+    "guid": "5ba5281be5739214a8fb5afec34260ea",
+    "bytes": 5209,
+    "sha256": "2d2ac861fa5657b8bed4f7468798ae50470d23dd39c29eb3995c28ebaee7de37"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Scripts/RightFacingPelvisPreview.cs",
+    "guid": "8746c359e5d9a0a4f94486b4f140a8d7",
+    "bytes": 6119,
+    "sha256": "a05cd2b81df5873a58018d2105aa3716bac37a474dbb46194197f6c12af9b964"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Scripts/RightFacingShotPreview.cs",
+    "guid": "f450eac46027b64418cf135af1db0c2e",
+    "bytes": 7976,
+    "sha256": "a9377a51aeb16384ed7bd5e1c202a8ac4deff8cf1efc6cb1e993f587013aada9"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Scripts/RightFacingWalker.cs",
+    "guid": "afc05c09b17c11d4fa50736e357befa8",
+    "bytes": 7666,
+    "sha256": "81fdf322ae2c59d813ce5df99ac473ba88129642dc0de6a6b9a50b00d186aca8"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Scripts/RunWalkPreview.cs",
+    "guid": "344a2847a4a8cff4598866ab805da16a",
+    "bytes": 2383,
+    "sha256": "16f85a23ae38471188ccc9a7cdb304bee6b2f292498de62e213ff6003b5cd2b5"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Scripts/ShootingStanceTrial.cs",
+    "guid": "3362f4733db061c40a87cb81e27d7e2c",
+    "bytes": 2886,
+    "sha256": "e0dea7341eabbc3c004f1c6e6eca433044fc935f4809aa98cdc0b7f49a8a70d3"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Scripts/SideFacingPreview.cs",
+    "guid": "9e3e8ea35856c944094e49df91812cd5",
+    "bytes": 1286,
+    "sha256": "cfc69ebca6092592bd0b2b880f72885c478145add01eb6440abb7365ba5ca666"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Scripts/SideScrollDamageTarget.cs",
+    "guid": "1c956e57d099a974c8e2f7bd84d47748",
+    "bytes": 2619,
+    "sha256": "0118250f9d41584a77699e4d4f49409b9414024facd097c7b7ad9b55e9608ea2"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Scripts/SideScrollMapPreview.cs",
+    "guid": "c35f7f6c1da27c343a37a35a57041799",
+    "bytes": 5381,
+    "sha256": "ad70f708cdbc52cd50b71915c1e81a0d990e54d1336856312e621446d58d1f96"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Scripts/SideScrollNetworkPlayer.cs",
+    "guid": "2d30cc784bfee084f944ab69b961775d",
+    "bytes": 6191,
+    "sha256": "81df003691137983b1c91c7f1206a7504043fcd0c5a5be5225374cd5638c5900"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Scripts/SideScrollNetworkSession.cs",
+    "guid": "3ade65e53d2319045bb975a581dec0b0",
+    "bytes": 6294,
+    "sha256": "8917969d1c814d356d1fd897f033c7960bee2c04b8f83e45bdd269ee49d7109a"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Scripts/StandingDownAimReviewControls.cs",
+    "guid": "618ae4a34a1add64b8438c9396c452a1",
+    "bytes": 3163,
+    "sha256": "f0c829ced788ddeb5732204eebd9d8c2623bc276f4367b47d71d1509fbe668b4"
+  },
+  {
+    "path": "Assets/RightWalkPrototype/Scripts/WalkPreviewControls.cs",
+    "guid": "de4243dce1e6be64dbf3d670944dec3e",
+    "bytes": 3296,
+    "sha256": "b9150a8eebf18d57e43f0acb85ade12f62c0f99a6b9e63f9c17211dd64cbb0b9"
+  }
+]

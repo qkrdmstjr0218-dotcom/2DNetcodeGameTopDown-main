@@ -16,6 +16,12 @@ namespace RightWalkPrototype
         public int TakeoffFrame => transition!=null ? transition.TakeoffFrame : 0;
         public bool TakeoffRunning => transition!=null&&transition.TakeoffRunning;
         public bool UseAlternatePose => transition!=null&&transition.UseAlternatePose;
+        private bool networkDriven;
+        private int networkFrame,networkTakeoffFrame;
+        private bool networkRunning,networkTakeoffRunning;
+        public void SetNetworkDriven(bool value){networkDriven=value;}
+        public void SetNetworkPose(int frame,bool running,int takeoffFrame,bool takeoffRunning)
+        { networkFrame=frame;networkRunning=running;networkTakeoffFrame=takeoffFrame;networkTakeoffRunning=takeoffRunning; }
         private void Awake()
         {
             walker=GetComponent<RightFacingWalker>();legs=GetComponent<SpriteRenderer>();
@@ -23,7 +29,11 @@ namespace RightWalkPrototype
             gait=GetComponent<RunWalkPreview>();
             transition=new JumpLegTransitionRig(transform,legs);
         }
-        private void LateUpdate() { if(movement!=null&&movement.enabled)ApplyPose(); }
+        private void LateUpdate()
+        {
+            if(networkDriven)ApplyNetworkPose(networkFrame,networkRunning,networkTakeoffFrame,networkTakeoffRunning);
+            else if(movement!=null&&movement.enabled)ApplyPose();
+        }
         public void ApplyPose()
         {
             ApplyPose(walker!=null ? walker.FrameIndex : 0,gait!=null&&gait.IsRunning);

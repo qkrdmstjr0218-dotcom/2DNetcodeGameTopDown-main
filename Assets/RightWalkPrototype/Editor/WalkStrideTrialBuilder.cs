@@ -43,9 +43,9 @@ public static class WalkStrideTrialBuilder
             }
         }
         if (frames.Length != 40) throw new InvalidOperationException("Expected forty trial frames.");
-        var scene = EditorSceneManager.OpenScene(Root + "SideScrollTestMap.unity");
+        var scene = EditorSceneManager.OpenScene("Assets/RightWalkPrototype/Scenes/Archive/SideScrollTestMap.unity");
         // Save the copied map before applying experimental overrides.
-        EditorSceneManager.SaveScene(scene, Root + "SideScrollStrideTrial.unity");
+        EditorSceneManager.SaveScene(scene, "Assets/RightWalkPrototype/Scenes/Archive/SideScrollStrideTrial.unity");
         var control = UnityEngine.Object.FindFirstObjectByType<SideScrollMapPreview>();
         control.speed = 1.6f;
         var walker = control.walker;

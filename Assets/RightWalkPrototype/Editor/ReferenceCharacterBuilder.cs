@@ -59,6 +59,6 @@ public static class ReferenceCharacterBuilder
         camera.gameObject.AddComponent<AudioListener>();new GameObject("Main Light").AddComponent<Light>().type=LightType.Directional;
         var preview=new GameObject("Preview Controls").AddComponent<WalkPreviewControls>();preview.walker=walker;preview.followCamera=camera;
         preview.cameraHeight=1.1f;
-        EditorSceneManager.SaveScene(scene,Root+"/RightWalkingCharacterDemo.unity");AssetDatabase.SaveAssets();
+        EditorSceneManager.SaveScene(scene,"Assets/RightWalkPrototype/Scenes/Archive/RightWalkingCharacterDemo.unity");AssetDatabase.SaveAssets();
     }
 }

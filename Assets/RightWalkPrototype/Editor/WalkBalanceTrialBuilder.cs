@@ -11,8 +11,8 @@ public static class WalkBalanceTrialBuilder
     {
         if (Application.isPlaying || EditorSceneManager.GetActiveScene().isDirty)
             throw new InvalidOperationException("Stop Play and save first.");
-        var scene = EditorSceneManager.OpenScene("Assets/RightWalkPrototype/SideScrollStrideTrial.unity");
-        EditorSceneManager.SaveScene(scene, "Assets/RightWalkPrototype/SideScrollWalkBalanceTrial.unity");
+        var scene = EditorSceneManager.OpenScene("Assets/RightWalkPrototype/Scenes/Archive/SideScrollStrideTrial.unity");
+        EditorSceneManager.SaveScene(scene, "Assets/RightWalkPrototype/Scenes/Archive/SideScrollWalkBalanceTrial.unity");
         var walker = UnityEngine.Object.FindFirstObjectByType<RightFacingWalker>();
         // The upper-body sprites use a ground-level origin; rotate around the pelvis instead.
         PrefabUtility.UnpackPrefabInstance(walker.gameObject, PrefabUnpackMode.Completely, InteractionMode.AutomatedAction);

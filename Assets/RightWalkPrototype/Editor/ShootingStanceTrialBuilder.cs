@@ -15,8 +15,8 @@ public static class ShootingStanceTrialBuilder
             throw new InvalidOperationException("Stop Play and save first.");
         var first = LoadFrames(0);
         var second = LoadFrames(1);
-        var scene = EditorSceneManager.OpenScene(Root + "SideScrollStrideTrial.unity");
-        EditorSceneManager.SaveScene(scene, Root + "SideScrollStanceTrial.unity");
+        var scene = EditorSceneManager.OpenScene("Assets/RightWalkPrototype/Scenes/Archive/SideScrollStrideTrial.unity");
+        EditorSceneManager.SaveScene(scene, "Assets/RightWalkPrototype/Scenes/Archive/SideScrollStanceTrial.unity");
         var control = UnityEngine.Object.FindFirstObjectByType<SideScrollMapPreview>();
         var stance = control.gameObject.AddComponent<ShootingStanceTrial>();
         stance.UseStance = false;

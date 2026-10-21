@@ -1,0 +1,170 @@
+[
+  {
+    "old": "Assets/RightWalkPrototype/LeftRightWalkPreview.unity",
+    "new": "Assets/RightWalkPrototype/Scenes/Archive/LeftRightWalkPreview.unity",
+    "group": "Archive",
+    "guid": "7f6e8e6349846cc40ade810813f3e3f9",
+    "bytes": 65208,
+    "sha256": "ab6d9e279fe177be279518c6aa90ab5fb4e0801f273e0fb59114b95ec92757a4"
+  },
+  {
+    "old": "Assets/RightWalkPrototype/ReferenceLegStudy.unity",
+    "new": "Assets/RightWalkPrototype/Scenes/Archive/ReferenceLegStudy.unity",
+    "group": "Archive",
+    "guid": "af2fd63f703e364488d029d9fc0d4fd6",
+    "bytes": 18969,
+    "sha256": "5989840e936811f7db9a7bad201ca336227093f3c4712dcee0c78ea92f29833d"
+  },
+  {
+    "old": "Assets/RightWalkPrototype/RightWalkDemo.unity",
+    "new": "Assets/RightWalkPrototype/Scenes/Archive/RightWalkDemo.unity",
+    "group": "Archive",
+    "guid": "682c73e8544ec13408574ac8c40b2c7c",
+    "bytes": 149231,
+    "sha256": "ab82107be511e5e51df7d84311e1b6bdb05f026710cfb0eadbb8479fe72ee681"
+  },
+  {
+    "old": "Assets/RightWalkPrototype/RightWalkingCharacterDemo.unity",
+    "new": "Assets/RightWalkPrototype/Scenes/Archive/RightWalkingCharacterDemo.unity",
+    "group": "Archive",
+    "guid": "8df6aad8c912d984eb6501e2f9e65ae7",
+    "bytes": 16245,
+    "sha256": "96b30bebe109422dd671b9f62acd6937567aa2cd7b25491e9995b648415c6319"
+  },
+  {
+    "old": "Assets/RightWalkPrototype/RightWalkSheetDemo.unity",
+    "new": "Assets/RightWalkPrototype/Scenes/Archive/RightWalkSheetDemo.unity",
+    "group": "Archive",
+    "guid": "ad92bc5146983b5469d7ada6756d2446",
+    "bytes": 64694,
+    "sha256": "50bbc65de2b20bef973994f663a8989b78f93275a9591bdd3337fd067f421f92"
+  },
+  {
+    "old": "Assets/RightWalkPrototype/SideScrollCrouchTrial.unity",
+    "new": "Assets/RightWalkPrototype/Scenes/Archive/SideScrollCrouchTrial.unity",
+    "group": "Archive",
+    "guid": "f2757c8d6c3ad4343ac8f39687b35a81",
+    "bytes": 106089,
+    "sha256": "243dc11c35a066732515e639781db9080390e108d6e9c8fb220d40ecf3611e5a"
+  },
+  {
+    "old": "Assets/RightWalkPrototype/SideScrollFrontDownAimTrial.unity",
+    "new": "Assets/RightWalkPrototype/Scenes/Archive/SideScrollFrontDownAimTrial.unity",
+    "group": "Archive",
+    "guid": "f6d2666d4e9ff6547a1b46846b919ad2",
+    "bytes": 70729,
+    "sha256": "daf206eb4d557d2284a79795f1b13dab32d658a7c108e4063beda7392481ae5e"
+  },
+  {
+    "old": "Assets/RightWalkPrototype/SideScrollFrontPlayableTrial.unity",
+    "new": "Assets/RightWalkPrototype/Scenes/Archive/SideScrollFrontPlayableTrial.unity",
+    "group": "Archive",
+    "guid": "5a63b1a8e5af03e4eba6a93c3b039203",
+    "bytes": 105329,
+    "sha256": "cb464384251945c9c0cd2c2fdc91b7df845f176b635d67b6c53d4eda7a2eff3c"
+  },
+  {
+    "old": "Assets/RightWalkPrototype/SideScrollFrontStandingReview.unity",
+    "new": "Assets/RightWalkPrototype/Scenes/Archive/SideScrollFrontStandingReview.unity",
+    "group": "Archive",
+    "guid": "0d3f0f3e345c12f4eb4b553f14906713",
+    "bytes": 74989,
+    "sha256": "100940a24cf0c306883175943134d20a1d4037f1f00ec30c3025e7800c0108fe"
+  },
+  {
+    "old": "Assets/RightWalkPrototype/SideScrollNetworkTrial.unity",
+    "new": "Assets/RightWalkPrototype/Scenes/Network/SideScrollNetworkTrial.unity",
+    "group": "Network",
+    "guid": "d21b2fa5279b2354daf1d76e17722074",
+    "bytes": 66145,
+    "sha256": "c333ae184c50b61d41072fcd6fc8ca4a536c2e174b3bed22f25bba8117a94175"
+  },
+  {
+    "old": "Assets/RightWalkPrototype/SideScrollRunRecoveryTrial.unity",
+    "new": "Assets/RightWalkPrototype/Scenes/Archive/SideScrollRunRecoveryTrial.unity",
+    "group": "Archive",
+    "guid": "60000ad5ce9a5774b96a2e3e2cf4ea96",
+    "bytes": 97809,
+    "sha256": "c73255cff261d6c3a0a32a0fbe53fcdbf8503f28bf4e12ea3605ab1ebe904c35"
+  },
+  {
+    "old": "Assets/RightWalkPrototype/SideScrollRunTrial.unity",
+    "new": "Assets/RightWalkPrototype/Scenes/Archive/SideScrollRunTrial.unity",
+    "group": "Archive",
+    "guid": "5dece15cce8212c4f85edec90bc3a904",
+    "bytes": 88767,
+    "sha256": "a3dac52843805f92209d2bb0db0e7c431c781f669e13d7d037f5b55cba89d0b2"
+  },
+  {
+    "old": "Assets/RightWalkPrototype/SideScrollStanceTrial.unity",
+    "new": "Assets/RightWalkPrototype/Scenes/Archive/SideScrollStanceTrial.unity",
+    "group": "Archive",
+    "guid": "651c333bfe8fd4f4bb145360938a9796",
+    "bytes": 89631,
+    "sha256": "d2bfeaaa2d079fb562bf6723eb9a61f3f01ab26e1299747fa3c5fe6b5451ccec"
+  },
+  {
+    "old": "Assets/RightWalkPrototype/SideScrollStrideTrial.unity",
+    "new": "Assets/RightWalkPrototype/Scenes/Archive/SideScrollStrideTrial.unity",
+    "group": "Archive",
+    "guid": "a4e86116b83a4ca4bbc68299804ff92c",
+    "bytes": 84800,
+    "sha256": "d7bab8c105e9a7866a2562835526a5ba40f9dea2a06bc999cc48caf14fff40e1"
+  },
+  {
+    "old": "Assets/RightWalkPrototype/SideScrollTestMap.unity",
+    "new": "Assets/RightWalkPrototype/Scenes/Archive/SideScrollTestMap.unity",
+    "group": "Archive",
+    "guid": "bece14e580c0da24798ff59f25b9c589",
+    "bytes": 72095,
+    "sha256": "55c7a3eaf571ec9f6f9ba9fceddccd9d0f8d0f6509246177ab635aa310f82d50"
+  },
+  {
+    "old": "Assets/RightWalkPrototype/SideScrollWalkBalanceTrial.unity",
+    "new": "Assets/RightWalkPrototype/Scenes/Archive/SideScrollWalkBalanceTrial.unity",
+    "group": "Archive",
+    "guid": "bcfb83bafddd45346ba51b3f0fb63bc4",
+    "bytes": 123668,
+    "sha256": "90100efb0a367daf1461f2613f7a47f3b2103743f3b56cd922efa0db51e0c305"
+  },
+  {
+    "old": "Assets/Scenes/OperatorAimPoseStudy.unity",
+    "new": "Assets/Scenes/Archive/CharacterStudies/OperatorAimPoseStudy.unity",
+    "group": "OlderCharacterStudy",
+    "guid": "22e80d0b9a63cc041a94e6a691445dfb",
+    "bytes": 13033,
+    "sha256": "536b31283ecd3275b22734851752a1e61f26fdc0cab07d3749d3bc9084288991"
+  },
+  {
+    "old": "Assets/Scenes/OperatorMasterJointStudy.unity",
+    "new": "Assets/Scenes/Archive/CharacterStudies/OperatorMasterJointStudy.unity",
+    "group": "OlderCharacterStudy",
+    "guid": "d757a450a75c9854eb355aee903fd839",
+    "bytes": 40481,
+    "sha256": "dbfa69751d42c0a26e5e3e15702a3b713d9c079955b6bd68187b22686a5dc54c"
+  },
+  {
+    "old": "Assets/Scenes/OperatorMasterReassembly.unity",
+    "new": "Assets/Scenes/Archive/CharacterStudies/OperatorMasterReassembly.unity",
+    "group": "OlderCharacterStudy",
+    "guid": "38508ff2b4498164eaed7ed9ecbb6756",
+    "bytes": 29321,
+    "sha256": "f57038e9079d2794bc036bd527a80aabba96754102d5606117aee0c99564643a"
+  },
+  {
+    "old": "Assets/Scenes/OperatorWalkSkeletonStudy.unity",
+    "new": "Assets/Scenes/Archive/CharacterStudies/OperatorWalkSkeletonStudy.unity",
+    "group": "OlderCharacterStudy",
+    "guid": "e00624d770c90634399b100ce8e3dba1",
+    "bytes": 34540,
+    "sha256": "17a3bf5bb196fb6b0b2d5dbcfe17feef1a6a22cefa4cdb905e8318f14e650bbf"
+  },
+  {
+    "old": "Assets/Scenes/SampleScene 1.unity",
+    "new": "Assets/Scenes/Archive/SampleScene 1.unity",
+    "group": "OlderSample",
+    "guid": "3dd9a96d0a0ccfc4296702fdd2798877",
+    "bytes": 112227,
+    "sha256": "a67c73ea9facd440925db819649e96d0bc974acb85f6e3564b6cf5f9c7260bd8"
+  }
+]

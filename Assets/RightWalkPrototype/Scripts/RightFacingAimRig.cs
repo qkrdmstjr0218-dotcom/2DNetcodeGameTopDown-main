@@ -22,6 +22,7 @@ namespace RightWalkPrototype
         [Range(0,1)] public float headDownFollow = .45f;
         [Range(0,1)] public float headFollow = .75f;
         public bool mouseAim;
+        public bool showAimPreview=true;
         public bool HorizontalAndUpOnly { get; set; }
         [Range(0,90)] public float maxAngle = 90f;
         public float restAngle;
@@ -37,8 +38,16 @@ namespace RightWalkPrototype
         private Transform characterRoot;
         private Vector2? worldTarget;
         private bool directionTarget;
+        private bool? networkFrontDown;
+        private float networkFrontDegrees;
+        private Vector2 networkDirection;
+        public void SetNetworkAim(Vector2 direction,bool frontDown,float frontDegrees)
+        {
+            networkFrontDown=frontDown;networkFrontDegrees=frontDegrees;
+            networkDirection=direction;
+        }
         private float recoilDistance;
-        public void KickRecoil() { recoilDistance=Mathf.Min(.025f,recoilDistance+.018f); }
+        public void KickRecoil(float strength=1) { recoilDistance=Mathf.Min(.025f*strength,recoilDistance+.018f*strength); }
         private SpriteRenderer weaponRenderer;
         private SpriteRenderer headRenderer;
         private int weaponRestOrder;
@@ -57,6 +66,7 @@ namespace RightWalkPrototype
         public Vector2 AimDirection => frontDownAim!=null&&frontDownAim.IsActive ? frontDownAim.AimDirection : (Vector2)transform.TransformVector(Vector3.right).normalized;
         public Vector3 MuzzlePosition => frontDownAim!=null&&frontDownAim.IsActive ? frontDownAim.MuzzlePosition : muzzle != null ? muzzle.position : transform.position;
         public float AimAngle { get; private set; }
+        public Vector2 AimPoint {get;private set;}
         public bool TargetWithinRange { get; private set; }
         public void SetAimTarget(Vector2 point) { directionTarget=false;worldTarget=point; mouseAim=false; ApplyTarget(point); }
         public void SetAimDirection(Vector2 direction)
@@ -112,7 +122,8 @@ namespace RightWalkPrototype
         private void LateUpdate()
         {
             recoilDistance=Mathf.MoveTowards(recoilDistance,0f,Time.deltaTime*.3f);
-            if(mouseAim)
+            if(networkFrontDown.HasValue)SetAimDirection(networkDirection);
+            else if(mouseAim&&!RelayArenaPrototype.LiveInputBlocked)
             {
                 directionTarget=false;
                 var camera=aimCamera != null ? aimCamera : Camera.main;
@@ -176,7 +187,7 @@ namespace RightWalkPrototype
         }
         private void ApplyTarget(Vector2 point)
         {
-            hasLastAimTarget=true;
+            hasLastAimTarget=true;AimPoint=point;
             if(movement==null)movement=GetComponentInParent<SideScrollMapPreview>();
             bool airborne=movement!=null && !movement.Grounded;
             var facingPreview=GetComponentInParent<SideFacingPreview>();
@@ -192,7 +203,15 @@ namespace RightWalkPrototype
             var bodyDirection=transform.parent.parent.InverseTransformVector(point-(Vector2)restingOrigin);
             float bodyAngle=Mathf.Atan2(bodyDirection.y,bodyDirection.x)*Mathf.Rad2Deg;
             if(HorizontalAndUpOnly){bodyAngle=Mathf.Max(0,bodyAngle);if(frontDownAim!=null)frontDownAim.Deactivate();}
-            if(!HorizontalAndUpOnly&&frontDownAim!=null&&frontDownAim.TryAim(point))
+            if(networkFrontDown==false&&frontDownAim!=null)frontDownAim.Deactivate();
+            bool frontPose=false;
+            if(!HorizontalAndUpOnly&&frontDownAim!=null&&frontDownAim.isActiveAndEnabled)
+            {
+                if(networkFrontDown==true)
+                {frontDownAim.ShowAngle((-90f-networkFrontDegrees)*Mathf.Deg2Rad,false);frontPose=true;}
+                else if(!networkFrontDown.HasValue)frontPose=frontDownAim.TryAim(point);
+            }
+            if(frontPose)
             {
                 SetBodyLean(0f);SetDownAimOffset(0f);AimAngle=frontDownAim.LocalAimDegrees;
                 TargetWithinRange=frontDownAim.TargetWithinRange;AirborneDownAim=airborne;
@@ -235,6 +254,7 @@ namespace RightWalkPrototype
         }
         private void OnGUI()
         {
+            if(!showAimPreview)return;
             if(!HasAimTarget || !hasLastAimTarget)return;
             var camera=aimCamera!=null ? aimCamera : Camera.main;
             if(camera==null)return;
@@ -245,15 +265,27 @@ namespace RightWalkPrototype
             }
             var origin=(Vector2)MuzzlePosition;
             var direction=AimDirection;
-            float range=Mathf.Max(.1f,previewAimRange);
-            var point=TraceShot(origin,direction,range,out bool hitSomething);
+            var network=characterRoot.GetComponent<SideScrollNetworkPlayer>();
+            if(network!=null&&network.GrenadeActive){network.DrawGrenadePreview(camera);return;}
+            bool shotgun=network!=null&&(network.ShotgunActive||network.InstantShotgunActive);
+            bool rifle=network!=null&&network.RifleActive;
+            float range=rifle?SideScrollNetworkPlayer.RifleRange:shotgun?SideScrollNetworkPlayer.ShotgunRange:Mathf.Max(.1f,previewAimRange);
+            var point=rifle?origin+direction*range:TraceShot(origin,direction,range,out bool hitSomething);
             var end=camera.WorldToScreenPoint(point);
             if(end.z<=0)return;
             var previous=GUI.color;
-            GUI.color=TargetWithinRange ? Color.white : new Color(1f,.75f,.15f);
+            GUI.color=network!=null&&network.ActiveAmmoEmpty?new Color(1,.2f,.15f):rifle?new Color(.8f,.4f,1):shotgun?new Color(1f,.82f,.18f):TargetWithinRange ? Color.white : new Color(1f,.75f,.15f);
             var to=new Vector2(end.x,Screen.height-end.y);
-            DrawAimLine(to+new Vector2(-5,-5),to+new Vector2(5,5),2f);
-            DrawAimLine(to+new Vector2(-5,5),to+new Vector2(5,-5),2f);
+            if(shotgun)
+            {
+                DrawAimLine(to+new Vector2(-8,-5),to+new Vector2(-8,5),2f);
+                DrawAimLine(to+new Vector2(8,-5),to+new Vector2(8,5),2f);
+            }
+            else
+            {
+                DrawAimLine(to+new Vector2(-5,-5),to+new Vector2(5,5),2f);
+                DrawAimLine(to+new Vector2(-5,5),to+new Vector2(5,-5),2f);
+            }
             GUI.color=previous;
         }
         public Vector2 TraceShot(Vector2 origin, Vector2 direction, float range, out bool hitSomething)
@@ -262,7 +294,7 @@ namespace RightWalkPrototype
             hitSomething=collider!=null;
             return point;
         }
-        public Vector2 TraceShot(Vector2 origin, Vector2 direction, float range, out Collider2D hitCollider)
+        public Vector2 TraceShot(Vector2 origin, Vector2 direction, float range, out Collider2D hitCollider,bool ignoreNetworkPlayers=false)
         {
             if(characterRoot==null)
             {
@@ -280,6 +312,9 @@ namespace RightWalkPrototype
             foreach(var hit in new System.ArraySegment<RaycastHit2D>(aimHits,0,count))
             {
                 if(hit.collider==null || hit.collider.transform.IsChildOf(characterRoot))continue;
+                // Grated one-way walkways carry feet but let bullets pass in both directions.
+                if(hit.collider.usedByEffector&&hit.collider.TryGetComponent<PlatformEffector2D>(out var platform)&&platform.useOneWay&&hit.collider.GetComponent<ArenaCover>()==null)continue;
+                if(ignoreNetworkPlayers&&hit.collider.GetComponentInParent<SideScrollNetworkPlayer>()!=null)continue;
                 if(hit.distance<=nearest){nearest=hit.distance;point=hit.point;hitCollider=hit.collider;}
             }
             return point;

@@ -30,6 +30,11 @@ namespace RightWalkPrototype
         public float CyclePhase => phase;
         public bool IsSettling => settling;
         public bool HoldCycle { get; set; }
+        public void ApplyNetworkFrame(int index, Vector2 velocity)
+        {
+            Velocity=velocity;
+            if(frames!=null&&frames.Length>0)ShowFrame(Mathf.Clamp(index,0,frames.Length-1));
+        }
         public void ResumeFromPlantedPose(int index)
         {
             phase = PlantedPhase(index);

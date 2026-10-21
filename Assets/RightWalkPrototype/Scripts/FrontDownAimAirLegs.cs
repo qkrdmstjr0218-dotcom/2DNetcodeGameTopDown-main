@@ -35,6 +35,11 @@ namespace RightWalkPrototype
         private bool rememberedMirror, selectedMirror, wasAirborne;
         private bool appliedMirror;
         private float takeoffFacing=1f;
+        private bool networkDriven;
+        public bool TakeoffMirror => selectedMirror;
+        public float TakeoffFacing => takeoffFacing;
+        public void SetNetworkPose(bool mirror,float facing)
+        { networkDriven=true;selectedMirror=mirror;takeoffFacing=facing<0?-1f:1f; }
         private void Awake()
         {
             movement=GetComponent<SideScrollMapPreview>();walker=GetComponent<RightFacingWalker>();
@@ -47,6 +52,7 @@ namespace RightWalkPrototype
         }
         private void LateUpdate()
         {
+            if(networkDriven)return;
             if(movement==null||walker==null)return;
             bool airborne=!movement.Grounded;
             if(selectPoseFromTakeoffFoot&&!airborne&&Mathf.Abs(walker.Velocity.x)>.03f&&footData!=null)

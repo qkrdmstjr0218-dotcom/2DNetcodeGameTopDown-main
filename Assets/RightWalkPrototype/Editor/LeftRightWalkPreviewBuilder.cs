@@ -9,13 +9,13 @@ public static class LeftRightWalkPreviewBuilder
     {
         if(Application.isPlaying || EditorSceneManager.GetActiveScene().isDirty)
             throw new System.InvalidOperationException("Stop Play and save the current scene first.");
-        EditorSceneManager.OpenScene("Assets/RightWalkPrototype/RightWalkSheetDemo.unity");
+        EditorSceneManager.OpenScene("Assets/RightWalkPrototype/Scenes/Archive/RightWalkSheetDemo.unity");
         var walker=Object.FindFirstObjectByType<RightFacingWalker>();
         var facing=walker.gameObject.AddComponent<SideFacingPreview>();
         facing.SetFacing(-1);
         walker.GetComponentInChildren<RightFacingAimRig>().ResetAim();
         PrefabUtility.SaveAsPrefabAsset(walker.gameObject,"Assets/RightWalkPrototype/LeftRightWalkPreview.prefab");
-        EditorSceneManager.SaveScene(EditorSceneManager.GetActiveScene(),"Assets/RightWalkPrototype/LeftRightWalkPreview.unity");
+        EditorSceneManager.SaveScene(EditorSceneManager.GetActiveScene(),"Assets/RightWalkPrototype/Scenes/Archive/LeftRightWalkPreview.unity");
         AssetDatabase.SaveAssets();
     }
 }
