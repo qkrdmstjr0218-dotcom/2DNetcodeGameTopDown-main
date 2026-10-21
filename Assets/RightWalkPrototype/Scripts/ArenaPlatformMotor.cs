@@ -12,7 +12,10 @@ namespace RightWalkPrototype
         private BoxCollider2D shape;
         private SideScrollMapPreview movement;
         private float gravity;
+        private RaycastHit2D flatJoin;
+        private float flatJoinDirection;
         private readonly List<Collider2D> platforms=new List<Collider2D>();
+        private readonly HashSet<Collider2D> passableCovers=new HashSet<Collider2D>();
         private readonly HashSet<Collider2D> ignored=new HashSet<Collider2D>();
         private readonly HashSet<Collider2D> admitted=new HashSet<Collider2D>();
         private readonly HashSet<Collider2D> dropping=new HashSet<Collider2D>();
@@ -25,7 +28,8 @@ namespace RightWalkPrototype
             // corner; art and the separately calculated damage bounds stay intact.
             shape.edgeRadius=Mathf.Max(shape.edgeRadius,.025f);
             foreach(var effector in FindObjectsByType<PlatformEffector2D>(FindObjectsSortMode.None))
-                if(effector.useOneWay)foreach(var collider in effector.GetComponents<Collider2D>())if(collider.usedByEffector)platforms.Add(collider);
+                if(effector.useOneWay)foreach(var collider in effector.GetComponents<Collider2D>())if(collider.usedByEffector)
+                {platforms.Add(collider);if(collider.GetComponent<ArenaCover>()!=null)passableCovers.Add(collider);}
         }
         private static float SurfaceY(Collider2D collider,float x)
         {
@@ -79,8 +83,9 @@ namespace RightWalkPrototype
                 else if(!movement.Grounded&&shape.bounds.min.y>surface+.04f)admitted.Add(collider);
                 // Keep an admitted landing enabled through the contact margin;
                 // do not disable it again just before physics resolves the foot.
-                // Flat practice ledges also ignore side entry while the sole is below their top.
-                bool below=(slope||ArenaObjectiveMatch.PracticeRoom)&&!supported&&!admitted.Contains(collider);
+                // Passable cover also admits horizontal entry from below its top.
+                // Its collider stays enabled for weapon traces; only this body ignores it.
+                bool below=(slope||ArenaObjectiveMatch.PracticeRoom||passableCovers.Contains(collider))&&!supported&&!admitted.Contains(collider);
                 Ignore(collider,drop||below);
             }
         }
@@ -110,10 +115,53 @@ namespace RightWalkPrototype
             body.gravityScale=gravity;body.linearVelocity=new Vector2(body.linearVelocity.x,-1);
             return true;
         }
+        static bool FlatSolid(RaycastHit2D hit)=>hit.collider!=null&&!hit.collider.usedByEffector&&
+            Mathf.Abs(hit.collider.transform.up.x)<.01f&&hit.normal.y>.99f;
+        public void CompleteSolidSlopeJoin(ref RaycastHit2D floor,Collider2D previousSupport,bool grounded,bool jumping)
+        {
+            if(flatJoin.collider!=null)
+            {
+                float sole=shape.bounds.min.y-shape.edgeRadius;
+                if(!grounded||jumping||body.linearVelocity.x*flatJoinDirection<=0||Mathf.Abs(sole-flatJoin.point.y)>.12f)
+                    flatJoin=default;
+                else
+                {
+                    // Retain this real flat hit until the narrow probe reaches
+                    // it too. Otherwise a fast step can reselect the old slope
+                    // and reapply its upward tangent on the following tick.
+                    if(FlatSolid(floor))flatJoin=default;else floor=flatJoin;
+                    if(body.linearVelocity.y>0)body.linearVelocity=new Vector2(body.linearVelocity.x,0);
+                    return;
+                }
+            }
+            if(!grounded||jumping||previousSupport==null||previousSupport.usedByEffector||
+                Mathf.Abs(previousSupport.transform.up.x)<.01f||body.linearVelocity.y<=0)return;
+            if(!FlatSolid(floor))
+            {
+                // The narrowed walking probe can miss the flat deck for one
+                // frame after the full rounded toe reaches it. Probe that toe
+                // only while following a solid incline, never during a jump.
+                var bounds=shape.bounds;float sign=Mathf.Sign(body.linearVelocity.x);
+                if(sign==0)return;
+                float toe=(sign>0?bounds.max.x:bounds.min.x)+sign*(shape.edgeRadius+.01f+Mathf.Abs(body.linearVelocity.x)*Time.fixedDeltaTime);
+                var ahead=Physics2D.Raycast(new Vector2(toe,bounds.min.y+.04f),Vector2.down,.2f,1);
+                // A ray beginning inside the deck reports its origin, not the
+                // top surface. Do not treat that as support above the foot.
+                if(!FlatSolid(ahead)||ahead.point.y<ahead.collider.bounds.max.y-.005f)return;
+                flatJoin=floor=ahead;flatJoinDirection=sign;
+            }
+            // A solid incline's upward tangent is walking support, not a jump.
+            // Finish it as soon as the existing foot probe reaches the flat deck,
+            // before upward velocity makes that same probe report airborne.
+            body.linearVelocity=new Vector2(body.linearVelocity.x,0);
+        }
         public void ApplyGroundVelocity(ref Vector2 velocity,RaycastHit2D floor,bool grounded,float input,bool jumping)
         {
             bool slope=grounded&&floor.collider!=null&&Mathf.Abs(floor.normal.x)>.01f;
-            bool settled=floor.distance<.04f;
+            // On a steep incline the narrowed foot probe is farther from the
+            // surface even while the full rounded collider is touching it.
+            // Keep actual support still instead of re-enabling downhill gravity.
+            bool settled=floor.distance<.04f||floor.collider!=null&&shape.IsTouching(floor.collider);
             body.gravityScale=slope&&settled&&!jumping&&Mathf.Abs(input)<.001f?0:gravity;
             if(!slope||jumping)return;
             if(Mathf.Abs(input)<.001f){if(settled)velocity=Vector2.zero;}
@@ -124,6 +172,7 @@ namespace RightWalkPrototype
             if(body!=null)body.gravityScale=gravity;
             if(shape!=null)foreach(var collider in ignored)if(collider!=null)Physics2D.IgnoreCollision(shape,collider,false);
             ignored.Clear();admitted.Clear();dropping.Clear();
+            flatJoin=default;flatJoinDirection=0;
         }
         public void ResetContactState(){Restore();}
         private void OnDisable(){Restore();}

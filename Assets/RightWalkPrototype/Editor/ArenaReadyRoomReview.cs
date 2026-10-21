@@ -15,6 +15,7 @@ public static partial class ArenaReadyRoomReview
     [Serializable] class Command {public int id,target,action;public bool ready;public uint generation;}
     [Serializable] class Peer
     {
+        public float westCycle,westWidth;
         public int role,phase=-1,roster,mask,hp,ammo,shots,spectator,climbed,normalCapacity,pickupsAvailable,pickupsCount,enemiesCount,enemyHealth,enemyGeneration,instantAmmo,instantShots,hostInstantCount,selectedAmmo,rifleAmmo,rifleShots,grenadeAmmo,grenadeShots,grenadeBursts,hostGrenadeBursts,grenadePushes;public Vector2 grenadeImpulse;public Vector2 hostGrenadePoint,predictedGrenade;public bool predictedGrenadeHit;public float[] instantAngles;public Vector3 enemyPosition;public uint life;public bool connected,denied,blocked,grounded,ammoCursor,osCursor,worldStamina,hitReacting,sawHit;public float energy,delay,countdown,normal,normalDelay,normalRate,shotInterval,velocityX,velocityY,lastHitX,lastHitY;public string notice,cursor,support;public Vector3 position;public double end;
     }
     static bool started,spectatorOnly,normalOnly,practiceOnly,pickupsOnly,enemiesOnly,instantOnly,rifleOnly,grenadeOnly,foundryOnly;static string folder;static int revision;
@@ -51,7 +52,7 @@ public static partial class ArenaReadyRoomReview
         if(started||EditorApplication.isCompiling||Time.time<.4f||!File.Exists(Request))return;
         var session=UnityEngine.Object.FindFirstObjectByType<SideScrollNetworkSession>();if(session==null)return;
         started=true;var settings=JsonUtility.FromJson<Settings>(File.ReadAllText(Request));folder=settings.folder;spectatorOnly=settings.spectatorOnly;normalOnly=settings.normalOnly;practiceOnly=settings.practiceOnly;pickupsOnly=settings.pickupsOnly;enemiesOnly=settings.enemiesOnly;instantOnly=settings.instantOnly;rifleOnly=settings.rifleOnly;grenadeOnly=settings.grenadeOnly;foundryOnly=settings.foundryOnly;revision=0;passed.Clear();cache.Clear();
-        bool main=Unity.Multiplayer.PlayMode.CurrentPlayer.IsMainEditor;session.useReadyRoom=true;session.StartLocal(main);session.StartCoroutine(Actor(session,main));if(main)session.StartCoroutine(Run(session));
+        bool main=Unity.Multiplayer.PlayMode.CurrentPlayer.IsMainEditor;session.useReadyRoom=!(File.Exists(folder+"/solo-performance.txt")||File.Exists(folder+"/entrance-cover.txt"));session.StartLocal(main);session.StartCoroutine(Actor(session,main));if(main)session.StartCoroutine(Run(session));
     }
     static string Read(string path){using(var f=new FileStream(path,FileMode.Open,FileAccess.Read,FileShare.ReadWrite))using(var r=new StreamReader(f))return r.ReadToEnd();}
     static Peer P(int role){try{var peer=JsonUtility.FromJson<Peer>(Read(folder+"/peer-"+role+".json"));if(peer!=null&&peer.role==role)cache[role]=peer;}catch{}return cache.TryGetValue(role,out var found)?found:null;}
@@ -80,6 +81,10 @@ public static partial class ArenaReadyRoomReview
                 if(cmd.action>=16&&cmd.action<=22&&cmd.action!=20)firing=false;
                 if(cmd.action==60&&own!=null)session.StartCoroutine(FoundryClient(own));
                 if(cmd.action==61&&own!=null)session.StartCoroutine(FoundryClient(own,true));
+                if(cmd.action==62&&own!=null)session.StartCoroutine(FoundrySlopeClient(own));
+                if(cmd.action==64&&own!=null)session.StartCoroutine(FoundryTraversalClient(own));
+                if(cmd.action==65&&own!=null)session.StartCoroutine(FoundrySeamClient(own));
+                if(cmd.action==66&&own!=null)session.StartCoroutine(WestBridgeClient(own));
                 if(cmd.action==1&&match!=null)match.SetLocalReady(cmd.ready);
                 if(cmd.action==2&&match!=null)denied=!match.StartRound();
                 if(cmd.action==3)session.DisconnectLocal();
@@ -210,6 +215,7 @@ public static partial class ArenaReadyRoomReview
             {
                 write=Time.realtimeSinceStartup+.08f;
                 var peer=new Peer{hostInstantCount=lastHostInstant,instantAngles=observedAngles,climbed=climbed,role=role,connected=manager!=null&&manager.IsConnectedClient,denied=denied,notice=session.ConnectionNotice,cursor=Cursor.lockState.ToString(),blocked=RelayArenaPrototype.ControlsBlocked};
+                var crossing=UnityEngine.Object.FindFirstObjectByType<ArenaRetractingBridge>();if(crossing!=null){peer.westCycle=crossing.CycleTime;peer.westWidth=crossing.westLeaf.localScale.x;}
                 if(own!=null){peer.grenadePushes=own.ReceivedGrenadePushes;peer.grenadeImpulse=own.LastGrenadePush;peer.grenadeAmmo=own.GrenadeRounds;peer.grenadeShots=own.ReceivedGrenadeShots;peer.grenadeBursts=own.ReceivedGrenadeBursts;peer.predictedGrenade=grenadePredicted;peer.predictedGrenadeHit=grenadePredictionHit;peer.rifleAmmo=own.RifleRounds;peer.rifleShots=own.ReceivedRifleShots;peer.selectedAmmo=(int)own.SelectedAmmo;peer.instantAmmo=own.InstantShotgunRounds;peer.instantShots=own.ReceivedInstantBlasts;peer.sawHit=sawHit;peer.lastHitX=lastHitX;peer.lastHitY=lastHitY;peer.hitReacting=own.GetComponent<SideScrollMapPreview>().HitReacting;peer.velocityX=own.GetComponent<Rigidbody2D>().linearVelocity.x;peer.velocityY=own.GetComponent<Rigidbody2D>().linearVelocity.y;peer.shotInterval=own.NormalShotInterval;peer.worldStamina=own.WorldStaminaVisible;peer.normal=own.NormalAmmo;peer.normalCapacity=own.NormalCapacity;peer.ammoCursor=own.AmmoCursorVisible;peer.osCursor=Cursor.visible;peer.position=own.transform.position;peer.life=own.LifeVersion;peer.hp=own.Health;peer.energy=own.Stamina;peer.ammo=own.ShotgunRounds;peer.grounded=own.GetComponent<SideScrollMapPreview>().Grounded;var ground=own.GetComponent<SideScrollMapPreview>().GroundCollider;peer.support=ground!=null?ground.name:"";if(RelayArenaPrototype.Instance.WantsSpectator){var target=RelayArenaPrototype.Instance.SpectatorTarget();peer.spectator=target!=null?target.PlayerNumber:0;}}
                 foreach(var player in UnityEngine.Object.FindObjectsByType<SideScrollNetworkPlayer>(FindObjectsSortMode.None))if(player.IsSpawned){peer.shots+=player.ReceivedShots;if(player.PlayerNumber==1){peer.hostGrenadeBursts=player.ReceivedGrenadeBursts;peer.hostGrenadePoint=player.LastGrenadeBurst;}}
                 if(match!=null&&match.IsSpawned){peer.enemiesCount=match.Patrols.Count;if(match.Patrols.Count>0){peer.enemyHealth=match.Patrols[0].Health;peer.enemyGeneration=match.Patrols[0].Generation;peer.enemyPosition=match.PatrolPosition(match.Patrols[0]);}peer.pickupsCount=match.AmmoPickups.Count;foreach(var pickup in match.AmmoPickups)if(pickup.Available)peer.pickupsAvailable++;peer.normalDelay=match.NormalAmmoRules.Delay;peer.normalRate=match.NormalAmmoRules.Rate;peer.delay=match.RespawnSeconds;peer.countdown=match.CountdownSeconds;peer.phase=(int)match.State.Value.Phase;peer.end=match.State.Value.End;peer.roster=match.ReadyPlayers.Count;foreach(var p in match.ReadyPlayers)if(p.Ready)peer.mask|=1<<(p.Number-1);}
@@ -226,7 +232,7 @@ public static partial class ArenaReadyRoomReview
     static void Require(bool check,string label){if(!check)throw new Exception(label);passed.Add(label);}
     static IEnumerator Run(SideScrollNetworkSession session)
     {
-        var stack=new Stack<IEnumerator>();stack.Push(foundryOnly?CheckFoundry():grenadeOnly?CheckGrenade():rifleOnly?CheckRifle():instantOnly?CheckInstant():enemiesOnly?CheckEnemies():pickupsOnly?CheckPickups():practiceOnly?CheckPractice():normalOnly?CheckNormal():spectatorOnly?CheckSpectator():Check(session));string result="PASS";
+        var stack=new Stack<IEnumerator>();stack.Push(File.Exists(folder+"/west-bridge.txt")?CheckWestBridgeRound():File.Exists(folder+"/entrance-cover.txt")?CheckEntranceCovers():File.Exists(folder+"/selection-only.txt")?CheckAmmoPreselection():File.Exists(folder+"/solo-performance.txt")?CheckSoloPerformance():foundryOnly?CheckFoundry():grenadeOnly?CheckGrenade():rifleOnly?CheckRifle():instantOnly?CheckInstant():enemiesOnly?CheckEnemies():pickupsOnly?CheckPickups():practiceOnly?CheckPractice():normalOnly?CheckNormal():spectatorOnly?CheckSpectator():Check(session));string result="PASS";
         while(stack.Count>0)
         {
             bool more=false;object next=null;Exception failure=null;

@@ -21,20 +21,22 @@ namespace RightWalkPrototype
         }
         void ResetLocalFireTiming()
         {System.Array.Clear(localFireReady,0,localFireReady.Length);localSwitchReady=0;localFireKind=AmmoKind.Normal;localTimingLife=LifeVersion;}
-        void NotifyFireMode(bool selectionChanged=false)
+        void NotifyFireMode()
         {
             if(!IsOwner||!IsSpawned||!NormalAmmoEnabled)return;
             if(localTimingLife!=LifeVersion)ResetLocalFireTiming();
             var kind=ActiveFireKind;
-            if(!selectionChanged&&kind==localFireKind)return;
+            // Q/E preselects the special round while normal fire remains active.
+            // Only an effective firing-mode change starts the switch delay.
+            if(kind==localFireKind)return;
             localFireKind=kind;localSwitchReady=Time.time+WeaponSwitchSeconds;
-            ChangeFireModeServerRpc(kind,selectionChanged,LifeVersion);
+            ChangeFireModeServerRpc(kind,LifeVersion);
         }
         [ServerRpc]
-        void ChangeFireModeServerRpc(AmmoKind kind,bool selectionChanged,uint generation)
+        void ChangeFireModeServerRpc(AmmoKind kind,uint generation)
         {
             if(!NormalAmmoEnabled||IsDead||generation!=LifeVersion||ArenaObjectiveMatch.CombatBlocked||(int)kind>(int)AmmoKind.Grenade)return;
-            if(selectionChanged||kind!=serverFireKind)serverSwitchReady=NetworkManager.ServerTime.Time+WeaponSwitchSeconds;
+            if(kind!=serverFireKind)serverSwitchReady=NetworkManager.ServerTime.Time+WeaponSwitchSeconds;
             serverFireKind=kind;
         }
         bool ServerFireReady(AmmoKind kind,double now)

@@ -76,6 +76,10 @@ public static class RelayFoundryBuilder
         MakeObjectives();Camera.main.transform.position=new Vector3(0,6.5f,-10);Camera.main.orthographicSize=21;
         Physics2D.SyncTransforms();EditorSceneManager.MarkSceneDirty(scene);EditorSceneManager.SaveScene(scene);AssetDatabase.SaveAssets();
         FoundryConsoleBuilder.Apply();
+        FoundryLowerBypassBuilder.Apply();
+        FoundryEntranceCoverBuilder.Apply();
+        FoundryTraversalTuningBuilder.Apply();
+        FoundryWestBridgeBuilder.Apply();
         Selection.activeGameObject=root.gameObject;
     }
     static GameObject Box(string name,Vector2 at,Vector2 size,Color color,int order,bool solid=false)

@@ -76,7 +76,7 @@ namespace RightWalkPrototype
         {
             if(!IsSpawned||!IsOwner||IsDead||RelayArenaPrototype.ControlsBlocked||!SpecialAmmoEnabled)return;
             if(InstantShotgunEnabled&&kind==AmmoKind.Shotgun)kind=AmmoKind.InstantShotgun;
-            if(kind==AmmoKind.Normal||kind==AmmoKind.Shotgun||kind==AmmoKind.InstantShotgun&&InstantShotgunEnabled||kind==AmmoKind.Rifle&&RifleEnabled||kind==AmmoKind.Grenade&&NormalAmmoEnabled){if(selectedAmmo.Value!=kind){selectedAmmo.Value=kind;NotifyFireMode(true);}}
+            if(kind==AmmoKind.Normal||kind==AmmoKind.Shotgun||kind==AmmoKind.InstantShotgun&&InstantShotgunEnabled||kind==AmmoKind.Rifle&&RifleEnabled||kind==AmmoKind.Grenade&&NormalAmmoEnabled){if(selectedAmmo.Value!=kind){selectedAmmo.Value=kind;NotifyFireMode();}}
         }
         public void CycleAmmo(int direction)
         {

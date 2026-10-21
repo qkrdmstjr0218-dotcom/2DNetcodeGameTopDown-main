@@ -45,9 +45,11 @@ namespace RightWalkPrototype
         private Vector3 cameraPosition;
         private bool cameraReady;
         private ArenaMapSettings map;
+        private ArenaRetractingBridge[] extraBridges;
         private void Awake()
         {
             map=GetComponent<ArenaMapSettings>();
+            extraBridges=GetComponentsInChildren<ArenaRetractingBridge>();
             ArenaReadyRoom.Build(transform);
             // Keep the serialized collider reference, but let each visible leaf
             // carry its own collision instead of toggling the entire crossing.
@@ -76,7 +78,12 @@ namespace RightWalkPrototype
             MenuOpen=value;if(!value)waitForMouseRelease=true;
             if(value){Cursor.lockState=CursorLockMode.None;Cursor.visible=true;}
         }
-        public bool IsSafeLanding(Vector2 point)=>!(point.x>pitLeft&&point.x<pitRight&&point.y<-2.3f);
+        public bool IsSafeLanding(Vector2 point)
+        {
+            if(point.x>pitLeft&&point.x<pitRight&&point.y<-2.3f)return false;
+            if(extraBridges!=null)foreach(var bridge in extraBridges)if(bridge.UnsafeLanding(point))return false;
+            return true;
+        }
         private double Clock=>NetworkManager.Singleton!=null&&NetworkManager.Singleton.IsListening?
             NetworkManager.Singleton.ServerTime.Time:Time.timeAsDouble;
         private void Update()
@@ -150,7 +157,15 @@ namespace RightWalkPrototype
             GUILayout.Label(map!=null?map.displayName:"중계 시설 07 · 3층 순환 전장");
             string state=BridgeOpen?"통행 불가":CycleTime>=8?"곧 수납됩니다":"통행 가능";
             float remaining=BridgeOpen?14-CycleTime:10-CycleTime;
-            GUILayout.Label("동쪽 다리: "+state+" · "+Mathf.CeilToInt(remaining)+"초 / Tab: 전체 지도");
+            bool extra=extraBridges!=null&&extraBridges.Length>0;
+            GUILayout.Label((extra?"[디버그] 동쪽: ":"동쪽 다리: ")+state+" · "+Mathf.CeilToInt(remaining)+"초"+(extra?"":" / Tab: 전체 지도"));
+            if(extra)
+            {
+                var bridge=extraBridges[0];
+                string westState=bridge.Retracted?"통행 불가":bridge.CycleTime>=8?"곧 수납됩니다":"통행 가능";
+                float westRemaining=bridge.Retracted?14-bridge.CycleTime:10-bridge.CycleTime;
+                GUILayout.Label("서쪽: "+westState+" · "+Mathf.CeilToInt(westRemaining)+"초 / Tab: 전체 지도");
+            }
             GUILayout.EndArea();
             }
             if(MenuOpen)

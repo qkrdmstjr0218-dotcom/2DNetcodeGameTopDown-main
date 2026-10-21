@@ -75,12 +75,25 @@ public static partial class ArenaReadyRoomReview
             {
                 float x=sign*(tier==0?10.5f:13.5f),floor=tier*3.6f,top=floor+1.8f;
                 move.SetInput(0);move.SetSpawnPosition(new Vector2(x,floor+.04f));yield return Wait(()=>move.Grounded,"shortcut start "+sign+"/"+tier);
-                move.SetInput(0,true);yield return new WaitForSecondsRealtime(.25f);move.SetInput(0,true);
+                move.SetInput(0,true);yield return new WaitForSecondsRealtime(.25f);
+                if(RelayArenaPrototype.Instance.jumpSpeed<7.5f)move.SetInput(0,true);
                 yield return Wait(()=>move.Grounded&&Mathf.Abs(own.transform.position.y-top)<.2f,"shortcut jump landing "+sign+"/"+tier,4);
             }
             move.SetInput(0);move.SetSpawnPosition(new Vector2(0,10.84f));yield return Wait(()=>move.Grounded,"top grate landing");
             Require(own.GetComponent<ArenaPlatformMotor>().TryDrop(move.GroundCollider),"top grate accepts safe drop");
             yield return Wait(()=>move.Grounded&&own.transform.position.y<9.5f,"drop lands on upper core or cover");
+        }
+        if(GameObject.Find("Lower service bypass")!=null)
+        {
+            yield return FoundryTraverse(own,new Vector2(-7.8f,0),new Vector2(0,-2.8f),false,"service-west-entry");
+            var camera=RelayArenaPrototype.Instance.arenaCamera;
+            yield return new WaitForSecondsRealtime(.8f);
+            Require(!own.IsDead&&own.Health==own.MaxHealth,"service floor is safe below ground");
+            if(own.IsOwner)
+                Require(camera.transform.position.y-camera.orthographicSize<-2.9f,"service floor visible at gameplay zoom");
+            ScreenCapture.CaptureScreenshot(folder+"/service-bypass-"+own.PlayerNumber+".png");
+            yield return FoundryTraverse(own,new Vector2(0,-2.8f),new Vector2(7.8f,0),false,"service-east-exit");
+            yield return FoundryTraverse(own,new Vector2(7.8f,0),new Vector2(-7.8f,0),false,"service-east-to-west");
         }
         foundryDriving=false;own.GetComponent<SideScrollMapPreview>().SetInput(0);
     }
@@ -92,6 +105,13 @@ public static partial class ArenaReadyRoomReview
         Send(0,1,true);yield return Wait(()=>All(4,p=>p.mask==15),"everyone ready");match.roundSeconds=300;Require(match.StartRound(),"foundry match starts");
         yield return Wait(()=>All(4,p=>p.phase==1),"all four arrivals including x31 finish countdown",22);
         yield return Wait(()=>All(4,p=>p.pickupsCount==3&&p.enemiesCount==2),"map supplies and patrols agree on four peers");
+        if(File.Exists(folder+"/performance-only.txt")){yield return FoundryPerformanceSample(Player(1));yield break;}
+        if(File.Exists(folder+"/slope-only.txt"))
+        {
+            yield return FoundrySlopeStops(Player(1));Send(4,62);
+            yield return Wait(()=>File.Exists(folder+"/slope-client.txt"),"client slope checks complete",70);
+            Require(Read(folder+"/slope-client.txt")=="PASS","client slope stops pass");yield break;
+        }
         if(File.Exists(folder+"/drop-only.txt"))
         {
             yield return CheckFoundryDrops(Player(1));Send(4,61);yield return Wait(()=>File.Exists(folder+"/foundry-drop-client.txt"),"client drop checks complete",45);Require(Read(folder+"/foundry-drop-client.txt")=="PASS","client drop return and re-entry pass");

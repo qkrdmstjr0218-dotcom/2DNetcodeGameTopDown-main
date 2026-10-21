@@ -85,6 +85,7 @@ namespace RightWalkPrototype
                 for(int i=0;i<count;i++)if(!arenaMotor.IsIgnored(floorHits[i].collider)&&floorHits[i].normal.y>=.5f&&floorHits[i].distance<nearest)
                 {floorHit=floorHits[i];nearest=floorHit.distance;}
             }
+            if(arenaMotor!=null&&!HitReacting)arenaMotor.CompleteSolidSlopeJoin(ref floorHit,GroundCollider,Grounded,jumpRequested);
             // On an incline, upward motion along the surface is still grounded.
             Grounded=floorHit.collider!=null&&floorHit.normal.y>=.5f&&Vector2.Dot(body.linearVelocity,floorHit.normal)<=.1f;
             GroundCollider=Grounded?floorHit.collider:null;
