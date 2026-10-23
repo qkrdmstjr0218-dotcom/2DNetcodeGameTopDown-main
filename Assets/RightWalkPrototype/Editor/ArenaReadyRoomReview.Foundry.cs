@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -104,7 +104,7 @@ public static partial class ArenaReadyRoomReview
         Require(map!=null&&match.Points.Length==6,"foundry data and six uplinks loaded");
         Send(0,1,true);yield return Wait(()=>All(4,p=>p.mask==15),"everyone ready");match.roundSeconds=300;Require(match.StartRound(),"foundry match starts");
         yield return Wait(()=>All(4,p=>p.phase==1),"all four arrivals including x31 finish countdown",22);
-        yield return Wait(()=>All(4,p=>p.pickupsCount==3&&p.enemiesCount==2),"map supplies and patrols agree on four peers");
+        yield return Wait(()=>All(4,p=>p.pickupsCount==3&&p.enemiesCount==(map.patrolRoutes.Length+(map.turretSpawns?.Length??0)+(map.roamingEnemies?(map.droneSpawns?.Length??0):0))),"map supplies and patrols agree on four peers");
         if(File.Exists(folder+"/performance-only.txt")){yield return FoundryPerformanceSample(Player(1));yield break;}
         if(File.Exists(folder+"/slope-only.txt"))
         {
@@ -131,7 +131,7 @@ public static partial class ArenaReadyRoomReview
         float score=match.ScoreFor(host.OwnerClientId);yield return Wait(()=>match.ScoreFor(host.OwnerClientId)>score+.2f,"top objective actually awards score",4);
         yield return new WaitForSecondsRealtime(.2f);ScreenCapture.CaptureScreenshot(folder+"/foundry-upper-play.png");yield return new WaitForSecondsRealtime(.2f);
         Require(rules.arenaCamera.transform.position.y>9&&Mathf.Abs(rules.arenaCamera.orthographicSize-4.8f)<.01f,"camera follows top tier without shrinking character");
-        host.ReceiveServerDamage(100,host.LifeVersion);yield return Wait(()=>host.IsDead,"foundry player death");yield return Wait(()=>!host.IsDead&&host.HasCurrentLifePose&&Vector2.Distance(host.transform.position,starts[0].position)<.3f,"automatic respawn returns to foundry spawn",10);
+        host.ReceiveServerDamage(100,host.LifeVersion);yield return Wait(()=>host.IsDead,"foundry player death");yield return Wait(()=>!host.IsDead&&host.HasCurrentLifePose&&NearestSpawn(map,host.transform.position)>=0,"automatic respawn returns to safe foundry candidate",10);
         move.SetSpawnPosition(new Vector2(26,-2.6f));yield return Wait(()=>host.IsDead,"bridge pit applies fall death",3);
         state=match.State.Value;state.End=match.Now+.05;match.State.Value=state;yield return Wait(()=>All(4,p=>p.phase==2),"all peers receive foundry results");Require(match.ReturnToRoom(),"foundry returns to ready room");
         yield return Wait(()=>All(4,p=>p.phase==0&&p.position.x>89&&p.hp==100&&p.mask==0),"return restores ready room and resources");foundryDriving=false;

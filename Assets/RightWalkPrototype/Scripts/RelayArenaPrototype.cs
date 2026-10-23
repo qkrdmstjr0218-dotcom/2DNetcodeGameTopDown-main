@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using Unity.Netcode;
 #if ENABLE_INPUT_SYSTEM
 using UnityEngine.InputSystem;
@@ -117,7 +117,7 @@ namespace RightWalkPrototype
             {
                 Vector3 position=player.transform.position;
                 if(player.IsSpawned&&player.HasCurrentLifePose&&!player.IsDead&&position.x>pitLeft&&position.x<pitRight&&position.y<-2.4f)
-                    player.ReceiveServerDamage(player.MaxHealth,player.LifeVersion);
+                    player.ReceiveServerDamage(player.MaxHealth,player.LifeVersion,null,true);
             }
         }
         private void LateUpdate()
@@ -150,7 +150,7 @@ namespace RightWalkPrototype
         }
         private void OnGUI()
         {
-            if(ArenaObjectiveMatch.TransitionActive||ArenaObjectiveMatch.InReadyRoom&&!MenuOpen)return;
+            if(SideScrollNetworkSession.LobbyVisible||ArenaObjectiveMatch.TransitionActive||ArenaObjectiveMatch.InReadyRoom&&!MenuOpen)return;
             if(!ArenaObjectiveMatch.InReadyRoom)
             {
             GUILayout.BeginArea(new Rect(Screen.width*.5f-180,12,360,75),GUI.skin.box);

@@ -52,7 +52,7 @@ namespace RightWalkPrototype
                 foreach(var target in FindObjectsByType<SideScrollNetworkPlayer>(FindObjectsSortMode.None))
                 {
                     if(target==this||!target.IsSpawned||target.IsDead||hitPlayers.Contains(target.NetworkObjectId)||!RifleIntersects(target.ServerHitBounds(),from,direction,step))continue;
-                    hitPlayers.Add(target.NetworkObjectId);target.ReceiveServerDamage(RifleDamage,target.LifeVersion);ShowRifleImpactClientRpc((Vector2)target.ServerHitBounds().center,direction);
+                    hitPlayers.Add(target.NetworkObjectId);target.ReceiveServerDamage(RifleDamage,target.LifeVersion,this);ShowRifleImpactClientRpc((Vector2)target.ServerHitBounds().center,direction);
                 }
                 foreach(var enemy in FindObjectsByType<ArenaPatrolEnemy>(FindObjectsSortMode.None))
                 {

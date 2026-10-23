@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using Unity.Collections;
 using Unity.Netcode;
 using UnityEngine;
@@ -11,16 +11,17 @@ namespace RightWalkPrototype
         public enum Stage:byte {Waiting,Playing,Finished,Starting,Returning,Countdown}
         public struct RoundState:INetworkSerializable,IEquatable<RoundState>
         {
-            public Stage Phase;public int Version,Point;public double End,Switch,Warning;
+            public Stage Phase;public int Version,Point,Upcoming;public double End,Switch,Warning;
             public void NetworkSerialize<T>(BufferSerializer<T> s) where T:IReaderWriter
-            {byte p=(byte)Phase;s.SerializeValue(ref p);Phase=(Stage)p;s.SerializeValue(ref Version);s.SerializeValue(ref Point);s.SerializeValue(ref End);s.SerializeValue(ref Switch);s.SerializeValue(ref Warning);}
-            public bool Equals(RoundState o)=>Phase==o.Phase&&Version==o.Version&&Point==o.Point&&End==o.End&&Switch==o.Switch&&Warning==o.Warning;
+            {byte p=(byte)Phase;s.SerializeValue(ref p);Phase=(Stage)p;s.SerializeValue(ref Version);s.SerializeValue(ref Point);s.SerializeValue(ref Upcoming);s.SerializeValue(ref End);s.SerializeValue(ref Switch);s.SerializeValue(ref Warning);}
+            public bool Equals(RoundState o)=>Phase==o.Phase&&Version==o.Version&&Point==o.Point&&Upcoming==o.Upcoming&&End==o.End&&Switch==o.Switch&&Warning==o.Warning;
         }
         public struct Score:INetworkSerializable,IEquatable<Score>
         {
-            public ulong Client;public int Number;public float Seconds;
-            public void NetworkSerialize<T>(BufferSerializer<T> s) where T:IReaderWriter{s.SerializeValue(ref Client);s.SerializeValue(ref Number);s.SerializeValue(ref Seconds);}
-            public bool Equals(Score o)=>Client==o.Client&&Number==o.Number&&Seconds==o.Seconds;
+            public ulong Client;public int Number,Kills;public float Seconds,KillPoints;
+            public float Total=>Seconds+KillPoints;
+            public void NetworkSerialize<T>(BufferSerializer<T> s) where T:IReaderWriter{s.SerializeValue(ref Client);s.SerializeValue(ref Number);s.SerializeValue(ref Seconds);s.SerializeValue(ref Kills);s.SerializeValue(ref KillPoints);}
+            public bool Equals(Score o)=>Client==o.Client&&Number==o.Number&&Seconds==o.Seconds&&Kills==o.Kills&&KillPoints==o.KillPoints;
         }
         public float roundSeconds=180,pointSeconds=30,warningSeconds=5;
         public readonly NetworkVariable<RoundState> State=new(new RoundState{Phase=Stage.Waiting});
@@ -31,10 +32,15 @@ namespace RightWalkPrototype
         public static bool Ended=>Instance!=null&&Instance.IsSpawned&&Instance.State.Value.Phase==Stage.Finished;
         public ArenaObjectivePoint[] Points {get;private set;}
         public double Now=>NetworkManager!=null?NetworkManager.ServerTime.Time:0;
-        public int NextPoint=>(State.Value.Point+1)%Mathf.Max(1,Points.Length);
+        public int NextPoint=>State.Value.Upcoming;
+        int PickNextPoint(int current)
+        {
+            int count=Points.Length;if(count<=1)return 0;
+            int pick=UnityEngine.Random.Range(0,count-1);return pick>=current?pick+1:pick;
+        }
         public bool PreviewNext=>State.Value.Phase==Stage.Playing&&Now>=State.Value.Warning&&State.Value.Switch<State.Value.End;
         double lastTick,nextTick;
-        void Awake(){Scores=new NetworkList<Score>();AmmoPickups=new NetworkList<AmmoPickup>();Patrols=new NetworkList<PatrolState>();}
+        void Awake(){Scores=new NetworkList<Score>();AmmoPickups=new NetworkList<AmmoPickup>();HealthPickups=new NetworkList<AmmoPickup>();Patrols=new NetworkList<PatrolState>();TurretShots=new NetworkList<TurretShot>();}
         public override void OnNetworkSpawn()
         {
             Instance=this;
@@ -44,7 +50,7 @@ namespace RightWalkPrototype
             InitializeAmmoRules();pickupVersion=-1;patrolVersion=-1;
         }
         public override void OnNetworkDespawn()
-        {ClearPatrolVisuals();ClearPickupVisuals();if(Points!=null)foreach(var p in Points)if(p!=null)p.Show(false,false,Color.white);if(Instance==this)Instance=null;}
+        {ClearTurretVisuals();ClearPatrolVisuals();ClearPickupVisuals();if(Points!=null)foreach(var p in Points)if(p!=null)p.Show(false,false,Color.white);if(Instance==this)Instance=null;}
         public bool StartRound()
         {
             if(!IsSpawned||!IsServer||Points.Length==0)return false;
@@ -61,8 +67,8 @@ namespace RightWalkPrototype
         {
             var players=FindObjectsByType<SideScrollNetworkPlayer>(FindObjectsSortMode.None);
             if(players.Length==0)return false;
-            double now=Now;var old=State.Value;
-            State.Value=new RoundState{Phase=RoomFlow?Stage.Countdown:Stage.Playing,Version=old.Version+1,Point=0,End=RoomFlow?0:now+Mathf.Max(1,roundSeconds),Switch=now+Mathf.Max(1,pointSeconds),Warning=now+Mathf.Max(1,pointSeconds)-Mathf.Clamp(warningSeconds,0,Mathf.Max(1,pointSeconds))};
+            double now=Now;var old=State.Value;int first=UnityEngine.Random.Range(0,Points.Length);
+            State.Value=new RoundState{Phase=RoomFlow?Stage.Countdown:Stage.Playing,Version=old.Version+1,Point=first,Upcoming=PickNextPoint(first),End=RoomFlow?0:now+Mathf.Max(1,roundSeconds),Switch=now+Mathf.Max(1,pointSeconds),Warning=now+Mathf.Max(1,pointSeconds)-Mathf.Clamp(warningSeconds,0,Mathf.Max(1,pointSeconds))};
             if(RoomFlow){arrivals.Value=0;arrivalDeadline=now+15;}
             Scores.Clear();foreach(var p in players)if(p.IsSpawned){Scores.Add(new Score{Client=p.OwnerClientId,Number=p.PlayerNumber});p.ResetForArenaRound();}
             Result.Value=default;Occupants.Value=0;OccupantNumber.Value=0;lastTick=now;nextTick=now;
@@ -71,9 +77,9 @@ namespace RightWalkPrototype
         void Update()
         {
             if(!IsSpawned||Points==null)return;
-            UpdateRoom();
+            UpdateRoom();UpdateKillRules();
             if(IsServer&&Now>=nextTick){ServerTick();nextTick=Now+.1;}
-            UpdateAmmoPickups();UpdatePatrols();
+            UpdateAmmoPickups();UpdateHealthPickups();UpdatePatrols();UpdateTurretShots();
             var state=State.Value;
             Color color=Occupants.Value>1?new Color(1,.65f,.25f):Occupants.Value==1?new Color(.35f,1,.65f):new Color(.25f,.85f,1);
             for(int i=0;i<Points.Length;i++)Points[i].Show(state.Phase==Stage.Playing&&i==state.Point,PreviewNext&&i==NextPoint,color);
@@ -88,7 +94,7 @@ namespace RightWalkPrototype
             foreach(var p in players)if(p.IsSpawned){bool found=false;for(int i=0;i<Scores.Count;i++)if(Scores[i].Client==p.OwnerClientId)found=true;if(!found)Scores.Add(new Score{Client=p.OwnerClientId,Number=p.PlayerNumber});}
             bool switched=false;
             while(until>=state.Switch&&state.Switch<state.End)
-            {state.Point=(state.Point+1)%Points.Length;state.Switch+=Mathf.Max(1,pointSeconds);state.Warning=state.Switch-Mathf.Clamp(warningSeconds,0,Mathf.Max(1,pointSeconds));switched=true;}
+            {state.Point=state.Upcoming;state.Upcoming=PickNextPoint(state.Point);state.Switch+=Mathf.Max(1,pointSeconds);state.Warning=state.Switch-Mathf.Clamp(warningSeconds,0,Mathf.Max(1,pointSeconds));switched=true;}
             int count=0;SideScrollNetworkPlayer sole=null;
             foreach(var p in players)if(Points[state.Point].Contains(p)){count++;sole=p;}
             Occupants.Value=count;OccupantNumber.Value=count==1?sole.PlayerNumber:0;
@@ -97,14 +103,14 @@ namespace RightWalkPrototype
             if(now>=state.End)
             {
                 state.Phase=Stage.Finished;Occupants.Value=0;OccupantNumber.Value=0;
-                float best=0;for(int i=0;i<Scores.Count;i++)best=Mathf.Max(best,Scores[i].Seconds);
+                float best=0;for(int i=0;i<Scores.Count;i++)best=Mathf.Max(best,Scores[i].Total);
                 string winners="";int ties=0;
-                for(int i=0;i<Scores.Count;i++)if(Mathf.Abs(Scores[i].Seconds-best)<.05f){winners+=(ties++>0?" / ":"")+"P"+Scores[i].Number;}
+                for(int i=0;i<Scores.Count;i++)if(Mathf.Abs(Scores[i].Total-best)<.05f){winners+=(ties++>0?" / ":"")+"P"+Scores[i].Number;}
                 Result.Value=new FixedString128Bytes(best<.05f?"획득 점수 없음 · 무승부":ties==1?winners+" 승리":winners+" 공동 1위");
             }
             State.Value=state;
         }
-        public float ScoreFor(ulong client){for(int i=0;i<Scores.Count;i++)if(Scores[i].Client==client)return Scores[i].Seconds;return 0;}
+        public float ScoreFor(ulong client){for(int i=0;i<Scores.Count;i++)if(Scores[i].Client==client)return Scores[i].Total;return 0;}
         void OnGUI()
         {
             if(!IsSpawned||Points==null||Points.Length==0)return;
@@ -125,12 +131,12 @@ namespace RightWalkPrototype
             }
             else GUILayout.Label("경기 종료 · "+Result.Value);
             GUILayout.EndArea();
-            ArenaObjectiveGuide.Draw(this);
+            ArenaObjectiveGuide.Draw(this);DrawMedicalGuide();
             if(state.Phase!=Stage.Waiting)
             {
-                GUILayout.BeginArea(new Rect(Screen.width-230,185,215,Mathf.Min(230,50+Scores.Count*24)),GUI.skin.box);GUILayout.Label("점유 점수");
+                GUILayout.BeginArea(new Rect(Screen.width-230,185,215,Mathf.Min(230,50+Scores.Count*24)),GUI.skin.box);GUILayout.Label("점수 · 처치 +"+PlayerKillReward.ToString("0.#"));
                 var sorted=new Score[Scores.Count];for(int i=0;i<Scores.Count;i++)sorted[i]=Scores[i];Array.Sort(sorted,(a,b)=>a.Number.CompareTo(b.Number));
-                foreach(var score in sorted)GUILayout.Label("P"+score.Number+"   "+score.Seconds.ToString("0.0")+"점");GUILayout.EndArea();
+                foreach(var score in sorted)GUILayout.Label("P"+score.Number+"   "+score.Total.ToString("0.0")+"점 · "+score.Kills+"킬");GUILayout.EndArea();
             }
             if(state.Phase==Stage.Finished&&(RelayArenaPrototype.Instance==null||!RelayArenaPrototype.Instance.MenuOpen))
             {

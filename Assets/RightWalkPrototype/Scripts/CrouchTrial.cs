@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 #if ENABLE_INPUT_SYSTEM
 using UnityEngine.InputSystem;
 #endif
@@ -141,7 +141,7 @@ namespace RightWalkPrototype
         private void OnDestroy(){legRig?.Dispose();}
         private void OnGUI()
         {
-            if(networkDriven||ArenaObjectiveMatch.InReadyRoom)return;
+            if(SideScrollNetworkSession.LobbyVisible||networkDriven||ArenaObjectiveMatch.InReadyRoom)return;
             GUILayout.BeginArea(new Rect(15,215,310,94),GUI.skin.box);
             GUILayout.Label("앉기 시험 · S / ↓ / 왼쪽 Ctrl 유지");
             GUILayout.Label("A/D: 앉아서 이동 · 마우스/좌클릭: 좌우·위·비스듬한 아래 사격");

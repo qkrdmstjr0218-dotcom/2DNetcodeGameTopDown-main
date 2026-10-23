@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.IO;
 using System.Reflection;
@@ -52,7 +52,7 @@ public static partial class ArenaReadyRoomReview
         uint old=Player(2).LifeVersion;float atDeath=Player(2).NormalAmmo;
         Send(2,15);yield return Wait(()=>Player(2).NormalAmmo<=rules.Capacity-3,"spend ammo before death");Send(2,16);atDeath=Player(2).NormalAmmo;Player(2).ReceiveServerDamage(100,old);
         yield return new WaitForSecondsRealtime(.6f);Require(Player(2).IsDead&&Mathf.Abs(Player(2).NormalAmmo-atDeath)<.15f,"dead player cannot recharge");
-        yield return Wait(()=>Player(2).LifeVersion>old&&!Player(2).IsDead&&Player(2).NormalAmmo==rules.Capacity,"automatic revive refills normal magazine",match.RespawnSeconds+2);
+        yield return Wait(()=>Player(2).LifeVersion>old&&!Player(2).IsDead&&Player(2).NormalAmmo==rules.Capacity,"normal automatic recharge reaches full after revive",match.RespawnSeconds+2);
         int prior=Player(2).ReceivedShots;File.WriteAllText(folder+"/command.json",JsonUtility.ToJson(new Command{id=++revision,target=2,action=19,generation=old}));yield return new WaitForSecondsRealtime(.3f);
         Require(Player(2).NormalAmmo==rules.Capacity&&Player(2).ReceivedShots==prior,"old-life shot does not spend fresh ammo");
         Send(1,15);yield return Wait(()=>Player(1).NormalAmmo<=rules.Capacity-3,"spend before finish");Send(1,16);

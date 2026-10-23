@@ -12,3 +12,11 @@
 설정 원본은 ArenaObjectiveMatch의 `ammoPickupAmount`(3), `ammoPickupRespawnSeconds`(15)다. 고정 두 위치는 시험 코드에만 있다. 공개 서버 지급 메서드는 유효 전투/양수 지급량/생존을 검증한다. 회복 아이템이나 다른 탄종은 아직 없다.
 
 검증: `LocalTools/Analysis/NetworkCombat/room-104932/result.txt` 4인 PASS. 메뉴 `Tools/Right Walk Prototype/Verify Ammo Pickups`. 양 지점 동기화, 만량 보존, 동시1회 지급, 재생성, 일회성 드롭/최대치, 사망 제외, 종료/새 경기 초기화 및 화면 확인.
+
+## 2026-10-22 일회성 드롭 수명
+
+일회성 탄약·회복 드롭은 생성 후 20초 동안 획득하지 않으면 서버가 제거하고 전원에게 동기화한다. 공통 설정은 `ArenaObjectiveMatch.Pickups.cs`의 `droppedItemLifetimeSeconds`다. 고정 보급원에는 만료 시각을 설정하지 않아 기존 재생성 규칙을 유지한다. 회복 드롭의 적 처치 연결은 여전히 미구현이다.
+
+검증: `room-053754` 4인 PASS. 두 드롭 종류의 만료 전 유지/20초 뒤 전원 제거, 고정 보급 보존, 경기 종료·대기 복귀 정리를 확인했다.
+
+2026-10-22 후속: 마지막4초 동안 드롭 상자·문구가 .2초 간격으로 함께 깜빡인다. `droppedItemWarningSeconds` 공통 설정(0=해제), 지급·획득과 고정 보급은 유지. room-063826 4인 실제 시각물 켜짐/꺼짐·기존 소멸 회귀 PASS.

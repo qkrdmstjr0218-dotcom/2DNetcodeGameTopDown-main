@@ -30,7 +30,7 @@ public static partial class ArenaReadyRoomReview
     {
         foundryDriving=true;var move=own.GetComponent<SideScrollMapPreview>();var body=own.GetComponent<Rigidbody2D>();
         var crouch=own.GetComponent<CrouchTrial>();
-        var rows=new List<string>{"side,uphill,crouched,x,y,vx,vy,grounded,support"};float worstPop=0,minPeakSpeed=float.MaxValue;bool allReached=true;
+        var rows=new List<string>{"side,uphill,crouched,x,y,vx,vy,grounded,support,sole,join"};float worstPop=0,minPeakSpeed=float.MaxValue;bool allReached=true;
         bool running=File.Exists(folder+"/running-seams.txt");
         foreach(int side in new[]{-1,1})foreach(bool seated in running?new[]{false}:new[]{false,true})foreach(bool uphill in new[]{false,true})
         {
@@ -40,14 +40,17 @@ public static partial class ArenaReadyRoomReview
             float start=side*(uphill?5.4f:8),end=side*(uphill?8:5.4f),dir=Mathf.Sign(end-start);
             move.SetSpawnPosition(new Vector2(start,(uphill?-1.32f:0)+.04f));
             yield return Wait(()=>move.Grounded,"seam start "+side+"/"+seated+"/"+uphill,3);
-            move.SetInput(dir,false,running);float until=Time.realtimeSinceStartup+6,peakSpeed=0;
+            move.SetInput(dir,false,running);float until=Time.realtimeSinceStartup+6,peakSpeed=0,minJoinSpeed=float.MaxValue;
             while(dir*(end-body.position.x)>.04f&&Time.realtimeSinceStartup<until)
             {
                 worstPop=Mathf.Max(worstPop,body.position.y-flatY);
                 peakSpeed=Mathf.Max(peakSpeed,Mathf.Abs(body.linearVelocity.x));
-                rows.Add(side+","+uphill+","+seated+","+body.position.x+","+body.position.y+","+body.linearVelocity.x+","+body.linearVelocity.y+","+move.Grounded+","+(move.GroundCollider!=null?move.GroundCollider.name:""));
+                if(Mathf.Abs(body.position.x)>6.55f&&Mathf.Abs(body.position.x)<7.3f)minJoinSpeed=Mathf.Min(minJoinSpeed,Mathf.Abs(body.linearVelocity.x));
+                rows.Add(side+","+uphill+","+seated+","+body.position.x+","+body.position.y+","+body.linearVelocity.x+","+body.linearVelocity.y+","+move.Grounded+","+(move.GroundCollider!=null?move.GroundCollider.name:"")+","+(own.GetComponent<BoxCollider2D>().bounds.min.y-own.GetComponent<BoxCollider2D>().edgeRadius)+","+((RaycastHit2D)typeof(ArenaPlatformMotor).GetField("flatJoin",System.Reflection.BindingFlags.NonPublic|System.Reflection.BindingFlags.Instance).GetValue(own.GetComponent<ArenaPlatformMotor>())).collider);
                 yield return null;
             }
+            File.AppendAllText(folder+"/seam-speed-"+own.PlayerNumber+".txt",side+","+uphill+","+seated+",min="+minJoinSpeed+"\n");
+            Require(minJoinSpeed>(seated?.6f:running?3.4f:1.8f),"no seam stall "+side+"/"+uphill+"/"+seated+" (min="+minJoinSpeed+")");
             allReached&=Mathf.Abs(body.position.x-end)<.4f;
             minPeakSpeed=Mathf.Min(minPeakSpeed,peakSpeed);
             move.SetInput(0);yield return new WaitForSecondsRealtime(.3f);

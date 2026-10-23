@@ -690,11 +690,11 @@ PlayerSettings:
   captureStartupLogs: {}
   activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: e2b69a6d-1860-430f-8ed3-bcb4b8361b17
+  cloudProjectId: ddba7536-7d05-40f3-b2d3-0576037e20c5
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
   projectName: 2DNetcodeGame
-  organizationId: rhavkd33
+  organizationId: pakeunsuk
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}

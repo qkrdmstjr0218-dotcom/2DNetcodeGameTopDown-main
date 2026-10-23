@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -15,7 +15,13 @@ public static partial class ArenaReadyRoomReview
     [Serializable] class Command {public int id,target,action;public bool ready;public uint generation;}
     [Serializable] class Peer
     {
+        public bool palettes;
+        public bool online,relay;public string onlineRoom;
+        public bool ammoHint;public string ammoHintText;
+        public int entryCount,entryShapes,entryWarnings,groundEntrances,turretEntrances;
         public float westCycle,westWidth;
+        public float walkSetting,runSetting;public bool objectivePreview;public int objectivePoint,objectiveNext;public int medStations,supplyS,supplyR,supplyG;public int shield,clientShield;public float shieldTime;public int medicCount,medicHealth,medicId;public Vector2 medicPosition,medicEntry,medicExit;public double medicNextAt;public bool medicWarning;public int clientKills;public float hostScore,clientScore,killReward;public bool warningAmmoOn,warningAmmoOff,warningHealthOn,warningHealthOff;public int droneCount,droneHealth,droneGeneration;public Vector2 dronePosition;public int turretCount,turretHealth,turretGeneration,turretShots;public double turretFireAt;
+        public int healthCount,healthAvailable;
         public int role,phase=-1,roster,mask,hp,ammo,shots,spectator,climbed,normalCapacity,pickupsAvailable,pickupsCount,enemiesCount,enemyHealth,enemyGeneration,instantAmmo,instantShots,hostInstantCount,selectedAmmo,rifleAmmo,rifleShots,grenadeAmmo,grenadeShots,grenadeBursts,hostGrenadeBursts,grenadePushes;public Vector2 grenadeImpulse;public Vector2 hostGrenadePoint,predictedGrenade;public bool predictedGrenadeHit;public float[] instantAngles;public Vector3 enemyPosition;public uint life;public bool connected,denied,blocked,grounded,ammoCursor,osCursor,worldStamina,hitReacting,sawHit;public float energy,delay,countdown,normal,normalDelay,normalRate,shotInterval,velocityX,velocityY,lastHitX,lastHitY;public string notice,cursor,support;public Vector3 position;public double end;
     }
     static bool started,spectatorOnly,normalOnly,practiceOnly,pickupsOnly,enemiesOnly,instantOnly,rifleOnly,grenadeOnly,foundryOnly;static string folder;static int revision;
@@ -51,8 +57,8 @@ public static partial class ArenaReadyRoomReview
         if(!EditorApplication.isPlaying){started=false;return;}
         if(started||EditorApplication.isCompiling||Time.time<.4f||!File.Exists(Request))return;
         var session=UnityEngine.Object.FindFirstObjectByType<SideScrollNetworkSession>();if(session==null)return;
-        started=true;var settings=JsonUtility.FromJson<Settings>(File.ReadAllText(Request));folder=settings.folder;spectatorOnly=settings.spectatorOnly;normalOnly=settings.normalOnly;practiceOnly=settings.practiceOnly;pickupsOnly=settings.pickupsOnly;enemiesOnly=settings.enemiesOnly;instantOnly=settings.instantOnly;rifleOnly=settings.rifleOnly;grenadeOnly=settings.grenadeOnly;foundryOnly=settings.foundryOnly;revision=0;passed.Clear();cache.Clear();
-        bool main=Unity.Multiplayer.PlayMode.CurrentPlayer.IsMainEditor;session.useReadyRoom=!(File.Exists(folder+"/solo-performance.txt")||File.Exists(folder+"/entrance-cover.txt"));session.StartLocal(main);session.StartCoroutine(Actor(session,main));if(main)session.StartCoroutine(Run(session));
+        started=true;var settings=JsonUtility.FromJson<Settings>(File.ReadAllText(Request));folder=settings.folder;spectatorOnly=settings.spectatorOnly;normalOnly=settings.normalOnly;practiceOnly=settings.practiceOnly;pickupsOnly=settings.pickupsOnly;enemiesOnly=settings.enemiesOnly;instantOnly=settings.instantOnly;rifleOnly=settings.rifleOnly;grenadeOnly=settings.grenadeOnly;foundryOnly=settings.foundryOnly;revision=0;passed.Clear();cache.Clear();dropAmmoOn=dropAmmoOff=dropHealthOn=dropHealthOff=false;medicalTouch=false;
+        bool main=Unity.Multiplayer.PlayMode.CurrentPlayer.IsMainEditor;session.useReadyRoom=!(File.Exists(folder+"/solo-performance.txt")||File.Exists(folder+"/entrance-cover.txt"));if(File.Exists(folder+"/online.txt"))session.StartCoroutine(OnlineBoot(session,main));else session.StartLocal(main);session.StartCoroutine(Actor(session,main));if(main)session.StartCoroutine(Run(session));
     }
     static string Read(string path){using(var f=new FileStream(path,FileMode.Open,FileAccess.Read,FileShare.ReadWrite))using(var r=new StreamReader(f))return r.ReadToEnd();}
     static Peer P(int role){try{var peer=JsonUtility.FromJson<Peer>(Read(folder+"/peer-"+role+".json"));if(peer!=null&&peer.role==role)cache[role]=peer;}catch{}return cache.TryGetValue(role,out var found)?found:null;}
@@ -85,6 +91,24 @@ public static partial class ArenaReadyRoomReview
                 if(cmd.action==64&&own!=null)session.StartCoroutine(FoundryTraversalClient(own));
                 if(cmd.action==65&&own!=null)session.StartCoroutine(FoundrySeamClient(own));
                 if(cmd.action==66&&own!=null)session.StartCoroutine(WestBridgeClient(own));
+                if(cmd.action>=70&&cmd.action<=74&&own!=null)session.StartCoroutine(TurretClient(own,cmd.action,cmd.ready));
+                if(cmd.action>=75&&cmd.action<=77&&own!=null)session.StartCoroutine(ReadyCoverClient(own,cmd.action));
+                if(cmd.action==119&&!main)session.StartCoroutine(OnlineRejoin(session));
+                if(cmd.action==115)session.StartCoroutine(OnlineQueryReview(session,cmd.id));
+                if(cmd.action==116)_=session.LeaveOnlineRoomAsync();
+                if(cmd.action==117)session.StartCoroutine(OnlineRejoin(session));
+                if(cmd.action==113&&own!=null)session.StartCoroutine(SpecialCycleClient(own));
+                if(cmd.action==114&&own!=null)session.StartCoroutine(SolidRestClient(own));
+                if(cmd.action==112&&own!=null)session.StartCoroutine(BalconyClient(own));
+                if(cmd.action==110&&own!=null)own.GetComponent<SideScrollMapPreview>().SetSpawnPosition(new Vector2(30,.04f));
+                if(cmd.action==111&&own!=null)own.GetComponent<SideScrollMapPreview>().SetSpawnPosition(new Vector2(-18,.04f));
+                if(cmd.action==109&&own!=null)own.GetComponent<SideScrollMapPreview>().SetSpawnPosition(new Vector2(-7,3.64f));
+                if(cmd.action>=102&&cmd.action<=106&&own!=null)SupplyCommand(own,cmd.action);
+                if(cmd.action==78&&own!=null)own.GetComponent<SideScrollMapPreview>().SetSpawnPosition(new Vector2(cmd.ready?4.6f:0,3.64f));
+                if((cmd.action==79||cmd.action==80)&&own!=null)own.GetComponent<SideScrollMapPreview>().SetSpawnPosition(new Vector2(cmd.action==80?-16:-18,.04f));
+                if(cmd.action>=97&&cmd.action<=100&&own!=null)MedicalCommand(own,cmd.action,cmd.ready);
+                if(cmd.action>=87&&cmd.action<=95&&own!=null)KillRushCommand(own,cmd.action);
+                if(cmd.action>=81&&cmd.action<=86&&own!=null)NavigationCommand(own,cmd.action);
                 if(cmd.action==1&&match!=null)match.SetLocalReady(cmd.ready);
                 if(cmd.action==2&&match!=null)denied=!match.StartRound();
                 if(cmd.action==3)session.DisconnectLocal();
@@ -189,6 +213,8 @@ public static partial class ArenaReadyRoomReview
                 else move.SetSpawnPosition(match.PatrolPosition(match.Patrols[0])+Vector3.left*.15f);
             }
             if(followingEnemy&&own!=null&&match!=null&&match.Patrols.Count>0)own.GetComponent<SideScrollMapPreview>().SetSpawnPosition(match.PatrolPosition(match.Patrols[0]));
+            if(own!=null&&match!=null&&File.Exists(folder+"/medical.txt"))FollowMedicalForReview(own,match);
+            if(own!=null&&match!=null&&File.Exists(folder+"/navigation.txt"))NavigationShoot(own,match);
             if(firing&&own!=null)
             {
                 var aim=own.GetComponentInChildren<RightFacingAimRig>();
@@ -214,11 +240,17 @@ public static partial class ArenaReadyRoomReview
             if(role!=0&&Time.realtimeSinceStartup>=write)
             {
                 write=Time.realtimeSinceStartup+.08f;
-                var peer=new Peer{hostInstantCount=lastHostInstant,instantAngles=observedAngles,climbed=climbed,role=role,connected=manager!=null&&manager.IsConnectedClient,denied=denied,notice=session.ConnectionNotice,cursor=Cursor.lockState.ToString(),blocked=RelayArenaPrototype.ControlsBlocked};
+                var peer=new Peer{online=session.IsOnlineConnection,onlineRoom=session.OnlineRoomId,relay=manager!=null&&manager.GetComponent<Unity.Netcode.Transports.UTP.UnityTransport>().Protocol==Unity.Netcode.Transports.UTP.UnityTransport.ProtocolType.RelayUnityTransport,hostInstantCount=lastHostInstant,instantAngles=observedAngles,climbed=climbed,role=role,connected=manager!=null&&manager.IsConnectedClient,denied=denied,notice=session.ConnectionNotice,cursor=Cursor.lockState.ToString(),blocked=RelayArenaPrototype.ControlsBlocked};
                 var crossing=UnityEngine.Object.FindFirstObjectByType<ArenaRetractingBridge>();if(crossing!=null){peer.westCycle=crossing.CycleTime;peer.westWidth=crossing.westLeaf.localScale.x;}
-                if(own!=null){peer.grenadePushes=own.ReceivedGrenadePushes;peer.grenadeImpulse=own.LastGrenadePush;peer.grenadeAmmo=own.GrenadeRounds;peer.grenadeShots=own.ReceivedGrenadeShots;peer.grenadeBursts=own.ReceivedGrenadeBursts;peer.predictedGrenade=grenadePredicted;peer.predictedGrenadeHit=grenadePredictionHit;peer.rifleAmmo=own.RifleRounds;peer.rifleShots=own.ReceivedRifleShots;peer.selectedAmmo=(int)own.SelectedAmmo;peer.instantAmmo=own.InstantShotgunRounds;peer.instantShots=own.ReceivedInstantBlasts;peer.sawHit=sawHit;peer.lastHitX=lastHitX;peer.lastHitY=lastHitY;peer.hitReacting=own.GetComponent<SideScrollMapPreview>().HitReacting;peer.velocityX=own.GetComponent<Rigidbody2D>().linearVelocity.x;peer.velocityY=own.GetComponent<Rigidbody2D>().linearVelocity.y;peer.shotInterval=own.NormalShotInterval;peer.worldStamina=own.WorldStaminaVisible;peer.normal=own.NormalAmmo;peer.normalCapacity=own.NormalCapacity;peer.ammoCursor=own.AmmoCursorVisible;peer.osCursor=Cursor.visible;peer.position=own.transform.position;peer.life=own.LifeVersion;peer.hp=own.Health;peer.energy=own.Stamina;peer.ammo=own.ShotgunRounds;peer.grounded=own.GetComponent<SideScrollMapPreview>().Grounded;var ground=own.GetComponent<SideScrollMapPreview>().GroundCollider;peer.support=ground!=null?ground.name:"";if(RelayArenaPrototype.Instance.WantsSpectator){var target=RelayArenaPrototype.Instance.SpectatorTarget();peer.spectator=target!=null?target.PlayerNumber:0;}}
-                foreach(var player in UnityEngine.Object.FindObjectsByType<SideScrollNetworkPlayer>(FindObjectsSortMode.None))if(player.IsSpawned){peer.shots+=player.ReceivedShots;if(player.PlayerNumber==1){peer.hostGrenadeBursts=player.ReceivedGrenadeBursts;peer.hostGrenadePoint=player.LastGrenadeBurst;}}
+                if(own!=null){peer.palettes=File.Exists(folder+"/appearance.txt")&&AllPalettesVisible();peer.ammoHint=own.AmmoSelectionHintVisible;peer.ammoHintText=own.AmmoSelectionHintText;peer.grenadePushes=own.ReceivedGrenadePushes;peer.grenadeImpulse=own.LastGrenadePush;peer.grenadeAmmo=own.GrenadeRounds;peer.grenadeShots=own.ReceivedGrenadeShots;peer.grenadeBursts=own.ReceivedGrenadeBursts;peer.predictedGrenade=grenadePredicted;peer.predictedGrenadeHit=grenadePredictionHit;peer.rifleAmmo=own.RifleRounds;peer.rifleShots=own.ReceivedRifleShots;peer.selectedAmmo=(int)own.SelectedAmmo;peer.instantAmmo=own.InstantShotgunRounds;peer.instantShots=own.ReceivedInstantBlasts;peer.sawHit=sawHit;peer.lastHitX=lastHitX;peer.lastHitY=lastHitY;peer.hitReacting=own.GetComponent<SideScrollMapPreview>().HitReacting;peer.velocityX=own.GetComponent<Rigidbody2D>().linearVelocity.x;peer.velocityY=own.GetComponent<Rigidbody2D>().linearVelocity.y;peer.shotInterval=own.NormalShotInterval;peer.worldStamina=own.WorldStaminaVisible;peer.normal=own.NormalAmmo;peer.normalCapacity=own.NormalCapacity;peer.ammoCursor=own.AmmoCursorVisible;peer.osCursor=Cursor.visible;peer.position=own.transform.position;peer.life=own.LifeVersion;peer.walkSetting=own.GetComponent<SideScrollMapPreview>().speed;peer.runSetting=own.GetComponent<RunWalkPreview>().runSpeed;peer.hp=own.Health;peer.shield=own.Shield;peer.shieldTime=own.ShieldRemaining;peer.energy=own.Stamina;peer.ammo=own.ShotgunRounds;peer.grounded=own.GetComponent<SideScrollMapPreview>().Grounded;var ground=own.GetComponent<SideScrollMapPreview>().GroundCollider;peer.support=ground!=null?ground.name:"";if(RelayArenaPrototype.Instance.WantsSpectator){var target=RelayArenaPrototype.Instance.SpectatorTarget();peer.spectator=target!=null?target.PlayerNumber:0;}}
+                foreach(var player in UnityEngine.Object.FindObjectsByType<SideScrollNetworkPlayer>(FindObjectsSortMode.None))if(player.IsSpawned){if(player.PlayerNumber==2)peer.clientShield=player.Shield;peer.shots+=player.ReceivedShots;if(player.PlayerNumber==1){peer.hostGrenadeBursts=player.ReceivedGrenadeBursts;peer.hostGrenadePoint=player.LastGrenadeBurst;}}
                 if(match!=null&&match.IsSpawned){peer.enemiesCount=match.Patrols.Count;if(match.Patrols.Count>0){peer.enemyHealth=match.Patrols[0].Health;peer.enemyGeneration=match.Patrols[0].Generation;peer.enemyPosition=match.PatrolPosition(match.Patrols[0]);}peer.pickupsCount=match.AmmoPickups.Count;foreach(var pickup in match.AmmoPickups)if(pickup.Available)peer.pickupsAvailable++;peer.normalDelay=match.NormalAmmoRules.Delay;peer.normalRate=match.NormalAmmoRules.Rate;peer.delay=match.RespawnSeconds;peer.countdown=match.CountdownSeconds;peer.phase=(int)match.State.Value.Phase;peer.end=match.State.Value.End;peer.roster=match.ReadyPlayers.Count;foreach(var p in match.ReadyPlayers)if(p.Ready)peer.mask|=1<<(p.Number-1);}
+                if(match!=null&&match.IsSpawned&&File.Exists(folder+"/kill-rush.txt"))foreach(var score in match.Scores)
+                {if(score.Number==1)peer.hostScore=score.Total;if(score.Number==2){peer.clientScore=score.Total;peer.clientKills=score.Kills;}}
+                if(match!=null&&match.IsSpawned&&File.Exists(folder+"/expiry.txt"))ObserveDropWarning(peer,match);
+                if(match!=null&&match.IsSpawned){peer.objectivePoint=match.State.Value.Point;peer.objectiveNext=match.NextPoint;peer.objectivePreview=match.PreviewNext;peer.killReward=match.PlayerKillReward;peer.healthCount=match.HealthPickups.Count;foreach(var item in match.HealthPickups)if(item.Available)peer.healthAvailable++;peer.turretShots=match.TurretShots.Count;peer.medicNextAt=match.MedicalTransit.Value.NextAt;peer.medicEntry=match.MedicalTransit.Value.Entry;peer.medicExit=match.MedicalTransit.Value.Exit;peer.medicWarning=match.MedicalTransit.Value.Valid&&peer.medicNextAt>match.Now&&peer.medicNextAt-match.Now<=3;foreach(var e in match.Patrols)if(e.Medical){if(e.Health>0){peer.medicCount++;peer.medicHealth=e.Health;peer.medicId=e.Id;peer.medicPosition=e.Position;}}else if(e.Flying){peer.droneCount++;if(peer.droneCount==1){peer.dronePosition=match.PatrolPosition(e);peer.droneHealth=e.Health;peer.droneGeneration=e.Generation;}}else if(e.Turret){peer.turretCount++;if(peer.turretCount==1){peer.turretHealth=e.Health;peer.turretGeneration=e.Generation;peer.turretFireAt=e.FireAt;}}}
+                if(match!=null){foreach(var item in match.AmmoPickups)if(item.Available){if(item.Ammo==ArenaObjectiveMatch.SupplyAmmo.Rifle)peer.supplyR++;else if(item.Ammo==ArenaObjectiveMatch.SupplyAmmo.Grenade)peer.supplyG++;else peer.supplyS++;}var map=UnityEngine.Object.FindFirstObjectByType<ArenaMapSettings>();var stations=map!=null?map.transform.Find(FoundryMedicalStationsBuilder.RootName):null;peer.medStations=stations!=null?stations.childCount:0;}
+                if(match!=null&&match.IsSpawned&&File.Exists(folder+"/entrances.txt"))ObserveEntrances(peer,match);
                 File.WriteAllText(folder+"/peer-"+role+".json",JsonUtility.ToJson(peer));
             }
             yield return null;
@@ -232,12 +264,18 @@ public static partial class ArenaReadyRoomReview
     static void Require(bool check,string label){if(!check)throw new Exception(label);passed.Add(label);}
     static IEnumerator Run(SideScrollNetworkSession session)
     {
-        var stack=new Stack<IEnumerator>();stack.Push(File.Exists(folder+"/west-bridge.txt")?CheckWestBridgeRound():File.Exists(folder+"/entrance-cover.txt")?CheckEntranceCovers():File.Exists(folder+"/selection-only.txt")?CheckAmmoPreselection():File.Exists(folder+"/solo-performance.txt")?CheckSoloPerformance():foundryOnly?CheckFoundry():grenadeOnly?CheckGrenade():rifleOnly?CheckRifle():instantOnly?CheckInstant():enemiesOnly?CheckEnemies():pickupsOnly?CheckPickups():practiceOnly?CheckPractice():normalOnly?CheckNormal():spectatorOnly?CheckSpectator():Check(session));string result="PASS";
+        var stack=new Stack<IEnumerator>();stack.Push(File.Exists(folder+"/appearance.txt")?CheckAppearance():File.Exists(folder+"/online.txt")?CheckOnlineRooms(session):File.Exists(folder+"/entrances.txt")?CheckEntrances():File.Exists(folder+"/spawn-safety.txt")?CheckSpawnSafety():File.Exists(folder+"/central-depot.txt")?CheckCentralDepot():File.Exists(folder+"/respawn-ammo.txt")?CheckRespawnAmmo():File.Exists(folder+"/random-objectives.txt")?CheckRandomObjectives():File.Exists(folder+"/supplies.txt")?CheckGeneralSupplies():File.Exists(folder+"/medical.txt")?CheckMedicalDrone():File.Exists(folder+"/kill-rush.txt")?CheckKillRush():File.Exists(folder+"/navigation.txt")?CheckEnemyNavigation():File.Exists(folder+"/expiry.txt")?CheckDropExpiration():File.Exists(folder+"/health.txt")?CheckHealthPickups():File.Exists(folder+"/depot.txt")?CheckDepot():File.Exists(folder+"/ready-cover.txt")?CheckReadyCover():File.Exists(folder+"/turrets.txt")?CheckTurrets():File.Exists(folder+"/west-bridge.txt")?CheckWestBridgeRound():File.Exists(folder+"/entrance-cover.txt")?CheckEntranceCovers():File.Exists(folder+"/selection-only.txt")?CheckAmmoPreselection():File.Exists(folder+"/solo-performance.txt")?CheckSoloPerformance():foundryOnly?CheckFoundry():grenadeOnly?CheckGrenade():rifleOnly?CheckRifle():instantOnly?CheckInstant():enemiesOnly?CheckEnemies():pickupsOnly?CheckPickups():practiceOnly?CheckPractice():normalOnly?CheckNormal():spectatorOnly?CheckSpectator():Check(session));string result="PASS";
         while(stack.Count>0)
         {
             bool more=false;object next=null;Exception failure=null;
             try{more=stack.Peek().MoveNext();if(more)next=stack.Peek().Current;}catch(Exception e){failure=e;}
             if(failure!=null){result="FAIL: "+failure;break;}if(!more){stack.Pop();continue;}if(next is IEnumerator nested)stack.Push(nested);else yield return next;
+        }
+        if(File.Exists(folder+"/online.txt"))
+        {
+            var cleanup=session.LeaveOnlineRoomAsync();float deadline=Time.realtimeSinceStartup+20;
+            while(!cleanup.IsCompleted&&Time.realtimeSinceStartup<deadline)yield return null;
+            if(!cleanup.IsCompleted)result+="\nOnline cleanup timed out";
         }
         File.WriteAllText(folder+"/result.txt",result+"\n"+string.Join("\n",passed));File.WriteAllText(folder+"/stop.txt","stop");
         yield return new WaitForSecondsRealtime(.6f);session.DisconnectLocal();yield return new WaitForSecondsRealtime(.6f);EditorApplication.isPlaying=false;

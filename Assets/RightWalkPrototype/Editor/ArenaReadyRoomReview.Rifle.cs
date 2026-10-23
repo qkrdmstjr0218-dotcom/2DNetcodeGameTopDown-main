@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Reflection;
 using Unity.Netcode;
 using UnityEngine;
@@ -27,10 +27,13 @@ public static partial class ArenaReadyRoomReview
         host.SelectAmmo(SideScrollNetworkPlayer.AmmoKind.InstantShotgun);int ammo=host.ShotgunRounds;
         preview.Fire();Require(host.ShotgunRounds==ammo,"shotgun also respects switch delay");
         yield return new WaitForSecondsRealtime(.23f);preview.Fire();Require(host.ShotgunRounds==ammo-1,"shotgun fires while rifle is cooling down");
+        yield return null;ScreenCapture.CaptureScreenshot(folder+"/shotgun-muzzle.png");
         host.SetSpecialHeld(false);yield return new WaitForSecondsRealtime(.23f);normal=host.NormalAmmo;preview.Fire();Require(host.NormalAmmo<normal,"normal fires while shotgun is cooling down");
         host.SetSpecialHeld(true);yield return new WaitForSecondsRealtime(.23f);preview.Fire();Require(host.ShotgunRounds==ammo-1,"switch back cannot reset shotgun cooldown");
         yield return new WaitForSecondsRealtime(host.FireWaitRemaining+.05f);preview.Fire();Require(host.ShotgunRounds==ammo-2,"shotgun fires again after its own interval");
-        yield return new WaitForSecondsRealtime(.7f);yield return ResetRifleRow();
+        yield return new WaitForSecondsRealtime(.7f);
+        Require(((IList)typeof(RightFacingShotPreview).GetField("shotgunFlashes",BindingFlags.NonPublic|BindingFlags.Instance).GetValue(preview)).Count==0,"shotgun muzzle visuals release after their lifetime");
+        yield return ResetRifleRow();
     }
     static void SampleFireButtons(SideScrollNetworkPlayer own,bool special,bool primary)
     {typeof(RightFacingShotPreview).GetMethod("ProcessFireInput",BindingFlags.Instance|BindingFlags.NonPublic).Invoke(own.GetComponentInChildren<RightFacingShotPreview>(),new object[]{false,special,primary,0});}
@@ -67,7 +70,7 @@ public static partial class ArenaReadyRoomReview
     static IEnumerator CheckRifle()
     {
         yield return Wait(()=>All(4,p=>p.connected&&p.phase==0&&p.roster==4&&p.rifleAmmo==SideScrollNetworkPlayer.RifleCapacity),"four peers have rifle ammunition",45);
-        Send(1,40);yield return Wait(()=>P(1).selectedAmmo==2,"shotgun still selected through cycle");Send(1,41);yield return Wait(()=>P(1).selectedAmmo==3,"rifle is next selection");Send(1,41);yield return Wait(()=>P(1).selectedAmmo==4,"cycle includes grenade");Send(1,41);yield return Wait(()=>P(1).selectedAmmo==0,"cycle returns to normal");
+        Send(1,40);yield return Wait(()=>P(1).selectedAmmo==2,"shotgun still selected through cycle");Send(1,41);yield return Wait(()=>P(1).selectedAmmo==3,"rifle is next selection");Send(1,41);yield return Wait(()=>P(1).selectedAmmo==4,"cycle includes grenade");Send(1,41);yield return Wait(()=>P(1).selectedAmmo==2,"cycle returns to shotgun without normal");
         var match=ArenaObjectiveMatch.Instance;Send(0,1,true);yield return Wait(()=>All(4,p=>p.mask==15),"everyone ready");match.roundSeconds=120;Require(match.StartRound(),"start rifle round");yield return Wait(()=>All(4,p=>p.phase==1),"rifle round playing");yield return RifleRow();
         yield return CheckFireTiming();yield return CheckHeldSpecial();yield return RifleRow();
         var host=Player(1);host.SelectAmmo(SideScrollNetworkPlayer.AmmoKind.Rifle);host.SetSpecialHeld(true);yield return new WaitForSecondsRealtime(.23f);int count=host.ReceivedRifleShots;RifleShot(host,host.LifeVersion);

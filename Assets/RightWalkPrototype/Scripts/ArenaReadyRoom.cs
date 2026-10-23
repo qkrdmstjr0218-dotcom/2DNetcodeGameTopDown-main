@@ -38,6 +38,13 @@ namespace RightWalkPrototype
             var title=new GameObject("Ready room title");title.transform.SetParent(root,false);title.transform.position=new Vector3(100,5.9f,0);
             var text=title.AddComponent<TextMesh>();text.text="RELAY / READY ROOM";text.anchor=TextAnchor.MiddleCenter;text.alignment=TextAlignment.Center;text.fontSize=64;text.characterSize=.055f;text.color=new Color(.35f,.55f,.6f);
             text.font=Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");title.GetComponent<MeshRenderer>().sharedMaterial=text.font.material;title.GetComponent<MeshRenderer>().sortingOrder=-80;
+            var cover=Box("Rifle practice solid crate",0,1,1.2f,2,new Color(.29f,.35f,.39f),3,true);cover.AddComponent<ArenaCover>();
+            Box("Crate face",0,1,.85f,1.65f,new Color(.13f,.21f,.25f),4);
+            Box("Crate solid edge",0,2,1.24f,.045f,new Color(.96f,.63f,.23f),5);
+            Box("Piercing mark",0,1,.72f,.045f,new Color(.8f,.5f,1),5);
+            var label=new GameObject("Rifle practice label");label.transform.SetParent(root,false);label.transform.position=new Vector3(100,2.6f,0);
+            var hint=label.AddComponent<TextMesh>();hint.text="RIFLE / PIERCE";hint.anchor=TextAnchor.MiddleCenter;hint.alignment=TextAlignment.Center;hint.fontSize=48;hint.characterSize=.035f;hint.color=new Color(.8f,.65f,1);hint.font=text.font;
+            label.GetComponent<MeshRenderer>().sharedMaterial=hint.font.material;label.GetComponent<MeshRenderer>().sortingOrder=5;
         }
     }
 }

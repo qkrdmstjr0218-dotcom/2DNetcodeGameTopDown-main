@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 namespace RightWalkPrototype
@@ -47,6 +47,7 @@ namespace RightWalkPrototype
         private void FixedUpdate()
         {
             if(!movement.enabled){Restore();return;}
+            if(movement.HitReacting)ReleaseSolidJoin();
             foreach(var collider in platforms)
             {
                 if(collider==null)continue;
@@ -117,42 +118,54 @@ namespace RightWalkPrototype
         }
         static bool FlatSolid(RaycastHit2D hit)=>hit.collider!=null&&!hit.collider.usedByEffector&&
             Mathf.Abs(hit.collider.transform.up.x)<.01f&&hit.normal.y>.99f;
+        private void ReleaseSolidJoin()
+        {
+            flatJoin=default;
+        }
         public void CompleteSolidSlopeJoin(ref RaycastHit2D floor,Collider2D previousSupport,bool grounded,bool jumping)
         {
+            var bounds=shape.bounds;
+            float sole=bounds.min.y-shape.edgeRadius;
             if(flatJoin.collider!=null)
             {
-                float sole=shape.bounds.min.y-shape.edgeRadius;
-                if(!grounded||jumping||body.linearVelocity.x*flatJoinDirection<=0||Mathf.Abs(sole-flatJoin.point.y)>.12f)
-                    flatJoin=default;
+                if(!grounded||jumping||body.linearVelocity.x*flatJoinDirection<=0||Mathf.Abs(sole-flatJoin.point.y)>.16f)
+                    ReleaseSolidJoin();
                 else
                 {
-                    // Retain this real flat hit until the narrow probe reaches
-                    // it too. Otherwise a fast step can reselect the old slope
-                    // and reapply its upward tangent on the following tick.
-                    if(FlatSolid(floor))flatJoin=default;else floor=flatJoin;
+                    // Keep support until the entire rounded foot clears the ramp,
+                    // not just until the narrower ground probe first sees the deck.
+                    floor=flatJoin;
+                    float lift=flatJoin.point.y+.03f-sole;
+                    if(lift>0)body.position+=Vector2.up*lift;
                     if(body.linearVelocity.y>0)body.linearVelocity=new Vector2(body.linearVelocity.x,0);
+                    var deck=flatJoin.collider.bounds;
+                    bool fullyOnDeck=flatJoinDirection>0?bounds.min.x-shape.edgeRadius>deck.min.x+.02f:
+                        bounds.max.x+shape.edgeRadius<deck.max.x-.02f;
+                    if(fullyOnDeck)ReleaseSolidJoin();
                     return;
                 }
             }
             if(!grounded||jumping||previousSupport==null||previousSupport.usedByEffector||
                 Mathf.Abs(previousSupport.transform.up.x)<.01f||body.linearVelocity.y<=0)return;
-            if(!FlatSolid(floor))
+            float sign=Mathf.Sign(body.linearVelocity.x);
+            if(sign==0)return;
+            var ahead=floor;
+            if(FlatSolid(ahead))ahead.point=new Vector2(ahead.point.x,ahead.collider.bounds.max.y);
+            else
             {
-                // The narrowed walking probe can miss the flat deck for one
-                // frame after the full rounded toe reaches it. Probe that toe
-                // only while following a solid incline, never during a jump.
-                var bounds=shape.bounds;float sign=Mathf.Sign(body.linearVelocity.x);
-                if(sign==0)return;
                 float toe=(sign>0?bounds.max.x:bounds.min.x)+sign*(shape.edgeRadius+.01f+Mathf.Abs(body.linearVelocity.x)*Time.fixedDeltaTime);
-                var ahead=Physics2D.Raycast(new Vector2(toe,bounds.min.y+.04f),Vector2.down,.2f,1);
-                // A ray beginning inside the deck reports its origin, not the
-                // top surface. Do not treat that as support above the foot.
-                if(!FlatSolid(ahead)||ahead.point.y<ahead.collider.bounds.max.y-.005f)return;
-                flatJoin=floor=ahead;flatJoinDirection=sign;
+                // Start above the contact margin so a slightly low rounded toe
+                // cannot report an inside-collider ray hit on the deck's side.
+                ahead=Physics2D.Raycast(new Vector2(toe,sole+.2f),Vector2.down,.36f,1);
             }
-            // A solid incline's upward tangent is walking support, not a jump.
-            // Finish it as soon as the existing foot probe reaches the flat deck,
-            // before upward velocity makes that same probe report airborne.
+            if(!FlatSolid(ahead)||ahead.point.y<ahead.collider.bounds.max.y-.005f||
+                Mathf.Abs(ahead.point.y-previousSupport.bounds.max.y)>.03f||
+                Mathf.Abs(sole-ahead.point.y)>.16f)return;
+            flatJoin=floor=ahead;flatJoinDirection=sign;
+            // Clear the rounded foot and the physics contact margin together;
+            // merely reaching y=0 still lets the deck's corner push sideways.
+            float step=ahead.point.y+.03f-sole;
+            if(step>0)body.position+=Vector2.up*step;
             body.linearVelocity=new Vector2(body.linearVelocity.x,0);
         }
         public void ApplyGroundVelocity(ref Vector2 velocity,RaycastHit2D floor,bool grounded,float input,bool jumping)
@@ -162,7 +175,11 @@ namespace RightWalkPrototype
             // surface even while the full rounded collider is touching it.
             // Keep actual support still instead of re-enabling downhill gravity.
             bool settled=floor.distance<.04f||floor.collider!=null&&shape.IsTouching(floor.collider);
-            body.gravityScale=slope&&settled&&!jumping&&Mathf.Abs(input)<.001f?0:gravity;
+            // Tangent velocity already follows solid ramps. Gravity projected by the
+            // contact solver otherwise slows uphill acceleration and speeds downhill motion.
+            // Keep normal gravity for jumps, falling, hit reactions and passable ramps.
+            bool controlledSolid=slope&&settled&&!jumping&&!movement.HitReacting&&!floor.collider.usedByEffector;
+            body.gravityScale=slope&&settled&&!jumping&&(controlledSolid||Mathf.Abs(input)<.001f)?0:gravity;
             if(!slope||jumping)return;
             if(Mathf.Abs(input)<.001f){if(settled)velocity=Vector2.zero;}
             else velocity.y=-floor.normal.x/floor.normal.y*velocity.x;

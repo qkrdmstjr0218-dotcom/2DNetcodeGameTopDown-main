@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
@@ -18,10 +18,13 @@ public static class RelayFoundryBuilder
         var previous=UnityEngine.Object.FindFirstObjectByType<RelayArenaPrototype>();UnityEngine.Object.DestroyImmediate(previous.gameObject);
         sprite=AssetDatabase.LoadAssetAtPath<Sprite>("Assets/RightWalkPrototype/Art/MapSolid.png");
         root=new GameObject("Foundry 08 - traversal blockout").transform;
-        var rules=root.gameObject.AddComponent<RelayArenaPrototype>();rules.arenaCamera=Camera.main;rules.pitLeft=24;rules.pitRight=28;
+        var rules=root.gameObject.AddComponent<RelayArenaPrototype>();rules.arenaCamera=Camera.main;rules.pitLeft=24;rules.pitRight=28;rules.runSpeed=4.5f;
         var map=root.gameObject.AddComponent<ArenaMapSettings>();
-        map.shotgunSupplies=new[]{new Vector2(-27,.55f),new Vector2(27,4.15f),new Vector2(3,7.75f)};
+        FoundryDepotSupplyBuilder.Configure(map);
+        map.healthSupplies=new[]{new Vector2(-18,.55f),new Vector2(18,.55f)};
         map.patrolRoutes=new[]{new ArenaMapSettings.PatrolRoute{left=-12,right=-8,floor=0},new ArenaMapSettings.PatrolRoute{left=17,right=21,floor=3.6f}};
+        map.roamingEnemies=true;map.medicalSupplyDrones=true;map.droneSpawns=new[]{new Vector2(-9,5),new Vector2(10,9)};
+        map.turretSpawns=new[]{new Vector2(-19,7.2f),new Vector2(19,7.2f)};
         Box("Backdrop",new Vector2(0,6),new Vector2(80,30),new Color(.045f,.065f,.09f),-100);
         for(int x=-32;x<=32;x+=8)
         {
@@ -73,13 +76,14 @@ public static class RelayFoundryBuilder
             var at=new GameObject("Player "+(i+1)+" combat start").transform;at.SetParent(root);at.position=starts[i];session.playerSpawns[i]=at;
             Box("Spawn pad "+(i+1),starts[i]-Vector2.up*.02f,new Vector2(1.2f,.035f),Pass,3);
         }
-        MakeObjectives();Camera.main.transform.position=new Vector3(0,6.5f,-10);Camera.main.orthographicSize=21;
+        FoundryMedicalStationsBuilder.BuildVisuals(map);FoundrySpawnBuilder.Configure(map,session);MakeObjectives();Camera.main.transform.position=new Vector3(0,6.5f,-10);Camera.main.orthographicSize=21;
         Physics2D.SyncTransforms();EditorSceneManager.MarkSceneDirty(scene);EditorSceneManager.SaveScene(scene);AssetDatabase.SaveAssets();
         FoundryConsoleBuilder.Apply();
         FoundryLowerBypassBuilder.Apply();
         FoundryEntranceCoverBuilder.Apply();
         FoundryTraversalTuningBuilder.Apply();
         FoundryWestBridgeBuilder.Apply();
+        FoundryDepotBuilder.Apply();
         Selection.activeGameObject=root.gameObject;
     }
     static GameObject Box(string name,Vector2 at,Vector2 size,Color color,int order,bool solid=false)

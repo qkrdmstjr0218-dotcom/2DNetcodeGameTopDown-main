@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Reflection;
 using Unity.Netcode;
 using UnityEngine;
@@ -19,10 +19,10 @@ public static partial class ArenaReadyRoomReview
         ScreenCapture.CaptureScreenshot(folder+"/ammo-pickup.png");yield return new WaitForSecondsRealtime(.3f);
         Send(2,27,true);yield return Wait(()=>P(2).position.x<-7.5f,"second player overlaps same supply");yield return new WaitForSecondsRealtime(.3f);
         SetShotgun(1,0);SetShotgun(2,0);
-        yield return Wait(()=>P(1).ammo+P(2).ammo==3&&All(4,p=>p.pickupsAvailable==1),"simultaneous contact grants exactly one three-round pickup");
-        Require(Player(1).ShotgunRounds==3&&Player(2).ShotgunRounds==0,"stable server recipient and no duplicate grant");
+        yield return Wait(()=>P(1).ammo+P(2).ammo==1&&All(4,p=>p.pickupsAvailable==1),"simultaneous contact grants exactly one one-round pickup");
+        Require(Player(1).ShotgunRounds==1&&Player(2).ShotgunRounds==0,"stable server recipient and no duplicate grant");
         Send(1,28);yield return Wait(()=>P(1).position.x>-.5f,"first recipient leaves supply");
-        yield return Wait(()=>P(2).ammo==3,"remaining player collects when fixed source respawns",18);
+        yield return Wait(()=>P(2).ammo==1,"remaining player collects when fixed source respawns",18);
         Require(match.AmmoPickups.Count==2&&!match.AmmoPickups[0].Available,"fixed source returns to cooldown");
         Send(2,28);yield return Wait(()=>P(2).position.x>-.5f,"client moves to one-use drop test");
         Send(1,27,false);yield return Wait(()=>P(1).position.x>7.5f,"host leaves drop location");

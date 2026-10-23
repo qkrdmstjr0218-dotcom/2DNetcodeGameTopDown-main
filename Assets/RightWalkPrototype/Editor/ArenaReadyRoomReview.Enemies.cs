@@ -1,11 +1,11 @@
-using System.Collections;
+﻿using System.Collections;
 using UnityEditor;
 using UnityEngine;
 using RightWalkPrototype;
 public static partial class ArenaReadyRoomReview
 {
     static void DropChance(ArenaObjectiveMatch match,float value)
-    {var so=new SerializedObject(match);so.FindProperty("patrolDropChance").floatValue=value;so.ApplyModifiedPropertiesWithoutUndo();}
+    {var so=new SerializedObject(match);so.FindProperty("patrolDropChance").floatValue=value;so.FindProperty("patrolHealthDropChance").floatValue=0;so.ApplyModifiedPropertiesWithoutUndo();}
     static IEnumerator CheckEnemies()
     {
         yield return Wait(()=>All(4,p=>p.connected&&p.phase==0&&p.roster==4&&p.enemiesCount==0),"four peers waiting without enemies",45);
@@ -32,7 +32,7 @@ public static partial class ArenaReadyRoomReview
         Require(match.Now-began>=match.NormalAmmoRules.ShotInterval*3-.02&&Player(1).ReceivedShots-shots>=4,"normal kill respects slower server fire interval");
         yield return Wait(()=>UnityEngine.Object.FindObjectsByType<ArenaPatrolBurst>(FindObjectsSortMode.None).Length>0,"destruction burst spawned locally",1);
         ScreenCapture.CaptureScreenshot(folder+"/patrol-destruction.png");yield return null;
-        int drops=match.AmmoPickups.Count;Require(drops==3&&match.AmmoPickups[2].Amount==1&&match.AmmoPickups[2].Respawn==0,"forced drop is one shotgun round and one-use");
+        int drops=match.AmmoPickups.Count;Require(drops==3&&match.AmmoPickups[2].Amount==1&&match.AmmoPickups[2].Respawn==0,"forced drop is one special round and one-use");
         match.DamagePatrolServer(id,gen,10);Require(match.AmmoPickups.Count==drops,"duplicate destruction does not duplicate drop");
         Require(UnityEngine.Object.FindObjectsByType<ArenaPatrolEnemy>(FindObjectsSortMode.None).Length==1,"destroyed hazard disables visible shot collider");
         yield return Wait(()=>All(4,p=>p.enemyHealth==4&&p.enemyGeneration>gen),"disabled patrol respawns with new generation",12);

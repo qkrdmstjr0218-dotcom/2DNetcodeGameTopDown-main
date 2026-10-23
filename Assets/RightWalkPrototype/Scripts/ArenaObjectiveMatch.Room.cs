@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using Unity.Netcode;
 using UnityEngine;
 
@@ -28,6 +28,9 @@ namespace RightWalkPrototype
         readonly NetworkVariable<ReadyRoster> roomRoster=new();
         public ReadyRoster ReadyPlayers=>roomRoster.Value;
         readonly NetworkVariable<bool> roomFlow=new(false);
+        readonly NetworkVariable<bool> soloPractice=new(false);
+        public bool SoloPractice=>soloPractice.Value;
+        int MinimumPlayers=>SoloPractice?1:2;
         int roomVersion=-1;
         int reportedArrivalVersion=-1;
         readonly NetworkVariable<int> arrivals=new(0);
@@ -72,7 +75,7 @@ namespace RightWalkPrototype
         {
             get
             {
-                if(!RoomFlow||State.Value.Phase!=Stage.Waiting||ReadyPlayers.Count<2||ReadyPlayers.Count>4)return false;
+                if(!RoomFlow||State.Value.Phase!=Stage.Waiting||ReadyPlayers.Count<MinimumPlayers||ReadyPlayers.Count>4)return false;
                 if(IsServer&&NetworkManager.ConnectedClients.Count!=ReadyPlayers.Count)return false;
                 foreach(var p in ReadyPlayers)if(!p.Ready)return false;
                 return true;
@@ -84,6 +87,7 @@ namespace RightWalkPrototype
             if(IsServer)
             {
                 var session=FindFirstObjectByType<SideScrollNetworkSession>();
+                soloPractice.Value=session!=null&&session.SoloPractice;
                 roomFlow.Value=RelayArenaPrototype.Instance!=null&&session!=null&&session.useReadyRoom;
                 respawnDuration.Value=Mathf.Max(.1f,respawnSeconds);countdownDuration.Value=Mathf.Max(.1f,countdownSeconds);
                 roomRoster.Value=default;
@@ -137,12 +141,12 @@ namespace RightWalkPrototype
             var state=State.Value;
             if(state.Phase==Stage.Starting)
             {
-                if(ReadyPlayers.Count<2){EnterWaiting();return;}
+                if(ReadyPlayers.Count<MinimumPlayers){EnterWaiting();return;}
                 if(Now>=state.End)BeginCombat();
             }
             else if(state.Phase==Stage.Countdown)
             {
-                if(ReadyPlayers.Count<2||state.End==0&&Now>=arrivalDeadline){EnterWaiting();return;}
+                if(ReadyPlayers.Count<MinimumPlayers||state.End==0&&Now>=arrivalDeadline){EnterWaiting();return;}
                 int expected=0;foreach(var p in ReadyPlayers)expected|=1<<(p.Number-1);
                 if(state.End==0&&(arrivals.Value&expected)==expected){state.End=Now+CountdownSeconds;State.Value=state;}
                 else if(state.End>0&&Now>=state.End)
@@ -151,7 +155,7 @@ namespace RightWalkPrototype
                 }
             }
             else if(state.Phase==Stage.Returning&&Now>=state.End)EnterWaiting();
-            else if(state.Phase==Stage.Playing&&ReadyPlayers.Count<2)
+            else if(state.Phase==Stage.Playing&&ReadyPlayers.Count<MinimumPlayers)
             {
                 state.Phase=Stage.Finished;State.Value=state;Occupants.Value=0;OccupantNumber.Value=0;
                 Result.Value=new Unity.Collections.FixedString128Bytes("참가자가 부족하여 경기를 종료했습니다.");
@@ -184,7 +188,7 @@ namespace RightWalkPrototype
             }
             float width=Mathf.Min(540,Screen.width-30);
             GUILayout.BeginArea(new Rect((Screen.width-width)*.5f,15,width,180),GUI.skin.box);
-            GUILayout.Label("준비 공간 · 해킹 구역 점유 · 2~4명 · 3분");
+            GUILayout.Label(SoloPractice?"혼자 연습 · 해킹 구역 점유 · 인터넷 연결 없음":"준비 공간 · 해킹 구역 점유 · 2~4명 · 3분");
             var sorted=new ReadyPlayer[ReadyPlayers.Count];for(int i=0;i<sorted.Length;i++)sorted[i]=ReadyPlayers[i];Array.Sort(sorted,(a,b)=>a.Number.CompareTo(b.Number));
             foreach(var p in sorted)GUILayout.Label("P"+p.Number+(p.Client==Unity.Netcode.NetworkManager.ServerClientId?"  방장":"")+(p.Client==NetworkManager.LocalClientId?"  (나)":"")+"     "+(p.Ready?"준비 완료":"준비 중"));
             GUILayout.Label("A/D 이동 · Space 점프 · 사격 연습 · 체력은 최소 1 유지 · 참가 인원이 바뀌면 준비가 해제됩니다.");
@@ -192,9 +196,9 @@ namespace RightWalkPrototype
             GUILayout.BeginArea(new Rect((Screen.width-width)*.5f,Screen.height-120,width,105),GUI.skin.box);
             bool ready=IsReady(NetworkManager.LocalClientId);
             GUILayout.BeginHorizontal();if(GUILayout.Button(ready?"준비 취소":"준비",GUILayout.Height(32)))SetLocalReady(!ready);
-            if(IsServer){bool enabled=GUI.enabled;GUI.enabled=CanStart;if(GUILayout.Button("경기 시작",GUILayout.Height(32)))StartRound();GUI.enabled=enabled;}
+            if(IsServer){bool enabled=GUI.enabled;GUI.enabled=CanStart;if(GUILayout.Button(SoloPractice?"연습 시작":"경기 시작",GUILayout.Height(32)))StartRound();GUI.enabled=enabled;}
             if(GUILayout.Button(IsServer?"방 닫고 나가기":"방 나가기",GUILayout.Height(32)))FindFirstObjectByType<SideScrollNetworkSession>()?.DisconnectLocal();GUILayout.EndHorizontal();
-            GUILayout.Label(ReadyPlayers.Count<2?"다른 플레이어를 기다립니다. 혼자서는 시작할 수 없습니다.":CanStart?(IsServer?"전원 준비 완료. 경기 시작을 눌러주세요.":"방장의 시작을 기다립니다."):"모두 준비하면 방장이 경기를 시작할 수 있습니다.");
+            GUILayout.Label(SoloPractice?"준비 후 연습 시작을 누르면 실제 맵에서 혼자 플레이합니다.":ReadyPlayers.Count<MinimumPlayers?"다른 플레이어를 기다립니다. 혼자서는 시작할 수 없습니다.":CanStart?(IsServer?"전원 준비 완료. 경기 시작을 눌러주세요.":"방장의 시작을 기다립니다."):"모두 준비하면 방장이 경기를 시작할 수 있습니다.");
             GUILayout.EndArea();
         }
     }

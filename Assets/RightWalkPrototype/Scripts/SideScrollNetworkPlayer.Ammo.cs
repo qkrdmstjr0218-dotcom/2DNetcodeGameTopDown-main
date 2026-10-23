@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
@@ -76,13 +76,19 @@ namespace RightWalkPrototype
         {
             if(!IsSpawned||!IsOwner||IsDead||RelayArenaPrototype.ControlsBlocked||!SpecialAmmoEnabled)return;
             if(InstantShotgunEnabled&&kind==AmmoKind.Shotgun)kind=AmmoKind.InstantShotgun;
-            if(kind==AmmoKind.Normal||kind==AmmoKind.Shotgun||kind==AmmoKind.InstantShotgun&&InstantShotgunEnabled||kind==AmmoKind.Rifle&&RifleEnabled||kind==AmmoKind.Grenade&&NormalAmmoEnabled){if(selectedAmmo.Value!=kind){selectedAmmo.Value=kind;NotifyFireMode();}}
+            if(kind==AmmoKind.Normal||kind==AmmoKind.Shotgun||kind==AmmoKind.InstantShotgun&&InstantShotgunEnabled||kind==AmmoKind.Rifle&&RifleEnabled||kind==AmmoKind.Grenade&&NormalAmmoEnabled){if(selectedAmmo.Value!=kind){selectedAmmo.Value=kind;NotifyFireMode();ShowAmmoSelectionHint();}}
         }
         public void CycleAmmo(int direction)
         {
             if(direction==0)return;
             if(RifleEnabled)
-            {int index=SelectedAmmo==AmmoKind.Normal?0:SelectedAmmo==AmmoKind.Grenade?3:SelectedAmmo==AmmoKind.Rifle?2:1;index=(index+(direction>0?1:3))%4;SelectAmmo(index==0?AmmoKind.Normal:index==1?AmmoKind.InstantShotgun:index==2?AmmoKind.Rifle:AmmoKind.Grenade);}
+            {
+                // Q/E preselects specials; releasing right mouse always restores normal fire.
+                if(SelectedAmmo==AmmoKind.Normal){SelectAmmo(AmmoKind.InstantShotgun);return;}
+                int index=SelectedAmmo==AmmoKind.Grenade?2:SelectedAmmo==AmmoKind.Rifle?1:0;
+                index=(index+(direction>0?1:2))%3;
+                SelectAmmo(index==0?AmmoKind.InstantShotgun:index==1?AmmoKind.Rifle:AmmoKind.Grenade);
+            }
             else SelectAmmo(SelectedAmmo==AmmoKind.Normal?AmmoKind.Shotgun:AmmoKind.Normal);
         }
         const double PracticeSupplyInterval=2;
@@ -174,7 +180,7 @@ namespace RightWalkPrototype
             {
                 var victim=impact.Player;
                 if(!victim.IsSpawned||victim.IsDead||victim.LifeVersion!=impact.Life)yield break;
-                victim.ReceiveServerDamage(impact.Count*ShotgunPelletDamage,impact.Life);
+                victim.ReceiveServerDamage(impact.Count*ShotgunPelletDamage,impact.Life,this);
                 if(!victim.IsDead)
                 {
                     victim.allowedHitPoseUntil=NetworkManager.ServerTime.Time+ShotgunHitSeconds+.3;

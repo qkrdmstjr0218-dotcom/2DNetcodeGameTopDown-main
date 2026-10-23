@@ -1,4 +1,4 @@
-using Unity.Netcode;
+﻿using Unity.Netcode;
 using UnityEngine;
 #if ENABLE_INPUT_SYSTEM
 using UnityEngine.InputSystem;
@@ -72,10 +72,10 @@ namespace RightWalkPrototype
         {
             GUILayout.BeginArea(new Rect(Screen.width-255,Screen.height-189,240,174),GUI.skin.box);
             GUILayout.Label("현재: "+ActiveAmmoName+(ActiveAmmoEmpty?" · 탄약 없음":""));
-            GUILayout.Label("일반탄  "+NormalRounds+" / "+NormalCapacity+"     샷건  "+ShotgunRounds+" / "+ShotgunCapacity);
-            GUILayout.Label("라이플  "+RifleRounds+" / "+RifleCapacity+"     유탄  "+GrenadeRounds+" / "+GrenadeCapacity);
-            GUILayout.Label("Q/E 선택 · 우클릭 동안 선택탄");
-            GUILayout.Label("선택: "+SelectedAmmoName);
+            GUILayout.Label("일반탄  "+NormalRounds+" / "+NormalCapacity+"     S 샷건  "+ShotgunRounds+" / "+ShotgunCapacity);
+            GUILayout.Label("R 라이플  "+RifleRounds+" / "+RifleCapacity+"     G 유탄  "+GrenadeRounds+" / "+GrenadeCapacity);
+            GUILayout.Label("Q/E 특수탄 선택 · 우클릭 동안 사용");
+            GUILayout.Label("특수탄 선택: "+SelectedAmmoName);
             GUILayout.EndArea();
             if(!AmmoCursorVisible||Event.current.type!=EventType.Repaint)return;
             var point=MouseScreenPoint();point.y=Screen.height-point.y;

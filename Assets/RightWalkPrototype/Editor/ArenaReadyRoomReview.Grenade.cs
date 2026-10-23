@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
 using Unity.Netcode;
@@ -23,7 +23,12 @@ public static partial class ArenaReadyRoomReview
         int bursts=own.ReceivedGrenadeBursts;SampleFireButtons(own,true,true);
         yield return new WaitForSecondsRealtime(.1f);if(main)ScreenCapture.CaptureScreenshot(folder+"/grenade-flight.png");
         float end=Time.realtimeSinceStartup+3;while(own.ReceivedGrenadeBursts==bursts&&Time.realtimeSinceStartup<end)yield return null;
-        if(main&&own.ReceivedGrenadeBursts>bursts)ScreenCapture.CaptureScreenshot(folder+"/grenade-blast.png");
+        if(main&&own.ReceivedGrenadeBursts>bursts)
+        {
+            ScreenCapture.CaptureScreenshot(folder+"/grenade-blast.png");
+            yield return new WaitForSecondsRealtime(.1f);ScreenCapture.CaptureScreenshot(folder+"/grenade-wave.png");
+            yield return new WaitForSecondsRealtime(.16f);ScreenCapture.CaptureScreenshot(folder+"/grenade-smoke.png");
+        }
     }
     static void GrenadeShot(SideScrollNetworkPlayer p,Vector2 origin,Vector2 direction,float speed,uint life)
     {typeof(SideScrollNetworkPlayer).GetMethod("FireGrenadeServerRpc",BindingFlags.NonPublic|BindingFlags.Instance).Invoke(p,new object[]{origin,direction,speed,life});}
@@ -49,12 +54,15 @@ public static partial class ArenaReadyRoomReview
         yield return Wait(()=>P(2).grenadePushes>0&&P(3).grenadePushes>0,"both damaged owners receive brief grenade reaction");Require(P(2).grenadeImpulse.x>0&&P(3).grenadeImpulse.x>0&&Mathf.Abs(P(2).grenadeImpulse.magnitude-SideScrollNetworkPlayer.GrenadePushSpeed)<.01f,"grenade reaction points away from explosion and stays small");Require(P(1).grenadePushes==0&&P(4).grenadePushes==0,"outside blast receives no reaction");yield return Wait(()=>!P(2).hitReacting&&!P(3).hitReacting,"brief grenade reaction ends");
         Vector2 point=host.LastGrenadeBurst;int secondHp=100-ArenaGrenadeBallistics.BlastDamage(point,secondBounds,40,10),thirdHp=100-ArenaGrenadeBallistics.BlastDamage(point,thirdBounds,40,10);Require(Player(2).Health==secondHp&&Player(3).Health==thirdHp&&secondHp<thirdHp,"actual multi-target damage follows distance falloff");yield return Wait(()=>All(4,p=>p.hostGrenadeBursts==bursts+1&&Vector2.Distance(p.hostGrenadePoint,point)<.02f),"all peers share one explosion position");Require(P(1).predictedGrenadeHit&&Vector2.Distance(P(1).predictedGrenade,point)<.16f,"predicted first collision matches server explosion");
         yield return new WaitForSecondsRealtime(.4f);Require(Player(2).Health==secondHp&&host.ReceivedGrenadeBursts==bursts+1,"no repeated splash or cluster");
+        yield return new WaitForSecondsRealtime(.2f);
+        var preview=host.GetComponentInChildren<RightFacingShotPreview>();
+        Require(((IList)typeof(RightFacingShotPreview).GetField("grenadeBlasts",BindingFlags.NonPublic|BindingFlags.Instance).GetValue(preview)).Count==0,"expanded blast visuals release after their lifetime");
         yield return GrenadeReset();yield return GrenadeLayout(true);Send(4,52);yield return Wait(()=>P(1).hp<100&&P(2).hp<100&&P(4).grenadeAmmo==2,"client grenade damages host and another client",4);
         yield return GrenadeReset();yield return GrenadeLayout();int selfPushes=host.ReceivedGrenadePushes;Send(1,53);yield return Wait(()=>P(1).hp<100,"close explosion damages shooter",4);Require(host.ReceivedGrenadePushes==selfPushes+1,"self explosion also gives brief reaction");
         yield return GrenadeReset();Send(0,54);yield return Wait(()=>Mathf.Abs(P(1).position.x+6)<.12f&&Mathf.Abs(P(2).position.x+2.2f)<.12f&&All(4,p=>p.grounded),"cover test positions settled");yield return new WaitForSecondsRealtime(.3f);bursts=host.ReceivedGrenadeBursts;int protectedPushes=P(2).grenadePushes;Send(1,52);
         yield return Wait(()=>host.ReceivedGrenadeBursts>bursts,"grenade hits solid cover",4);point=host.LastGrenadeBurst;
         Require(Vector2.Distance(point,((Bounds)typeof(SideScrollNetworkPlayer).GetMethod("ServerHitBounds",BindingFlags.NonPublic|BindingFlags.Instance).Invoke(Player(2),null)).ClosestPoint(new Vector3(point.x,point.y,0)))<ArenaGrenadeBallistics.BlastRadius,"covered player is geometrically in splash radius");System.IO.File.WriteAllText(folder+"/cover-debug.txt",point+" hp "+Player(1).Health+"/"+Player(2).Health+" blocked="+ArenaGrenadeBallistics.WorldTrace(point,Player(2).transform.position+Vector3.up*1.3f,0,out _));yield return Wait(()=>P(2).hp<100&&P(2).grenadePushes>protectedPushes,"blast damages and briefly pushes player behind solid cover");Require(Player(1).Health<100&&Player(2).Health>=60,"covered player receives distance-scaled splash without wall shielding");
-        yield return GrenadeReset();var patrol=match.Patrols[0];patrol.Health=4;patrol.Generation++;patrol.Speed=0;patrol.RespawnAt=0;match.Patrols[0]=patrol;yield return new WaitForSecondsRealtime(.2f);Send(1,55);yield return Wait(()=>host.GrenadeRounds==2&&match.Patrols[0].Health<4&&match.Patrols[0].Health>=1,"grenade splash damages patrol enemy",4);
+        yield return GrenadeReset();var patrol=match.Patrols[0];patrol.Health=4;patrol.Generation++;patrol.Speed=0;patrol.RespawnAt=0;match.Patrols[0]=patrol;yield return new WaitForSecondsRealtime(.2f);Send(1,55);yield return Wait(()=>host.GrenadeRounds==2&&match.Patrols[0].Health<4&&match.Patrols[0].Health>=0,"grenade splash damages patrol enemy",4);
         yield return GrenadeReset();yield return GrenadeLayout();SetGrenades(host,0);float normal=host.NormalAmmo;int shots=host.ReceivedGrenadeShots;Send(1,56);yield return new WaitForSecondsRealtime(1.1f);Require(host.GrenadeActive&&host.ActiveAmmoEmpty&&host.ReceivedGrenadeShots==shots&&host.NormalAmmo==normal,"empty held grenade cannot fire or fall back");
         Send(1,49);yield return Wait(()=>!host.SpecialHeld&&host.FireWaitRemaining<=0,"grenade release switch completes");SampleFireButtons(host,false,true);Require(host.NormalAmmo<normal,"releasing grenade restores normal fire");
         yield return GrenadeReset();yield return GrenadeLayout();host.SelectAmmo(SideScrollNetworkPlayer.AmmoKind.Grenade);host.SetSpecialHeld(true);yield return new WaitForSecondsRealtime(.25f);var a=host.GetComponentInChildren<RightFacingAimRig>();shots=host.ReceivedGrenadeShots;

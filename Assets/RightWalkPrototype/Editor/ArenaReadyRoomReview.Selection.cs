@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.IO;
 using System.Reflection;
 using UnityEditor;
@@ -20,6 +20,7 @@ public static partial class ArenaReadyRoomReview
         own.GetComponentInChildren<RightFacingAimRig>().SetAimDirection(Vector2.up);
         var preview=own.GetComponentInChildren<RightFacingShotPreview>();
         own.SetSpecialHeld(false);
+        VerifySpecialCycle(own);
         yield return new WaitForSecondsRealtime(.3f);
         var serverReady=typeof(SideScrollNetworkPlayer).GetField("serverSwitchReady",BindingFlags.Instance|BindingFlags.NonPublic);
         double before=(double)serverReady.GetValue(own);
@@ -50,5 +51,20 @@ public static partial class ArenaReadyRoomReview
         yield return new WaitForSecondsRealtime(.24f);normal=own.NormalAmmo;preview.Fire();
         Require(own.NormalAmmo<normal,"normal fires after release wait");
         foundryDriving=false;
+        if(File.Exists(folder+"/hint-only.txt"))yield return CheckAmmoHint();
     }
+    [MenuItem("Tools/Right Walk Prototype/Verify Ammo Selection Hint")]
+    public static void BeginAmmoHint(){BeginPreselection();File.WriteAllText(folder+"/hint-only.txt","hint");}
+    static IEnumerator CheckAmmoHint()
+    {
+        yield return Wait(()=>All(4,p=>p.connected&&p.phase==0),"four peers for owner-only selection hint",40);
+        var own=Player(1);own.SelectAmmo(SideScrollNetworkPlayer.AmmoKind.InstantShotgun);own.SelectAmmo(SideScrollNetworkPlayer.AmmoKind.Rifle);
+        Require(own.AmmoSelectionHintVisible&&own.AmmoSelectionHintText=="R","rifle selection shows owner head hint");
+        foreach(var p in Object.FindObjectsByType<SideScrollNetworkPlayer>(FindObjectsSortMode.None))if(!p.IsOwner)Require(!p.AmmoSelectionHintVisible,"remote selection hint stays private");
+        ScreenCapture.CaptureScreenshot(folder+"/ammo-head-hint.png");yield return new WaitForSecondsRealtime(.1f);
+        Send(4,113);yield return Wait(()=>P(4).ammoHint&&P(4).ammoHintText.StartsWith("S"),"participant sees selected shotgun above own head",6);
+        yield return Wait(()=>!P(1).ammoHint&&!P(4).ammoHint,"head hints expire automatically",4);
+        Require(own.SelectedAmmo==SideScrollNetworkPlayer.AmmoKind.Rifle&&P(4).selectedAmmo==2,"hint expiry does not change chosen special");
+    }
+
 }

@@ -1,4 +1,4 @@
-%YAML 1.1
+﻿%YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
 --- !u!1 &7184689633827390920
 GameObject:
@@ -71,15 +71,57 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RightWalkPrototype.ArenaObjectiveMatch
   ShowTopMostFoldoutHeaderGroup: 1
-  roundSeconds: 180
-  pointSeconds: 30
-  warningSeconds: 5
-  respawnSeconds: 6
-  countdownSeconds: 3
   normalAmmoCapacity: 12
   normalAmmoRechargeDelay: 1
   normalAmmoRechargeRate: 4
   normalShotInterval: 0.23
+  Patrols:
+    UpdateTraits:
+      MinSecondsBetweenUpdates: 0
+      MaxSecondsBetweenUpdates: 0
+  patrolHealth: 4
+  patrolSpeed: 1.2
+  patrolRespawnSeconds: 10
+  patrolDropChance: 0.5
+  patrolContactDamage: 10
+  patrolContactInterval: 1
+  groundChaseSpeed: 2.8
+  groundRushSpeed: 6
+  groundRushRange: 2.8
+  groundRushWarning: 0.55
+  groundRushSeconds: 0.55
+  groundRushRecovery: 0.85
+  HealthPickups:
+    UpdateTraits:
+      MinSecondsBetweenUpdates: 0
+      MaxSecondsBetweenUpdates: 0
+  healthPickupAmount: 25
+  healthPickupRespawnSeconds: 20
+  playerKillPoints: 5
+  medicalDroneHealth: 8
+  medicalDroneSpeed: 3.2
+  medicalFirstMinimum: 10
+  medicalFirstMaximum: 16
+  medicalMinimumInterval: 25
+  medicalMaximumInterval: 40
+  medicalWarningSeconds: 3
+  medicalMaximumFlightSeconds: 35
+  AmmoPickups:
+    UpdateTraits:
+      MinSecondsBetweenUpdates: 0
+      MaxSecondsBetweenUpdates: 0
+  ammoPickupRespawnSeconds: 15
+  droppedItemLifetimeSeconds: 20
+  droppedItemWarningSeconds: 4
+  respawnSeconds: 6
+  countdownSeconds: 3
+  TurretShots:
+    UpdateTraits:
+      MinSecondsBetweenUpdates: 0
+      MaxSecondsBetweenUpdates: 0
+  roundSeconds: 180
+  pointSeconds: 30
+  warningSeconds: 5
   Scores:
     UpdateTraits:
       MinSecondsBetweenUpdates: 0

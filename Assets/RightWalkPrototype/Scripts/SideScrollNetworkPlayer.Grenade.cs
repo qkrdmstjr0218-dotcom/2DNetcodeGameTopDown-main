@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
@@ -6,7 +6,7 @@ namespace RightWalkPrototype
 {
     public sealed partial class SideScrollNetworkPlayer
     {
-        public const int GrenadeCapacity=3,GrenadeDamage=40,GrenadeMinimumDamage=10,GrenadeEnemyDamage=3,GrenadeEnemyMinimumDamage=1;
+        public const int GrenadeCapacity=3,GrenadeDamage=40,GrenadeMinimumDamage=10,GrenadeEnemyDamage=6,GrenadeEnemyMinimumDamage=2;
         public const float GrenadeInterval=1,GrenadePushSpeed=2.2f,GrenadeHitSeconds=.14f;
         public int ReceivedGrenadePushes{get;private set;}
         public Vector2 LastGrenadePush{get;private set;}
@@ -68,7 +68,7 @@ namespace RightWalkPrototype
             GrenadeBurstClientRpc(id,point);
             foreach(var target in FindObjectsByType<SideScrollNetworkPlayer>(FindObjectsSortMode.None))
                 if(target.IsSpawned&&!target.IsDead&&ArenaGrenadeBallistics.InBlast(point,target.ArenaHitBounds))
-                {target.ReceiveServerDamage(ArenaGrenadeBallistics.BlastDamage(point,target.ArenaHitBounds,GrenadeDamage,GrenadeMinimumDamage),target.LifeVersion);target.PushFromGrenadeServer(point);}
+                {target.ReceiveServerDamage(ArenaGrenadeBallistics.BlastDamage(point,target.ArenaHitBounds,GrenadeDamage,GrenadeMinimumDamage),target.LifeVersion,this);target.PushFromGrenadeServer(point);}
             foreach(var e in FindObjectsByType<ArenaPatrolEnemy>(FindObjectsSortMode.None))
                 if(e.Match==match&&e.isActiveAndEnabled&&e.TryGetComponent<Collider2D>(out var shape)&&shape.enabled&&ArenaGrenadeBallistics.InBlast(point,shape.bounds))match.DamagePatrolServer(e.Id,e.Generation,ArenaGrenadeBallistics.BlastDamage(point,shape.bounds,GrenadeEnemyDamage,GrenadeEnemyMinimumDamage));
             foreach(var t in FindObjectsByType<SideScrollDamageTarget>(FindObjectsSortMode.None))

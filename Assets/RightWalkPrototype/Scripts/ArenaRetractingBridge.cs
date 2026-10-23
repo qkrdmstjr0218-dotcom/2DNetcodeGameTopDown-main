@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using Unity.Netcode;
 
 namespace RightWalkPrototype
@@ -38,7 +38,7 @@ namespace RightWalkPrototype
             if(manager==null||!manager.IsServer)return;
             foreach(var player in FindObjectsByType<SideScrollNetworkPlayer>(FindObjectsSortMode.None))
                 if(player.IsSpawned&&player.HasCurrentLifePose&&!player.IsDead&&player.transform.position.x>left&&player.transform.position.x<right&&player.transform.position.y<-2.4f)
-                    player.ReceiveServerDamage(player.MaxHealth,player.LifeVersion);
+                    player.ReceiveServerDamage(player.MaxHealth,player.LifeVersion,null,true);
         }
     }
 }

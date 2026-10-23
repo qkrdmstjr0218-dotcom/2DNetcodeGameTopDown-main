@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using Unity.Netcode;
 
 namespace RightWalkPrototype
@@ -182,7 +182,7 @@ namespace RightWalkPrototype
             if(!IsSpawned)return;
             var match=ArenaObjectiveMatch.Instance;
             if(IsOwner&&InstantShotgunEnabled&&SelectedAmmo==AmmoKind.Shotgun)SelectAmmo(AmmoKind.InstantShotgun);
-            if(IsServer&&IsDead&&match!=null&&match.RoomFlow&&match.State.Value.Phase==ArenaObjectiveMatch.Stage.Playing&&RespawnRemaining<=0)ResetForArenaRound();
+            if(IsServer&&IsDead&&match!=null&&match.RoomFlow&&match.State.Value.Phase==ArenaObjectiveMatch.Stage.Playing&&RespawnRemaining<=0)ResetArenaLife(false);
             if(IsOwner&&ArenaObjectiveMatch.Instance!=null&&ArenaObjectiveMatch.Instance.RoomFlow)aim.showAimPreview=!ArenaObjectiveMatch.InReadyRoom||ArenaObjectiveMatch.PracticeRoom;
             if(appliedLifeVersion!=LifeVersion)
             {
@@ -192,7 +192,7 @@ namespace RightWalkPrototype
                 else transform.position=life.Value.SpawnPosition;
             }
             if(!IsOwner)ApplyRemoteMotion();
-            UpdateSprintEnergy();
+            UpdateSprintEnergy();UpdateShield();
             UpdateNormalAmmo();UpdatePracticeAmmo();
             if(IsDead)death.SetNetworkPlayback((float)(NetworkManager.ServerTime.Time-life.Value.DeathTime),IsOwner?(bool?)null:motion.Value.Grounded);
         }
@@ -323,14 +323,24 @@ namespace RightWalkPrototype
         private System.Collections.IEnumerator ApplyPlayerImpact(SideScrollNetworkPlayer victim,uint generation,float delay)
         {
             yield return new WaitForSeconds(delay);
-            if(IsServer&&IsSpawned&&victim!=null)victim.ReceiveServerDamage(playerDamage,generation);
+            if(IsServer&&IsSpawned&&victim!=null)victim.ReceiveServerDamage(playerDamage,generation,this);
         }
-        public void ReceiveServerDamage(int damage,uint generation)
+        public void ReceiveServerDamage(int damage,uint generation,SideScrollNetworkPlayer attacker=null,bool bypassShield=false)
         {
             if(!IsServer||!IsSpawned||IsDead||damage<=0||generation!=LifeVersion||ArenaObjectiveMatch.CombatBlocked)return;
+            if(!bypassShield)damage=AbsorbShield(damage);
+            if(damage<=0)return;
             var state=life.Value;state.Health=Mathf.Max(ArenaObjectiveMatch.PracticeRoom?1:0,state.Health-damage);
             if(state.Health==0){state.FatalPose=IsOwner?CaptureMotion():motion.Value;state.DeathTime=NetworkManager.ServerTime.Time;}
             life.Value=state;
+            if(state.Health==0)ArenaObjectiveMatch.Instance?.RecordPlayerKill(attacker,this);
+        }
+        public int GrantHealthServer(int amount,uint generation)
+        {
+            var match=ArenaObjectiveMatch.Instance;
+            if(!IsServer||!IsSpawned||IsDead||!HasCurrentLifePose||amount<=0||generation!=LifeVersion||match==null||!match.RoomFlow||match.State.Value.Phase!=ArenaObjectiveMatch.Stage.Playing)return 0;
+            int healed=Mathf.Min(amount,Mathf.Max(0,MaxHealth-Health));if(healed==0)return 0;
+            var state=life.Value;state.Health+=healed;life.Value=state;return healed;
         }
         public void RequestRevive(){if(IsSpawned&&IsOwner&&IsDead)ReviveServerRpc();}
         [ServerRpc]
@@ -341,19 +351,24 @@ namespace RightWalkPrototype
             life.Value=new LifeState {Health=MaxHealth,Generation=LifeVersion+1,SpawnPosition=SpawnPosition()};
             nextServerShot=0;ResetSprintEnergy();ResetSpecialAmmo();
         }
-        public void ResetForArenaRound()
+        public void ResetForArenaRound()=>ResetArenaLife(true);
+        void ResetArenaLife(bool refillAmmo)
         {
             if(!IsServer||!IsSpawned)return;
-            life.Value=new LifeState{Health=MaxHealth,Generation=LifeVersion+1,SpawnPosition=SpawnPosition()};nextServerShot=0;ResetSprintEnergy();ResetSpecialAmmo();
+            Vector3 spawn=SpawnPosition();
+            var map=RelayArenaPrototype.Instance!=null?RelayArenaPrototype.Instance.GetComponent<ArenaMapSettings>():null;
+            if(!refillAmmo&&map!=null&&map.TryChooseRespawn(this,out var chosen))spawn=chosen;
+            life.Value=new LifeState{Health=MaxHealth,Generation=LifeVersion+1,SpawnPosition=spawn};nextServerShot=0;ResetSprintEnergy();
+            if(refillAmmo)ResetSpecialAmmo();else{ResetNormalAmmo();ResetFireTiming();}
         }
         private void OnGUI()
         {
             if(!IsSpawned||Camera.main==null||ArenaObjectiveMatch.TransitionActive)return;
-            DrawWorldStamina();
+            DrawWorldStamina();DrawShieldHud();DrawAmmoSelectionHint();
             if(ArenaObjectiveMatch.InReadyRoom)
             {
                 var at=Camera.main.WorldToScreenPoint(transform.position+Vector3.up*2.45f);
-                if(at.z>0)GUI.Label(new Rect(at.x-75,Screen.height-at.y,150,25),"P"+PlayerNumber+(IsOwner?" (나)":"")+" · "+(ArenaObjectiveMatch.Instance.IsReady(OwnerClientId)?"준비 완료":"준비 중"),new GUIStyle(GUI.skin.label){alignment=TextAnchor.MiddleCenter,normal={textColor=ArenaObjectiveMatch.Instance.IsReady(OwnerClientId)?new Color(.35f,1,.65f):Color.white}});
+                if(at.z>0)GUI.Label(new Rect(at.x-75,Screen.height-at.y,150,25),"P"+PlayerNumber+(IsOwner?" (나)":"")+" · "+(ArenaObjectiveMatch.Instance.IsReady(OwnerClientId)?"준비 완료":"준비 중"),new GUIStyle(GUI.skin.label){alignment=TextAnchor.MiddleCenter,normal={textColor=ArenaPlayerAppearance.Accent(PlayerNumber)}});
                 if(IsOwner)DrawAmmoHud();
                 return;
             }
@@ -362,9 +377,9 @@ namespace RightWalkPrototype
             {
                 var rect=new Rect(point.x-38,Screen.height-point.y,76,7);var color=GUI.color;
                 GUI.color=new Color(.08f,.08f,.08f,.9f);GUI.DrawTexture(rect,Texture2D.whiteTexture);
-                rect.width*=Health/(float)MaxHealth;GUI.color=IsOwner?new Color(.3f,.9f,.55f):new Color(1,.45f,.35f);
+                rect.width*=Health/(float)MaxHealth;GUI.color=ArenaPlayerAppearance.Accent(PlayerNumber);
                 GUI.DrawTexture(rect,Texture2D.whiteTexture);GUI.color=color;
-                GUI.color=IsOwner?new Color(.3f,.9f,.55f):Color.white;
+                GUI.color=ArenaPlayerAppearance.Accent(PlayerNumber);
                 GUI.Label(new Rect(point.x-38,Screen.height-point.y-23,28,22),"P"+PlayerNumber);
                 GUI.color=color;
                 GUI.Label(new Rect(point.x-10,Screen.height-point.y-23,100,22),Health+" / "+MaxHealth);
@@ -397,6 +412,7 @@ namespace RightWalkPrototype
         }
         public override void OnNetworkDespawn()
         {
+            ClearShieldVisual();
             playerNumber.OnValueChanged-=SetCharacterOrder;
             if(shots!=null)shots.ShotRequested=null;
         }

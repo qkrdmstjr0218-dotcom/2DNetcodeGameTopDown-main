@@ -1,10 +1,10 @@
-using UnityEngine;
+﻿using UnityEngine;
 using Unity.Netcode;
 using Unity.Netcode.Transports.UTP;
 
 namespace RightWalkPrototype
 {
-    public sealed class SideScrollNetworkSession : MonoBehaviour
+    public sealed partial class SideScrollNetworkSession : MonoBehaviour
     {
         public GameObject targetPrefab;
         public GameObject arenaObjectivePrefab;
@@ -24,9 +24,11 @@ namespace RightWalkPrototype
                 connectedToHost?"호스트와의 연결이 종료되었습니다.\n다시 접속할 수 있습니다.":"호스트에 연결하지 못했습니다.\n호스트 실행 여부를 확인해 주세요.";
             if(!wasHost&&!intentionalDisconnect&&!connectedToHost&&sessionManager!=null&&!string.IsNullOrEmpty(sessionManager.DisconnectReason))ConnectionNotice=sessionManager.DisconnectReason;
             connectedToHost=false;
+            if(onlineConnection&&!intentionalDisconnect&&!onlineLeaving&&isActiveAndEnabled)StartCoroutine(WaitForOnlineClosure());
         }
         public void DisconnectLocal()
         {
+            if(onlineConnection||onlineSession!=null){_=LeaveOnlineRoomAsync();return;}
             intentionalDisconnect=true;
             NetworkManager.Singleton?.Shutdown();
         }
@@ -37,14 +39,15 @@ namespace RightWalkPrototype
             foreach(float x in new[]{-3f,3f})
                 Instantiate(targetPrefab,new Vector3(x,1.2f,0),Quaternion.identity).GetComponent<NetworkObject>().Spawn();
         }
-        public void StartLocal(bool host)
+        public bool SoloPractice {get;private set;}
+        public void StartSoloPractice()=>StartLocal(true,true);
+        public void StartLocal(bool host)=>StartLocal(host,false);
+        void StartLocal(bool host,bool solo)
         {
             var manager=NetworkManager.Singleton;
-            if(manager==null||manager.IsListening)return;
-            bool room=useReadyRoom&&arenaObjectivePrefab!=null&&RelayArenaPrototype.Instance!=null;
-            manager.NetworkConfig.ConnectionApproval=room;
-            manager.ConnectionApprovalCallback=room?ApproveRoomConnection:null;
-            ConnectionNotice="";connectedToHost=false;intentionalDisconnect=false;
+            if(manager==null||manager.IsListening||manager.ShutdownInProgress)return;
+            if(OnlineBusy||onlineSession!=null)return;
+            SoloPractice=solo;PrepareConnection(false);
             manager.GetComponent<UnityTransport>().SetConnectionData("127.0.0.1",7783,"127.0.0.1");
             if(host)manager.StartHost();else manager.StartClient();
         }
@@ -53,8 +56,10 @@ namespace RightWalkPrototype
             var match=ArenaObjectiveMatch.Instance;
             bool busy=match!=null&&match.IsSpawned&&match.State.Value.Phase!=ArenaObjectiveMatch.Stage.Waiting;
             bool full=NetworkManager.Singleton.ConnectedClients.Count>=4;
-            response.Approved=!busy&&!full;response.CreatePlayerObject=response.Approved;response.Pending=false;
-            response.Reason=busy?"경기가 진행 중입니다. 대기방으로 돌아온 뒤 참가해 주세요.":full?"방이 가득 찼습니다. 최대 4명까지 참가할 수 있습니다.":"";
+            bool compatible=!onlineConnection||System.Text.Encoding.UTF8.GetString(request.Payload??System.Array.Empty<byte>())==OnlineRoomKind;
+            bool soloGuest=SoloPractice&&request.ClientNetworkId!=Unity.Netcode.NetworkManager.ServerClientId;
+            response.Approved=!soloGuest&&!busy&&!full&&compatible;response.CreatePlayerObject=response.Approved;response.Pending=false;
+            response.Reason=soloGuest?"혼자 연습 중인 방입니다.":!compatible?"게임 버전이 다릅니다. 같은 빌드로 접속해 주세요.":busy?"경기가 진행 중입니다. 대기방으로 돌아온 뒤 참가해 주세요.":full?"방이 가득 찼습니다. 최대 4명까지 참가할 수 있습니다.":"";
         }
         private void Start()
         {
@@ -126,6 +131,7 @@ namespace RightWalkPrototype
             if(ArenaObjectiveMatch.TransitionActive)return;
             var manager=NetworkManager.Singleton;
             if(manager==null)return;
+            if(!manager.IsListening&&useReadyRoom&&RelayArenaPrototype.Instance!=null){DrawOnlineLobby();return;}
             GUILayout.BeginArea(new Rect(Screen.width-230,15,215,160),GUI.skin.box);
             if(!manager.IsListening)
             {
@@ -137,7 +143,7 @@ namespace RightWalkPrototype
             else
             {
                 if(ArenaObjectiveMatch.Instance!=null&&ArenaObjectiveMatch.Instance.RoomFlow)
-                {GUILayout.Label(manager.IsHost?"내가 방장 · 로컬 연결":"참가 중 · 로컬 연결");if(GUILayout.Button(manager.IsHost?"방 닫고 나가기":"방 나가기"))DisconnectLocal();GUILayout.EndArea();return;}
+                {GUILayout.Label(manager.IsHost?"내가 방장":"참가 중");GUILayout.Label(onlineConnection?"인터넷 · "+OnlineRoomName:SoloPractice?"혼자 연습 · 로컬":"로컬 테스트 연결");if(GUILayout.Button(manager.IsHost?"방 닫고 나가기":"방 나가기"))DisconnectLocal();GUILayout.EndArea();return;}
                 GUILayout.Label(manager.IsHost ? "Host : 7783" : "Client : 7783");
                 GUILayout.Label("Players: "+FindObjectsByType<SideScrollNetworkPlayer>(FindObjectsSortMode.None).Length);
                 if(manager.IsServer && GUILayout.Button("Reset Targets"))
@@ -148,6 +154,7 @@ namespace RightWalkPrototype
         }
         private void OnDestroy()
         {
+            CleanupOnlineOnDestroy();
             if(sessionManager!=null)
             {
                 sessionManager.OnServerStarted-=SpawnTargets;
