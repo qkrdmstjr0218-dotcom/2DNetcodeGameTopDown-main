@@ -1,7 +1,10 @@
-Shader "RightWalk/FrontHighlightTone"
+﻿Shader "RightWalk/FrontHighlightTone"
 {
     Properties
     {
+        [PerRendererData] _IdentityTexture("Identity Texture",2D)="white"{}
+        [PerRendererData] _IdentityEnabled("Identity Enabled",Float)=0
+
         [PerRendererData] _MainTex ("Sprite Texture", 2D) = "white" {}
         _Color ("Tint", Color) = (1,1,1,1)
         _HighlightReduction ("Highlight Reduction", Range(0,0.2)) = 0.08
@@ -26,10 +29,11 @@ Shader "RightWalk/FrontHighlightTone"
             #pragma multi_compile _ PIXELSNAP_ON
             #pragma multi_compile _ ETC1_EXTERNAL_ALPHA
             #include "UnitySprites.cginc"
+            #include "../PlayerIdentity.cginc"
             half _HighlightReduction;
             fixed4 ToneFrag(v2f input) : SV_Target
             {
-                fixed4 color=SampleSpriteTexture(input.texcoord)*input.color;
+                fixed4 color=PlayerIdentitySample(SampleSpriteTexture(input.texcoord),input.texcoord)*input.color;
                 half luminance=dot(color.rgb,half3(0.2126,0.7152,0.0722));
                 // Compress bright paint/skin while retaining dark outlines and alpha.
                 color.rgb*=1-_HighlightReduction*smoothstep(0.35,0.9,luminance);

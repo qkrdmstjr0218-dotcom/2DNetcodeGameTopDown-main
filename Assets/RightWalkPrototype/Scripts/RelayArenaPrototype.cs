@@ -123,6 +123,11 @@ namespace RightWalkPrototype
         private void LateUpdate()
         {
             if(arenaCamera==null)return;
+            if(ArenaTutorial.Active)
+            {
+                var p=LocalPlayer();var at=p!=null?p.transform.position:ArenaTutorial.Instance.Checkpoint;
+                arenaCamera.orthographicSize=4.8f;arenaCamera.transform.position=new Vector3(Mathf.Clamp(at.x,199,210),Mathf.Clamp(at.y+1.3f,3.2f,5),-10);cameraReady=false;return;
+            }
             if(WantsSpectator)overview=false;
             if(ArenaObjectiveMatch.InReadyRoom)
             {arenaCamera.orthographicSize=Mathf.Max(6.5f,11/arenaCamera.aspect);cameraPosition=new Vector3(100,3.7f,-10);arenaCamera.transform.position=cameraPosition;cameraReady=false;return;}

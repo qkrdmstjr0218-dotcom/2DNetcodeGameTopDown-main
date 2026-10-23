@@ -50,6 +50,7 @@ namespace RightWalkPrototype
         public static bool CombatBlocked=>Ended||Instance!=null&&Instance.IsSpawned&&Instance.RoomFlow&&Instance.State.Value.Phase!=Stage.Playing&&!PracticeRoom;
         public static bool RoomUIContains(Vector2 screenPoint)
         {
+            if(ArenaTutorial.Active)return ArenaTutorial.PointerOverUI(screenPoint);
             if(!PracticeRoom)return false;
             var p=new Vector2(screenPoint.x,Screen.height-screenPoint.y);
             float width=Mathf.Min(540,Screen.width-30);
@@ -75,7 +76,7 @@ namespace RightWalkPrototype
         {
             get
             {
-                if(!RoomFlow||State.Value.Phase!=Stage.Waiting||ReadyPlayers.Count<MinimumPlayers||ReadyPlayers.Count>4)return false;
+                if(ArenaTutorial.Active||!RoomFlow||State.Value.Phase!=Stage.Waiting||ReadyPlayers.Count<MinimumPlayers||ReadyPlayers.Count>4)return false;
                 if(IsServer&&NetworkManager.ConnectedClients.Count!=ReadyPlayers.Count)return false;
                 foreach(var p in ReadyPlayers)if(!p.Ready)return false;
                 return true;
@@ -180,6 +181,7 @@ namespace RightWalkPrototype
         }
         void DrawRoom()
         {
+            if(ArenaTutorial.Active)return;
             if(Transitioning)
             {
                 int depth=GUI.depth;GUI.depth=-100;

@@ -1,7 +1,10 @@
-Shader "RightWalk/HeadSplit"
+﻿Shader "RightWalk/HeadSplit"
 {
     Properties
     {
+        [PerRendererData] _IdentityTexture("Identity Texture",2D)="white"{}
+        [PerRendererData] _IdentityEnabled("Identity Enabled",Float)=0
+
         [PerRendererData] _MainTex("Sprite",2D)="white"{}
         _Color("Tint",Color)=(1,1,1,1)
         _RearLayer("Rear hair layer",Float)=0
@@ -16,6 +19,7 @@ Shader "RightWalk/HeadSplit"
             #pragma vertex vert
             #pragma fragment frag
             #include "UnityCG.cginc"
+            #include "PlayerIdentity.cginc"
             sampler2D _MainTex;float4 _MainTex_TexelSize;fixed4 _Color;float _RearLayer;
             struct appdata { float4 vertex:POSITION;float2 uv:TEXCOORD0;fixed4 color:COLOR; };
             struct v2f { float4 vertex:SV_POSITION;float2 uv:TEXCOORD0;fixed4 color:COLOR; };
@@ -30,7 +34,7 @@ Shader "RightWalk/HeadSplit"
                 if(pixel.y>123)boundary=lerp(244.12,261,saturate((pixel.y-123)/10));
                 bool rear=pixel.y>=108 && pixel.x<boundary;
                 if(rear != (_RearLayer>.5))discard;
-                fixed4 color=tex2D(_MainTex,i.uv)*i.color;
+                fixed4 color=PlayerIdentitySample(tex2D(_MainTex,i.uv),i.uv)*i.color;
                 color.rgb*=color.a;
                 return color;
             }

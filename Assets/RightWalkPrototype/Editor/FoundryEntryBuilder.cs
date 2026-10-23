@@ -37,8 +37,8 @@ public static class FoundryEntryBuilder
         }
         if(addBalconies)foreach(int side in new[]{-1,1})
         {
-            Part("Outer spawn balcony "+side,new Vector2(side*33.25f,10.66f),new Vector2(4.5f,.28f),Steel,0,true);
-            Line("Balcony solid edge "+side,new Vector2(side*31,10.8f),new Vector2(side*35.5f,10.8f),Solid);
+            Part("Outer spawn balcony "+side,new Vector2(side*33.5f,10.66f),new Vector2(5,.28f),Steel,0,true);
+            Line("Balcony solid edge "+side,new Vector2(side*31,10.8f),new Vector2(side*36,10.8f),Solid);
             Vector2 a=new(side*25,7.2f),b=new(side*31,10.8f);if(a.x>b.x){var t=a;a=b;b=t;}
             var d=b-a;var normal=new Vector2(-d.normalized.y,d.normalized.x);
             var ramp=Part("Outer balcony access "+side,(a+b)*.5f-normal*.1f,new Vector2(d.magnitude,.2f),Steel,0,true);
@@ -48,6 +48,7 @@ public static class FoundryEntryBuilder
             for(float x=0;x<d.magnitude;x+=.32f)Line("Balcony passable dash",Vector2.Lerp(a,b,x/d.magnitude),Vector2.Lerp(a,b,Mathf.Min(x+.2f,d.magnitude)/d.magnitude),Pass);
             Label("Balcony arrival sign "+side,"ARRIVAL / "+(side<0?"WEST":"EAST"),new Vector2(side*33,12.7f),Pass);
         }
+        RepairBalconyEdges(map);
         // Replace only this builder's noncolliding entrance art, never the balconies or travel lanes.
         var names=new System.Collections.Generic.HashSet<string>{"Enemy entrance decorations","Ground enemy door","Door frame","Door seam","Ground entrance sign","Drone exit recess","Drone exit frame","Drone exit sign","Turret floor hatch","Turret hatch warning"};
         for(int i=root.childCount-1;i>=0;i--)if(names.Contains(root.GetChild(i).name))Object.DestroyImmediate(root.GetChild(i).gameObject);
@@ -69,6 +70,19 @@ public static class FoundryEntryBuilder
         {
             Part("Turret floor hatch",at+Vector2.down*.03f,new Vector2(1.6f,.08f),new Color(.08f,.12f,.14f),4);
             foreach(int side in new[]{-1,1})Part("Turret hatch warning",at+new Vector2(side*.7f,.015f),new Vector2(.18f,.035f),Solid,7);
+        }
+    }
+    // Targeted migration for existing scenes: fill the half-unit end gap up to
+    // the boundary's inner face; keep the access ramps and all spawn data.
+    public static void RepairBalconyEdges(ArenaMapSettings map)
+    {
+        var root=map.transform.Find(RootName);if(root==null)return;
+        foreach(int side in new[]{-1,1})
+        {
+            var deck=root.Find("Outer spawn balcony "+side);
+            if(deck!=null){deck.position=new Vector3(side*33.5f,10.66f,deck.position.z);deck.localScale=new Vector3(5,.28f,1);}
+            var edge=root.Find("Balcony solid edge "+side);
+            if(edge!=null){edge.position=new Vector3(side*33.5f,10.8f,edge.position.z);edge.localScale=new Vector3(5,.035f,1);}
         }
     }
 }

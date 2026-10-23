@@ -1,0 +1,416 @@
+fileFormatVersion: 2
+guid: 3387d32019ba4104bb113e166bb165a0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6714802050006004986
+    second: front-down-atlas-playable-waist-v2-P3_0
+  - first:
+      213: -4790498944568629102
+    second: front-down-atlas-playable-waist-v2-P3_1
+  - first:
+      213: -2912956385931498650
+    second: front-down-atlas-playable-waist-v2-P3_2
+  - first:
+      213: 3675172119923059666
+    second: front-down-atlas-playable-waist-v2-P3_3
+  - first:
+      213: -4946820643714702835
+    second: front-down-atlas-playable-waist-v2-P3_4
+  - first:
+      213: 7385487211155462660
+    second: front-down-atlas-playable-waist-v2-P3_5
+  - first:
+      213: -3187810134458303693
+    second: front-down-atlas-playable-waist-v2-P3_6
+  - first:
+      213: 5211716781178028545
+    second: front-down-atlas-playable-waist-v2-P3_7
+  - first:
+      213: -4747741192465704311
+    second: front-down-atlas-playable-waist-v2-P3_8
+  - first:
+      213: -3863302323267293403
+    second: front-down-atlas-playable-waist-v2-P3_9
+  - first:
+      213: -2890584398261824408
+    second: front-down-atlas-playable-waist-v2-P3_10
+  - first:
+      213: 5927018192388069136
+    second: front-down-atlas-playable-waist-v2-P3_11
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 0
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: front-down-atlas-playable-waist-v2-P3_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 561
+        width: 985
+        height: 1160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60bc350bc1b30d2a0800000000000000
+      internalID: -6714802050006004986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: front-down-atlas-playable-waist-v2-P3_1
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 1700
+        width: 593
+        height: 345
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2986a10579ab48db0800000000000000
+      internalID: -4790498944568629102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: front-down-atlas-playable-waist-v2-P3_2
+      rect:
+        serializedVersion: 2
+        x: 863
+        y: 1386
+        width: 204
+        height: 659
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66be85ab9991397d0800000000000000
+      internalID: -2912956385931498650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: front-down-atlas-playable-waist-v2-P3_3
+      rect:
+        serializedVersion: 2
+        x: 1073
+        y: 1625
+        width: 513
+        height: 420
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2dbee683295d00330800000000000000
+      internalID: 3675172119923059666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: front-down-atlas-playable-waist-v2-P3_4
+      rect:
+        serializedVersion: 2
+        x: 1592
+        y: 1840
+        width: 151
+        height: 205
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d02e0db75dc595bb0800000000000000
+      internalID: -4946820643714702835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: front-down-atlas-playable-waist-v2-P3_5
+      rect:
+        serializedVersion: 2
+        x: 1749
+        y: 1849
+        width: 100
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40a9c121d758e7660800000000000000
+      internalID: 7385487211155462660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: front-down-atlas-playable-waist-v2-P3_6
+      rect:
+        serializedVersion: 2
+        x: 1855
+        y: 1854
+        width: 109
+        height: 191
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33bf83c829f92c3d0800000000000000
+      internalID: -3187810134458303693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: front-down-atlas-playable-waist-v2-P3_7
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 1328
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1020f04bcccb35840800000000000000
+      internalID: 5211716781178028545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: front-down-atlas-playable-waist-v2-P3_8
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 458
+        width: 30
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98a97914a82ac1eb0800000000000000
+      internalID: -4747741192465704311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: front-down-atlas-playable-waist-v2-P3_9
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 440
+        width: 62
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52f26b1710bc26ac0800000000000000
+      internalID: -3863302323267293403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: front-down-atlas-playable-waist-v2-P3_10
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 445
+        width: 139
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86451540ec492e7d0800000000000000
+      internalID: -2890584398261824408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: front-down-atlas-playable-waist-v2-P3_11
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 468
+        width: 35
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 017919ea4aff04250800000000000000
+      internalID: 5927018192388069136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      front-down-atlas-playable-waist-v2-P3_0: -6714802050006004986
+      front-down-atlas-playable-waist-v2-P3_1: -4790498944568629102
+      front-down-atlas-playable-waist-v2-P3_10: -2890584398261824408
+      front-down-atlas-playable-waist-v2-P3_11: 5927018192388069136
+      front-down-atlas-playable-waist-v2-P3_2: -2912956385931498650
+      front-down-atlas-playable-waist-v2-P3_3: 3675172119923059666
+      front-down-atlas-playable-waist-v2-P3_4: -4946820643714702835
+      front-down-atlas-playable-waist-v2-P3_5: 7385487211155462660
+      front-down-atlas-playable-waist-v2-P3_6: -3187810134458303693
+      front-down-atlas-playable-waist-v2-P3_7: 5211716781178028545
+      front-down-atlas-playable-waist-v2-P3_8: -4747741192465704311
+      front-down-atlas-playable-waist-v2-P3_9: -3863302323267293403
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,1144 @@
+fileFormatVersion: 2
+guid: dc307f2ee6eeee1418c5ec370abed329
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6211241650058160059
+    second: RunRecoveryTrial-P2_0
+  - first:
+      213: -822116769429423866
+    second: RunRecoveryTrial-P2_1
+  - first:
+      213: 7940097484251991726
+    second: RunRecoveryTrial-P2_2
+  - first:
+      213: 8979860204341306889
+    second: RunRecoveryTrial-P2_3
+  - first:
+      213: 2779955750245782614
+    second: RunRecoveryTrial-P2_4
+  - first:
+      213: 2996134936105413737
+    second: RunRecoveryTrial-P2_5
+  - first:
+      213: -2064673033877864424
+    second: RunRecoveryTrial-P2_6
+  - first:
+      213: 5239013124605349107
+    second: RunRecoveryTrial-P2_7
+  - first:
+      213: 7936139730063421247
+    second: RunRecoveryTrial-P2_8
+  - first:
+      213: 5725778897239742521
+    second: RunRecoveryTrial-P2_9
+  - first:
+      213: -8306873031718951316
+    second: RunRecoveryTrial-P2_10
+  - first:
+      213: 7851753947902878766
+    second: RunRecoveryTrial-P2_11
+  - first:
+      213: 5399183381894751013
+    second: RunRecoveryTrial-P2_12
+  - first:
+      213: 5656889145636933891
+    second: RunRecoveryTrial-P2_13
+  - first:
+      213: -5804647614287467604
+    second: RunRecoveryTrial-P2_14
+  - first:
+      213: -8169728659514044093
+    second: RunRecoveryTrial-P2_15
+  - first:
+      213: 4789806304071399962
+    second: RunRecoveryTrial-P2_16
+  - first:
+      213: -6265847112330344685
+    second: RunRecoveryTrial-P2_17
+  - first:
+      213: 7762445245483083039
+    second: RunRecoveryTrial-P2_18
+  - first:
+      213: 5079528101618079640
+    second: RunRecoveryTrial-P2_19
+  - first:
+      213: 3456344240815625597
+    second: RunRecoveryTrial-P2_20
+  - first:
+      213: 36182471612619589
+    second: RunRecoveryTrial-P2_21
+  - first:
+      213: -7872106147597725072
+    second: RunRecoveryTrial-P2_22
+  - first:
+      213: -6638679965087020831
+    second: RunRecoveryTrial-P2_23
+  - first:
+      213: -3645585572259049813
+    second: RunRecoveryTrial-P2_24
+  - first:
+      213: -4818945610603359297
+    second: RunRecoveryTrial-P2_25
+  - first:
+      213: -8775351341150184488
+    second: RunRecoveryTrial-P2_26
+  - first:
+      213: -6183308672823434129
+    second: RunRecoveryTrial-P2_27
+  - first:
+      213: 2861614446180772082
+    second: RunRecoveryTrial-P2_28
+  - first:
+      213: -8850131164755912094
+    second: RunRecoveryTrial-P2_29
+  - first:
+      213: -6480616874763592701
+    second: RunRecoveryTrial-P2_30
+  - first:
+      213: 5973154944184915095
+    second: RunRecoveryTrial-P2_31
+  - first:
+      213: -7451062222646120717
+    second: RunRecoveryTrial-P2_32
+  - first:
+      213: -2332587224341129076
+    second: RunRecoveryTrial-P2_33
+  - first:
+      213: 8636350863043204755
+    second: RunRecoveryTrial-P2_34
+  - first:
+      213: 8630892337663379610
+    second: RunRecoveryTrial-P2_35
+  - first:
+      213: -6699657857862110617
+    second: RunRecoveryTrial-P2_36
+  - first:
+      213: 7123229563681749632
+    second: RunRecoveryTrial-P2_37
+  - first:
+      213: -2067072367105960261
+    second: RunRecoveryTrial-P2_38
+  - first:
+      213: -2815574195207966295
+    second: RunRecoveryTrial-P2_39
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 0
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: RunRecoveryTrial-P2_0
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 3637
+        width: 272
+        height: 223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb7e3d54f53c23650800000000000000
+      internalID: 6211241650058160059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunRecoveryTrial-P2_1
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 3635
+        width: 272
+        height: 223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 609744a67214794f0800000000000000
+      internalID: -822116769429423866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunRecoveryTrial-P2_2
+      rect:
+        serializedVersion: 2
+        x: 1147
+        y: 3633
+        width: 270
+        height: 223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eae00dee794e03e60800000000000000
+      internalID: 7940097484251991726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunRecoveryTrial-P2_3
+      rect:
+        serializedVersion: 2
+        x: 1657
+        y: 3632
+        width: 265
+        height: 223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9062e6c474fde9c70800000000000000
+      internalID: 8979860204341306889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunRecoveryTrial-P2_4
+      rect:
+        serializedVersion: 2
+        x: 2168
+        y: 3630
+        width: 260
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65454b8a603649620800000000000000
+      internalID: 2779955750245782614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunRecoveryTrial-P2_5
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 3117
+        width: 253
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96c63b5a9d8649920800000000000000
+      internalID: 2996134936105413737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunRecoveryTrial-P2_6
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 3117
+        width: 244
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 810c16690dec853e0800000000000000
+      internalID: -2064673033877864424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunRecoveryTrial-P2_7
+      rect:
+        serializedVersion: 2
+        x: 1149
+        y: 3115
+        width: 233
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fc06b9eda6b4b840800000000000000
+      internalID: 5239013124605349107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunRecoveryTrial-P2_8
+      rect:
+        serializedVersion: 2
+        x: 1666
+        y: 3116
+        width: 220
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3f6b4a7905d22e60800000000000000
+      internalID: 7936139730063421247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunRecoveryTrial-P2_9
+      rect:
+        serializedVersion: 2
+        x: 2184
+        y: 3115
+        width: 206
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9381760129d067f40800000000000000
+      internalID: 5725778897239742521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunRecoveryTrial-P2_10
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 2603
+        width: 190
+        height: 235
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c66ae164dfe08bc80800000000000000
+      internalID: -8306873031718951316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunRecoveryTrial-P2_11
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 2603
+        width: 173
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e24a5808d9807fc60800000000000000
+      internalID: 7851753947902878766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunRecoveryTrial-P2_12
+      rect:
+        serializedVersion: 2
+        x: 1185
+        y: 2604
+        width: 171
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52367030ea0cdea40800000000000000
+      internalID: 5399183381894751013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunRecoveryTrial-P2_13
+      rect:
+        serializedVersion: 2
+        x: 1707
+        y: 2606
+        width: 172
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 301d37bd4be418e40800000000000000
+      internalID: 5656889145636933891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunRecoveryTrial-P2_14
+      rect:
+        serializedVersion: 2
+        x: 2229
+        y: 2612
+        width: 171
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: caba318cfbfb17fa0800000000000000
+      internalID: -5804647614287467604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunRecoveryTrial-P2_15
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 2106
+        width: 182
+        height: 235
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 341565ab11b4f9e80800000000000000
+      internalID: -8169728659514044093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunRecoveryTrial-P2_16
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 2106
+        width: 190
+        height: 235
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1a3a11c47fc87240800000000000000
+      internalID: 4789806304071399962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunRecoveryTrial-P2_17
+      rect:
+        serializedVersion: 2
+        x: 1188
+        y: 2101
+        width: 188
+        height: 237
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31784accf3d3b09a0800000000000000
+      internalID: -6265847112330344685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunRecoveryTrial-P2_18
+      rect:
+        serializedVersion: 2
+        x: 1690
+        y: 2097
+        width: 209
+        height: 237
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f156075d2deb9bb60800000000000000
+      internalID: 7762445245483083039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunRecoveryTrial-P2_19
+      rect:
+        serializedVersion: 2
+        x: 2190
+        y: 2096
+        width: 240
+        height: 235
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8975f8b55eb1e7640800000000000000
+      internalID: 5079528101618079640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunRecoveryTrial-P2_20
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 1587
+        width: 267
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d75584746c667ff20800000000000000
+      internalID: 3456344240815625597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunRecoveryTrial-P2_21
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 1586
+        width: 268
+        height: 229
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54bd09724cb808000800000000000000
+      internalID: 36182471612619589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunRecoveryTrial-P2_22
+      rect:
+        serializedVersion: 2
+        x: 1147
+        y: 1585
+        width: 266
+        height: 229
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 072d44eba29a0c290800000000000000
+      internalID: -7872106147597725072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunRecoveryTrial-P2_23
+      rect:
+        serializedVersion: 2
+        x: 1658
+        y: 1584
+        width: 261
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e84c77bebbaed3a0800000000000000
+      internalID: -6638679965087020831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunRecoveryTrial-P2_24
+      rect:
+        serializedVersion: 2
+        x: 2168
+        y: 1583
+        width: 257
+        height: 229
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: baec537bc37486dc0800000000000000
+      internalID: -3645585572259049813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunRecoveryTrial-P2_25
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 1070
+        width: 250
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb31f00cf7aaf1db0800000000000000
+      internalID: -4818945610603359297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunRecoveryTrial-P2_26
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 1069
+        width: 241
+        height: 232
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8dbde73f270b73680800000000000000
+      internalID: -8775351341150184488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunRecoveryTrial-P2_27
+      rect:
+        serializedVersion: 2
+        x: 1150
+        y: 1069
+        width: 229
+        height: 231
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6464cbc589703aa0800000000000000
+      internalID: -6183308672823434129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunRecoveryTrial-P2_28
+      rect:
+        serializedVersion: 2
+        x: 1666
+        y: 1068
+        width: 217
+        height: 234
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f82bb46d2f76b720800000000000000
+      internalID: 2861614446180772082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunRecoveryTrial-P2_29
+      rect:
+        serializedVersion: 2
+        x: 2185
+        y: 1068
+        width: 202
+        height: 234
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26a1c1d78940e2580800000000000000
+      internalID: -8850131164755912094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunRecoveryTrial-P2_30
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 556
+        width: 187
+        height: 235
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30c5056c9493016a0800000000000000
+      internalID: -6480616874763592701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunRecoveryTrial-P2_31
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 557
+        width: 174
+        height: 234
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 794928c46c8e4e250800000000000000
+      internalID: 5973154944184915095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunRecoveryTrial-P2_32
+      rect:
+        serializedVersion: 2
+        x: 1186
+        y: 557
+        width: 175
+        height: 237
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fe68dbc262889890800000000000000
+      internalID: -7451062222646120717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunRecoveryTrial-P2_33
+      rect:
+        serializedVersion: 2
+        x: 1708
+        y: 560
+        width: 175
+        height: 237
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c88588d274cf0afd0800000000000000
+      internalID: -2332587224341129076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunRecoveryTrial-P2_34
+      rect:
+        serializedVersion: 2
+        x: 2227
+        y: 566
+        width: 175
+        height: 235
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39614534a5b7ad770800000000000000
+      internalID: 8636350863043204755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunRecoveryTrial-P2_35
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 60
+        width: 187
+        height: 229
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9801194ad617c770800000000000000
+      internalID: 8630892337663379610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunRecoveryTrial-P2_36
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 58
+        width: 194
+        height: 231
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7627971bca80603a0800000000000000
+      internalID: -6699657857862110617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunRecoveryTrial-P2_37
+      rect:
+        serializedVersion: 2
+        x: 1185
+        y: 53
+        width: 191
+        height: 234
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08abfc43c8bcad260800000000000000
+      internalID: 7123229563681749632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunRecoveryTrial-P2_38
+      rect:
+        serializedVersion: 2
+        x: 1688
+        y: 49
+        width: 214
+        height: 235
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb69f9942a84053e0800000000000000
+      internalID: -2067072367105960261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunRecoveryTrial-P2_39
+      rect:
+        serializedVersion: 2
+        x: 2189
+        y: 48
+        width: 244
+        height: 232
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a17fdfdf221de8d0800000000000000
+      internalID: -2815574195207966295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      RunRecoveryTrial-P2_0: 6211241650058160059
+      RunRecoveryTrial-P2_1: -822116769429423866
+      RunRecoveryTrial-P2_10: -8306873031718951316
+      RunRecoveryTrial-P2_11: 7851753947902878766
+      RunRecoveryTrial-P2_12: 5399183381894751013
+      RunRecoveryTrial-P2_13: 5656889145636933891
+      RunRecoveryTrial-P2_14: -5804647614287467604
+      RunRecoveryTrial-P2_15: -8169728659514044093
+      RunRecoveryTrial-P2_16: 4789806304071399962
+      RunRecoveryTrial-P2_17: -6265847112330344685
+      RunRecoveryTrial-P2_18: 7762445245483083039
+      RunRecoveryTrial-P2_19: 5079528101618079640
+      RunRecoveryTrial-P2_2: 7940097484251991726
+      RunRecoveryTrial-P2_20: 3456344240815625597
+      RunRecoveryTrial-P2_21: 36182471612619589
+      RunRecoveryTrial-P2_22: -7872106147597725072
+      RunRecoveryTrial-P2_23: -6638679965087020831
+      RunRecoveryTrial-P2_24: -3645585572259049813
+      RunRecoveryTrial-P2_25: -4818945610603359297
+      RunRecoveryTrial-P2_26: -8775351341150184488
+      RunRecoveryTrial-P2_27: -6183308672823434129
+      RunRecoveryTrial-P2_28: 2861614446180772082
+      RunRecoveryTrial-P2_29: -8850131164755912094
+      RunRecoveryTrial-P2_3: 8979860204341306889
+      RunRecoveryTrial-P2_30: -6480616874763592701
+      RunRecoveryTrial-P2_31: 5973154944184915095
+      RunRecoveryTrial-P2_32: -7451062222646120717
+      RunRecoveryTrial-P2_33: -2332587224341129076
+      RunRecoveryTrial-P2_34: 8636350863043204755
+      RunRecoveryTrial-P2_35: 8630892337663379610
+      RunRecoveryTrial-P2_36: -6699657857862110617
+      RunRecoveryTrial-P2_37: 7123229563681749632
+      RunRecoveryTrial-P2_38: -2067072367105960261
+      RunRecoveryTrial-P2_39: -2815574195207966295
+      RunRecoveryTrial-P2_4: 2779955750245782614
+      RunRecoveryTrial-P2_5: 2996134936105413737
+      RunRecoveryTrial-P2_6: -2064673033877864424
+      RunRecoveryTrial-P2_7: 5239013124605349107
+      RunRecoveryTrial-P2_8: 7936139730063421247
+      RunRecoveryTrial-P2_9: 5725778897239742521
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

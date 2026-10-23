@@ -1,0 +1,394 @@
+[
+  {
+    "source": "Assets/RightWalkPrototype/Art/CrouchTrial/crouch-lower-atlas-v2.png",
+    "variants": [
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/crouch-lower-atlas-v2-P2.png",
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/crouch-lower-atlas-v2-P3.png",
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/crouch-lower-atlas-v2-P4.png"
+    ],
+    "hair_pixels": 0,
+    "gold_pixels": 25740,
+    "iris_pixels": 0,
+    "source_sha256": "35b2836d48841cce32d064a02739948a6c1671b29d4d10462097c1d9463fb06f",
+    "alpha_exact": true,
+    "outside_mask_changed": 0
+  },
+  {
+    "source": "Assets/RightWalkPrototype/Art/DeathTrial/death-final-v2.png",
+    "variants": [
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/death-final-v2-P2.png",
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/death-final-v2-P3.png",
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/death-final-v2-P4.png"
+    ],
+    "hair_pixels": 112680,
+    "gold_pixels": 24834,
+    "iris_pixels": 0,
+    "source_sha256": "853f6fd10d7b1328c25f181b216884dead583854438d3408f05fa660da2fd4be",
+    "alpha_exact": true,
+    "outside_mask_changed": 0
+  },
+  {
+    "source": "Assets/RightWalkPrototype/Art/DeathTrial/death-middle-v1.png",
+    "variants": [
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/death-middle-v1-P2.png",
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/death-middle-v1-P3.png",
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/death-middle-v1-P4.png"
+    ],
+    "hair_pixels": 131360,
+    "gold_pixels": 26290,
+    "iris_pixels": 0,
+    "source_sha256": "debf4fc2355df15c12ba16fb685adeb6b1bde24da3d3e1fa67ee79a3dc216c81",
+    "alpha_exact": true,
+    "outside_mask_changed": 0
+  },
+  {
+    "source": "Assets/RightWalkPrototype/Art/FrontDownAim/front-down-air-legs-approved-v9.png",
+    "variants": [
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/front-down-air-legs-approved-v9-P2.png",
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/front-down-air-legs-approved-v9-P3.png",
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/front-down-air-legs-approved-v9-P4.png"
+    ],
+    "hair_pixels": 0,
+    "gold_pixels": 2055,
+    "iris_pixels": 0,
+    "source_sha256": "381b83eaa40fcfbdb88c0e9df3364f884f62048149bce96c859c817ce992afa4",
+    "alpha_exact": true,
+    "outside_mask_changed": 0
+  },
+  {
+    "source": "Assets/RightWalkPrototype/Art/FrontDownAim/front-down-atlas-playable-waist-v2.png",
+    "variants": [
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/front-down-atlas-playable-waist-v2-P2.png",
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/front-down-atlas-playable-waist-v2-P3.png",
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/front-down-atlas-playable-waist-v2-P4.png"
+    ],
+    "hair_pixels": 105618,
+    "gold_pixels": 34972,
+    "iris_pixels": 606,
+    "source_sha256": "551444166dbc0f2fa0c5613d556daa1d54b216b5a9031e68ae9d04effce2da1a",
+    "alpha_exact": true,
+    "outside_mask_changed": 0
+  },
+  {
+    "source": "Assets/RightWalkPrototype/Art/JumpAirbornePose.png",
+    "variants": [
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/JumpAirbornePose-P2.png",
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/JumpAirbornePose-P3.png",
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/JumpAirbornePose-P4.png"
+    ],
+    "hair_pixels": 0,
+    "gold_pixels": 1181,
+    "iris_pixels": 0,
+    "source_sha256": "aa2bbfae199207fa001b34267fb6c3972d6c7a47a39bae87ce6059c3a6382106",
+    "alpha_exact": true,
+    "outside_mask_changed": 0
+  },
+  {
+    "source": "Assets/RightWalkPrototype/Art/RightWalk-CollarFront-v45.png",
+    "variants": [
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-CollarFront-v45-P2.png",
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-CollarFront-v45-P3.png",
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-CollarFront-v45-P4.png"
+    ],
+    "hair_pixels": 0,
+    "gold_pixels": 152,
+    "iris_pixels": 0,
+    "source_sha256": "8e52d4f5773957aea760cf469f39c35815ab33d87054e5e4ad76feb9f875f6fd",
+    "alpha_exact": true,
+    "outside_mask_changed": 0
+  },
+  {
+    "source": "Assets/RightWalkPrototype/Art/RightWalk-FarForearm-v43.png",
+    "variants": [
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-FarForearm-v43-P2.png",
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-FarForearm-v43-P3.png",
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-FarForearm-v43-P4.png"
+    ],
+    "hair_pixels": 0,
+    "gold_pixels": 213,
+    "iris_pixels": 0,
+    "source_sha256": "3ed5bdad82414e6104fa45fad1823504314db23befc34d33d860a83da6d2b75d",
+    "alpha_exact": true,
+    "outside_mask_changed": 0
+  },
+  {
+    "source": "Assets/RightWalkPrototype/Art/RightWalk-FarUpperArm-v48.png",
+    "variants": [
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-FarUpperArm-v48-P2.png",
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-FarUpperArm-v48-P3.png",
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-FarUpperArm-v48-P4.png"
+    ],
+    "hair_pixels": 0,
+    "gold_pixels": 232,
+    "iris_pixels": 0,
+    "source_sha256": "761e644548f3740e4fb1e9ec4de9016727f3e7eea26d8ae3edf7fe56bc963ee0",
+    "alpha_exact": true,
+    "outside_mask_changed": 0
+  },
+  {
+    "source": "Assets/RightWalkPrototype/Art/RightWalk-HeadFace-v46.png",
+    "variants": [
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-HeadFace-v46-P2.png",
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-HeadFace-v46-P3.png",
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-HeadFace-v46-P4.png"
+    ],
+    "hair_pixels": 14207,
+    "gold_pixels": 158,
+    "iris_pixels": 31,
+    "source_sha256": "be909c4bdf046de460d97bc3af2749efe2f27d66f4fa2754abbcaca3b4281498",
+    "alpha_exact": true,
+    "outside_mask_changed": 0
+  },
+  {
+    "source": "Assets/RightWalkPrototype/Art/RightWalk-Hip-Clothing-v43.png",
+    "variants": [
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-Hip-Clothing-v43-P2.png",
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-Hip-Clothing-v43-P3.png",
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-Hip-Clothing-v43-P4.png"
+    ],
+    "hair_pixels": 0,
+    "gold_pixels": 384,
+    "iris_pixels": 0,
+    "source_sha256": "3d3c6f389b42f1bcf4e0caf349761870f3bc507317ea15810f611327ea7b0e53",
+    "alpha_exact": true,
+    "outside_mask_changed": 0
+  },
+  {
+    "source": "Assets/RightWalkPrototype/Art/RightWalk-NearForearm-v43.png",
+    "variants": [
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-NearForearm-v43-P2.png",
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-NearForearm-v43-P3.png",
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-NearForearm-v43-P4.png"
+    ],
+    "hair_pixels": 0,
+    "gold_pixels": 281,
+    "iris_pixels": 0,
+    "source_sha256": "93744977e72444783d0d37b141a2df1b98c522c8d767f35bc4f675823bb3f57f",
+    "alpha_exact": true,
+    "outside_mask_changed": 0
+  },
+  {
+    "source": "Assets/RightWalkPrototype/Art/RightWalk-NearUpperArm-v47.png",
+    "variants": [
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-NearUpperArm-v47-P2.png",
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-NearUpperArm-v47-P3.png",
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-NearUpperArm-v47-P4.png"
+    ],
+    "hair_pixels": 0,
+    "gold_pixels": 225,
+    "iris_pixels": 0,
+    "source_sha256": "6de5474e1a79999e66dc649ca722241835d03bdcbf09dfbff0e538e5a696a77b",
+    "alpha_exact": true,
+    "outside_mask_changed": 0
+  },
+  {
+    "source": "Assets/RightWalkPrototype/Art/RightWalk-Pelvis-Underlay-v46.png",
+    "variants": [
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-Pelvis-Underlay-v46-P2.png",
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-Pelvis-Underlay-v46-P3.png",
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-Pelvis-Underlay-v46-P4.png"
+    ],
+    "hair_pixels": 0,
+    "gold_pixels": 63,
+    "iris_pixels": 0,
+    "source_sha256": "2a166c394e5d8cb426978d1cc3e0f9fcf1802dd157a881549af903ce202e54a7",
+    "alpha_exact": true,
+    "outside_mask_changed": 0
+  },
+  {
+    "source": "Assets/RightWalkPrototype/Art/RightWalk-Torso-v42.png",
+    "variants": [
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-Torso-v42-P2.png",
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-Torso-v42-P3.png",
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-Torso-v42-P4.png"
+    ],
+    "hair_pixels": 0,
+    "gold_pixels": 726,
+    "iris_pixels": 0,
+    "source_sha256": "4cb9a045247bd37f07e2ced715dd89edc47ad62514478254ea2b4a844439bb71",
+    "alpha_exact": true,
+    "outside_mask_changed": 0
+  },
+  {
+    "source": "Assets/RightWalkPrototype/Art/RightWalk-Weapon-v42.png",
+    "variants": [
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-Weapon-v42-P2.png",
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-Weapon-v42-P3.png",
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-Weapon-v42-P4.png"
+    ],
+    "hair_pixels": 0,
+    "gold_pixels": 519,
+    "iris_pixels": 0,
+    "source_sha256": "32911b452215c498d4160f1a616c291cc0c3fbc943bbba677060990d569b1d1a",
+    "alpha_exact": true,
+    "outside_mask_changed": 0
+  },
+  {
+    "source": "Assets/RightWalkPrototype/Art/RightWalk-WeaponHands-v44.png",
+    "variants": [
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-WeaponHands-v44-P2.png",
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-WeaponHands-v44-P3.png",
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-WeaponHands-v44-P4.png"
+    ],
+    "hair_pixels": 0,
+    "gold_pixels": 497,
+    "iris_pixels": 0,
+    "source_sha256": "858a291d6c653aaed2f7fd72307155dd3f3bd2960078b7c6bba5d6150efda065",
+    "alpha_exact": true,
+    "outside_mask_changed": 0
+  },
+  {
+    "source": "Assets/RightWalkPrototype/Art/RunRecoveryTrial.png",
+    "variants": [
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/RunRecoveryTrial-P2.png",
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/RunRecoveryTrial-P3.png",
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/RunRecoveryTrial-P4.png"
+    ],
+    "hair_pixels": 0,
+    "gold_pixels": 63217,
+    "iris_pixels": 0,
+    "source_sha256": "f17ad4f779621d6fcd379456416bf23d65de70a384e65619e6caad6bb29534a0",
+    "alpha_exact": true,
+    "outside_mask_changed": 0
+  },
+  {
+    "source": "Assets/RightWalkPrototype/Art/WalkStrideTrial.png",
+    "variants": [
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/WalkStrideTrial-P2.png",
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/WalkStrideTrial-P3.png",
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/WalkStrideTrial-P4.png"
+    ],
+    "hair_pixels": 0,
+    "gold_pixels": 62890,
+    "iris_pixels": 0,
+    "source_sha256": "ffdb53aa8b1829fd5fe0222ac3ebd7942fc6c80bba1af40456c40fbd84a7e1b8",
+    "alpha_exact": true,
+    "outside_mask_changed": 0
+  },
+  {
+    "source": "Assets/RightWalkPrototype/Resources/JumpTransition/Boot.png",
+    "variants": [
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/Boot-P2.png",
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/Boot-P3.png",
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/Boot-P4.png"
+    ],
+    "hair_pixels": 0,
+    "gold_pixels": 448,
+    "iris_pixels": 0,
+    "source_sha256": "91edead8afadd7e4eb52091579f82ff78de7b947c130100acbd6f67f60cb8e89",
+    "alpha_exact": true,
+    "outside_mask_changed": 0
+  },
+  {
+    "source": "Assets/RightWalkPrototype/Resources/JumpTransition/FarKnee.png",
+    "variants": [
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/FarKnee-P2.png",
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/FarKnee-P3.png",
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/FarKnee-P4.png"
+    ],
+    "hair_pixels": 0,
+    "gold_pixels": 232,
+    "iris_pixels": 0,
+    "source_sha256": "5e447175d7411575b503a6b1ab480fecdf6f99eaf796d7c501aa47c410605d20",
+    "alpha_exact": true,
+    "outside_mask_changed": 0
+  },
+  {
+    "source": "Assets/RightWalkPrototype/Resources/JumpTransition/Knee.png",
+    "variants": [
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/Knee-P2.png",
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/Knee-P3.png",
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/Knee-P4.png"
+    ],
+    "hair_pixels": 0,
+    "gold_pixels": 232,
+    "iris_pixels": 0,
+    "source_sha256": "5e447175d7411575b503a6b1ab480fecdf6f99eaf796d7c501aa47c410605d20",
+    "alpha_exact": true,
+    "outside_mask_changed": 0
+  },
+  {
+    "source": "Assets/RightWalkPrototype/Resources/JumpTransition/farShin.png",
+    "variants": [
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/farShin-P2.png",
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/farShin-P3.png",
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/farShin-P4.png"
+    ],
+    "hair_pixels": 0,
+    "gold_pixels": 311,
+    "iris_pixels": 0,
+    "source_sha256": "e13b241d543ada4a6d6107f9eca1fe37039c206b84d9947d5d201085db05a14a",
+    "alpha_exact": true,
+    "outside_mask_changed": 0
+  },
+  {
+    "source": "Assets/RightWalkPrototype/Resources/JumpTransition/farThigh.png",
+    "variants": [
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/farThigh-P2.png",
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/farThigh-P3.png",
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/farThigh-P4.png"
+    ],
+    "hair_pixels": 0,
+    "gold_pixels": 193,
+    "iris_pixels": 0,
+    "source_sha256": "5bbfbe77dff5695c38000b166aca232adf63581a3a987ed7124fcae92adb99c3",
+    "alpha_exact": true,
+    "outside_mask_changed": 0
+  },
+  {
+    "source": "Assets/RightWalkPrototype/Resources/JumpTransition/nearShin.png",
+    "variants": [
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/nearShin-P2.png",
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/nearShin-P3.png",
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/nearShin-P4.png"
+    ],
+    "hair_pixels": 0,
+    "gold_pixels": 426,
+    "iris_pixels": 0,
+    "source_sha256": "a3564f7253c723e31c29db6bb5bfe4cfd2b08bb363c055e50ee49099bf21118e",
+    "alpha_exact": true,
+    "outside_mask_changed": 0
+  },
+  {
+    "source": "Assets/RightWalkPrototype/Resources/JumpTransition/nearThigh.png",
+    "variants": [
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/nearThigh-P2.png",
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/nearThigh-P3.png",
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/nearThigh-P4.png"
+    ],
+    "hair_pixels": 0,
+    "gold_pixels": 428,
+    "iris_pixels": 0,
+    "source_sha256": "414c94df7f359b6d3a7027e9d29c4a9d922fa0f50706248ba771a03aa0e1a64a",
+    "alpha_exact": true,
+    "outside_mask_changed": 0
+  },
+  {
+    "source": "Assets/RightWalkPrototype/Resources/JumpTransition/AlternateAir.png",
+    "variants": [
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/AlternateAir-P2.png",
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/AlternateAir-P3.png",
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/AlternateAir-P4.png"
+    ],
+    "hair_pixels": 0,
+    "gold_pixels": 1352,
+    "iris_pixels": 0,
+    "source_sha256": "8858a2878cf41cd5a0485b5e6aeb8a29e9b3ec63de888baa472a62fd1df8c189",
+    "alpha_exact": true,
+    "outside_mask_changed": 0
+  },
+  {
+    "source": "Assets/RightWalkPrototype/Resources/JumpTransition/Waist.png",
+    "variants": [
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/Waist-P2.png",
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/Waist-P3.png",
+      "Assets/RightWalkPrototype/Art/PlayerPalettes/Waist-P4.png"
+    ],
+    "hair_pixels": 0,
+    "gold_pixels": 47,
+    "iris_pixels": 0,
+    "source_sha256": "9e931e89d2d29b7168434fdaa6a56798844ff5afc7e2e3b8e6ce9bf0020ea664",
+    "alpha_exact": true,
+    "outside_mask_changed": 0
+  }
+]

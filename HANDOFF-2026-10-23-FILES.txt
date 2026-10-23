@@ -1,0 +1,227 @@
+2026-10-23 학원 인계 시점 변경 목록
+자동 커밋/푸시/집 전송은 하지 않았음. ?? 새 파일과 폴더 내부 및 .meta도 전달할 것.
+LocalTools 검사/미술 자료는 Git 제외일 수 있어 HOME 문서의 별도 복사 목록 참조.
+
+HEAD:
+bde7ebd 로비와 방
+
+ M AGENTS.md
+ M Assets/RightWalkPrototype/Art/FrontDownAim/FrontHighlightTone.shader
+ M Assets/RightWalkPrototype/Art/HeadSplit-v88.shader
+ M Assets/RightWalkPrototype/Art/LegEdge-v42.shader
+ M Assets/RightWalkPrototype/Art/LooseRifle.shader
+ M Assets/RightWalkPrototype/Editor/ArenaReadyRoomReview.Appearance.cs
+ M Assets/RightWalkPrototype/Editor/ArenaReadyRoomReview.Selection.cs
+ M Assets/RightWalkPrototype/Editor/ArenaReadyRoomReview.cs
+ M Assets/RightWalkPrototype/Editor/FoundryEntryBuilder.cs
+ M Assets/RightWalkPrototype/Scenes/Network/RelayFoundryPrototype.unity
+ M Assets/RightWalkPrototype/Scripts/ArenaObjectiveMatch.Room.cs
+ M Assets/RightWalkPrototype/Scripts/ArenaPlatformMotor.cs
+ M Assets/RightWalkPrototype/Scripts/ArenaPlayerAppearance.cs
+ M Assets/RightWalkPrototype/Scripts/RelayArenaPrototype.cs
+ M Assets/RightWalkPrototype/Scripts/RightFacingAimRig.cs
+ M Assets/RightWalkPrototype/Scripts/SideScrollNetworkPlayer.AmmoSelectionHint.cs
+ M Assets/RightWalkPrototype/Scripts/SideScrollNetworkPlayer.NormalAmmo.cs
+ M Assets/RightWalkPrototype/Scripts/SideScrollNetworkPlayer.cs
+ M Assets/RightWalkPrototype/Scripts/SideScrollNetworkSession.LobbyUI.cs
+ M Assets/RightWalkPrototype/Scripts/SideScrollNetworkSession.cs
+?? Assets/RightWalkPrototype/Art/PlayerIdentity.cginc
+?? Assets/RightWalkPrototype/Art/PlayerIdentity.cginc.meta
+?? Assets/RightWalkPrototype/Art/PlayerIdentitySprite.shader
+?? Assets/RightWalkPrototype/Art/PlayerIdentitySprite.shader.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/AlternateAir-P2.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/AlternateAir-P2.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/AlternateAir-P3.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/AlternateAir-P3.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/AlternateAir-P4.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/AlternateAir-P4.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/Boot-P2.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/Boot-P2.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/Boot-P3.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/Boot-P3.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/Boot-P4.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/Boot-P4.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/FarKnee-P2.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/FarKnee-P2.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/FarKnee-P3.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/FarKnee-P3.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/FarKnee-P4.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/FarKnee-P4.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/JumpAirbornePose-P2.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/JumpAirbornePose-P2.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/JumpAirbornePose-P3.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/JumpAirbornePose-P3.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/JumpAirbornePose-P4.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/JumpAirbornePose-P4.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/Knee-P2.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/Knee-P2.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/Knee-P3.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/Knee-P3.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/Knee-P4.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/Knee-P4.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-CollarFront-v45-P2.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-CollarFront-v45-P2.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-CollarFront-v45-P3.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-CollarFront-v45-P3.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-CollarFront-v45-P4.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-CollarFront-v45-P4.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-FarForearm-v43-P2.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-FarForearm-v43-P2.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-FarForearm-v43-P3.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-FarForearm-v43-P3.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-FarForearm-v43-P4.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-FarForearm-v43-P4.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-FarUpperArm-v48-P2.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-FarUpperArm-v48-P2.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-FarUpperArm-v48-P3.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-FarUpperArm-v48-P3.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-FarUpperArm-v48-P4.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-FarUpperArm-v48-P4.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-HeadFace-v46-P2.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-HeadFace-v46-P2.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-HeadFace-v46-P3.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-HeadFace-v46-P3.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-HeadFace-v46-P4.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-HeadFace-v46-P4.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-Hip-Clothing-v43-P2.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-Hip-Clothing-v43-P2.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-Hip-Clothing-v43-P3.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-Hip-Clothing-v43-P3.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-Hip-Clothing-v43-P4.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-Hip-Clothing-v43-P4.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-NearForearm-v43-P2.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-NearForearm-v43-P2.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-NearForearm-v43-P3.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-NearForearm-v43-P3.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-NearForearm-v43-P4.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-NearForearm-v43-P4.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-NearUpperArm-v47-P2.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-NearUpperArm-v47-P2.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-NearUpperArm-v47-P3.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-NearUpperArm-v47-P3.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-NearUpperArm-v47-P4.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-NearUpperArm-v47-P4.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-Pelvis-Underlay-v46-P2.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-Pelvis-Underlay-v46-P2.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-Pelvis-Underlay-v46-P3.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-Pelvis-Underlay-v46-P3.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-Pelvis-Underlay-v46-P4.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-Pelvis-Underlay-v46-P4.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-Torso-v42-P2.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-Torso-v42-P2.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-Torso-v42-P3.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-Torso-v42-P3.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-Torso-v42-P4.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-Torso-v42-P4.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-Weapon-v42-P2.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-Weapon-v42-P2.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-Weapon-v42-P3.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-Weapon-v42-P3.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-Weapon-v42-P4.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-Weapon-v42-P4.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-WeaponHands-v44-P2.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-WeaponHands-v44-P2.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-WeaponHands-v44-P3.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-WeaponHands-v44-P3.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-WeaponHands-v44-P4.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/RightWalk-WeaponHands-v44-P4.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/RunRecoveryTrial-P2.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/RunRecoveryTrial-P2.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/RunRecoveryTrial-P3.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/RunRecoveryTrial-P3.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/RunRecoveryTrial-P4.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/RunRecoveryTrial-P4.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/Waist-P2.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/Waist-P2.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/Waist-P3.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/Waist-P3.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/Waist-P4.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/Waist-P4.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/WalkStrideTrial-P2.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/WalkStrideTrial-P2.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/WalkStrideTrial-P3.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/WalkStrideTrial-P3.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/WalkStrideTrial-P4.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/WalkStrideTrial-P4.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/crouch-lower-atlas-v2-P2.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/crouch-lower-atlas-v2-P2.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/crouch-lower-atlas-v2-P3.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/crouch-lower-atlas-v2-P3.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/crouch-lower-atlas-v2-P4.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/crouch-lower-atlas-v2-P4.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/death-final-v2-P2.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/death-final-v2-P2.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/death-final-v2-P3.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/death-final-v2-P3.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/death-final-v2-P4.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/death-final-v2-P4.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/death-middle-v1-P2.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/death-middle-v1-P2.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/death-middle-v1-P3.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/death-middle-v1-P3.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/death-middle-v1-P4.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/death-middle-v1-P4.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/farShin-P2.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/farShin-P2.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/farShin-P3.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/farShin-P3.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/farShin-P4.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/farShin-P4.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/farThigh-P2.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/farThigh-P2.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/farThigh-P3.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/farThigh-P3.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/farThigh-P4.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/farThigh-P4.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/front-down-air-legs-approved-v9-P2.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/front-down-air-legs-approved-v9-P2.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/front-down-air-legs-approved-v9-P3.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/front-down-air-legs-approved-v9-P3.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/front-down-air-legs-approved-v9-P4.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/front-down-air-legs-approved-v9-P4.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/front-down-atlas-playable-waist-v2-P2.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/front-down-atlas-playable-waist-v2-P2.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/front-down-atlas-playable-waist-v2-P3.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/front-down-atlas-playable-waist-v2-P3.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/front-down-atlas-playable-waist-v2-P4.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/front-down-atlas-playable-waist-v2-P4.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/nearShin-P2.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/nearShin-P2.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/nearShin-P3.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/nearShin-P3.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/nearShin-P4.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/nearShin-P4.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/nearThigh-P2.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/nearThigh-P2.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/nearThigh-P3.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/nearThigh-P3.png.meta
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/nearThigh-P4.png
+?? Assets/RightWalkPrototype/Art/PlayerPalettes/nearThigh-P4.png.meta
+?? Assets/RightWalkPrototype/Docs/PLAYER-PALETTES.ko.md
+?? Assets/RightWalkPrototype/Docs/PLAYER-PALETTES.ko.md.meta
+?? Assets/RightWalkPrototype/Docs/WEAPON-AIM-GUIDES.ko.md
+?? Assets/RightWalkPrototype/Docs/WEAPON-AIM-GUIDES.ko.md.meta
+?? Assets/RightWalkPrototype/Editor/ArenaReadyRoomReview.WeaponGuides.cs
+?? Assets/RightWalkPrototype/Editor/ArenaReadyRoomReview.WeaponGuides.cs.meta
+?? Assets/RightWalkPrototype/Editor/PlayerPaletteBuilder.cs
+?? Assets/RightWalkPrototype/Editor/PlayerPaletteBuilder.cs.meta
+?? Assets/RightWalkPrototype/Editor/PlayerPaletteSources.json
+?? Assets/RightWalkPrototype/Editor/PlayerPaletteSources.json.meta
+?? Assets/RightWalkPrototype/Resources/PlayerPaletteLibrary.asset
+?? Assets/RightWalkPrototype/Resources/PlayerPaletteLibrary.asset.meta
+?? Assets/RightWalkPrototype/Scripts/ArenaPlayerPaletteLibrary.cs
+?? Assets/RightWalkPrototype/Scripts/ArenaPlayerPaletteLibrary.cs.meta
+?? Assets/RightWalkPrototype/Scripts/ArenaTutorial.Space.cs
+?? Assets/RightWalkPrototype/Scripts/ArenaTutorial.Space.cs.meta
+?? Assets/RightWalkPrototype/Scripts/ArenaTutorial.UI.cs
+?? Assets/RightWalkPrototype/Scripts/ArenaTutorial.UI.cs.meta
+?? Assets/RightWalkPrototype/Scripts/ArenaTutorial.cs
+?? Assets/RightWalkPrototype/Scripts/ArenaTutorial.cs.meta
+?? Assets/RightWalkPrototype/Scripts/SideScrollNetworkPlayer.WeaponGuides.cs
+?? Assets/RightWalkPrototype/Scripts/SideScrollNetworkPlayer.WeaponGuides.cs.meta
+?? Assets/_Recovery.meta
+?? Assets/_Recovery/0.unity
+?? Assets/_Recovery/0.unity.meta
+?? HANDOFF-2026-10-23-HOME.ko.md
+?? HANDOFF-2026-10-23-TUTORIAL-TECHNICAL.ko.md

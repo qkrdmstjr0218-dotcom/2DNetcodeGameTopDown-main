@@ -267,6 +267,8 @@ namespace RightWalkPrototype
             var direction=AimDirection;
             var network=characterRoot.GetComponent<SideScrollNetworkPlayer>();
             if(network!=null&&network.GrenadeActive){network.DrawGrenadePreview(camera);return;}
+            if(network!=null&&network.SpecialHeld&&(network.SelectedAmmo==SideScrollNetworkPlayer.AmmoKind.Rifle||network.SelectedAmmo==SideScrollNetworkPlayer.AmmoKind.InstantShotgun||network.SelectedAmmo==SideScrollNetworkPlayer.AmmoKind.Shotgun))
+            {network.DrawWeaponGuide(camera);return;}
             bool shotgun=network!=null&&(network.ShotgunActive||network.InstantShotgunActive);
             bool rifle=network!=null&&network.RifleActive;
             float range=rifle?SideScrollNetworkPlayer.RifleRange:shotgun?SideScrollNetworkPlayer.ShotgunRange:Mathf.Max(.1f,previewAimRange);

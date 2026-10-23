@@ -27,6 +27,12 @@ namespace RightWalkPrototype
             // box (including a one-way/solid seam). Round only the tiny contact
             // corner; art and the separately calculated damage bounds stay intact.
             shape.edgeRadius=Mathf.Max(shape.edgeRadius,.025f);
+            RefreshPlatforms();
+        }
+        public void RefreshPlatforms()
+        {
+            foreach(var c in ignored)if(c!=null&&shape!=null)Physics2D.IgnoreCollision(shape,c,false);
+            platforms.Clear();passableCovers.Clear();ignored.Clear();admitted.Clear();dropping.Clear();flatJoin=default;
             foreach(var effector in FindObjectsByType<PlatformEffector2D>(FindObjectsSortMode.None))
                 if(effector.useOneWay)foreach(var collider in effector.GetComponents<Collider2D>())if(collider.usedByEffector)
                 {platforms.Add(collider);if(collider.GetComponent<ArenaCover>()!=null)passableCovers.Add(collider);}

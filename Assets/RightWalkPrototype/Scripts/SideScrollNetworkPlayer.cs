@@ -132,6 +132,7 @@ namespace RightWalkPrototype
             // Keep every pose's parts together without changing their internal order.
             characterSorting=GetComponent<UnityEngine.Rendering.SortingGroup>();
             if(characterSorting==null)characterSorting=gameObject.AddComponent<UnityEngine.Rendering.SortingGroup>();
+            if(GetComponent<ArenaPlayerAppearance>()==null)gameObject.AddComponent<ArenaPlayerAppearance>();
             SetCharacterOrder(0,PlayerNumber);playerNumber.OnValueChanged+=SetCharacterOrder;
             walker=GetComponent<RightFacingWalker>();movement=GetComponent<SideScrollMapPreview>();
             gait=GetComponent<RunWalkPreview>();crouch=GetComponent<CrouchTrial>();air=GetComponent<AirDownShotPose>();
@@ -166,6 +167,7 @@ namespace RightWalkPrototype
         }
         private Vector3 SpawnPosition()
         {
+            if(ArenaTutorial.Active)return ArenaTutorial.Instance.Checkpoint;
             var session=FindFirstObjectByType<SideScrollNetworkSession>();
             var match=ArenaObjectiveMatch.Instance;
             if(session!=null&&session.useReadyRoom&&session.arenaObjectivePrefab!=null&&RelayArenaPrototype.Instance!=null&&(match==null||match.RoomView))return ArenaReadyRoom.Spawn(PlayerNumber);
@@ -338,7 +340,7 @@ namespace RightWalkPrototype
         public int GrantHealthServer(int amount,uint generation)
         {
             var match=ArenaObjectiveMatch.Instance;
-            if(!IsServer||!IsSpawned||IsDead||!HasCurrentLifePose||amount<=0||generation!=LifeVersion||match==null||!match.RoomFlow||match.State.Value.Phase!=ArenaObjectiveMatch.Stage.Playing)return 0;
+            if(!IsServer||!IsSpawned||IsDead||!HasCurrentLifePose||amount<=0||generation!=LifeVersion||match==null||!match.RoomFlow||(match.State.Value.Phase!=ArenaObjectiveMatch.Stage.Playing&&!(ArenaTutorial.Active&&ArenaObjectiveMatch.PracticeRoom)))return 0;
             int healed=Mathf.Min(amount,Mathf.Max(0,MaxHealth-Health));if(healed==0)return 0;
             var state=life.Value;state.Health+=healed;life.Value=state;return healed;
         }
@@ -365,7 +367,7 @@ namespace RightWalkPrototype
         {
             if(!IsSpawned||Camera.main==null||ArenaObjectiveMatch.TransitionActive)return;
             DrawWorldStamina();DrawShieldHud();DrawAmmoSelectionHint();
-            if(ArenaObjectiveMatch.InReadyRoom)
+            if(ArenaObjectiveMatch.InReadyRoom&&!ArenaTutorial.Active)
             {
                 var at=Camera.main.WorldToScreenPoint(transform.position+Vector3.up*2.45f);
                 if(at.z>0)GUI.Label(new Rect(at.x-75,Screen.height-at.y,150,25),"P"+PlayerNumber+(IsOwner?" (나)":"")+" · "+(ArenaObjectiveMatch.Instance.IsReady(OwnerClientId)?"준비 완료":"준비 중"),new GUIStyle(GUI.skin.label){alignment=TextAnchor.MiddleCenter,normal={textColor=ArenaPlayerAppearance.Accent(PlayerNumber)}});

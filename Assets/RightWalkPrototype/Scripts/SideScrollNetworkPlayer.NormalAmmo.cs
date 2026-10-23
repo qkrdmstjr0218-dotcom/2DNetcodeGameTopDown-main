@@ -75,7 +75,7 @@ namespace RightWalkPrototype
             GUILayout.Label("일반탄  "+NormalRounds+" / "+NormalCapacity+"     S 샷건  "+ShotgunRounds+" / "+ShotgunCapacity);
             GUILayout.Label("R 라이플  "+RifleRounds+" / "+RifleCapacity+"     G 유탄  "+GrenadeRounds+" / "+GrenadeCapacity);
             GUILayout.Label("Q/E 특수탄 선택 · 우클릭 동안 사용");
-            GUILayout.Label("특수탄 선택: "+SelectedAmmoName);
+            GUILayout.Label("특수탄 선택: "+SelectedAmmoName+"  "+AmmoSelectionHintCountText);
             GUILayout.EndArea();
             if(!AmmoCursorVisible||Event.current.type!=EventType.Repaint)return;
             var point=MouseScreenPoint();point.y=Screen.height-point.y;

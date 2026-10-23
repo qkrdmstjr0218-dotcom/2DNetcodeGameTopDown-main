@@ -20,6 +20,7 @@ namespace RightWalkPrototype
         }
         private void ClientStopped(bool wasHost)
         {
+            StopTutorial();
             ConnectionNotice=wasHost||intentionalDisconnect?"연결을 종료했습니다.":
                 connectedToHost?"호스트와의 연결이 종료되었습니다.\n다시 접속할 수 있습니다.":"호스트에 연결하지 못했습니다.\n호스트 실행 여부를 확인해 주세요.";
             if(!wasHost&&!intentionalDisconnect&&!connectedToHost&&sessionManager!=null&&!string.IsNullOrEmpty(sessionManager.DisconnectReason))ConnectionNotice=sessionManager.DisconnectReason;
@@ -28,6 +29,7 @@ namespace RightWalkPrototype
         }
         public void DisconnectLocal()
         {
+            StopTutorial();
             if(onlineConnection||onlineSession!=null){_=LeaveOnlineRoomAsync();return;}
             intentionalDisconnect=true;
             NetworkManager.Singleton?.Shutdown();
@@ -35,13 +37,27 @@ namespace RightWalkPrototype
         private void SpawnTargets()
         {
             if(arenaObjectivePrefab!=null)Instantiate(arenaObjectivePrefab).GetComponent<NetworkObject>().Spawn();
+            if(TutorialMode)return;
             if(targetPrefab==null)return;
             foreach(float x in new[]{-3f,3f})
                 Instantiate(targetPrefab,new Vector3(x,1.2f,0),Quaternion.identity).GetComponent<NetworkObject>().Spawn();
         }
         public bool SoloPractice {get;private set;}
-        public void StartSoloPractice()=>StartLocal(true,true);
-        public void StartLocal(bool host)=>StartLocal(host,false);
+        public void StartSoloPractice(){StopTutorial();StartLocal(true,true);}
+        public void StartLocal(bool host){StopTutorial();StartLocal(host,false);}
+        public bool TutorialMode=>ArenaTutorial.Active&&ArenaTutorial.Instance.Session==this;
+        public void StartTutorial()
+        {
+            var n=NetworkManager.Singleton;if(n==null||n.IsListening||n.ShutdownInProgress||OnlineBusy||onlineSession!=null)return;
+            ArenaTutorial.Begin(this);StartLocal(true,true);
+        }
+        void StopTutorial(){if(TutorialMode)ArenaTutorial.Instance.End();}
+        public void TutorialToPractice()=>StartCoroutine(SwitchTutorialToPractice());
+        System.Collections.IEnumerator SwitchTutorialToPractice()
+        {
+            DisconnectLocal();while(NetworkManager.Singleton!=null&&(NetworkManager.Singleton.IsListening||NetworkManager.Singleton.ShutdownInProgress))yield return null;
+            StartSoloPractice();
+        }
         void StartLocal(bool host,bool solo)
         {
             var manager=NetworkManager.Singleton;
@@ -143,7 +159,7 @@ namespace RightWalkPrototype
             else
             {
                 if(ArenaObjectiveMatch.Instance!=null&&ArenaObjectiveMatch.Instance.RoomFlow)
-                {GUILayout.Label(manager.IsHost?"내가 방장":"참가 중");GUILayout.Label(onlineConnection?"인터넷 · "+OnlineRoomName:SoloPractice?"혼자 연습 · 로컬":"로컬 테스트 연결");if(GUILayout.Button(manager.IsHost?"방 닫고 나가기":"방 나가기"))DisconnectLocal();GUILayout.EndArea();return;}
+                {GUILayout.Label(manager.IsHost?"내가 방장":"참가 중");GUILayout.Label(TutorialMode?"튜토리얼 · 오프라인":onlineConnection?"인터넷 · "+OnlineRoomName:SoloPractice?"혼자 연습 · 로컬":"로컬 테스트 연결");if(GUILayout.Button(manager.IsHost?"방 닫고 나가기":"방 나가기"))DisconnectLocal();GUILayout.EndArea();return;}
                 GUILayout.Label(manager.IsHost ? "Host : 7783" : "Client : 7783");
                 GUILayout.Label("Players: "+FindObjectsByType<SideScrollNetworkPlayer>(FindObjectsSortMode.None).Length);
                 if(manager.IsServer && GUILayout.Button("Reset Targets"))
@@ -154,6 +170,7 @@ namespace RightWalkPrototype
         }
         private void OnDestroy()
         {
+            StopTutorial();
             CleanupOnlineOnDestroy();
             if(sessionManager!=null)
             {

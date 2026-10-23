@@ -1,0 +1,546 @@
+fileFormatVersion: 2
+guid: d465347989876524dafdfaa371c4e9ee
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3184125055525947426
+    second: crouch-lower-atlas-v2-P3_0
+  - first:
+      213: 3787968564422363085
+    second: crouch-lower-atlas-v2-P3_1
+  - first:
+      213: 3486808923504074460
+    second: crouch-lower-atlas-v2-P3_2
+  - first:
+      213: -6118213077026985730
+    second: crouch-lower-atlas-v2-P3_3
+  - first:
+      213: 3727583118764352953
+    second: crouch-lower-atlas-v2-P3_4
+  - first:
+      213: -8554742305194157447
+    second: crouch-lower-atlas-v2-P3_5
+  - first:
+      213: -568115307890832437
+    second: crouch-lower-atlas-v2-P3_6
+  - first:
+      213: -127542007308879324
+    second: crouch-lower-atlas-v2-P3_7
+  - first:
+      213: 7235897135425949015
+    second: crouch-lower-atlas-v2-P3_8
+  - first:
+      213: -5609383567168421010
+    second: crouch-lower-atlas-v2-P3_9
+  - first:
+      213: 4173943245839294840
+    second: crouch-lower-atlas-v2-P3_10
+  - first:
+      213: -1482693561069917195
+    second: crouch-lower-atlas-v2-P3_11
+  - first:
+      213: -2770966663776853309
+    second: crouch-lower-atlas-v2-P3_12
+  - first:
+      213: -2610319783874756795
+    second: crouch-lower-atlas-v2-P3_13
+  - first:
+      213: 8528155307745467733
+    second: crouch-lower-atlas-v2-P3_14
+  - first:
+      213: 2756938503095665403
+    second: crouch-lower-atlas-v2-P3_15
+  - first:
+      213: -5469538079355235008
+    second: crouch-lower-atlas-v2-P3_16
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 0
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: crouch-lower-atlas-v2-P3_0
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 443
+        width: 583
+        height: 773
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed774f8d127bfc3d0800000000000000
+      internalID: -3184125055525947426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crouch-lower-atlas-v2-P3_1
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 1062
+        width: 42
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc7cdbef651919430800000000000000
+      internalID: 3787968564422363085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crouch-lower-atlas-v2-P3_2
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 592
+        width: 52
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cde5f15fd32a36030800000000000000
+      internalID: 3486808923504074460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crouch-lower-atlas-v2-P3_3
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 593
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef828a34f9db71ba0800000000000000
+      internalID: -6118213077026985730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crouch-lower-atlas-v2-P3_4
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 596
+        width: 28
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b521b0d8190bb330800000000000000
+      internalID: 3727583118764352953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crouch-lower-atlas-v2-P3_5
+      rect:
+        serializedVersion: 2
+        x: 547
+        y: 646
+        width: 15
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97a55e9c233774980800000000000000
+      internalID: -8554742305194157447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crouch-lower-atlas-v2-P3_6
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 650
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bcb84b13326ad18f0800000000000000
+      internalID: -568115307890832437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crouch-lower-atlas-v2-P3_7
+      rect:
+        serializedVersion: 2
+        x: 721
+        y: 592
+        width: 533
+        height: 459
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42af9685831ea3ef0800000000000000
+      internalID: -127542007308879324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crouch-lower-atlas-v2-P3_8
+      rect:
+        serializedVersion: 2
+        x: 786
+        y: 598
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75d84547b121b6460800000000000000
+      internalID: 7235897135425949015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crouch-lower-atlas-v2-P3_9
+      rect:
+        serializedVersion: 2
+        x: 804
+        y: 602
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e63430e8d577722b0800000000000000
+      internalID: -5609383567168421010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crouch-lower-atlas-v2-P3_10
+      rect:
+        serializedVersion: 2
+        x: 932
+        y: 596
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87164e08443dce930800000000000000
+      internalID: 4173943245839294840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crouch-lower-atlas-v2-P3_11
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 602
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fb2ba5df0a6c6be0800000000000000
+      internalID: -1482693561069917195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crouch-lower-atlas-v2-P3_12
+      rect:
+        serializedVersion: 2
+        x: 956
+        y: 595
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c2a121208c8b89d0800000000000000
+      internalID: -2770966663776853309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crouch-lower-atlas-v2-P3_13
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 580
+        width: 17
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54f78f39cf746cbd0800000000000000
+      internalID: -2610319783874756795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crouch-lower-atlas-v2-P3_14
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 15
+        width: 572
+        height: 469
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55dd78b71181a5670800000000000000
+      internalID: 8528155307745467733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crouch-lower-atlas-v2-P3_15
+      rect:
+        serializedVersion: 2
+        x: 699
+        y: 0
+        width: 542
+        height: 474
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf24d9036fc924620800000000000000
+      internalID: 2756938503095665403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crouch-lower-atlas-v2-P3_16
+      rect:
+        serializedVersion: 2
+        x: 1155
+        y: 79
+        width: 36
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0451f8e781c4814b0800000000000000
+      internalID: -5469538079355235008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      crouch-lower-atlas-v2-P3_0: -3184125055525947426
+      crouch-lower-atlas-v2-P3_1: 3787968564422363085
+      crouch-lower-atlas-v2-P3_10: 4173943245839294840
+      crouch-lower-atlas-v2-P3_11: -1482693561069917195
+      crouch-lower-atlas-v2-P3_12: -2770966663776853309
+      crouch-lower-atlas-v2-P3_13: -2610319783874756795
+      crouch-lower-atlas-v2-P3_14: 8528155307745467733
+      crouch-lower-atlas-v2-P3_15: 2756938503095665403
+      crouch-lower-atlas-v2-P3_16: -5469538079355235008
+      crouch-lower-atlas-v2-P3_2: 3486808923504074460
+      crouch-lower-atlas-v2-P3_3: -6118213077026985730
+      crouch-lower-atlas-v2-P3_4: 3727583118764352953
+      crouch-lower-atlas-v2-P3_5: -8554742305194157447
+      crouch-lower-atlas-v2-P3_6: -568115307890832437
+      crouch-lower-atlas-v2-P3_7: -127542007308879324
+      crouch-lower-atlas-v2-P3_8: 7235897135425949015
+      crouch-lower-atlas-v2-P3_9: -5609383567168421010
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

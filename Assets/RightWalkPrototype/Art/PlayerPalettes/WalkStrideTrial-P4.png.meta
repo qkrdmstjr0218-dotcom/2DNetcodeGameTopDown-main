@@ -1,0 +1,1144 @@
+fileFormatVersion: 2
+guid: 5d69b680cff2a624db2a1440f30cf2ff
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8195629123162915099
+    second: WalkStrideTrial-P4_0
+  - first:
+      213: 7991711311298817289
+    second: WalkStrideTrial-P4_1
+  - first:
+      213: -7675307230476712358
+    second: WalkStrideTrial-P4_2
+  - first:
+      213: 6350070474562460116
+    second: WalkStrideTrial-P4_3
+  - first:
+      213: 4743760134152783181
+    second: WalkStrideTrial-P4_4
+  - first:
+      213: 1070433274379913820
+    second: WalkStrideTrial-P4_5
+  - first:
+      213: 7723173604138632107
+    second: WalkStrideTrial-P4_6
+  - first:
+      213: -3147227879525911217
+    second: WalkStrideTrial-P4_7
+  - first:
+      213: 8884715713762089181
+    second: WalkStrideTrial-P4_8
+  - first:
+      213: -7541336846417546645
+    second: WalkStrideTrial-P4_9
+  - first:
+      213: 8281625081901583912
+    second: WalkStrideTrial-P4_10
+  - first:
+      213: -5660651135049890256
+    second: WalkStrideTrial-P4_11
+  - first:
+      213: 5721437730568057787
+    second: WalkStrideTrial-P4_12
+  - first:
+      213: 8216749078466255630
+    second: WalkStrideTrial-P4_13
+  - first:
+      213: -6152906025633109830
+    second: WalkStrideTrial-P4_14
+  - first:
+      213: -3106108129732059962
+    second: WalkStrideTrial-P4_15
+  - first:
+      213: 9023302266542928198
+    second: WalkStrideTrial-P4_16
+  - first:
+      213: 7600986845463909042
+    second: WalkStrideTrial-P4_17
+  - first:
+      213: 8168306710047743433
+    second: WalkStrideTrial-P4_18
+  - first:
+      213: 8080643445966221909
+    second: WalkStrideTrial-P4_19
+  - first:
+      213: 5365471592120534647
+    second: WalkStrideTrial-P4_20
+  - first:
+      213: -6853511782116862718
+    second: WalkStrideTrial-P4_21
+  - first:
+      213: -1046378136421416437
+    second: WalkStrideTrial-P4_22
+  - first:
+      213: 2037251027614035891
+    second: WalkStrideTrial-P4_23
+  - first:
+      213: -5804013394618083885
+    second: WalkStrideTrial-P4_24
+  - first:
+      213: 2739054754513118274
+    second: WalkStrideTrial-P4_25
+  - first:
+      213: 3215730686612713886
+    second: WalkStrideTrial-P4_26
+  - first:
+      213: -774696470034853871
+    second: WalkStrideTrial-P4_27
+  - first:
+      213: -484743137611669855
+    second: WalkStrideTrial-P4_28
+  - first:
+      213: 3492392436671202320
+    second: WalkStrideTrial-P4_29
+  - first:
+      213: 3226131235854520815
+    second: WalkStrideTrial-P4_30
+  - first:
+      213: -8229876866121609880
+    second: WalkStrideTrial-P4_31
+  - first:
+      213: 4533428529246692527
+    second: WalkStrideTrial-P4_32
+  - first:
+      213: -6821140506222710203
+    second: WalkStrideTrial-P4_33
+  - first:
+      213: -698624914381153613
+    second: WalkStrideTrial-P4_34
+  - first:
+      213: -1114115686466656305
+    second: WalkStrideTrial-P4_35
+  - first:
+      213: -634375301048788564
+    second: WalkStrideTrial-P4_36
+  - first:
+      213: 1365109789178043935
+    second: WalkStrideTrial-P4_37
+  - first:
+      213: -6550822867571453631
+    second: WalkStrideTrial-P4_38
+  - first:
+      213: 4611100768674319014
+    second: WalkStrideTrial-P4_39
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 0
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: WalkStrideTrial-P4_0
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 3624
+        width: 243
+        height: 235
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ee370b1cb6434e80800000000000000
+      internalID: -8195629123162915099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkStrideTrial-P4_1
+      rect:
+        serializedVersion: 2
+        x: 675
+        y: 3626
+        width: 242
+        height: 233
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90def61881348ee60800000000000000
+      internalID: 7991711311298817289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkStrideTrial-P4_2
+      rect:
+        serializedVersion: 2
+        x: 1179
+        y: 3626
+        width: 243
+        height: 234
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a56c2794db4db7590800000000000000
+      internalID: -7675307230476712358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkStrideTrial-P4_3
+      rect:
+        serializedVersion: 2
+        x: 1685
+        y: 3625
+        width: 245
+        height: 236
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d9ddf6d37bff1850800000000000000
+      internalID: 6350070474562460116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkStrideTrial-P4_4
+      rect:
+        serializedVersion: 2
+        x: 2191
+        y: 3625
+        width: 249
+        height: 236
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4506df55b835d140800000000000000
+      internalID: 4743760134152783181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkStrideTrial-P4_5
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 3114
+        width: 241
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5a4c234461fade00800000000000000
+      internalID: 1070433274379913820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkStrideTrial-P4_6
+      rect:
+        serializedVersion: 2
+        x: 662
+        y: 3114
+        width: 231
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba34b5d49793e2b60800000000000000
+      internalID: 7723173604138632107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkStrideTrial-P4_7
+      rect:
+        serializedVersion: 2
+        x: 1181
+        y: 3114
+        width: 218
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f45f6a51becc254d0800000000000000
+      internalID: -3147227879525911217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkStrideTrial-P4_8
+      rect:
+        serializedVersion: 2
+        x: 1702
+        y: 3114
+        width: 204
+        height: 245
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd8de115ed9dc4b70800000000000000
+      internalID: 8884715713762089181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkStrideTrial-P4_9
+      rect:
+        serializedVersion: 2
+        x: 2227
+        y: 3114
+        width: 181
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b62b7b9081ac75790800000000000000
+      internalID: -7541336846417546645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkStrideTrial-P4_10
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 2602
+        width: 167
+        height: 251
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82e85b1522e3ee270800000000000000
+      internalID: 8281625081901583912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkStrideTrial-P4_11
+      rect:
+        serializedVersion: 2
+        x: 717
+        y: 2602
+        width: 145
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03680f9b8c35171b0800000000000000
+      internalID: -5660651135049890256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkStrideTrial-P4_12
+      rect:
+        serializedVersion: 2
+        x: 1235
+        y: 2602
+        width: 138
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb3b60f6d41a66f40800000000000000
+      internalID: 5721437730568057787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkStrideTrial-P4_13
+      rect:
+        serializedVersion: 2
+        x: 1747
+        y: 2602
+        width: 142
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0bdf7ea0c1c70270800000000000000
+      internalID: 8216749078466255630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkStrideTrial-P4_14
+      rect:
+        serializedVersion: 2
+        x: 2259
+        y: 2602
+        width: 158
+        height: 246
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab827c5b19c7c9aa0800000000000000
+      internalID: -6152906025633109830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkStrideTrial-P4_15
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 2090
+        width: 169
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6cc1e55ec13e4e4d0800000000000000
+      internalID: -3106108129732059962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkStrideTrial-P4_16
+      rect:
+        serializedVersion: 2
+        x: 714
+        y: 2090
+        width: 187
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 641b44a9a95393d70800000000000000
+      internalID: 9023302266542928198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkStrideTrial-P4_17
+      rect:
+        serializedVersion: 2
+        x: 1220
+        y: 2090
+        width: 201
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b21b42a3412c7960800000000000000
+      internalID: 7600986845463909042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkStrideTrial-P4_18
+      rect:
+        serializedVersion: 2
+        x: 1726
+        y: 2090
+        width: 214
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cdd5dcdca7ab5170800000000000000
+      internalID: 8168306710047743433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkStrideTrial-P4_19
+      rect:
+        serializedVersion: 2
+        x: 2231
+        y: 2089
+        width: 220
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 552b769a666342070800000000000000
+      internalID: 8080643445966221909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkStrideTrial-P4_20
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 1576
+        width: 227
+        height: 246
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7764bcc4cfbf57a40800000000000000
+      internalID: 5365471592120534647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkStrideTrial-P4_21
+      rect:
+        serializedVersion: 2
+        x: 683
+        y: 1578
+        width: 228
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20558fa785f63e0a0800000000000000
+      internalID: -6853511782116862718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkStrideTrial-P4_22
+      rect:
+        serializedVersion: 2
+        x: 1187
+        y: 1578
+        width: 229
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b02cdddf0a48a71f0800000000000000
+      internalID: -1046378136421416437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkStrideTrial-P4_23
+      rect:
+        serializedVersion: 2
+        x: 1693
+        y: 1577
+        width: 233
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bfeb3b0405c54c10800000000000000
+      internalID: 2037251027614035891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkStrideTrial-P4_24
+      rect:
+        serializedVersion: 2
+        x: 2199
+        y: 1577
+        width: 239
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d51e2e8190047fa0800000000000000
+      internalID: -5804013394618083885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkStrideTrial-P4_25
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 1066
+        width: 233
+        height: 251
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 244691f79c3130620800000000000000
+      internalID: 2739054754513118274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkStrideTrial-P4_26
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 1066
+        width: 217
+        height: 251
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e91bfd4950290ac20800000000000000
+      internalID: 3215730686612713886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkStrideTrial-P4_27
+      rect:
+        serializedVersion: 2
+        x: 1189
+        y: 1066
+        width: 204
+        height: 251
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 110d2de3aa9bf35f0800000000000000
+      internalID: -774696470034853871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkStrideTrial-P4_28
+      rect:
+        serializedVersion: 2
+        x: 1710
+        y: 1066
+        width: 190
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ae19534fa8d549f0800000000000000
+      internalID: -484743137611669855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkStrideTrial-P4_29
+      rect:
+        serializedVersion: 2
+        x: 2235
+        y: 1066
+        width: 167
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0144c0cea68777030800000000000000
+      internalID: 3492392436671202320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkStrideTrial-P4_30
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 554
+        width: 151
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe196e7244585cc20800000000000000
+      internalID: 3226131235854520815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkStrideTrial-P4_31
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 554
+        width: 135
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86dcd91189a99cd80800000000000000
+      internalID: -8229876866121609880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkStrideTrial-P4_32
+      rect:
+        serializedVersion: 2
+        x: 1237
+        y: 554
+        width: 134
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa4ee5c6a39f9ee30800000000000000
+      internalID: 4533428529246692527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkStrideTrial-P4_33
+      rect:
+        serializedVersion: 2
+        x: 1747
+        y: 554
+        width: 150
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 542319b79d07651a0800000000000000
+      internalID: -6821140506222710203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkStrideTrial-P4_34
+      rect:
+        serializedVersion: 2
+        x: 2257
+        y: 554
+        width: 166
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bad213875cfd46f0800000000000000
+      internalID: -698624914381153613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkStrideTrial-P4_35
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 42
+        width: 185
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc7e67d9fadd980f0800000000000000
+      internalID: -1114115686466656305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkStrideTrial-P4_36
+      rect:
+        serializedVersion: 2
+        x: 706
+        y: 42
+        width: 203
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca994b6560f3237f0800000000000000
+      internalID: -634375301048788564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkStrideTrial-P4_37
+      rect:
+        serializedVersion: 2
+        x: 1212
+        y: 42
+        width: 219
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1e9d5fde18d1f210800000000000000
+      internalID: 1365109789178043935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkStrideTrial-P4_38
+      rect:
+        serializedVersion: 2
+        x: 1722
+        y: 42
+        width: 224
+        height: 235
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 141d5e74f4dc615a0800000000000000
+      internalID: -6550822867571453631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkStrideTrial-P4_39
+      rect:
+        serializedVersion: 2
+        x: 2223
+        y: 41
+        width: 234
+        height: 234
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6aa0d5ce7bbedff30800000000000000
+      internalID: 4611100768674319014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      WalkStrideTrial-P4_0: -8195629123162915099
+      WalkStrideTrial-P4_1: 7991711311298817289
+      WalkStrideTrial-P4_10: 8281625081901583912
+      WalkStrideTrial-P4_11: -5660651135049890256
+      WalkStrideTrial-P4_12: 5721437730568057787
+      WalkStrideTrial-P4_13: 8216749078466255630
+      WalkStrideTrial-P4_14: -6152906025633109830
+      WalkStrideTrial-P4_15: -3106108129732059962
+      WalkStrideTrial-P4_16: 9023302266542928198
+      WalkStrideTrial-P4_17: 7600986845463909042
+      WalkStrideTrial-P4_18: 8168306710047743433
+      WalkStrideTrial-P4_19: 8080643445966221909
+      WalkStrideTrial-P4_2: -7675307230476712358
+      WalkStrideTrial-P4_20: 5365471592120534647
+      WalkStrideTrial-P4_21: -6853511782116862718
+      WalkStrideTrial-P4_22: -1046378136421416437
+      WalkStrideTrial-P4_23: 2037251027614035891
+      WalkStrideTrial-P4_24: -5804013394618083885
+      WalkStrideTrial-P4_25: 2739054754513118274
+      WalkStrideTrial-P4_26: 3215730686612713886
+      WalkStrideTrial-P4_27: -774696470034853871
+      WalkStrideTrial-P4_28: -484743137611669855
+      WalkStrideTrial-P4_29: 3492392436671202320
+      WalkStrideTrial-P4_3: 6350070474562460116
+      WalkStrideTrial-P4_30: 3226131235854520815
+      WalkStrideTrial-P4_31: -8229876866121609880
+      WalkStrideTrial-P4_32: 4533428529246692527
+      WalkStrideTrial-P4_33: -6821140506222710203
+      WalkStrideTrial-P4_34: -698624914381153613
+      WalkStrideTrial-P4_35: -1114115686466656305
+      WalkStrideTrial-P4_36: -634375301048788564
+      WalkStrideTrial-P4_37: 1365109789178043935
+      WalkStrideTrial-P4_38: -6550822867571453631
+      WalkStrideTrial-P4_39: 4611100768674319014
+      WalkStrideTrial-P4_4: 4743760134152783181
+      WalkStrideTrial-P4_5: 1070433274379913820
+      WalkStrideTrial-P4_6: 7723173604138632107
+      WalkStrideTrial-P4_7: -3147227879525911217
+      WalkStrideTrial-P4_8: 8884715713762089181
+      WalkStrideTrial-P4_9: -7541336846417546645
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

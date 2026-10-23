@@ -60,6 +60,10 @@ public static partial class ArenaReadyRoomReview
         yield return Wait(()=>All(4,p=>p.connected&&p.phase==0),"four peers for owner-only selection hint",40);
         var own=Player(1);own.SelectAmmo(SideScrollNetworkPlayer.AmmoKind.InstantShotgun);own.SelectAmmo(SideScrollNetworkPlayer.AmmoKind.Rifle);
         Require(own.AmmoSelectionHintVisible&&own.AmmoSelectionHintText=="R","rifle selection shows owner head hint");
+        Require(own.AmmoSelectionHintCountText==own.RifleRounds.ToString(),"selection hint shows only current rifle rounds");
+        var rounds=(Unity.Netcode.NetworkVariable<int>)typeof(SideScrollNetworkPlayer).GetField("rifleRounds",System.Reflection.BindingFlags.NonPublic|System.Reflection.BindingFlags.Instance).GetValue(own);
+        int saved=rounds.Value;rounds.Value=1;Require(own.AmmoSelectionHintCountText=="1","visible selection count follows partial supply");
+        rounds.Value=0;Require(own.SelectedAmmoRounds==0&&own.AmmoSelectionHintCountText=="0","empty selected ammo stays zero without falling back to normal");rounds.Value=saved;
         foreach(var p in Object.FindObjectsByType<SideScrollNetworkPlayer>(FindObjectsSortMode.None))if(!p.IsOwner)Require(!p.AmmoSelectionHintVisible,"remote selection hint stays private");
         ScreenCapture.CaptureScreenshot(folder+"/ammo-head-hint.png");yield return new WaitForSecondsRealtime(.1f);
         Send(4,113);yield return Wait(()=>P(4).ammoHint&&P(4).ammoHintText.StartsWith("S"),"participant sees selected shotgun above own head",6);

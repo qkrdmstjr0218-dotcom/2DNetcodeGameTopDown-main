@@ -20,9 +20,10 @@ namespace RightWalkPrototype
             GUILayout.BeginHorizontal();GUILayout.Label("방 이름",GUILayout.Width(60));onlineRoomDraft=GUILayout.TextField(onlineRoomDraft,32);
             if(GUILayout.Button("방 만들기",GUILayout.Width(105)))_=CreateOnlineRoomAsync(onlineRoomDraft);GUILayout.EndHorizontal();
             if(GUILayout.Button("혼자 연습 · 인터넷 연결 불필요",GUILayout.Height(30)))StartSoloPractice();
+            if(GUILayout.Button("튜토리얼 · 이동과 무기 익히기",GUILayout.Height(30)))StartTutorial();
             GUILayout.Label(OnlineModeName+" · "+OnlineMapName+" · 2~4명 · 3분");GUILayout.Space(10);
             GUILayout.BeginHorizontal();GUILayout.Label("방 목록");if(GUILayout.Button("새로고침",GUILayout.Width(105)))_=RefreshOnlineRoomsAsync();GUILayout.EndHorizontal();
-            roomScroll=GUILayout.BeginScrollView(roomScroll,GUILayout.Height(Mathf.Max(100,height-280)));
+            roomScroll=GUILayout.BeginScrollView(roomScroll,GUILayout.Height(Mathf.Max(70,height-314)));
             if(onlineRooms.Count==0)GUILayout.Label(browserOpened?"검색된 방이 없습니다.":"새로고침을 누르면 인터넷 방 목록을 불러옵니다.");
             var roomStyle=new GUIStyle(GUI.skin.label){wordWrap=true,richText=false};
             foreach(var room in onlineRooms)
