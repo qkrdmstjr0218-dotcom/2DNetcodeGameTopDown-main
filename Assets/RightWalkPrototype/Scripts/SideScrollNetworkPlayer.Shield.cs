@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using Unity.Netcode;
 namespace RightWalkPrototype
 {
@@ -15,15 +15,16 @@ namespace RightWalkPrototype
         }
         readonly NetworkVariable<ShieldState> shield=new();
         LineRenderer shieldOutline;Material shieldMaterial;
-        bool ShieldActive=>IsSpawned&&!IsDead&&shield.Value.Generation==LifeVersion&&NetworkManager.ServerTime.Time<shield.Value.Until
+        SpriteRenderer shieldSurface;Sprite shieldSprite;int shieldLast;float shieldFlash;
+        bool ShieldActive=>IsSpawned&&!IsDead&&shield.Value.Generation==LifeVersion&&ArenaClock.Now(NetworkManager)<shield.Value.Until
             &&ArenaObjectiveMatch.Instance!=null&&ArenaObjectiveMatch.Instance.State.Value.Phase==ArenaObjectiveMatch.Stage.Playing;
         public int Shield=>ShieldActive?shield.Value.Amount:0;
-        public float ShieldRemaining=>Shield>0?Mathf.Max(0,(float)(shield.Value.Until-NetworkManager.ServerTime.Time)):0;
+        public float ShieldRemaining=>Shield>0?Mathf.Max(0,(float)(shield.Value.Until-ArenaClock.Now(NetworkManager))):0;
         public bool GrantShieldServer(uint generation)
         {
             var match=ArenaObjectiveMatch.Instance;
             if(!IsServer||!IsSpawned||IsDead||!HasCurrentLifePose||generation!=LifeVersion||match==null||!match.RoomFlow||match.State.Value.Phase!=ArenaObjectiveMatch.Stage.Playing)return false;
-            shield.Value=new ShieldState{Amount=ShieldCapacity,Generation=LifeVersion,Until=NetworkManager.ServerTime.Time+ShieldDuration};return true;
+            shield.Value=new ShieldState{Amount=ShieldCapacity,Generation=LifeVersion,Until=ArenaClock.Now(NetworkManager)+ShieldDuration};return true;
         }
         int AbsorbShield(int damage)
         {
@@ -34,7 +35,15 @@ namespace RightWalkPrototype
         {
             if(IsServer&&shield.Value.Amount>0&&!ShieldActive)shield.Value=default;
             bool visible=Shield>0&&!ArenaObjectiveMatch.TransitionActive;
-            if(!visible){if(shieldOutline!=null)shieldOutline.enabled=false;return;}
+            if(!visible){if(shieldOutline!=null)shieldOutline.enabled=false;if(shieldSurface!=null)shieldSurface.enabled=false;shieldLast=0;return;}
+            var effect=RelayArenaPrototype.Instance!=null?RelayArenaPrototype.Instance.shieldEffectShader:null;
+            if(effect!=null&&effect.isSupported)
+            {
+                if(shieldSurface==null){var surface=new GameObject("Energy shield");surface.transform.SetParent(transform,false);shieldSurface=surface.AddComponent<SpriteRenderer>();var texture=Texture2D.whiteTexture;shieldSprite=Sprite.Create(texture,new Rect(0,0,texture.width,texture.height),new Vector2(.5f,.5f),texture.width);shieldSurface.sprite=shieldSprite;shieldMaterial=new Material(effect);shieldSurface.sharedMaterial=shieldMaterial;shieldSurface.sortingOrder=90;}
+                float h=crouch!=null&&crouch.IsCrouched?1.55f:2.15f;shieldSurface.enabled=true;shieldSurface.transform.localPosition=new Vector3(0,h*.5f,0);shieldSurface.transform.localScale=new Vector3(1.68f,h+.48f,1);
+                if(Shield!=shieldLast)shieldFlash=1;shieldLast=Shield;shieldFlash=Mathf.MoveTowards(shieldFlash,0,Time.deltaTime*4);
+                shieldMaterial.SetFloat("_Strength",Shield/(float)ShieldCapacity);shieldMaterial.SetFloat("_Pulse",Time.time);shieldMaterial.SetFloat("_Flash",shieldFlash);shieldSurface.color=new Color(1,1,1,ShieldRemaining<3?.65f+.25f*Mathf.Sin(Time.time*10):1);return;
+            }
             if(shieldOutline==null)
             {
                 var go=new GameObject("Protective shield");go.transform.SetParent(transform,false);
@@ -56,6 +65,6 @@ namespace RightWalkPrototype
             bar.width*=Shield/(float)ShieldCapacity;GUI.color=new Color(.35f,.65f,1);GUI.DrawTexture(bar,Texture2D.whiteTexture);GUI.color=old;
             if(IsOwner)GUI.Label(new Rect(at.x-65,Screen.height-at.y-44,130,22),"보호막 "+Shield+" · "+ShieldRemaining.ToString("0")+"초",new GUIStyle(GUI.skin.label){alignment=TextAnchor.MiddleCenter,normal={textColor=new Color(.55f,.8f,1)}});
         }
-        void ClearShieldVisual(){if(shieldOutline!=null)Destroy(shieldOutline.gameObject);if(shieldMaterial!=null)Destroy(shieldMaterial);}
+        void ClearShieldVisual(){if(shieldSurface!=null)Destroy(shieldSurface.gameObject);if(shieldSprite!=null)Destroy(shieldSprite);if(shieldOutline!=null)Destroy(shieldOutline.gameObject);if(shieldMaterial!=null)Destroy(shieldMaterial);}
     }
 }

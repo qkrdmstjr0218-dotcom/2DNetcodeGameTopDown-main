@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
@@ -19,6 +19,10 @@ public static class RelayFoundryBuilder
         sprite=AssetDatabase.LoadAssetAtPath<Sprite>("Assets/RightWalkPrototype/Art/MapSolid.png");
         root=new GameObject("Foundry 08 - traversal blockout").transform;
         var rules=root.gameObject.AddComponent<RelayArenaPrototype>();rules.arenaCamera=Camera.main;rules.pitLeft=24;rules.pitRight=28;rules.runSpeed=4.5f;
+        rules.readyRoomFont=AssetDatabase.LoadAssetAtPath<Font>("Assets/TextMesh Pro/EliceDigitalBaeum_Regular.ttf");
+        rules.weaponRange=16f;rules.shieldEffectShader=AssetDatabase.LoadAssetAtPath<Shader>("Assets/RightWalkPrototype/Art/UI/ShieldEffect.shader");
+        rules.ammoCursorShader=AssetDatabase.LoadAssetAtPath<Shader>("Assets/RightWalkPrototype/Art/UI/AmmoCursor.shader");
+        rules.hudPortraits=new Texture2D[4];for(int i=0;i<4;i++)rules.hudPortraits[i]=AssetDatabase.LoadAssetAtPath<Texture2D>("Assets/RightWalkPrototype/Art/UI/portrait-"+(i+1)+".png");
         var map=root.gameObject.AddComponent<ArenaMapSettings>();
         FoundryDepotSupplyBuilder.Configure(map);
         map.healthSupplies=new[]{new Vector2(-18,.55f),new Vector2(18,.55f)};
@@ -51,7 +55,7 @@ public static class RelayFoundryBuilder
             Deck("Jump shortcut lower "+sign,sign<0?-12:9,sign<0?-9:12,1.8f,true);
             Deck("Jump shortcut upper "+sign,sign<0?-15:12,sign<0?-12:15,5.4f,true);
             Cover("Lower outer cover "+sign,sign<0?-28:29,0);
-            Cover("Upper cover "+sign,sign*23,7.2f);
+            // Keep the forked crown/balcony ramps free of tall cover.
         }
         Cover("Upper core cover",0,7.2f);
         Box("Left boundary",new Vector2(-36.25f,7),new Vector2(.5f,22),Steel,0,true);
@@ -84,6 +88,9 @@ public static class RelayFoundryBuilder
         FoundryTraversalTuningBuilder.Apply();
         FoundryWestBridgeBuilder.Apply();
         FoundryDepotBuilder.Apply();
+        FoundryFloorSpacingBuilder.Apply();
+        FoundryLayoutBuilder.Apply();
+        FoundryArtBuilder.ImportTextures();FoundryArtBuilder.Apply();
         Selection.activeGameObject=root.gameObject;
     }
     static GameObject Box(string name,Vector2 at,Vector2 size,Color color,int order,bool solid=false)
@@ -108,14 +115,14 @@ public static class RelayFoundryBuilder
     {
         var go=Box(name,new Vector2((left+right)*.5f,top-.14f),new Vector2(right-left,.28f),Steel,0,true);if(pass)OneWay(go);
         Edge(go,new Vector2(left,top-.01f),new Vector2(right,top-.01f),pass);
-        for(float x=left+.3f;x<right;x+=.8f)Box(pass?"Grate opening":"Deck joint",new Vector2(x,top-.11f),new Vector2(pass?.3f:.035f,.075f),new Color(.055f,.095f,.12f),2).transform.SetParent(go.transform,true);
+        // Continuous metal interiors; dash patterns are reserved for one-way tops.
     }
     static void Ramp(string name,Vector2 lower,Vector2 upper)
     {
         if(lower.x>upper.x){var t=lower;lower=upper;upper=t;}
         var delta=upper-lower;float angle=Mathf.Atan2(delta.y,delta.x)*Mathf.Rad2Deg;
         var normal=new Vector2(-delta.normalized.y,delta.normalized.x);
-        var go=Box(name,(lower+upper)*.5f-normal*.1f,new Vector2(delta.magnitude+.22f,.2f),Steel,0,true);
+        var go=Box(name,(lower+upper)*.5f-normal*.1f,new Vector2(delta.magnitude,.2f),Steel,0,true);
         go.transform.rotation=Quaternion.Euler(0,0,angle);OneWay(go);Edge(go,lower,upper,true);
     }
     static void Cover(string name,float x,float floor)

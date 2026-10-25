@@ -13,19 +13,24 @@ namespace RightWalkPrototype
             "Q/E로 R을 선택하고 우클릭+좌클릭으로 상자 안 표적을 쏘세요. 일반탄은 벽에 막히지만 라이플은 지형을 관통합니다.",
             "Q/E로 G 선택 → 우클릭 유지 → 좌클릭. 예상 궤적으로 엄폐물 너머 표적을 파괴하세요. 가까운 폭발은 자신도 다칩니다. 자해 후 왼쪽 의료패드에서 회복해 보세요."
         };
-        static Rect Card=>new Rect((Screen.width-Mathf.Min(660,Screen.width-32))*.5f,12,Mathf.Min(660,Screen.width-32),Active&&Instance.Lesson>=3&&Instance.Lesson<LessonCount?210:155);
-        static Rect Navigation=>new Rect((Screen.width-Mathf.Min(660,Screen.width-32))*.5f,Screen.height-103,Mathf.Min(660,Screen.width-32),88);
+        static Rect Card=>new Rect(12,12,Mathf.Min(380,Screen.width-270),Active&&Instance.Lesson>=3&&Instance.Lesson<LessonCount?285:190);
+        static Rect Navigation=>new Rect((Screen.width-Mathf.Min(660,Screen.width-24))*.5f,Screen.height-80,Mathf.Min(660,Screen.width-24),68);
+        static Rect Status=>new Rect(Screen.width-245,12,233,185);
         public static bool PointerOverUI(Vector2 point)
         {
             var gui=new Vector2(point.x,Screen.height-point.y);
-            return Card.Contains(gui)||Navigation.Contains(gui)||new Rect(Screen.width-230,15,215,160).Contains(gui);
+            return Card.Contains(gui)||Navigation.Contains(gui)||Status.Contains(gui);
         }
         string ProgressText()
         {
             if(LessonComplete)return "목표 달성! 다음 구간으로 이동할 수 있습니다.";
-            if(Lesson==0)return (walked?"이동 확인  ":"")+(sprinted?"달리기 확인":"Shift로 달려보세요.");
+            if(Lesson==0)return !walked?"먼저 오른쪽 MOVE 패드를 지나세요.":!sprinted?"이동 확인 ✓ · Shift로 SPRINT 패드까지 달려보세요.":"달리기 확인 ✓ · SPRINT 패드까지 이동하세요.";
             if(Lesson==1)return doubleJump?"두 번째 점프 확인 · 높은 발판 위에 착지하세요.":"공중에서 Space를 한 번 더 누르세요.";
+            if(Lesson==2)return crouched?"Space를 눌러 발판을 통과해 바닥에 착지하세요.":"높은 점선 발판 위에서 먼저 앉으세요.";
+            if(targetResetAt>0)return "다른 탄으로 파괴된 표적을 다시 준비하고 있습니다.";
             if(Lesson==3&&Target!=null&&Target.Health.Value==0)return "사격을 멈추고 일반탄의 자동충전을 기다리세요.";
+            if(Lesson==4)return pushed?"밀치기 확인 ✓ · 표적을 오른쪽 구멍에 떨어뜨리세요.":"S를 선택하고 표적을 사거리 안에서 맞히세요.";
+            if(Lesson==5)return "R을 선택하고 고체 상자 안의 표적을 조준하세요.";
             if(Lesson==6)return (Target!=null&&Target.Health.Value==0?"표적 파괴 ✓  ":"표적 파괴 대기  ")+(selfHurt?"자해 확인 ✓  ":"가까운 폭발의 자해 확인 대기  ")+(healed&&player!=null&&player.Health==player.MaxHealth?"회복 ✓":"왼쪽 의료패드에서 회복");
             return "언제든 구간 재시도로 체력·탄약을 복구할 수 있습니다.";
         }
@@ -33,20 +38,29 @@ namespace RightWalkPrototype
         {
             if(!Active||player==null||!player.IsSpawned||RelayArenaPrototype.Instance==null||RelayArenaPrototype.Instance.MenuOpen)return;
             GUILayout.BeginArea(Card,GUI.skin.box);
-            GUILayout.Label(Lesson<LessonCount?"튜토리얼 "+(Lesson+1)+" / "+LessonCount+" · "+Titles[Lesson]:"튜토리얼 둘러보기 완료",new GUIStyle(GUI.skin.label){fontSize=20,fontStyle=FontStyle.Bold});
-            var wrap=new GUIStyle(GUI.skin.label){wordWrap=true,fontSize=15};
+            GUILayout.Label(Lesson<LessonCount?"튜토리얼 "+(Lesson+1)+" / "+LessonCount+" · "+Titles[Lesson]:"튜토리얼 둘러보기 완료",new GUIStyle(GUI.skin.label){fontSize=18,fontStyle=FontStyle.Bold,wordWrap=true});
+            var wrap=new GUIStyle(GUI.skin.label){wordWrap=true,fontSize=Screen.height<540?13:15};
             GUILayout.Label(Lesson<LessonCount?Instructions[Lesson]:"직접 달성한 구간: "+CompletedCount+" / "+LessonCount+". 실제 맵의 혼자 연습으로 이어가거나, 이전 구간에 다시 도전할 수 있습니다.",wrap);
             if(Lesson>=3&&Lesson<LessonCount)GUILayout.Label("실제 경기에서 특수탄은 자동충전되지 않습니다. 보급이나 적 드롭으로 얻으세요. 여기와 대기방에서는 반복 연습을 위해 보충됩니다.",wrap);
             if(Lesson<LessonCount)GUILayout.Label(ProgressText(),wrap);
             if(Time.unscaledTime<noticeUntil)GUILayout.Label(notice,wrap);
             GUILayout.EndArea();
+            GUILayout.BeginArea(Status,GUI.skin.box);
+            GUILayout.Label("오프라인 연습 · 달성 "+CompletedCount+" / "+LessonCount);
+            GUILayout.Label("HP "+player.Health+" / "+player.MaxHealth);
+            GUILayout.Label("스태미나 "+player.Stamina.ToString("0")+" / "+player.MaximumStamina.ToString("0"));
+            GUILayout.Label("현재: "+player.ActiveAmmoName);
+            GUILayout.Label("일반탄 "+player.NormalRounds+" / "+player.NormalCapacity+"    S "+player.InstantShotgunRounds+" / "+SideScrollNetworkPlayer.ShotgunCapacity);
+            GUILayout.Label("R "+player.RifleRounds+" / "+SideScrollNetworkPlayer.RifleCapacity+"    G "+player.GrenadeRounds+" / "+SideScrollNetworkPlayer.GrenadeCapacity);
+            GUILayout.Label("선택: "+player.SelectedAmmoName+" "+player.SelectedAmmoRounds);
+            GUILayout.EndArea();
             GUILayout.BeginArea(Navigation,GUI.skin.box);GUILayout.BeginHorizontal();
-            var enabled=GUI.enabled;GUI.enabled=Lesson>0;if(GUILayout.Button("이전",GUILayout.Height(30)))pendingLesson=Lesson-1;GUI.enabled=enabled;
-            if(GUILayout.Button("구간 재시도",GUILayout.Height(30)))pendingLesson=Lesson;
-            GUI.enabled=LessonComplete&&Lesson<LessonCount;if(GUILayout.Button("다음 구간",GUILayout.Height(30)))pendingLesson=Lesson+1;GUI.enabled=enabled;
-            if(Lesson<LessonCount&&GUILayout.Button("건너뛰기",GUILayout.Height(30)))pendingLesson=Lesson+1;
-            if(Lesson==LessonCount&&GUILayout.Button("실제 맵 혼자 연습",GUILayout.Height(30)))pendingExit=2;
-            if(GUILayout.Button("로비로",GUILayout.Height(30)))pendingExit=1;
+            var enabled=GUI.enabled;GUI.enabled=Lesson>0;if(ArenaUiTheme.Button("이전",GUILayout.Height(30)))pendingLesson=Lesson-1;GUI.enabled=enabled;
+            if(ArenaUiTheme.Button("구간 재시도",GUILayout.Height(30)))pendingLesson=Lesson;
+            GUI.enabled=LessonComplete&&Lesson<LessonCount;if(ArenaUiTheme.Button("다음 구간",GUILayout.Height(30)))pendingLesson=Lesson+1;GUI.enabled=enabled;
+            if(Lesson<LessonCount&&ArenaUiTheme.Button("건너뛰기",GUILayout.Height(30)))pendingLesson=Lesson+1;
+            if(Lesson==LessonCount&&ArenaUiTheme.Button("실제 맵 혼자 연습",GUILayout.Height(30)))pendingExit=2;
+            if(ArenaUiTheme.Button("로비로",GUILayout.Height(30)))pendingExit=1;
             GUILayout.EndHorizontal();GUILayout.Label("ESC: 메뉴 · 낙하 시 현재 구간으로 복귀 · 연습 중 체력은 최소 1 유지");GUILayout.EndArea();
         }
     }

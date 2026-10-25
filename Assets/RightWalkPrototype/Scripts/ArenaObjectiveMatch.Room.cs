@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Unity.Netcode;
 using UnityEngine;
 
@@ -53,10 +53,10 @@ namespace RightWalkPrototype
             if(ArenaTutorial.Active)return ArenaTutorial.PointerOverUI(screenPoint);
             if(!PracticeRoom)return false;
             var p=new Vector2(screenPoint.x,Screen.height-screenPoint.y);
-            float width=Mathf.Min(540,Screen.width-30);
-            return new Rect((Screen.width-width)*.5f,15,width,180).Contains(p)
-                ||new Rect((Screen.width-width)*.5f,Screen.height-120,width,105).Contains(p)
-                ||new Rect(Screen.width-230,15,215,160).Contains(p);
+            float width=Mathf.Min(640,Screen.width-32);
+            return new Rect(16,16,250,65+Instance.ReadyPlayers.Count*48).Contains(p)
+                ||new Rect((Screen.width-width)*.5f,Screen.height-128,width,112).Contains(p)
+                ;
         }
         public static bool RoomPointerOverUI
         {
@@ -181,27 +181,32 @@ namespace RightWalkPrototype
         }
         void DrawRoom()
         {
-            if(ArenaTutorial.Active)return;
+            if(ArenaTutorial.Active||RelayArenaPrototype.Instance!=null&&RelayArenaPrototype.Instance.MenuOpen)return;
             if(Transitioning)
             {
-                int depth=GUI.depth;GUI.depth=-100;
-                var color=GUI.color;GUI.color=new Color(.035f,.055f,.08f,1);GUI.DrawTexture(new Rect(0,0,Screen.width,Screen.height),Texture2D.whiteTexture);GUI.color=color;
-                GUI.Label(new Rect(Screen.width*.5f-180,Screen.height*.5f-25,360,50),State.Value.Phase==Stage.Starting?"전투 지역으로 이동합니다…":"대기방으로 돌아갑니다…",new GUIStyle(GUI.skin.label){alignment=TextAnchor.MiddleCenter,fontSize=22});GUI.depth=depth;return;
+                ArenaTransitionHud.Transition(State.Value.Phase==Stage.Returning);return;
             }
-            float width=Mathf.Min(540,Screen.width-30);
-            GUILayout.BeginArea(new Rect((Screen.width-width)*.5f,15,width,180),GUI.skin.box);
-            GUILayout.Label(SoloPractice?"혼자 연습 · 해킹 구역 점유 · 인터넷 연결 없음":"준비 공간 · 해킹 구역 점유 · 2~4명 · 3분");
-            var sorted=new ReadyPlayer[ReadyPlayers.Count];for(int i=0;i<sorted.Length;i++)sorted[i]=ReadyPlayers[i];Array.Sort(sorted,(a,b)=>a.Number.CompareTo(b.Number));
-            foreach(var p in sorted)GUILayout.Label("P"+p.Number+(p.Client==Unity.Netcode.NetworkManager.ServerClientId?"  방장":"")+(p.Client==NetworkManager.LocalClientId?"  (나)":"")+"     "+(p.Ready?"준비 완료":"준비 중"));
-            GUILayout.Label("A/D 이동 · Space 점프 · 사격 연습 · 체력은 최소 1 유지 · 참가 인원이 바뀌면 준비가 해제됩니다.");
-            GUILayout.EndArea();
-            GUILayout.BeginArea(new Rect((Screen.width-width)*.5f,Screen.height-120,width,105),GUI.skin.box);
-            bool ready=IsReady(NetworkManager.LocalClientId);
-            GUILayout.BeginHorizontal();if(GUILayout.Button(ready?"준비 취소":"준비",GUILayout.Height(32)))SetLocalReady(!ready);
-            if(IsServer){bool enabled=GUI.enabled;GUI.enabled=CanStart;if(GUILayout.Button(SoloPractice?"연습 시작":"경기 시작",GUILayout.Height(32)))StartRound();GUI.enabled=enabled;}
-            if(GUILayout.Button(IsServer?"방 닫고 나가기":"방 나가기",GUILayout.Height(32)))FindFirstObjectByType<SideScrollNetworkSession>()?.DisconnectLocal();GUILayout.EndHorizontal();
-            GUILayout.Label(SoloPractice?"준비 후 연습 시작을 누르면 실제 맵에서 혼자 플레이합니다.":ReadyPlayers.Count<MinimumPlayers?"다른 플레이어를 기다립니다. 혼자서는 시작할 수 없습니다.":CanStart?(IsServer?"전원 준비 완료. 경기 시작을 눌러주세요.":"방장의 시작을 기다립니다."):"모두 준비하면 방장이 경기를 시작할 수 있습니다.");
-            GUILayout.EndArea();
+            using(ArenaUiTheme.Use())
+            {
+                float width=Mathf.Min(640,Screen.width-32);
+                GUILayout.BeginArea(new Rect(16,16,250,65+ReadyPlayers.Count*48),GUI.skin.box);
+                GUILayout.Label(SoloPractice?"혼자 연습":"출격 대기",new GUIStyle(ArenaUiTheme.Title){fontSize=20});
+                var sorted=new ReadyPlayer[ReadyPlayers.Count];for(int i=0;i<sorted.Length;i++)sorted[i]=ReadyPlayers[i];Array.Sort(sorted,(a,b)=>a.Number.CompareTo(b.Number));
+                foreach(var p in sorted)
+                {
+                    GUILayout.BeginHorizontal();GUILayout.Label("P"+p.Number+(p.Client==NetworkManager.LocalClientId?" · 나":"")+(p.Client==Unity.Netcode.NetworkManager.ServerClientId?" · 방장":""),GUILayout.Width(135));
+                    GUILayout.Label(p.Ready?"준비 완료":"준비 중",ArenaUiTheme.Static(new GUIStyle(GUI.skin.label){normal={textColor=p.Ready?new Color(.4f,.94f,.7f):new Color(.57f,.68f,.72f)}}));GUILayout.EndHorizontal();GUILayout.Space(14);
+                }
+                GUILayout.EndArea();
+                GUILayout.BeginArea(new Rect((Screen.width-width)*.5f,Screen.height-128,width,112),GUI.skin.box);
+                bool ready=IsReady(NetworkManager.LocalClientId);var enabled=GUI.enabled;
+                GUILayout.BeginHorizontal();
+                if(ArenaUiTheme.Button(ready?"준비 취소":"준비",GUILayout.Height(38)))SetLocalReady(!ready);
+                if(IsServer){GUI.enabled=enabled&&CanStart;if(ArenaUiTheme.Button(SoloPractice?"연습 시작":"경기 시작",GUILayout.Height(38)))StartRound();GUI.enabled=enabled;}
+                if(ArenaUiTheme.Button("로비로 나가기",GUILayout.Height(38)))RelayArenaPrototype.Instance?.RequestLeave();GUILayout.EndHorizontal();
+                GUILayout.Label(SoloPractice?"조작을 연습한 뒤 준비하고 출발하세요.":ReadyPlayers.Count<MinimumPlayers?"다른 플레이어를 기다리는 중입니다.":CanStart?"모두 준비했습니다. 방장이 경기를 시작할 수 있습니다.":"준비를 마치면 방장이 경기를 시작합니다.",ArenaUiTheme.Muted);
+                GUILayout.EndArea();
+            }
         }
     }
 }

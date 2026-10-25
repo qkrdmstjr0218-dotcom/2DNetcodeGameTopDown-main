@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.IO;
 using System.Reflection;
 using Unity.Netcode;
@@ -15,7 +15,7 @@ public static partial class ArenaReadyRoomReview
     {
         yield return Wait(()=>All(4,p=>p.connected&&p.phase==0&&p.roster==4),"four peers waiting",45);
         var m=ArenaObjectiveMatch.Instance;Send(0,1,true);yield return Wait(()=>All(4,p=>p.mask==15),"everyone ready");m.roundSeconds=120;Require(m.StartRound(),"start ammunition persistence match");
-        yield return Wait(()=>All(4,p=>p.phase==1&&p.hp==100&&p.ammo==6&&p.rifleAmmo==3&&p.grenadeAmmo==3),"new match starts all special types full");
+        yield return Wait(()=>All(4,p=>p.phase==1&&p.hp==100&&p.ammo==6&&p.rifleAmmo==3&&p.grenadeAmmo==SideScrollNetworkPlayer.GrenadeCapacity),"new match starts all special types full");
         for(int i=0;i<m.Patrols.Count;i++){var e=m.Patrols[i];e.Health=0;e.RespawnAt=m.Now+300;m.Patrols[i]=e;}
         var rules=(NetworkVariable<ArenaObjectiveMatch.AmmoRules>)typeof(ArenaObjectiveMatch).GetField("ammoRules",BindingFlags.NonPublic|BindingFlags.Instance).GetValue(m);var original=rules.Value;var paused=original;paused.Rate=0;rules.Value=paused;
         var host=Player(1);var client=Player(2);uint h=host.LifeVersion,c=client.LifeVersion;
@@ -37,9 +37,9 @@ public static partial class ArenaReadyRoomReview
         Require(P(2).ammo==0&&P(2).rifleAmmo==2&&P(2).grenadeAmmo==1,"repeated deaths cannot replenish special ammo");
         SetNormalSupply(host,2);SetNormalSupply(client,3);rules.Value=original;yield return Wait(()=>P(1).normal>2&&P(2).normal>3,"normal automatic recharge resumes normally");
         var state=m.State.Value;state.End=m.Now+.05;m.State.Value=state;yield return Wait(()=>All(4,p=>p.phase==2),"round finishes");Require(m.ReturnToRoom(),"return to preparation room");
-        yield return Wait(()=>All(4,p=>p.phase==0&&p.ammo==6&&p.rifleAmmo==3&&p.grenadeAmmo==3),"preparation room restores full practice inventories");
+        yield return Wait(()=>All(4,p=>p.phase==0&&p.ammo==6&&p.rifleAmmo==3&&p.grenadeAmmo==SideScrollNetworkPlayer.GrenadeCapacity),"preparation room restores full practice inventories");
         Send(0,1,true);yield return Wait(()=>All(4,p=>p.mask==15),"ready again");Require(m.StartRound(),"start next match");
-        yield return Wait(()=>All(4,p=>p.phase==1&&p.ammo==6&&p.rifleAmmo==3&&p.grenadeAmmo==3),"next match starts full rather than carrying old shortages");
+        yield return Wait(()=>All(4,p=>p.phase==1&&p.ammo==6&&p.rifleAmmo==3&&p.grenadeAmmo==SideScrollNetworkPlayer.GrenadeCapacity),"next match starts full rather than carrying old shortages");
         state=m.State.Value;state.End=m.Now+.05;m.State.Value=state;yield return Wait(()=>All(4,p=>p.phase==2),"second round finishes");
     }
 }

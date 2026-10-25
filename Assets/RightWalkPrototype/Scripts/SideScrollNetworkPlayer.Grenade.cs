@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
@@ -6,7 +6,7 @@ namespace RightWalkPrototype
 {
     public sealed partial class SideScrollNetworkPlayer
     {
-        public const int GrenadeCapacity=3,GrenadeDamage=40,GrenadeMinimumDamage=10,GrenadeEnemyDamage=6,GrenadeEnemyMinimumDamage=2;
+        public const int GrenadeCapacity=4,GrenadeDamage=40,GrenadeMinimumDamage=10,GrenadeEnemyDamage=6,GrenadeEnemyMinimumDamage=2;
         public const float GrenadeInterval=1,GrenadePushSpeed=2.2f,GrenadeHitSeconds=.14f;
         public int ReceivedGrenadePushes{get;private set;}
         public Vector2 LastGrenadePush{get;private set;}
@@ -22,7 +22,7 @@ namespace RightWalkPrototype
         void UpdateGrenadePracticeAmmo()
         {
             if(!IsServer||!IsSpawned||!NormalAmmoEnabled)return;
-            double now=NetworkManager.ServerTime.Time;
+            double now=ArenaClock.Now(NetworkManager);
             if(!ArenaObjectiveMatch.PracticeRoom||IsDead||GrenadeRounds>=GrenadeCapacity){nextGrenadePracticeSupply=now+PracticeSupplyInterval;return;}
             if(now>=nextGrenadePracticeSupply){grenadeRounds.Value++;nextGrenadePracticeSupply=now+PracticeSupplyInterval;}
         }
@@ -43,7 +43,7 @@ namespace RightWalkPrototype
             if(!IsServer||!IsSpawned||!NormalAmmoEnabled||IsDead||generation!=LifeVersion||ArenaObjectiveMatch.CombatBlocked||GrenadeRounds<=0)return;
             if(!float.IsFinite(origin.x)||!float.IsFinite(origin.y)||!float.IsFinite(direction.x)||!float.IsFinite(direction.y)||!float.IsFinite(speed)||direction.sqrMagnitude<.9f||direction.sqrMagnitude>1.1f||speed<ArenaGrenadeBallistics.MinimumSpeed||speed>ArenaGrenadeBallistics.MaximumSpeed)return;
             Vector3 position=IsOwner?transform.position:motion.Value.LifeVersion==LifeVersion?motion.Value.Position:life.Value.SpawnPosition;if(Vector2.Distance(origin,position)>3)return;
-            double now=NetworkManager.ServerTime.Time;if(!ServerFireReady(AmmoKind.Grenade,now))return;
+            double now=ArenaClock.Now(NetworkManager);if(!ServerFireReady(AmmoKind.Grenade,now))return;
             MarkServerFired(AmmoKind.Grenade,now);grenadeRounds.Value--;nextGrenadePracticeSupply=now+PracticeSupplyInterval;
             var match=ArenaObjectiveMatch.Instance;uint id=++grenadeSequence;Vector2 velocity=direction.normalized*speed;
             ShowGrenadeClientRpc(id,origin,velocity,now,match.State.Value.Version);
@@ -56,7 +56,7 @@ namespace RightWalkPrototype
             int step=0,maximum=Mathf.CeilToInt(ArenaGrenadeBallistics.MaximumLife/ArenaGrenadeBallistics.Step);
             while(IsServer&&IsSpawned&&match!=null&&match.IsSpawned&&match.State.Value.Version==version&&!ArenaObjectiveMatch.CombatBlocked)
             {
-                int target=Mathf.Min(maximum,Mathf.FloorToInt((float)(NetworkManager.ServerTime.Time-began)/ArenaGrenadeBallistics.Step));
+                int target=Mathf.Min(maximum,Mathf.FloorToInt((float)(ArenaClock.Now(NetworkManager)-began)/ArenaGrenadeBallistics.Step));
                 while(step<target)
                 {var next=ArenaGrenadeBallistics.At(origin,velocity,++step*ArenaGrenadeBallistics.Step);if(context.Sweep(previous,next,out var point)){BurstGrenade(id,point,match);yield break;}previous=next;}
                 if(step>=maximum){EndGrenadeClientRpc(id);yield break;}yield return null;
@@ -70,15 +70,15 @@ namespace RightWalkPrototype
                 if(target.IsSpawned&&!target.IsDead&&ArenaGrenadeBallistics.InBlast(point,target.ArenaHitBounds))
                 {target.ReceiveServerDamage(ArenaGrenadeBallistics.BlastDamage(point,target.ArenaHitBounds,GrenadeDamage,GrenadeMinimumDamage),target.LifeVersion,this);target.PushFromGrenadeServer(point);}
             foreach(var e in FindObjectsByType<ArenaPatrolEnemy>(FindObjectsSortMode.None))
-                if(e.Match==match&&e.isActiveAndEnabled&&e.TryGetComponent<Collider2D>(out var shape)&&shape.enabled&&ArenaGrenadeBallistics.InBlast(point,shape.bounds))match.DamagePatrolServer(e.Id,e.Generation,ArenaGrenadeBallistics.BlastDamage(point,shape.bounds,GrenadeEnemyDamage,GrenadeEnemyMinimumDamage));
+                if(e.Match==match&&e.isActiveAndEnabled&&e.TryGetComponent<Collider2D>(out var shape)&&shape.enabled&&ArenaGrenadeBallistics.InBlast(point,shape.bounds))match.DamagePatrolServer(e.Id,e.Generation,ArenaGrenadeBallistics.BlastDamage(point,shape.bounds,GrenadeEnemyDamage,GrenadeEnemyMinimumDamage),this);
             foreach(var t in FindObjectsByType<SideScrollDamageTarget>(FindObjectsSortMode.None))
-                if(t.IsSpawned&&t.Health.Value>0&&t.TryGetComponent<Collider2D>(out var shape)&&shape.enabled&&ArenaGrenadeBallistics.InBlast(point,shape.bounds))t.ReceiveDamage(ArenaGrenadeBallistics.BlastDamage(point,shape.bounds,GrenadeEnemyDamage,GrenadeEnemyMinimumDamage),t.Generation);
+                if(t.IsSpawned&&t.Health.Value>0&&t.TryGetComponent<Collider2D>(out var shape)&&shape.enabled&&ArenaGrenadeBallistics.InBlast(point,shape.bounds))t.ReceiveDamage(ArenaGrenadeBallistics.BlastDamage(point,shape.bounds,GrenadeEnemyDamage,GrenadeEnemyMinimumDamage),t.Generation,this,AmmoKind.Grenade);
         }
         void PushFromGrenadeServer(Vector2 centre)
         {
             if(!IsServer||!IsSpawned||IsDead||ArenaObjectiveMatch.CombatBlocked)return;
             Vector2 away=((Vector2)ArenaHitBounds.center-centre).normalized;
-            allowedHitPoseUntil=NetworkManager.ServerTime.Time+GrenadeHitSeconds+.3;
+            allowedHitPoseUntil=ArenaClock.Now(NetworkManager)+GrenadeHitSeconds+.3;
             GrenadePushClientRpc(away*GrenadePushSpeed,LifeVersion);
         }
         [ClientRpc]void GrenadePushClientRpc(Vector2 impulse,uint generation)

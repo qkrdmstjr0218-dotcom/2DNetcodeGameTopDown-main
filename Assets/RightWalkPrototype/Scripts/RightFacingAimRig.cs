@@ -123,7 +123,7 @@ namespace RightWalkPrototype
         {
             recoilDistance=Mathf.MoveTowards(recoilDistance,0f,Time.deltaTime*.3f);
             if(networkFrontDown.HasValue)SetAimDirection(networkDirection);
-            else if(mouseAim&&!RelayArenaPrototype.LiveInputBlocked)
+            else if(mouseAim&&!RelayArenaPrototype.AimInputBlocked)
             {
                 directionTarget=false;
                 var camera=aimCamera != null ? aimCamera : Camera.main;
@@ -254,7 +254,7 @@ namespace RightWalkPrototype
         }
         private void OnGUI()
         {
-            if(!showAimPreview)return;
+            if(!showAimPreview||ArenaCombatHud.TabVisible||ArenaObjectiveMatch.Ended||ArenaObjectiveMatch.CountingDown||ArenaObjectiveMatch.TransitionActive)return;
             if(!HasAimTarget || !hasLastAimTarget)return;
             var camera=aimCamera!=null ? aimCamera : Camera.main;
             if(camera==null)return;
@@ -269,6 +269,7 @@ namespace RightWalkPrototype
             if(network!=null&&network.GrenadeActive){network.DrawGrenadePreview(camera);return;}
             if(network!=null&&network.SpecialHeld&&(network.SelectedAmmo==SideScrollNetworkPlayer.AmmoKind.Rifle||network.SelectedAmmo==SideScrollNetworkPlayer.AmmoKind.InstantShotgun||network.SelectedAmmo==SideScrollNetworkPlayer.AmmoKind.Shotgun))
             {network.DrawWeaponGuide(camera);return;}
+            if(ArenaCombatHud.Active)return;
             bool shotgun=network!=null&&(network.ShotgunActive||network.InstantShotgunActive);
             bool rifle=network!=null&&network.RifleActive;
             float range=rifle?SideScrollNetworkPlayer.RifleRange:shotgun?SideScrollNetworkPlayer.ShotgunRange:Mathf.Max(.1f,previewAimRange);

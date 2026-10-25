@@ -16,7 +16,7 @@ namespace RightWalkPrototype
         void UpdateInstantPracticeAmmo()
         {
             if(!IsServer||!IsSpawned||!InstantShotgunEnabled)return;
-            double now=NetworkManager.ServerTime.Time;
+            double now=ArenaClock.Now(NetworkManager);
             if(!ArenaObjectiveMatch.PracticeRoom||IsDead||InstantShotgunRounds>=ShotgunCapacity){nextInstantPracticeSupply=now+PracticeSupplyInterval;return;}
             if(now<nextInstantPracticeSupply)return;
             instantShotgunRounds.Value++;nextInstantPracticeSupply=now+PracticeSupplyInterval;

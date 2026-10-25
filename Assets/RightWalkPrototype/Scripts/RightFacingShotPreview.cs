@@ -10,7 +10,7 @@ namespace RightWalkPrototype
     public sealed partial class RightFacingShotPreview : MonoBehaviour
     {
         [Min(.01f)] public float shotInterval = .15f;
-        [Min(.1f)] public float bulletSpeed = 12f;
+        [Min(.1f)] public float bulletSpeed = 15f;
         public bool readMouse = true;
         public System.Action<Vector2,Vector2> ShotRequested;
         private RightFacingAimRig aim;
@@ -18,6 +18,7 @@ namespace RightWalkPrototype
         private SideScrollNetworkPlayer player;
         private Material material;
         private float nextShot;
+        private bool audioPrimaryHeld;
         private readonly List<Shot> shots = new List<Shot>();
         private readonly Stack<LineRenderer> pool = new Stack<LineRenderer>();
         private readonly List<Spark> sparks = new List<Spark>();
@@ -54,7 +55,7 @@ namespace RightWalkPrototype
             var shot=new Shot {visual=visual,position=origin,direction=direction.normalized,remaining=Mathf.Max(0f,range),authoritativePath=authoritativePath,hitsAtEnd=hitsAtEnd,shotgun=shotgun};
             shots.Add(shot);
             Draw(shot);
-            if(emitMuzzle){EmitMuzzle(shot.position,shot.direction);aim.KickRecoil();}
+            if(emitMuzzle){ArenaAudio.World(shotgun?ArenaAudio.Cue.Shotgun:ArenaAudio.Cue.Normal,origin,GetInstanceID());EmitMuzzle(shot.position,shot.direction);aim.KickRecoil();}
         }
         private LineRenderer AcquireVisual()
         {
@@ -81,6 +82,7 @@ namespace RightWalkPrototype
         }
         private void EmitImpact(Vector2 position, Vector2 incoming)
         {
+            ArenaAudio.World(ArenaAudio.Cue.Impact,position,GetInstanceID());
             for(int i=0;i<6;i++)
             {
                 float angle=(-75f+i*30f)*Mathf.Deg2Rad;
@@ -104,9 +106,10 @@ namespace RightWalkPrototype
         // Clearing SpecialHeld before restoring RMB would restart switch delay forever.
         private void ProcessFireInput(bool blocked,bool special,bool primary,int cycle)
         {
+            bool pressed=primary&&!audioPrimaryHeld;audioPrimaryHeld=primary;
             if(blocked){if(player!=null)player.SetSpecialHeld(false);return;}
             if(player!=null){if(cycle!=0)player.CycleAmmo(cycle);player.SetSpecialHeld(special);}
-            if(primary)Fire();
+            if(primary){if(pressed&&player!=null&&player.ActiveAmmoEmpty)ArenaAudio.Ui(ArenaAudio.Cue.DryFire);Fire();}
         }
         private void LateUpdate()
         {

@@ -8,6 +8,12 @@ namespace RightWalkPrototype
         public SpriteRenderer[] area;
         public TextMesh label;
         public ArenaHackingConsole console;
+        ArenaHackingField field;
+        public static float WarningPulse(ArenaObjectiveMatch match)
+        {
+            if(match==null||!match.PreviewNext||match.State.Value.Switch-match.Now>3)return 1;
+            return .3f+.7f*(.5f+.5f*Mathf.Cos((float)(match.Now%1)*Mathf.PI*4));
+        }
         // The fill is the visible capture area. Test the centre of the feet,
         // allowing the rest of the character to extend beyond its outline.
         public Bounds CaptureBounds=>area!=null&&area.Length>0&&area[0]!=null?area[0].bounds:
@@ -22,10 +28,14 @@ namespace RightWalkPrototype
         }
         public void Show(bool active,bool next,Color color)
         {
-            if(console!=null)console.Show(active,next,color);
+            float pulse=active?WarningPulse(ArenaObjectiveMatch.Instance):1;
+            if(console!=null)console.Show(active,next,Color.Lerp(color*.35f,color,pulse));
             if(next&&!active)color=ArenaObjectiveGuide.NextColor;
-            foreach(var r in area)if(r!=null){r.enabled=active||next;var c=color;c.a=r.name=="Zone fill"?(active?.07f:.025f):(active?.8f:.3f);r.color=c;}
-            if(label!=null){label.gameObject.SetActive(active||next);label.text=active?"UPLINK":"NEXT";label.color=color;}
+            if(Application.isPlaying&&field==null&&area!=null&&area.Length>0)field=new ArenaHackingField(area[0]);
+            bool hologram=field!=null&&field.Ready;
+            if(hologram)field.Show(active,next,color,pulse,ArenaObjectiveMatch.Instance!=null?ArenaObjectiveMatch.Instance.Now:Time.timeAsDouble);
+            foreach(var r in area)if(r!=null){r.enabled=!hologram&&(active||next);var c=color;c.a=(r.name=="Zone fill"?(active?.07f:.025f):(active?.8f:.3f))*pulse;r.color=c;}
+            if(label!=null){label.gameObject.SetActive((active||next)&&!ArenaCombatHud.Active);label.text=active?"UPLINK":"NEXT";label.color=color;}
         }
     }
 }

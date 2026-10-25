@@ -11,12 +11,13 @@ namespace RightWalkPrototype
         readonly List<GrenadeFlight> grenades=new();readonly List<GrenadeBlast> grenadeBlasts=new();
         public void ShowGrenade(uint id,Vector2 origin,Vector2 velocity,double began,int version)
         {
+            ArenaAudio.World(ArenaAudio.Cue.GrenadeLaunch,origin,GetInstanceID());
             var g=new GrenadeFlight{Id=id,Origin=origin,Velocity=velocity,Began=began,Version=version,Body=AcquireVisual(),Tail=AcquireVisual()};g.Body.numCapVertices=6;g.Body.sortingOrder=31;grenades.Add(g);DrawGrenade(g);
             AddSpark(origin,velocity,.06f,.32f,.1f,true,new Color(.8f,1,.5f),new Color(.3f,.8f,.1f,0));aim.KickRecoil(1.5f);
         }
         void DrawGrenade(GrenadeFlight g)
         {
-            float age=Mathf.Max(0,(float)(NetworkManager.Singleton.ServerTime.Time-g.Began));var p=ArenaGrenadeBallistics.At(g.Origin,g.Velocity,age);var direction=(g.Velocity+Vector2.down*ArenaGrenadeBallistics.Gravity*age).normalized;
+            float age=Mathf.Max(0,(float)(ArenaClock.Now(NetworkManager.Singleton)-g.Began));var p=ArenaGrenadeBallistics.At(g.Origin,g.Velocity,age);var direction=(g.Velocity+Vector2.down*ArenaGrenadeBallistics.Gravity*age).normalized;
             g.Body.startWidth=.13f;g.Body.endWidth=.09f;g.Body.startColor=new Color(.9f,1,.7f);g.Body.endColor=new Color(.45f,.9f,.15f);g.Body.SetPosition(0,(Vector3)(p+direction*.08f));g.Body.SetPosition(1,(Vector3)(p-direction*.07f));
             g.Tail.startWidth=.065f;g.Tail.endWidth=.005f;g.Tail.startColor=new Color(.65f,1,.3f,.6f);g.Tail.endColor=new Color(.3f,.7f,.1f,0);g.Tail.SetPosition(0,p);g.Tail.SetPosition(1,p-direction*.35f);
         }
@@ -25,6 +26,7 @@ namespace RightWalkPrototype
         {for(int i=grenades.Count-1;i>=0;i--)if(grenades[i].Id==id){ReturnGrenadeLine(grenades[i].Body);ReturnGrenadeLine(grenades[i].Tail);grenades.RemoveAt(i);}}
         public void ShowGrenadeBurst(uint id,Vector2 point)
         {
+            ArenaAudio.World(ArenaAudio.Cue.Explosion,point,GetInstanceID());
             if(aim==null)aim=GetComponent<RightFacingAimRig>();
             EndGrenade(id);
             LineRenderer Blob(int order){var line=AcquireVisual();line.numCapVertices=8;line.sortingOrder=order;return line;}
@@ -65,7 +67,7 @@ namespace RightWalkPrototype
         {
             var match=ArenaObjectiveMatch.Instance;
             for(int i=grenades.Count-1;i>=0;i--)
-            {var g=grenades[i];if(match==null||!match.IsSpawned||match.State.Value.Version!=g.Version||ArenaObjectiveMatch.CombatBlocked||NetworkManager.Singleton.ServerTime.Time-g.Began>ArenaGrenadeBallistics.MaximumLife+.5)EndGrenade(g.Id);else DrawGrenade(g);}
+            {var g=grenades[i];if(match==null||!match.IsSpawned||match.State.Value.Version!=g.Version||ArenaObjectiveMatch.CombatBlocked||ArenaClock.Now(NetworkManager.Singleton)-g.Began>ArenaGrenadeBallistics.MaximumLife+.5)EndGrenade(g.Id);else DrawGrenade(g);}
             for(int i=grenadeBlasts.Count-1;i>=0;i--)
             {
                 var blast=grenadeBlasts[i];float age=Time.time-blast.Began;

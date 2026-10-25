@@ -16,6 +16,7 @@ namespace RightWalkPrototype
             if(Event.current.type!=EventType.Repaint||arena==null||arena.MenuOpen||arena.overview||
                 match.State.Value.Phase!=ArenaObjectiveMatch.Stage.Playing)return;
             var camera=arena.arenaCamera;if(camera==null)return;
+            if(ArenaCombatHud.Active){var bounds=match.Points[match.State.Value.Point].CaptureBounds;ArenaCombatHud.DrawMarker(new Vector3(bounds.center.x,bounds.max.y+.3f,bounds.center.z));return;}
             if(owner==null||!owner.IsSpawned||!owner.IsOwner)
             {
                 owner=null;

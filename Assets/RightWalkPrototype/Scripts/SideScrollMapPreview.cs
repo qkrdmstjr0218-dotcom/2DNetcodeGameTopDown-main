@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 #if ENABLE_INPUT_SYSTEM
 using UnityEngine.InputSystem;
 #endif
@@ -100,7 +100,7 @@ namespace RightWalkPrototype
             float targetSpeed=SpeedOverride??(runMode!=null&&sprint?runMode.runSpeed:speed);
             if(blocked)jumpRequested=false;
             bool dropping=jumpRequested&&GetComponent<CrouchTrial>() is CrouchTrial crouch&&crouch.IsCrouched&&arenaMotor!=null&&arenaMotor.TryDrop(GroundCollider);
-            if(dropping){Grounded=false;GroundCollider=null;JumpCount=1;velocity=body.linearVelocity;jumpRequested=false;}
+            if(dropping){ArenaTutorial.Instance?.RecordDrop(GroundCollider);Grounded=false;GroundCollider=null;JumpCount=1;velocity=body.linearVelocity;jumpRequested=false;}
             velocity.x=Mathf.MoveTowards(velocity.x,pushed?0:horizontal*targetSpeed,(pushed?3f:14f)*Time.fixedDeltaTime);
             if(blocked&&!pushed)velocity.x=0;
             bool jumping=jumpRequested&&!JumpInputBlocked&&(Grounded||allowDoubleJump&&JumpCount<2);
@@ -133,7 +133,7 @@ namespace RightWalkPrototype
         {spawn=position;ResetPosition();transform.position=new Vector3(spawn.x,spawn.y,transform.position.z);}
         private void OnGUI()
         {
-            if(SideScrollNetworkSession.LobbyVisible||ArenaObjectiveMatch.InReadyRoom)return;
+            if(ArenaCombatHud.UsesGameUi||ArenaObjectiveMatch.Ended||ArenaCombatHud.Active||SideScrollNetworkSession.LobbyVisible||ArenaObjectiveMatch.InReadyRoom)return;
             GUILayout.BeginArea(new Rect(15,15,310,180),GUI.skin.box);
             GUILayout.Label("횡스크롤 테스트 맵");
             GUILayout.Label(allowDoubleJump?"A/D 또는 ←/→: 이동 / Space: 점프·공중 1회 추가":"A/D 또는 ←/→: 이동 / Space: 점프");

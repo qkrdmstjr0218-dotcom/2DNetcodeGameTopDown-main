@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using Unity.Netcode;
 using Unity.Netcode.Transports.UTP;
 
@@ -7,6 +7,7 @@ namespace RightWalkPrototype
     public sealed partial class SideScrollNetworkSession : MonoBehaviour
     {
         public GameObject targetPrefab;
+        public GameObject tutorialTargetPrefab;
         public GameObject arenaObjectivePrefab;
         public Transform[] playerSpawns;
         public bool useReadyRoom=true;
@@ -63,9 +64,10 @@ namespace RightWalkPrototype
             var manager=NetworkManager.Singleton;
             if(manager==null||manager.IsListening||manager.ShutdownInProgress)return;
             if(OnlineBusy||onlineSession!=null)return;
-            SoloPractice=solo;PrepareConnection(false);
+            ArenaClock.Reset();SoloPractice=solo;PrepareConnection(false);
             manager.GetComponent<UnityTransport>().SetConnectionData("127.0.0.1",7783,"127.0.0.1");
-            if(host)manager.StartHost();else manager.StartClient();
+            bool started=host?manager.StartHost():manager.StartClient();
+            if(!started){StopTutorial();SoloPractice=false;ConnectionNotice="연결을 시작하지 못했습니다. 다시 시도해 주세요.";}
         }
         private void ApproveRoomConnection(NetworkManager.ConnectionApprovalRequest request,NetworkManager.ConnectionApprovalResponse response)
         {
@@ -83,6 +85,8 @@ namespace RightWalkPrototype
             // NetworkConfig.Prefabs.Add alone is not a persisted prefab-list asset.
             if(targetPrefab!=null && !NetworkManager.Singleton.NetworkConfig.Prefabs.Contains(targetPrefab))
                 NetworkManager.Singleton.AddNetworkPrefab(targetPrefab);
+            if(tutorialTargetPrefab!=null&&!NetworkManager.Singleton.NetworkConfig.Prefabs.Contains(tutorialTargetPrefab))
+                NetworkManager.Singleton.AddNetworkPrefab(tutorialTargetPrefab);
             if(arenaObjectivePrefab!=null&&!NetworkManager.Singleton.NetworkConfig.Prefabs.Contains(arenaObjectivePrefab))NetworkManager.Singleton.AddNetworkPrefab(arenaObjectivePrefab);
             NetworkManager.Singleton.OnServerStarted+=SpawnTargets;
             sessionManager=NetworkManager.Singleton;
@@ -144,11 +148,13 @@ namespace RightWalkPrototype
         }
         private void OnGUI()
         {
+            if(TutorialMode||ArenaCombatHud.Active||ArenaObjectiveMatch.Instance!=null&&ArenaObjectiveMatch.Instance.IsSpawned&&ArenaObjectiveMatch.Instance.RoomFlow)return;
             if(ArenaObjectiveMatch.TransitionActive)return;
             var manager=NetworkManager.Singleton;
             if(manager==null)return;
             if(!manager.IsListening&&useReadyRoom&&RelayArenaPrototype.Instance!=null){DrawOnlineLobby();return;}
-            GUILayout.BeginArea(new Rect(Screen.width-230,15,215,160),GUI.skin.box);
+            if(ArenaCombatHud.UsesGameUi&&manager.IsListening)return;
+            GUILayout.BeginArea(new Rect(Screen.width-230,15,215,manager.IsListening&&ArenaObjectiveMatch.Instance!=null&&ArenaObjectiveMatch.Instance.RoomFlow?100:160),GUI.skin.box);
             if(!manager.IsListening)
             {
                 if(!string.IsNullOrEmpty(ConnectionNotice))

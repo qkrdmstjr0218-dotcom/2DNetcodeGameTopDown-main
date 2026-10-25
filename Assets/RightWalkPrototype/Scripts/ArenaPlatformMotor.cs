@@ -12,8 +12,12 @@ namespace RightWalkPrototype
         private BoxCollider2D shape;
         private SideScrollMapPreview movement;
         private float gravity;
+        private Vector2 commandedVelocity;
+        private bool landingControl;
         private RaycastHit2D flatJoin;
         private float flatJoinDirection;
+        private Collider2D lastSlope;
+        private float lastSlopeAt=float.NegativeInfinity;
         private readonly List<Collider2D> platforms=new List<Collider2D>();
         private readonly HashSet<Collider2D> passableCovers=new HashSet<Collider2D>();
         private readonly HashSet<Collider2D> ignored=new HashSet<Collider2D>();
@@ -23,6 +27,8 @@ namespace RightWalkPrototype
         private void Awake()
         {
             body=GetComponent<Rigidbody2D>();shape=GetComponent<BoxCollider2D>();movement=GetComponent<SideScrollMapPreview>();gravity=body.gravityScale;
+            var map=FindFirstObjectByType<ArenaMapSettings>();
+            if(map!=null)maximumDrop=Mathf.Max(maximumDrop,map.floorSpacing+.6f);
             // A square foot catches the inflated side of a coplanar neighbouring
             // box (including a one-way/solid seam). Round only the tiny contact
             // corner; art and the separately calculated damage bounds stay intact.
@@ -151,7 +157,13 @@ namespace RightWalkPrototype
                     return;
                 }
             }
-            if(!grounded||jumping||previousSupport==null||previousSupport.usedByEffector||
+            // The probe can briefly see the flat one-way deck inside the torso
+            // before the rounded sole reaches its edge. Retain only the recent
+            // grounded ramp contact to complete this same ascending junction.
+            if((previousSupport==null||Mathf.Abs(previousSupport.transform.up.x)<.01f)&&Time.fixedTime-lastSlopeAt<=.12f)
+                previousSupport=lastSlope;
+            bool recent=previousSupport==lastSlope&&Time.fixedTime-lastSlopeAt<=.12f;
+            if((!grounded&&!recent)||jumping||movement.HitReacting||previousSupport==null||IsIgnored(previousSupport)||
                 Mathf.Abs(previousSupport.transform.up.x)<.01f||body.linearVelocity.y<=0)return;
             float sign=Mathf.Sign(body.linearVelocity.x);
             if(sign==0)return;
@@ -176,26 +188,43 @@ namespace RightWalkPrototype
         }
         public void ApplyGroundVelocity(ref Vector2 velocity,RaycastHit2D floor,bool grounded,float input,bool jumping)
         {
+            commandedVelocity=velocity;landingControl=!jumping&&!movement.HitReacting&&velocity.y<-.1f&&(floor.collider==null||!shape.IsTouching(floor.collider));
             bool slope=grounded&&floor.collider!=null&&Mathf.Abs(floor.normal.x)>.01f;
+            if(jumping||movement.HitReacting){lastSlope=null;lastSlopeAt=float.NegativeInfinity;}
+            else if(slope){lastSlope=floor.collider;lastSlopeAt=Time.fixedTime;}
             // On a steep incline the narrowed foot probe is farther from the
             // surface even while the full rounded collider is touching it.
             // Keep actual support still instead of re-enabling downhill gravity.
             bool settled=floor.distance<.04f||floor.collider!=null&&shape.IsTouching(floor.collider);
-            // Tangent velocity already follows solid ramps. Gravity projected by the
-            // contact solver otherwise slows uphill acceleration and speeds downhill motion.
-            // Keep normal gravity for jumps, falling, hit reactions and passable ramps.
-            bool controlledSolid=slope&&settled&&!jumping&&!movement.HitReacting&&!floor.collider.usedByEffector;
-            body.gravityScale=slope&&settled&&!jumping&&(controlledSolid||Mathf.Abs(input)<.001f)?0:gravity;
+            // Once supported, one-way and solid slopes use the same controlled
+            // tangent motion. Air, jump/drop and knockback still use normal gravity.
+            bool controlledSlope=slope&&settled&&!jumping&&!movement.HitReacting;
+            body.gravityScale=controlledSlope?0:gravity;
             if(!slope||jumping)return;
             if(Mathf.Abs(input)<.001f){if(settled)velocity=Vector2.zero;}
             else velocity.y=-floor.normal.x/floor.normal.y*velocity.x;
+        }
+        private void OnCollisionEnter2D(Collision2D collision)
+        {
+            if(!landingControl||!movement.enabled||movement.HitReacting)return;
+            var floor=collision.collider;
+            if(!(floor is BoxCollider2D)||floor.isTrigger||IsIgnored(floor)||floor.GetComponentInParent<SideScrollNetworkPlayer>()!=null||floor.GetComponentInParent<ArenaPatrolEnemy>()!=null)return;
+            Vector2 normal=floor.transform.up;if(normal.y<.6f||Mathf.Abs(normal.x)<.01f)return;
+            bool top=false;for(int i=0;i<collision.contactCount;i++)if(Vector2.Dot(collision.GetContact(i).normal,normal)>.97f){top=true;break;}
+            if(!top)return;
+            // A falling body's vertical impact is otherwise converted to a lateral
+            // impulse before the next ground probe. Preserve the commanded air x,
+            // not that solver-generated shove, and begin tangent control now.
+            body.linearVelocity=new Vector2(commandedVelocity.x,-normal.x/normal.y*commandedVelocity.x);
+            body.gravityScale=0;landingControl=false;
         }
         private void Restore()
         {
             if(body!=null)body.gravityScale=gravity;
             if(shape!=null)foreach(var collider in ignored)if(collider!=null)Physics2D.IgnoreCollision(shape,collider,false);
             ignored.Clear();admitted.Clear();dropping.Clear();
-            flatJoin=default;flatJoinDirection=0;
+            flatJoin=default;flatJoinDirection=0;landingControl=false;commandedVelocity=Vector2.zero;
+            lastSlope=null;lastSlopeAt=float.NegativeInfinity;
         }
         public void ResetContactState(){Restore();}
         private void OnDisable(){Restore();}

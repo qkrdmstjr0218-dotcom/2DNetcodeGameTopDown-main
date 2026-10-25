@@ -11,11 +11,12 @@ public static class FoundrySpawnBuilder
     {
         FoundryEntryBuilder.Configure(map);
         var rules=map.GetComponent<RelayArenaPrototype>();rules.walkSpeed=2.8f;
-        map.respawnPoints=new[]{Starts[0],Starts[1],Starts[2],Starts[3],new Vector2(-9,10.84f),new Vector2(9,10.84f),new Vector2(-18,3.64f),new Vector2(18,3.64f)};
+        var starts=(Vector2[])Starts.Clone();for(int i=2;i<4;i++)starts[i].y=3*map.floorSpacing+.04f;
+        map.respawnPoints=new[]{starts[0],starts[1],starts[2],starts[3],new Vector2(-FoundryUpperRouteBuilder.FixedSpawnX,3*map.floorSpacing+.04f),new Vector2(FoundryUpperRouteBuilder.FixedSpawnX,3*map.floorSpacing+.04f),new Vector2(-18,map.floorSpacing+.04f),new Vector2(18,map.floorSpacing+.04f)};
         for(int i=0;i<Mathf.Min(4,session.playerSpawns.Length);i++)
         {
-            if(session.playerSpawns[i]!=null)session.playerSpawns[i].position=Starts[i];
-            var pad=map.transform.Find("Spawn pad "+(i+1));if(pad!=null)pad.position=Starts[i]-Vector2.up*.02f;
+            if(session.playerSpawns[i]!=null)session.playerSpawns[i].position=starts[i];
+            var pad=map.transform.Find("Spawn pad "+(i+1));if(pad!=null)pad.position=starts[i]-Vector2.up*.02f;
         }
         // Superseded: spawn safety must not obstruct the existing middle route.
         var oldCovers=map.transform.Find(RootName);

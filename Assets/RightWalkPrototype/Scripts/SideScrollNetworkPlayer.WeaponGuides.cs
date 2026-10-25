@@ -7,7 +7,7 @@ namespace RightWalkPrototype
         readonly Vector2[] shotgunGuide=new Vector2[GuideSamples+1];
         public bool WeaponGuideVisible=>IsSpawned&&IsOwner&&NormalAmmoEnabled&&!IsDead&&SpecialHeld
             &&(SelectedAmmo==AmmoKind.Rifle||SelectedAmmo==AmmoKind.InstantShotgun||SelectedAmmo==AmmoKind.Shotgun)
-            &&!RelayArenaPrototype.ControlsBlocked&&!ArenaObjectiveMatch.CombatBlocked&&!ArenaObjectiveMatch.RoomPointerOverUI;
+            &&!ArenaCombatHud.TabVisible&&!RelayArenaPrototype.ControlsBlocked&&!ArenaObjectiveMatch.CombatBlocked&&!ArenaObjectiveMatch.RoomPointerOverUI;
         // Empty takes priority over the existing switch / per-weapon fire wait.
         public int WeaponGuideState=>SelectedAmmoRounds<=0?2:FireWaitRemaining>0?1:0;
         public Vector2 RifleGuideEnd=>(Vector2)aim.MuzzlePosition+aim.AimDirection*RifleRange;

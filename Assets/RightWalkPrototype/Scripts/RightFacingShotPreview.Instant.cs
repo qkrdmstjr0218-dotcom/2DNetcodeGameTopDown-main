@@ -16,7 +16,7 @@ namespace RightWalkPrototype
             line.SetPosition(0,new Vector3(origin.x,origin.y,aim.MuzzlePosition.z));line.SetPosition(1,new Vector3(end.x,end.y,aim.MuzzlePosition.z));
             var trace=new InstantTrace{Visual=line};instantTraces.Add(trace);DrawInstantTrace(trace);
             if(hit)EmitImpact(end,direction);
-            if(muzzle){EmitShotgunMuzzle(direction);aim.KickRecoil();}
+            if(muzzle){ArenaAudio.World(ArenaAudio.Cue.Shotgun,origin,GetInstanceID());EmitShotgunMuzzle(direction);aim.KickRecoil();}
         }
         void EmitShotgunMuzzle(Vector2 direction)
         {

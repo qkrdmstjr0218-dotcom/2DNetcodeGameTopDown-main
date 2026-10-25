@@ -36,7 +36,7 @@ namespace RightWalkPrototype
         void ChangeFireModeServerRpc(AmmoKind kind,uint generation)
         {
             if(!NormalAmmoEnabled||IsDead||generation!=LifeVersion||ArenaObjectiveMatch.CombatBlocked||(int)kind>(int)AmmoKind.Grenade)return;
-            if(kind!=serverFireKind)serverSwitchReady=NetworkManager.ServerTime.Time+WeaponSwitchSeconds;
+            if(kind!=serverFireKind)serverSwitchReady=ArenaClock.Now(NetworkManager)+WeaponSwitchSeconds;
             serverFireKind=kind;
         }
         bool ServerFireReady(AmmoKind kind,double now)

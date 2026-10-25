@@ -18,7 +18,7 @@ namespace RightWalkPrototype
         void UpdateRiflePracticeAmmo()
         {
             if(!IsServer||!IsSpawned||!RifleEnabled)return;
-            double now=NetworkManager.ServerTime.Time;
+            double now=ArenaClock.Now(NetworkManager);
             if(!ArenaObjectiveMatch.PracticeRoom||IsDead||RifleRounds>=RifleCapacity){nextRiflePracticeSupply=now+PracticeSupplyInterval;return;}
             if(now<nextRiflePracticeSupply)return;
             rifleRounds.Value++;nextRiflePracticeSupply=now+PracticeSupplyInterval;
@@ -30,7 +30,7 @@ namespace RightWalkPrototype
             if(!float.IsFinite(origin.x)||!float.IsFinite(origin.y)||!float.IsFinite(direction.x)||!float.IsFinite(direction.y)||direction.sqrMagnitude<.9f||direction.sqrMagnitude>1.1f)return;
             Vector3 position=IsOwner?transform.position:motion.Value.LifeVersion==LifeVersion?motion.Value.Position:life.Value.SpawnPosition;
             if(Vector2.Distance(origin,position)>3)return;
-            double now=NetworkManager.ServerTime.Time;if(!ServerFireReady(AmmoKind.Rifle,now))return;
+            double now=ArenaClock.Now(NetworkManager);if(!ServerFireReady(AmmoKind.Rifle,now))return;
             MarkServerFired(AmmoKind.Rifle,now);rifleRounds.Value--;nextRiflePracticeSupply=now+PracticeSupplyInterval;
             direction.Normalize();float barrel=Mathf.Max(0,Vector2.Dot(origin-(Vector2)ServerHitBounds().center,direction));
             var match=ArenaObjectiveMatch.Instance;ShowRifleClientRpc(origin,direction,now);
@@ -46,7 +46,7 @@ namespace RightWalkPrototype
             var hitPlayers=new HashSet<ulong>();var hitPatrols=new HashSet<int>();var hitTargets=new HashSet<ulong>();float travelled=0;
             while(IsServer&&IsSpawned&&match!=null&&match.IsSpawned&&match.State.Value.Version==version&&!ArenaObjectiveMatch.CombatBlocked)
             {
-                float next=barrel+Mathf.Min(RifleRange,(float)(NetworkManager.ServerTime.Time-began)*RifleSpeed);
+                float next=barrel+Mathf.Min(RifleRange,(float)(ArenaClock.Now(NetworkManager)-began)*RifleSpeed);
                 Vector2 from=start+direction*travelled;float step=Mathf.Max(0,next-travelled);
                 // Sweep only the distance travelled this frame. Walls never stop this bullet.
                 foreach(var target in FindObjectsByType<SideScrollNetworkPlayer>(FindObjectsSortMode.None))
@@ -57,19 +57,19 @@ namespace RightWalkPrototype
                 foreach(var enemy in FindObjectsByType<ArenaPatrolEnemy>(FindObjectsSortMode.None))
                 {
                     if(enemy.Match!=match||hitPatrols.Contains(enemy.Id)||!enemy.TryGetComponent<Collider2D>(out var shape)||!shape.enabled||!RifleIntersects(shape.bounds,from,direction,step))continue;
-                    hitPatrols.Add(enemy.Id);match.DamagePatrolServer(enemy.Id,enemy.Generation,RifleTargetDamage);ShowRifleImpactClientRpc(shape.bounds.center,direction);
+                    hitPatrols.Add(enemy.Id);match.DamagePatrolServer(enemy.Id,enemy.Generation,RifleTargetDamage,this);ShowRifleImpactClientRpc(shape.bounds.center,direction);
                 }
                 foreach(var target in FindObjectsByType<SideScrollDamageTarget>(FindObjectsSortMode.None))
                 {
                     if(!target.IsSpawned||target.Health.Value<=0||hitTargets.Contains(target.NetworkObjectId)||!target.TryGetComponent<Collider2D>(out var shape)||!RifleIntersects(shape.bounds,from,direction,step))continue;
-                    hitTargets.Add(target.NetworkObjectId);target.ReceiveDamage(RifleTargetDamage,target.Generation);ShowRifleImpactClientRpc(shape.bounds.center,direction);
+                    hitTargets.Add(target.NetworkObjectId);target.ReceiveDamage(RifleTargetDamage,target.Generation,this,AmmoKind.Rifle);ShowRifleImpactClientRpc(shape.bounds.center,direction);
                 }
                 travelled=next;if(travelled>=barrel+RifleRange)yield break;yield return null;
             }
         }
         [ClientRpc]
         void ShowRifleClientRpc(Vector2 origin,Vector2 direction,double began)
-        {ReceivedShots++;ReceivedRifleShots++;shots.ShowRifle(origin,direction,(float)(NetworkManager.ServerTime.Time-began));}
+        {ReceivedShots++;ReceivedRifleShots++;shots.ShowRifle(origin,direction,(float)(ArenaClock.Now(NetworkManager)-began));}
         [ClientRpc]
         void ShowRifleImpactClientRpc(Vector2 point,Vector2 direction)=>shots.ShowRifleImpact(point,direction);
     }

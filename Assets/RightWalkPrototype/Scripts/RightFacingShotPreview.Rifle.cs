@@ -8,6 +8,7 @@ namespace RightWalkPrototype
         readonly List<RifleFlight> rifles=new();
         public void ShowRifle(Vector2 origin,Vector2 direction,float age)
         {
+            ArenaAudio.World(ArenaAudio.Cue.Rifle,origin,GetInstanceID());
             if(aim==null)aim=GetComponent<RightFacingAimRig>();
             var flight=new RifleFlight{Glow=AcquireVisual(),Tail=AcquireVisual(),Visual=AcquireVisual(),Origin=origin,Direction=direction.normalized,Age=Mathf.Max(0,age),InitialAge=Mathf.Max(0,age),Born=Time.time};
             flight.Glow.sortingOrder=29;flight.Visual.sortingOrder=31;flight.Glow.numCapVertices=6;flight.Visual.numCapVertices=6;flight.Tail.numCapVertices=2;
@@ -23,6 +24,7 @@ namespace RightWalkPrototype
         }
         public void ShowRifleImpact(Vector2 point,Vector2 direction)
         {
+            ArenaAudio.World(ArenaAudio.Cue.Impact,point,GetInstanceID());
             if(aim==null)aim=GetComponent<RightFacingAimRig>();
             var side=new Vector2(-direction.y,direction.x);
             AddSpark(point,direction*.1f,.24f,.6f,.4f,false,RifleWhite,RifleViolet);

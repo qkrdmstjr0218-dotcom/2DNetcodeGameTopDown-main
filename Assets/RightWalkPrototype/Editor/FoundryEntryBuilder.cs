@@ -10,10 +10,11 @@ public static class FoundryEntryBuilder
     public static void Configure(ArenaMapSettings map)
     {
         map.enemyEntrances=true;map.enemyEntrySeconds=1.4f;
-        map.groundEnemySpawns=new[]{new Vector2(-13,0),new Vector2(14,3.6f),new Vector2(13,0),new Vector2(-14,3.6f)};
+        float level=map.floorSpacing;
+        map.groundEnemySpawns=new[]{new Vector2(-11,0),new Vector2(10.5f,level),new Vector2(11,0),new Vector2(-10.5f,level)};
         map.patrolRoutes=System.Array.ConvertAll(map.groundEnemySpawns,at=>new ArenaMapSettings.PatrolRoute{left=Mathf.Min(at.x,at.x+(at.x<0?4:-4)),right=Mathf.Max(at.x,at.x+(at.x<0?4:-4)),floor=at.y});
-        map.turretSpawns=new[]{new Vector2(-19,7.2f),new Vector2(19,7.2f),new Vector2(-9,0),new Vector2(9,0)};
-        map.droneSpawns=new[]{new Vector2(-26.25f,13.3f),new Vector2(26.25f,13.3f)};
+        map.turretSpawns=new[]{new Vector2(-8,2*level),new Vector2(8,2*level),new Vector2(-9,0),new Vector2(9,0)};
+        map.droneSpawns=new[]{new Vector2(-26.25f,3*level+2.5f),new Vector2(26.25f,3*level+2.5f)};
         var root=map.transform.Find(RootName);bool addBalconies=root==null;
         if(addBalconies){root=new GameObject(RootName).transform;root.SetParent(map.transform,false);}
         var sprite=AssetDatabase.LoadAssetAtPath<Sprite>("Assets/RightWalkPrototype/Art/MapSolid.png");
@@ -37,16 +38,16 @@ public static class FoundryEntryBuilder
         }
         if(addBalconies)foreach(int side in new[]{-1,1})
         {
-            Part("Outer spawn balcony "+side,new Vector2(side*33.5f,10.66f),new Vector2(5,.28f),Steel,0,true);
-            Line("Balcony solid edge "+side,new Vector2(side*31,10.8f),new Vector2(side*36,10.8f),Solid);
-            Vector2 a=new(side*25,7.2f),b=new(side*31,10.8f);if(a.x>b.x){var t=a;a=b;b=t;}
+            Part("Outer spawn balcony "+side,new Vector2(side*33.5f,3*level-.14f),new Vector2(5,.28f),Steel,0,true);
+            Line("Balcony solid edge "+side,new Vector2(side*31,3*level),new Vector2(side*36,3*level),Solid);
+            Vector2 a=new(side*(level>4.8f?31-level/.8f:25),2*level),b=new(side*31,3*level);if(a.x>b.x){var t=a;a=b;b=t;}
             var d=b-a;var normal=new Vector2(-d.normalized.y,d.normalized.x);
             var ramp=Part("Outer balcony access "+side,(a+b)*.5f-normal*.1f,new Vector2(d.magnitude,.2f),Steel,0,true);
             ramp.transform.rotation=Quaternion.Euler(0,0,Mathf.Atan2(d.y,d.x)*Mathf.Rad2Deg);
             ramp.GetComponent<BoxCollider2D>().usedByEffector=true;
             var effector=ramp.AddComponent<PlatformEffector2D>();effector.useOneWay=true;effector.surfaceArc=160;effector.useSideFriction=false;effector.useSideBounce=false;
             for(float x=0;x<d.magnitude;x+=.32f)Line("Balcony passable dash",Vector2.Lerp(a,b,x/d.magnitude),Vector2.Lerp(a,b,Mathf.Min(x+.2f,d.magnitude)/d.magnitude),Pass);
-            Label("Balcony arrival sign "+side,"ARRIVAL / "+(side<0?"WEST":"EAST"),new Vector2(side*33,12.7f),Pass);
+            Label("Balcony arrival sign "+side,"ARRIVAL / "+(side<0?"WEST":"EAST"),new Vector2(side*33,3*level+1.9f),Pass);
         }
         RepairBalconyEdges(map);
         // Replace only this builder's noncolliding entrance art, never the balconies or travel lanes.
@@ -80,9 +81,9 @@ public static class FoundryEntryBuilder
         foreach(int side in new[]{-1,1})
         {
             var deck=root.Find("Outer spawn balcony "+side);
-            if(deck!=null){deck.position=new Vector3(side*33.5f,10.66f,deck.position.z);deck.localScale=new Vector3(5,.28f,1);}
+            if(deck!=null){deck.position=new Vector3(side*33.5f,3*map.floorSpacing-.14f,deck.position.z);deck.localScale=new Vector3(5,.28f,1);}
             var edge=root.Find("Balcony solid edge "+side);
-            if(edge!=null){edge.position=new Vector3(side*33.5f,10.8f,edge.position.z);edge.localScale=new Vector3(5,.035f,1);}
+            if(edge!=null){edge.position=new Vector3(side*33.5f,3*map.floorSpacing,edge.position.z);edge.localScale=new Vector3(5,.035f,1);}
         }
     }
 }

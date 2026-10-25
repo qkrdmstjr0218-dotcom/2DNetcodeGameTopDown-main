@@ -1,0 +1,264 @@
+2026-10-26 학원 복귀 인계용 Git 변경 목록
+HEAD: 
+b5f532d 튜토리얼 제작중
+미커밋/미추적 .meta 포함. 무시된 LocalTools는 별도 폴더 복사 필요.
+완전한 전달 방법은 HANDOFF-2026-10-26-ACADEMY.ko.md 참조.
+
+ M AGENTS.md
+ M Assets/RightWalkPrototype/Docs/SOLID-RAMP-MOTION.ko.md
+ M Assets/RightWalkPrototype/Editor/ArenaReadyRoomReview.CentralDepot.cs
+ M Assets/RightWalkPrototype/Editor/ArenaReadyRoomReview.Grenade.cs
+ M Assets/RightWalkPrototype/Editor/ArenaReadyRoomReview.Medical.cs
+ M Assets/RightWalkPrototype/Editor/ArenaReadyRoomReview.RespawnAmmo.cs
+ M Assets/RightWalkPrototype/Editor/FoundryDepotSupplyBuilder.cs
+ M Assets/RightWalkPrototype/Editor/FoundryEntryBuilder.cs
+ M Assets/RightWalkPrototype/Editor/FoundrySpawnBuilder.cs
+ M Assets/RightWalkPrototype/Editor/RelayArenaPrototypeBuilder.cs
+ M Assets/RightWalkPrototype/Editor/RelayFoundryBuilder.cs
+ M Assets/RightWalkPrototype/Scenes/Network/RelayFoundryPrototype.unity
+ M Assets/RightWalkPrototype/Scripts/ArenaMapSettings.cs
+ M Assets/RightWalkPrototype/Scripts/ArenaObjectiveGuide.cs
+ M Assets/RightWalkPrototype/Scripts/ArenaObjectiveMatch.Enemies.cs
+ M Assets/RightWalkPrototype/Scripts/ArenaObjectiveMatch.HealthPickups.cs
+ M Assets/RightWalkPrototype/Scripts/ArenaObjectiveMatch.Kills.cs
+ M Assets/RightWalkPrototype/Scripts/ArenaObjectiveMatch.MedicalDrones.cs
+ M Assets/RightWalkPrototype/Scripts/ArenaObjectiveMatch.Navigation.cs
+ M Assets/RightWalkPrototype/Scripts/ArenaObjectiveMatch.Pickups.cs
+ M Assets/RightWalkPrototype/Scripts/ArenaObjectiveMatch.Room.cs
+ M Assets/RightWalkPrototype/Scripts/ArenaObjectiveMatch.Turrets.cs
+ M Assets/RightWalkPrototype/Scripts/ArenaObjectiveMatch.cs
+ M Assets/RightWalkPrototype/Scripts/ArenaObjectivePoint.cs
+ M Assets/RightWalkPrototype/Scripts/ArenaPatrolEnemy.cs
+ M Assets/RightWalkPrototype/Scripts/ArenaPlatformMotor.cs
+ M Assets/RightWalkPrototype/Scripts/ArenaReadyRoom.cs
+ M Assets/RightWalkPrototype/Scripts/ArenaRetractingBridge.cs
+ M Assets/RightWalkPrototype/Scripts/ArenaTutorial.Space.cs
+ M Assets/RightWalkPrototype/Scripts/ArenaTutorial.UI.cs
+ M Assets/RightWalkPrototype/Scripts/ArenaTutorial.cs
+ M Assets/RightWalkPrototype/Scripts/CrouchTrial.cs
+ M Assets/RightWalkPrototype/Scripts/RelayArenaPrototype.Spectator.cs
+ M Assets/RightWalkPrototype/Scripts/RelayArenaPrototype.cs
+ M Assets/RightWalkPrototype/Scripts/RightFacingAimRig.cs
+ M Assets/RightWalkPrototype/Scripts/RightFacingShotPreview.Grenade.cs
+ M Assets/RightWalkPrototype/Scripts/RightFacingShotPreview.Instant.cs
+ M Assets/RightWalkPrototype/Scripts/RightFacingShotPreview.Rifle.cs
+ M Assets/RightWalkPrototype/Scripts/RightFacingShotPreview.cs
+ M Assets/RightWalkPrototype/Scripts/SideScrollDamageTarget.cs
+ M Assets/RightWalkPrototype/Scripts/SideScrollMapPreview.cs
+ M Assets/RightWalkPrototype/Scripts/SideScrollNetworkPlayer.Ammo.cs
+ M Assets/RightWalkPrototype/Scripts/SideScrollNetworkPlayer.AmmoSelectionHint.cs
+ M Assets/RightWalkPrototype/Scripts/SideScrollNetworkPlayer.FireTiming.cs
+ M Assets/RightWalkPrototype/Scripts/SideScrollNetworkPlayer.Grenade.cs
+ M Assets/RightWalkPrototype/Scripts/SideScrollNetworkPlayer.InstantShotgun.cs
+ M Assets/RightWalkPrototype/Scripts/SideScrollNetworkPlayer.NormalAmmo.cs
+ M Assets/RightWalkPrototype/Scripts/SideScrollNetworkPlayer.Rifle.cs
+ M Assets/RightWalkPrototype/Scripts/SideScrollNetworkPlayer.Shield.cs
+ M Assets/RightWalkPrototype/Scripts/SideScrollNetworkPlayer.WeaponGuides.cs
+ M Assets/RightWalkPrototype/Scripts/SideScrollNetworkPlayer.cs
+ M Assets/RightWalkPrototype/Scripts/SideScrollNetworkSession.LobbyUI.cs
+ M Assets/RightWalkPrototype/Scripts/SideScrollNetworkSession.cs
+ M Assets/RightWalkPrototype/SideScrollNetworkPlayer.prefab
+?? Assets/RightWalkPrototype/Art/UI.meta
+?? Assets/RightWalkPrototype/Art/UI/AmmoCursor.shader
+?? Assets/RightWalkPrototype/Art/UI/AmmoCursor.shader.meta
+?? Assets/RightWalkPrototype/Art/UI/ShieldEffect.shader
+?? Assets/RightWalkPrototype/Art/UI/ShieldEffect.shader.meta
+?? Assets/RightWalkPrototype/Art/UI/portrait-1.png
+?? Assets/RightWalkPrototype/Art/UI/portrait-1.png.meta
+?? Assets/RightWalkPrototype/Art/UI/portrait-2.png
+?? Assets/RightWalkPrototype/Art/UI/portrait-2.png.meta
+?? Assets/RightWalkPrototype/Art/UI/portrait-3.png
+?? Assets/RightWalkPrototype/Art/UI/portrait-3.png.meta
+?? Assets/RightWalkPrototype/Art/UI/portrait-4.png
+?? Assets/RightWalkPrototype/Art/UI/portrait-4.png.meta
+?? Assets/RightWalkPrototype/Docs/COMBAT-HUD.ko.md
+?? Assets/RightWalkPrototype/Docs/COMBAT-HUD.ko.md.meta
+?? Assets/RightWalkPrototype/Docs/ENEMY-FEEDBACK.ko.md
+?? Assets/RightWalkPrototype/Docs/ENEMY-FEEDBACK.ko.md.meta
+?? Assets/RightWalkPrototype/Docs/FOUNDRY-ART.ko.md
+?? Assets/RightWalkPrototype/Docs/FOUNDRY-ART.ko.md.meta
+?? Assets/RightWalkPrototype/Docs/FOUNDRY-FLOOR-SPACING.ko.md
+?? Assets/RightWalkPrototype/Docs/FOUNDRY-FLOOR-SPACING.ko.md.meta
+?? Assets/RightWalkPrototype/Docs/FOUNDRY-LAYOUT-REVISION.ko.md
+?? Assets/RightWalkPrototype/Docs/FOUNDRY-LAYOUT-REVISION.ko.md.meta
+?? Assets/RightWalkPrototype/Docs/FULL-FOUNDRY-BACKGROUND.ko.md
+?? Assets/RightWalkPrototype/Docs/FULL-FOUNDRY-BACKGROUND.ko.md.meta
+?? Assets/RightWalkPrototype/Docs/GAME-AUDIO.ko.md
+?? Assets/RightWalkPrototype/Docs/GAME-AUDIO.ko.md.meta
+?? Assets/RightWalkPrototype/Docs/HACKING-FIELD.ko.md
+?? Assets/RightWalkPrototype/Docs/HACKING-FIELD.ko.md.meta
+?? Assets/RightWalkPrototype/Docs/OFFLINE-TUTORIAL.ko.md
+?? Assets/RightWalkPrototype/Docs/OFFLINE-TUTORIAL.ko.md.meta
+?? Assets/RightWalkPrototype/Docs/PICKUP-BODY-CONTACT.ko.md
+?? Assets/RightWalkPrototype/Docs/PICKUP-BODY-CONTACT.ko.md.meta
+?? Assets/RightWalkPrototype/Docs/UPPER-ROUTES-BRIDGES.ko.md
+?? Assets/RightWalkPrototype/Docs/UPPER-ROUTES-BRIDGES.ko.md.meta
+?? Assets/RightWalkPrototype/Docs/VISUAL-FOLLOWUP.ko.md
+?? Assets/RightWalkPrototype/Docs/VISUAL-FOLLOWUP.ko.md.meta
+?? Assets/RightWalkPrototype/Editor/ArenaAudioReview.cs
+?? Assets/RightWalkPrototype/Editor/ArenaAudioReview.cs.meta
+?? Assets/RightWalkPrototype/Editor/ArenaCombatHudReview.cs
+?? Assets/RightWalkPrototype/Editor/ArenaCombatHudReview.cs.meta
+?? Assets/RightWalkPrototype/Editor/ArenaPickupContactReview.cs
+?? Assets/RightWalkPrototype/Editor/ArenaPickupContactReview.cs.meta
+?? Assets/RightWalkPrototype/Editor/ArenaSlopeLandingReview.cs
+?? Assets/RightWalkPrototype/Editor/ArenaSlopeLandingReview.cs.meta
+?? Assets/RightWalkPrototype/Editor/ArenaTutorialReview.Input.cs
+?? Assets/RightWalkPrototype/Editor/ArenaTutorialReview.Input.cs.meta
+?? Assets/RightWalkPrototype/Editor/ArenaTutorialReview.cs
+?? Assets/RightWalkPrototype/Editor/ArenaTutorialReview.cs.meta
+?? Assets/RightWalkPrototype/Editor/ArenaVisualFollowupReview.cs
+?? Assets/RightWalkPrototype/Editor/ArenaVisualFollowupReview.cs.meta
+?? Assets/RightWalkPrototype/Editor/FoundryArtBuilder.cs
+?? Assets/RightWalkPrototype/Editor/FoundryArtBuilder.cs.meta
+?? Assets/RightWalkPrototype/Editor/FoundryArtReview.cs
+?? Assets/RightWalkPrototype/Editor/FoundryArtReview.cs.meta
+?? Assets/RightWalkPrototype/Editor/FoundryCoverArtBuilder.cs
+?? Assets/RightWalkPrototype/Editor/FoundryCoverArtBuilder.cs.meta
+?? Assets/RightWalkPrototype/Editor/FoundryFloorSpacingBuilder.cs
+?? Assets/RightWalkPrototype/Editor/FoundryFloorSpacingBuilder.cs.meta
+?? Assets/RightWalkPrototype/Editor/FoundryFloorSpacingReview.cs
+?? Assets/RightWalkPrototype/Editor/FoundryFloorSpacingReview.cs.meta
+?? Assets/RightWalkPrototype/Editor/FoundryLayoutBuilder.cs
+?? Assets/RightWalkPrototype/Editor/FoundryLayoutBuilder.cs.meta
+?? Assets/RightWalkPrototype/Editor/FoundryRampMotionReview.Layout.cs
+?? Assets/RightWalkPrototype/Editor/FoundryRampMotionReview.Layout.cs.meta
+?? Assets/RightWalkPrototype/Editor/FoundryRampMotionReview.Upper.cs
+?? Assets/RightWalkPrototype/Editor/FoundryRampMotionReview.Upper.cs.meta
+?? Assets/RightWalkPrototype/Editor/FoundryRampMotionReview.cs
+?? Assets/RightWalkPrototype/Editor/FoundryRampMotionReview.cs.meta
+?? Assets/RightWalkPrototype/Editor/FoundryUpperRouteBuilder.cs
+?? Assets/RightWalkPrototype/Editor/FoundryUpperRouteBuilder.cs.meta
+?? Assets/RightWalkPrototype/Resources/ArenaAudio.meta
+?? Assets/RightWalkPrototype/Resources/ArenaAudio/Countdown.wav
+?? Assets/RightWalkPrototype/Resources/ArenaAudio/Countdown.wav.meta
+?? Assets/RightWalkPrototype/Resources/ArenaAudio/Death.wav
+?? Assets/RightWalkPrototype/Resources/ArenaAudio/Death.wav.meta
+?? Assets/RightWalkPrototype/Resources/ArenaAudio/DoubleJump.wav
+?? Assets/RightWalkPrototype/Resources/ArenaAudio/DoubleJump.wav.meta
+?? Assets/RightWalkPrototype/Resources/ArenaAudio/DryFire.wav
+?? Assets/RightWalkPrototype/Resources/ArenaAudio/DryFire.wav.meta
+?? Assets/RightWalkPrototype/Resources/ArenaAudio/EnemyBreak.wav
+?? Assets/RightWalkPrototype/Resources/ArenaAudio/EnemyBreak.wav.meta
+?? Assets/RightWalkPrototype/Resources/ArenaAudio/EnemyShot.wav
+?? Assets/RightWalkPrototype/Resources/ArenaAudio/EnemyShot.wav.meta
+?? Assets/RightWalkPrototype/Resources/ArenaAudio/Explosion.wav
+?? Assets/RightWalkPrototype/Resources/ArenaAudio/Explosion.wav.meta
+?? Assets/RightWalkPrototype/Resources/ArenaAudio/GrenadeLaunch.wav
+?? Assets/RightWalkPrototype/Resources/ArenaAudio/GrenadeLaunch.wav.meta
+?? Assets/RightWalkPrototype/Resources/ArenaAudio/Hurt.wav
+?? Assets/RightWalkPrototype/Resources/ArenaAudio/Hurt.wav.meta
+?? Assets/RightWalkPrototype/Resources/ArenaAudio/Impact.wav
+?? Assets/RightWalkPrototype/Resources/ArenaAudio/Impact.wav.meta
+?? Assets/RightWalkPrototype/Resources/ArenaAudio/Jump.wav
+?? Assets/RightWalkPrototype/Resources/ArenaAudio/Jump.wav.meta
+?? Assets/RightWalkPrototype/Resources/ArenaAudio/Land.wav
+?? Assets/RightWalkPrototype/Resources/ArenaAudio/Land.wav.meta
+?? Assets/RightWalkPrototype/Resources/ArenaAudio/Normal.wav
+?? Assets/RightWalkPrototype/Resources/ArenaAudio/Normal.wav.meta
+?? Assets/RightWalkPrototype/Resources/ArenaAudio/PickupAmmo.wav
+?? Assets/RightWalkPrototype/Resources/ArenaAudio/PickupAmmo.wav.meta
+?? Assets/RightWalkPrototype/Resources/ArenaAudio/PickupHealth.wav
+?? Assets/RightWalkPrototype/Resources/ArenaAudio/PickupHealth.wav.meta
+?? Assets/RightWalkPrototype/Resources/ArenaAudio/PickupShield.wav
+?? Assets/RightWalkPrototype/Resources/ArenaAudio/PickupShield.wav.meta
+?? Assets/RightWalkPrototype/Resources/ArenaAudio/Rifle.wav
+?? Assets/RightWalkPrototype/Resources/ArenaAudio/Rifle.wav.meta
+?? Assets/RightWalkPrototype/Resources/ArenaAudio/RoundEnd.wav
+?? Assets/RightWalkPrototype/Resources/ArenaAudio/RoundEnd.wav.meta
+?? Assets/RightWalkPrototype/Resources/ArenaAudio/RoundStart.wav
+?? Assets/RightWalkPrototype/Resources/ArenaAudio/RoundStart.wav.meta
+?? Assets/RightWalkPrototype/Resources/ArenaAudio/Select.wav
+?? Assets/RightWalkPrototype/Resources/ArenaAudio/Select.wav.meta
+?? Assets/RightWalkPrototype/Resources/ArenaAudio/ShieldHit.wav
+?? Assets/RightWalkPrototype/Resources/ArenaAudio/ShieldHit.wav.meta
+?? Assets/RightWalkPrototype/Resources/ArenaAudio/Shotgun.wav
+?? Assets/RightWalkPrototype/Resources/ArenaAudio/Shotgun.wav.meta
+?? Assets/RightWalkPrototype/Resources/ArenaAudio/Step.wav
+?? Assets/RightWalkPrototype/Resources/ArenaAudio/Step.wav.meta
+?? Assets/RightWalkPrototype/Resources/ArenaAudio/UiClick.wav
+?? Assets/RightWalkPrototype/Resources/ArenaAudio/UiClick.wav.meta
+?? Assets/RightWalkPrototype/Resources/FoundryArt.meta
+?? Assets/RightWalkPrototype/Resources/FoundryArt/Case_100_240.png
+?? Assets/RightWalkPrototype/Resources/FoundryArt/Case_100_240.png.meta
+?? Assets/RightWalkPrototype/Resources/FoundryArt/Case_120_240.png
+?? Assets/RightWalkPrototype/Resources/FoundryArt/Case_120_240.png.meta
+?? Assets/RightWalkPrototype/Resources/FoundryArt/Case_120_240_Pass.png
+?? Assets/RightWalkPrototype/Resources/FoundryArt/Case_120_240_Pass.png.meta
+?? Assets/RightWalkPrototype/Resources/FoundryArt/Case_140_240.png
+?? Assets/RightWalkPrototype/Resources/FoundryArt/Case_140_240.png.meta
+?? Assets/RightWalkPrototype/Resources/FoundryArt/Case_80_120.png
+?? Assets/RightWalkPrototype/Resources/FoundryArt/Case_80_120.png.meta
+?? Assets/RightWalkPrototype/Resources/FoundryArt/Case_80_90.png
+?? Assets/RightWalkPrototype/Resources/FoundryArt/Case_80_90.png.meta
+?? Assets/RightWalkPrototype/Resources/FoundryArt/DepotWall.png
+?? Assets/RightWalkPrototype/Resources/FoundryArt/DepotWall.png.meta
+?? Assets/RightWalkPrototype/Resources/FoundryArt/DroneBarrel.png
+?? Assets/RightWalkPrototype/Resources/FoundryArt/DroneBarrel.png.meta
+?? Assets/RightWalkPrototype/Resources/FoundryArt/DroneHull.png
+?? Assets/RightWalkPrototype/Resources/FoundryArt/DroneHull.png.meta
+?? Assets/RightWalkPrototype/Resources/FoundryArt/DroneSensor.png
+?? Assets/RightWalkPrototype/Resources/FoundryArt/DroneSensor.png.meta
+?? Assets/RightWalkPrototype/Resources/FoundryArt/EnemySprite.shader
+?? Assets/RightWalkPrototype/Resources/FoundryArt/EnemySprite.shader.meta
+?? Assets/RightWalkPrototype/Resources/FoundryArt/GroundCharge.png
+?? Assets/RightWalkPrototype/Resources/FoundryArt/GroundCharge.png.meta
+?? Assets/RightWalkPrototype/Resources/FoundryArt/GroundHull.png
+?? Assets/RightWalkPrototype/Resources/FoundryArt/GroundHull.png.meta
+?? Assets/RightWalkPrototype/Resources/FoundryArt/GroundSensor.png
+?? Assets/RightWalkPrototype/Resources/FoundryArt/GroundSensor.png.meta
+?? Assets/RightWalkPrototype/Resources/FoundryArt/HackingField.shader
+?? Assets/RightWalkPrototype/Resources/FoundryArt/HackingField.shader.meta
+?? Assets/RightWalkPrototype/Resources/FoundryArt/Pickup_G.png
+?? Assets/RightWalkPrototype/Resources/FoundryArt/Pickup_G.png.meta
+?? Assets/RightWalkPrototype/Resources/FoundryArt/Pickup_Health.png
+?? Assets/RightWalkPrototype/Resources/FoundryArt/Pickup_Health.png.meta
+?? Assets/RightWalkPrototype/Resources/FoundryArt/Pickup_R.png
+?? Assets/RightWalkPrototype/Resources/FoundryArt/Pickup_R.png.meta
+?? Assets/RightWalkPrototype/Resources/FoundryArt/Pickup_S.png
+?? Assets/RightWalkPrototype/Resources/FoundryArt/Pickup_S.png.meta
+?? Assets/RightWalkPrototype/Resources/FoundryArt/Pickup_Shield.png
+?? Assets/RightWalkPrototype/Resources/FoundryArt/Pickup_Shield.png.meta
+?? Assets/RightWalkPrototype/Resources/FoundryArt/RushArrow.png
+?? Assets/RightWalkPrototype/Resources/FoundryArt/RushArrow.png.meta
+?? Assets/RightWalkPrototype/Resources/FoundryArt/SupportCargo.png
+?? Assets/RightWalkPrototype/Resources/FoundryArt/SupportCargo.png.meta
+?? Assets/RightWalkPrototype/Resources/FoundryArt/SupportHull.png
+?? Assets/RightWalkPrototype/Resources/FoundryArt/SupportHull.png.meta
+?? Assets/RightWalkPrototype/Resources/FoundryArt/SupportMarker.png
+?? Assets/RightWalkPrototype/Resources/FoundryArt/SupportMarker.png.meta
+?? Assets/RightWalkPrototype/Resources/FoundryArt/TurretBarrel.png
+?? Assets/RightWalkPrototype/Resources/FoundryArt/TurretBarrel.png.meta
+?? Assets/RightWalkPrototype/Resources/FoundryArt/TurretBase.png
+?? Assets/RightWalkPrototype/Resources/FoundryArt/TurretBase.png.meta
+?? Assets/RightWalkPrototype/Resources/FoundryArt/TurretSensor.png
+?? Assets/RightWalkPrototype/Resources/FoundryArt/TurretSensor.png.meta
+?? Assets/RightWalkPrototype/Scripts/ArenaAmmoCursor.cs
+?? Assets/RightWalkPrototype/Scripts/ArenaAmmoCursor.cs.meta
+?? Assets/RightWalkPrototype/Scripts/ArenaAudio.cs
+?? Assets/RightWalkPrototype/Scripts/ArenaAudio.cs.meta
+?? Assets/RightWalkPrototype/Scripts/ArenaClock.cs
+?? Assets/RightWalkPrototype/Scripts/ArenaClock.cs.meta
+?? Assets/RightWalkPrototype/Scripts/ArenaCombatHud.cs
+?? Assets/RightWalkPrototype/Scripts/ArenaCombatHud.cs.meta
+?? Assets/RightWalkPrototype/Scripts/ArenaEnemyArt.cs
+?? Assets/RightWalkPrototype/Scripts/ArenaEnemyArt.cs.meta
+?? Assets/RightWalkPrototype/Scripts/ArenaHackingField.cs
+?? Assets/RightWalkPrototype/Scripts/ArenaHackingField.cs.meta
+?? Assets/RightWalkPrototype/Scripts/ArenaHudSkin.cs
+?? Assets/RightWalkPrototype/Scripts/ArenaHudSkin.cs.meta
+?? Assets/RightWalkPrototype/Scripts/ArenaObjectiveMatch.Audio.cs
+?? Assets/RightWalkPrototype/Scripts/ArenaObjectiveMatch.Audio.cs.meta
+?? Assets/RightWalkPrototype/Scripts/ArenaObjectiveMatch.ResultsUI.cs
+?? Assets/RightWalkPrototype/Scripts/ArenaObjectiveMatch.ResultsUI.cs.meta
+?? Assets/RightWalkPrototype/Scripts/ArenaPickupArt.cs
+?? Assets/RightWalkPrototype/Scripts/ArenaPickupArt.cs.meta
+?? Assets/RightWalkPrototype/Scripts/ArenaReadyRoomControls.cs
+?? Assets/RightWalkPrototype/Scripts/ArenaReadyRoomControls.cs.meta
+?? Assets/RightWalkPrototype/Scripts/ArenaTransitionHud.cs
+?? Assets/RightWalkPrototype/Scripts/ArenaTransitionHud.cs.meta
+?? Assets/RightWalkPrototype/Scripts/ArenaUiTheme.cs
+?? Assets/RightWalkPrototype/Scripts/ArenaUiTheme.cs.meta
+?? Assets/RightWalkPrototype/Scripts/RelayArenaPrototype.Menu.cs
+?? Assets/RightWalkPrototype/Scripts/RelayArenaPrototype.Menu.cs.meta
+?? HANDOFF-2026-10-26-ACADEMY.ko.md

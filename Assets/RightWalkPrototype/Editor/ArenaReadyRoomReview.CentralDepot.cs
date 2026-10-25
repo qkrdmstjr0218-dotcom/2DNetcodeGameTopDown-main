@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
@@ -73,6 +73,6 @@ public static partial class ArenaReadyRoomReview
         foreach(var item in m.AmmoPickups)Require(item.Amount==1&&CaseClearsFloor(m,item),"every ammunition source gives one and stays above floor");
         Require(NoQuantityLabels(m),"dropped cases also omit quantity labels");
         yield return CheckDepotSlope(m);
-        var state=m.State.Value;state.End=m.Now+.05;m.State.Value=state;yield return Wait(()=>All(4,p=>p.phase==2&&p.pickupsCount==0),"finish clears fixed supplies and drops");Require(m.ReturnToRoom(),"return after depot test");yield return Wait(()=>All(4,p=>p.phase==0&&p.ammo==6&&p.rifleAmmo==3&&p.grenadeAmmo==3),"ready room returns full practice ammunition");
+        var state=m.State.Value;state.End=m.Now+.05;m.State.Value=state;yield return Wait(()=>All(4,p=>p.phase==2&&p.pickupsCount==0),"finish clears fixed supplies and drops");Require(m.ReturnToRoom(),"return after depot test");yield return Wait(()=>All(4,p=>p.phase==0&&p.ammo==6&&p.rifleAmmo==3&&p.grenadeAmmo==SideScrollNetworkPlayer.GrenadeCapacity),"ready room returns full practice ammunition");
     }
 }

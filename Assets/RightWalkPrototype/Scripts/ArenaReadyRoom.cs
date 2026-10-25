@@ -7,7 +7,7 @@ namespace RightWalkPrototype
     public static class ArenaReadyRoom
     {
         public static Vector3 Spawn(int number)=>new Vector3(100+(Mathf.Clamp(number,1,4)-2.5f)*3,.04f,0);
-        public static void Build(Transform parent)
+        public static void Build(Transform parent,Font controlsFont=null)
         {
             var root=new GameObject("Ready room").transform;root.SetParent(parent,false);
             var sprite=Sprite.Create(Texture2D.whiteTexture,new Rect(0,0,1,1),Vector2.one*.5f,1);
@@ -26,7 +26,7 @@ namespace RightWalkPrototype
             Box("Ceiling",0,9,21,.3f,steel,0,true);
             foreach(float x in new[]{-7f,7f})
             {
-                for(int level=0;level<3;level++)
+                for(int level=0;level<2;level++)
                 {
                     float lx=level==1?Mathf.Sign(x)*5.5f:x,y=1.5f+level*1.5f;
                     var ledge=Box("Jump ledge "+(x<0?"West ":"East ")+(level+1),lx,y,3,.16f,steel,0,true);
@@ -35,15 +35,14 @@ namespace RightWalkPrototype
                 }
             }
             for(int i=1;i<=4;i++)Box("Arrival pad",Spawn(i).x-100,-.15f,1.5f,.06f,new Color(.27f,.4f,.46f),2);
-            var title=new GameObject("Ready room title");title.transform.SetParent(root,false);title.transform.position=new Vector3(100,5.9f,0);
-            var text=title.AddComponent<TextMesh>();text.text="RELAY / READY ROOM";text.anchor=TextAnchor.MiddleCenter;text.alignment=TextAlignment.Center;text.fontSize=64;text.characterSize=.055f;text.color=new Color(.35f,.55f,.6f);
-            text.font=Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");title.GetComponent<MeshRenderer>().sharedMaterial=text.font.material;title.GetComponent<MeshRenderer>().sortingOrder=-80;
+            var font=controlsFont!=null?controlsFont:Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+            ArenaReadyRoomControls.Build(root,sprite,font);
             var cover=Box("Rifle practice solid crate",0,1,1.2f,2,new Color(.29f,.35f,.39f),3,true);cover.AddComponent<ArenaCover>();
             Box("Crate face",0,1,.85f,1.65f,new Color(.13f,.21f,.25f),4);
             Box("Crate solid edge",0,2,1.24f,.045f,new Color(.96f,.63f,.23f),5);
             Box("Piercing mark",0,1,.72f,.045f,new Color(.8f,.5f,1),5);
             var label=new GameObject("Rifle practice label");label.transform.SetParent(root,false);label.transform.position=new Vector3(100,2.6f,0);
-            var hint=label.AddComponent<TextMesh>();hint.text="RIFLE / PIERCE";hint.anchor=TextAnchor.MiddleCenter;hint.alignment=TextAlignment.Center;hint.fontSize=48;hint.characterSize=.035f;hint.color=new Color(.8f,.65f,1);hint.font=text.font;
+            var hint=label.AddComponent<TextMesh>();hint.text="RIFLE / PIERCE";hint.anchor=TextAnchor.MiddleCenter;hint.alignment=TextAlignment.Center;hint.fontSize=48;hint.characterSize=.035f;hint.color=new Color(.8f,.65f,1);hint.font=font;
             label.GetComponent<MeshRenderer>().sharedMaterial=hint.font.material;label.GetComponent<MeshRenderer>().sortingOrder=5;
         }
     }

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
@@ -119,21 +119,32 @@ namespace RightWalkPrototype
             if(trip.Step<trip.Points.Count)return true;
             FinishMedicalTrip();return false;
         }
+        public const float SupportGuideHeight=1.55f;
+        public bool TrySupportGuideWorld(out Vector2 world)
+        {
+            foreach(var drone in Patrols)if(drone.Medical&&drone.Health>0)
+            {
+                world=patrolViews.TryGetValue(drone.Id,out var view)&&view!=null&&view.gameObject.activeInHierarchy&&view.Generation==drone.Generation
+                    ?(Vector2)view.transform.TransformPoint(new Vector3(0,SupportGuideHeight,0)):drone.Position+Vector2.up*SupportGuideHeight;
+                return true;
+            }
+            world=default;return false;
+        }
         void DrawMedicalGuide()
         {
             if(State.Value.Phase!=Stage.Playing||RelayArenaPrototype.Instance!=null&&RelayArenaPrototype.Instance.MenuOpen||Camera.main==null)return;
-            var window=MedicalTransit.Value;bool approaching=window.Valid&&window.NextAt>Now&&window.NextAt-Now<=medicalWarningSeconds;
-            Vector2 world=window.Entry;bool exists=approaching;
-            if(!approaching)foreach(var drone in Patrols)if(drone.Medical&&drone.Health>0){world=drone.Position+Vector2.up*.5f;exists=true;break;}
+            bool live=TrySupportGuideWorld(out Vector2 world);var window=MedicalTransit.Value;bool approaching=!live&&window.Valid&&window.NextAt>Now&&window.NextAt-Now<=medicalWarningSeconds;
+            if(approaching)world=window.Entry+Vector2.up*SupportGuideHeight;bool exists=live||approaching;
             if(!exists)return;
+            if(ArenaCombatHud.Active){ArenaCombatHud.DrawMarker(world,true,live);return;}
             var p=Camera.main.WorldToScreenPoint(world);
             if(!approaching&&p.z>0&&p.x>50&&p.x<Screen.width-50&&p.y>90&&p.y<Screen.height-90)return;
             var screen=new Vector2(p.x,Screen.height-p.y);var delta=screen-new Vector2(Screen.width*.5f,Screen.height*.5f);
             string arrow=Mathf.Abs(delta.x)>=Mathf.Abs(delta.y)?delta.x<0?"◀":"▶":delta.y<0?"▲":"▼";
             float minY=Mathf.Min(340,Screen.height*.45f),maxY=Mathf.Max(minY,Screen.height-200);
-            float x=Mathf.Clamp(screen.x,90,Screen.width-90),y=Mathf.Clamp(screen.y,minY,maxY);
-            var rect=new Rect(x-80,y-14,160,28);var old=GUI.color;GUI.color=new Color(.02f,.1f,.05f,.9f);GUI.DrawTexture(rect,Texture2D.whiteTexture);GUI.color=old;
-            GUI.Label(rect,arrow+" "+(approaching?"보호막 드론 접근":"보호막 드론"),new GUIStyle(GUI.skin.label){alignment=TextAnchor.MiddleCenter,fontSize=14,normal={textColor=new Color(.4f,1,.6f)}});
+            float x=Mathf.Clamp(screen.x,120,Screen.width-120),y=Mathf.Clamp(screen.y,minY,maxY);
+            var rect=new Rect(x-110,y-14,220,28);var old=GUI.color;GUI.color=new Color(.02f,.1f,.05f,.9f);GUI.DrawTexture(rect,Texture2D.whiteTexture);GUI.color=old;
+            GUI.Label(rect,arrow+" "+(approaching?"보호막 드론 접근":"보호막 드론")+" · 격추 +"+MedicalDroneKillPoints,new GUIStyle(GUI.skin.label){alignment=TextAnchor.MiddleCenter,fontSize=14,normal={textColor=new Color(.4f,1,.6f)}});
         }
     }
 }

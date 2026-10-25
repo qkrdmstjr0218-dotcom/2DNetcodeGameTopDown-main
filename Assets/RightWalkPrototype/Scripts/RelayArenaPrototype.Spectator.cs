@@ -27,11 +27,15 @@ namespace RightWalkPrototype
         void DrawSpectator()
         {
             if(!WantsSpectator)return;
+            using(ArenaUiTheme.Use())DrawStyledSpectator();
+        }
+        void DrawStyledSpectator()
+        {
             var own=LocalPlayer();var viewed=SpectatorTarget();
             GUILayout.BeginArea(new Rect(Screen.width*.5f-190,Screen.height-130,380,110),GUI.skin.box);
             GUILayout.Label("부활 대기 · "+own.RespawnRemaining.ToString("0.0")+"초");
             GUILayout.Label(viewed!=null?"P"+viewed.PlayerNumber+" 관전 중":"생존 플레이어가 없습니다.");
-            if(viewed!=null){GUILayout.BeginHorizontal();if(GUILayout.Button("◀ 이전"))CycleSpectator(-1);if(GUILayout.Button("다음 ▶"))CycleSpectator(1);GUILayout.EndHorizontal();}
+            if(viewed!=null){GUILayout.BeginHorizontal();if(ArenaUiTheme.Button("◀ 이전"))CycleSpectator(-1);if(ArenaUiTheme.Button("다음 ▶"))CycleSpectator(1);GUILayout.EndHorizontal();}
             GUILayout.EndArea();
         }
     }

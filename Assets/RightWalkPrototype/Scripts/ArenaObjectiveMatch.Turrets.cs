@@ -52,7 +52,7 @@ namespace RightWalkPrototype
             Vector2 pivot=TurretPivot(state);var target=TurretTarget(state,players,false);
             if(target==null)return;
             state.Aim=((Vector2)target.ArenaHitBounds.center-pivot).normalized;
-            state.TargetClient=target.OwnerClientId;state.BurstLeft=state.Flying?2:TurretBurstCount;state.FireAt=Now+TurretWarning;Patrols[index]=state;
+            state.TargetClient=target.OwnerClientId;state.BurstLeft=state.Flying?2:TurretBurstCount;state.FireAt=Now+(state.Flying?DroneWarning:TurretWarning);Patrols[index]=state;
         }
         void UpdateTurretShots()
         {
@@ -91,6 +91,7 @@ namespace RightWalkPrototype
                 if(!PickupGameActive)break;remaining.Add(shot.Id);
                 if(!turretBulletViews.TryGetValue(shot.Id,out var line))
                 {
+                    ArenaAudio.World(ArenaAudio.Cue.EnemyShot,shot.Origin,shot.Id);
                     if(turretBulletMaterial==null)turretBulletMaterial=new Material(Shader.Find("Sprites/Default"));
                     var go=new GameObject("Turret projectile");go.transform.SetParent(transform,false);line=go.AddComponent<LineRenderer>();
                     line.sharedMaterial=turretBulletMaterial;line.useWorldSpace=true;line.positionCount=2;line.numCapVertices=6;line.sortingOrder=30;

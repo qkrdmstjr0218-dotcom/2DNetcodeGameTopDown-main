@@ -117,7 +117,7 @@ public static partial class ArenaReadyRoomReview
         m.DamagePatrolServer(id,1,100);Require(m.HealthPickups.Count==health+1,"duplicate death cannot duplicate medical kit");
         yield return Wait(()=>m.HealthPickups.Count==health+1&&!m.HealthPickups[health].Falling,"kit falls and settles on terrain",4);
         kit=m.HealthPickups[health];Require(kit.Position.y<initialHeight&&ArenaEnemyNavigation.FloorBelow(kit.Position+Vector2.up*.02f,.5f,out var under)&&Mathf.Abs(kit.Position.y-under.point.y-.3f-.35f*Mathf.Abs(under.normal.x)/Mathf.Max(.3f,under.normal.y))<.03f,"settled kit rests just above actual floor");
-        Require(kit.ExpiresAt>m.Now+16&&m.ScoreFor(Player(2).OwnerClientId)==score,"kit keeps finite lifetime and NPC kill gives no player-kill points");
+        Require(kit.ExpiresAt>m.Now+16&&m.ScoreFor(Player(2).OwnerClientId)==score+ArenaObjectiveMatch.MedicalDroneKillPoints,"kit keeps finite lifetime and medical drone awards killer bounty");
         // Hold the next arrival only in this fixture while testing the real fifteen-second expiry.
         var deferred=m.MedicalTransit.Value;deferred.NextAt=m.Now+120;m.MedicalTransit.Value=deferred;
         Send(2,99);

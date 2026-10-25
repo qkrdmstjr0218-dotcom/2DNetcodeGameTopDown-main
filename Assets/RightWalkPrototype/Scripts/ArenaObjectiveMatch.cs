@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Unity.Collections;
 using Unity.Netcode;
 using UnityEngine;
@@ -18,10 +18,10 @@ namespace RightWalkPrototype
         }
         public struct Score:INetworkSerializable,IEquatable<Score>
         {
-            public ulong Client;public int Number,Kills;public float Seconds,KillPoints;
-            public float Total=>Seconds+KillPoints;
-            public void NetworkSerialize<T>(BufferSerializer<T> s) where T:IReaderWriter{s.SerializeValue(ref Client);s.SerializeValue(ref Number);s.SerializeValue(ref Seconds);s.SerializeValue(ref Kills);s.SerializeValue(ref KillPoints);}
-            public bool Equals(Score o)=>Client==o.Client&&Number==o.Number&&Seconds==o.Seconds&&Kills==o.Kills&&KillPoints==o.KillPoints;
+            public ulong Client;public int Number,Kills;public float Seconds,KillPoints,DronePoints;
+            public float Total=>Seconds+KillPoints+DronePoints;
+            public void NetworkSerialize<T>(BufferSerializer<T> s) where T:IReaderWriter{s.SerializeValue(ref Client);s.SerializeValue(ref Number);s.SerializeValue(ref Seconds);s.SerializeValue(ref Kills);s.SerializeValue(ref KillPoints);s.SerializeValue(ref DronePoints);}
+            public bool Equals(Score o)=>Client==o.Client&&Number==o.Number&&Seconds==o.Seconds&&Kills==o.Kills&&KillPoints==o.KillPoints&&DronePoints==o.DronePoints;
         }
         public float roundSeconds=180,pointSeconds=30,warningSeconds=5;
         public readonly NetworkVariable<RoundState> State=new(new RoundState{Phase=Stage.Waiting});
@@ -31,7 +31,7 @@ namespace RightWalkPrototype
         public static ArenaObjectiveMatch Instance {get;private set;}
         public static bool Ended=>Instance!=null&&Instance.IsSpawned&&Instance.State.Value.Phase==Stage.Finished;
         public ArenaObjectivePoint[] Points {get;private set;}
-        public double Now=>NetworkManager!=null?NetworkManager.ServerTime.Time:0;
+        public double Now=>NetworkManager!=null?ArenaClock.Now(NetworkManager):0;
         public int NextPoint=>State.Value.Upcoming;
         int PickNextPoint(int current)
         {
@@ -48,9 +48,10 @@ namespace RightWalkPrototype
             if(IsServer){Scores.Clear();State.Value=new RoundState{Phase=Stage.Waiting};Result.Value=default;lastTick=Now;nextTick=Now;}
             InitializeRoom();
             InitializeAmmoRules();pickupVersion=-1;patrolVersion=-1;
+            ListenPickupAudio();
         }
         public override void OnNetworkDespawn()
-        {ClearTurretVisuals();ClearPatrolVisuals();ClearPickupVisuals();if(Points!=null)foreach(var p in Points)if(p!=null)p.Show(false,false,Color.white);if(Instance==this)Instance=null;}
+        {StopPickupAudio();ClearTurretVisuals();ClearPatrolVisuals();ClearPickupVisuals();if(Points!=null)foreach(var p in Points)if(p!=null)p.Show(false,false,Color.white);if(Instance==this)Instance=null;}
         public bool StartRound()
         {
             if(!IsSpawned||!IsServer||Points.Length==0)return false;
@@ -116,12 +117,14 @@ namespace RightWalkPrototype
             if(!IsSpawned||Points==null||Points.Length==0)return;
             if(RoomFlow&&(State.Value.Phase==Stage.Waiting||Transitioning)){DrawRoom();return;}
             if(RoomFlow&&State.Value.Phase==Stage.Countdown)
-            {GUI.Label(new Rect(Screen.width*.5f-250,Screen.height*.5f-65,500,130),State.Value.End==0?"플레이어 도착을 기다립니다…":Mathf.Max(1,Mathf.CeilToInt((float)(State.Value.End-Now))).ToString(),new GUIStyle(GUI.skin.box){alignment=TextAnchor.MiddleCenter,fontSize=40});return;}
+            {ArenaTransitionHud.Countdown(State.Value.End,Now);return;}
             var state=State.Value;
-            if(RoomFlow&&state.Phase==Stage.Playing&&state.End-Now>roundSeconds-.7f)GUI.Label(new Rect(Screen.width*.5f-160,Screen.height*.5f-50,320,100),"시작!",new GUIStyle(GUI.skin.box){alignment=TextAnchor.MiddleCenter,fontSize=40});
+            if(RoomFlow&&state.Phase==Stage.Finished){DrawResults();return;}
+            if(RoomFlow&&state.Phase==Stage.Playing&&state.End-Now>roundSeconds-.7f)ArenaTransitionHud.Go();
+            if(ArenaCombatHud.Active){ArenaObjectiveGuide.Draw(this);DrawMedicalGuide();return;}
             GUILayout.BeginArea(new Rect(Screen.width*.5f-210,91,420,125),GUI.skin.box);
             if(state.Phase==Stage.Waiting)
-            {GUILayout.Label("해킹 구역 시험 · 구역 단독 점유 1초 = 1점");GUILayout.Label("구역 안에서 사격 가능 · 2명 이상이면 득점 중단");if(IsServer){if(GUILayout.Button("시험 경기 시작 (3분)"))StartRound();}else GUILayout.Label("호스트의 경기 시작을 기다립니다.");}
+            {GUILayout.Label("해킹 구역 시험 · 구역 단독 점유 1초 = 1점");GUILayout.Label("구역 안에서 사격 가능 · 2명 이상이면 득점 중단");if(IsServer){if(ArenaUiTheme.Button("시험 경기 시작 (3분)"))StartRound();}else GUILayout.Label("호스트의 경기 시작을 기다립니다.");}
             else if(state.Phase==Stage.Playing)
             {
                 int left=Mathf.Max(0,Mathf.CeilToInt((float)(state.End-Now)));
@@ -134,14 +137,14 @@ namespace RightWalkPrototype
             ArenaObjectiveGuide.Draw(this);DrawMedicalGuide();
             if(state.Phase!=Stage.Waiting)
             {
-                GUILayout.BeginArea(new Rect(Screen.width-230,185,215,Mathf.Min(230,50+Scores.Count*24)),GUI.skin.box);GUILayout.Label("점수 · 처치 +"+PlayerKillReward.ToString("0.#"));
+                GUILayout.BeginArea(new Rect(Screen.width-230,185,215,Mathf.Min(230,50+Scores.Count*24)),GUI.skin.box);GUILayout.Label("처치 +"+PlayerKillReward.ToString("0.#")+" · 드론 +"+MedicalDroneKillPoints);
                 var sorted=new Score[Scores.Count];for(int i=0;i<Scores.Count;i++)sorted[i]=Scores[i];Array.Sort(sorted,(a,b)=>a.Number.CompareTo(b.Number));
                 foreach(var score in sorted)GUILayout.Label("P"+score.Number+"   "+score.Total.ToString("0.0")+"점 · "+score.Kills+"킬");GUILayout.EndArea();
             }
             if(state.Phase==Stage.Finished&&(RelayArenaPrototype.Instance==null||!RelayArenaPrototype.Instance.MenuOpen))
             {
                 GUILayout.BeginArea(new Rect(Screen.width*.5f-190,Screen.height*.5f-95,380,190),GUI.skin.box);GUILayout.Label("경기 종료");GUILayout.Label(Result.Value.ToString());
-                if(IsServer){if(GUILayout.Button(RoomFlow?"대기방으로 돌아가기":"다시 시작")){if(RoomFlow)ReturnToRoom();else StartRound();}}else GUILayout.Label(RoomFlow?"방장이 대기방으로 돌아가기를 기다립니다.":"호스트가 다음 경기를 시작할 수 있습니다.");
+                if(IsServer){if(ArenaUiTheme.Button(RoomFlow?"대기방으로 돌아가기":"다시 시작")){if(RoomFlow)ReturnToRoom();else StartRound();}}else GUILayout.Label(RoomFlow?"방장이 대기방으로 돌아가기를 기다립니다.":"호스트가 다음 경기를 시작할 수 있습니다.");
                 GUILayout.Label("ESC: 메뉴 / 연결 종료");GUILayout.EndArea();
             }
         }

@@ -28,6 +28,10 @@ public static class RelayArenaPrototypeBuilder
         sprite=AssetDatabase.LoadAssetAtPath<Sprite>("Assets/RightWalkPrototype/Art/MapSolid.png");
         root=new GameObject("Relay facility 쨌 prototype layout").transform;
         var rules=root.gameObject.AddComponent<RelayArenaPrototype>();rules.arenaCamera=Camera.main;
+        rules.readyRoomFont=AssetDatabase.LoadAssetAtPath<Font>("Assets/TextMesh Pro/EliceDigitalBaeum_Regular.ttf");
+        rules.weaponRange=16f;rules.shieldEffectShader=AssetDatabase.LoadAssetAtPath<Shader>("Assets/RightWalkPrototype/Art/UI/ShieldEffect.shader");
+        rules.ammoCursorShader=AssetDatabase.LoadAssetAtPath<Shader>("Assets/RightWalkPrototype/Art/UI/AmmoCursor.shader");
+        rules.hudPortraits=new Texture2D[4];for(int i=0;i<4;i++)rules.hudPortraits[i]=AssetDatabase.LoadAssetAtPath<Texture2D>("Assets/RightWalkPrototype/Art/UI/portrait-"+(i+1)+".png");
         Camera.main.backgroundColor=new Color(.055f,.085f,.12f);Camera.main.orthographicSize=4.8f;
         Camera.main.transform.position=new Vector3(-8,2.7f,-10);
 
@@ -95,6 +99,7 @@ public static class RelayArenaPrototypeBuilder
         rules.warningLight=Box("Bridge state beacon",new Vector2(14,4.3f),new Vector2(1.5f,.08f),cyan,-40).GetComponent<SpriteRenderer>();
 
         var session=Object.FindFirstObjectByType<SideScrollNetworkSession>();session.targetPrefab=null;
+        session.tutorialTargetPrefab=AssetDatabase.LoadAssetAtPath<GameObject>("Assets/RightWalkPrototype/NetworkDamageTarget.prefab");
         session.playerSpawns=new Transform[4];
         var positions=new[]{new Vector2(-8,.03f),new Vector2(8,.03f),new Vector2(-7,3.23f),new Vector2(7,3.23f)};
         for(int i=0;i<4;i++)

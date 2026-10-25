@@ -4,7 +4,7 @@ namespace RightWalkPrototype
 {
     public sealed partial class ArenaObjectiveMatch
     {
-        public const float DroneSight=9,DroneSpeed=2.2f,DroneNear=3,DroneFar=5;
+        public const float DroneSight=9,DroneSpeed=2.2f,DroneNear=3,DroneFar=5,DroneWarning=1.2f;
         sealed class EnemyBrain
         {
             public List<int> Path=new();public int Step,Last=-1;public double Think,Tick,LostUntil;

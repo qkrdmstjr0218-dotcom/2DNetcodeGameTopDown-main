@@ -11,6 +11,7 @@ namespace RightWalkPrototype
         private int generation;
         public int Generation => generation;
         private float flash;
+        public event System.Action<SideScrollNetworkPlayer,SideScrollNetworkPlayer.AmmoKind> Damaged;
         public override void OnNetworkSpawn()
         {
             Health.OnValueChanged+=Changed;
@@ -23,11 +24,12 @@ namespace RightWalkPrototype
             generation++;Hits.Value=0;Health.Value=Mathf.Max(1,maxHealth);
             ApplyState();
         }
-        public void ReceiveDamage(int damage,int expectedGeneration)
+        public void ReceiveDamage(int damage,int expectedGeneration,SideScrollNetworkPlayer source=null,SideScrollNetworkPlayer.AmmoKind kind=SideScrollNetworkPlayer.AmmoKind.Normal)
         {
             if(!IsServer||!IsSpawned||Health.Value<=0||damage<=0||generation!=expectedGeneration)return;
             Hits.Value++;
             Health.Value=Mathf.Max(0,Health.Value-damage);
+            Damaged?.Invoke(source,kind);
         }
         private void Changed(int previous,int current)
         {

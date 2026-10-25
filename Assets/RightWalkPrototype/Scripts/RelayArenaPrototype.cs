@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using Unity.Netcode;
 #if ENABLE_INPUT_SYSTEM
 using UnityEngine.InputSystem;
@@ -15,9 +15,14 @@ namespace RightWalkPrototype
         private BoxCollider2D bridgeRightCollider;
         public SpriteRenderer warningLight;
         public Camera arenaCamera;
+        public Font readyRoomFont;
+        public Texture2D[] hudPortraits;
+        public Shader ammoCursorShader;
+        public Shader shieldEffectShader;
+        private ArenaCombatHud combatHud;
         public bool overview;
         public float pitLeft=12,pitRight=16;
-        public float weaponRange=24f;
+        public float weaponRange=16f;
         public float walkSpeed=2.4f,runSpeed=3.6f,crouchSpeed=.9f,jumpSpeed=6.5f;
         public float staminaMaximum=100,staminaDrain=25,staminaRecovery=20,staminaRecoveryDelay=1,staminaResume=20;
         public static RelayArenaPrototype Instance {get;private set;}
@@ -36,8 +41,9 @@ namespace RightWalkPrototype
 #endif
             }
         }
+        public static bool AimInputBlocked=>Instance!=null&&(!HasGameplayFocus||Instance.MenuOpen||Instance.overview||ArenaObjectiveMatch.Ended||ArenaObjectiveMatch.TransitionActive);
         public static bool LiveInputBlocked=>ControlsBlocked||Instance!=null&&!HasGameplayFocus;
-        public static bool FireInputBlocked=>LiveInputBlocked||ArenaObjectiveMatch.CombatBlocked||ArenaObjectiveMatch.RoomPointerOverUI||Instance!=null&&Instance.waitForMouseRelease;
+        public static bool FireInputBlocked=>ArenaCombatHud.TabVisible||LiveInputBlocked||ArenaObjectiveMatch.CombatBlocked||ArenaObjectiveMatch.RoomPointerOverUI||Instance!=null&&Instance.waitForMouseRelease;
         public float CycleTime {get;private set;}
         public bool BridgeOpen=>CycleTime>=10;
         private float desiredSize;
@@ -48,9 +54,12 @@ namespace RightWalkPrototype
         private ArenaRetractingBridge[] extraBridges;
         private void Awake()
         {
+            LoadAudioSettings();
+            gameObject.AddComponent<ArenaAudio>();
             map=GetComponent<ArenaMapSettings>();
+            combatHud=gameObject.AddComponent<ArenaCombatHud>();combatHud.portraits=hudPortraits;
             extraBridges=GetComponentsInChildren<ArenaRetractingBridge>();
-            ArenaReadyRoom.Build(transform);
+            ArenaReadyRoom.Build(transform,readyRoomFont);
             // Keep the serialized collider reference, but let each visible leaf
             // carry its own collision instead of toggling the entire crossing.
             bridgeCollider.transform.SetParent(bridgeLeft,false);
@@ -75,7 +84,7 @@ namespace RightWalkPrototype
         private void OnDisable(){if(Instance==this)Instance=null;Cursor.lockState=CursorLockMode.None;Cursor.visible=true;}
         public void SetMenuOpen(bool value)
         {
-            MenuOpen=value;if(!value)waitForMouseRelease=true;
+            MenuOpen=value;if(!value){LeaveConfirmationOpen=false;waitForMouseRelease=true;}
             if(value){Cursor.lockState=CursorLockMode.None;Cursor.visible=true;}
         }
         public bool IsSafeLanding(Vector2 point)
@@ -85,21 +94,22 @@ namespace RightWalkPrototype
             return true;
         }
         private double Clock=>NetworkManager.Singleton!=null&&NetworkManager.Singleton.IsListening?
-            NetworkManager.Singleton.ServerTime.Time:Time.timeAsDouble;
+            ArenaClock.Now(NetworkManager.Singleton):Time.timeAsDouble;
         private void Update()
         {
 #if ENABLE_INPUT_SYSTEM
             if(HasGameplayFocus&&Keyboard.current!=null)
             {
-                if(Keyboard.current.escapeKey.wasPressedThisFrame)SetMenuOpen(!MenuOpen);
-                if(!MenuOpen&&!ArenaObjectiveMatch.InReadyRoom&&!ArenaObjectiveMatch.CountingDown&&Keyboard.current.tabKey.wasPressedThisFrame)overview=!overview;
+                if(Keyboard.current.escapeKey.wasPressedThisFrame){if(LeaveConfirmationOpen)CancelLeave();else SetMenuOpen(!MenuOpen);}
+                // Held Tab is handled below.
             }
             if(Mouse.current==null||!Mouse.current.leftButton.isPressed)waitForMouseRelease=false;
 #elif ENABLE_LEGACY_INPUT_MANAGER
-            if(HasGameplayFocus&&Input.GetKeyDown(KeyCode.Escape))SetMenuOpen(!MenuOpen);
-            if(HasGameplayFocus&&!MenuOpen&&!ArenaObjectiveMatch.InReadyRoom&&!ArenaObjectiveMatch.CountingDown&&Input.GetKeyDown(KeyCode.Tab))overview=!overview;
+            if(HasGameplayFocus&&Input.GetKeyDown(KeyCode.Escape)){if(LeaveConfirmationOpen)CancelLeave();else SetMenuOpen(!MenuOpen);}
+            // Held Tab is handled below.
             if(!Input.GetMouseButton(0))waitForMouseRelease=false;
 #endif
+            combatHud.TickInput();if(ArenaCombatHud.TabVisible)waitForMouseRelease=true;
             CycleTime=(float)(Clock%14);
             // Eight seconds safe, two seconds warning, four seconds retracted.
             float opened=CycleTime>=13.4f?(14-CycleTime)/.6f:CycleTime>=10?Mathf.Clamp01((CycleTime-10)/.6f):0;
@@ -108,7 +118,7 @@ namespace RightWalkPrototype
                 CycleTime>=8?Color.Lerp(new Color(1,.7f,.2f),new Color(.35f,.18f,.07f),Mathf.PingPong(Time.unscaledTime*3,1)):new Color(.25f,.9f,.75f);
             var manager=NetworkManager.Singleton;
             if(!HasGameplayFocus||manager==null||!manager.IsConnectedClient)waitForMouseRelease=true;
-            bool capture=HasGameplayFocus&&manager!=null&&manager.IsConnectedClient&&!MenuOpen&&!overview&&!ArenaObjectiveMatch.CombatBlocked&&!ArenaObjectiveMatch.InReadyRoom&&!WantsSpectator;
+            bool capture=HasGameplayFocus&&manager!=null&&manager.IsConnectedClient&&!MenuOpen&&!overview&&!ArenaCombatHud.TabVisible&&!ArenaObjectiveMatch.CombatBlocked&&!ArenaObjectiveMatch.InReadyRoom&&!WantsSpectator;
             if(WantsSpectator)waitForMouseRelease=true;
             Cursor.lockState=capture?CursorLockMode.Confined:CursorLockMode.None;
             var local=LocalPlayer();Cursor.visible=local==null||!local.AmmoCursorVisible;
@@ -126,7 +136,7 @@ namespace RightWalkPrototype
             if(ArenaTutorial.Active)
             {
                 var p=LocalPlayer();var at=p!=null?p.transform.position:ArenaTutorial.Instance.Checkpoint;
-                arenaCamera.orthographicSize=4.8f;arenaCamera.transform.position=new Vector3(Mathf.Clamp(at.x,199,210),Mathf.Clamp(at.y+1.3f,3.2f,5),-10);cameraReady=false;return;
+                arenaCamera.orthographicSize=4.8f;arenaCamera.transform.position=new Vector3(Mathf.Clamp(at.x+1,200,210),Mathf.Clamp(at.y+1.3f,2.2f,4.2f),-10);cameraReady=false;return;
             }
             if(WantsSpectator)overview=false;
             if(ArenaObjectiveMatch.InReadyRoom)
@@ -156,7 +166,7 @@ namespace RightWalkPrototype
         private void OnGUI()
         {
             if(SideScrollNetworkSession.LobbyVisible||ArenaObjectiveMatch.TransitionActive||ArenaObjectiveMatch.InReadyRoom&&!MenuOpen)return;
-            if(!ArenaObjectiveMatch.InReadyRoom)
+            if(!ArenaCombatHud.UsesGameUi&&!ArenaObjectiveMatch.InReadyRoom&&!ArenaCombatHud.Active&&!ArenaObjectiveMatch.Ended)
             {
             GUILayout.BeginArea(new Rect(Screen.width*.5f-180,12,360,75),GUI.skin.box);
             GUILayout.Label(map!=null?map.displayName:"중계 시설 07 · 3층 순환 전장");
@@ -173,17 +183,8 @@ namespace RightWalkPrototype
             }
             GUILayout.EndArea();
             }
-            if(MenuOpen)
-            {
-                GUILayout.BeginArea(new Rect(Screen.width*.5f-160,Screen.height*.5f-95,320,190),GUI.skin.box);
-                GUILayout.Label("게임 메뉴");
-                GUILayout.Label("다른 플레이어의 게임은 계속 진행됩니다.");
-                if(GUILayout.Button("계속하기 (ESC)"))SetMenuOpen(false);
-                if(GUILayout.Button("연결 종료"))
-                {FindFirstObjectByType<SideScrollNetworkSession>()?.DisconnectLocal();MenuOpen=false;}
-                GUILayout.EndArea();
-            }
-            else DrawSpectator();
+            if(MenuOpen)DrawGameMenu();
+            else if(!ArenaCombatHud.TabVisible)DrawSpectator();
         }
     }
 }

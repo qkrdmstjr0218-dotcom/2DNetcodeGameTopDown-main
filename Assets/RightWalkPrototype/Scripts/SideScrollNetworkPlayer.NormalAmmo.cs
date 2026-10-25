@@ -1,4 +1,4 @@
-﻿using Unity.Netcode;
+using Unity.Netcode;
 using UnityEngine;
 #if ENABLE_INPUT_SYSTEM
 using UnityEngine.InputSystem;
@@ -35,7 +35,7 @@ namespace RightWalkPrototype
             if(!normalAmmoInitialized)ResetNormalAmmo();
             if(IsDead||ArenaObjectiveMatch.CombatBlocked)return;
             var rules=ArenaObjectiveMatch.Instance.NormalAmmoRules;
-            if(NetworkManager.ServerTime.Time-lastNormalShot<rules.Delay)return;
+            if(ArenaClock.Now(NetworkManager)-lastNormalShot<rules.Delay)return;
             normalAmmo.Value=Mathf.Min(rules.Capacity,normalAmmo.Value+rules.Rate*Time.deltaTime);
         }
         public bool WorldStaminaVisible=>IsSpawned&&IsOwner&&!IsDead&&RelayArenaPrototype.Instance!=null
@@ -70,6 +70,8 @@ namespace RightWalkPrototype
         }
         void DrawNormalAmmoHud()
         {
+            if(!ArenaTutorial.Active&&!ArenaCombatHud.Active&&!ArenaObjectiveMatch.InReadyRoom)
+            {
             GUILayout.BeginArea(new Rect(Screen.width-255,Screen.height-189,240,174),GUI.skin.box);
             GUILayout.Label("현재: "+ActiveAmmoName+(ActiveAmmoEmpty?" · 탄약 없음":""));
             GUILayout.Label("일반탄  "+NormalRounds+" / "+NormalCapacity+"     S 샷건  "+ShotgunRounds+" / "+ShotgunCapacity);
@@ -77,16 +79,21 @@ namespace RightWalkPrototype
             GUILayout.Label("Q/E 특수탄 선택 · 우클릭 동안 사용");
             GUILayout.Label("특수탄 선택: "+SelectedAmmoName+"  "+AmmoSelectionHintCountText);
             GUILayout.EndArea();
+            }
+            if(ArenaObjectiveMatch.PracticeRoom)ArenaCombatHud.DrawPracticeAmmo(this);
             if(!AmmoCursorVisible||Event.current.type!=EventType.Repaint)return;
             var point=MouseScreenPoint();point.y=Screen.height-point.y;
             DrawAmmoCursor(point,GrenadeActive?GrenadeRounds:RifleActive?RifleRounds:InstantShotgunActive?InstantShotgunRounds:ShotgunActive?ShotgunRounds:NormalAmmo,GrenadeActive?GrenadeCapacity:RifleActive?RifleCapacity:SpecialShotActive?ShotgunCapacity:NormalCapacity,SpecialShotActive,InstantShotgunActive,RifleActive);
         }
         // Screen y grows downwards: -90 degrees is twelve o'clock and positive
         // sweep is clockwise. Fractional ammo fills the next segment gradually.
+        ArenaAmmoCursor smoothAmmoCursor;
         void DrawAmmoCursor(Vector2 centre,float ammo,int capacity,bool shotgun,bool instant,bool rifle)
         {
             var previous=GUI.color;float alpha=ammo>=capacity-.001f?.45f:1;
             Color ink=GrenadeActive?new Color(.65f,1,.3f,alpha):rifle?new Color(.8f,.4f,1,alpha):instant?new Color(1,.82f,.18f,alpha):shotgun?new Color(1,.76f,.27f,alpha):new Color(.3f,.9f,1,alpha);
+            if(smoothAmmoCursor==null)smoothAmmoCursor=new ArenaAmmoCursor();
+            if(smoothAmmoCursor.Draw(centre,ammo,capacity,ink,ActiveAmmoEmpty,FireCursorBlocked,!ActiveAmmoEmpty&&FireWaitRemaining>0?FireWaitProgress:0))return;
             int segments=Mathf.Clamp(capacity,1,32);float units=capacity/(float)segments,span=360f/segments,gap=Mathf.Min(5,span*.22f);
             for(int i=0;i<segments;i++)
             {

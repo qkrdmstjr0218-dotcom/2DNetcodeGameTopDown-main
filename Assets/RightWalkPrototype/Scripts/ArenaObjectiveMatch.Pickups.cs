@@ -23,6 +23,15 @@ namespace RightWalkPrototype
         int pickupVersion=-1,nextPickupId;
         readonly Dictionary<int,GameObject> pickupVisuals=new();
         Sprite pickupSprite;
+        public static Vector2 PickupDisplayPosition(Vector2 position,double now,bool healing=false)=>position+Vector2.up*((healing?.1f:0)+.035f*Mathf.Sin((float)now*3));
+        public static bool PickupBodyContact(Bounds body,Vector2 position,bool healing,double now)
+        {
+            // Match the visible case/rim, including its shared-clock bob.
+            // Include the motor's rounded .025 foot/body contact margin.
+            body.Expand(new Vector3(.05f,.05f,0));
+            var box=new Bounds(PickupDisplayPosition(position,now,healing),new Vector3(healing?.7f:.725f,healing?.7f:.725f,.2f));
+            return body.Intersects(box);
+        }
         // Future enemy death code can spawn a one-use drop through this server-only entry.
         // Fixed test sources use exactly the same pickup state and grant path.
         public bool SpawnShotgunDropServer(Vector2 position,int amount)
@@ -67,8 +76,7 @@ namespace RightWalkPrototype
                         foreach(var player in players)
                         {
                             if(!player.IsSpawned||player.IsDead||!player.HasCurrentLifePose)continue;
-                            Vector2 centre=(Vector2)player.transform.position+Vector2.up*.65f;
-                            if((centre-item.Position).sqrMagnitude>.65f*.65f)continue;
+                            if(!PickupBodyContact(player.ArenaHitBounds,item.Position,false,Now))continue;
                             if(player.GrantSpecialAmmoServer(item.Ammo,item.Amount,player.LifeVersion)<=0)continue;
                             if(item.Respawn<=0)AmmoPickups.RemoveAt(i);
                             else{item.Available=false;item.ReadyAt=Now+item.Respawn;AmmoPickups[i]=item;}
@@ -83,7 +91,7 @@ namespace RightWalkPrototype
                 remaining.Add(item.Id);
                 if(!pickupVisuals.TryGetValue(item.Id,out var view)){view=MakePickupVisual(item);pickupVisuals.Add(item.Id,view);}
                 view.SetActive(PickupGameActive&&item.Available&&PickupVisualVisible(item));
-                view.transform.position=new Vector3(item.Position.x,item.Position.y+.035f*Mathf.Sin((float)Now*3),0);
+                view.transform.position=PickupDisplayPosition(item.Position,Now);
             }
             var remove=new List<int>();foreach(var pair in pickupVisuals)if(!remaining.Contains(pair.Key)){Destroy(pair.Value);remove.Add(pair.Key);}
             foreach(int id in remove)pickupVisuals.Remove(id);
@@ -106,9 +114,11 @@ namespace RightWalkPrototype
                 var sr=go.AddComponent<SpriteRenderer>();sr.sprite=pickupSprite;sr.color=color;sr.sortingOrder=order;
             }
             var rim=item.Shield?new Color(.35f,.65f,1):healing?new Color(.3f,.95f,.5f):SupplyColor(item.Ammo);
-            Box("Case",Vector2.zero,new Vector2(.65f,healing?.46f:.65f),healing?new Color(.85f,.95f,.9f):new Color(.04f,.13f,.17f),40);
-            Box("Top rim",new Vector2(0,healing?.24f:.34f),new Vector2(.7f,.045f),rim,41);
-            Box("Bottom rim",new Vector2(0,healing?-.24f:-.34f),new Vector2(.7f,.045f),rim,41);
+            if(!ArenaPickupArt.Build(root,item,healing))
+            {
+            Box("Case",Vector2.zero,new Vector2(.65f,.65f),healing?new Color(.85f,.95f,.9f):new Color(.04f,.13f,.17f),40);
+            Box("Top rim",new Vector2(0,.34f),new Vector2(.7f,.045f),rim,41);
+            Box("Bottom rim",new Vector2(0,-.34f),new Vector2(.7f,.045f),rim,41);
             if(item.Shield)
             {Box("Shield plate",Vector2.zero,new Vector2(.3f,.32f),rim,42);Box("Shield inset",new Vector2(0,.025f),new Vector2(.18f,.19f),new Color(.9f,.95f,1),43);}
             else if(healing)
@@ -119,9 +129,7 @@ namespace RightWalkPrototype
                 var letter=new GameObject("Ammo initial");letter.transform.SetParent(root.transform,false);var mark=letter.AddComponent<TextMesh>();mark.text=SupplyInitial(item.Ammo);mark.font=Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");mark.fontSize=72;mark.characterSize=.075f;mark.anchor=TextAnchor.MiddleCenter;mark.color=rim;
                 var ink=letter.GetComponent<MeshRenderer>();ink.sharedMaterial=mark.font.material;ink.sortingOrder=43;
             }
-            if(!healing)return root;
-            var label=new GameObject("Amount");label.transform.SetParent(root.transform,false);label.transform.localPosition=new Vector3(0,.45f,0);
-            var text=label.AddComponent<TextMesh>();text.text=item.Shield?"보호막 +"+item.Amount:(healing?"회복 +":SupplyInitial(item.Ammo)+" +")+item.Amount;text.font=Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");text.fontSize=40;text.characterSize=.035f;text.anchor=TextAnchor.MiddleCenter;text.color=rim;var renderer=label.GetComponent<MeshRenderer>();renderer.sharedMaterial=text.font.material;renderer.sortingOrder=44;
+            }
             return root;
         }
         public static Color SupplyColor(SupplyAmmo kind)=>kind==SupplyAmmo.Rifle?new Color(.75f,.45f,1):kind==SupplyAmmo.Grenade?new Color(.65f,1,.3f):new Color(1,.82f,.18f);

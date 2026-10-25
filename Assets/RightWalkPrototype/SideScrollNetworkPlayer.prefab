@@ -354,7 +354,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 584dbc929e3833e4d85b250bebd1fd7b, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RightWalkPrototype.RightFacingAimRig
   muzzle: {fileID: 925596709736899766}
   frontDownAim: {fileID: 2536809923980113713}
@@ -391,10 +391,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f450eac46027b64418cf135af1db0c2e, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RightWalkPrototype.RightFacingShotPreview
   shotInterval: 0.15
-  bulletSpeed: 12
+  bulletSpeed: 15
   readMouse: 1
 --- !u!1 &2163268152172144252
 GameObject:
@@ -977,7 +977,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: afc05c09b17c11d4fa50736e357befa8, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RightWalkPrototype.RightFacingWalker
   frames:
   - {fileID: 21300000, guid: ecee58f4a650b0a499cf5bb86e757c1b, type: 2}
@@ -1078,7 +1078,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8746c359e5d9a0a4f94486b4f140a8d7, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RightWalkPrototype.RightFacingPelvisPreview
   spreadPixels: 3
 --- !u!114 &4806374297725862862
@@ -1091,7 +1091,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9e3e8ea35856c944094e49df91812cd5, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RightWalkPrototype.SideFacingPreview
   turnWithMovement: 1
   turnWithAim: 1
@@ -1178,7 +1178,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c35f7f6c1da27c343a37a35a57041799, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RightWalkPrototype.SideScrollMapPreview
   walker: {fileID: 171377229198457945}
   followCamera: {fileID: 0}
@@ -1196,7 +1196,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 344a2847a4a8cff4598866ab805da16a, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RightWalkPrototype.RunWalkPreview
   runFrames:
   - {fileID: 21300000, guid: 51750fe99fa81e641b6da7f45e786101, type: 2}
@@ -1252,7 +1252,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 52cd956675f3cdb4f8cb5292767826e5, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RightWalkPrototype.AirDownShotPose
   tuckedLegs: {fileID: 21300000, guid: 86daebeb68a94cd5a2b913e1cb6f0473, type: 3}
 --- !u!114 &2536809923980113713
@@ -1265,7 +1265,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 119f66aeb95fbed46a71222797b31d12, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RightWalkPrototype.FrontDownAimOverlay
   poseData: {fileID: 4900000, guid: 9126d65116b4db143b1618267eb88506, type: 3}
   material: {fileID: 2100000, guid: 3cbfb63518bb53a49acd46fa2e49b18f, type: 2}
@@ -1288,7 +1288,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 214c31c64812d594aad6ecc7e2a389c7, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RightWalkPrototype.FrontDownAimPlaytestHud
   overlay: {fileID: 2536809923980113713}
 --- !u!114 &3150684514393652262
@@ -1301,7 +1301,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4aa99c8b41a1f724db8ff4777170e687, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RightWalkPrototype.FrontDownAimAirLegs
   approvedLegMaterial: {fileID: 2100000, guid: 777b0202c04bacd44b2cf02bc6de811c, type: 2}
   reviewPixelsPerSourcePixel: 0.59
@@ -1324,7 +1324,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9091eb365208ff34a83d03dbde75d9d2, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RightWalkPrototype.FrontDownAimMovingLegs
 --- !u!114 &292530125429254898
 MonoBehaviour:
@@ -1336,7 +1336,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0d264bdff7144224cae2536064dd752a, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RightWalkPrototype.CharacterDeathTrial
   middlePose: {fileID: 21300000, guid: 8a229254b43d470458d790139df9c549, type: 3}
   fallenPose: {fileID: 21300000, guid: 146c2b7016e746c4caba11468c6e6994, type: 3}
@@ -1355,7 +1355,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 453d26c819047fa4c847d6b459e6608f, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RightWalkPrototype.CrouchTrial
   lowerAtlas: {fileID: 2800000, guid: d597004b63609414eba9e8e364f8e4ab, type: 3}
   bodyDrop: 0.5
@@ -1372,7 +1372,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
   GlobalObjectIdHash: 608617141
   InScenePlacedSourceGlobalObjectIdHash: 0
@@ -1397,10 +1397,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2d30cc784bfee084f944ab69b961775d, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RightWalkPrototype.SideScrollNetworkPlayer
   ShowTopMostFoldoutHeaderGroup: 1
-  playerDamage: 25
+  playerDamage: 10
 --- !u!1 &5896410952660828248
 GameObject:
   m_ObjectHideFlags: 0
@@ -1445,7 +1445,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5ba5281be5739214a8fb5afec34260ea, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RightWalkPrototype.RightFacingNeckSkin
   head: {fileID: 4362031661188639085}
   material: {fileID: 2100000, guid: 591743cd6d0a95c44ab686ffe9fb67b3, type: 2}
@@ -1645,7 +1645,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 96f261e37ef76934d8da6565e4ca82f0, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RightWalkPrototype.RightFacingHipLink
   walker: {fileID: 171377229198457945}
   meanDropPixels: 4
@@ -1696,7 +1696,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 735f6e2b26d1e1b47ba64ea978927731, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RightWalkPrototype.RightFacingArmIK
   upperArm: {fileID: 446813865879092793}
   forearm: {fileID: 7815445991853549373}
@@ -2242,7 +2242,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 735f6e2b26d1e1b47ba64ea978927731, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RightWalkPrototype.RightFacingArmIK
   upperArm: {fileID: 1297749061522507730}
   forearm: {fileID: 5472242218862656284}

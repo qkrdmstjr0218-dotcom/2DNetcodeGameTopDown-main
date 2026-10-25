@@ -7,6 +7,7 @@ namespace RightWalkPrototype
         public string displayName="주조 시설 08 · 4단 순환 전장";
         public Rect cameraBounds=new Rect(-37,-2.1f,74,18);
         public Vector2 overviewCentre=new Vector2(0,6.5f);
+        [Min(3.6f)] public float floorSpacing=3.6f;
         [System.Serializable] public struct AmmoSupply {public Vector2 position;public ArenaObjectiveMatch.SupplyAmmo ammo;}
         public AmmoSupply[] ammoSupplies;
         public Vector2[] shotgunSupplies;

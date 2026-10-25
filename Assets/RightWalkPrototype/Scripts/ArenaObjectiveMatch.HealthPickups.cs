@@ -66,7 +66,7 @@ namespace RightWalkPrototype
                         foreach(var player in players)
                         {
                             if(!player.IsSpawned||player.IsDead||!player.HasCurrentLifePose||(!item.Shield&&player.Health>=player.MaxHealth))continue;
-                            if(((Vector2)player.transform.position+Vector2.up*.65f-item.Position).sqrMagnitude>.65f*.65f)continue;
+                            if(!PickupBodyContact(player.ArenaHitBounds,item.Position,true,Now))continue;
                             if(item.Shield){if(!player.GrantShieldServer(player.LifeVersion))continue;}
                             else if(player.GrantHealthServer(item.Amount,player.LifeVersion)<=0)continue;
                             if(item.Respawn<=0)HealthPickups.RemoveAt(i);
@@ -81,7 +81,7 @@ namespace RightWalkPrototype
             {
                 remaining.Add(item.Id);
                 if(!healthPickupVisuals.TryGetValue(item.Id,out var view)){view=MakePickupVisual(item,true);healthPickupVisuals.Add(item.Id,view);}
-                view.SetActive(PickupGameActive&&item.Available&&PickupVisualVisible(item));view.transform.position=new Vector3(item.Position.x,item.Position.y+.035f*Mathf.Sin((float)Now*3),0);
+                view.SetActive(PickupGameActive&&item.Available&&PickupVisualVisible(item));view.transform.position=PickupDisplayPosition(item.Position,Now,true);
             }
             var remove=new List<int>();foreach(var pair in healthPickupVisuals)if(!remaining.Contains(pair.Key)){Destroy(pair.Value);remove.Add(pair.Key);}foreach(int id in remove)healthPickupVisuals.Remove(id);
         }

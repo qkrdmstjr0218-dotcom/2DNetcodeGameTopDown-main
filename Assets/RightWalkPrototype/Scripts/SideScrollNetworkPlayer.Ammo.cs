@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
@@ -28,7 +28,7 @@ namespace RightWalkPrototype
         internal void PushFromPatrolServer(float direction)
         {
             if(!IsServer||!IsSpawned||IsDead||ArenaObjectiveMatch.CombatBlocked)return;
-            allowedHitPoseUntil=NetworkManager.ServerTime.Time+PatrolHitSeconds+.3;
+            allowedHitPoseUntil=ArenaClock.Now(NetworkManager)+PatrolHitSeconds+.3;
             PatrolPushClientRpc(Vector2.right*Mathf.Sign(direction)*PatrolPush,LifeVersion);
         }
         [ClientRpc]
@@ -59,7 +59,7 @@ namespace RightWalkPrototype
         [ServerRpc(Delivery=RpcDelivery.Unreliable)]
         private void FastHitPoseServerRpc(MotionState pose,uint sequence)
         {
-            if(!IsSpawned||IsDead||pose.LifeVersion!=LifeVersion||NetworkManager.ServerTime.Time>allowedHitPoseUntil||
+            if(!IsSpawned||IsDead||pose.LifeVersion!=LifeVersion||ArenaClock.Now(NetworkManager)>allowedHitPoseUntil||
                 unchecked((int)(sequence-acceptedHitPose))<=0||!float.IsFinite(pose.Position.x)||!float.IsFinite(pose.Position.y)||!float.IsFinite(pose.Position.z)||
                 !float.IsFinite(pose.Velocity.x)||!float.IsFinite(pose.Velocity.y)||!float.IsFinite(pose.Aim.x)||!float.IsFinite(pose.Aim.y))return;
             acceptedHitPose=sequence;FastHitPoseClientRpc(pose,sequence);
@@ -98,7 +98,7 @@ namespace RightWalkPrototype
             UpdateGrenadePracticeAmmo();UpdateRiflePracticeAmmo();UpdateInstantPracticeAmmo();
             if(InstantShotgunEnabled)return;
             if(!IsServer||!IsSpawned)return;
-            double now=NetworkManager.ServerTime.Time;
+            double now=ArenaClock.Now(NetworkManager);
             if(!ArenaObjectiveMatch.PracticeRoom||IsDead||ShotgunRounds>=ShotgunCapacity){nextPracticeSupply=now+PracticeSupplyInterval;return;}
             if(now<nextPracticeSupply)return;
             shotgunRounds.Value++;nextPracticeSupply=now+PracticeSupplyInterval;
@@ -131,7 +131,7 @@ namespace RightWalkPrototype
             if(!float.IsFinite(origin.x)||!float.IsFinite(origin.y)||!float.IsFinite(direction.x)||!float.IsFinite(direction.y)||direction.sqrMagnitude<.9f||direction.sqrMagnitude>1.1f)return;
             Vector3 position=IsOwner?transform.position:motion.Value.LifeVersion==LifeVersion?motion.Value.Position:life.Value.SpawnPosition;
             if(Vector2.Distance(origin,position)>3f)return;
-            double now=NetworkManager.ServerTime.Time;
+            double now=ArenaClock.Now(NetworkManager);
             if(!ServerFireReady(instant?AmmoKind.InstantShotgun:AmmoKind.Shotgun,now))return;
             MarkServerFired(instant?AmmoKind.InstantShotgun:AmmoKind.Shotgun,now);
             if(instant){instantShotgunRounds.Value--;nextInstantPracticeSupply=now+PracticeSupplyInterval;}
@@ -170,9 +170,9 @@ namespace RightWalkPrototype
                 impact.Count++;impact.Delay=instant?0:Mathf.Min(impact.Delay,travel/ShotgunPelletSpeed);
             }
             if(instant)ShowInstantShotgunClientRpc(paths);else ShowShotgunClientRpc(paths);
-            foreach(var impact in impacts.Values)StartCoroutine(ApplyShotgunImpact(impact,direction));
+            foreach(var impact in impacts.Values)StartCoroutine(ApplyShotgunImpact(impact,direction,instant?AmmoKind.InstantShotgun:AmmoKind.Shotgun));
         }
-        private IEnumerator ApplyShotgunImpact(PelletImpact impact,Vector2 direction)
+        private IEnumerator ApplyShotgunImpact(PelletImpact impact,Vector2 direction,AmmoKind kind)
         {
             if(impact.Delay>0)yield return new WaitForSeconds(impact.Delay);
             if(!IsServer||!IsSpawned||ArenaObjectiveMatch.CombatBlocked)yield break;
@@ -183,12 +183,12 @@ namespace RightWalkPrototype
                 victim.ReceiveServerDamage(impact.Count*ShotgunPelletDamage,impact.Life,this);
                 if(!victim.IsDead)
                 {
-                    victim.allowedHitPoseUntil=NetworkManager.ServerTime.Time+ShotgunHitSeconds+.3;
+                    victim.allowedHitPoseUntil=ArenaClock.Now(NetworkManager)+ShotgunHitSeconds+.3;
                     victim.ShotgunPushClientRpc(direction.normalized*ShotgunPush,impact.Life);
                 }
             }
-            else if(impact.Enemy!=null)impact.Enemy.Match.DamagePatrolServer(impact.Enemy.Id,impact.Generation,impact.Count);
-            else if(impact.Target!=null)impact.Target.ReceiveDamage(impact.Count,impact.Generation);
+            else if(impact.Enemy!=null)impact.Enemy.Match.DamagePatrolServer(impact.Enemy.Id,impact.Generation,impact.Count,this);
+            else if(impact.Target!=null)impact.Target.ReceiveDamage(impact.Count,impact.Generation,this,kind);
         }
         [ClientRpc]
         private void ShowShotgunClientRpc(PelletPath[] paths)
@@ -199,7 +199,7 @@ namespace RightWalkPrototype
         [ClientRpc]
         private void ShotgunPushClientRpc(Vector2 impulse,uint generation)
         {
-            if(IsServer&&!IsDead&&LifeVersion==generation)allowedHitPoseUntil=NetworkManager.ServerTime.Time+ShotgunHitSeconds+.3;
+            if(IsServer&&!IsDead&&LifeVersion==generation)allowedHitPoseUntil=ArenaClock.Now(NetworkManager)+ShotgunHitSeconds+.3;
             if(IsOwner&&!IsDead&&LifeVersion==generation&&HasCurrentLifePose)
             {movement.ApplyShotgunPush(impulse);PublishMotion();}
         }

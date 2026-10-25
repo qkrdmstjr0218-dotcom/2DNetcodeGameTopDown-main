@@ -4,11 +4,12 @@ namespace RightWalkPrototype
     // Local shot collider/presentation; health, motion clock and damage belong to the match server.
     public sealed class ArenaPatrolEnemy:MonoBehaviour
     {
+        public const float GroundHitWidth=1.1f;
         public ArenaObjectiveMatch Match {get;private set;}
         public int Id {get;private set;}
         public int Generation {get;private set;}
-        BoxCollider2D shape;int previousHealth;bool medical;float flash;Sprite sprite;
-        Transform barrel,bodyRoot,entryMarker;SpriteRenderer sensor,rushMarker;
+        BoxCollider2D shape;int previousHealth;bool medical,artFlash;float flash;Sprite sprite;
+        Transform barrel,bodyRoot,entryMarker,artFacing;SpriteRenderer sensor,rushMarker;
         readonly System.Collections.Generic.List<SpriteRenderer> entryLights=new();
         readonly System.Collections.Generic.List<SpriteRenderer> bodyParts=new();
         readonly System.Collections.Generic.List<Color> bodyColors=new();
@@ -17,7 +18,9 @@ namespace RightWalkPrototype
             Match=match;Id=id;this.sprite=sprite;this.medical=medical;
             bodyRoot=new GameObject("Enemy body").transform;bodyRoot.SetParent(transform,false);
             if(!medical)CreateEntryMarker(sprite,turret,flying);
-            shape=gameObject.AddComponent<BoxCollider2D>();shape.size=new Vector2(.85f,.9f);shape.offset=new Vector2(0,.48f);
+            shape=gameObject.AddComponent<BoxCollider2D>();shape.size=new Vector2(!turret&&!flying?GroundHitWidth:.85f,.9f);shape.offset=new Vector2(0,.48f);
+            if(medical&&ArenaEnemyArt.BuildSupport(bodyRoot,bodyParts,bodyColors))return;
+            if(!medical&&ArenaEnemyArt.Build(bodyRoot,turret,flying,bodyParts,bodyColors,out barrel,out sensor,out rushMarker,out artFacing))return;
             SpriteRenderer Box(string name,Vector2 at,Vector2 size,Color color)
             {var go=new GameObject(name);go.transform.SetParent(bodyRoot,false);go.transform.localPosition=at;go.transform.localScale=size;var sr=go.AddComponent<SpriteRenderer>();sr.sprite=sprite;sr.color=color;sr.sortingOrder=10+bodyParts.Count;bodyParts.Add(sr);bodyColors.Add(color);return sr;}
             if(flying)
@@ -55,7 +58,7 @@ namespace RightWalkPrototype
             Box("Track",new Vector2(0,.14f),new Vector2(.98f,.22f),new Color(.12f,.17f,.19f));
             for(int i=-1;i<=1;i++)Box("Wheel",new Vector2(i*.3f,.14f),new Vector2(.15f,.14f),new Color(.43f,.49f,.49f));
             sensor=Box("Red sensor",new Vector2(0,.65f),new Vector2(.5f,.12f),new Color(1,.25f,.15f));
-            rushMarker=Box("Rush direction",new Vector2(.65f,.5f),new Vector2(.42f,.08f),new Color(1,.8f,.2f));rushMarker.gameObject.SetActive(false);
+            rushMarker=Box("Bumper charge",new Vector2(.38f,.5f),new Vector2(.08f,.32f),new Color(1,.8f,.2f));rushMarker.gameObject.SetActive(false);
             Box("Warning",new Vector2(0,.36f),new Vector2(.55f,.06f),new Color(1,.75f,.25f));
         }
         public void Apply(ArenaObjectiveMatch.PatrolState state,bool visible,int maximum)
@@ -64,6 +67,7 @@ namespace RightWalkPrototype
             bool entering=Match.EnemyEntering(state);
             bool hit=state.Health<previousHealth&&previousHealth>0;
             if(hit)flash=.1f;
+            if(hit&&visible)ArenaAudio.World(state.Health==0?ArenaAudio.Cue.EnemyBreak:ArenaAudio.Cue.Impact,transform.position,GetInstanceID());
             if(hit&&state.Health==0&&visible)
             {
                 var effect=new GameObject("Patrol destruction");effect.transform.SetParent(Match.transform,false);
@@ -77,6 +81,13 @@ namespace RightWalkPrototype
             var target=Match.PatrolPosition(state);
             transform.position=!entering&&state.Roaming&&Vector3.Distance(transform.position,target)<2?Vector3.MoveTowards(transform.position,target,Mathf.Max(1.2f,state.Speed)*1.5f*Time.deltaTime):target;
             transform.rotation=Quaternion.Euler(0,0,state.Roaming&&!state.Flying?state.Angle:0);
+            if(artFacing!=null)
+            {
+                // Ground navigation does not update weapon Aim during ordinary
+                // pursuit. Follow actual travel; charge/rush keeps its locked aim.
+                float direction=state.RushPhase==1||state.RushPhase==2||!state.Roaming?state.Aim.x:state.Velocity.x;
+                if(Mathf.Abs(direction)>.02f)artFacing.localScale=new Vector3(direction<0?-1:1,1,1);
+            }
             if(entryMarker!=null)
             {
                 entryMarker.gameObject.SetActive(entering);
@@ -89,16 +100,18 @@ namespace RightWalkPrototype
             }
             flash=Mathf.Max(0,flash-Time.deltaTime);
             for(int i=0;i<bodyParts.Count;i++)bodyParts[i].color=flash>0?new Color(1,.95f,.8f):bodyColors[i];
+            if(!medical&&artFlash!=(flash>0)){artFlash=flash>0;ArenaEnemyArt.SetFlash(bodyParts,artFlash);}
             if(rushMarker!=null)
             {
                 bool rushing=state.RushPhase==1||state.RushPhase==2;rushMarker.gameObject.SetActive(rushing);
-                rushMarker.transform.localPosition=new Vector2((state.Aim.x<0?-1:1)*.65f,.5f);
-                rushMarker.color=state.RushPhase==2?Color.white:new Color(1,.8f,.2f);
+                if(artFacing==null)rushMarker.transform.localPosition=new Vector2((state.Aim.x<0?-1:1)*.38f,.5f);
+                rushMarker.color=state.RushPhase==2?new Color(1,.94f,.72f):Color.Lerp(new Color(1,.5f,.12f),new Color(1,.95f,.55f),Mathf.PingPong((float)Match.Now*4,1));
                 if(flash<=0&&state.RushPhase==1)sensor.color=Color.Lerp(new Color(1,.25f,.1f),Color.yellow,Mathf.PingPong((float)Match.Now*5,1));
             }
             if(barrel!=null)
             {
                 barrel.localRotation=Quaternion.Euler(0,0,Mathf.Atan2(state.Aim.y,state.Aim.x)*Mathf.Rad2Deg);
+                barrel.localScale=new Vector3(1,state.Aim.x<0?-1:1,1);
                 if(flash<=0)sensor.color=state.FireAt>0?Color.Lerp(new Color(1,.3f,.05f),new Color(1,1,.7f),Mathf.PingPong((float)Match.Now*10,1)):new Color(.6f,.2f,.12f);
             }
             // Players pass through the shot collider; contact damage is decided by the server.

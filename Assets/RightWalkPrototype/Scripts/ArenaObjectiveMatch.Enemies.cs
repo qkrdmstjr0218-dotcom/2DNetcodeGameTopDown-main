@@ -30,7 +30,7 @@ namespace RightWalkPrototype
         public float PatrolHealthFraction(int id){foreach(var p in Patrols)if(p.Id==id)return p.Health/(float)Mathf.Max(1,p.Medical?medicalDroneHealth:patrolHealth);return 0;}
         void AddPatrol(float left,float right,float floor=0)
         {Patrols.Add(new PatrolState{Id=++nextPatrolId,Generation=1,Health=patrolHealth,Left=left,Right=right,Floor=floor,Speed=patrolSpeed,Started=Now});}
-        public void DamagePatrolServer(int id,int generation,int damage)
+        public void DamagePatrolServer(int id,int generation,int damage,SideScrollNetworkPlayer attacker=null)
         {
             if(!IsServer||!IsSpawned||!PickupGameActive||damage<=0)return;
             for(int i=0;i<Patrols.Count;i++)
@@ -41,7 +41,7 @@ namespace RightWalkPrototype
                 if(state.Health==0)
                 {
                     state.RespawnAt=Now+(state.Medical?.6f:Mathf.Max(.1f,patrolRespawnSeconds));
-                    if(state.Medical)SpawnFallingShieldDropServer((Vector2)PatrolPosition(state)+Vector2.up*.35f);
+                    if(state.Medical){SpawnFallingShieldDropServer((Vector2)PatrolPosition(state)+Vector2.up*.35f);RecordMedicalDroneKill(attacker);}
                     else SpawnEnemyLoot((Vector2)PatrolPosition(state)+Vector2.up*.55f);
                 }
                 Patrols[i]=state;return;
