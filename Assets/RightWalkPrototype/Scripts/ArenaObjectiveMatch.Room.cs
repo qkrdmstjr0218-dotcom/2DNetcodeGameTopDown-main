@@ -8,10 +8,10 @@ namespace RightWalkPrototype
     {
         public struct ReadyPlayer:INetworkSerializable,IEquatable<ReadyPlayer>
         {
-            public ulong Client;public int Number;public bool Ready;
+            public ulong Client;public int Number;public bool Ready;public Unity.Collections.FixedString64Bytes Nickname;
             public void NetworkSerialize<T>(BufferSerializer<T> s) where T:IReaderWriter
-            {s.SerializeValue(ref Client);s.SerializeValue(ref Number);s.SerializeValue(ref Ready);}
-            public bool Equals(ReadyPlayer p)=>Client==p.Client&&Number==p.Number&&Ready==p.Ready;
+            {s.SerializeValue(ref Client);s.SerializeValue(ref Number);s.SerializeValue(ref Ready);s.SerializeValue(ref Nickname);}
+            public bool Equals(ReadyPlayer p)=>Client==p.Client&&Number==p.Number&&Ready==p.Ready&&Nickname.Equals(p.Nickname);
         }
         // A bounded snapshot also stays consistent when several clients join
         // during the same tick; no initial-list/add-event overlap is possible.
@@ -103,7 +103,7 @@ namespace RightWalkPrototype
             foreach(var p in players)
             {
                 if(!p.IsSpawned||!NetworkManager.ConnectedClients.ContainsKey(p.OwnerClientId)||next.Count>=4)continue;
-                var entry=new ReadyPlayer{Client=p.OwnerClientId,Number=p.PlayerNumber};
+                var entry=new ReadyPlayer{Client=p.OwnerClientId,Number=p.PlayerNumber,Nickname=p.Nickname};
                 foreach(var previous in old)if(previous.Client==entry.Client)entry.Ready=previous.Ready;
                 next[next.Count++]=entry;
             }
@@ -158,8 +158,7 @@ namespace RightWalkPrototype
             else if(state.Phase==Stage.Returning&&Now>=state.End)EnterWaiting();
             else if(state.Phase==Stage.Playing&&ReadyPlayers.Count<MinimumPlayers)
             {
-                state.Phase=Stage.Finished;State.Value=state;Occupants.Value=0;OccupantNumber.Value=0;
-                Result.Value=new Unity.Collections.FixedString128Bytes("참가자가 부족하여 경기를 종료했습니다.");
+                FinishRound("참가자가 부족하여 경기를 종료했습니다.");
             }
         }
         static bool CombatPosition(Vector3 position)
@@ -190,18 +189,21 @@ namespace RightWalkPrototype
             {
                 float width=Mathf.Min(640,Screen.width-32);
                 GUILayout.BeginArea(new Rect(16,16,250,65+ReadyPlayers.Count*48),GUI.skin.box);
-                GUILayout.Label(SoloPractice?"혼자 연습":"출격 대기",new GUIStyle(ArenaUiTheme.Title){fontSize=20});
+                int readyCount=0;foreach(var entry in ReadyPlayers)if(entry.Ready)readyCount++;
+                GUILayout.BeginHorizontal();GUILayout.Label(SoloPractice?"혼자 연습":"출격 대기",new GUIStyle(ArenaUiTheme.Title){fontSize=20});
+                GUILayout.FlexibleSpace();GUILayout.Label("준비 "+readyCount+" / "+ReadyPlayers.Count,new GUIStyle(ArenaUiTheme.Muted){alignment=TextAnchor.MiddleRight,fontSize=12,wordWrap=false},GUILayout.Width(85));GUILayout.EndHorizontal();
                 var sorted=new ReadyPlayer[ReadyPlayers.Count];for(int i=0;i<sorted.Length;i++)sorted[i]=ReadyPlayers[i];Array.Sort(sorted,(a,b)=>a.Number.CompareTo(b.Number));
                 foreach(var p in sorted)
                 {
-                    GUILayout.BeginHorizontal();GUILayout.Label("P"+p.Number+(p.Client==NetworkManager.LocalClientId?" · 나":"")+(p.Client==Unity.Netcode.NetworkManager.ServerClientId?" · 방장":""),GUILayout.Width(135));
-                    GUILayout.Label(p.Ready?"준비 완료":"준비 중",ArenaUiTheme.Static(new GUIStyle(GUI.skin.label){normal={textColor=p.Ready?new Color(.4f,.94f,.7f):new Color(.57f,.68f,.72f)}}));GUILayout.EndHorizontal();GUILayout.Space(14);
+                    var row=GUILayoutUtility.GetRect(218,44);GUI.Label(new Rect(row.x,row.y,row.width-106,15),"P"+p.Number+(p.Client==NetworkManager.LocalClientId?" · 나":"")+(p.Client==Unity.Netcode.NetworkManager.ServerClientId?" · 방장":""),ArenaUiTheme.Static(new GUIStyle(GUI.skin.label){alignment=TextAnchor.MiddleLeft,fontSize=11,normal={textColor=ArenaPlayerAppearance.Accent(p.Number)}}));
+                    ArenaPlayerNames.Label(new Rect(row.x,row.y+26,row.width,18),ArenaPlayerNames.Name(p.Nickname),12);
+                    ArenaHudSkin.ReadyBadge(new Rect(row.xMax-104,row.y,104,23),p.Ready);GUILayout.Space(4);
                 }
                 GUILayout.EndArea();
                 GUILayout.BeginArea(new Rect((Screen.width-width)*.5f,Screen.height-128,width,112),GUI.skin.box);
                 bool ready=IsReady(NetworkManager.LocalClientId);var enabled=GUI.enabled;
                 GUILayout.BeginHorizontal();
-                if(ArenaUiTheme.Button(ready?"준비 취소":"준비",GUILayout.Height(38)))SetLocalReady(!ready);
+                if(ArenaUiTheme.Button(ready?"준비 취소":"출격 준비",GUILayout.Height(38)))SetLocalReady(!ready);
                 if(IsServer){GUI.enabled=enabled&&CanStart;if(ArenaUiTheme.Button(SoloPractice?"연습 시작":"경기 시작",GUILayout.Height(38)))StartRound();GUI.enabled=enabled;}
                 if(ArenaUiTheme.Button("로비로 나가기",GUILayout.Height(38)))RelayArenaPrototype.Instance?.RequestLeave();GUILayout.EndHorizontal();
                 GUILayout.Label(SoloPractice?"조작을 연습한 뒤 준비하고 출발하세요.":ReadyPlayers.Count<MinimumPlayers?"다른 플레이어를 기다리는 중입니다.":CanStart?"모두 준비했습니다. 방장이 경기를 시작할 수 있습니다.":"준비를 마치면 방장이 경기를 시작합니다.",ArenaUiTheme.Muted);

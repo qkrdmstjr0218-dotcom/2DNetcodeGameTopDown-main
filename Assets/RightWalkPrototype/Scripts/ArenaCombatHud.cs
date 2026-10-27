@@ -115,18 +115,18 @@ namespace RightWalkPrototype
         public static ArenaObjectiveMatch.Score[] RankedScores(ArenaObjectiveMatch match)
         {
             var rows=new ArenaObjectiveMatch.Score[match.Scores.Count];for(int i=0;i<rows.Length;i++)rows[i]=match.Scores[i];
-            Array.Sort(rows,(a,b)=>{int score=b.Total.CompareTo(a.Total);return score!=0?score:a.Number.CompareTo(b.Number);});return rows;
+            Array.Sort(rows,ArenaScoreRules.Compare);return rows;
         }
         void DrawRanking(float w,SideScrollNetworkPlayer local)
         {
             var rows=RankedScores(ArenaObjectiveMatch.Instance);float x=w-208;ArenaHudSkin.Panel(new Rect(x,16,192,34+rows.Length*25),Cyan);
-            GUI.Label(new Rect(x+12,20,166,23),"현재 순위",small);int rank=1;
+            GUI.Label(new Rect(x+12,20,166,23),"현재 순위",small);
             for(int i=0;i<rows.Length;i++)
             {
-                var row=rows[i];if(i>0&&Mathf.Abs(row.Total-rows[i-1].Total)>=.05f)rank=i+1;float y=47+i*25;
+                var row=rows[i];int rank=ArenaScoreRules.Rank(rows,i);float y=47+i*25;
                 if(row.Client==local.OwnerClientId)Fill(new Rect(x+5,y+4,2,14),ArenaPlayerAppearance.Accent(row.Number));
                 GUI.Label(new Rect(x+13,y,105,23),rank+"위   P"+row.Number,text);
-                GUI.Label(new Rect(x+108,y,70,23),row.Total.ToString("0.0"),new GUIStyle(text){alignment=TextAnchor.MiddleRight});
+                GUI.Label(new Rect(x+108,y,70,23),ArenaScoreRules.Format(row.Total),new GUIStyle(text){alignment=TextAnchor.MiddleRight});
             }
         }
         public static int Slot(SideScrollNetworkPlayer.AmmoKind kind)=>kind==SideScrollNetworkPlayer.AmmoKind.Normal?0:kind==SideScrollNetworkPlayer.AmmoKind.Rifle?2:kind==SideScrollNetworkPlayer.AmmoKind.Grenade?3:1;
@@ -137,7 +137,7 @@ namespace RightWalkPrototype
             const string initials="NSRG";
             var q=new Rect(w-238,h-91,22,18);var e=new Rect(w-44,h-91,22,18);
             ArenaHudSkin.Panel(q,new Color(.45f,.62f,.69f));ArenaHudSkin.Panel(e,new Color(.45f,.62f,.69f));GUI.Label(q,"Q",keycap);GUI.Label(e,"E",keycap);
-            float centre=(q.x+e.xMax)*.5f;GUI.Label(new Rect(centre-46,h-91,92,18),"특수탄 전환",ammoHint);
+            float centre=(q.x+e.xMax)*.5f;GUI.Label(new Rect(centre-46,h-91,92,18),ArenaUiTheme.SpecialAmmoSwitchLabel,ammoHint);
             Line(new Vector2(q.xMax+6,h-82),new Vector2(centre-52,h-82),new Color(.24f,.39f,.45f));Line(new Vector2(centre+52,h-82),new Vector2(e.x-6,h-82),new Color(.24f,.39f,.45f));
             for(int i=0;i<4;i++)
             {
@@ -186,7 +186,7 @@ namespace RightWalkPrototype
             GUI.Label(new Rect(x+65,y,105,24),"참가자",small);GUI.Label(new Rect(x+rowWidth-130,y,78,24),"점수",small);GUI.Label(new Rect(x+rowWidth-43,y,36,24),"처치",small);
             var match=ArenaObjectiveMatch.Instance;var sorted=new ArenaObjectiveMatch.Score[match.Scores.Count];
             for(int i=0;i<sorted.Length;i++)sorted[i]=match.Scores[i];
-            Array.Sort(sorted,(a,b)=>{int score=b.Total.CompareTo(a.Total);return score!=0?score:a.Number.CompareTo(b.Number);});
+            Array.Sort(sorted,ArenaScoreRules.Compare);
             var players=FindObjectsByType<SideScrollNetworkPlayer>(FindObjectsSortMode.None);
             for(int i=0;i<sorted.Length;i++)
             {
@@ -194,10 +194,10 @@ namespace RightWalkPrototype
                 if(score.Client==local.OwnerClientId)Outline(r,ArenaPlayerAppearance.Accent(score.Number));
                 int portrait=score.Number-1;
                 if(portraits!=null&&portrait>=0&&portrait<portraits.Length&&portraits[portrait]!=null)ArenaUiTheme.DrawPortrait(new Rect(x+5,top+4,54,68),portraits[portrait]);
-                GUI.Label(new Rect(x+65,top+7,105,24),"P"+score.Number+(score.Client==local.OwnerClientId?" · 나":""),text);
+                ArenaPlayerNames.Label(new Rect(x+65,top+7,rowWidth-65-130,30),"P"+score.Number+" "+ArenaPlayerNames.Name(score.Nickname)+(score.Client==local.OwnerClientId?" · 나":""),13);
                 foreach(var p in players)if(p.IsSpawned&&p.OwnerClientId==score.Client)
                 {Bar(new Rect(x+65,top+41,92,5),p.Health/(float)p.MaxHealth,ArenaPlayerAppearance.Accent(score.Number));GUI.Label(new Rect(x+65,top+49,100,20),p.Health+" / "+p.MaxHealth,small);break;}
-                GUI.Label(new Rect(x+rowWidth-130,top+22,78,28),score.Total.ToString("0.0"),text);
+                GUI.Label(new Rect(x+rowWidth-130,top+22,78,28),ArenaScoreRules.Format(score.Total),text);
                 GUI.Label(new Rect(x+rowWidth-43,top+22,36,28),score.Kills.ToString(),text);
             }
             GUI.Label(new Rect(panel.x+24,panel.yMax-53,width-48,28),"단독 해킹 1초 = 1점     ·     플레이어 처치 +5     ·     지원 드론 격추 +5",text);

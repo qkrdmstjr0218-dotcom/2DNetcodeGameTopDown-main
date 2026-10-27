@@ -12,6 +12,11 @@ namespace RightWalkPrototype
             if(flashBlock==null)flashBlock=new MaterialPropertyBlock();
             foreach(var part in parts){part.GetPropertyBlock(flashBlock);flashBlock.SetFloat("_HitFlash",active?1:0);part.SetPropertyBlock(flashBlock);}
         }
+        public static void SetEntryFloor(List<SpriteRenderer> parts,float floor)
+        {
+            if(flashBlock==null)flashBlock=new MaterialPropertyBlock();
+            foreach(var part in parts){part.GetPropertyBlock(flashBlock);flashBlock.SetFloat("_EntryClipY",floor);part.SetPropertyBlock(flashBlock);}
+        }
         static Sprite Load(string name)
         {
             if(!sprites.TryGetValue(name,out var sprite)){sprite=Resources.Load<Sprite>("FoundryArt/"+name);sprites[name]=sprite;}

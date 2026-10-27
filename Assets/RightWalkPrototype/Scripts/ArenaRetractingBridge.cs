@@ -23,11 +23,15 @@ namespace RightWalkPrototype
             westCollider=westLeaf.GetComponent<BoxCollider2D>();
             eastCollider=eastLeaf.GetComponent<BoxCollider2D>();
         }
+        bool resting;
         void Update()
         {
+            if(ArenaObjectiveMatch.Ended)return;
+            if(!RelayArenaPrototype.SceneryRunning&&resting)return;
+            resting=!RelayArenaPrototype.SceneryRunning;
             var manager=NetworkManager.Singleton;
             double clock=manager!=null&&manager.IsListening?ArenaClock.Now(manager):Time.timeAsDouble;
-            CycleTime=(float)((clock+phaseOffset)%14);
+            CycleTime=resting?0:(float)((clock+phaseOffset)%14);
             float opened=CycleTime>=13.4f?(14-CycleTime)/.6f:CycleTime>=10?Mathf.Clamp01((CycleTime-10)/.6f):0;
             float width=(right-left)*.5f*(1-Mathf.Clamp01(opened));
             westLeaf.localScale=eastLeaf.localScale=new Vector3(width,.18f,1);

@@ -38,8 +38,10 @@ namespace RightWalkPrototype
                 var state=Patrols[i];if(state.Id!=id||state.Generation!=generation||state.Health<=0||EnemyEntering(state))continue;
                 if(state.Medical&&!MedicalInsideArena(state.Position))return;
                 state.Health=Mathf.Max(0,state.Health-damage);
+                if(state.Health>0)RecognizeAttacker(ref state,attacker);
                 if(state.Health==0)
                 {
+                    ResetEnemyBrain(state.Id);
                     state.RespawnAt=Now+(state.Medical?.6f:Mathf.Max(.1f,patrolRespawnSeconds));
                     if(state.Medical){SpawnFallingShieldDropServer((Vector2)PatrolPosition(state)+Vector2.up*.35f);RecordMedicalDroneKill(attacker);}
                     else SpawnEnemyLoot((Vector2)PatrolPosition(state)+Vector2.up*.55f);
@@ -85,7 +87,8 @@ namespace RightWalkPrototype
                         }
                         if(state.Health<=0)
                         {if(Now<state.RespawnAt)continue;state.Generation++;state.Health=patrolHealth;state.Started=Now;state.RespawnAt=0;state.FireAt=0;state.BurstLeft=0;state.NextAttack=Now+1.5;state.RushPhase=0;state.RushUntil=0;if(state.Roaming)state.Speed=state.Flying?DroneSpeed:patrolSpeed;ResetEnemyBrain(state.Id);if(state.Roaming){state.Position=EnemySpawn(state);state.Velocity=Vector2.zero;}var settings=RelayArenaPrototype.Instance!=null?RelayArenaPrototype.Instance.GetComponent<ArenaMapSettings>():null;BeginEnemyEntry(ref state,settings);Patrols[i]=state;}
-                        if(EnemyEntering(state))continue;
+                        if(EnemyEntering(state)){AdvanceEnemyEntry(ref state,false);Patrols[i]=state;continue;}
+                        if(state.EntryUntil>0&&state.Started<=state.EntryUntil){AdvanceEnemyEntry(ref state,true);state.Started=Now;Patrols[i]=state;}
                         if(state.Roaming){UpdateRoamingEnemy(ref state,players);if(!state.Equals(Patrols[i]))Patrols[i]=state;}
                         if(state.Health<=0)continue;
                         if(state.Turret||state.Flying){UpdateTurret(i,state,players);continue;}

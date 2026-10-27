@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Reflection;
 using Unity.Netcode;
 using UnityEngine;
@@ -76,14 +76,14 @@ public static partial class ArenaReadyRoomReview
         var host=Player(1);host.SelectAmmo(SideScrollNetworkPlayer.AmmoKind.Rifle);host.SetSpecialHeld(true);yield return new WaitForSecondsRealtime(.23f);int count=host.ReceivedRifleShots;RifleShot(host,host.LifeVersion);
         Require(Player(2).Health==100&&Player(3).Health==100&&Player(4).Health==100,"rifle travels rather than hitting instantly");Require(host.RifleRounds==SideScrollNetworkPlayer.RifleCapacity-1&&host.ShotgunRounds==6&&host.NormalAmmo==host.NormalCapacity,"rifle spends independent ammunition");
         RifleShot(host,host.LifeVersion);Require(host.RifleRounds==SideScrollNetworkPlayer.RifleCapacity-1&&host.ReceivedRifleShots==count+1,"server refuses same-frame repeated rifle shot");
-        yield return Wait(()=>P(2).hp==50&&P(3).hp==50&&P(4).hp==50,"one bullet penetrates two covers and three players",3);
-        yield return new WaitForSecondsRealtime(.7f);Require(All(4,p=>p.role==1||p.hp==50),"one bullet deals damage only once per player");
+        yield return Wait(()=>P(2).hp==100-SideScrollNetworkPlayer.RifleDamage&&P(3).hp==100-SideScrollNetworkPlayer.RifleDamage&&P(4).hp==100-SideScrollNetworkPlayer.RifleDamage,"one bullet penetrates two covers and three players",3);
+        yield return new WaitForSecondsRealtime(.7f);Require(All(4,p=>p.role==1||p.hp==100-SideScrollNetworkPlayer.RifleDamage),"one bullet deals damage only once per player");
         yield return ResetRifleRow();Send(1,46);yield return Wait(()=>match.Patrols[0].Health==0&&P(1).rifleAmmo==SideScrollNetworkPlayer.RifleCapacity-1,"rifle hits low patrol when aimed down",3);
         yield return ResetRifleRow();yield return RifleRow();count=host.ReceivedRifleShots;
         RifleShot(host,host.LifeVersion-1);RifleShot(host,host.LifeVersion,new Vector2(float.NaN,0));RifleShot(host,host.LifeVersion,null,Vector2.zero);
         Require(host.RifleRounds==SideScrollNetworkPlayer.RifleCapacity&&host.ReceivedRifleShots==count,"stale-life and invalid rifle requests rejected");
         Send(1,17);yield return new WaitForSecondsRealtime(.4f);Send(1,43);yield return Wait(()=>P(1).rifleAmmo==SideScrollNetworkPlayer.RifleCapacity-1,"selected rifle fires through normal controls");yield return new WaitForSecondsRealtime(.35f);
-        yield return ResetRifleRow();yield return RifleRow(true);Send(4,43);yield return Wait(()=>P(1).hp==50&&P(2).hp==50&&P(3).hp==50&&P(4).rifleAmmo==SideScrollNetworkPlayer.RifleCapacity-1,"client rifle pierces to host and other clients",3);
+        yield return ResetRifleRow();yield return RifleRow(true);Send(4,43);yield return Wait(()=>P(1).hp==100-SideScrollNetworkPlayer.RifleDamage&&P(2).hp==100-SideScrollNetworkPlayer.RifleDamage&&P(3).hp==100-SideScrollNetworkPlayer.RifleDamage&&P(4).rifleAmmo==SideScrollNetworkPlayer.RifleCapacity-1,"client rifle pierces to host and other clients",3);
         yield return ResetRifleRow();yield return RifleRow();
         ((NetworkVariable<int>)typeof(SideScrollNetworkPlayer).GetField("rifleRounds",BindingFlags.NonPublic|BindingFlags.Instance).GetValue(host)).Value=0;
         float normal=host.NormalAmmo;Send(1,43);yield return new WaitForSecondsRealtime(.5f);

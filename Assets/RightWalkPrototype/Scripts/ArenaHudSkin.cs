@@ -5,9 +5,36 @@ namespace RightWalkPrototype
     public static class ArenaHudSkin
     {
         public static readonly Color Frame=new(.23f,.36f,.42f,.9f);
+        static Texture2D readyCheck;
         static void Fill(Rect r,Color c){var old=GUI.color;GUI.color=c;GUI.DrawTexture(r,Texture2D.whiteTexture);GUI.color=old;}
         static void Line(Vector2 a,Vector2 b,Color c,float thickness=1)
         {var old=GUI.matrix;GUI.matrix=old*Matrix4x4.TRS(a,Quaternion.Euler(0,0,Mathf.Atan2(b.y-a.y,b.x-a.x)*Mathf.Rad2Deg),Vector3.one);Fill(new Rect(0,-thickness/2,Vector2.Distance(a,b),thickness),c);GUI.matrix=old;}
+        public static void ReadyBadge(Rect r,bool ready)
+        {
+            var accent=ready?new Color(.42f,.93f,.72f):new Color(.57f,.67f,.72f);
+            // Rects and a single AA icon also work inside GUILayout clipping groups.
+            Fill(new Rect(r.x+3,r.y,r.width-6,r.height),new Color(.025f,.055f,.075f,.94f));
+            Fill(new Rect(r.x,r.y+3,r.width,r.height-6),new Color(.025f,.055f,.075f,.94f));
+            Fill(new Rect(r.x+3,r.y,r.width-6,1),Frame);Fill(new Rect(r.x+3,r.yMax-1,r.width-6,1),Frame);
+            Fill(new Rect(r.x,r.y+3,1,r.height-6),Frame);Fill(new Rect(r.xMax-1,r.y+3,1,r.height-6),Frame);
+            for(int i=0;i<3;i++){Fill(new Rect(r.x+2-i,r.y+i,1,1),Frame);Fill(new Rect(r.xMax-3+i,r.y+i,1,1),Frame);Fill(new Rect(r.x+2-i,r.yMax-i-1,1,1),Frame);Fill(new Rect(r.xMax-3+i,r.yMax-i-1,1,1),Frame);}
+            Fill(new Rect(r.x+1,r.y+6,2,r.height-12),accent);
+            float x=r.x+12,y=r.center.y;
+            if(ready)
+            {
+                if(readyCheck==null)
+                {
+                    readyCheck=new Texture2D(32,32,TextureFormat.RGBA32,false){hideFlags=HideFlags.HideAndDontSave,filterMode=FilterMode.Bilinear,wrapMode=TextureWrapMode.Clamp};
+                    var pixels=new Color[1024];Vector2 a=new(5,16),b=new(12,9),c=new(27,24);
+                    float Distance(Vector2 p,Vector2 from,Vector2 to){var d=to-from;return Vector2.Distance(p,from+d*Mathf.Clamp01(Vector2.Dot(p-from,d)/d.sqrMagnitude));}
+                    for(int j=0;j<32;j++)for(int i=0;i<32;i++){var p=new Vector2(i+.5f,j+.5f);pixels[j*32+i]=new Color(1,1,1,Mathf.Clamp01(2.1f-Mathf.Min(Distance(p,a,b),Distance(p,b,c))));}
+                    readyCheck.SetPixels(pixels);readyCheck.Apply();
+                }
+                var old=GUI.color;GUI.color=accent;GUI.DrawTexture(new Rect(x-7,y-7,14,14),readyCheck);GUI.color=old;
+            }
+            else Fill(new Rect(x-3,y-1,8,2),accent);
+            GUI.Label(new Rect(r.x+25,r.y,r.width-29,r.height),ready?"준비 완료":"준비 전",ArenaUiTheme.Static(new GUIStyle(GUI.skin.label){alignment=TextAnchor.MiddleCenter,fontSize=13,padding=new RectOffset(),normal={textColor=accent}}));
+        }
         public static void Panel(Rect r,Color accent)
         {
             var dark=new Color(.025f,.055f,.075f,.94f);
@@ -38,7 +65,7 @@ namespace RightWalkPrototype
             }
             else if(slot==1)
             {
-                for(int i=0;i<3;i++){float x=2+i*6;Fill(new Rect(x,5,4,12),color);Fill(new Rect(x-1,16,6,2),color);Fill(new Rect(x,3,4,1),Color.Lerp(color,Color.white,.35f));}
+                for(int i=0;i<3;i++){float x=2+i*6;Fill(new Rect(x,5,4,12),color);Fill(new Rect(x-1,16,6,2),color);var highlight=Color.Lerp(color,Color.white,.35f);highlight.a=color.a;Fill(new Rect(x,3,4,1),highlight);}
             }
             else
             {

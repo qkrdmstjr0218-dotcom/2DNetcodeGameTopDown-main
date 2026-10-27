@@ -21,9 +21,14 @@ namespace RightWalkPrototype
             Color steel=new Color(.19f,.29f,.35f),cyan=new Color(.25f,.8f,.76f);
             Box("Back wall",0,4,28,20,new Color(.055f,.085f,.12f),-100);
             for(int i=-2;i<=2;i++){Box("Wall bay",i*4,4.1f,3.8f,7.6f,new Color(.08f,.14f,.18f),-95);Box("Wall vent",i*4,7,.35f,.3f,new Color(.14f,.23f,.28f),-90);}
-            Box("Floor",0,-.25f,20,.5f,steel,0,true);Box("Floor edge",0,0,20,.035f,new Color(.96f,.63f,.23f),1);
-            Box("West wall",-10.2f,4,.4f,8.5f,steel,0,true);Box("East wall",10.2f,4,.4f,8.5f,steel,0,true);
-            Box("Ceiling",0,9,21,.3f,steel,0,true);
+            // A single rectangular frame; preserve the four playable inner planes.
+            const float halfWidth=10f,frameThickness=.4f,ceilingBottom=8.85f;
+            float outerWidth=(halfWidth+frameThickness)*2;
+            Box("Floor",0,-frameThickness*.5f,outerWidth,frameThickness,steel,0,true);
+            Box("Floor edge",0,0,halfWidth*2,.035f,new Color(.96f,.63f,.23f),1);
+            Box("West wall",-halfWidth-frameThickness*.5f,ceilingBottom*.5f,frameThickness,ceilingBottom,steel,0,true);
+            Box("East wall",halfWidth+frameThickness*.5f,ceilingBottom*.5f,frameThickness,ceilingBottom,steel,0,true);
+            Box("Ceiling",0,ceilingBottom+frameThickness*.5f,outerWidth,frameThickness,steel,0,true);
             foreach(float x in new[]{-7f,7f})
             {
                 for(int level=0;level<2;level++)
@@ -37,13 +42,13 @@ namespace RightWalkPrototype
             for(int i=1;i<=4;i++)Box("Arrival pad",Spawn(i).x-100,-.15f,1.5f,.06f,new Color(.27f,.4f,.46f),2);
             var font=controlsFont!=null?controlsFont:Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
             ArenaReadyRoomControls.Build(root,sprite,font);
-            var cover=Box("Rifle practice solid crate",0,1,1.2f,2,new Color(.29f,.35f,.39f),3,true);cover.AddComponent<ArenaCover>();
-            Box("Crate face",0,1,.85f,1.65f,new Color(.13f,.21f,.25f),4);
-            Box("Crate solid edge",0,2,1.24f,.045f,new Color(.96f,.63f,.23f),5);
-            Box("Piercing mark",0,1,.72f,.045f,new Color(.8f,.5f,1),5);
-            var label=new GameObject("Rifle practice label");label.transform.SetParent(root,false);label.transform.position=new Vector3(100,2.6f,0);
-            var hint=label.AddComponent<TextMesh>();hint.text="RIFLE / PIERCE";hint.anchor=TextAnchor.MiddleCenter;hint.alignment=TextAlignment.Center;hint.fontSize=48;hint.characterSize=.035f;hint.color=new Color(.8f,.65f,1);hint.font=font;
-            label.GetComponent<MeshRenderer>().sharedMaterial=hint.font.material;label.GetComponent<MeshRenderer>().sortingOrder=5;
+            foreach(float x in new[]{-3.4f,3.4f})
+            {
+                var cover=Box("Rifle practice solid crate "+(x<0?"West":"East"),x,1,1.2f,2,new Color(.29f,.35f,.39f),3,true);cover.AddComponent<ArenaCover>();
+                Box("Crate solid edge",x,2,1.24f,.045f,new Color(.96f,.63f,.23f),5);
+            }
+            ArenaReadyRoomHacking.Build(root,sprite,font);
+            ArenaReadyRoomArt.Build(root,sprite,font);
         }
     }
 }

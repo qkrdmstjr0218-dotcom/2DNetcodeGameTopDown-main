@@ -6,7 +6,7 @@ namespace RightWalkPrototype
 {
     public sealed partial class SideScrollNetworkPlayer
     {
-        public const int RifleCapacity=3,RifleDamage=50,RifleTargetDamage=4;
+        public const int RifleCapacity=3,RifleDamage=30,RifleTargetDamage=4;
         public const float RifleRange=30,RifleSpeed=48,RifleInterval=1.2f;
         readonly NetworkVariable<int> rifleRounds=new(RifleCapacity);
         double nextRiflePracticeSupply;

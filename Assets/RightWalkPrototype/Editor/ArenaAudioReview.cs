@@ -6,6 +6,8 @@ using System.Reflection;
 using UnityEditor;
 using UnityEngine;
 using RightWalkPrototype;
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.LowLevel;
 [InitializeOnLoad]
 public static class ArenaAudioReview
 {
@@ -42,7 +44,7 @@ public static class ArenaAudioReview
         {
             var clip=Resources.Load<AudioClip>("ArenaAudio/"+cue);if(clip==null)throw new Exception("missing "+cue);
             var pcm=new float[clip.samples*clip.channels];bool read=clip.GetData(pcm,0);float peak=0;double power=0;foreach(float value in pcm){peak=Mathf.Max(peak,Mathf.Abs(value));power+=value*value;}
-            Check(read&&clip.channels==1&&peak<.425f&&power/pcm.Length>.000001,"PCM clip valid and bounded: "+cue);
+            Check(read&&clip.channels==1&&peak<ArenaAudio.ClipPeakBound&&power/pcm.Length>.0004,"PCM clip valid and bounded: "+cue);
         }
         var audio=ArenaAudio.Instance;bool savedKey=PlayerPrefs.HasKey("RightWalk.SfxVolume");float savedEffects=ArenaAudio.EffectsVolume;ArenaAudio.SetEffectsVolume(.65f);
         Check(audio!=null&&audio.GetComponents<AudioSource>().Length==16,"fixed pool has twelve world and four UI voices");
@@ -51,8 +53,14 @@ public static class ArenaAudioReview
         for(int i=0;i<match.Patrols.Count;i++){var s=match.Patrols[i];s.Health=0;s.RespawnAt=match.Now+600;match.Patrols[i]=s;}match.TurretShots.Clear();var transit=match.MedicalTransit.Value;transit.NextAt=match.Now+600;match.MedicalTransit.Value=transit;
         var player=UnityEngine.Object.FindFirstObjectByType<SideScrollNetworkPlayer>();var move=player.GetComponent<SideScrollMapPreview>();move.readKeyboard=false;move.SetInput(0);move.SetSpawnPosition(new Vector2(-.7f,6.84f));
         var shots=player.GetComponentInChildren<RightFacingShotPreview>();shots.readMouse=false;var aim=player.GetComponentInChildren<RightFacingAimRig>();aim.SetAimTarget(new Vector2(5,7.5f));yield return new WaitForSeconds(.9f);
-        int normal=audio.PlayedCount(ArenaAudio.Cue.Normal),received=player.ReceivedShots;shots.Fire();yield return Frames();
-        Check(player.ReceivedShots==received+1&&audio.PlayedCount(ArenaAudio.Cue.Normal)==normal+1,"real normal fire emits exactly one fire sound");
+        int normal=audio.PlayedCount(ArenaAudio.Cue.Normal),received=player.ReceivedShots;shots.readMouse=true;
+        InputSystem.QueueStateEvent(Mouse.current,new MouseState{position=new Vector2(Screen.width*.7f,Screen.height*.5f),buttons=1});yield return Frames();
+        InputSystem.QueueStateEvent(Mouse.current,new MouseState());shots.readMouse=false;
+        Check(player.ReceivedShots==received+1&&audio.PlayedCount(ArenaAudio.Cue.Normal)==normal+1,"actual mouse press emits exactly one normal shot and fire sound");
+        var normalBuffer=new float[512];float normalPeak=0;double normalPower=0;int normalSamples=0;
+        for(int frame=0;frame<6;frame++){foreach(var source in audio.GetComponents<AudioSource>())if(source.isPlaying&&source.clip!=null&&source.clip.name=="Normal"){source.GetOutputData(normalBuffer,0);foreach(float value in normalBuffer){normalPeak=Mathf.Max(normalPeak,Mathf.Abs(value));normalPower+=value*value;normalSamples++;}}yield return null;}
+        File.WriteAllText(Folder+"/normal-output.txt","peak="+normalPeak+" rms="+Math.Sqrt(normalPower/Math.Max(1,normalSamples))+" samples="+normalSamples+" master="+AudioListener.volume+" effects="+ArenaAudio.EffectsVolume+" editorMute="+EditorUtility.audioMasterMute+" lastRejection="+audio.LastRejection);
+        Check(normalPeak>.01f&&normalPower>0,"normal fire has measurable post-gain DSP output");
         foreach(var pair in new[]{(SideScrollNetworkPlayer.AmmoKind.InstantShotgun,ArenaAudio.Cue.Shotgun),(SideScrollNetworkPlayer.AmmoKind.Rifle,ArenaAudio.Cue.Rifle),(SideScrollNetworkPlayer.AmmoKind.Grenade,ArenaAudio.Cue.GrenadeLaunch)})
         {
             player.SelectAmmo(pair.Item1);player.SetSpecialHeld(true);yield return new WaitForSeconds(1.1f);
@@ -80,8 +88,9 @@ public static class ArenaAudioReview
         Check(audio.Play(ArenaAudio.Cue.UiClick,Vector2.zero,9001,true)&&!audio.Play(ArenaAudio.Cue.UiClick,Vector2.zero,9001,true),"duplicate event throttled");
         yield return Frames();
         for(int i=0;i<20;i++)audio.Play(ArenaAudio.Cue.Explosion,(Vector2)Camera.main.transform.position,10000+i,false);
-        var sources=audio.GetComponents<AudioSource>();float bound=0;int active=0;foreach(var source in sources)if(source.isPlaying){active++;bound+=source.volume*.45f;}
-        Check(active<=16&&bound<=.751f,"overlap remains within fixed voice and peak budget");
+        var sources=audio.GetComponents<AudioSource>();float bound=0;int active=0;foreach(var source in sources)if(source.isPlaying){active++;bound+=source.volume*ArenaAudio.ClipPeakBound;}
+        Check(active<=16&&bound<=ArenaAudio.MixPeakBudget+.001f,"overlap remains within fixed voice and peak budget");
+        Check(audio.Play(ArenaAudio.Cue.Normal,(Vector2)Camera.main.transform.position,87123,false),"weapon voice can replace a lower priority sound in a saturated world pool");
         var output=new float[512];float energy=0;for(int frame=0;frame<8;frame++){yield return null;foreach(var source in sources)if(source.isPlaying){source.GetOutputData(output,0);foreach(float v in output)energy+=v*v;}}
         Check(energy>0,"Unity audio source output contains a nonzero DSP signal");
         ArenaAudio.SetEffectsVolume(0);Check(!audio.Play(ArenaAudio.Cue.UiClick,Vector2.zero,7001,true),"effects mute prevents playback");ArenaAudio.SetEffectsVolume(.65f);

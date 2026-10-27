@@ -46,6 +46,9 @@ namespace RightWalkPrototype
         public static bool FireInputBlocked=>ArenaCombatHud.TabVisible||LiveInputBlocked||ArenaObjectiveMatch.CombatBlocked||ArenaObjectiveMatch.RoomPointerOverUI||Instance!=null&&Instance.waitForMouseRelease;
         public float CycleTime {get;private set;}
         public bool BridgeOpen=>CycleTime>=10;
+        public const float CombatCameraSize=5.6f;
+        public static bool SceneryRunning=>!SideScrollNetworkSession.LobbyVisible&&!ArenaTutorial.Active&&!ArenaObjectiveMatch.InReadyRoom&&!ArenaObjectiveMatch.Ended;
+        bool bridgeResting;
         private float desiredSize;
         private bool waitForMouseRelease;
         private Vector3 cameraPosition;
@@ -54,12 +57,17 @@ namespace RightWalkPrototype
         private ArenaRetractingBridge[] extraBridges;
         private void Awake()
         {
+            // On desktop, VSync overrides targetFrameRate; use a 60 FPS software cap.
+            QualitySettings.vSyncCount=0;
+            Application.targetFrameRate=60;
             LoadAudioSettings();
             gameObject.AddComponent<ArenaAudio>();
             map=GetComponent<ArenaMapSettings>();
             combatHud=gameObject.AddComponent<ArenaCombatHud>();combatHud.portraits=hudPortraits;
             extraBridges=GetComponentsInChildren<ArenaRetractingBridge>();
+            ArenaFoundryLandmarkArt.Apply(map);
             ArenaReadyRoom.Build(transform,readyRoomFont);
+            ArenaEnemyDoorArt.Build(map);
             // Keep the serialized collider reference, but let each visible leaf
             // carry its own collision instead of toggling the entire crossing.
             bridgeCollider.transform.SetParent(bridgeLeft,false);
@@ -84,7 +92,7 @@ namespace RightWalkPrototype
         private void OnDisable(){if(Instance==this)Instance=null;Cursor.lockState=CursorLockMode.None;Cursor.visible=true;}
         public void SetMenuOpen(bool value)
         {
-            MenuOpen=value;if(!value){LeaveConfirmationOpen=false;waitForMouseRelease=true;}
+            MenuOpen=value;if(!value){LeaveConfirmationOpen=false;QuitConfirmationOpen=false;waitForMouseRelease=true;}
             if(value){Cursor.lockState=CursorLockMode.None;Cursor.visible=true;}
         }
         public bool IsSafeLanding(Vector2 point)
@@ -100,22 +108,27 @@ namespace RightWalkPrototype
 #if ENABLE_INPUT_SYSTEM
             if(HasGameplayFocus&&Keyboard.current!=null)
             {
-                if(Keyboard.current.escapeKey.wasPressedThisFrame){if(LeaveConfirmationOpen)CancelLeave();else SetMenuOpen(!MenuOpen);}
+                if(Keyboard.current.escapeKey.wasPressedThisFrame)HandleMenuEscape();
                 // Held Tab is handled below.
             }
             if(Mouse.current==null||!Mouse.current.leftButton.isPressed)waitForMouseRelease=false;
 #elif ENABLE_LEGACY_INPUT_MANAGER
-            if(HasGameplayFocus&&Input.GetKeyDown(KeyCode.Escape)){if(LeaveConfirmationOpen)CancelLeave();else SetMenuOpen(!MenuOpen);}
+            if(HasGameplayFocus&&Input.GetKeyDown(KeyCode.Escape))HandleMenuEscape();
             // Held Tab is handled below.
             if(!Input.GetMouseButton(0))waitForMouseRelease=false;
 #endif
             combatHud.TickInput();if(ArenaCombatHud.TabVisible)waitForMouseRelease=true;
-            CycleTime=(float)(Clock%14);
-            // Eight seconds safe, two seconds warning, four seconds retracted.
-            float opened=CycleTime>=13.4f?(14-CycleTime)/.6f:CycleTime>=10?Mathf.Clamp01((CycleTime-10)/.6f):0;
-            SetBridgeOpening(opened);
-            if(warningLight!=null)warningLight.color=BridgeOpen?new Color(1,.25f,.20f):
-                CycleTime>=8?Color.Lerp(new Color(1,.7f,.2f),new Color(.35f,.18f,.07f),Mathf.PingPong(Time.unscaledTime*3,1)):new Color(.25f,.9f,.75f);
+            if(ArenaObjectiveMatch.Ended)bridgeResting=true;
+            else if(SceneryRunning||!bridgeResting)
+            {
+                CycleTime=SceneryRunning?(float)(Clock%14):0;
+                // Eight seconds safe, two seconds warning, four seconds retracted.
+                float opened=CycleTime>=13.4f?(14-CycleTime)/.6f:CycleTime>=10?Mathf.Clamp01((CycleTime-10)/.6f):0;
+                SetBridgeOpening(opened);
+                if(warningLight!=null)warningLight.color=BridgeOpen?new Color(1,.25f,.20f):
+                    CycleTime>=8?Color.Lerp(new Color(1,.7f,.2f),new Color(.35f,.18f,.07f),Mathf.PingPong(Time.unscaledTime*3,1)):new Color(.25f,.9f,.75f);
+                bridgeResting=!SceneryRunning;
+            }
             var manager=NetworkManager.Singleton;
             if(!HasGameplayFocus||manager==null||!manager.IsConnectedClient)waitForMouseRelease=true;
             bool capture=HasGameplayFocus&&manager!=null&&manager.IsConnectedClient&&!MenuOpen&&!overview&&!ArenaCombatHud.TabVisible&&!ArenaObjectiveMatch.CombatBlocked&&!ArenaObjectiveMatch.InReadyRoom&&!WantsSpectator;
@@ -141,22 +154,31 @@ namespace RightWalkPrototype
             if(WantsSpectator)overview=false;
             if(ArenaObjectiveMatch.InReadyRoom)
             {arenaCamera.orthographicSize=Mathf.Max(6.5f,11/arenaCamera.aspect);cameraPosition=new Vector3(100,3.7f,-10);arenaCamera.transform.position=cameraPosition;cameraReady=false;return;}
+            if(ArenaObjectiveMatch.Ended&&cameraReady)return;
+            float followSize=CombatCameraSize;
+            var match=ArenaObjectiveMatch.Instance;
+            if(match!=null&&match.IsSpawned&&match.State.Value.Phase==ArenaObjectiveMatch.Stage.Countdown)
+            {
+                var state=match.State.Value;
+                float progress=state.End<=0?0:Mathf.Clamp01(1-(float)(state.End-match.Now)/Mathf.Max(.1f,match.CountdownSeconds));
+                followSize=Mathf.Lerp(4.8f,CombatCameraSize,Mathf.SmoothStep(0,1,progress));
+            }
             var target=map!=null?new Vector3(map.overviewCentre.x,map.overviewCentre.y,-10):new Vector3(0,3,-10);
             if(!overview)
             {
                 var owner=LocalPlayer();var viewed=WantsSpectator?SpectatorTarget():owner;
                 if(viewed!=null)target=viewed.transform.position+new Vector3(0,1.3f,-10);
                 else if(owner!=null)target=owner.transform.position+new Vector3(0,1.3f,-10);
-                float halfWidth=4.8f*arenaCamera.aspect;
+                float halfWidth=followSize*arenaCamera.aspect;
                 if(map==null){target.x=Mathf.Clamp(target.x,-24+halfWidth,24-halfWidth);target.y=Mathf.Clamp(target.y,2.7f,7.4f);}
                 else
                 {
                     var b=map.cameraBounds;
                     target.x=b.width<=halfWidth*2?b.center.x:Mathf.Clamp(target.x,b.xMin+halfWidth,b.xMax-halfWidth);
-                    target.y=b.height<=9.6f?b.center.y:Mathf.Clamp(target.y,b.yMin+4.8f,b.yMax-4.8f);
+                    target.y=b.height<=followSize*2?b.center.y:Mathf.Clamp(target.y,b.yMin+followSize,b.yMax-followSize);
                 }
             }
-            desiredSize=overview?(map!=null?Mathf.Max(map.cameraBounds.height*.5f,map.cameraBounds.width*.5f/arenaCamera.aspect):Mathf.Max(7,25/arenaCamera.aspect)):4.8f;
+            desiredSize=overview?(map!=null?Mathf.Max(map.cameraBounds.height*.5f,map.cameraBounds.width*.5f/arenaCamera.aspect):Mathf.Max(7,25/arenaCamera.aspect)):followSize;
             // Sole writer, before aim (order 100). Never aim through an intermediate camera.
             arenaCamera.orthographicSize=desiredSize;
             if(!cameraReady||overview){cameraPosition=target;cameraReady=true;}
@@ -165,7 +187,8 @@ namespace RightWalkPrototype
         }
         private void OnGUI()
         {
-            if(SideScrollNetworkSession.LobbyVisible||ArenaObjectiveMatch.TransitionActive||ArenaObjectiveMatch.InReadyRoom&&!MenuOpen)return;
+            if(SideScrollNetworkSession.LobbyVisible)return;
+            if(ArenaObjectiveMatch.TransitionActive||ArenaObjectiveMatch.InReadyRoom&&!MenuOpen)return;
             if(!ArenaCombatHud.UsesGameUi&&!ArenaObjectiveMatch.InReadyRoom&&!ArenaCombatHud.Active&&!ArenaObjectiveMatch.Ended)
             {
             GUILayout.BeginArea(new Rect(Screen.width*.5f-180,12,360,75),GUI.skin.box);

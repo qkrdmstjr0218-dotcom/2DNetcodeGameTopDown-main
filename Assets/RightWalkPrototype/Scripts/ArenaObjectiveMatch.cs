@@ -8,7 +8,7 @@ namespace RightWalkPrototype
     [DefaultExecutionOrder(160)]
     public sealed partial class ArenaObjectiveMatch : NetworkBehaviour
     {
-        public enum Stage:byte {Waiting,Playing,Finished,Starting,Returning,Countdown}
+        public enum Stage:byte {Waiting,Playing,Finished,Starting,Returning,Countdown,Ending}
         public struct RoundState:INetworkSerializable,IEquatable<RoundState>
         {
             public Stage Phase;public int Version,Point,Upcoming;public double End,Switch,Warning;
@@ -18,10 +18,10 @@ namespace RightWalkPrototype
         }
         public struct Score:INetworkSerializable,IEquatable<Score>
         {
-            public ulong Client;public int Number,Kills;public float Seconds,KillPoints,DronePoints;
+            public ulong Client;public int Number,Kills;public FixedString64Bytes Nickname;public float Seconds,KillPoints,DronePoints;
             public float Total=>Seconds+KillPoints+DronePoints;
-            public void NetworkSerialize<T>(BufferSerializer<T> s) where T:IReaderWriter{s.SerializeValue(ref Client);s.SerializeValue(ref Number);s.SerializeValue(ref Seconds);s.SerializeValue(ref Kills);s.SerializeValue(ref KillPoints);s.SerializeValue(ref DronePoints);}
-            public bool Equals(Score o)=>Client==o.Client&&Number==o.Number&&Seconds==o.Seconds&&Kills==o.Kills&&KillPoints==o.KillPoints&&DronePoints==o.DronePoints;
+            public void NetworkSerialize<T>(BufferSerializer<T> s) where T:IReaderWriter{s.SerializeValue(ref Client);s.SerializeValue(ref Number);s.SerializeValue(ref Nickname);s.SerializeValue(ref Seconds);s.SerializeValue(ref Kills);s.SerializeValue(ref KillPoints);s.SerializeValue(ref DronePoints);}
+            public bool Equals(Score o)=>Client==o.Client&&Number==o.Number&&Nickname.Equals(o.Nickname)&&Seconds==o.Seconds&&Kills==o.Kills&&KillPoints==o.KillPoints&&DronePoints==o.DronePoints;
         }
         public float roundSeconds=180,pointSeconds=30,warningSeconds=5;
         public readonly NetworkVariable<RoundState> State=new(new RoundState{Phase=Stage.Waiting});
@@ -29,7 +29,8 @@ namespace RightWalkPrototype
         public readonly NetworkVariable<FixedString128Bytes> Result=new();
         public NetworkList<Score> Scores;
         public static ArenaObjectiveMatch Instance {get;private set;}
-        public static bool Ended=>Instance!=null&&Instance.IsSpawned&&Instance.State.Value.Phase==Stage.Finished;
+        public bool TimeLimitReached=>State.Value.Phase==Stage.Playing&&Now>=State.Value.End;
+        public static bool Ended=>Instance!=null&&Instance.IsSpawned&&(Instance.TimeLimitReached||Instance.State.Value.Phase==Stage.Ending||Instance.State.Value.Phase==Stage.Finished);
         public ArenaObjectivePoint[] Points {get;private set;}
         public double Now=>NetworkManager!=null?ArenaClock.Now(NetworkManager):0;
         public int NextPoint=>State.Value.Upcoming;
@@ -71,13 +72,14 @@ namespace RightWalkPrototype
             double now=Now;var old=State.Value;int first=UnityEngine.Random.Range(0,Points.Length);
             State.Value=new RoundState{Phase=RoomFlow?Stage.Countdown:Stage.Playing,Version=old.Version+1,Point=first,Upcoming=PickNextPoint(first),End=RoomFlow?0:now+Mathf.Max(1,roundSeconds),Switch=now+Mathf.Max(1,pointSeconds),Warning=now+Mathf.Max(1,pointSeconds)-Mathf.Clamp(warningSeconds,0,Mathf.Max(1,pointSeconds))};
             if(RoomFlow){arrivals.Value=0;arrivalDeadline=now+15;}
-            Scores.Clear();foreach(var p in players)if(p.IsSpawned){Scores.Add(new Score{Client=p.OwnerClientId,Number=p.PlayerNumber});p.ResetForArenaRound();}
+            Scores.Clear();foreach(var p in players)if(p.IsSpawned){Scores.Add(new Score{Client=p.OwnerClientId,Number=p.PlayerNumber,Nickname=p.Nickname});p.ResetForArenaRound();}
             Result.Value=default;Occupants.Value=0;OccupantNumber.Value=0;lastTick=now;nextTick=now;
             RelayArenaPrototype.Instance?.SetMenuOpen(false);return true;
         }
         void Update()
         {
             if(!IsSpawned||Points==null)return;
+            if(IsServer&&State.Value.Phase==Stage.Ending&&Now>=State.Value.End){var finished=State.Value;finished.Phase=Stage.Finished;State.Value=finished;}
             UpdateRoom();UpdateKillRules();
             if(IsServer&&Now>=nextTick){ServerTick();nextTick=Now+.1;}
             UpdateAmmoPickups();UpdateHealthPickups();UpdatePatrols();UpdateTurretShots();
@@ -92,7 +94,8 @@ namespace RightWalkPrototype
             var players=FindObjectsByType<SideScrollNetworkPlayer>(FindObjectsSortMode.None);
             // Scores belong to a connection, so a reused P number cannot inherit them.
             for(int i=Scores.Count-1;i>=0;i--){bool found=false;foreach(var p in players)if(p.IsSpawned&&p.OwnerClientId==Scores[i].Client)found=true;if(!found)Scores.RemoveAt(i);}
-            foreach(var p in players)if(p.IsSpawned){bool found=false;for(int i=0;i<Scores.Count;i++)if(Scores[i].Client==p.OwnerClientId)found=true;if(!found)Scores.Add(new Score{Client=p.OwnerClientId,Number=p.PlayerNumber});}
+            foreach(var p in players)if(p.IsSpawned){bool found=false;for(int i=0;i<Scores.Count;i++)if(Scores[i].Client==p.OwnerClientId)found=true;if(!found)Scores.Add(new Score{Client=p.OwnerClientId,Number=p.PlayerNumber,Nickname=p.Nickname});}
+            for(int i=0;i<Scores.Count;i++)foreach(var p in players)if(p.IsSpawned&&p.OwnerClientId==Scores[i].Client){var row=Scores[i];row.Nickname=p.Nickname;if(!row.Equals(Scores[i]))Scores[i]=row;break;}
             bool switched=false;
             while(until>=state.Switch&&state.Switch<state.End)
             {state.Point=state.Upcoming;state.Upcoming=PickNextPoint(state.Point);state.Switch+=Mathf.Max(1,pointSeconds);state.Warning=state.Switch-Mathf.Clamp(warningSeconds,0,Mathf.Max(1,pointSeconds));switched=true;}
@@ -103,13 +106,18 @@ namespace RightWalkPrototype
             if(count==1&&!switched)for(int i=0;i<Scores.Count;i++)if(Scores[i].Client==sole.OwnerClientId){var score=Scores[i];score.Seconds+=dt;Scores[i]=score;break;}
             if(now>=state.End)
             {
-                state.Phase=Stage.Finished;Occupants.Value=0;OccupantNumber.Value=0;
-                float best=0;for(int i=0;i<Scores.Count;i++)best=Mathf.Max(best,Scores[i].Total);
-                string winners="";int ties=0;
-                for(int i=0;i<Scores.Count;i++)if(Mathf.Abs(Scores[i].Total-best)<.05f){winners+=(ties++>0?" / ":"")+"P"+Scores[i].Number;}
-                Result.Value=new FixedString128Bytes(best<.05f?"획득 점수 없음 · 무승부":ties==1?winners+" 승리":winners+" 공동 1위");
+                FinishRound();return;
             }
             State.Value=state;
+        }
+        public const float EndAnnouncementSeconds=1.5f;
+        void FinishRound(string reason=null)
+        {
+            if(!IsServer||State.Value.Phase!=Stage.Playing)return;
+            var state=State.Value;state.Phase=Stage.Ending;state.Version++;state.End=Now+EndAnnouncementSeconds;
+            Occupants.Value=0;OccupantNumber.Value=0;
+            var rows=new Score[Scores.Count];for(int i=0;i<rows.Length;i++)rows[i]=Scores[i];
+            Result.Value=new FixedString128Bytes(reason??ArenaScoreRules.Result(rows));State.Value=state;
         }
         public float ScoreFor(ulong client){for(int i=0;i<Scores.Count;i++)if(Scores[i].Client==client)return Scores[i].Total;return 0;}
         void OnGUI()
@@ -119,6 +127,7 @@ namespace RightWalkPrototype
             if(RoomFlow&&State.Value.Phase==Stage.Countdown)
             {ArenaTransitionHud.Countdown(State.Value.End,Now);return;}
             var state=State.Value;
+            if(state.Phase==Stage.Ending){ArenaTransitionHud.RoundEnd();return;}
             if(RoomFlow&&state.Phase==Stage.Finished){DrawResults();return;}
             if(RoomFlow&&state.Phase==Stage.Playing&&state.End-Now>roundSeconds-.7f)ArenaTransitionHud.Go();
             if(ArenaCombatHud.Active){ArenaObjectiveGuide.Draw(this);DrawMedicalGuide();return;}
@@ -139,7 +148,7 @@ namespace RightWalkPrototype
             {
                 GUILayout.BeginArea(new Rect(Screen.width-230,185,215,Mathf.Min(230,50+Scores.Count*24)),GUI.skin.box);GUILayout.Label("처치 +"+PlayerKillReward.ToString("0.#")+" · 드론 +"+MedicalDroneKillPoints);
                 var sorted=new Score[Scores.Count];for(int i=0;i<Scores.Count;i++)sorted[i]=Scores[i];Array.Sort(sorted,(a,b)=>a.Number.CompareTo(b.Number));
-                foreach(var score in sorted)GUILayout.Label("P"+score.Number+"   "+score.Total.ToString("0.0")+"점 · "+score.Kills+"킬");GUILayout.EndArea();
+                foreach(var score in sorted)GUILayout.Label("P"+score.Number+"   "+ArenaScoreRules.Format(score.Total)+"점 · "+score.Kills+"킬");GUILayout.EndArea();
             }
             if(state.Phase==Stage.Finished&&(RelayArenaPrototype.Instance==null||!RelayArenaPrototype.Instance.MenuOpen))
             {

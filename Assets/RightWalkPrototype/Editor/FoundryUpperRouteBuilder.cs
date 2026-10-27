@@ -8,8 +8,9 @@ public static class FoundryUpperRouteBuilder
 {
     public const string RootName="Upper route moving bridges";
     public const float BridgeWidth=6,FixedSpawnX=9.625f;
-    public static float LowerStepHeight(ArenaMapSettings map)=>map.floorSpacing*(2+1f/3);
-    public static float UpperStepHeight(ArenaMapSettings map)=>map.floorSpacing*(2+2f/3);
+    public const float LowerStepX=3.8f,UpperStepWidth=2.4f;
+    public static float LowerStepHeight(ArenaMapSettings map)=>map.floorSpacing*2.25f;
+    public static float UpperStepHeight(ArenaMapSettings map)=>map.floorSpacing*2.5f;
     static Sprite sprite;static Transform root;
     static readonly Color Steel=new(.20f,.28f,.33f),Edge=new(.96f,.63f,.23f),Pass=new(.22f,.8f,.77f);
     static GameObject Part(Transform parent,string name,Vector2 at,Vector2 size,Color color,int order,bool solid=false)
@@ -55,7 +56,7 @@ public static class FoundryUpperRouteBuilder
             bridge.status=Label(go.transform,"Crossing status","CROSSING SAFE",new Vector2(side*6.25f,crown+1.45f),.022f);
             Label(go.transform,"Bridge name",side<0?"4F / WEST":"4F / EAST",new Vector2(side*6.25f,crown+1.85f),.026f);
             // Low one-way steps enrich the central third floor without making walls.
-            float y=LowerStepHeight(map),x=side*4.5f;
+            float y=LowerStepHeight(map),x=side*LowerStepX;
             var step=Part(root,"Third floor step "+side,new Vector2(x,y-.1f),new Vector2(3,.2f),Steel,1,true);
             step.GetComponent<BoxCollider2D>().usedByEffector=true;var effector=step.AddComponent<PlatformEffector2D>();
             effector.useOneWay=true;effector.surfaceArc=160;effector.useSideFriction=false;effector.useSideBounce=false;
@@ -63,13 +64,14 @@ public static class FoundryUpperRouteBuilder
             var ascent=map.transform.Find(FoundryLayoutBuilder.RootName+"/Central ascent "+side);
             if(ascent!=null)
             {
-                float high=UpperStepHeight(map);ascent.position=new Vector3(side*2.1f,high-.1f,0);ascent.localScale=new Vector3(1.6f,.2f,1);
+                float high=UpperStepHeight(map);ascent.position=new Vector3(side*2.1f,high-.1f,0);ascent.localScale=new Vector3(UpperStepWidth,.2f,1);
                 for(int i=ascent.childCount-1;i>=0;i--)if(ascent.GetChild(i).name=="Passable dash")UnityEngine.Object.DestroyImmediate(ascent.GetChild(i).gameObject);
-                Dashes(ascent,side*2.1f,high,1.6f);
+                Dashes(ascent,side*2.1f,high,UpperStepWidth);
             }
         }
         if(map.respawnPoints!=null)for(int i=0;i<map.respawnPoints.Length;i++)
         {var p=map.respawnPoints[i];if(Mathf.Abs(p.y-crown-.04f)<.01f&&(Mathf.Abs(Mathf.Abs(p.x)-9)<.01f||Mathf.Abs(Mathf.Abs(p.x)-FixedSpawnX)<.01f)){p.x=Mathf.Sign(p.x)*FixedSpawnX;map.respawnPoints[i]=p;}}
+        FoundryThirdFloorAccessBuilder.Configure(map);
         EditorUtility.SetDirty(map);
         Physics2D.SyncTransforms();EditorSceneManager.MarkSceneDirty(scene);EditorSceneManager.SaveScene(scene);
     }

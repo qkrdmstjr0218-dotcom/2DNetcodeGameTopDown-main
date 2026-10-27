@@ -11,7 +11,7 @@ namespace RightWalkPrototype
                 !NetworkManager.ConnectedClients.ContainsKey(attacker.OwnerClientId))return;
             for(int i=0;i<Scores.Count;i++)if(Scores[i].Client==attacker.OwnerClientId)
             {var score=Scores[i];score.DronePoints+=MedicalDroneKillPoints;Scores[i]=score;return;}
-            Scores.Add(new Score{Client=attacker.OwnerClientId,Number=attacker.PlayerNumber,DronePoints=MedicalDroneKillPoints});
+            Scores.Add(new Score{Client=attacker.OwnerClientId,Number=attacker.PlayerNumber,Nickname=attacker.Nickname,DronePoints=MedicalDroneKillPoints});
         }
         [SerializeField,Min(0)] float playerKillPoints=5;
         readonly Unity.Netcode.NetworkVariable<float> killReward=new(5);
@@ -27,7 +27,7 @@ namespace RightWalkPrototype
             // is removed from the victim, including deaths inside an objective.
             for(int i=0;i<Scores.Count;i++)if(Scores[i].Client==attacker.OwnerClientId)
             {var score=Scores[i];score.Kills++;score.KillPoints+=PlayerKillReward;Scores[i]=score;return;}
-            Scores.Add(new Score{Client=attacker.OwnerClientId,Number=attacker.PlayerNumber,Kills=1,KillPoints=PlayerKillReward});
+            Scores.Add(new Score{Client=attacker.OwnerClientId,Number=attacker.PlayerNumber,Nickname=attacker.Nickname,Kills=1,KillPoints=PlayerKillReward});
         }
     }
 }

@@ -24,6 +24,11 @@ namespace RightWalkPrototype
         SideScrollNetworkPlayer TurretTarget(PatrolState state,SideScrollNetworkPlayer[] players,bool locked)
         {
             Vector2 pivot=TurretPivot(state);SideScrollNetworkPlayer target=null;float nearest=state.Flying?DroneSight:TurretRange;
+            if(!locked&&ProvokedTarget(state,out var provoked))
+            {
+                var to=(Vector2)provoked.ArenaHitBounds.center;
+                return Vector2.Distance(pivot,to)<nearest&&Mathf.Abs(to.y-pivot.y)<=(state.Flying?DroneSight:TurretVerticalRange)&&!ArenaGrenadeBallistics.WorldTrace(pivot,to,0,out _)?provoked:null;
+            }
             foreach(var player in players)
             {
                 if(!player.IsSpawned||player.IsDead||!player.HasCurrentLifePose||locked&&player.OwnerClientId!=state.TargetClient)continue;
@@ -48,6 +53,8 @@ namespace RightWalkPrototype
                 if(state.BurstLeft==0)state.NextAttack=Now+(state.Flying?2.2f:TurretInterval);
                 Patrols[index]=state;return;
             }
+            if(ProvokedTarget(state,out var noticed))
+            {state.Aim=((Vector2)noticed.ArenaHitBounds.center-TurretPivot(state)).normalized;Patrols[index]=state;}
             if(Now<state.NextAttack)return;
             Vector2 pivot=TurretPivot(state);var target=TurretTarget(state,players,false);
             if(target==null)return;

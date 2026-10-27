@@ -12,7 +12,7 @@ namespace RightWalkPrototype
 {
     public sealed partial class SideScrollNetworkSession
     {
-        public const string OnlineRoomKind="foundry-score-20261023-v1";
+        public const string OnlineRoomKind="foundry-score-20261027-v2";
         public const string OnlineModeName="해킹 구역 점령",OnlineMapName="주조 시설 08";
         public static SideScrollNetworkSession Instance {get;private set;}
         public static bool LobbyVisible=>Instance!=null&&Instance.useReadyRoom&&RelayArenaPrototype.Instance!=null
@@ -149,6 +149,7 @@ namespace RightWalkPrototype
         }
         void Update()
         {
+            if(!LobbyVisible||!Application.isFocused)UpdateLobbyIme(false);
             if(onlineSession!=null&&onlineSession.IsHost&&!onlineLeaving&&!publishing&&Time.unscaledTime>=nextPhasePublish)_=PublishOnlinePhase();
             if(LobbyVisible&&browserOpened&&!OnlineBusy&&!onlineLeaving&&Time.unscaledTime>=nextRoomQuery)_=RefreshOnlineRoomsAsync();
         }

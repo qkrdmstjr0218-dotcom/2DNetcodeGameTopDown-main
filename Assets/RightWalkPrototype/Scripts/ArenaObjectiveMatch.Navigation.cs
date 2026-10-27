@@ -8,7 +8,7 @@ namespace RightWalkPrototype
         sealed class EnemyBrain
         {
             public List<int> Path=new();public int Step,Last=-1;public double Think,Tick,LostUntil;
-            public SideScrollNetworkPlayer Target;public Vector2 Goal;
+            public SideScrollNetworkPlayer Target;public Vector2 Goal;public double ProvokedUntil;public uint ProvokedLife;
         }
         readonly Dictionary<int,EnemyBrain> enemyBrains=new();
         ArenaEnemyNavigation groundNavigation,flightNavigation;
@@ -34,8 +34,32 @@ namespace RightWalkPrototype
                 state.Position=EnemySpawn(state);Patrols.Add(state);
             }
         }
+        const float ProvokedMemorySeconds=6,ProvokedRange=24;
+        EnemyBrain BrainFor(PatrolState state)
+        {
+            if(!enemyBrains.TryGetValue(state.Id,out var brain)){brain=new EnemyBrain{Tick=Now,Think=Now};enemyBrains.Add(state.Id,brain);}
+            return brain;
+        }
+        bool ProvokedTarget(PatrolState state,out SideScrollNetworkPlayer target)
+        {
+            target=null;if(!enemyBrains.TryGetValue(state.Id,out var brain)||brain.ProvokedUntil<=0)return false;
+            var p=brain.Target;
+            if(Now>brain.ProvokedUntil||p==null||!p.IsSpawned||p.IsDead||!p.HasCurrentLifePose||p.LifeVersion!=brain.ProvokedLife||Vector2.Distance(PatrolPosition(state),p.ArenaHitBounds.center)>ProvokedRange)
+            {brain.ProvokedUntil=0;brain.Target=null;brain.LostUntil=0;brain.Think=Now;return false;}
+            target=p;return true;
+        }
+        void RecognizeAttacker(ref PatrolState state,SideScrollNetworkPlayer attacker)
+        {
+            if(state.Medical||attacker==null||!attacker.IsSpawned||attacker.IsDead||!attacker.HasCurrentLifePose||attacker.NetworkManager!=NetworkManager||!NetworkManager.ConnectedClients.ContainsKey(attacker.OwnerClientId))return;
+            var brain=BrainFor(state);bool changed=brain.Target!=attacker;
+            brain.Target=attacker;brain.ProvokedLife=attacker.LifeVersion;brain.ProvokedUntil=Now+ProvokedMemorySeconds;brain.LostUntil=brain.ProvokedUntil;brain.Think=Now;
+            if(changed){brain.Path.Clear();brain.Step=0;if(state.RushPhase==1){state.RushPhase=0;state.RushUntil=0;}}
+            // A new target gets a fresh visible warning, never an instant redirected shot.
+            if(state.FireAt>0&&state.TargetClient!=attacker.OwnerClientId){state.FireAt=0;state.BurstLeft=0;}
+        }
         SideScrollNetworkPlayer RoamingTarget(PatrolState state,EnemyBrain brain,SideScrollNetworkPlayer[] players)
         {
+            if(ProvokedTarget(state,out var provoked))return provoked;
             Vector2 centre=state.Position+Vector2.up*.48f;float nearest=state.Flying?DroneSight:8;SideScrollNetworkPlayer found=null;
             foreach(var p in players)
             {
@@ -64,7 +88,7 @@ namespace RightWalkPrototype
         void UpdateRoamingEnemy(ref PatrolState state,SideScrollNetworkPlayer[] players)
         {
             var graph=state.Flying?flightNavigation:groundNavigation;if(graph==null)return;
-            if(!enemyBrains.TryGetValue(state.Id,out var brain)){brain=new EnemyBrain{Tick=Now,Think=Now};enemyBrains.Add(state.Id,brain);}
+            var brain=BrainFor(state);
             if(Now-brain.Tick<.1)return;
             float dt=Mathf.Min(.2f,(float)(Now-brain.Tick));brain.Tick=Now;
             if(!state.Flying&&!ArenaEnemyNavigation.FloorBelow(state.Position+Vector2.up*.08f,.2f,out _))

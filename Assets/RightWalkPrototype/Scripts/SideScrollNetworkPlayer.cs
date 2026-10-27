@@ -164,6 +164,7 @@ namespace RightWalkPrototype
                 PublishMotion();
             }
             else{transform.position=motion.Value.LifeVersion==LifeVersion?motion.Value.Position:life.Value.SpawnPosition;ApplyRemoteMotion();}
+            if(IsOwner)SubmitNicknameRpc(new Unity.Collections.FixedString64Bytes(ArenaPlayerNames.Local));
         }
         private Vector3 SpawnPosition()
         {
@@ -184,7 +185,7 @@ namespace RightWalkPrototype
             if(!IsSpawned)return;
             var match=ArenaObjectiveMatch.Instance;
             if(IsOwner&&InstantShotgunEnabled&&SelectedAmmo==AmmoKind.Shotgun)SelectAmmo(AmmoKind.InstantShotgun);
-            if(IsServer&&IsDead&&match!=null&&match.RoomFlow&&match.State.Value.Phase==ArenaObjectiveMatch.Stage.Playing&&RespawnRemaining<=0)ResetArenaLife(false);
+            if(IsServer&&IsDead&&!ArenaObjectiveMatch.Ended&&match!=null&&match.RoomFlow&&match.State.Value.Phase==ArenaObjectiveMatch.Stage.Playing&&RespawnRemaining<=0)ResetArenaLife(false);
             if(IsOwner&&ArenaObjectiveMatch.Instance!=null&&ArenaObjectiveMatch.Instance.RoomFlow)aim.showAimPreview=!ArenaObjectiveMatch.InReadyRoom||ArenaObjectiveMatch.PracticeRoom;
             if(appliedLifeVersion!=LifeVersion)
             {
@@ -363,6 +364,32 @@ namespace RightWalkPrototype
             life.Value=new LifeState{Health=MaxHealth,Generation=LifeVersion+1,SpawnPosition=spawn};nextServerShot=0;ResetSprintEnergy();
             if(refillAmmo)ResetSpecialAmmo();else{ResetNormalAmmo();ResetFireTiming();}
         }
+        GUIStyle readyPlayerStyle,readyNameStyle;
+        Rect readyIdentityRow,readyPlayerRect,readyNicknameRect;
+        void DrawReadyIdentity(Vector2 at)
+        {
+            readyPlayerStyle??=ArenaUiTheme.Static(new GUIStyle(GUI.skin.label){font=GUI.skin.font,fontSize=14,alignment=TextAnchor.MiddleLeft,padding=new RectOffset(),richText=false,wordWrap=false,clipping=TextClipping.Clip});
+            readyNameStyle??=ArenaUiTheme.Static(new GUIStyle(readyPlayerStyle){fontSize=13,normal={textColor=new Color(.7f,.83f,.86f)}});
+            string identity="P"+PlayerNumber+(IsOwner?" · 나":""),name=ArenaPlayerNames.Name(Nickname);
+            readyPlayerStyle.normal.textColor=ArenaPlayerAppearance.Accent(PlayerNumber);
+            float playerWidth=Mathf.Ceil(readyPlayerStyle.CalcSize(new GUIContent(identity)).x)+4;
+            float nameWidth=Mathf.Min(210,Mathf.Ceil(readyNameStyle.CalcSize(new GUIContent(name)).x)+4);
+            float width=playerWidth+8+nameWidth;
+            float centre=Mathf.Clamp(at.x,width*.5f+4,Mathf.Max(width*.5f+4,Screen.width-width*.5f-4));
+            readyIdentityRow=new Rect(centre-width*.5f,at.y,width,24);
+            readyPlayerRect=new Rect(readyIdentityRow.x,at.y,playerWidth,24);
+            readyNicknameRect=new Rect(readyPlayerRect.xMax+8,at.y,nameWidth,24);
+            ArenaHudSkin.ReadyBadge(new Rect(centre-54,at.y-30,108,26),ArenaObjectiveMatch.Instance.IsReady(OwnerClientId));
+            var playerColor=readyPlayerStyle.normal.textColor;var nameColor=readyNameStyle.normal.textColor;
+            readyPlayerStyle.normal.textColor=readyNameStyle.normal.textColor=new Color(0,0,0,.85f);
+            ArenaUiTheme.Static(readyPlayerStyle);ArenaUiTheme.Static(readyNameStyle);
+            GUI.Label(new Rect(readyPlayerRect.x+1,at.y+1,playerWidth,24),identity,readyPlayerStyle);
+            GUI.Label(new Rect(readyNicknameRect.x+1,at.y+1,nameWidth,24),name,readyNameStyle);
+            readyPlayerStyle.normal.textColor=playerColor;readyNameStyle.normal.textColor=nameColor;
+            ArenaUiTheme.Static(readyPlayerStyle);ArenaUiTheme.Static(readyNameStyle);
+            GUI.Label(readyPlayerRect,identity,readyPlayerStyle);
+            GUI.Label(readyNicknameRect,new GUIContent(name,name),readyNameStyle);
+        }
         private void OnGUI()
         {
             if(!IsSpawned||Camera.main==null||ArenaObjectiveMatch.TransitionActive||ArenaObjectiveMatch.Ended)return;
@@ -372,7 +399,11 @@ namespace RightWalkPrototype
             if(ArenaObjectiveMatch.InReadyRoom&&!ArenaTutorial.Active)
             {
                 var at=Camera.main.WorldToScreenPoint(transform.position+Vector3.up*2.45f);
-                if(at.z>0)GUI.Label(new Rect(at.x-75,Screen.height-at.y,150,25),"P"+PlayerNumber+(IsOwner?" (나)":"")+" · "+(ArenaObjectiveMatch.Instance.IsReady(OwnerClientId)?"준비 완료":"준비 중"),ArenaUiTheme.Static(new GUIStyle(GUI.skin.label){alignment=TextAnchor.MiddleCenter,normal={textColor=ArenaPlayerAppearance.Accent(PlayerNumber)}}));
+                if(at.z>0)using(ArenaUiTheme.Use())
+                {
+                    float y=Screen.height-at.y;
+                    DrawReadyIdentity(new Vector2(at.x,y));
+                }
                 if(IsOwner)DrawAmmoHud();
                 return;
             }

@@ -5,6 +5,7 @@ namespace RightWalkPrototype
     // Scoped skin: other IMGUI components never inherit these styles.
     public static class ArenaUiTheme
     {
+        public const string SpecialAmmoSwitchLabel="특수탄 교체";
         static GUISkin skin;
         public static bool Button(string label,params GUILayoutOption[] options)
         {bool pressed=GUILayout.Button(label,options);if(pressed)ArenaAudio.Ui(ArenaAudio.Cue.UiClick);return pressed;}
@@ -29,19 +30,30 @@ namespace RightWalkPrototype
                 skin.button.normal.textColor=skin.button.hover.textColor=skin.button.active.textColor=new Color(.87f,.97f,.98f);
                 skin.button.border=new RectOffset(1,1,1,1);skin.button.padding=new RectOffset(12,12,8,8);skin.button.fontSize=15;
                 skin.textField.normal.background=panel;Static(skin.textField);skin.textField.focused.background=button;
-                foreach(var state in new[]{skin.textField.normal,skin.textField.hover,skin.textField.active,skin.textField.focused,skin.textField.onNormal,skin.textField.onHover,skin.textField.onActive,skin.textField.onFocused}){state.scaledBackgrounds=new Texture2D[0];state.textColor=Color.white;}
+                foreach(var state in new[]{skin.textField.normal,skin.textField.hover,skin.textField.active,skin.textField.focused,skin.textField.onNormal,skin.textField.onHover,skin.textField.onActive,skin.textField.onFocused}){ClearScaledBackgrounds(state);state.textColor=Color.white;}
                 skin.textField.border=new RectOffset(1,1,1,1);
                 skin.textField.padding=new RectOffset(10,10,8,8);skin.textField.fontSize=15;skin.textField.normal.textColor=skin.textField.focused.textColor=Color.white;
                 skin.toggle.fontSize=13;skin.toggle.normal.textColor=new Color(.6f,.72f,.76f);
-                skin.label.normal.background=null;skin.label.normal.scaledBackgrounds=new Texture2D[0];Static(skin.label);Static(skin.box);
+                skin.label.normal.background=null;ClearScaledBackgrounds(skin.label.normal);Static(skin.label);Static(skin.box);
             }
             var scope=new Scope(GUI.skin);GUI.skin=skin;return scope;
         }
         sealed class Scope:IDisposable{readonly GUISkin old;public Scope(GUISkin old){this.old=old;}public void Dispose(){GUI.skin=old;}}
+        static void ClearScaledBackgrounds(GUIStyleState state)
+        {
+#if UNITY_EDITOR
+            state.scaledBackgrounds=Array.Empty<Texture2D>();
+#endif
+        }
         public static GUIStyle Static(GUIStyle style)
         {
             foreach(var state in new[]{style.hover,style.active,style.focused,style.onNormal,style.onHover,style.onActive,style.onFocused})
-            {state.background=style.normal.background;state.scaledBackgrounds=style.normal.scaledBackgrounds;state.textColor=style.normal.textColor;}
+            {
+                state.background=style.normal.background;state.textColor=style.normal.textColor;
+#if UNITY_EDITOR
+                state.scaledBackgrounds=style.normal.scaledBackgrounds;
+#endif
+            }
             return style;
         }
         public static void DrawPortrait(Rect frame,Texture2D texture)

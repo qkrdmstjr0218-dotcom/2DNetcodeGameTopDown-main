@@ -40,15 +40,16 @@ public static partial class FoundryRampMotionReview
             move.SetInput(0);move.SetSpawnPosition(new Vector2(side*6.6f,upper+.04f));yield return new WaitForSeconds(.3f);
             move.SetInput(-side);yield return Wait(()=>side*body.position.x<3.5f,"walk under third-floor step");move.SetInput(0);yield return new WaitForSeconds(.2f);
             Require(move.Grounded&&Mathf.Abs(body.position.y-upper)<.25f,"new step does not block walking");
-            move.SetSpawnPosition(new Vector2(side*6.6f,upper+.04f));yield return new WaitForSeconds(.3f);
-            move.SetInput(-side,true);yield return new WaitForSeconds(.45f);move.SetInput(-side,true);
-            yield return Wait(()=>side*body.position.x<4.55f,"jump toward raised third-floor step",3);move.SetInput(0);
-            yield return Wait(()=>move.Grounded&&Mathf.Abs(body.position.y-FoundryUpperRouteBuilder.LowerStepHeight(map))<.25f,"land third-floor step",4);Require(true,"double jump reaches first third-height step "+side);
-            move.SetInput(-side);yield return Wait(()=>side*body.position.x<3.6f,"walk toward inner step edge",2);move.SetInput(0);yield return new WaitForSeconds(.25f);
-            move.SetInput(-side,true);yield return new WaitForSeconds(.45f);move.SetInput(-side,true);
-            yield return Wait(()=>side*body.position.x<2.2f,"cross to central ascent step",3);move.SetInput(0);
-            yield return Wait(()=>move.Grounded&&Mathf.Abs(body.position.y-FoundryUpperRouteBuilder.UpperStepHeight(map))<.25f,"land central ascent step",4);Require(true,"raised lower step connects to upper third-height step "+side);
-            yield return DoubleJumpTo(crown);
+            move.SetSpawnPosition(new Vector2(side*FoundryUpperRouteBuilder.LowerStepX,upper+.04f));Physics2D.SyncTransforms();yield return new WaitForSeconds(.3f);
+            float[] xs={FoundryUpperRouteBuilder.LowerStepX,2.1f,1.2f,1.2f};
+            float[] heights={FoundryUpperRouteBuilder.LowerStepHeight(map),FoundryUpperRouteBuilder.UpperStepHeight(map),map.floorSpacing*2.75f,crown};
+            for(int rung=0;rung<4;rung++)
+            {
+                float targetX=side*xs[rung];move.SetInput(Mathf.Abs(body.position.x-targetX)<.15f?0:Mathf.Sign(targetX-body.position.x),true);yield return new WaitForFixedUpdate();yield return new WaitForSeconds(.1f);
+                float deadline=Time.time+3;int jumps=move.JumpCount;
+                while(!move.Grounded&&Time.time<deadline){move.SetInput(Mathf.Abs(body.position.x-targetX)<.15f?0:Mathf.Sign(targetX-body.position.x));jumps=Mathf.Max(jumps,move.JumpCount);yield return new WaitForFixedUpdate();}
+                move.SetInput(0);Require(move.Grounded&&move.GroundCollider!=null&&Mathf.Abs(move.GroundCollider.bounds.max.y-heights[rung])<.05f&&jumps==1,"single jump central crown rung "+side+" "+rung);yield return new WaitForSeconds(.15f);
+            }
         }
         var bridges=map.transform.Find(FoundryUpperRouteBuilder.RootName).GetComponentsInChildren<ArenaRetractingBridge>();
         Require(bridges.Length==2,"two upper bridges");

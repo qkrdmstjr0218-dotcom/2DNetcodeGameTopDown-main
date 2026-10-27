@@ -70,6 +70,7 @@ public static class FoundryArtBuilder
             if(r.name=="Grate opening"||r.name=="Deck joint")r.enabled=false;
         FoundryCoverArtBuilder.ApplyVisuals(map);
         foreach(var t in map.GetComponentsInChildren<TextMesh>())if(t.name=="Depot sign"){t.GetComponent<MeshRenderer>().sortingOrder=-40;t.color=new Color(.42f,.58f,.62f);}
+        FoundrySurfaceArtBuilder.ApplyVisuals(map);ArenaFoundryLandmarkArt.Apply(map);
         if(before!=Geometry(map))throw new Exception("Art changed collider geometry");
         if(root.GetComponentsInChildren<Collider2D>(true).Length!=0)throw new Exception("Art has colliders");
         System.IO.Directory.CreateDirectory("LocalTools/Analysis/FoundryArt");

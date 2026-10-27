@@ -8,7 +8,7 @@ namespace RightWalkPrototype
         public ArenaObjectiveMatch Match {get;private set;}
         public int Id {get;private set;}
         public int Generation {get;private set;}
-        BoxCollider2D shape;int previousHealth;bool medical,artFlash;float flash;Sprite sprite;
+        BoxCollider2D shape;int previousHealth;bool medical,artFlash,entryActive;float flash;Sprite sprite;
         Transform barrel,bodyRoot,entryMarker,artFacing;SpriteRenderer sensor,rushMarker;
         readonly System.Collections.Generic.List<SpriteRenderer> entryLights=new();
         readonly System.Collections.Generic.List<SpriteRenderer> bodyParts=new();
@@ -64,7 +64,7 @@ namespace RightWalkPrototype
         public void Apply(ArenaObjectiveMatch.PatrolState state,bool visible,int maximum)
         {
             Generation=state.Generation;
-            bool entering=Match.EnemyEntering(state);
+            bool entering=Match.EnemyEntering(state);entryActive=entering;
             bool hit=state.Health<previousHealth&&previousHealth>0;
             if(hit)flash=.1f;
             if(hit&&visible)ArenaAudio.World(state.Health==0?ArenaAudio.Cue.EnemyBreak:ArenaAudio.Cue.Impact,transform.position,GetInstanceID());
@@ -88,18 +88,41 @@ namespace RightWalkPrototype
                 float direction=state.RushPhase==1||state.RushPhase==2||!state.Roaming?state.Aim.x:state.Velocity.x;
                 if(Mathf.Abs(direction)>.02f)artFacing.localScale=new Vector3(direction<0?-1:1,1,1);
             }
+            float entryShade=1,entryAlpha=1;
             if(entryMarker!=null)
             {
-                entryMarker.gameObject.SetActive(entering);
-                float remaining=(float)(state.EntryUntil-Match.Now);
-                float emerge=Mathf.Clamp01(1-remaining/Mathf.Min(.4f,state.EntrySeconds*.4f));
-                bodyRoot.gameObject.SetActive(!entering||emerge>0);
-                Vector2 offset=state.Turret?Vector2.down*.95f:state.Flying?Vector2.up*1.1f:Vector2.right*(state.Left<0?-.9f:.9f);
-                bodyRoot.localPosition=entering?Vector2.Lerp(offset,Vector2.zero,emerge):Vector2.zero;
-                foreach(var light in entryLights)light.color=Color.Lerp(new Color(1,.35f,.05f,.45f),new Color(1,.85f,.2f),Mathf.PingPong((float)Match.Now*5,1));
+                bool ground=!state.Turret&&!state.Flying;
+                entryMarker.gameObject.SetActive(entering&&!ground);
+                if(ground)
+                {
+                    float emerge=Mathf.SmoothStep(0,1,Mathf.InverseLerp(.42f,.8f,ArenaObjectiveMatch.EntryProgress(state,Match.Now)));
+                    bodyRoot.gameObject.SetActive(!entering||ArenaObjectiveMatch.EntryProgress(state,Match.Now)>=.42f);
+                    bodyRoot.localPosition=Vector2.zero;bodyRoot.localScale=Vector3.one*(entering?Mathf.Lerp(.75f,1,emerge):1);
+                    entryShade=entering?Mathf.Lerp(.45f,1,emerge):1;
+                    entryAlpha=entering?Mathf.SmoothStep(0,1,Mathf.InverseLerp(.42f,.55f,ArenaObjectiveMatch.EntryProgress(state,Match.Now))):1;
+                }
+                else if(state.Flying)
+                {
+                    float progress=ArenaObjectiveMatch.EntryProgress(state,Match.Now);
+                    float emerge=Mathf.SmoothStep(0,1,Mathf.InverseLerp(.55f,1,progress));
+                    bodyRoot.gameObject.SetActive(!entering||progress>=.55f);bodyRoot.localPosition=Vector2.zero;
+                    bodyRoot.localScale=Vector3.one*(entering?Mathf.Lerp(.75f,1,emerge):1);
+                    entryShade=entering?Mathf.Lerp(.5f,1,emerge):1;
+                    entryAlpha=entering?Mathf.SmoothStep(0,1,Mathf.InverseLerp(.55f,.78f,progress)):1;
+                }
+                else
+                {
+                    float remaining=(float)(state.EntryUntil-Match.Now);
+                    float emerge=state.Turret?Mathf.SmoothStep(0,1,Mathf.InverseLerp(.45f,1,ArenaObjectiveMatch.EntryProgress(state,Match.Now))):Mathf.Clamp01(1-remaining/Mathf.Min(.4f,state.EntrySeconds*.4f));
+                    bodyRoot.gameObject.SetActive(!entering||emerge>0);
+                    Vector2 offset=state.Turret?Vector2.down*1.4f:Vector2.up*1.1f;
+                    bodyRoot.localPosition=entering?Vector2.Lerp(offset,Vector2.zero,emerge):Vector2.zero;
+                }
+                foreach(var light in entryLights)light.color=Color.Lerp(new Color(1,.35f,.05f,.45f),new Color(1,.75f,.3f),Mathf.PingPong((float)Match.Now*5,1));
             }
+            if(state.Turret)ArenaEnemyArt.SetEntryFloor(bodyParts,entering?transform.position.y:-10000);
             flash=Mathf.Max(0,flash-Time.deltaTime);
-            for(int i=0;i<bodyParts.Count;i++)bodyParts[i].color=flash>0?new Color(1,.95f,.8f):bodyColors[i];
+            for(int i=0;i<bodyParts.Count;i++)bodyParts[i].color=flash>0?new Color(1,.95f,.8f):bodyColors[i]*new Color(entryShade,entryShade,entryShade,entryAlpha);
             if(!medical&&artFlash!=(flash>0)){artFlash=flash>0;ArenaEnemyArt.SetFlash(bodyParts,artFlash);}
             if(rushMarker!=null)
             {
@@ -126,17 +149,25 @@ namespace RightWalkPrototype
                 var go=new GameObject("Warning light");go.transform.SetParent(entryMarker,false);go.transform.localPosition=at;go.transform.localScale=size;
                 var sr=go.AddComponent<SpriteRenderer>();sr.sprite=markerSprite;sr.sortingOrder=28;entryLights.Add(sr);
             }
-            Light(new Vector2(-.65f,.48f),new Vector2(.06f,.9f));Light(new Vector2(.65f,.48f),new Vector2(.06f,.9f));
-            Light(new Vector2(0,.02f),new Vector2(1.35f,.05f));
-            Light(new Vector2(0,1.05f),new Vector2(.08f,.28f));Light(new Vector2(0,.84f),new Vector2(.08f,.08f));
-            var label=new GameObject("Incoming label");label.transform.SetParent(entryMarker,false);label.transform.localPosition=Vector2.up*1.4f;
-            var text=label.AddComponent<TextMesh>();text.font=Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");text.text=turret?"TURRET":flying?"DRONE":"INCOMING";
+            // Mounted amber indicators instead of a floating bracket/exclamation frame.
+            if(flying)
+            {
+                Light(new Vector2(-.78f,.7f),new Vector2(.035f,.44f));Light(new Vector2(.78f,.7f),new Vector2(.035f,.44f));
+                Light(new Vector2(0,1.36f),new Vector2(.42f,.035f));
+            }
+            else
+            {
+                Light(new Vector2(-.61f,.04f),new Vector2(.14f,.035f));Light(new Vector2(.61f,.04f),new Vector2(.14f,.035f));
+                Light(new Vector2(0,.04f),new Vector2(.36f,.025f));
+            }
+            var label=new GameObject("Incoming label");label.transform.SetParent(entryMarker,false);label.transform.localPosition=Vector2.up*(flying?1.72f:1.25f);
+            var text=label.AddComponent<TextMesh>();text.font=Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");text.text=turret?"TURRET / DEPLOY":flying?"DRONE / DEPLOY":"INCOMING";
             text.anchor=TextAnchor.MiddleCenter;text.fontSize=48;text.characterSize=.025f;text.color=new Color(1,.7f,.2f);
             var renderer=label.GetComponent<MeshRenderer>();renderer.sharedMaterial=text.font.material;renderer.sortingOrder=28;
         }
         void OnGUI()
         {
-            if(Match==null||!Match.IsSpawned||!gameObject.activeInHierarchy||!bodyRoot.gameObject.activeSelf||entryMarker!=null&&entryMarker.gameObject.activeSelf||ArenaObjectiveMatch.TransitionActive||Camera.main==null)return;
+            if(Match==null||!Match.IsSpawned||entryActive||!gameObject.activeInHierarchy||!bodyRoot.gameObject.activeSelf||entryMarker!=null&&entryMarker.gameObject.activeSelf||ArenaObjectiveMatch.TransitionActive||Camera.main==null)return;
             var p=Camera.main.WorldToScreenPoint(transform.position+Vector3.up*1.12f);if(p.z<=0)return;
             float fraction=Match.PatrolHealthFraction(Id);var rect=new Rect(p.x-22,Screen.height-p.y,44,4);var color=GUI.color;
             GUI.color=new Color(.06f,.07f,.08f,.9f);GUI.DrawTexture(rect,Texture2D.whiteTexture);rect.width*=fraction;GUI.color=medical?new Color(.3f,1,.5f):new Color(1,.45f,.25f);GUI.DrawTexture(rect,Texture2D.whiteTexture);GUI.color=color;

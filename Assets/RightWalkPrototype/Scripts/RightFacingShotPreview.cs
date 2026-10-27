@@ -22,6 +22,22 @@ namespace RightWalkPrototype
         private readonly List<Shot> shots = new List<Shot>();
         private readonly Stack<LineRenderer> pool = new Stack<LineRenderer>();
         private readonly List<Spark> sparks = new List<Spark>();
+        private static readonly Gradient PlainVisualGradient = new Gradient
+        {
+            colorKeys=new[]{new GradientColorKey(Color.white,0f),new GradientColorKey(Color.white,1f)},
+            alphaKeys=new[]{new GradientAlphaKey(1f,0f),new GradientAlphaKey(1f,1f)}
+        };
+        private static readonly Gradient NormalTracerGradient = new Gradient
+        {
+            colorKeys=new[]{
+                new GradientColorKey(new Color(1f,.98f,.85f),0f),
+                new GradientColorKey(new Color(1f,.98f,.85f),.1f),
+                new GradientColorKey(new Color(.82f,.69f,.33f),.35f),
+                new GradientColorKey(new Color(.82f,.69f,.33f),1f)},
+            alphaKeys=new[]{new GradientAlphaKey(1f,0f),new GradientAlphaKey(1f,.1f),
+                new GradientAlphaKey(.45f,.3f),new GradientAlphaKey(.2f,.6f),new GradientAlphaKey(0f,1f)}
+        };
+        private static readonly float[] NormalTracerSamples = {0f,.1f,.3f,.35f,.6f,1f};
         private sealed class Spark
         {
             public LineRenderer visual;
@@ -59,7 +75,7 @@ namespace RightWalkPrototype
         }
         private LineRenderer AcquireVisual()
         {
-            if(pool.Count>0){var reused=pool.Pop();reused.sortingOrder=30;reused.positionCount=2;reused.numCapVertices=0;reused.gameObject.SetActive(true);return reused;}
+            if(pool.Count>0){var reused=pool.Pop();reused.colorGradient=PlainVisualGradient;reused.sortingOrder=30;reused.positionCount=2;reused.numCapVertices=0;reused.gameObject.SetActive(true);return reused;}
             if(material==null)material=new Material(Shader.Find("Sprites/Default"));
             var go=new GameObject("Preview bullet");
             var line=go.AddComponent<LineRenderer>();
@@ -157,15 +173,22 @@ namespace RightWalkPrototype
         }
         private void Draw(Shot shot)
         {
-            shot.visual.startColor=shot.shotgun?new Color(1f,.8f,.35f):new Color(1f,1f,.85f);
-            shot.visual.endColor=new Color(1f,.65f,.12f,0f);
+            if(shot.shotgun)
+            {
+                shot.visual.startColor=new Color(1f,.8f,.35f);
+                shot.visual.endColor=new Color(1f,.65f,.12f,0f);
+            }
+            else shot.visual.colorGradient=NormalTracerGradient;
+            // LineRenderer samples its gradient at vertices; keep every fade key on the same straight path.
+            shot.visual.positionCount=shot.shotgun?2:NormalTracerSamples.Length;
             bool arena=RelayArenaPrototype.Instance!=null;
             shot.visual.numCapVertices=arena&&!shot.shotgun?6:0;
             shot.visual.startWidth=arena?(shot.shotgun?.045f:.075f):.032f;shot.visual.endWidth=.004f;
             float tail=arena?(shot.shotgun?.32f:.8f):.18f;
             var offset=shot.impacted?Vector2.up*.025f:-shot.direction*(arena?Mathf.Min(tail,shot.travelled):tail);
-            shot.visual.SetPosition(0,new Vector3(shot.position.x,shot.position.y,aim.MuzzlePosition.z));
-            shot.visual.SetPosition(1,new Vector3(shot.position.x+offset.x,shot.position.y+offset.y,aim.MuzzlePosition.z));
+            var front=new Vector3(shot.position.x,shot.position.y,aim.MuzzlePosition.z);
+            for(int i=0;i<shot.visual.positionCount;i++)
+                shot.visual.SetPosition(i,front+(Vector3)offset*(shot.shotgun?i:NormalTracerSamples[i]));
         }
         private void Release(Shot shot) {shot.visual.gameObject.SetActive(false);pool.Push(shot.visual);}
         private void OnDisable()

@@ -47,6 +47,16 @@ namespace RightWalkPrototype
                 GUI.Label(rect,"전투 개시",Label(28,new Color(.9f,.95f,.88f)));
             }
         }
+        public static void RoundEnd()
+        {
+            using(ArenaUiTheme.Use())
+            {
+                var rect=new Rect(Screen.width*.5f-180,Screen.height*.5f-58,360,116);
+                ArenaHudSkin.Panel(rect,Cyan);
+                GUI.Label(new Rect(rect.x,rect.y+10,rect.width,60),"경기 종료",Label(38,new Color(.9f,.95f,.88f)));
+                GUI.Label(new Rect(rect.x,rect.y+76,rect.width,24),"결과를 확인합니다",Label(15,Muted));
+            }
+        }
         public static void Connection()
         {
             var rect=GUILayoutUtility.GetRect(0,10000,32,32,GUILayout.ExpandWidth(true));GUI.Label(new Rect(rect.x,rect.y,rect.width-88,27),"연결 중 · 잠시 기다려 주세요",ArenaUiTheme.Muted);

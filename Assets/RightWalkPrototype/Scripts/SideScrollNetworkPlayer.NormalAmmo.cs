@@ -43,7 +43,8 @@ namespace RightWalkPrototype
         void DrawWorldStamina()
         {
             if(!WorldStaminaVisible)return;
-            var point=Camera.main.WorldToScreenPoint(transform.position+Vector3.up*(crouch.IsCrouched?1.95f:2.45f));
+            bool ready=ArenaObjectiveMatch.InReadyRoom&&!ArenaTutorial.Active;
+            var point=Camera.main.WorldToScreenPoint(transform.position+Vector3.up*(!ready&&crouch.IsCrouched?1.95f:2.45f));
             if(point.z<=0)return;
             var bar=new Rect(point.x-29,Screen.height-point.y+(ArenaObjectiveMatch.PracticeRoom?28:11),58,5);var old=GUI.color;
             GUI.color=new Color(.025f,.04f,.055f,.9f);GUI.DrawTexture(new Rect(bar.x-1,bar.y-1,bar.width+2,bar.height+2),Texture2D.whiteTexture);

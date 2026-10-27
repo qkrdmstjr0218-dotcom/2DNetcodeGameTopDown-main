@@ -1,5 +1,97 @@
 # Working Preferences
 
+> **2026-10-27 닉네임줄바꿈:** 4한글머리위개행제보→readyIdentity가label자동wrap상속/CalcSize소수폭여유없음. P스타일font명시·wordWrapfalse·Clip/이름상속·양폭Ceil+4px(이름상한210)/8px간격·합산중앙유지. solo4한글/12한글/영문12×1366/1920 44개확인PASS·실제1줄높이18.83/영역24·텍스트전체맞음/캡처·저장이름불변/네트워크이름복원. BulletShot일반Windows64Mono0오류/기존5경고·28.60초/710003914bytes. Docs/NICKNAME-WRAP-2026-10-27.ko.md·LocalTools/Analysis/NicknameWrap-2026-10-27. 실제원격/Player실창미검증·직접OS·커밋푸시없음.
+
+> **2026-10-27 하단점프안내:** 점프카드기존더블점프유지+S/↓ + Space · 점선 내려가기추가. 카드크기/타카드/물리불변·점프제목+.35/본문-.13·.034/추가-.48·.031로3줄. 초기4줄상단초과/압축후글줄겹침은실측보정후9확인PASS·1366/1920육안/글리프누락없음. BulletShot일반Windows64Mono0오류/기존5경고·28.61초/710003914bytes. Docs/READY-HACKING-2026-10-27.ko.md후속절·LocalTools/Analysis/DropGuide-2026-10-27. 안내만수정/내려가기물리·실멀티미재실행·직접OS·커밋푸시없음.
+
+> **2026-10-27 트랩바닥마감:** Hazard bed/West pit bed 4x.5에금속3분할·베벨·캡·볼트·주의인서트추가. PitBeds별도처리/전체생성기연결. 75Collider/Effector정확동일·빨간위험선포함다른모든Sprite객체ID/색/활성/행렬/참조정확동일·새충돌0·경계내부/중복없음·벽6/바닥58유지. 렌더지형Collider(상자제외)미술누락0. 40개확인PASS·양쪽EditorRender/카메라복원. BulletShot일반Windows64Mono증분0오류/경고1·14.76초/710003402bytes. Docs/MAP-ART-UNIFY-2026-10-27.ko.md트랩절·LocalTools/Analysis/PitFloor-2026-10-27(변경전씬보존). 초기검증Color직렬화루프는적용전실패/수정PASS·정적미술뿐/실플레이·멀티미재실행·직접OS·커밋푸시없음.
+
+> **2026-10-27 벽마감누락보완:** 이전height<=.31표면선택으로수직벽제외원인. 경계벽2/낙사벽4에금속패널·세로베벨·이음매·볼트·캡·주의인서트추가/모두기존Bounds안. FoundryWallArtBuilder/공통Surface생성기연결. 저장75Collider행렬/직렬화/Effector정확동일·새충돌0/기존58바닥유지·재적용중복없음. EditorRender좌우/낙사/전체5시점·177개개별확인PASS/카메라직렬화복원. BulletShot일반Windows64Mono증분0오류/경고1·12.73초/709990794bytes. Docs/MAP-ART-UNIFY-2026-10-27.ko.md벽보완절·LocalTools/Analysis/MapWalls-2026-10-27(변경전씬보존). 정적장식뿐/실플레이·멀티미재실행·직접OS·커밋푸시없음.
+
+> **2026-10-27 전체지형·단말·출입구통일:** 배경18패널이미전체지만6deck만마감잔존확인→얇은지형58개공통금속인셋/베벨·통과.2/.035/.32청록점선/고체주황실선(실Effector기준). 부모자식/다리축소추종·FullArt생성기연결. Console6+대기실공유금속하우징/받침·그립·볼트,스폰4문/4소켓/2덕트·문짝리벳/상태등·큰괄호제거. 드론덕트중심.55보정/허공오프셋대신후반중심등장·보호시각유지. 저장75Collider행렬16/직렬화/Effector정확동일·정적새충돌0. solo177개개별확인PASS·FoundryArt41PASS·전체+8구역/대기실사진. BulletShot일반Windows64Mono0오류/기존5경고·40.49초/709918282bytes. Docs/MAP-ART-UNIFY-2026-10-27.ko.md·LocalTools/Analysis/MapArtUnity-2026-10-27(변경전씬보존). 사진Camera/AI정지fixture·실멀티/Player실창/장시간성능미검증·직접OS·커밋푸시없음.
+
+> **2026-10-27 단말기일치·드론확대:** 사용자대기실단말기상이/드론작고좌상지적. 실제Layout의Console복제·7부품Sprite/변환/순서동일·색참조복제내부/맵원본불변. 드론알파합산512중x41..471/y33..270기준중앙y.4082보정·.34→.62(1.82배)·칸중앙x-7/y3.8/실그림내부. solo16PASS·1366/1920육안확인·충돌0/6site유지. BulletShot일반Windows64Mono0오류/기존5경고·28.54초/709663466bytes. Docs/READY-HACKING-2026-10-27.ko.md후속절·LocalTools/Analysis/ReadyVisualFix-2026-10-27. 기존폰트/점유검사재사용·실멀티/Player실창미검증·직접OS·커밋푸시없음.
+
+> **2026-10-27 대기실해킹·폰트:** 중앙상자→x96.6/103.4동일1.2x2고체2개·경계발판유지/Collider9→10. 중앙4x2.1기존Field+Contains연습/청록·단독녹·경합주황·득점없음/실제6site미등록·경기숨김. 안내2판큰판하단내통합/카드높이1.4·지원설명.034확대/초안발판가림육안발견후보정. solo42PASS·2해상도/글경계·144글리프누락0·폰트includeData1. 빌드실sharedassets0원본TTF4627916bytes전체동일내장확인(BuildReport packs0이라바이너리확인). BulletShot일반Windows64Mono0오류/기존5경고·64.50초/709663466bytes. Docs/READY-HACKING-2026-10-27.ko.md·LocalTools/Analysis/ReadyHacking-2026-10-27. 2인경합동일서버fixture/실원격·Player실창·장시간미검증·직접OS·커밋푸시없음.
+
+> **2026-10-27 지원안내·터렛출현:** 대기실큰판아래중앙소형판/기존지원기체그림·비무장/격추5점·보호막투하·파란방패위치안내. 7튜토진행유지·장식충돌없음. 터렛기존1.4초중45%후지하1.4→0상승·공유SpriteShader월드Y절삭/출현중터렛만적용·완료해제/판정예고사거리유지. solo두해상도글그림Bounds·렌더바닥아래0픽셀/보호·복원PASS/FoundryArt41PASS. BulletShot일반Windows64Mono0오류/기존5경고·39.49초/709660906bytes. Docs/SUPPORT-TURRET-2026-10-27.ko.md·LocalTools/Analysis/SupportTurret-2026-10-27. 초기그림전체Bounds초과보정후PASS/터렛단계는별도표시fixture·실멀티장시간미검증·직접OS·커밋푸시없음.
+
+> **2026-10-27 적피격반응·문출현:** 생존전투적실공격자6초우선/사망·생명변경·이탈·거리24해제·지원제외/기존사거리시야예고유지. 지상4문양쪽슬라이딩·내부등장→안전출구.9이동→닫힘/기존1.4초출현보호·체력바숨김/장식충돌0·기존시각공유·새RPC없음. solo공격자추적/실터렛발사·지형차단·만료·4출구·연속출현PASS/FoundryArt회귀PASS. BulletShot일반Windows64Mono0오류/기존5경고·31.25초/709659514bytes·최종정지clean. Docs/ENEMY-REACTION-ENTRY-2026-10-27.ko.md·LocalTools/Analysis/EnemyReactionEntry-2026-10-27. 추가플레이어는동일서버fixture/실멀티·장시간미검증·직접OS·커밋푸시없음.
+
+> **2026-10-27 이름탄종최종빌드:** P+닉네임중앙정렬/탄종그림+수량·낮춘높이포함BulletShot/2DNetcodeGame.exe 일반Windows64Mono성공0오류/기존5경고·27.67초/709653370bytes. solo36PASS·1366/1920최종화면·해상도복원/정지clean. Docs/NAME-AMMO-LAYOUT-2026-10-27.ko.md.
+
+> **2026-10-27 이름·탄종배치후속:** 사용자한글입력정상확인. 발밑이름제거→머리위P·나+닉네임8px가로묶음/합산폭rootX중앙(짧은/12한글·1366/1920검사)/카드없음·글자그림자/준비배지윗줄4px유지. 머리위탄종HUD공통AmmoGlyph+잔탄수/경기기존80(보호막102)→44~46px오프셋·34~36하향/HUD상단6px여백·준비배지4px여백. 대기앉기P기준으로아이콘/스태미나앵커일치. 1.4초/끝.25감쇠·빈탄빨강/수량·판정유지/HUD캡alpha보완. 실제solo36PASS·2해상도사진/보호막50·앉기·만료. 최초대기실보호막지급가정검사실패→Playing만허용기존규칙확인후검사수정/Shield코드원복. Docs/NAME-AMMO-LAYOUT-2026-10-27.ko.md·LocalTools/Analysis/NameAmmoLayout-2026-10-27. 입력/적피격범위미변경·실다인미검증/직접OS·커밋푸시없음.
+
+> **2026-10-27 입력·이름·줌후속:** 한글입력불편제보→로비닉네임/방이름포커스IME(legacyOn+Keyboard.SetIMEEnabled)명시·이탈복원/조합중저장보류·다음프레임확정문자만저장·완료3초·재편집시해제/저장대기중입장차단. 실물OS한영조합은미검증·사용자재확인필요(문자열저장/모드만PASS). 대기실발밑닉네임/카드없음. 카운트다운3초공통시계SmoothStep4.8→5.6/경기유지·물리불변. 실제solo9PASS·1366저장/이름/줌사진·CSV/PlayerPrefs해상도복원. 지원드론알파폭1.6875vs피격.85·양외곽/화물밑일부누락,전투드론폭1.375vs.85·터렛받침/회전포신일부밖·지상1.1은몸체약1.05대부분포함. 피격변경미적용. 특수탄머리위는HUD그림+잔탄권장만·S/R/G유지. Docs/FEEDBACK-2026-10-27.ko.md·LocalTools/Analysis/Feedback-2026-10-27. BulletShot최신일반Windows빌드0오류/기존5경고·48.75초/709652346bytes. 직접OS입력/커밋푸시없음.
+
+> **2026-10-27 최종빌드:** 새닉네임/Ending/기한가드/카메라5.6/로비다리휴지포함BulletShot/2DNetcodeGame.exe 일반Windows64Mono성공·0오류/기존5경고(ServicesRefresh후해당경고없음)·106.80초/709650810bytes. 전원같은v2최신빌드필요·실제멀티미검증. Docs/FINAL-FEATURES-2026-10-27.ko.md.
+
+> **2026-10-27 마무리기능:** 사용자승인 경기카메라4.8→5.6(Countdown부터/경계clamp포함)·캐릭터판정불변/방6.5·튜토4.8유지. 서버Ending1.5초→Finished·입력/피해/부활차단·deadline도달Playing공백도가드/종료카메라다리고정·복귀회복. 종료음Ending/승패음Finished. 로비닉네임저장12text-elements/UTF8≤60·소유자Rpc서버정리/경기중거절·준비명단/Score이름스냅샷·Tab/결과/승자표시. 로비/방/튜토다리닫힌휴지/경기공통시계유지. OnlineRoomKind20261027-v2(전원최신빌드필요). solo통합36/Polish89/기한공백2·이름Score/Roster직렬화PASS·4행1366/1920는명시fixture/원격아님. 초기승자잘림/작은명단이름/준비숫자클립수정·첫결과음검사실패후재로딩계측4종모두1+1회PASS(원인미확정기록). Docs/FINAL-FEATURES-2026-10-27.ko.md및LocalTools/Analysis/FinalFeatures-2026-10-27. 실다PC/Relay/장시간미검증·직접OS입력/커밋푸시없음.
+
+> **2026-10-26 Services Refresh 사용자해결:** MissingProjectID/멤버경고에기존cloudProjectId·조직파일변경없음비교확인. 사용자가Services Refresh로해결/기존ID조직유지스크린샷확인. 기존6경고중Services경고는로그인메타데이터일시상태가능성/새ID생성·unlink안함.
+
+> **2026-10-26 버그점검:** 점수안내Ink→Muted 기존설명색통일·1920/1366실제확인. HUD83/Followup56/튜토리얼7구간생성전환·solo재입장·28음원·60fps집중42PASS. 씬프리팹9/GUID3007참조누락0/MissingScript0. 일반BulletShot최신빌드성공0오류/기존6경고·43.17초/709645850bytes. 이번검사추가버그발견없음. 실제다PC/Relay/장시간·Player실조작미검증;fixture한계Docs/BUG-AUDIT-2026-10-26.ko.md·자료LocalTools/Analysis/BugAudit-2026-10-26. 커밋푸시없음.
+
+> **2026-10-26 solo포트충돌수정:** 타Unity PID18408 loopbackUDP7783점유확인. solo/튜토리얼만port0(OS자동할당)로,명시로컬7783/Relay유지. 점유상태실제solo호스트/플레이어1/나가기재입장PASS·화면확인·Play종료. 점수한줄/위쪽여백보정. Docs/SOLO-PORT-FIX-2026-10-26.ko.md·LocalTools/Analysis/SoloPortFix-2026-10-26. 빌드미갱신.
+
+> **2026-10-26 게시판점수안내:** 실제경기 해킹초당1/처치5/지원드론5/최고점승리 추가, 보급드롭유지. 카드키마우스.25상향/제목.2상향·하단우측탄종영역확대. 방·판외곽/9충돌불변. 컴파일/정적Camera.Render1920·1366확인. 연습연결NetworkManager초기화오류·재시도실패로실플레이미검증(room사진로비·PASS한계result기록). Play종료/빌드미갱신. Docs/READY-ROOM-SCORES-2026-10-26.ko.md.
+
+> **2026-10-26 표찰·문구최종빌드:** 표찰없음/QE벽HUD공통'특수탄 교체'적용BulletShot/2DNetcodeGame.exe일반Windows64Mono갱신·0오류/이전동일6경고·28.39초/709645850bytes. 8확인PASS/1920·1366/9충돌정확동일/정지clean. 최대4명질문만확인·방장포함4/일반2~4/solo1유지. Docs/READY-ROOM-TEXT-2026-10-26.ko.md및LocalTools/Analysis/ReadyRoomText-2026-10-26.
+
+> **2026-10-26 표찰제거·QE용어통일/4인질문:** 사용자불필요지적상단출격대기훈련구역표찰3노드제거. 벽/HUD Q·E는ArenaUiTheme.SpecialAmmoSwitchLabel='특수탄 교체'공유. 8확인PASS·1920/1366실제화면/9Collider전체동일. 인원질문읽기확인만:방장포함최대4/일반최소2/solo1,온라인MaxPlayers4·서버count>=4거절·준비/스폰4일치. 인원확대미요청/수정없음. Docs/READY-ROOM-TEXT-2026-10-26.ko.md·LocalTools/Analysis/ReadyRoomText-2026-10-26. 직접OS입력/실다인없음.
+
+> **2026-10-26 직사각·통일최종빌드:** 6카드동일/별도우측하단탄종설명/조작연습장식삭제/4변동일.4프레임포함BulletShot/2DNetcodeGame.exe갱신·일반Windows64Mono0오류/6경고·31.36초/709646362bytes. 56검사·2해상도확인·정지clean. 추가ServicesCore연결확인경고기록: 프로젝트ID/조직은기존원본과동일/변경없음,실접속실패로단정금지·인터넷멀티미검증. Docs/READY-ROOM-RECT-2026-10-26.ko.md및LocalTools/Analysis/ReadyRoomRect-2026-10-26.
+
+> **2026-10-26 직사각·일관성최종확인:** 56API/물리/렌더PASS·1920/1366확인. 안쪽0/8.85/90/110유지·4변외곽같은선/.4두께/모서리접합/표시-충돌XY일치,4경계변환허용분외동일·5기존발판상자충돌정확동일. 6카드동일크기/별도우측하단탄종7텍스트경계PASS·조작연습정적장식없음. Docs/READY-ROOM-RECT-2026-10-26.ko.md및LocalTools/Analysis/ReadyRoomRect-2026-10-26.
+
+> **2026-10-26 방직사각·카드통일수정:** 사용자우측카드불일치/방외곽어중간/조작연습버튼의문. 기능없던조작연습장식3개제거. 6카드5x1.62동일복원·탄종은공통하단우측별도텍스트(제목유지·키캡제거). 행/키/마우스/구분선.1상향으로글자크기유지하단여백확보. 방네변두께.4·바깥너비20.8로외곽직사각x89.6..110.4/y-.4..9.25통일/안쪽기준면0/8.85/90/110유지. 4경계외형조정·발판4/상자1불변. Docs/READY-ROOM-RECT-2026-10-26.ko.md·LocalTools/Analysis/ReadyRoomRect-2026-10-26(before보관/첫footer경계실패별도). 직접OS입력없음·커밋푸시없음.
+
+> **2026-10-26 대기방정리최종빌드:** 벽천장연결/우측Q/E아래'특수탄종류'확장카드/관통연습표찰제거/상단표찰잘림보정포함BulletShot/2DNetcodeGame.exe갱신·일반Windows64Mono오류0/기존5경고·30.78초/709646362bytes. 최종44물리/API/렌더PASS·1920/1366확인·다른7충돌불변/2벽위쪽만변경·아이콘/60FPS유지. 자료LocalTools/Analysis/ReadyRoomRefine-2026-10-26,Docs/READY-ROOM-REFINE-2026-10-26.ko.md. 최종정지clean·직접OS입력/4인재실행없음.
+
+> **2026-10-26 대기방정리검증:** 벽연결/탄종Q/E아래묶음/표찰제거최종44API·물리·렌더PASS. 두벽positionY/scaleY만변경·다른7충돌체정확동일,상단빈틈y8.55실Ray차단/천장맞닿음PASS. 종류제목.037·태그.035·이름.034/7텍스트카드BoundsPASS·1920/1366최종화면확인. Docs/READY-ROOM-REFINE-2026-10-26.ko.md및LocalTools/Analysis/ReadyRoomRefine-2026-10-26. 실제4인검사미실행/직접OS입력없음.
+
+> **2026-10-26 대기방연결·특수탄정리요청:** 사용자벽/천장분리·탄종소개뜬금없음·관통연습문구불필요지적. 양벽윗면8.25→천장아랫면8.85(바닥-.25/폭/x유지,중심4.3·높이9.1)로실제연결/베벨·모서리판추가. 나머지7충돌유지. 우측Q/E카드하단.54확장/'특수탄종류 :'와S/R/G안내묶기·좌하단실제경기수급안내정리. 관통연습글자·판·지지대제거/중앙상자판정유지. 상단표찰잘림·등기구부착보정. Docs/READY-ROOM-REFINE-2026-10-26.ko.md·LocalTools/Analysis/ReadyRoomRefine-2026-10-26(before보관). 구형ReadyCover표찰없음/라이플30HP70기대로맞춤·4인재실행아님. 직접OS조작없음/커밋푸시없음.
+
+> **2026-10-26 대기방전체시안빌드:** 새훈련구역아트포함BulletShot/2DNetcodeGame.exe일반Windows64Mono빌드0오류/기존5경고·31.52초/709646874bytes. 23API·렌더검사/2해상도/원래9충돌설정전체동일/60FPS목표·아이콘유지. 현재아트는사용자최종수용미확정·변경전원본before보존. 최종정지clean·자료LocalTools/Analysis/ReadyRoomDesign-2026-10-26및Docs/READY-ROOM-DESIGN-2026-10-26.ko.md.
+
+> **2026-10-26 대기방전체훈련구역시안:** 사용자전체디자인업그레이드요청. ArenaReadyRoomArt정적장식helper추가/원래Builder끝호출. 기존DepotWall/Case_120_240재사용·철골/체결부/LED하우징/가이드매립레일/발판인셋·배경받침/바닥패널·도착표시/받침관통연습표찰. 가이드.92배+y.3,제목명단비겹침2해상도유지. 기존Collider9개변환/형상/재질/플래그/effector전체JSON정확동일·새아트Collider0/상자그림XY정확일치. API/렌더23PASS·1920/1366육안확인·정지방120프레임2.00445초평균59.87/목표60. 새텍스처/실광원/Update/RPC없음·기존그림숨김외원본불변. Docs/READY-ROOM-DESIGN-2026-10-26.ko.md·LocalTools/Analysis/ReadyRoomDesign-2026-10-26(before보관). 시안적용이며사용자수용미확정·실멀티/빌드실측/장시간미검증·직접OS조작/커밋푸시없음.
+
+> **2026-10-26 가이드최종확인:** 설정종료중복제거·350높이/독립로비종료유지,대기방새절삭패널·입체키/마우스·탄종태그19항목PASS·1920/1366육안확인. 1366제목명단겹침→x-6.85보정및화면Bounds교차검사PASS. 메시44/텍스트28/추가충돌0·기존방충돌9유지·60목표. BulletShot/2DNetcodeGame.exe최신일반Windows빌드0오류/기존5경고·29.89초/709640730bytes·아이콘유지. Docs/READY-GUIDE-2026-10-26.ko.md·LocalTools/Analysis/ReadyGuide-2026-10-26. 초기메시밝음선형색보정/잘못된patch형식미적용후수정기록. 직접OS입력없음·Player실창/멀티/장시간미검증·커밋푸시없음.
+
+> **2026-10-26 설정종료중복제거/대기방가이드:** 사용자지적으로로비설정내게임종료제거·높이420→350/음량·테스트위12px·닫기유지,로비독립종료/경기방나가기유지. ArenaReadyRoomControls절삭프레임·6카드·입체키캡·실형마우스좌우강조·S/R/G색태그로개량. 안내내용/월드위치·충돌·무기준비판정불변. 기존SpriteShader+한글폰트/정적메시공유재질·파괴시해제,Linear색보정으로기존어두운Sprite톤일치. LocalTools/Analysis/ReadyGuide-2026-10-26(첫톤사진별도)/Docs/READY-GUIDE-2026-10-26.ko.md. 직접OS조작없음·멀티/장시간미검증·커밋푸시없음.
+
+> **2026-10-26 캐릭터아이콘빌드확인:** 기본P1초상Default/Standalone8슬롯설정후사용자경로Builds/BulletShot/2DNetcodeGame.exe갱신·일반Windows64Mono(검증define없음)오류0/경고1·23.86초. exe에서32px아이콘추출해캐릭터실제내장확인/원본초상여백·상반신구도그대로. Review/Foundry.exe아이콘이번미갱신. LocalTools/Analysis/AppIcon-2026-10-26/settings.json·build.json·exe-icon.png,Docs/APP-ICON-2026-10-26.ko.md. 직접탐색기/작업표시줄조작없음.
+
+> **2026-10-26 실행아이콘기본초상:** 사용자기본캐릭터썸네일요청→기존P1기본색portrait-1.png(128x160/GUIDa3738370fae24bf43a199600dfd086c5)원본그대로DefaultIcon+Standalone8슬롯1024..16에연결·ProjectSettings저장. 제품명/원본그림/수입설정불변. 사용자가보여준Builds/BulletShot/2DNetcodeGame.exe를현재소스로재빌드대상/Review출력은이번아이콘미갱신. 설정전ProjectSettings·이전exe비교본보관(완전게임백업아님). Docs/APP-ICON-2026-10-26.ko.md·LocalTools/Analysis/AppIcon-2026-10-26. 직접OS조작없음·커밋푸시없음.
+
+> **2026-10-26 FPS최종확인:** Editor로비워밍업후180프레임/3.00017초·평균59.9966FPS/target60·vSync0확인,FixedDeltaTime약.02·NGOTick30유지. 최신Windows빌드0오류/기존5경고·46.47초/Review-20261026/Foundry.exe갱신(소리테스트위12px도포함). Player실FPS/장시간발열미측정·최종정지clean/컴파일실패false. 정지후vSync1은프로젝트값복원이며플레이시Awake0/60재적용. Docs/FRAME-LIMIT-2026-10-26.ko.md및LocalTools/Analysis/FrameLimit-2026-10-26.
+
+> **2026-10-26 60FPS제한요청:** 사용자승인으로RelayArenaPrototype.Awake에vSyncCount0/targetFrameRate60적용. 현게임로비·대기·연습·튜토리얼·경기공통/EditorGameView와PC빌드목표60,SceneView·컴파일부하/발열보장아님. 물리FixedDeltaTime·NGOTick·게임판정불변,검증기임시30은종료시60복원. Docs/FRAME-LIMIT-2026-10-26.ko.md·LocalTools/Analysis/FrameLimit-2026-10-26. 최신Windows빌드갱신검사·장시간/실제멀티미검증·직접OS조작없음.
+
+> **2026-10-26 로비기능최종빌드:** Windows64Mono Review-20261026/Foundry.exe최신N/R/G음·N꼬리revision8·로비설정종료포함으로갱신/오류0·경고1(Pipeline설정없음)·709650618bytes. 첫편집기반영타이밍경고6→동기화후증분10.9초최종경고1해소확인. GUI최종1920·1366·API28PASS·실제ConfirmQuitEditor정지·해상도/FPS/음량복원·정지clean. 빌드에서직접마우스로종료/인터넷멀티는미실행. 자료LocalTools/Analysis/LobbyControls-2026-10-26/build.json·build-messages.txt및Docs/LOBBY-CONTROLS-2026-10-26.ko.md.
+
+> **2026-10-26 로비설정·게임종료:** 사용자요청로비패널오른쪽위설정80x34/게임종료105x34추가. 기존음량/효과음/소리테스트·저장공유/로비닫기ESC·게임종료,경기계속/방나가기유지. Quit확인·좌종료우취소/직접로비vs설정취소복귀기억·ESC핸들러공유/Editor플레이정지·PlayerApplication.Quit가드. 팝업시로비입력GUI비활성/다른OnGUI가팝업덮는문제육안발견→로비·팝업동일콜백순서로그림. 제품API28PASS/1920·1366최종화면확인·설정저장복원/기존solo진입·방나가기취소회귀/ConfirmQuit로실제Editor정지확인. 내부마우스주입실패는별도보관·실제클릭통과로해석금지,ESC는핸들러호출검사. Docs/LOBBY-CONTROLS-2026-10-26.ko.md 및LocalTools/Analysis/LobbyControls-2026-10-26. 직접OS조작0·게임규칙불변·커밋푸시없음.
+
+> **2026-10-26 N꼬리중간보강revision8:** 사용자'꼬리짧아보임'후중간정도로회복승인. 탄두앞10%alpha1/길이.8·폭.075·cap6·끝alpha0유지. 꼬리RGB(.72,.58,.28)→(.82,.69,.33),alpha30% .28→.45/60% .09→.20. 해당색과중간alpha외전체소스정확동일비교. revision8 before/PreviewScene전후(상v7하v8확대)·Unity컴파일/정지clean확인. 음원·판정·풀초기화불변/전체빌드미갱신·직접클릭키입력없음. Docs/WEAPON-FEEDBACK-2026-10-26.ko.md최신절.
+
+> **2026-10-26 N꼬리감쇠revision7:** 사용자일반탄어색함추가피드백·탄두유지꼬리만옅게승인. 아이보리머리앞10%alpha1유지/뒤어두운노랑(.72,.58,.28)·alpha30% .28/60% .09/끝0. 폭.075·길이.8·cap6/속도피해총성불변. LineRenderer정점샘플위해동일직선6정점·풀재획득기본2키복원으로특수탄/불꽃잔류방지. revision7 before/UnityPreviewScene렌더전후(상전하후,확대fixture)/자료Docs/WEAPON-FEEDBACK-2026-10-26.ko.md최신절. 전체빌드미갱신·멀티미검증/직접클릭키입력없음.
+
+> **2026-10-26 유탄소폭보강revision6:** 사용자'유탄쏘는소리좀만더강화'→기존음색/길이.28유지한채PCM최종1.12배(+.98dB)/RMS.19006·peak.57015. G발사WAV만변경·나머지27종해시동일. UnityPCM읽기/정지clean/컴파일실패false확인·전체빌드미갱신. LocalTools/Analysis/WeaponFeedback-2026-10-26/revision6/grenade-v6.wav및JSON/생성기반영. 무기판정/그림/다른음량불변·직접클릭키입력없음.
+
+> **2026-10-26 N아이보리노랑/R긴잔향승인:** 사용자'그렇게해봐'로N형태유지+아이보리중심(1,.98,.85)/옅은노란꼬리(1,.86,.42,0)및R뒤로끌리는저음잔향승인. N은색2개만변경/굵기.075·길이.8·cap6포함전체코드비교일치. R앞100ms PCM완전동일·.27→.48초/감쇠저역반사추가·금속핑없음·peak.5616. 나머지27WAV해시동일/유탄·발판·총성N·게임판정유지. revision5/비교JSON·UnityPCM/컴파일확인·rifle-v5.wav. 생성기28PCM전체피크검사/전체빌드·52항목재실행없음. Docs/WEAPON-FEEDBACK-2026-10-26.ko.md최신절/직접클릭키입력0·커밋푸시없음.
+
+> **2026-10-26 일반탄외형복원/라이플울림:** 사용자일반탄초기화느낌지적→직전흰중심하늘색/폭.075·길이.8·cap6복원,RightFacingShotPreview전체가보관v2와텍스트동일. 앞선짧고얇은따뜻한탄두변경철회/일반총성.16유지. R더크게울림요청→금속핑없이저음몸통·27/49/79ms감쇠반사/.27초/RMS.13114→.17056(+2.28dB)·peak.56164. 유탄괜찮음사용자확인·유지/나머지27WAV해시동일. revision4/최근미리듣기rifle-v4.wav·weapons-v4.wav,Docs/WEAPON-FEEDBACK-2026-10-26.ko.md. 발판·무기판정불변/전체빌드미갱신·재청취필요/직접클릭키입력없음·커밋푸시없음.
+
+> **2026-10-26 사용자실플레이음색후속:** 사용자가중앙3→4층발판괜찮음확인/배치유지. 라이플'깡'피드백→고음금속잔향·래치제거/.19초마른압력총성, 유탄작음→중음압력보강/목표RMS.185·실제.1697·peak.5091. N비주얼/총성불일치→밝은따뜻한탄두+하늘색꼬리·길이.8→.38/폭.075→.055/둥근끝제거·.16초건조파열리시버음. 피해속도사거리간격판정불변. 변경WAV3개만/나머지25해시동일. 기존AudioReview52PASS/28PCM·실사격·DSP·보이스피크·음소거복원. Docs/WEAPON-FEEDBACK-2026-10-26.ko.md 및LocalTools/Analysis/WeaponFeedback-2026-10-26/weapons-v3.wav(N/S/R/G). 재청취필요/공통착탄금속음은유지. 전체빌드미재생성·이전Review실행파일은이번조정미포함. 직접클릭키입력0/멀티·장시간미검증/커밋푸시없음.
+
+> **2026-10-26 빌드/상층/탄환/사운드 후속:** 사용자정정대상은중앙3F13.6→4F20.4. 잘못건드린아래2→3층지름길완전복원. 중앙13.6→15.3→17→18.7→20.4/1.7간격·단일점프4단계/기존4발판조정·신규2/비대상69충돌정확동일·생성기연결. N흰중심+하늘색꼬리/기계총성유지, S저음산탄+펌프/R고압짧은파열/G공압저음으로분리. 결과공통+.24초뒤승리/공동/무승부/패배4종추가(28PCM),힘빠짐피드백으로타격·명확한화음·기계닫힘보강. Windows64Mono非Development검증빌드오류0/기존경고5·Editor87/Player最終96PASS/실제8단일점프·하강·28PCM·한글·셰이더·4결과음각1회/실행오류0. 종료ComputeBuffer GC경고1원인미확정기록. 검증기AfterSceneLoad호스트초기화경합은3프레임대기로해결·게임RPC변경없음;숨김창ScreenCapture검정은제외하고게임카메라offscreen검증(IMGUI제외)·EditorUI사진확인. Docs/BUILD-POLISH-2026-10-26.ko.md 및LocalTools/Analysis/BuildPolish-2026-10-26. ARENA_BUILD_REVIEW는명시검증빌드만/일반빌드검증기제외. 사용자직접조작최소요청/클릭키입력0·CLI/API중심/최종정지clean. 인터넷멀티·다른OS/API·장시간발열미검증·커밋푸시없음.
+
+> **2026-10-26 강종후점검/빌드호환성:** Gitfsck0/저장Foundry씬기존동일·복구0(1)보존, Unityready/정지clean·씬/프리팹Missing0/배경18/음원24/라이플30/보호막50확인. 과거12:15/12:18Player빌드실패CS1061 5개발견(ArenaUiTheme.scaledBackgrounds Editor전용무조건참조)→해당읽기쓰기만UNITY_EDITOR가드. Editor재컴파일오류0/PlayerRoslyn전체런타임컴파일exit0(격리출력·기존폐기API경고)·전체실행파일빌드아님. 공통피격무적없음/로봇접촉만플레이어별1초. N/S/R/G별도파일지만유사청감·음색분리강화, 결과RoundEnd이미있지만명확한결과음후보, 하늘색=에너지탄강제아님/예광+기계총성가능, 3층지름길6.8→10.2→13.6각3.4사용자불편/발판배치후보:전부아직미적용·라이플30의도유지. Docs/CRASH-CHECK-2026-10-26.ko.md 및LocalTools/Analysis/CrashCheck-2026-10-26. CLI첫읽기타임아웃은focus재컴파일후정상·게임오류와구분. 발열원인미판정/부하검사·멀티·빌드실행미검증·커밋푸시없음.
+
+> **2026-10-26 준비표기세로정렬:** 사용자스크린샷피드백으로대기실머리위준비배지를P번호·나바로위에동일중심X/4px간격으로배치. 명단가로배치·판정·P밑스태미나유지. solo준비전후/1920·1366육안확인·최종정지clean/오류0. Docs/READY-ALIGNMENT-2026-10-26.ko.md 및LocalTools/Analysis/ReadyAlignment-2026-10-26. 일반탄하늘색궤적/HUD일치·적탄두/외곽/꼬리개선은사용자의견으로기록만·아직미적용. 다음사용자확인은새효과음청취/라이플30체감/탄환구분/경사다리/빌드/장시간·실제멀티여전히미검증. 커밋푸시없음.
+
+> **2026-10-26 학원 후속 피드백 적용:** 사용자승인 라이플플레이어피해50→30/적4·관통·3발·간격유지, 보호막50/15초재획득보충·갱신유지/중첩없음. ArenaScoreRules 0.1점반올림버킷으로승자·정렬·순위·표시공유/연쇄.05동점제거·새추가판별없음. 공장전투합성PCM24종재작업(점프상승음/픽업멜로디제거), 총성RMS·게인.45→.9/우선순위2·피크.8/믹스.85·16풀/설정유지·LastRejection. 실제마우스발사/DSP피크.1403·Audio48PASS. 대기실명단/머리위절삭배지·AA체크·준비완료/준비전·인원계수·출격준비·판정유지. Followup56PASS(점수경계/준비/보호막/실제서버벽관통100→70→40→10), HUD83PASS·1366/1920육안확인·최종오류0/정지clean. 첫배지회전선클리핑수정/첫라이플fixture전환.18대기누락수정기록. Docs/PLAYTEST-FOLLOWUP-2026-10-26.ko.md, LocalTools/Analysis/PlaytestFollowup-2026-10-26 및효과음생성원본·미리듣기LocalTools/Audio. 피해표적은solo서버소유추가NetworkObject/4행결과는Scorefixture·실제클라이언트아님. 출력기기청취·실대전밸런스/멀티/빌드미검증·외부AI/직접OS/VP/커밋/푸시없음.
+
 > **2026-10-26 전체배경/지원아이콘깨짐:** 사용자전체배경적용요청. FoundryArtBuilder 루트full map/legacy샘플제거·승인DepotWall1텍스처18패널(x-39..39/y-6.8..34)/층외곽미세Tint·중앙원색/후방-50·신규광원없음·기존생성기동일Apply연결/맵재생성아님. 실제씬저장·전후모든BoxCollider변환형상재질활성effector정확동일/아트충돌0. 지원마크선조합깨짐→수작업단일닫힌SVG512x576→AA PNG128x144/GUI28x31.5·보간비압축/카드없음·기존숨김/가장자리간격유지. source build_support_marker.cjs/후속생성기연결. FoundryArtReview 전체PASS(배경격자모든층·지하·외곽/1텍스처·기존추격피격포신드론시간등장파괴)/8지점·전체지도사진·HUD전체PASS/1920실제아이콘끊김없음확인. Docs/FULL-FOUNDRY-BACKGROUND.ko.md·LocalTools/Analysis/FoundryArt/full-*.png/geometry.txt·CombatHud자료. 사진AI정지/위치fixture·멀티/빌드/장시간성능미검증·게임규칙불변·외부AI/직접OS/VP/커밋/푸시없음.
 
 > **2026-10-26 마크구분/질문확인:** 지원마크보호막색파랑(.35,.65,1)+흰방패속문양, live기체중심카메라내측가시시중복마크숨김/화면밖·접근예고유지. 해킹청록마름모+단말기/접점모양강화·Tab지도소형공유/기존시간바·교체점멸유지. 양마크가같은가장자리근접시지원마크50UI단위상하분리/순위·경계고려. HUD전체solo PASS(가시/밖/뒤거절·보간/입력/ESC/결과/시계)·1920실제화면아이콘색형태/분리확인,오류0/정지clean. Docs/COMBAT-HUD.ko.md 및LocalTools/Analysis/CombatHud. 사용자질문답변: 맵배경은중앙보급고주변샘플만/공통상자·적·픽업·해킹효과는전체, 공격드론2발고정·터렛3발/랜덤미적용. 전체미술확장·랜덤연사는이번변경없음. 실제멀티/빌드미검증·외부AI/직접OS/VP/커밋/푸시없음.

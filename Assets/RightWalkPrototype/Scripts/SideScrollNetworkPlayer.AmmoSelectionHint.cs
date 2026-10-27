@@ -6,6 +6,8 @@ namespace RightWalkPrototype
         public const float AmmoSelectionHintSeconds=1.4f;
         float ammoHintUntil;uint ammoHintLife;
         GUIStyle ammoHintStyle;
+        Rect ammoHintRect;
+        public int AmmoSelectionHintSlot=>SelectedAmmo==AmmoKind.Rifle?2:SelectedAmmo==AmmoKind.Grenade?3:1;
         ArenaObjectiveMatch.SupplyAmmo HintSupply=>SelectedAmmo==AmmoKind.Rifle?ArenaObjectiveMatch.SupplyAmmo.Rifle:SelectedAmmo==AmmoKind.Grenade?ArenaObjectiveMatch.SupplyAmmo.Grenade:ArenaObjectiveMatch.SupplyAmmo.Shotgun;
         public string AmmoSelectionHintText=>ArenaObjectiveMatch.SupplyInitial(HintSupply);
         public int SelectedAmmoRounds=>SelectedAmmo==AmmoKind.Rifle?RifleRounds:SelectedAmmo==AmmoKind.Grenade?GrenadeRounds:ShotgunRounds;
@@ -22,17 +24,23 @@ namespace RightWalkPrototype
         void DrawAmmoSelectionHint()
         {
             if(!AmmoSelectionHintVisible)return;
-            var at=Camera.main.WorldToScreenPoint(transform.position+Vector3.up*(crouch.IsCrouched?1.95f:2.45f));
+            bool ready=ArenaObjectiveMatch.InReadyRoom&&!ArenaTutorial.Active;
+            var at=Camera.main.WorldToScreenPoint(transform.position+Vector3.up*(!ready&&crouch.IsCrouched?1.95f:2.45f));
             if(at.z<=0)return;
             float alpha=Mathf.Clamp01((ammoHintUntil-Time.unscaledTime)/.25f);
-            var rect=new Rect(Mathf.Clamp(at.x-40,8,Mathf.Max(8,Screen.width-88)),Mathf.Clamp(Screen.height-at.y-(ArenaCombatHud.Active?(Shield>0?102:80):(Shield>0?86:64)),8,Mathf.Max(8,Screen.height-44)),80,36);
+            // The compact row sits just above the actual world HUD / ready badge.
+            float offset=ArenaCombatHud.Active?10*ArenaCombatHud.UiScale+34:62;
+            ammoHintRect=new Rect(Mathf.Clamp(at.x-30,8,Mathf.Max(8,Screen.width-68)),Mathf.Clamp(Screen.height-at.y-offset,8,Mathf.Max(8,Screen.height-36)),60,28);
             var tint=SelectedAmmoRounds==0?new Color(1,.25f,.25f):ArenaObjectiveMatch.SupplyColor(HintSupply);
-            if(ammoHintStyle==null)ammoHintStyle=new GUIStyle(GUI.skin.label){alignment=TextAnchor.MiddleCenter,fontSize=24,fontStyle=FontStyle.Bold};
-            // Bare text with a small shadow for contrast; no box or capacity.
+            ammoHintStyle??=ArenaUiTheme.Static(new GUIStyle(GUI.skin.label){alignment=TextAnchor.MiddleLeft,fontSize=20,fontStyle=FontStyle.Bold,padding=new RectOffset()});
             var old=GUI.color;GUI.color=new Color(1,1,1,alpha);
-            string text=AmmoSelectionHintText+" "+AmmoSelectionHintCountText;
-            ammoHintStyle.normal.textColor=new Color(0,0,0,.8f);ArenaUiTheme.Static(ammoHintStyle);GUI.Label(new Rect(rect.x+1,rect.y+1,rect.width,rect.height),text,ammoHintStyle);
-            ammoHintStyle.normal.textColor=tint;ArenaUiTheme.Static(ammoHintStyle);GUI.Label(rect,text,ammoHintStyle);GUI.color=old;
+            var fadedTint=tint;fadedTint.a*=alpha;
+            var icon=new Rect(ammoHintRect.x,ammoHintRect.y+1,26,26);
+            var count=new Rect(ammoHintRect.x+31,ammoHintRect.y,29,28);
+            ArenaHudSkin.AmmoGlyph(new Rect(icon.x+1,icon.y+1,icon.width,icon.height),AmmoSelectionHintSlot,new Color(0,0,0,.8f*alpha));
+            ammoHintStyle.normal.textColor=new Color(0,0,0,.8f);ArenaUiTheme.Static(ammoHintStyle);GUI.Label(new Rect(count.x+1,count.y+1,count.width,count.height),AmmoSelectionHintCountText,ammoHintStyle);
+            ArenaHudSkin.AmmoGlyph(icon,AmmoSelectionHintSlot,fadedTint);
+            ammoHintStyle.normal.textColor=tint;ArenaUiTheme.Static(ammoHintStyle);GUI.Label(count,AmmoSelectionHintCountText,ammoHintStyle);GUI.color=old;
         }
     }
 }
