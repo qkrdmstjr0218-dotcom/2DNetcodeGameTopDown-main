@@ -83070,7 +83070,7 @@ MonoBehaviour:
   crouchSpeed: 0.9
   jumpSpeed: 7.5
   staminaMaximum: 100
-  staminaDrain: 25
+  staminaDrain: 20
   staminaRecovery: 20
   staminaRecoveryDelay: 1
   staminaResume: 20

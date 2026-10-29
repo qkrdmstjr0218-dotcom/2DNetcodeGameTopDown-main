@@ -9,6 +9,11 @@ namespace RightWalkPrototype
         static GUISkin skin;
         public static bool Button(string label,params GUILayoutOption[] options)
         {bool pressed=GUILayout.Button(label,options);if(pressed)ArenaAudio.Ui(ArenaAudio.Cue.UiClick);return pressed;}
+        public static bool CompactButton(string label,params GUILayoutOption[] options)
+        {
+            var style=new GUIStyle(GUI.skin.button){fontSize=13,fixedHeight=0,wordWrap=false,alignment=TextAnchor.MiddleCenter,padding=new RectOffset(6,6,2,2)};
+            bool pressed=GUILayout.Button(label,style,options);if(pressed)ArenaAudio.Ui(ArenaAudio.Cue.UiClick);return pressed;
+        }
         static Texture2D Tile(Color fill,Color edge)
         {
             var t=new Texture2D(4,4,TextureFormat.RGBA32,false){hideFlags=HideFlags.HideAndDontSave,filterMode=FilterMode.Point,wrapMode=TextureWrapMode.Clamp};

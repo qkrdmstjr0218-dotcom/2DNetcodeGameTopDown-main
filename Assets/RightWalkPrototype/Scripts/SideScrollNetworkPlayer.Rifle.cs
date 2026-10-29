@@ -33,6 +33,7 @@ namespace RightWalkPrototype
             double now=ArenaClock.Now(NetworkManager);if(!ServerFireReady(AmmoKind.Rifle,now))return;
             MarkServerFired(AmmoKind.Rifle,now);rifleRounds.Value--;nextRiflePracticeSupply=now+PracticeSupplyInterval;
             direction.Normalize();float barrel=Mathf.Max(0,Vector2.Dot(origin-(Vector2)ServerHitBounds().center,direction));
+            int guide=GuideHit(origin,direction,RifleRange,out float guideDistance,true);if(guide>=0)StartCoroutine(ApplyGuideImpact(guide,guideDistance/RifleSpeed));
             var match=ArenaObjectiveMatch.Instance;ShowRifleClientRpc(origin,direction,now);
             StartCoroutine(TravelRifle(origin-direction*barrel,direction,barrel,now,match,match.State.Value.Version));
         }

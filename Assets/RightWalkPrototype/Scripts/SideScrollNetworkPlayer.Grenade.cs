@@ -14,7 +14,7 @@ namespace RightWalkPrototype
         double nextGrenadePracticeSupply;uint grenadeSequence;
         public bool GrenadeActive=>NormalAmmoEnabled&&SpecialHeld&&SelectedAmmo==AmmoKind.Grenade&&!IsDead;
         public int GrenadeRounds=>grenadeRounds.Value;
-        public float GrenadeLaunchSpeed=>ArenaGrenadeBallistics.Speed(Vector2.Distance(aim.MuzzlePosition,aim.AimPoint));
+        public float GrenadeLaunchSpeed=>ArenaGrenadeBallistics.LaunchSpeed(Vector2.Distance(aim.MuzzlePosition,aim.AimPoint),aim.AimDirection);
         public int ReceivedGrenadeShots{get;private set;}
         public int ReceivedGrenadeBursts{get;private set;}
         public Vector2 LastGrenadeBurst{get;private set;}
@@ -29,7 +29,7 @@ namespace RightWalkPrototype
         public bool PredictGrenade(List<Vector2> points,out Vector2 end)=>ArenaGrenadeBallistics.Predict(this,aim.MuzzlePosition,aim.AimDirection*GrenadeLaunchSpeed,points,out end);
         public void DrawGrenadePreview(Camera camera)
         {
-            if(!IsOwner||IsDead||RelayArenaPrototype.ControlsBlocked||ArenaObjectiveMatch.CombatBlocked||ArenaObjectiveMatch.RoomPointerOverUI||Event.current.type!=EventType.Repaint)return;
+            if(!IsLocalHuman||IsDead||RelayArenaPrototype.ControlsBlocked||ArenaObjectiveMatch.CombatBlocked||ArenaObjectiveMatch.RoomPointerOverUI||Event.current.type!=EventType.Repaint)return;
             bool hit=PredictGrenade(grenadePreview,out var end);var color=GUI.color;GUI.color=ActiveAmmoEmpty?new Color(1,.2f,.15f,.8f):new Color(.65f,1,.3f,.7f);
             for(int i=1;i<grenadePreview.Count;i++)
             {var a=camera.WorldToScreenPoint(grenadePreview[i-1]);var b=camera.WorldToScreenPoint(grenadePreview[i]);if(a.z>0&&b.z>0&&i%2==1)CursorLine(new Vector2(a.x,Screen.height-a.y),new Vector2(b.x,Screen.height-b.y),1.5f);}
@@ -76,7 +76,7 @@ namespace RightWalkPrototype
         }
         void PushFromGrenadeServer(Vector2 centre)
         {
-            if(!IsServer||!IsSpawned||IsDead||ArenaObjectiveMatch.CombatBlocked)return;
+            if(!IsServer||!IsSpawned||IsDead||SpawnProtected||ArenaObjectiveMatch.CombatBlocked)return;
             Vector2 away=((Vector2)ArenaHitBounds.center-centre).normalized;
             allowedHitPoseUntil=ArenaClock.Now(NetworkManager)+GrenadeHitSeconds+.3;
             GrenadePushClientRpc(away*GrenadePushSpeed,LifeVersion);

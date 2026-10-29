@@ -96,8 +96,8 @@ namespace RightWalkPrototype
                         var bounds=new Bounds(PatrolPosition(state)+normal*.48f,new Vector3(Mathf.Abs(Mathf.Cos(radians))*.85f+Mathf.Abs(Mathf.Sin(radians))*.9f,Mathf.Abs(Mathf.Sin(radians))*.85f+Mathf.Abs(Mathf.Cos(radians))*.9f,.2f));
                         foreach(var p in players)
                         {
-                            if(!p.IsSpawned||p.IsDead||!p.HasCurrentLifePose||nextPatrolContact.TryGetValue(p.OwnerClientId,out double next)&&Now<next||!bounds.Intersects(p.ArenaHitBounds))continue;
-                            p.ReceiveServerDamage(patrolContactDamage,p.LifeVersion);p.PushFromPatrolServer(p.ArenaHitBounds.center.x-bounds.center.x);nextPatrolContact[p.OwnerClientId]=Now+Mathf.Max(.1f,patrolContactInterval);
+                            if(!p.IsSpawned||p.IsDead||!p.HasCurrentLifePose||nextPatrolContact.TryGetValue(p.ParticipantId,out double next)&&Now<next||!bounds.Intersects(p.ArenaHitBounds))continue;
+                            p.ReceiveServerDamage(patrolContactDamage,p.LifeVersion);p.PushFromPatrolServer(p.ArenaHitBounds.center.x-bounds.center.x);nextPatrolContact[p.ParticipantId]=Now+Mathf.Max(.1f,patrolContactInterval);
                             if(state.RushPhase==2){EndGroundRush(ref state);Patrols[i]=state;break;}
                         }
                     }

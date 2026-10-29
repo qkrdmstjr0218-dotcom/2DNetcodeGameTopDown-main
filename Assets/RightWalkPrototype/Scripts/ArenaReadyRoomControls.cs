@@ -3,8 +3,8 @@ using UnityEngine;
 
 namespace RightWalkPrototype
 {
-    // World-space wall art only: no colliders, controls, or network state.
-    public sealed class ArenaReadyRoomControls : MonoBehaviour
+    // World-space guide pages follow the server-selected topic; shot targets add no movement colliders.
+    public sealed partial class ArenaReadyRoomControls : MonoBehaviour
     {
         Sprite sprite;Font font;Material lineMaterial;
         readonly List<Mesh> meshes=new();
@@ -19,12 +19,12 @@ namespace RightWalkPrototype
         }
         void Box(string name,float x,float y,float w,float h,Color color,int order=-74)
         {
-            var go=new GameObject(name);go.transform.SetParent(transform,false);go.transform.localPosition=new Vector3(x,y,0);go.transform.localScale=new Vector3(w,h,1);
+            var go=new GameObject(name);go.transform.SetParent(contentRoot!=null?contentRoot:transform,false);go.transform.localPosition=new Vector3(x,y,0);go.transform.localScale=new Vector3(w,h,1);
             var r=go.AddComponent<SpriteRenderer>();r.sprite=sprite;r.color=color;r.sortingOrder=order;
         }
         void Polygon(string name,Vector2[] points,Color color,int order)
         {
-            var go=new GameObject(name);go.transform.SetParent(transform,false);
+            var go=new GameObject(name);go.transform.SetParent(contentRoot!=null?contentRoot:transform,false);
             var vertices=new Vector3[points.Length];var colors=new Color[points.Length];var triangles=new int[(points.Length-2)*3];
             var vertexColor=QualitySettings.activeColorSpace==ColorSpace.Linear?color.linear:color;
             for(int i=0;i<points.Length;i++){vertices[i]=points[i];colors[i]=vertexColor;}
@@ -40,17 +40,17 @@ namespace RightWalkPrototype
         }
         void Stroke(string name,Vector2[] points,Color color,float width,int order,bool loop=false)
         {
-            var go=new GameObject(name);go.transform.SetParent(transform,false);var line=go.AddComponent<LineRenderer>();
+            var go=new GameObject(name);go.transform.SetParent(contentRoot!=null?contentRoot:transform,false);var line=go.AddComponent<LineRenderer>();
             line.sharedMaterial=lineMaterial;line.useWorldSpace=false;line.loop=loop;line.positionCount=points.Length;
             line.startWidth=line.endWidth=width;line.startColor=line.endColor=color;line.sortingOrder=order;line.numCornerVertices=3;line.numCapVertices=3;
             for(int i=0;i<points.Length;i++)line.SetPosition(i,points[i]);
         }
-        void Text(string value,float x,float y,float size,Color color,bool centred=false)
+        TextMesh Text(string value,float x,float y,float size,Color color,bool centred=false)
         {
-            var go=new GameObject(value);go.transform.SetParent(transform,false);go.transform.localPosition=new Vector3(x,y,0);
+            var go=new GameObject(value);go.transform.SetParent(contentRoot!=null?contentRoot:transform,false);go.transform.localPosition=new Vector3(x,y,0);
             var text=go.AddComponent<TextMesh>();text.font=font;text.text=value;text.fontSize=64;text.characterSize=size;text.color=color;
             text.anchor=centred?TextAnchor.MiddleCenter:TextAnchor.MiddleLeft;
-            var renderer=go.GetComponent<MeshRenderer>();renderer.sharedMaterial=font.material;renderer.sortingOrder=-65;
+            var renderer=go.GetComponent<MeshRenderer>();renderer.sharedMaterial=font.material;renderer.sortingOrder=-65;return text;
         }
         void Key(string name,float x,float y,float width=.64f)
         {
@@ -92,7 +92,7 @@ namespace RightWalkPrototype
         }
         void AmmoType(string key,string label,float x,float y,Color color)
         {
-            Text(key,x,y+.01f,.035f,color,true);Text(label,x+.23f,y,.034f,Muted);
+            Text(key,x,y+.01f,.035f,color,true);Text(label,x+.38f,y,.034f,Muted);
         }
         void Draw()
         {
@@ -100,26 +100,20 @@ namespace RightWalkPrototype
             Panel("Control board frame",0,6.05f,16.3f,5.45f,.18f,Steel,-79);
             Panel("Control board backing",0,6.05f,16.18f,5.33f,.14f,new Color(.04f,.075f,.10f),-78);
             Box("Header rule",0,8f,15.35f,.018f,new Color(.18f,.3f,.34f),-76);
-            Text("조작 가이드",-6.85f,8.4f,.075f,Ink);
-            Text("키보드와 마우스 · 대기실에서 바로 연습하세요",-3.95f,8.38f,.035f,Muted);
+            heading=Text("조작 가이드",-6.85f,8.4f,.075f,Ink);
+            Text("천장 위 표적은 관통 라이플로만 전환됩니다",-3.95f,8.38f,.031f,Muted);
+            for(int i=0;i<4;i++)BuildTopic(i);BuildTargets();
+            Text("2 관통 라이플 선택 → 우클릭 사격 · 천장을 관통해 주제를 선택하세요",-7.1f,3.8f,.036f,Accent);
+        }
+        void DrawControls()
+        {
             Card(-5.2f,7.25f,"좌우 이동","S / ↓ 앉기");Key("A",-7.15f,7.25f);Key("D",-6.4f,7.25f);
             Card(0,7.25f,"사격","일반탄 자동 충전");Mouse(-1.55f,7.25f,false);
             Card(5.2f,7.25f,"특수탄 사용","우클릭을 누르는 동안");Mouse(3.65f,7.25f,true);
             Card(-5.2f,5.75f,"달리기","스태미나 소모");Key("Shift",-6.78f,5.75f,1.5f);
             Card(0,5.75f,"점프","공중에서 한 번 더","S/↓ + Space · 점선 내려가기");Key("Space",-1.58f,5.75f,1.5f);
-            Card(5.2f,5.75f,ArenaUiTheme.SpecialAmmoSwitchLabel,"선택한 탄종 유지");Key("Q",3.25f,5.75f);Key("E",4,5.75f);
-            Box("Footer rule",0,4.95f,15.35f,.018f,new Color(.18f,.3f,.34f),-76);
-            Box("Ammo footer divider",1.2f,4.56f,.014f,.64f,new Color(.18f,.3f,.34f),-73);
-            Text("특수탄 종류 :",1.55f,4.73f,.038f,Muted);
-            AmmoType("S","샷건",1.65f,4.4f,new Color(1,.78f,.3f));AmmoType("R","관통 라이플",3.4f,4.4f,new Color(.78f,.55f,1));AmmoType("G","유탄",6.25f,4.4f,new Color(.65f,.95f,.3f));
-            Text("실제 경기",-7.55f,4.73f,.034f,Accent);
-            Text("특수탄은 보급 · 적 드롭으로 획득",-5.65f,4.73f,.032f,Muted);
-            SupportNotice();
-            Panel("Hacking notice rim",4,3.8f,7.6f,.8f,.09f,Steel,-76);
-            Panel("Hacking notice face",4,3.8f,7.55f,.75f,.07f,Face,-75);
-            Text("해킹 구역 · 대기실에서는 연습만 가능",.65f,3.98f,.038f,Accent);
-            Text("단독 점유 초당 1점 · 2명 이상이면 득점 중단",.65f,3.62f,.034f,Muted);
-            Text("단독 해킹 1초 = 1점 · 플레이어 처치 +5점 · 지원 드론 격추 +5점 · 종료 시 최고 점수 승리",-7.55f,4.4f,.032f,Muted);
+            Card(5.2f,5.75f,ArenaUiTheme.SpecialAmmoSwitchLabel,"휠 순환 · 1 / 2 / 3 선택","선택한 탄종 유지");Key("Q",3.25f,5.75f);Key("E",4,5.75f);
+
         }
         void SupportNotice()
         {

@@ -17,11 +17,11 @@ namespace RightWalkPrototype
                 match.State.Value.Phase!=ArenaObjectiveMatch.Stage.Playing)return;
             var camera=arena.arenaCamera;if(camera==null)return;
             if(ArenaCombatHud.Active){var bounds=match.Points[match.State.Value.Point].CaptureBounds;ArenaCombatHud.DrawMarker(new Vector3(bounds.center.x,bounds.max.y+.3f,bounds.center.z));return;}
-            if(owner==null||!owner.IsSpawned||!owner.IsOwner)
+            if(owner==null||!owner.IsSpawned||!owner.IsLocalHuman)
             {
                 owner=null;
                 foreach(var player in Object.FindObjectsByType<SideScrollNetworkPlayer>(FindObjectsSortMode.None))
-                    if(player.IsSpawned&&player.IsOwner){owner=player;break;}
+                    if(player.IsSpawned&&player.IsLocalHuman){owner=player;break;}
             }
             if(owner==null)return;
             if(caption==null)caption=new GUIStyle(GUI.skin.label){fontSize=13,alignment=TextAnchor.MiddleCenter,wordWrap=false};

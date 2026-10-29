@@ -5,7 +5,7 @@ namespace RightWalkPrototype
     {
         const int GuideSamples=24;
         readonly Vector2[] shotgunGuide=new Vector2[GuideSamples+1];
-        public bool WeaponGuideVisible=>IsSpawned&&IsOwner&&NormalAmmoEnabled&&!IsDead&&SpecialHeld
+        public bool WeaponGuideVisible=>IsSpawned&&IsLocalHuman&&NormalAmmoEnabled&&!IsDead&&SpecialHeld
             &&(SelectedAmmo==AmmoKind.Rifle||SelectedAmmo==AmmoKind.InstantShotgun||SelectedAmmo==AmmoKind.Shotgun)
             &&!ArenaCombatHud.TabVisible&&!RelayArenaPrototype.ControlsBlocked&&!ArenaObjectiveMatch.CombatBlocked&&!ArenaObjectiveMatch.RoomPointerOverUI;
         // Empty takes priority over the existing switch / per-weapon fire wait.

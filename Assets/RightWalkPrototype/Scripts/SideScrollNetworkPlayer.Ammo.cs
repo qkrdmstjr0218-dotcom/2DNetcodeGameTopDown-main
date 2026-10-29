@@ -27,7 +27,7 @@ namespace RightWalkPrototype
         public const float PatrolHitSeconds=.12f,PatrolPush=2.4f;
         internal void PushFromPatrolServer(float direction)
         {
-            if(!IsServer||!IsSpawned||IsDead||ArenaObjectiveMatch.CombatBlocked)return;
+            if(!IsServer||!IsSpawned||IsDead||SpawnProtected||ArenaObjectiveMatch.CombatBlocked)return;
             allowedHitPoseUntil=ArenaClock.Now(NetworkManager)+PatrolHitSeconds+.3;
             PatrolPushClientRpc(Vector2.right*Mathf.Sign(direction)*PatrolPush,LifeVersion);
         }
@@ -159,8 +159,10 @@ namespace RightWalkPrototype
                     if(bounds.Contains(new Vector3(start.x,start.y,bounds.center.z))){intersects=true;hitDistance=0;}
                     if(intersects&&hitDistance>=0&&hitDistance<distance){distance=hitDistance;victim=candidate;}
                 }
+                int guide=GuideHit(start,ray,distance,out float guideDistance);if(guide>=0){distance=guideDistance;victim=null;hit=null;}
                 float travel=Mathf.Max(0,distance-barrel);
-                paths[i]=new PelletPath{Origin=distance<barrel?start+ray*distance:origin,Direction=ray,Range=travel,Hit=victim!=null||hit!=null};
+                paths[i]=new PelletPath{Origin=distance<barrel?start+ray*distance:origin,Direction=ray,Range=travel,Hit=victim!=null||hit!=null||guide>=0};
+                if(guide>=0){StartCoroutine(ApplyGuideImpact(guide,instant?0:travel/ShotgunPelletSpeed));continue;}
                 var target=victim==null&&hit!=null?hit.GetComponentInParent<SideScrollDamageTarget>():null;
                 var enemy=victim==null&&hit!=null?hit.GetComponentInParent<ArenaPatrolEnemy>():null;
                 Object key=victim!=null?(Object)victim:enemy!=null?(Object)enemy:target;

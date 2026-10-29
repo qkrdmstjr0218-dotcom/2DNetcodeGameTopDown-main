@@ -18,7 +18,7 @@ public static class RelayFoundryBuilder
         var previous=UnityEngine.Object.FindFirstObjectByType<RelayArenaPrototype>();UnityEngine.Object.DestroyImmediate(previous.gameObject);
         sprite=AssetDatabase.LoadAssetAtPath<Sprite>("Assets/RightWalkPrototype/Art/MapSolid.png");
         root=new GameObject("Foundry 08 - traversal blockout").transform;
-        var rules=root.gameObject.AddComponent<RelayArenaPrototype>();rules.arenaCamera=Camera.main;rules.pitLeft=24;rules.pitRight=28;rules.runSpeed=4.5f;
+        var rules=root.gameObject.AddComponent<RelayArenaPrototype>();rules.arenaCamera=Camera.main;rules.pitLeft=24;rules.pitRight=28;rules.runSpeed=4.5f;rules.staminaDrain=20;
         rules.readyRoomFont=AssetDatabase.LoadAssetAtPath<Font>("Assets/TextMesh Pro/EliceDigitalBaeum_Regular.ttf");
         rules.weaponRange=16f;rules.shieldEffectShader=AssetDatabase.LoadAssetAtPath<Shader>("Assets/RightWalkPrototype/Art/UI/ShieldEffect.shader");
         rules.ammoCursorShader=AssetDatabase.LoadAssetAtPath<Shader>("Assets/RightWalkPrototype/Art/UI/AmmoCursor.shader");

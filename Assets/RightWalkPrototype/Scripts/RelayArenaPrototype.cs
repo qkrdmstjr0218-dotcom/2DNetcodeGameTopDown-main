@@ -27,7 +27,7 @@ namespace RightWalkPrototype
         public float staminaMaximum=100,staminaDrain=25,staminaRecovery=20,staminaRecoveryDelay=1,staminaResume=20;
         public static RelayArenaPrototype Instance {get;private set;}
         public bool MenuOpen {get;private set;}
-        public static bool ControlsBlocked=>Instance!=null&&(Instance.MenuOpen||Instance.overview||ArenaObjectiveMatch.Ended||ArenaObjectiveMatch.CountingDown||ArenaObjectiveMatch.Instance!=null&&ArenaObjectiveMatch.Instance.Transitioning);
+        public static bool ControlsBlocked=>Instance!=null&&(Instance.MenuOpen||Instance.overview||ArenaObjectiveMatch.MarkerGuideOpen||ArenaObjectiveMatch.Ended||ArenaObjectiveMatch.CountingDown||ArenaObjectiveMatch.Instance!=null&&ArenaObjectiveMatch.Instance.Transitioning);
         public static bool HasGameplayFocus
         {
             get
@@ -41,7 +41,7 @@ namespace RightWalkPrototype
 #endif
             }
         }
-        public static bool AimInputBlocked=>Instance!=null&&(!HasGameplayFocus||Instance.MenuOpen||Instance.overview||ArenaObjectiveMatch.Ended||ArenaObjectiveMatch.TransitionActive);
+        public static bool AimInputBlocked=>Instance!=null&&(!HasGameplayFocus||Instance.MenuOpen||Instance.overview||ArenaObjectiveMatch.MarkerGuideOpen||ArenaObjectiveMatch.Ended||ArenaObjectiveMatch.TransitionActive);
         public static bool LiveInputBlocked=>ControlsBlocked||Instance!=null&&!HasGameplayFocus;
         public static bool FireInputBlocked=>ArenaCombatHud.TabVisible||LiveInputBlocked||ArenaObjectiveMatch.CombatBlocked||ArenaObjectiveMatch.RoomPointerOverUI||Instance!=null&&Instance.waitForMouseRelease;
         public float CycleTime {get;private set;}

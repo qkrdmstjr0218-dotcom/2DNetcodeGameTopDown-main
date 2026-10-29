@@ -1,9 +1,10 @@
-﻿Shader "RightWalk/FrontHighlightTone"
+Shader "RightWalk/FrontHighlightTone"
 {
     Properties
     {
         [PerRendererData] _IdentityTexture("Identity Texture",2D)="white"{}
         [PerRendererData] _IdentityEnabled("Identity Enabled",Float)=0
+        [PerRendererData] _SpawnProtectionAlpha("Spawn protection alpha",Float)=1
 
         [PerRendererData] _MainTex ("Sprite Texture", 2D) = "white" {}
         _Color ("Tint", Color) = (1,1,1,1)

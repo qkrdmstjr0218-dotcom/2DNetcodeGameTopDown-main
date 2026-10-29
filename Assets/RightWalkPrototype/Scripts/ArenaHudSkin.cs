@@ -6,6 +6,24 @@ namespace RightWalkPrototype
     {
         public static readonly Color Frame=new(.23f,.36f,.42f,.9f);
         static Texture2D readyCheck;
+        public static void SelfPointer(Vector2 at)
+        {
+            for(int y=0;y<9;y++)Fill(new Rect(at.x-(9-y),at.y+y,2*(9-y),1),new Color(.015f,.03f,.04f,.95f));
+            for(int y=0;y<6;y++)Fill(new Rect(at.x-(6-y),at.y+1+y,2*(6-y),1),new Color(.65f,.96f,1));
+        }
+        public static void ImpactMarker(Vector2 at,Color color,bool hit)
+        {
+            color.a=hit?.8f:.4f;
+            foreach(int x in new[]{-1,1})foreach(int y in new[]{-1,1})
+            {
+                var corner=at+new Vector2(x*6,y*6);
+                Fill(new Rect(corner.x-(x>0?3:0)-1,corner.y-1,5,3),new Color(.015f,.035f,.045f,.75f));
+                Fill(new Rect(corner.x-1,corner.y-(y>0?3:0)-1,3,5),new Color(.015f,.035f,.045f,.75f));
+                Fill(new Rect(corner.x-(x>0?3:0),corner.y,4,1),color);
+                Fill(new Rect(corner.x,corner.y-(y>0?3:0),1,4),color);
+            }
+            if(hit)Fill(new Rect(at.x-1,at.y-1,2,2),color);
+        }
         static void Fill(Rect r,Color c){var old=GUI.color;GUI.color=c;GUI.DrawTexture(r,Texture2D.whiteTexture);GUI.color=old;}
         static void Line(Vector2 a,Vector2 b,Color c,float thickness=1)
         {var old=GUI.matrix;GUI.matrix=old*Matrix4x4.TRS(a,Quaternion.Euler(0,0,Mathf.Atan2(b.y-a.y,b.x-a.x)*Mathf.Rad2Deg),Vector3.one);Fill(new Rect(0,-thickness/2,Vector2.Distance(a,b),thickness),c);GUI.matrix=old;}
@@ -34,6 +52,14 @@ namespace RightWalkPrototype
             }
             else Fill(new Rect(x-3,y-1,8,2),accent);
             GUI.Label(new Rect(r.x+25,r.y,r.width-29,r.height),ready?"준비 완료":"준비 전",ArenaUiTheme.Static(new GUIStyle(GUI.skin.label){alignment=TextAnchor.MiddleCenter,fontSize=13,padding=new RectOffset(),normal={textColor=accent}}));
+        }
+        public static void PlayerBadge(Rect r,int number)
+        {
+            var accent=ArenaPlayerAppearance.Accent(number);Fill(r,new Color(.025f,.055f,.075f,.96f));
+            var edge=accent;edge.a=.5f;
+            Fill(new Rect(r.x,r.y,r.width,1),edge);Fill(new Rect(r.x,r.yMax-1,r.width,1),edge);
+            Fill(new Rect(r.x,r.y,1,r.height),edge);Fill(new Rect(r.xMax-1,r.y,1,r.height),edge);
+            GUI.Label(r,"P"+number,ArenaUiTheme.Static(new GUIStyle(GUI.skin.label){fontSize=14,alignment=TextAnchor.MiddleCenter,wordWrap=false,padding=new RectOffset(),normal={textColor=accent}}));
         }
         public static void Panel(Rect r,Color accent)
         {

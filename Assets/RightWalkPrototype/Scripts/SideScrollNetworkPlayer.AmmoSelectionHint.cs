@@ -13,7 +13,7 @@ namespace RightWalkPrototype
         public int SelectedAmmoRounds=>SelectedAmmo==AmmoKind.Rifle?RifleRounds:SelectedAmmo==AmmoKind.Grenade?GrenadeRounds:ShotgunRounds;
         public int SelectedAmmoCapacity=>SelectedAmmo==AmmoKind.Rifle?RifleCapacity:SelectedAmmo==AmmoKind.Grenade?GrenadeCapacity:ShotgunCapacity;
         public string AmmoSelectionHintCountText=>SelectedAmmoRounds.ToString();
-        public bool AmmoSelectionHintVisible=>IsSpawned&&IsOwner&&NormalAmmoEnabled&&!IsDead
+        public bool AmmoSelectionHintVisible=>IsSpawned&&IsLocalHuman&&NormalAmmoEnabled&&!IsDead
             &&ammoHintLife==LifeVersion&&Time.unscaledTime<ammoHintUntil&&SelectedAmmo!=AmmoKind.Normal
             &&!RelayArenaPrototype.ControlsBlocked&&!ArenaObjectiveMatch.TransitionActive&&!ArenaObjectiveMatch.Ended;
         void ShowAmmoSelectionHint()
@@ -25,7 +25,7 @@ namespace RightWalkPrototype
         {
             if(!AmmoSelectionHintVisible)return;
             bool ready=ArenaObjectiveMatch.InReadyRoom&&!ArenaTutorial.Active;
-            var at=Camera.main.WorldToScreenPoint(transform.position+Vector3.up*(!ready&&crouch.IsCrouched?1.95f:2.45f));
+            var at=Camera.main.WorldToScreenPoint(transform.position+Vector3.up*(ready?ReadyIdentityHeight:crouch.IsCrouched?1.95f:2.45f));
             if(at.z<=0)return;
             float alpha=Mathf.Clamp01((ammoHintUntil-Time.unscaledTime)/.25f);
             // The compact row sits just above the actual world HUD / ready badge.

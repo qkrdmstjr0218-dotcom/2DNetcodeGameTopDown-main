@@ -50,12 +50,12 @@ namespace RightWalkPrototype
         }
         void RecognizeAttacker(ref PatrolState state,SideScrollNetworkPlayer attacker)
         {
-            if(state.Medical||attacker==null||!attacker.IsSpawned||attacker.IsDead||!attacker.HasCurrentLifePose||attacker.NetworkManager!=NetworkManager||!NetworkManager.ConnectedClients.ContainsKey(attacker.OwnerClientId))return;
+            if(state.Medical||attacker==null||!attacker.IsSpawned||attacker.IsDead||!attacker.HasCurrentLifePose||attacker.NetworkManager!=NetworkManager||!attacker.IsBot&&!NetworkManager.ConnectedClients.ContainsKey(attacker.ParticipantId))return;
             var brain=BrainFor(state);bool changed=brain.Target!=attacker;
             brain.Target=attacker;brain.ProvokedLife=attacker.LifeVersion;brain.ProvokedUntil=Now+ProvokedMemorySeconds;brain.LostUntil=brain.ProvokedUntil;brain.Think=Now;
             if(changed){brain.Path.Clear();brain.Step=0;if(state.RushPhase==1){state.RushPhase=0;state.RushUntil=0;}}
             // A new target gets a fresh visible warning, never an instant redirected shot.
-            if(state.FireAt>0&&state.TargetClient!=attacker.OwnerClientId){state.FireAt=0;state.BurstLeft=0;}
+            if(state.FireAt>0&&state.TargetClient!=attacker.ParticipantId){state.FireAt=0;state.BurstLeft=0;}
         }
         SideScrollNetworkPlayer RoamingTarget(PatrolState state,EnemyBrain brain,SideScrollNetworkPlayer[] players)
         {

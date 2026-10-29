@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +12,7 @@ namespace RightWalkPrototype
 {
     public sealed partial class SideScrollNetworkSession
     {
-        public const string OnlineRoomKind="foundry-score-20261027-v2";
+        public const string OnlineRoomKind="foundry-score-20261028-v7";
         public const string OnlineModeName="해킹 구역 점령",OnlineMapName="주조 시설 08";
         public static SideScrollNetworkSession Instance {get;private set;}
         public static bool LobbyVisible=>Instance!=null&&Instance.useReadyRoom&&RelayArenaPrototype.Instance!=null
@@ -184,3 +184,4 @@ namespace RightWalkPrototype
         }
     }
 }
+

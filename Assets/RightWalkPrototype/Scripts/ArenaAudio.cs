@@ -97,7 +97,7 @@ namespace RightWalkPrototype
             if(local==null||!local.IsSpawned)
             {
                 observing=false;if(Time.unscaledTime<findAt)return;findAt=Time.unscaledTime+.3f;
-                foreach(var p in FindObjectsByType<SideScrollNetworkPlayer>(FindObjectsSortMode.None))if(p.IsSpawned&&p.IsOwner){local=p;motor=p.GetComponent<SideScrollMapPreview>();body=p.GetComponent<Rigidbody2D>();break;}
+                foreach(var p in FindObjectsByType<SideScrollNetworkPlayer>(FindObjectsSortMode.None))if(p.IsSpawned&&p.IsLocalHuman){local=p;motor=p.GetComponent<SideScrollMapPreview>();body=p.GetComponent<Rigidbody2D>();break;}
             }
             if(local==null||!local.IsSpawned)return;
             if(!observing||life!=local.LifeVersion){Snapshot();observing=true;return;}

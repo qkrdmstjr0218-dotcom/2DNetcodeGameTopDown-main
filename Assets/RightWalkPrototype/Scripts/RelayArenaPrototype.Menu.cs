@@ -29,6 +29,7 @@ namespace RightWalkPrototype
         }
         void HandleMenuEscape()
         {
+            if(ArenaObjectiveMatch.MarkerGuideOpen){ArenaObjectiveMatch.Instance.CloseRules();return;}
             if(QuitConfirmationOpen)CancelQuit();
             else if(LeaveConfirmationOpen)CancelLeave();
             else SetMenuOpen(!MenuOpen);

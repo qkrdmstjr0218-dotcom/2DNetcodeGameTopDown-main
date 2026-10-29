@@ -29,7 +29,7 @@ Shader "RightWalk/HackingField"
                 float glow=exp(-abs(d)*26)*inside;
                 float floorLight=1-smoothstep(.012,.036,abs(p.y+halfSize.y-.055));
                 float shaft=max(0,1-abs(p.x)/(.28+.2*v.uv.y))*(1-v.uv.y)*v.uv.y;
-                float beamX=(frac(_Phase*.125)*2-1)*halfSize.x;
+                float beamX=sin(_Phase*.785398163397)*halfSize.x;
                 float beam=exp(-pow((p.x-beamX)*2.5,2));
                 float fill=(.018+.015*(1-v.uv.y)+beam*.012+shaft*.08)*_Active;
                 float alpha=inside*(fill+edge*.26+bracket*.55+glow*.07+floorLight*.35);

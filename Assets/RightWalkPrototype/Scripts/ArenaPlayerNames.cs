@@ -24,6 +24,18 @@ namespace RightWalkPrototype
         public static string Local=>Name(new FixedString64Bytes(Normalize(PlayerPrefs.GetString(PreferenceKey,"플레이어"))));
         public static string Name(FixedString64Bytes value)=>value.IsEmpty?"플레이어":value.ToString();
         public static void Save(string value){PlayerPrefs.SetString(PreferenceKey,Name(new FixedString64Bytes(Normalize(value))));PlayerPrefs.Save();}
+        public static string Fit(string value,GUIStyle style,float width)
+        {
+            if(style.CalcSize(new GUIContent(value)).x<=width)return value;
+            var elements=StringInfo.ParseCombiningCharacters(value);int count=elements.Length;
+            while(count>0){count--;var s=value.Substring(0,elements[count])+"…";if(style.CalcSize(new GUIContent(s)).x<=width)return s;}
+            return "…";
+        }
+        public static void CompactLabel(Rect rect,string value,int fontSize)
+        {
+            var style=ArenaUiTheme.Static(new GUIStyle(GUI.skin.label){fontSize=fontSize,wordWrap=false,richText=false,clipping=TextClipping.Clip});
+            GUI.Label(rect,new GUIContent(Fit(value,style,rect.width-2),value),style);
+        }
         public static void Label(Rect rect,string value,int fontSize,bool centred=false)
         {
             var style=ArenaUiTheme.Static(new GUIStyle(GUI.skin.label){fontSize=fontSize,richText=false,alignment=centred?TextAnchor.MiddleCenter:TextAnchor.MiddleLeft});

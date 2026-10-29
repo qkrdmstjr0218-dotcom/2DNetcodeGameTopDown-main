@@ -46,7 +46,7 @@ namespace RightWalkPrototype
             return now+.01>=serverSwitchReady&&now+.01>=serverFireReady[(int)kind];
         }
         void MarkServerFired(AmmoKind kind,double now)
-        {if(NormalAmmoEnabled)serverFireReady[(int)kind]=now+IntervalFor(kind);else nextServerShot=now+IntervalFor(kind);}
+        {EndSpawnProtectionServer();if(NormalAmmoEnabled)serverFireReady[(int)kind]=now+IntervalFor(kind);else nextServerShot=now+IntervalFor(kind);}
         public bool TryLocalFire()
         {
             NotifyFireMode();

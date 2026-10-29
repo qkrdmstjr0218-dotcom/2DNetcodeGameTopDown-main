@@ -72,7 +72,7 @@ namespace RightWalkPrototype
             double now=Now;var old=State.Value;int first=UnityEngine.Random.Range(0,Points.Length);
             State.Value=new RoundState{Phase=RoomFlow?Stage.Countdown:Stage.Playing,Version=old.Version+1,Point=first,Upcoming=PickNextPoint(first),End=RoomFlow?0:now+Mathf.Max(1,roundSeconds),Switch=now+Mathf.Max(1,pointSeconds),Warning=now+Mathf.Max(1,pointSeconds)-Mathf.Clamp(warningSeconds,0,Mathf.Max(1,pointSeconds))};
             if(RoomFlow){arrivals.Value=0;arrivalDeadline=now+15;}
-            Scores.Clear();foreach(var p in players)if(p.IsSpawned){Scores.Add(new Score{Client=p.OwnerClientId,Number=p.PlayerNumber,Nickname=p.Nickname});p.ResetForArenaRound();}
+            Scores.Clear();foreach(var p in players)if(p.IsSpawned){Scores.Add(new Score{Client=p.ParticipantId,Number=p.PlayerNumber,Nickname=p.Nickname});p.ResetForArenaRound();}
             Result.Value=default;Occupants.Value=0;OccupantNumber.Value=0;lastTick=now;nextTick=now;
             RelayArenaPrototype.Instance?.SetMenuOpen(false);return true;
         }
@@ -93,9 +93,9 @@ namespace RightWalkPrototype
             double now=Now,until=Math.Min(now,state.End);float dt=(float)Math.Max(0,until-lastTick);lastTick=until;
             var players=FindObjectsByType<SideScrollNetworkPlayer>(FindObjectsSortMode.None);
             // Scores belong to a connection, so a reused P number cannot inherit them.
-            for(int i=Scores.Count-1;i>=0;i--){bool found=false;foreach(var p in players)if(p.IsSpawned&&p.OwnerClientId==Scores[i].Client)found=true;if(!found)Scores.RemoveAt(i);}
-            foreach(var p in players)if(p.IsSpawned){bool found=false;for(int i=0;i<Scores.Count;i++)if(Scores[i].Client==p.OwnerClientId)found=true;if(!found)Scores.Add(new Score{Client=p.OwnerClientId,Number=p.PlayerNumber,Nickname=p.Nickname});}
-            for(int i=0;i<Scores.Count;i++)foreach(var p in players)if(p.IsSpawned&&p.OwnerClientId==Scores[i].Client){var row=Scores[i];row.Nickname=p.Nickname;if(!row.Equals(Scores[i]))Scores[i]=row;break;}
+            for(int i=Scores.Count-1;i>=0;i--){bool found=false;foreach(var p in players)if(p.IsSpawned&&p.ParticipantId==Scores[i].Client)found=true;if(!found)Scores.RemoveAt(i);}
+            foreach(var p in players)if(p.IsSpawned){bool found=false;for(int i=0;i<Scores.Count;i++)if(Scores[i].Client==p.ParticipantId)found=true;if(!found)Scores.Add(new Score{Client=p.ParticipantId,Number=p.PlayerNumber,Nickname=p.Nickname});}
+            for(int i=0;i<Scores.Count;i++)foreach(var p in players)if(p.IsSpawned&&p.ParticipantId==Scores[i].Client){var row=Scores[i];row.Nickname=p.Nickname;if(!row.Equals(Scores[i]))Scores[i]=row;break;}
             bool switched=false;
             while(until>=state.Switch&&state.Switch<state.End)
             {state.Point=state.Upcoming;state.Upcoming=PickNextPoint(state.Point);state.Switch+=Mathf.Max(1,pointSeconds);state.Warning=state.Switch-Mathf.Clamp(warningSeconds,0,Mathf.Max(1,pointSeconds));switched=true;}
@@ -103,7 +103,7 @@ namespace RightWalkPrototype
             foreach(var p in players)if(Points[state.Point].Contains(p)){count++;sole=p;}
             Occupants.Value=count;OccupantNumber.Value=count==1?sole.PlayerNumber:0;
             // Discard the sub-tick crossing a relocation rather than score the wrong site.
-            if(count==1&&!switched)for(int i=0;i<Scores.Count;i++)if(Scores[i].Client==sole.OwnerClientId){var score=Scores[i];score.Seconds+=dt;Scores[i]=score;break;}
+            if(count==1&&!switched)for(int i=0;i<Scores.Count;i++)if(Scores[i].Client==sole.ParticipantId){var score=Scores[i];score.Seconds+=dt;Scores[i]=score;break;}
             if(now>=state.End)
             {
                 FinishRound();return;

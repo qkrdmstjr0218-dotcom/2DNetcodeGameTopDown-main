@@ -86,7 +86,7 @@ namespace RightWalkPrototype
             foreach(var style in new[]{text,small,large,ammoInitial,ammoCount,worldNumber,worldPlayer,timer,keycap,ammoHint})ArenaUiTheme.Static(style);
         }
         SideScrollNetworkPlayer Local()
-        {if(localPlayer!=null&&localPlayer.IsSpawned&&localPlayer.IsOwner)return localPlayer;foreach(var p in FindObjectsByType<SideScrollNetworkPlayer>(FindObjectsSortMode.None))if(p.IsSpawned&&p.IsOwner){localPlayer=p;return p;}return null;}
+        {if(localPlayer!=null&&localPlayer.IsSpawned&&localPlayer.IsLocalHuman)return localPlayer;foreach(var p in FindObjectsByType<SideScrollNetworkPlayer>(FindObjectsSortMode.None))if(p.IsSpawned&&p.IsLocalHuman){localPlayer=p;return p;}return null;}
         void OnGUI()
         {
             if(Event.current.type!=EventType.Repaint||!Active||RelayArenaPrototype.Instance.MenuOpen)return;
@@ -108,7 +108,7 @@ namespace RightWalkPrototype
                 ArenaHudSkin.Panel(clockRect,clockColor);var led=clockColor;led.a=seconds<=10?.65f+.35f*Mathf.Sin(Time.unscaledTime*4)*Mathf.Sin(Time.unscaledTime*4):.75f;
                 Fill(new Rect(clockRect.x+35,clockRect.y+1,50,2),led);timer.normal.textColor=clockColor;ArenaUiTheme.Static(timer);GUI.Label(clockRect,seconds/60+":"+(seconds%60).ToString("00"),timer);
                 ArenaHudSkin.Panel(new Rect(16,h-42,46,26),Cyan);GUI.Label(new Rect(22,h-42,38,26),"Tab",small);
-                DrawAmmo(w,h,p);DrawRanking(w,p);
+                DrawAmmo(w,h,p);DrawRanking(w,p);ArenaObjectiveMatch.Instance.DrawKillNotices(w);
             }
             GUI.matrix=matrix;
         }
@@ -119,22 +119,37 @@ namespace RightWalkPrototype
         }
         void DrawRanking(float w,SideScrollNetworkPlayer local)
         {
-            var rows=RankedScores(ArenaObjectiveMatch.Instance);float x=w-208;ArenaHudSkin.Panel(new Rect(x,16,192,34+rows.Length*25),Cyan);
-            GUI.Label(new Rect(x+12,20,166,23),"현재 순위",small);
+            var rows=RankedScores(ArenaObjectiveMatch.Instance);float x=w-296;ArenaHudSkin.Panel(new Rect(x,16,280,34+rows.Length*25),Cyan);
+            GUI.Label(new Rect(x+12,20,254,23),"현재 순위",small);
             for(int i=0;i<rows.Length;i++)
             {
                 var row=rows[i];int rank=ArenaScoreRules.Rank(rows,i);float y=47+i*25;
-                if(row.Client==local.OwnerClientId)Fill(new Rect(x+5,y+4,2,14),ArenaPlayerAppearance.Accent(row.Number));
-                GUI.Label(new Rect(x+13,y,105,23),rank+"위   P"+row.Number,text);
-                GUI.Label(new Rect(x+108,y,70,23),ArenaScoreRules.Format(row.Total),new GUIStyle(text){alignment=TextAnchor.MiddleRight});
+                if(row.Client==local.ParticipantId)Fill(new Rect(x+5,y+4,2,14),ArenaPlayerAppearance.Accent(row.Number));
+                GUI.Label(new Rect(x+13,y,72,23),rank+"위 P"+row.Number,text);
+                ArenaPlayerNames.CompactLabel(new Rect(x+86,y,112,23),ArenaPlayerNames.Name(row.Nickname),12);
+                GUI.Label(new Rect(x+200,y,66,23),ArenaScoreRules.Format(row.Total),new GUIStyle(text){alignment=TextAnchor.MiddleRight});
             }
         }
         public static int Slot(SideScrollNetworkPlayer.AmmoKind kind)=>kind==SideScrollNetworkPlayer.AmmoKind.Normal?0:kind==SideScrollNetworkPlayer.AmmoKind.Rifle?2:kind==SideScrollNetworkPlayer.AmmoKind.Grenade?3:1;
         public static void DrawPracticeAmmo(SideScrollNetworkPlayer p)
         {if(Instance==null||RelayArenaPrototype.Instance.MenuOpen||Event.current.type!=EventType.Repaint)return;Instance.Styles();Instance.DrawAmmo(Screen.width,Screen.height,p);}
+        public static void DrawMarkerGuide(Rect r,bool framed=true,int fontSize=13)
+        {
+            if(framed)ArenaHudSkin.Panel(r,Cyan);
+            var label=new GUIStyle(GUI.skin.label){fontSize=fontSize,wordWrap=true,padding=new RectOffset(),richText=false};
+            label.normal.textColor=framed?new Color(.65f,.81f,.85f):new Color(.83f,.91f,.93f);ArenaUiTheme.Static(label);
+            float pad=framed?14:2,line=fontSize+7,first=framed?40:56,second=first+line*2+10;
+            GUI.Label(new Rect(r.x+pad,r.y+8,r.width-pad*2,line*2),"화면 가장자리의 마크는 해당 위치의 방향을 표시합니다.",label);
+            var at=new Vector2(r.x+pad+16,r.y+first+15);HackingSymbol(at,Cyan);
+            GUI.Label(new Rect(r.x+pad+46,r.y+first,r.width-pad*2-46,line*2),"해킹 구역 · 현재 점령할 지점\n밑의 막대: 이동까지 남은 시간 · 이동 예고 시 깜박임",label);
+            if(supportMarker==null)supportMarker=Resources.Load<Texture2D>("FoundryArt/SupportMarker");
+            if(supportMarker!=null)GUI.DrawTexture(new Rect(r.x+pad+2,r.y+second,28,31.5f),supportMarker);
+            GUI.Label(new Rect(r.x+pad+46,r.y+second,r.width-pad*2-46,line*2),"지원 드론 · 비무장 보급 기체\n파란 방패 위치의 드론을 격추하면 보호막을 떨어뜨립니다.",label);
+        }
         void DrawAmmo(float w,float h,SideScrollNetworkPlayer p)
         {
             const string initials="NSRG";
+            GUI.Label(new Rect(w-238,h-111,216,18),"휠 순환 · 1 샷건 / 2 라이플 / 3 유탄",ammoHint);
             var q=new Rect(w-238,h-91,22,18);var e=new Rect(w-44,h-91,22,18);
             ArenaHudSkin.Panel(q,new Color(.45f,.62f,.69f));ArenaHudSkin.Panel(e,new Color(.45f,.62f,.69f));GUI.Label(q,"Q",keycap);GUI.Label(e,"E",keycap);
             float centre=(q.x+e.xMax)*.5f;GUI.Label(new Rect(centre-46,h-91,92,18),ArenaUiTheme.SpecialAmmoSwitchLabel,ammoHint);
@@ -181,7 +196,8 @@ namespace RightWalkPrototype
             float width=Mathf.Min(1100,w-64),height=Mathf.Min(650,h-64);var panel=new Rect((w-width)/2,(h-height)/2,width,height);Fill(panel,Back);
             GUI.Label(new Rect(panel.x+24,panel.y+16,250,34),"전장 현황",large);
             float mapWidth=width*.59f;
-            DrawMap(new Rect(panel.x+24,panel.y+72,mapWidth-36,height-145));
+            DrawMap(new Rect(panel.x+24,panel.y+72,mapWidth-36,height-270));
+            DrawMarkerGuide(new Rect(panel.x+24,panel.yMax-208,mapWidth-36,144));
             float x=panel.x+mapWidth,y=panel.y+66,rowWidth=width-mapWidth-24;
             GUI.Label(new Rect(x+65,y,105,24),"참가자",small);GUI.Label(new Rect(x+rowWidth-130,y,78,24),"점수",small);GUI.Label(new Rect(x+rowWidth-43,y,36,24),"처치",small);
             var match=ArenaObjectiveMatch.Instance;var sorted=new ArenaObjectiveMatch.Score[match.Scores.Count];
@@ -191,11 +207,11 @@ namespace RightWalkPrototype
             for(int i=0;i<sorted.Length;i++)
             {
                 var score=sorted[i];float top=y+32+i*84;var r=new Rect(x,top,rowWidth,76);Fill(r,new Color(.07f,.12f,.145f,.9f));
-                if(score.Client==local.OwnerClientId)Outline(r,ArenaPlayerAppearance.Accent(score.Number));
+                if(score.Client==local.ParticipantId)Outline(r,ArenaPlayerAppearance.Accent(score.Number));
                 int portrait=score.Number-1;
                 if(portraits!=null&&portrait>=0&&portrait<portraits.Length&&portraits[portrait]!=null)ArenaUiTheme.DrawPortrait(new Rect(x+5,top+4,54,68),portraits[portrait]);
-                ArenaPlayerNames.Label(new Rect(x+65,top+7,rowWidth-65-130,30),"P"+score.Number+" "+ArenaPlayerNames.Name(score.Nickname)+(score.Client==local.OwnerClientId?" · 나":""),13);
-                foreach(var p in players)if(p.IsSpawned&&p.OwnerClientId==score.Client)
+                ArenaPlayerNames.Label(new Rect(x+65,top+7,rowWidth-65-130,30),"P"+score.Number+" "+ArenaPlayerNames.Name(score.Nickname),13);
+                foreach(var p in players)if(p.IsSpawned&&p.ParticipantId==score.Client)
                 {Bar(new Rect(x+65,top+41,92,5),p.Health/(float)p.MaxHealth,ArenaPlayerAppearance.Accent(score.Number));GUI.Label(new Rect(x+65,top+49,100,20),p.Health+" / "+p.MaxHealth,small);break;}
                 GUI.Label(new Rect(x+rowWidth-130,top+22,78,28),ArenaScoreRules.Format(score.Total),text);
                 GUI.Label(new Rect(x+rowWidth-43,top+22,36,28),score.Kills.ToString(),text);
@@ -216,7 +232,8 @@ namespace RightWalkPrototype
             Instance.worldPlayer.normal.textColor=accent;ArenaUiTheme.Static(Instance.worldPlayer);GUI.Label(new Rect(left,y-10,32,26),"P"+p.PlayerNumber,Instance.worldPlayer);
             if(p.Shield>0)ArenaHudSkin.Meter(new Rect(barX,y-7,84,4),p.Shield/(float)SideScrollNetworkPlayer.ShieldCapacity,new Color(.4f,.65f,1));
             ArenaHudSkin.Meter(new Rect(barX,y,84,6),p.Health/(float)p.MaxHealth,accent);
-            if(p.IsOwner)ArenaHudSkin.Meter(new Rect(barX,y+10,84,4),p.Stamina/p.MaximumStamina,p.SprintExhausted?new Color(1,.6f,.2f):Cyan);
+            if(p.IsLocalHuman)ArenaHudSkin.SelfPointer(new Vector2(at.x,y-22));
+            if(p.IsLocalHuman)ArenaHudSkin.Meter(new Rect(barX,y+10,84,4),p.Stamina/p.MaximumStamina,p.SprintExhausted?new Color(1,.6f,.2f):Cyan);
             Instance.worldNumber.normal.textColor=new Color(0,0,0,.85f);ArenaUiTheme.Static(Instance.worldNumber);GUI.Label(new Rect(barX+93,y-9,numberWidth,26),stats,Instance.worldNumber);
             Instance.worldNumber.normal.textColor=Color.white;ArenaUiTheme.Static(Instance.worldNumber);GUI.Label(new Rect(barX+92,y-10,numberWidth,26),p.Health+(p.Shield>0?" <color=#89BBFF>(+"+p.Shield+")</color>":""),Instance.worldNumber);
             GUI.matrix=matrix;
@@ -231,11 +248,13 @@ namespace RightWalkPrototype
             var delta=at-safe.center;if(p.z<0)delta=-delta;
             if(outside){float t=Mathf.Min(safe.width*.5f/Mathf.Max(.001f,Mathf.Abs(delta.x)),safe.height*.5f/Mathf.Max(.001f,Mathf.Abs(delta.y)));at=safe.center+delta*t;}
             int scoreCount=ArenaObjectiveMatch.Instance.Scores.Count;float rankBottom=(16+34+scoreCount*25+24)*scale;
-            if(at.x>Screen.width-224*scale&&at.y<rankBottom)at.y=rankBottom;
+            int notices=ArenaObjectiveMatch.Instance.KillNoticeCount;
+            if(notices>0&&at.x>Screen.width-416*scale)rankBottom=Mathf.Max(rankBottom,(78+scoreCount*25+notices*31)*scale);
+            if(at.x>Screen.width-(notices>0?416:312)*scale&&at.y<rankBottom)at.y=rankBottom;
             if(!support){hackingMarkerPosition=at;hackingMarkerFrame=Time.frameCount;}
             else if(hackingMarkerFrame==Time.frameCount&&Mathf.Abs(at.x-hackingMarkerPosition.x)<42*scale&&Mathf.Abs(at.y-hackingMarkerPosition.y)<50*scale)
             {
-                float minimum=Mathf.Max(safe.yMin+16*scale,at.x>Screen.width-224*scale?rankBottom:0);
+                float minimum=Mathf.Max(safe.yMin+16*scale,at.x>Screen.width-(notices>0?416:312)*scale?rankBottom:0);
                 float above=hackingMarkerPosition.y-50*scale;
                 at.y=above>=minimum?above:Mathf.Min(safe.yMax-16*scale,hackingMarkerPosition.y+50*scale);
             }

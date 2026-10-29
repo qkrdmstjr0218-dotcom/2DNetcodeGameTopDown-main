@@ -31,7 +31,7 @@ namespace RightWalkPrototype
             }
             foreach(var player in players)
             {
-                if(!player.IsSpawned||player.IsDead||!player.HasCurrentLifePose||locked&&player.OwnerClientId!=state.TargetClient)continue;
+                if(!player.IsSpawned||player.IsDead||!player.HasCurrentLifePose||locked&&player.ParticipantId!=state.TargetClient)continue;
                 Vector2 to=player.ArenaHitBounds.center;float distance=Vector2.Distance(pivot,to);
                 if(distance<nearest&&Mathf.Abs(to.y-pivot.y)<=(state.Flying?DroneSight:TurretVerticalRange)&&!ArenaGrenadeBallistics.WorldTrace(pivot,to,0,out _)){target=player;nearest=distance;}
             }
@@ -59,7 +59,7 @@ namespace RightWalkPrototype
             Vector2 pivot=TurretPivot(state);var target=TurretTarget(state,players,false);
             if(target==null)return;
             state.Aim=((Vector2)target.ArenaHitBounds.center-pivot).normalized;
-            state.TargetClient=target.OwnerClientId;state.BurstLeft=state.Flying?2:TurretBurstCount;state.FireAt=Now+(state.Flying?DroneWarning:TurretWarning);Patrols[index]=state;
+            state.TargetClient=target.ParticipantId;state.BurstLeft=state.Flying?2:TurretBurstCount;state.FireAt=Now+(state.Flying?DroneWarning:TurretWarning);Patrols[index]=state;
         }
         void UpdateTurretShots()
         {

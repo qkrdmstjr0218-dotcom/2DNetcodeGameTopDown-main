@@ -10,6 +10,7 @@ Shader "RightWalk/PlayerIdentitySprite"
   [PerRendererData] _EnableExternalAlpha("Enable External Alpha",Float)=0
   [PerRendererData] _IdentityTexture("Identity Texture",2D)="white"{}
   [PerRendererData] _IdentityEnabled("Identity Enabled",Float)=0
+        [PerRendererData] _SpawnProtectionAlpha("Spawn protection alpha",Float)=1
  }
  SubShader {
   Tags {"Queue"="Transparent" "RenderType"="Transparent" "IgnoreProjector"="True" "CanUseSpriteAtlas"="True"}

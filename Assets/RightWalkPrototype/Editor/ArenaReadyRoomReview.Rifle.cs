@@ -36,7 +36,7 @@ public static partial class ArenaReadyRoomReview
         yield return ResetRifleRow();
     }
     static void SampleFireButtons(SideScrollNetworkPlayer own,bool special,bool primary)
-    {typeof(RightFacingShotPreview).GetMethod("ProcessFireInput",BindingFlags.Instance|BindingFlags.NonPublic).Invoke(own.GetComponentInChildren<RightFacingShotPreview>(),new object[]{false,special,primary,0});}
+    {typeof(RightFacingShotPreview).GetMethod("ProcessFireInput",BindingFlags.Instance|BindingFlags.NonPublic).Invoke(own.GetComponentInChildren<RightFacingShotPreview>(),new object[]{false,special,primary,0,0});}
     static IEnumerator CheckHeldSpecial()
     {
         yield return RifleRow();Send(1,50);yield return new WaitForSecondsRealtime(.65f);yield return ResetRifleRow();yield return RifleRow();Send(1,47);

@@ -38,15 +38,15 @@ namespace RightWalkPrototype
             if(ArenaClock.Now(NetworkManager)-lastNormalShot<rules.Delay)return;
             normalAmmo.Value=Mathf.Min(rules.Capacity,normalAmmo.Value+rules.Rate*Time.deltaTime);
         }
-        public bool WorldStaminaVisible=>IsSpawned&&IsOwner&&!IsDead&&RelayArenaPrototype.Instance!=null
+        public bool WorldStaminaVisible=>IsSpawned&&IsLocalHuman&&!IsDead&&RelayArenaPrototype.Instance!=null
             &&!ArenaObjectiveMatch.TransitionActive&&!ArenaObjectiveMatch.Ended&&Stamina<MaximumStamina-.01f;
         void DrawWorldStamina()
         {
             if(!WorldStaminaVisible)return;
             bool ready=ArenaObjectiveMatch.InReadyRoom&&!ArenaTutorial.Active;
-            var point=Camera.main.WorldToScreenPoint(transform.position+Vector3.up*(!ready&&crouch.IsCrouched?1.95f:2.45f));
+            var point=Camera.main.WorldToScreenPoint(transform.position+Vector3.up*(ready?ReadyIdentityHeight:crouch.IsCrouched?1.95f:2.45f));
             if(point.z<=0)return;
-            var bar=new Rect(point.x-29,Screen.height-point.y+(ArenaObjectiveMatch.PracticeRoom?28:11),58,5);var old=GUI.color;
+            var bar=ready?new Rect(point.x+64,Screen.height-point.y-19,46,5):new Rect(point.x-29,Screen.height-point.y+11,58,5);var old=GUI.color;
             GUI.color=new Color(.025f,.04f,.055f,.9f);GUI.DrawTexture(new Rect(bar.x-1,bar.y-1,bar.width+2,bar.height+2),Texture2D.whiteTexture);
             bar.width*=Mathf.Clamp01(Stamina/MaximumStamina);
             GUI.color=SprintExhausted?new Color(1,.65f,.25f):new Color(.25f,.8f,.9f);GUI.DrawTexture(bar,Texture2D.whiteTexture);GUI.color=old;
@@ -65,7 +65,7 @@ namespace RightWalkPrototype
         {
             get
             {
-                if(!IsSpawned||!IsOwner||!NormalAmmoEnabled||IsDead||RelayArenaPrototype.FireInputBlocked||!RelayArenaPrototype.HasGameplayFocus)return false;
+                if(!IsSpawned||!IsLocalHuman||!NormalAmmoEnabled||IsDead||RelayArenaPrototype.FireInputBlocked||!RelayArenaPrototype.HasGameplayFocus)return false;
                 var mouse=MouseScreenPoint();return mouse.x>=0&&mouse.y>=0&&mouse.x<Screen.width&&mouse.y<Screen.height;
             }
         }
@@ -82,6 +82,10 @@ namespace RightWalkPrototype
             GUILayout.EndArea();
             }
             if(ArenaObjectiveMatch.PracticeRoom)ArenaCombatHud.DrawPracticeAmmo(this);
+        }
+        internal void DrawAimCursorOverlay()
+        {
+            if(ArenaCombatHud.TabVisible||ArenaObjectiveMatch.MarkerGuideOpen)return;
             if(!AmmoCursorVisible||Event.current.type!=EventType.Repaint)return;
             var point=MouseScreenPoint();point.y=Screen.height-point.y;
             DrawAmmoCursor(point,GrenadeActive?GrenadeRounds:RifleActive?RifleRounds:InstantShotgunActive?InstantShotgunRounds:ShotgunActive?ShotgunRounds:NormalAmmo,GrenadeActive?GrenadeCapacity:RifleActive?RifleCapacity:SpecialShotActive?ShotgunCapacity:NormalCapacity,SpecialShotActive,InstantShotgunActive,RifleActive);

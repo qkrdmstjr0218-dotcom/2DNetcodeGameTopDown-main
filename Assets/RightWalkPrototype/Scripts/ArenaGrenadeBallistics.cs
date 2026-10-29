@@ -6,6 +6,13 @@ namespace RightWalkPrototype
     {
         public const float Gravity=14,Radius=.09f,Step=1f/60,MaximumLife=3,MinimumSpeed=4,MaximumSpeed=18,BlastRadius=2;
         public static float Speed(float distance)=>Mathf.Clamp(4+distance*1.1f,MinimumSpeed,MaximumSpeed);
+        // Cursor distance remains useful for short throws, but a nearby upper cursor
+        // must not force a weak lob simply because the vertical screen space is short.
+        public static float LaunchSpeed(float distance,Vector2 direction)
+        {
+            float upward=Mathf.Clamp01(direction.normalized.y);
+            return Mathf.Max(Speed(distance),Mathf.Lerp(MinimumSpeed,12,upward*upward));
+        }
         public static Vector2 At(Vector2 origin,Vector2 velocity,float time)=>origin+velocity*time+Vector2.down*(Gravity*.5f*time*time);
         static readonly RaycastHit2D[] hits=new RaycastHit2D[128];
         static bool IsWorld(Collider2D shape)

@@ -23,7 +23,7 @@ namespace RightWalkPrototype
         private readonly HashSet<Collider2D> ignored=new HashSet<Collider2D>();
         private readonly HashSet<Collider2D> admitted=new HashSet<Collider2D>();
         private readonly HashSet<Collider2D> dropping=new HashSet<Collider2D>();
-        public bool IsIgnored(Collider2D collider)=>ignored.Contains(collider);
+        public bool IsIgnored(Collider2D collider)=>ignored.Contains(collider)||shape!=null&&collider!=null&&Physics2D.GetIgnoreCollision(shape,collider);
         private void Awake()
         {
             body=GetComponent<Rigidbody2D>();shape=GetComponent<BoxCollider2D>();movement=GetComponent<SideScrollMapPreview>();gravity=body.gravityScale;

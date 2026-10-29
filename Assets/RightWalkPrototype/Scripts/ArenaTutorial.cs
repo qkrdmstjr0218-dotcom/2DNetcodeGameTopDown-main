@@ -35,7 +35,7 @@ namespace RightWalkPrototype
             if(ending||NetworkManager.Singleton==null||!NetworkManager.Singleton.IsServer)return;
             if(pendingExit!=0){if(pendingExit==2)Session.TutorialToPractice();else Session.DisconnectLocal();return;}
             if(pendingLesson>=0){int next=pendingLesson;pendingLesson=-1;EnterLesson(next);return;}
-            if(player==null)foreach(var p in FindObjectsByType<SideScrollNetworkPlayer>(FindObjectsSortMode.None))if(p.IsSpawned&&p.IsOwner){player=p;break;}
+            if(player==null)foreach(var p in FindObjectsByType<SideScrollNetworkPlayer>(FindObjectsSortMode.None))if(p.IsSpawned&&p.IsLocalHuman){player=p;break;}
             if(player==null)return;
             if(!initialized){initialized=true;EnterLesson(0);return;}
             if(RelayArenaPrototype.ControlsBlocked)return;

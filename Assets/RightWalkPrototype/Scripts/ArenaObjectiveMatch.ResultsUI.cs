@@ -24,9 +24,10 @@ namespace RightWalkPrototype
                     var row=sorted[i];int rank=ArenaScoreRules.Rank(sorted,i);
                     float y=130+i*76;GUI.Box(new Rect(22,y,64,64),rank.ToString(),ArenaUiTheme.Static(new GUIStyle(GUI.skin.box){alignment=TextAnchor.MiddleCenter,fontSize=30,normal={textColor=ArenaPlayerAppearance.Accent(row.Number)}}));
                     GUI.Box(new Rect(start,y,available,64),GUIContent.none);
+                    if(row.Client==NetworkManager.LocalClientId){var c=GUI.color;GUI.color=new Color(.65f,.95f,1,.85f);GUI.DrawTexture(new Rect(start,y,2,64),Texture2D.whiteTexture);GUI.color=c;}
                     var portraits=RelayArenaPrototype.Instance!=null?RelayArenaPrototype.Instance.hudPortraits:null;
                     if(portraits!=null&&row.Number>0&&row.Number<=portraits.Length)ArenaUiTheme.DrawPortrait(new Rect(start+10,y+4,44,56),portraits[row.Number-1]);
-                    ArenaPlayerNames.Label(new Rect(start+62,y+8,available*.38f-66,48),"P"+row.Number+(row.Client==NetworkManager.LocalClientId?" · 나":"")+"\n"+ArenaPlayerNames.Name(row.Nickname),14);
+                    ArenaPlayerNames.Label(new Rect(start+62,y+8,available*.38f-66,48),"P"+row.Number+"\n"+ArenaPlayerNames.Name(row.Nickname),14);
                     string[] values={"",ArenaScoreRules.Format(row.Seconds),row.Kills.ToString(),row.DronePoints.ToString("0"),ArenaScoreRules.Format(row.Total)};
                     for(int col=1;col<5;col++)GUI.Label(new Rect(start+available*fractions[col],y+16,available*(fractions[col+1]-fractions[col]),32),values[col],number);
                 }

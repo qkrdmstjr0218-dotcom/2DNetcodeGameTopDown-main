@@ -254,7 +254,7 @@ namespace RightWalkPrototype
         }
         private void OnGUI()
         {
-            if(!showAimPreview||ArenaCombatHud.TabVisible||ArenaObjectiveMatch.Ended||ArenaObjectiveMatch.CountingDown||ArenaObjectiveMatch.TransitionActive)return;
+            if(!AimPreviewVisible)return;
             if(!HasAimTarget || !hasLastAimTarget)return;
             var camera=aimCamera!=null ? aimCamera : Camera.main;
             if(camera==null)return;
@@ -273,7 +273,7 @@ namespace RightWalkPrototype
             bool shotgun=network!=null&&(network.ShotgunActive||network.InstantShotgunActive);
             bool rifle=network!=null&&network.RifleActive;
             float range=rifle?SideScrollNetworkPlayer.RifleRange:shotgun?SideScrollNetworkPlayer.ShotgunRange:Mathf.Max(.1f,previewAimRange);
-            var point=rifle?origin+direction*range:TraceShot(origin,direction,range,out bool hitSomething);
+            bool hitSomething=false;var point=rifle?origin+direction*range:TraceShot(origin,direction,range,out hitSomething);
             var end=camera.WorldToScreenPoint(point);
             if(end.z<=0)return;
             var previous=GUI.color;
@@ -284,6 +284,10 @@ namespace RightWalkPrototype
                 DrawAimLine(to+new Vector2(-8,-5),to+new Vector2(-8,5),2f);
                 DrawAimLine(to+new Vector2(8,-5),to+new Vector2(8,5),2f);
             }
+            else if(network!=null&&network.NormalAmmoEnabled)
+            {
+                ArenaHudSkin.ImpactMarker(to,TargetWithinRange?new Color(.5f,.86f,.9f):new Color(1,.7f,.3f),hitSomething);
+            }
             else
             {
                 DrawAimLine(to+new Vector2(-5,-5),to+new Vector2(5,5),2f);
@@ -291,6 +295,7 @@ namespace RightWalkPrototype
             }
             GUI.color=previous;
         }
+        public bool AimPreviewVisible=>showAimPreview&&!RelayArenaPrototype.ControlsBlocked&&!ArenaObjectiveMatch.RoomPointerOverUI&&!ArenaCombatHud.TabVisible&&!ArenaObjectiveMatch.TransitionActive;
         public Vector2 TraceShot(Vector2 origin, Vector2 direction, float range, out bool hitSomething)
         {
             var point=TraceShot(origin,direction,range,out Collider2D collider);

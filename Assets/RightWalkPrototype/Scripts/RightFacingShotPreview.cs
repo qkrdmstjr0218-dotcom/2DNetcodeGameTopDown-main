@@ -120,27 +120,29 @@ namespace RightWalkPrototype
         }
         // Sample each button once, then apply one mode state per frame.
         // Clearing SpecialHeld before restoring RMB would restart switch delay forever.
-        private void ProcessFireInput(bool blocked,bool special,bool primary,int cycle)
+        private void ProcessFireInput(bool blocked,bool special,bool primary,int cycle,int slot=0)
         {
             bool pressed=primary&&!audioPrimaryHeld;audioPrimaryHeld=primary;
             if(blocked){if(player!=null)player.SetSpecialHeld(false);return;}
-            if(player!=null){if(cycle!=0)player.CycleAmmo(cycle);player.SetSpecialHeld(special);}
+            if(player!=null){if(slot!=0)player.SelectAmmo(slot==1?SideScrollNetworkPlayer.AmmoKind.Shotgun:slot==2?SideScrollNetworkPlayer.AmmoKind.Rifle:SideScrollNetworkPlayer.AmmoKind.Grenade);else if(cycle!=0)player.CycleAmmo(cycle);player.SetSpecialHeld(special);}
             if(primary){if(pressed&&player!=null&&player.ActiveAmmoEmpty)ArenaAudio.Ui(ArenaAudio.Cue.DryFire);Fire();}
         }
         private void LateUpdate()
         {
             if(readMouse)
             {
-                bool special=false,primary=false;int cycle=0;
+                bool special=false,primary=false;int cycle=0,slot=0;
 #if ENABLE_INPUT_SYSTEM
                 var k=Keyboard.current;var mouse=Mouse.current;
                 if(k!=null){if(k.qKey.wasPressedThisFrame)cycle=-1;else if(k.eKey.wasPressedThisFrame)cycle=1;}
-                if(mouse!=null){special=mouse.rightButton.isPressed;primary=mouse.leftButton.isPressed;}
+                if(k!=null){if(k.digit1Key.wasPressedThisFrame)slot=1;else if(k.digit2Key.wasPressedThisFrame)slot=2;else if(k.digit3Key.wasPressedThisFrame)slot=3;}
+                if(mouse!=null){special=mouse.rightButton.isPressed;primary=mouse.leftButton.isPressed;if(cycle==0){float wheel=mouse.scroll.ReadValue().y;if(Mathf.Abs(wheel)>.01f)cycle=wheel>0?-1:1;}}
 #elif ENABLE_LEGACY_INPUT_MANAGER
                 if(Input.GetKeyDown(KeyCode.Q))cycle=-1;else if(Input.GetKeyDown(KeyCode.E))cycle=1;
-                special=Input.GetMouseButton(1);primary=Input.GetMouseButton(0);
+                if(Input.GetKeyDown(KeyCode.Alpha1))slot=1;else if(Input.GetKeyDown(KeyCode.Alpha2))slot=2;else if(Input.GetKeyDown(KeyCode.Alpha3))slot=3;
+                special=Input.GetMouseButton(1);primary=Input.GetMouseButton(0);if(cycle==0&&Mathf.Abs(Input.mouseScrollDelta.y)>.01f)cycle=Input.mouseScrollDelta.y>0?-1:1;
 #endif
-                ProcessFireInput(RelayArenaPrototype.FireInputBlocked,special,primary,cycle);
+                ProcessFireInput(RelayArenaPrototype.FireInputBlocked,special,primary,cycle,slot);
             }
             UpdateGrenades();UpdateRifles();UpdateInstantTraces();
             for(int i=shots.Count-1;i>=0;i--)

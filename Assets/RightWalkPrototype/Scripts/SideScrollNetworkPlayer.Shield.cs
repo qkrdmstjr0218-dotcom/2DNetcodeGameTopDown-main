@@ -63,7 +63,7 @@ namespace RightWalkPrototype
             var old=GUI.color;var bar=new Rect(at.x-38,Screen.height-at.y+20,76,5);
             GUI.color=new Color(.04f,.07f,.16f,.95f);GUI.DrawTexture(bar,Texture2D.whiteTexture);
             bar.width*=Shield/(float)ShieldCapacity;GUI.color=new Color(.35f,.65f,1);GUI.DrawTexture(bar,Texture2D.whiteTexture);GUI.color=old;
-            if(IsOwner)GUI.Label(new Rect(at.x-65,Screen.height-at.y-44,130,22),"보호막 "+Shield+" · "+ShieldRemaining.ToString("0")+"초",new GUIStyle(GUI.skin.label){alignment=TextAnchor.MiddleCenter,normal={textColor=new Color(.55f,.8f,1)}});
+            if(IsLocalHuman)GUI.Label(new Rect(at.x-65,Screen.height-at.y-44,130,22),"보호막 "+Shield+" · "+ShieldRemaining.ToString("0")+"초",new GUIStyle(GUI.skin.label){alignment=TextAnchor.MiddleCenter,normal={textColor=new Color(.55f,.8f,1)}});
         }
         void ClearShieldVisual(){if(shieldSurface!=null)Destroy(shieldSurface.gameObject);if(shieldSprite!=null)Destroy(shieldSprite);if(shieldOutline!=null)Destroy(shieldOutline.gameObject);if(shieldMaterial!=null)Destroy(shieldMaterial);}
     }
