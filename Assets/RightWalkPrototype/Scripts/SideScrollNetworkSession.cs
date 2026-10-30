@@ -64,10 +64,12 @@ namespace RightWalkPrototype
             var manager=NetworkManager.Singleton;
             if(manager==null||manager.IsListening||manager.ShutdownInProgress)return;
             if(OnlineBusy||onlineSession!=null)return;
+            if(BrowserPlayer&&!solo){ConnectionNotice="웹에서는 인터넷 방을 이용해 주세요.";return;}
+            ConfigureTransport(BrowserPlayer&&solo);
             ArenaClock.Reset();SoloPractice=solo;PrepareConnection(false);
             // Solo has no remote clients: let the OS choose a free loopback port.
             // Keep the known port only for the explicit local host/client test mode.
-            manager.GetComponent<UnityTransport>().SetConnectionData("127.0.0.1",solo?(ushort)0:(ushort)7783,"127.0.0.1");
+            if(!BrowserPlayer)manager.GetComponent<UnityTransport>().SetConnectionData("127.0.0.1",solo?(ushort)0:(ushort)7783,"127.0.0.1");
             bool started=host?manager.StartHost():manager.StartClient();
             if(!started){StopTutorial();SoloPractice=false;ConnectionNotice="연결을 시작하지 못했습니다. 다시 시도해 주세요.";}
         }

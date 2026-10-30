@@ -58,7 +58,7 @@ namespace RightWalkPrototype
             try
             {
                 float delay=nextAllowedRoomQuery-Time.unscaledTime;
-                if(delay>0)await Task.Delay(TimeSpan.FromSeconds(delay));
+                if(delay>0)await WaitForQueryDelay(delay);
                 if(this==null||!Application.isPlaying)return false;
                 await EnsureOnlineServices();nextAllowedRoomQuery=Time.unscaledTime+1.5f;
                 var results=await MultiplayerService.Instance.QuerySessionsAsync(new QuerySessionsOptions{Count=30,
@@ -79,13 +79,18 @@ namespace RightWalkPrototype
             OnlineBusy=true;int generation=++onlineGeneration;ISession opened=null;
             try
             {
-                SoloPractice=false;PrepareConnection(true);ConnectionNotice=id==null?"방을 만드는 중…":"방에 입장하는 중…";
+                ConfigureTransport(false);SoloPractice=false;PrepareConnection(true);ConnectionNotice=id==null?"방을 만드는 중…":"방에 입장하는 중…";
                 await EnsureOnlineServices();
                 if(this==null||generation!=onlineGeneration||!Application.isPlaying)return false;
                 if(id==null)
                 {
                     name=string.IsNullOrWhiteSpace(name)?"해킹 점령전":name.Trim();if(name.Length>32)name=name.Substring(0,32);
-                    opened=await MultiplayerService.Instance.CreateSessionAsync(new SessionOptions{Name=name,MaxPlayers=4,Type=OnlineRoomKind,IsPrivate=false,
+                    opened=await MultiplayerService.Instance.CreateSessionAsync(new SessionOptions{Name=name,MaxPlayers=4,Type=OnlineRoomKind,
+#if ARENA_NETWORK_AUDIT
+                        IsPrivate=ArenaNetworkAudit.PrivateRoom,
+#else
+                        IsPrivate=false,
+#endif
                         SessionProperties=new Dictionary<string,SessionProperty>{
                             {"arena",new(OnlineRoomKind,VisibilityPropertyOptions.Public,PropertyIndex.String1)},
                             {"mode",new(OnlineModeName)},{"map",new(OnlineMapName)},{"phase",new("waiting")}}}.WithRelayNetwork());
@@ -93,7 +98,11 @@ namespace RightWalkPrototype
                 else
                 {
                     if(string.IsNullOrWhiteSpace(id))throw new ArgumentException("입장할 방을 선택해 주세요.");
-                    opened=await MultiplayerService.Instance.JoinSessionByIdAsync(id,new JoinSessionOptions{Type=OnlineRoomKind});
+                    // Choose the local platform's Relay protocol. Without an
+                    // override the SDK falls back to the host's protocol, which
+                    // can be DTLS even when this joining player runs in a browser.
+                    opened=await MultiplayerService.Instance.JoinSessionByIdAsync(id,new JoinSessionOptions{Type=OnlineRoomKind}
+                        .WithNetworkOptions(new NetworkOptions{RelayProtocol=RelayProtocol.Default}));
                 }
                 if(this==null||generation!=onlineGeneration||!Application.isPlaying){await CloseOnlineSession(opened);return false;}
                 onlineSession=opened;opened.Deleted+=OnlineSessionClosed;opened.RemovedFromSession+=OnlineSessionClosed;

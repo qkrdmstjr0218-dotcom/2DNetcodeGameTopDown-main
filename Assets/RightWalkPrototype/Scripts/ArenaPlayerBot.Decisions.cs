@@ -29,6 +29,9 @@ namespace RightWalkPrototype
         }
         void ChooseGoal(ArenaObjectiveMatch match,Vector2 foot)
         {
+#if ARENA_PERFORMANCE_AUDIT
+            using var audit=ArenaPerformanceCounters.Measure("Bot.Decision");
+#endif
             var previousPlayer=target;var previousEnemy=enemy;
             bool retained=RefreshTarget();
             if(!retained){target=null;enemy=null;}
@@ -106,6 +109,9 @@ namespace RightWalkPrototype
         }
         void TickCombat()
         {
+#if ARENA_PERFORMANCE_AUDIT
+            using var audit=ArenaPerformanceCounters.Measure("Bot.Combat");
+#endif
             if(!RefreshTarget()){target=null;enemy=null;player.SetSpecialHeld(false);return;}
             if(Time.time<shotAt)return;shotAt=Time.time+FireAttemptInterval;
             if(!visibleTarget&&PlannedAmmo!=SideScrollNetworkPlayer.AmmoKind.Rifle)return;

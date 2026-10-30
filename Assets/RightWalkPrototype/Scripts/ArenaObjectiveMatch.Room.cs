@@ -27,7 +27,7 @@ namespace RightWalkPrototype
         }
         readonly NetworkVariable<Unity.Collections.FixedString128Bytes> roomTitle=new();
         public string RoomTitle=>roomTitle.Value.ToString();
-        bool markerGuide;int markerGuideVersion=-1;
+        bool markerGuide,expandedRoster;int markerGuideVersion=-1;
         public static bool MarkerGuideOpen=>PracticeRoom&&Instance.markerGuide&&Instance.markerGuideVersion==Instance.State.Value.Version;
         readonly NetworkVariable<ReadyRoster> roomRoster=new();
         public ReadyRoster ReadyPlayers=>roomRoster.Value;
@@ -52,15 +52,26 @@ namespace RightWalkPrototype
         public static bool PracticeRoom=>Instance!=null&&Instance.IsSpawned&&Instance.RoomFlow&&Instance.State.Value.Phase==Stage.Waiting;
         public static bool TransitionActive=>Instance!=null&&Instance.IsSpawned&&Instance.Transitioning;
         public static bool CombatBlocked=>Ended||Instance!=null&&Instance.IsSpawned&&Instance.RoomFlow&&Instance.State.Value.Phase!=Stage.Playing&&!PracticeRoom;
+        public static Rect RoomControlsBounds(float screenWidth,float screenHeight)
+        {
+            // The ammunition HUD occupies the lower right. Keep the room controls
+            // inside the remaining space, including a small Web canvas.
+            float ammoLeft=screenWidth-312*ArenaCombatHud.ScaleForSize(screenWidth,screenHeight);
+            float width=Mathf.Min(640,screenWidth-32,Mathf.Max(320,ammoLeft-28));
+            float x=Mathf.Clamp((screenWidth-width)*.5f,16,Mathf.Max(16,ammoLeft-12-width));
+            return new Rect(x,screenHeight-146,width,130);
+        }
+        public static bool CompactRoomRoster(float screenWidth)=>screenWidth<1280;
+        public static Rect RoomRosterBounds(float screenWidth,int count,bool expanded)
+            =>CompactRoomRoster(screenWidth)?expanded?new Rect(16,16,250,112+count*66):new Rect(16,16,178,72):new Rect(16,16,250,84+count*66);
         public static bool RoomUIContains(Vector2 screenPoint)
         {
             if(ArenaTutorial.Active)return ArenaTutorial.PointerOverUI(screenPoint);
             if(!PracticeRoom)return false;
             if(MarkerGuideOpen)return true;
             var p=new Vector2(screenPoint.x,Screen.height-screenPoint.y);
-            float width=Mathf.Min(640,Screen.width-32);
-            return new Rect(16,16,250,84+Instance.ReadyPlayers.Count*66).Contains(p)
-                ||new Rect((Screen.width-width)*.5f,Screen.height-146,width,130).Contains(p)
+            return RoomRosterBounds(Screen.width,Instance.ReadyPlayers.Count,Instance.expandedRoster).Contains(p)
+                ||RoomControlsBounds(Screen.width,Screen.height).Contains(p)
                 ;
         }
         public static bool RoomPointerOverUI
@@ -213,7 +224,7 @@ namespace RightWalkPrototype
         }
         void DrawRoom()
         {
-            if(markerGuideVersion!=State.Value.Version){markerGuide=false;markerGuideVersion=State.Value.Version;}
+            if(markerGuideVersion!=State.Value.Version){markerGuide=false;expandedRoster=false;markerGuideVersion=State.Value.Version;}
             if(ArenaTutorial.Active||RelayArenaPrototype.Instance!=null&&RelayArenaPrototype.Instance.MenuOpen)return;
             if(Transitioning)
             {
@@ -221,13 +232,24 @@ namespace RightWalkPrototype
             }
             using(ArenaUiTheme.Use())
             {
-                float width=Mathf.Min(640,Screen.width-32);
-                GUILayout.BeginArea(new Rect(16,16,250,84+ReadyPlayers.Count*66),GUI.skin.box);
+                var controls=RoomControlsBounds(Screen.width,Screen.height);
+                bool compact=CompactRoomRoster(Screen.width);
+                GUILayout.BeginArea(RoomRosterBounds(Screen.width,ReadyPlayers.Count,expandedRoster),GUI.skin.box);
                 int readyCount=0;foreach(var entry in ReadyPlayers)if(entry.Ready)readyCount++;
-                GUILayout.BeginHorizontal();GUILayout.Label(SoloPractice?"혼자 연습":"출격 대기",new GUIStyle(ArenaUiTheme.Title){fontSize=20});
+                bool showRoster=!compact||expandedRoster;
+                if(!showRoster)
+                {
+                    if(SoloPractice)GUILayout.Label("혼자 연습",new GUIStyle(ArenaUiTheme.Title){fontSize=18,wordWrap=false},GUILayout.Height(24));
+                    else DrawRoomTitle(GUILayoutUtility.GetRect(146,24));
+                    if(ArenaUiTheme.CompactButton("명단 "+ReadyPlayers.Count+"명 · 준비 "+readyCount+"/"+ReadyPlayers.Count,GUILayout.Height(26)))expandedRoster=true;
+                }
+                else
+                {
+                GUILayout.BeginHorizontal();GUILayout.Label(SoloPractice?"혼자 연습":"출격 대기",new GUIStyle(ArenaUiTheme.Title){fontSize=20,wordWrap=false},GUILayout.Width(120),GUILayout.Height(28));
                 GUILayout.FlexibleSpace();GUILayout.Label("준비 "+readyCount+" / "+ReadyPlayers.Count,new GUIStyle(ArenaUiTheme.Muted){alignment=TextAnchor.MiddleRight,fontSize=12,wordWrap=false},GUILayout.Width(85));GUILayout.EndHorizontal();
                 if(SoloPractice)GUILayout.Label("참가자",ArenaUiTheme.Muted,GUILayout.Height(22));else DrawRoomTitle(GUILayoutUtility.GetRect(218,22));
                 var sorted=new ReadyPlayer[ReadyPlayers.Count];for(int i=0;i<sorted.Length;i++)sorted[i]=ReadyPlayers[i];Array.Sort(sorted,(a,b)=>a.Number.CompareTo(b.Number));
+                if(compact&&ArenaUiTheme.CompactButton("참가자 "+ReadyPlayers.Count+"명 · "+(expandedRoster?"명단 접기":"명단 펼치기"),GUILayout.Height(26)))expandedRoster=!expandedRoster;
                 foreach(var p in sorted)
                 {
                     var row=GUILayoutUtility.GetRect(218,58);bool self=p.Client==NetworkManager.LocalClientId;
@@ -240,8 +262,9 @@ namespace RightWalkPrototype
                     GUI.Label(new Rect(row.x+50,row.y+34,72,18),role,ArenaUiTheme.Static(new GUIStyle(GUI.skin.label){fontSize=11,wordWrap=false,padding=new RectOffset(),normal={textColor=self?new Color(.65f,.95f,1):new Color(.55f,.69f,.73f)}}));
                     ArenaHudSkin.ReadyBadge(new Rect(row.xMax-96,row.y+30,88,24),p.Ready);GUILayout.Space(8);
                 }
+                }
                 GUILayout.EndArea();
-                GUILayout.BeginArea(new Rect((Screen.width-width)*.5f,Screen.height-146,width,130),GUI.skin.box);
+                GUILayout.BeginArea(controls,GUI.skin.box);
                 bool ready=IsReady(NetworkManager.LocalClientId);var enabled=GUI.enabled;
                 GUI.enabled=enabled&&!markerGuide;
                 GUILayout.BeginHorizontal();
@@ -254,7 +277,7 @@ namespace RightWalkPrototype
                 if(session!=null&&session.CanEditBots)
                 {
                     GUILayout.Space(6);GUILayout.BeginHorizontal();
-                    GUILayout.Label("AI 연습 상대 "+session.BotCount+" / 3",ArenaUiTheme.Muted,GUILayout.Height(28));GUILayout.FlexibleSpace();
+                    GUILayout.Label("AI 연습 상대 "+session.BotCount+" / 3",new GUIStyle(ArenaUiTheme.Muted){wordWrap=false},GUILayout.MinWidth(126),GUILayout.Height(28));GUILayout.FlexibleSpace();
                     if(ArenaUiTheme.CompactButton("난이도: "+session.BotDifficultyName,GUILayout.Width(132),GUILayout.Height(28)))session.SetBotDifficulty((session.BotDifficulty+1)%3);
                     GUI.enabled=enabled&&!markerGuide&&session.BotCount<3;if(ArenaUiTheme.CompactButton("AI 추가",GUILayout.Width(100),GUILayout.Height(28)))session.AddPracticeBot();
                     GUI.enabled=enabled&&!markerGuide&&session.BotCount>0;if(ArenaUiTheme.CompactButton("AI 제거",GUILayout.Width(100),GUILayout.Height(28)))session.RemovePracticeBot();

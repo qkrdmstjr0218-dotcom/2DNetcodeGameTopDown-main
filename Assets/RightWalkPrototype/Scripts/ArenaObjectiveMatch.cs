@@ -78,6 +78,9 @@ namespace RightWalkPrototype
         }
         void Update()
         {
+#if ARENA_PERFORMANCE_AUDIT
+            using var audit=ArenaPerformanceCounters.Measure("Match.Update");
+#endif
             if(!IsSpawned||Points==null)return;
             if(IsServer&&State.Value.Phase==Stage.Ending&&Now>=State.Value.End){var finished=State.Value;finished.Phase=Stage.Finished;State.Value=finished;}
             UpdateRoom();UpdateKillRules();

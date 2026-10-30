@@ -73,7 +73,8 @@ namespace RightWalkPrototype
             var point=Camera.main.WorldToViewportPoint(guideWorld+Vector3.up*(.5f-ArenaObjectiveMatch.SupportGuideHeight));
             return point.z>0&&point.x>.025f&&point.x<.975f&&point.y>.05f&&point.y<.95f;
         }
-        public static float UiScale=>Mathf.Clamp(Screen.height/900f,1,1.25f)*Mathf.Min(1,Screen.width/1000f,Screen.height/600f);
+        public static float ScaleForSize(float width,float height)=>Mathf.Clamp(height/900f,1,1.25f)*Mathf.Min(1,width/1000f,height/600f);
+        public static float UiScale=>ScaleForSize(Screen.width,Screen.height);
         void Styles()
         {
             if(text!=null)return;
