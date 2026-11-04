@@ -26,7 +26,7 @@ namespace RightWalkPrototype
             {
                 Text("1 샷건    2 관통 라이플    3 유탄",-7.1f,7.25f,.065f,Ink);
                 Text("Q/E · 휠로 선택 / 우클릭을 누르는 동안 특수탄 사용",-7.1f,6.5f,.048f,Muted);
-                Text("일반탄 12발 · 사격을 멈춘 뒤 1초 후 초당 4발 충전",-7.1f,5.75f,.048f,Accent);
+                Text("일반탄 12발 · 사격 중단 1초 뒤 초당 6발 충전",-7.1f,5.75f,.048f,Accent);
                 Text("특수탄은 보급 · 적 드롭으로 보충합니다",-7.1f,5f,.05f,Muted);
                 Text("지원 드론 격추 → 보호막 투하 / 최대 50 · 중첩 없음",-7.1f,4.55f,.046f,Muted);
             }
@@ -46,7 +46,7 @@ namespace RightWalkPrototype
             {
                 var root=new GameObject("Guide target "+i);root.transform.SetParent(transform,false);root.transform.localPosition=new Vector3(-4.8f+i*3.2f,10.2f,0);contentRoot=root.transform;
                 Panel("Target frame",0,0,3f,.66f,.07f,Steel,-64);Panel("Target face",0,0,2.92f,.58f,.05f,Face,-63);
-                var label=Text(Topics[i],-.12f,0,.042f,Ink,true);label.GetComponent<MeshRenderer>().sortingOrder=-60;Box("Target light",1.26f,0,.07f,.30f,Accent,-62);
+                var label=Text(Topics[i],-.12f,0,.042f,Ink,true);label.GetComponent<MeshRenderer>().sortingOrder=-60;Box("Target light",1.26f,0,.07f,.30f,new Color(.48f,.32f,.65f),-62);
                 targets[i]=root.AddComponent<ArenaGuideTarget>();targets[i].Initialize(i,root.GetComponentInChildren<SpriteRenderer>());contentRoot=null;
             }
             Box("Ceiling target rail",0,9.9f,12.8f,.07f,Steel,-64);

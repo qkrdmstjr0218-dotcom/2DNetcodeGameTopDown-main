@@ -12,7 +12,7 @@ namespace RightWalkPrototype
         internal void Show(bool selected,bool flash)
         {
             if(flash)flashUntil=Time.time+.22f;
-            if(lamp!=null)lamp.color=Time.time<flashUntil?new Color(.9f,1,1):selected?new Color(.3f,.95f,.83f):new Color(.24f,.36f,.41f);
+            if(lamp!=null)lamp.color=Time.time<flashUntil?new Color(.95f,.82f,1):selected?new Color(.78f,.45f,1):new Color(.48f,.32f,.65f);
         }
     }
 }

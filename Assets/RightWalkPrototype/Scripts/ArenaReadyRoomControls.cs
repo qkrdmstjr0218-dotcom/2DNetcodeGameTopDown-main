@@ -101,9 +101,10 @@ namespace RightWalkPrototype
             Panel("Control board backing",0,6.05f,16.18f,5.33f,.14f,new Color(.04f,.075f,.10f),-78);
             Box("Header rule",0,8f,15.35f,.018f,new Color(.18f,.3f,.34f),-76);
             heading=Text("조작 가이드",-6.85f,8.4f,.075f,Ink);
-            Text("천장 위 표적은 관통 라이플로만 전환됩니다",-3.95f,8.38f,.031f,Muted);
             for(int i=0;i<4;i++)BuildTopic(i);BuildTargets();
-            Text("2 관통 라이플 선택 → 우클릭 사격 · 천장을 관통해 주제를 선택하세요",-7.1f,3.8f,.036f,Accent);
+            Box("Target instruction divider",0,4.12f,15.35f,.018f,Steel,-76);
+            Text("게시판 전환",-7.1f,3.8f,.036f,new Color(.78f,.45f,1));
+            Text("2 관통 라이플 선택 → 우클릭으로 천장 위 표적 사격",-4.9f,3.8f,.036f,Muted);
         }
         void DrawControls()
         {

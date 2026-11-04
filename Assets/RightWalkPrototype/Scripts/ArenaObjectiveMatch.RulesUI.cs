@@ -28,7 +28,7 @@ namespace RightWalkPrototype
             }
             else if(rulesTab==1)
             {
-                GUILayout.Label("일반탄 · 최대 12발 / 사격을 멈춘 뒤 1초 후부터 초당 4발 자동 충전",body);GUILayout.Space(12);
+                GUILayout.Label("일반탄 · 최대 12발 / 사격 중단 1초 뒤부터 초당 6발 자동 충전",body);GUILayout.Space(12);
                 GUILayout.Label("특수탄 선택 · Q/E 또는 마우스 휠\n1 샷건 · 2 관통 라이플 · 3 유탄\n우클릭을 누르는 동안 선택한 특수탄을 발사합니다.",body);GUILayout.Space(12);
                 GUILayout.Label("실제 경기의 특수탄은 보급 상자와 적이 떨어뜨린 아이템으로 보충합니다. 대기실에서는 연습을 위해 자동 보충됩니다.",body);GUILayout.Space(12);
                 GUILayout.Label("지원 드론 · 비무장 보급 기체\n격추 시 5점과 보호막을 얻을 수 있습니다. 보호막은 최대 50이며 중첩되지 않습니다.",body);

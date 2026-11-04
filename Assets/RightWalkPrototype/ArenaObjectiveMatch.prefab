@@ -73,7 +73,7 @@ MonoBehaviour:
   ShowTopMostFoldoutHeaderGroup: 1
   normalAmmoCapacity: 12
   normalAmmoRechargeDelay: 1
-  normalAmmoRechargeRate: 4
+  normalAmmoRechargeRate: 6
   normalShotInterval: 0.23
   Patrols:
     UpdateTraits:

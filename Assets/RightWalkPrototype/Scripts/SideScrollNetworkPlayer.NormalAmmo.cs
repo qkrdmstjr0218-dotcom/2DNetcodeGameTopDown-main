@@ -46,7 +46,7 @@ namespace RightWalkPrototype
             bool ready=ArenaObjectiveMatch.InReadyRoom&&!ArenaTutorial.Active;
             var point=Camera.main.WorldToScreenPoint(transform.position+Vector3.up*(ready?ReadyIdentityHeight:crouch.IsCrouched?1.95f:2.45f));
             if(point.z<=0)return;
-            var bar=ready?new Rect(point.x+64,Screen.height-point.y-19,46,5):new Rect(point.x-29,Screen.height-point.y+11,58,5);var old=GUI.color;
+            var bar=ready?new Rect(point.x-29,Screen.height-point.y+25,58,5):new Rect(point.x-29,Screen.height-point.y+11,58,5);var old=GUI.color;
             GUI.color=new Color(.025f,.04f,.055f,.9f);GUI.DrawTexture(new Rect(bar.x-1,bar.y-1,bar.width+2,bar.height+2),Texture2D.whiteTexture);
             bar.width*=Mathf.Clamp01(Stamina/MaximumStamina);
             GUI.color=SprintExhausted?new Color(1,.65f,.25f):new Color(.25f,.8f,.9f);GUI.DrawTexture(bar,Texture2D.whiteTexture);GUI.color=old;
